@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Kalau menggunakan Contoller
 Route::get('/admin', 'AdminController@index');
+Route::get('/landing', 'BaseController@index');
