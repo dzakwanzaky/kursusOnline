@@ -1,4 +1,4 @@
-<div class="top-bar">
+<!--<div class="top-bar">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -17,11 +17,11 @@
 				</div>
 			</div>
 		</div>
-	</div>
-    <header class="header header_style_01">
+	</div>-->
+    <header class="top-bar">
         <nav class="navbar header-nav navbar-expand-lg">
             <div class="container">
-				<a class="navbar-brand" href="index.html"><img src="tema/images/logos/logo-app.png" alt="image"></a>
+				<a class="navbar-brand" href="index.html"><h3 style="font-weight:bold">Imam Courses</h3></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarApp" aria-controls="navbarApp" aria-expanded="false" aria-label="Toggle navigation">
 					<span></span>
 					<span></span>
@@ -29,14 +29,14 @@
 				</button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
                     <ul class="navbar-nav">
-                        <li><a class="nav-link active" href="#home">Home</a></li>
-                        <li><a class="nav-link" href="#features">Features</a></li>
-                        <li><a class="nav-link" href="#screenshots">Screens</a></li>
-                        <li><a class="nav-link" href="#team">Team</a></li>
+                        <li><a class="nav-link active" href="#home">Beranda</a></li>
+                        <li><a class="nav-link" href="#features">Program</a></li>
+                        <li><a class="nav-link" href="#screenshots">Kontak</a></li>
+                        <li><a class="nav-link" href="#team">Bantuan</a></li>
                         <li><a class="nav-link" href="#pricing">Pricing</a></li>
                         <li><a class="nav-link" href="#testimonials">Clients</a></li>
-                        <li><a class="nav-link" href="#purchase">Purchase</a></li>
-						<li><a class="nav-link" href="#support">Support</a></li>
+                        <li><div class="btn-login"><a href="#purchase">Masuk</a></div></li>
+						<li><div class="btn-register"><a href="#support">Daftar</a></div></li>
                     </ul>
                 </div>
             </div>

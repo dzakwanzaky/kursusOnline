@@ -27,7 +27,7 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="/tema/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/tema/css/custom.css">
+     <link rel="stylesheet" href="/tema/css/custom.css">
 
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -41,43 +41,22 @@
     <!-- END LOADER -->
     @include('base/header_page') 
 
-    <div id="home" class="parallax first-section" style="background-image:url('uploads/bg-img.jpg');">
+    <div id="home" class="parallax first-section" style="background-image:url('tema/uploads/bimbel.png');">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <div class="big-tagline">
-                        <h2>Familiarize Your Creative Apps</h2>
-                        <p class="lead">With Appfast responsive landing page template, you can showcase your next creative & amazing apps!</p>
-                        <a data-scroll href="#order" class="btn btn-light btn-radius btn-brd"><i class="fa fa-play" aria-hidden="true"></i> GooglePlay </a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a data-scroll href="#screenshots" class="btn btn-light btn-radius btn-brd"><i class="fa fa-apple" aria-hidden="true"></i> App Store</a>
+                <div class="col-md-7 col-sm-12">
+                </div>
+                <div class="big-tagline">
+                        <h2>Gabung bersama kami dan</h2>
+                        <h2>menjadi juara!</h2>
+                        <p class="lead"></p>
+                        <a data-scroll href="#order" class="btn btn-light btn-radius btn-brd" style="font-weight:bold"> GABUNG SEKARANG </a>
                     </div>
-                </div>
-                <div class="app_iphone_01 wow slideInUp hidden-xs hidden-sm" data-wow-duration="1s" data-wow-delay="0.2s">
-                    <img src="tema/uploads/app_iphone_01.png" alt="" class="img-fluid">
-                </div>
-                <div class="app_iphone_02 wow slideInUp hidden-xs hidden-sm" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <img src="tema/uploads/app_iphone_02.png" alt="" class="img-fluid">
-                </div>
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->
 
     @include('base/features_page')    
-
-    @include('base/screens_page')
-
-    @include('base/team_page')
-
-    @include('base/pricing_page')
-
-    @include('base/clients_page')
-
-    @include('base/purchase_page')
-    
-    @include('base/support_page')
-
-    @include('base/footer_page')
 
     <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 

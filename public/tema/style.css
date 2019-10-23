@@ -92,9 +92,19 @@ a {
     transition: all .3s ease-in-out;
 }
 
+h3{
+    letter-spacing: 0;
+    font-weight: normal;
+    font-family: DM Sans;
+    position: relative;
+    padding: 0 0 10px 0;
+    font-weight: bold;
+    line-height: 120% !important;
+    color: #408ABD;
+    margin: 0
+}
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
@@ -153,9 +163,10 @@ h6 a:hover {
 }
 
 a {
-    color: #1f1f1f;
+    color: #92CD16;
     text-decoration: none;
     outline: none;
+    font-weight: bold;
 }
 
 a,
@@ -329,12 +340,12 @@ a img.aligncenter {
 -------------------------------------------------------------------*/
 
 .top-bar{
-	background: #121212;	
+	background: #ffffff;	
 	padding: 4px 0px;
 }
 
 .header-nav .navbar-toggler span {
-  background: #ffffff;
+  background: #121212;
 }
 
 .header-nav .navbar-brand {
@@ -353,18 +364,30 @@ a img.aligncenter {
     float: left;
 }
 
-.right-btn a{
+.btn-register a{
 	display: inline-block;
 	padding: 5px 20px;
-	font-size: 18px;
+	font-size: 16px;
 	border: 1px solid #ffffff;
 	color: #ffffff;
-	background-color: #AD1457;
+	background-color: #92CD16;
 	line-height: 25px;
 	float: right;
-	font-weight: 500;
+    font-weight: 500;
+    border-radius: 75px;
 }
-
+.btn-login a{
+	display: inline-block;
+	padding: 5px 20px;
+	font-size: 16px;
+	border: 1px solid #92CD16;
+	color: #92CD16;
+	background-color:#ffffff ;
+	line-height: 25px;
+	float: right;
+    font-weight: 500;
+    border-radius: 75px;
+}
 .right-btn a:hover{
 	background-color: #C62828;
 	color: #ffffff;
@@ -403,13 +426,13 @@ a img.aligncenter {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link:hover{
-	background: #AD1457;
+	background: #acf514;
 	color: #ffffff;
 	border-radius: 2px;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link.active{
-	background: #AD1457;
+	background: #92CD16;
 	color: #ffffff;
 	font-weight: 600;
 	border-radius: 2px;
@@ -666,9 +689,8 @@ body.app_version .header_style_01.fixed-menu{
 
 .first-section h2 {
     color: #ffffff;
-    font-size: 68px;
+    font-size: 38px;
     font-weight: 600;
-    text-transform: capitalize;
     display: block;
     margin: 0;
     padding: 0 0 30px;
@@ -2076,10 +2098,11 @@ body.app_version .bootstrap-select .btn-light:hover{
 
 .btn-light {
     padding: 13px 40px;
-    font-size: 18px;
+    font-size: 16px;
     border: 1px solid #ffffff !important;
     color: #ffffff;
-    background-color: #222222;
+    background-color: #92CD16;
+    border-radius: 75px;
 }
 
 .btn-dark {
