@@ -1,6 +1,6 @@
 @extends('base/script_page')
 @section('content')
-    <!-- END LOADER -->
+    <!-- LANDING PAGE -->
     <div id="home" class="parallax first-section" style="background-image:url('tema/uploads/bimbel.png');">
         <div class="container">
             <div class="row">

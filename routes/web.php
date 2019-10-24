@@ -14,8 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/program', function () {
+    return view('base/program_page');
+});
+Route::get('/kontak', function () {
+    return view('base/kontak_page');
+});
+Route::get('/tentangKami', function () {
+    return view('base/tentang_kami_page');
+});
 Route::get('/login', function () {
-    return view('base/screens_page');
+    return view('base/login_page');
+});
+Route::get('/register', function () {
+    return view('base/register_page');
 });
 
 //Kalau menggunakan Contoller

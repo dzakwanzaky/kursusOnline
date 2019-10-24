@@ -1,3 +1,4 @@
+<!-- BERISI FOOTER PAGE PADA HOME -->
 <div id="features" class="section wb">
         <div class="container">
             <div class="section-title text-center">

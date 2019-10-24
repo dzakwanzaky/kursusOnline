@@ -1,3 +1,5 @@
+@extends('base/script_page')
+@section('content')
 <div id="purchase" class="parallax section db" style="background-image:url('tema/uploads/pr_bg.jpg');">
         <div class="container">
             <div class="section-title text-center">
@@ -27,3 +29,4 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->
+@endsection

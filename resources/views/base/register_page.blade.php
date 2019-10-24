@@ -1,3 +1,5 @@
+@extends('base/script_page')
+@section('content')
 <div id="support" class="section" style="background-image:url('tema/uploads/form_bg.jpg');">
         <div class="container">
             <div class="section-title text-center">
@@ -42,3 +44,4 @@
     <section class="section nopad cac text-center">
         <a href="#"><h3>Interesting our awesome web design services? Just drop an email to us and get quote for free!</h3></a>
     </section>
+@endsection
