@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login', function () {
+    return view('base/screens_page');
+});
 
 //Kalau menggunakan Contoller
 Route::get('/admin', 'AdminController@index');

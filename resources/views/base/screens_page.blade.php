@@ -1,3 +1,5 @@
+@extends('base/script_page')
+@section('content')
 <div id="screenshots" class="section wb">
         <div class="container">
             <div class="section-title text-center">
@@ -153,3 +155,4 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->
+@endsection
