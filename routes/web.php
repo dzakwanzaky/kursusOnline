@@ -33,3 +33,9 @@ Route::get('/register', function () {
 //Kalau menggunakan Contoller
 Route::get('/admin', 'AdminController@index');
 Route::get('/landing', 'BaseController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/verify','VerifyController@getVerify')->name('getverify');
+Route::post('/verify','VerifyController@postVerify')->name('verify');
