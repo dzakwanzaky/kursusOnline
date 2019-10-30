@@ -34,6 +34,10 @@ Route::get('/register', function () {
 Route::get('/admin', 'AdminController@index');
 Route::get('/landing', 'BaseController@index');
 
+Route::get('/invoice', function () {
+    return view('admin/invoice');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
