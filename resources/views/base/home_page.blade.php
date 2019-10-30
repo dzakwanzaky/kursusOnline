@@ -4,7 +4,7 @@
     <div id="home" class="parallax first-section" style="background-image:url('tema/uploads/bimbel.png');">
         <div class="container">
             <div class="row">
-                <div class="col-md-7 col-sm-12">
+                <div class="col-md-7 col-sm-14">
                 </div>
                 <div class="big-tagline">
                         <h2>Gabung bersama kami dan</h2>

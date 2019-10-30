@@ -3,8 +3,7 @@
 <div id="pricing" class="section lb">
         <div class="container">
             <div class="section-title text-center">
-                <h3>Ready to get started?</h3>
-                <p class="lead">Get the red carpet treatment <strong>just $39 per month!</strong> It is estimated that 3.5 million established by personal blogs.<br> From each other, we share paid WordPress themes WP Service...</p>
+                <h3>Program Imam Course</h3>
             </div><!-- end title -->
 
             <div class="row">
@@ -12,11 +11,11 @@
                     <div class="tab-content">
                         <div class="tab-pane active fade show" id="tab1">
                             <div class="row text-center">
-                                <div class="col-md-4">
+                                <div class="col-md-4" style="margin:140px 0 0 0;">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header grd1">
-                                            <h2>Free Access</h2>
-                                            <h3>$85/month</h3>
+                                            <h2>PAKET REGULER</h2>
+                                            <h3>RP.2.000,00</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
                                         <div class="pricing-table-features">
@@ -27,15 +26,15 @@
                                             <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
                                         </div>
                                         <div class="pricing-table-sign-up">
-                                            <a href="#" class="btn btn-dark btn-radius btn-brd grd1 effect-1">Order Now</a>
+                                            <a href="#" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header grd1">
-                                            <h2>1 Year Membership</h2>
-                                            <h3>$59/year</h3>
+                                            <h2>PAKET PREMIUM</h2>
+                                            <h3>Rp.2.000,00</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
                                         <div class="pricing-table-text">
@@ -49,16 +48,16 @@
                                             <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
                                         </div>
                                         <div class="pricing-table-sign-up">
-                                            <a href="#" class="btn btn-dark btn-radius btn-brd grd1 effect-1">Learn More</a>
+                                            <a href="#" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-4" style="margin:140px 0 0 0;">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header grd1">
-                                            <h2>Lifetime Update</h2>
-                                            <h3>$85/one-time</h3>
+                                            <h2>PAKET GOLD</h2>
+                                            <h3>RP.2.000,00</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
                                         <div class="pricing-table-features">
@@ -69,7 +68,7 @@
                                             <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
                                         </div>
                                         <div class="pricing-table-sign-up">
-                                            <a href="#" class="btn btn-dark btn-radius btn-brd grd1 effect-1">Order Now</a>
+                                            <a href="#" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a>
                                         </div>
                                     </div>
                                 </div>
