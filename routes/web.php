@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use Nexmo\Laravel\Facade\Nexmo;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,8 +20,8 @@ Route::get('/program', function () {
 Route::get('/kontak', function () {
     return view('base/kontak_page');
 });
-Route::get('/tentangKami', function () {
-    return view('base/tentang_kami_page');
+Route::get('/paketProgram', function () {
+    return view('base/paket_program_page');
 });
 Route::get('/login', function () {
     return view('base/login_page');
@@ -29,10 +29,17 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('base/register_page');
 });
+$router->get('/nexmo', function () use ($router) {
+    app(Nexmo\Client::class);
+});
 
 //Kalau menggunakan Contoller
 Route::get('/admin', 'AdminController@index');
 Route::get('/landing', 'BaseController@index');
+
+Route::get('/invoice', function () {
+    return view('admin/invoice');
+});
 
 Auth::routes();
 
