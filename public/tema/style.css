@@ -47,7 +47,13 @@
     SKELETON
 -------------------------------------------------------------------*/
 
+.main {
+    background: #e7f0fd;
+    font-family: Poppins;
+}
+
 body {
+    background: #e7f0fd;
     color: #999;
     font-size: 15px;
     font-family: 'Barlow', sans-serif;
@@ -1779,7 +1785,7 @@ body.app_version .bootstrap-select .btn-light:hover{
     font-weight: 400;
     font-size: 20px;
     text-transform: capitalize;
-    line-height: !important;
+    line-height: important;
 }
 
 .footer {
@@ -2030,7 +2036,7 @@ body.app_version .bootstrap-select .btn-light:hover{
     color: #999 !important;
     margin: 0 !important;
     padding: 0 !important;
-    line-height: 1 !important:
+    line-height: 1 !important;
 }
 
 .stat-wrap p {
@@ -2039,7 +2045,7 @@ body.app_version .bootstrap-select .btn-light:hover{
     margin: 0;
     font-weight: 300;
     padding: 4px 0 0;
-    line-height: 1 !important:
+    line-height: 1 !important;
 }
 
 #preloader {
