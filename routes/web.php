@@ -11,6 +11,7 @@
 |
 */
 use Nexmo\Laravel\Facade\Nexmo;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -29,6 +30,13 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('base/register_page');
 });
+Route::get('/pendaftaranSiswa', function () {
+    return view('base/pendaftaranSiswa_page');
+});
+Route::get('/pendaftaranTutor', function () {
+    return view('base/pendaftaranTutor_page');
+});
+
 $router->get('/nexmo', function () use ($router) {
     app(Nexmo\Client::class);
 });
@@ -38,7 +46,7 @@ Route::get('/admin', 'AdminController@index');
 Route::get('/landing', 'BaseController@index');
 
 Route::get('/invoice', function () {
-    return view('admin/invoice');
+    return view('dashboard_admin/invoice');
 });
 
 Auth::routes();
