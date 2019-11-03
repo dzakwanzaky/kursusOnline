@@ -45,8 +45,14 @@ $router->get('/nexmo', function () use ($router) {
 Route::get('/admin', 'AdminController@index');
 Route::get('/landing', 'BaseController@index');
 
+Route::get('/murid', function () {
+    return view('murid/murid');
+});
 Route::get('/invoice', function () {
-    return view('dashboard_admin/invoice');
+    return view('murid/invoice');
+});
+Route::get('/invoicenya', function () {
+    return view('murid/invoicenya');
 });
 
 Auth::routes();
