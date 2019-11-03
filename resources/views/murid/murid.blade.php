@@ -48,8 +48,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-      <div class="container">
-            <div class="card mt-2">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
               <div class="card-body">
               <table class="table table-responsive-lg table-bordered small" id="jadwal">
                 <thead class="thead-dark">
@@ -68,7 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <td>6 SD</td>
                         <td>Matematika</td>
                         <td>Selasa, Rabu, Kamis</td>
-                        <td>Sendowo</td>
+                        <td>Ruang HY - U202</td>
                         <td>
                             <a class=" btn btn-sm btn-danger" style="color:white;">
                             <span>Belum Konfirmasi</span>
@@ -76,11 +77,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </td>
                     </tr>
                 </tbody>
-            </table>
+                </table>
               </div>
             </div>
 
             
+          </div>
           <!-- /.col-md-6 -->
           
         </div>
@@ -90,7 +92,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
   <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -101,7 +102,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       $('#murid').DataTable();
       });
     </script>
-    
+
 <!-- Main Footer -->
 @include('murid/footer')
 

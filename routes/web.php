@@ -43,7 +43,9 @@ Route::get('/murid', function () {
 Route::get('/invoice', function () {
     return view('murid/invoice');
 });
-
+Route::get('/invoicenya', function () {
+    return view('murid/invoicenya');
+});
 
 Auth::routes();
 

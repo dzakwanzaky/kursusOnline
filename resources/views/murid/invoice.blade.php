@@ -83,7 +83,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           </a>
                         </td>
                         <td>
-                          <a class=" btn btn-sm btn-success" style="color:white;">
+                          <a href="/invoicenya" class=" btn btn-sm btn-success" style="color:white;">
                             <span class="fa fa-download"></span>
                           </a>
                         </td>
