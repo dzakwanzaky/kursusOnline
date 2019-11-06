@@ -25,40 +25,47 @@
 
                 <label for="notelp">No Telepon</label>
                 <div class="form-textbox">
-                    <input type="tel" name="no-telp" id="no-telp" placeholder="No Telepon" 
-                        class="form-control @error('no-telp') is-invalid @enderror" value="{{ old('no-telp') }}" required autocomplete="no-telp"/>
+                <input id="phone" type="phone" class="form-control" name="phone" required autocomplete="new-password">
                 </div><br>
 
-                <label for="email">Email</label>
+                <label for="email">Nama</label>
                 <div class="form-textbox">
-                    <input type="email" name="email" id="email" 
-                        class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required autocomplete="email"/>
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 
                 </div><br>
 
-                <label for="pass">Kata Sandi</label>
+                <label for="pass">Email</label>
                 <div class="form-textbox">
-                    <input type="password" name="pass" id="password" placeholder="Password"
-                        class="form-control @error('password') is-invalid @enderror" required autocomplete="new-password"/> 
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 
+                </div><br>
+
+                <label for="confirm-password">Password</label>
+                <div class="form-textbox">
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div><br>
 
                 <label for="confirm-password">Konfirmasi Password</label>
                 <div class="form-textbox">
-                    <input type="password" name="confirm-password" id="confirm-password" placeholder="Masukkan ulang password" 
-                        class="form-control" required autocomplete="new-password"/>
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                 </div><br>
 
                 <div class="form-textbox">
