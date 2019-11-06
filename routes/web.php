@@ -27,8 +27,11 @@ Route::get('/paketProgram', function () {
 Route::get('/login', function () {
     return view('base/login_page');
 });
-Route::get('/register', function () {
-    return view('base/register_page');
+Route::get('/registerSiswa', function () {
+    return view('base/registerSiswa_page');
+});
+Route::get('/registerTutor', function () {
+    return view('base/registerTutor_page');
 });
 Route::get('/pendaftaranSiswa', function () {
     return view('base/pendaftaranSiswa_page');
@@ -49,7 +52,8 @@ Route::get('/murid', function () {
     return view('murid/murid');
 });
 Route::get('/invoice', function () {
-    return view('murid/invoice');
+    return view
+    ('murid/invoice');
 });
 Route::get('/invoicenya', function () {
     return view('murid/invoicenya');
