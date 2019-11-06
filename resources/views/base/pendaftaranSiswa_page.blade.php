@@ -21,24 +21,14 @@
             <form method="POST" action="{{ route('login')}}">
                 @csrf
                 <h2 class="form-title">Pendaftaran Imam Courses</h2>
-                    <button class="button" disabled="disabled">Murid</button>
-                <form action="#">
-                    <button class="button2">Tutor</button>
-                </form>
                 <div class="alert alert-danger">
                         <strong>Isikan!</strong> Data dengan sebenarnya.
                 </div>
-                    <div class="panel-body">Nama
-                        <div>
-                              <input id="nama" type="text" class="form-control" name="nama"  required autofocus
-                                    style="text-transform: capitalize">
-                            </div><br>
-                    <div class="panel-body">Alamat
-                        <div>
-                              <input id="alamat" type="text" class="form-control" name="alamat"  required autofocus
-                                    style="text-transform: capitalize">
-                            </div><br>
-
+                <div class="panel-body">Nama Lengkap
+                    <div>
+                        <input id="nama" type="text" class="form-control" name="nama"  required autofocus
+                                style="text-transform: capitalize">
+                    </div><br/>
                     <label for="kelas">Kelas
                         <div class="form-textbox">
                               <input id="kelas" type="text" class="form-control" name="alamat"  required autofocus
@@ -84,6 +74,7 @@
                         <input id="ortu" type="text" class="form-control" name="alamat"  required autofocus
                                 style="text-transform: capitalize">
                     </div><br/>
+                    
                     <div class="form-group">
                             <button type="submit" class="button3">Daftar</button>
                         </div>
