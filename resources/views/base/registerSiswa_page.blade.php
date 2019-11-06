@@ -1,8 +1,10 @@
 @extends('base/script_page')
 @section('content')
-    <div class="main">
-    <div class="container-content">
-        <div class="sign-up-content">
+<div class-="main">
+    <div class="container">
+    <div class="row">
+    <br>
+        <div class="col-md-12 col-md-offset-3">
             <form method="POST" action="{{ route('register')}}" class="signup-form">
                 @csrf
 
