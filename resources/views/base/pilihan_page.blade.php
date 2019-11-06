@@ -10,9 +10,20 @@
               <div class="card-body">
               <h2 class="form-title">Daftar Akun Imam Courses</h2>
               <br>
-              <div class="card-coloumns">
-                <button class="button" style="border-radius:inherit;height:20%;left:20px;position:absolute;width:30%" height="0" width="0">Daftar Sebagai Murid</button>
-                <span>Atau</span>
+              <p class="loginhere">
+                Daftar Sebagai
+              </p>
+              <br>
+              <div class="form-group row">
+                <div style="display:block; margin-left:auto; margin-right:auto; text-align:center;">
+                  <a href="/registerSiswa" class="link link--btn register-page__btn">
+                    <button type="submit" class="button">Murid</button>
+                  </a>
+                  <span style="text-align:center;">Atau</span>
+                  <a href="/registerTuror" class="link link--btn register-page__btn">
+                    <button type="submit" class="button2">Tutor</button>
+                  </a>
+                </div>
               </div>
               <p class="loginhere">
                 Sudah punya akun ?<a href="#" class="loginhere-link"> Masuk Sekarang</a>
