@@ -50,6 +50,8 @@ public function register(Request $request)
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             'phone' => ['required', 'min:10', 'max:13'],
+            'alamat' => ['required', 'min:10', 'max:13'],
+        
         ]);
     }
 
@@ -61,13 +63,27 @@ public function register(Request $request)
      */
     protected function create(array $data)
     {
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'phone'=>$data['phone'],
-            'active'=>0,
-        ]);
+        if ($data = $request ->input('siswa')){
+            $user = Siswa::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'phone'=>$data['phone'],
+                'alamat'=>$data['alamat'],
+                'active'=>0,
+            ]);
+        }else {
+            $user = Tutor::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'phone'=>$data['phone'],
+                'alamat'=>$data['alamat'],
+                'active'=>0,
+            ]);
+        }
+        
+       
         if($user){
             $user->code=SendOTP::sendOTP($user->phone);
             $user->save();

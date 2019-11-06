@@ -18,11 +18,7 @@
                         class="form-control @error('no-telp') is-invalid @enderror" value="{{ old('no-telp') }}" required autocomplete="no-telp"/>
                 </div><br>
                 
-                <label for="nama">Alamat</label>
-                <div class="form-textbox">
-                    <input type="tel" name="no-telp" id="nama" placeholder="Alamat" 
-                        class="form-control @error('no-telp') is-invalid @enderror" value="{{ old('no-telp') }}" required autocomplete="no-telp"/>
-                </div><br>
+                
 
                 <label for="notelp">No Telepon</label>
                 <div class="form-textbox">
@@ -63,11 +59,11 @@
                 </div><br><br>
 
                 <div class="form-group">
-                            <button type="submit" class="button3">Daftar</button>
+                            <button type="submit" class="btn btn-success">Daftar</button>
                         </div>
             </form>
             <p class="loginhere">
-                Sudah punya akun ?<a href="#" class="loginhere-link"> Masuk Sekarang</a>
+            Sudah punya akun ?<a href="{{ route ('login')}}" class="loginhere-link"> Masuk Sekarang</a>
             </p>
         </div>
     </div>
