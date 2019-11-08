@@ -30,6 +30,12 @@ Route::get('/login', function () {
 Route::get('/registerSiswa', function () {
     return view('base/registerSiswa_page');
 });
+Route::get('/registerTutor', function () {
+    return view('base/registerTutor_page');
+});
+Route::get('/registerPilih', function () {
+    return view('base/pilihan_page');
+});
 Route::get('/pendaftaranSiswa', function () {
     return view('base/pendaftaranSiswa_page');
 });

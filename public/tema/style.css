@@ -2341,24 +2341,25 @@ body.app_version .dev-list .widget-title small{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
-    width: 50%;
+    width: 30%;
     margin-bottom: 10px;
+    height: 50px;
 }
 .button2 {
     background-color: #ffffff;
-    float: right;
     font-weight: bold;
     border:0.5px solid #158ADF;
     color: #92CD16;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
-    width: 50%;
+    width: 30%;
     margin-bottom: 10px;
+    height: 50px;
 }
 .button3 {
     background-color: #92CD16;
@@ -2372,6 +2373,7 @@ body.app_version .dev-list .widget-title small{
     font-size: 16px;
     cursor: pointer;
     width: 100%;
+    height: 35px;
     margin-bottom: 10px;
 }
 
