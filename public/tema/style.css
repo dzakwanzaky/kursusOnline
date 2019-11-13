@@ -47,7 +47,13 @@
     SKELETON
 -------------------------------------------------------------------*/
 
+.main {
+    background: #e7f0fd;
+    font-family: Poppins;
+}
+
 body {
+    background: #e7f0fd;
     color: #999;
     font-size: 15px;
     font-family: 'Barlow', sans-serif;
@@ -421,14 +427,15 @@ a img.aligncenter {
 
 
 .navbar-expand-lg .navbar-nav .nav-link{
-	padding: 8px 15px;
-	font-size: 16px;
+	padding: 8px 18px;
+	font-size: 14px;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link:hover{
 	background: #acf514;
 	color: #ffffff;
-	border-radius: 2px;
+    border-radius: 2px;
+    padding: 8px 18px;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link.active{
@@ -645,7 +652,7 @@ body.app_version .header_style_01.fixed-menu{
     display: block;
     position: relative;
     overflow: hidden;
-    padding: 120px 0;
+    padding: 50px 0;
 }
 
 .noover {
@@ -976,6 +983,12 @@ body.app_version .header_style_01.fixed-menu{
     box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
 }
 
+.pricing-table2 {
+    margin: 70px 0 0 0;
+    background: #fff;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+}
+
 .pricing-table i {
     width: 30px;
     color: #c2c2c2;
@@ -1046,7 +1059,7 @@ body.app_version .header_style_01.fixed-menu{
 
 .pricing-table-highlighted h3,
 .pricing-table-highlighted h2 {
-    color: #ffffff !important;
+    color: #158ADF !important;
 }
 
 .pricing-table-sign-up {
@@ -1779,7 +1792,7 @@ body.app_version .bootstrap-select .btn-light:hover{
     font-weight: 400;
     font-size: 20px;
     text-transform: capitalize;
-    line-height: !important;
+    line-height: important;
 }
 
 .footer {
@@ -2030,7 +2043,7 @@ body.app_version .bootstrap-select .btn-light:hover{
     color: #999 !important;
     margin: 0 !important;
     padding: 0 !important;
-    line-height: 1 !important:
+    line-height: 1 !important;
 }
 
 .stat-wrap p {
@@ -2039,7 +2052,7 @@ body.app_version .bootstrap-select .btn-light:hover{
     margin: 0;
     font-weight: 300;
     padding: 4px 0 0;
-    line-height: 1 !important:
+    line-height: 1 !important;
 }
 
 #preloader {
@@ -2320,6 +2333,67 @@ body.app_version .dev-list .widget-title small{
     animation: sonarEffect 1.3s ease-out 75ms;
 }
 
+.button {
+    background-color: #158ADF;
+    border: 0.5px solid #158ADF;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100px;
+    margin-bottom: 10px;
+    height: 50px;
+    border-radius:5px;
+}
+.button2 {
+    background-color: #92CD16;
+    font-weight: bold;
+    border:0.5px solid #92CD16;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100px;
+    margin-bottom: 10px;
+    height: 50px;
+    border-radius:5px;
+}
+.button3 {
+    background-color: #92CD16;
+    font-weight:bold;
+    border: none;
+    color: #ffffff;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+}
 
+.register-page__btn {
+    margin: 20px;
+}
+
+.link--btn {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: .5px;
+    text-align: center;
+}
 
 

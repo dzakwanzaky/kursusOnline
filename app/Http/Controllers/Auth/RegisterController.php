@@ -2,24 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
+use App\SendOTP;
 class RegisterController extends Controller
-{
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
+{  
 
     use RegistersUsers;
 
@@ -28,7 +20,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/verify';
 
     /**
      * Create a new controller instance.
@@ -39,7 +31,12 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-
+public function register(Request $request)
+{
+    $this->validator($request->all())->validate();
+    event(new Registered($user = $this->create($request->all())));
+    return $this->registered($request,$user) ?: redirect('/verify?phone='.$request->phone);
+}
     /**
      * Get a validator for an incoming registration request.
      *
@@ -51,7 +48,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'phone' => ['required', 'min:10', 'max:13'],
         ]);
     }
 
@@ -63,10 +61,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'phone'=>$data['phone'],
+            'active'=>0,
         ]);
+        if($user){
+            $user->code=SendOTP::sendOTP($user->phone);
+            $user->save();
+        }
     }
 }

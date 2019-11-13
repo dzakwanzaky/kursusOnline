@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
  
      <!-- Site Metas -->
-    <title>Appfast - Responsive OnePage HTML5 Template</title>  
+    <title>Imam Courses</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -27,7 +27,11 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="/tema/css/responsive.css">
     <!-- Custom CSS -->
-     <link rel="stylesheet" href="/tema/css/custom.css">
+     <link rel="stylesheet" href="/tema/css/custom.css">         
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/ material-design-iconic-font.min.css">
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
 
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -41,9 +45,13 @@
     </div>
     @include('base/header_page') 
  <script src="/tema/js/all.js"></script>
+ 
     <!-- ALL PLUGINS -->
     <script src="/tema/js/custom.js"></script>
 	<script src="/tema/js/zenith.js"></script>
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 	<script>
 		$('#default').zenith({
 			layout: 'default' , 

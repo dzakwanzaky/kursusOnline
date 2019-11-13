@@ -18,7 +18,7 @@
 
 body.app_version .lead strong,
 body.app_version .icon-wrapper:hover a, {
-    color: #e80d45
+    color : #e80d45;
 }
 
 
@@ -34,8 +34,8 @@ body.app_version .nav-pills > li.active > a:hover,
 body.app_version .icon-wrapper:hover i,
 body.app_version .grd1 {
     color: #ffffff;
-    background: #AD1457;
-    border: 1px solid #AD1457;
+    background: #ffffff;
+    border: 1px solid #ffffff;
 }
 
 body.app_version .icon_wrap,
@@ -122,7 +122,7 @@ body.app_version .btn-light i {
 }
 
 body.app_version .effect-1:after {
-    box-shadow: 0 0 0 2px #AD1457;
+    box-shadow: 0 0 0 1px #ffffff;
 }
 
 body.app_version .footer a,
