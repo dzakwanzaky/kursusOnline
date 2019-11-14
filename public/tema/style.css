@@ -2343,23 +2343,25 @@ body.app_version .dev-list .widget-title small{
     display: inline-block;
     font-size: 18px;
     cursor: pointer;
-    width: 30%;
+    width: 100px;
     margin-bottom: 10px;
     height: 50px;
+    border-radius:5px;
 }
 .button2 {
-    background-color: #ffffff;
+    background-color: #92CD16;
     font-weight: bold;
-    border:0.5px solid #158ADF;
-    color: #92CD16;
+    border:0.5px solid #92CD16;
+    color: #ffffff;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
     cursor: pointer;
-    width: 30%;
+    width: 100px;
     margin-bottom: 10px;
     height: 50px;
+    border-radius:5px;
 }
 .button3 {
     background-color: #92CD16;
@@ -2375,6 +2377,23 @@ body.app_version .dev-list .widget-title small{
     width: 100%;
     height: 35px;
     margin-bottom: 10px;
+}
+
+.register-page__btn {
+    margin: 20px;
+}
+
+.link--btn {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: .5px;
+    text-align: center;
 }
 
 
