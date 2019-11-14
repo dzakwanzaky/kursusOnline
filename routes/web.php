@@ -71,6 +71,13 @@ Route::get('/pendapatan', function () {
 });
 
 Auth::routes();
+//for role route
+Route::middleware(['admin'])->group(function () {
+    //Route::resource('admin', 'AdminController');
+});
+Route::middleware(['tutor'])->group(function () {
+    //Route::resource('tutor', 'TutorController');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/verify','VerifyController@getVerify')->name('getverify');
