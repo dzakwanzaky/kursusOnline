@@ -55,11 +55,19 @@ Route::get('/murid', function () {
     return view('murid/murid');
 });
 Route::get('/invoice', function () {
-    return view
-    ('murid/invoice');
+    return view('murid/invoice');
 });
 Route::get('/invoicenya', function () {
     return view('murid/invoicenya');
+});
+Route::get('/tutor', function () {
+    return view('tutor/tutor');
+});
+Route::get('/jadwal', function () {
+    return view('tutor/jadwal');
+});
+Route::get('/pendapatan', function () {
+    return view('tutor/pendapatan');
 });
 
 Auth::routes();

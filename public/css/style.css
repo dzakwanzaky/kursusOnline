@@ -399,7 +399,12 @@ input[type=checkbox]:not(old):checked + label > span:before {
 .loginhere {
   text-align: center;
   color: #888;
-  margin-top: 63px; }
+  margin-top: 10px; }
+
+  .daftarsebagai {
+    text-align: center;
+    color: #000000;
+    margin-top: 5px; }
 
 .loginhere-link {
   color: #1da0f2;

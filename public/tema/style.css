@@ -2345,21 +2345,21 @@ body.app_version .dev-list .widget-title small{
     cursor: pointer;
     width: 50%;
     margin-bottom: 10px;
-    height: 35px;
+    height: 50px;
 }
 .button2 {
     background-color: #ffffff;
     font-weight: bold;
-    border:0.5px solid #158ADF;
+    border:0.5px solid #92CD16;
     color: #92CD16;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
     width: 50%;
     margin-bottom: 10px;
-    height: 35px;
+    height: 50px;
 }
 .button3 {
     background-color: #92CD16;
@@ -2375,6 +2375,23 @@ body.app_version .dev-list .widget-title small{
     width: 100%;
     height: 35px;
     margin-bottom: 10px;
+}
+
+.register-page__btn {
+    margin: 20px;
+}
+
+.link--btn {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: .5px;
+    text-align: center;
 }
 
 
