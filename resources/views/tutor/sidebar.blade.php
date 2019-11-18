@@ -11,7 +11,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block" style="margin: 0 0 0 10px;">Admin</a>
+          <a href="#" class="d-block" style="margin: 0 0 0 10px;">Tutor</a>
         </div>
       </div>
 
@@ -21,18 +21,27 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/admin" class="nav-link {{ Request::segment(1) === 'admin' ? 'nav-link active' : null }}">
+            <a href="/murid" class="nav-link {{ Request::segment(1) === 'tutor' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>
-                Jadwal Les
+                Managemen Siswa 
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/invoice" class="nav-link {{ Request::segment(1) === 'invoice' ? 'nav-link active' : null }}">
+            <a href="/jadwal" class="nav-link {{ Request::segment(1) === 'jadwal' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>
-                Invoice
+                Jadwal Mengajar
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/pendapatan" class="nav-link {{ Request::segment(1) === 'pendapatan' ? 'nav-link active' : null }}">
+              <i class="far fa-circle nav-icon"></i>
+              <p>
+                Pendapatan
+          
               </p>
             </a>
           </li>

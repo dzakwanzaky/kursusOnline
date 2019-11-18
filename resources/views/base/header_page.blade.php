@@ -16,8 +16,8 @@
                         <li><a class="nav-link" href="#screenshots">Program</a></li>
                         <li><a class="nav-link" href="#team">Kontak</a></li>
                         <li><a class="nav-link" href="#pricing">Tentang Kami</a></li>
-                        <li><div class="btn-login"><a href="#purchase">Masuk</a></div></li>
-						<li><div class="btn-register"><a href="#support">Daftar</a></div></li>
+                        <li><div class="btn-login"><a href="login">Masuk</a></div></li>
+						<li><div class="btn-register"><a href="register">Daftar</a></div></li>
                     </ul>
                 </div>
             </div>

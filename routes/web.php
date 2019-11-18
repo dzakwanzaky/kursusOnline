@@ -49,20 +49,36 @@ $router->get('/nexmo', function () use ($router) {
 
 //Kalau menggunakan Contoller
 Route::get('/admin', 'AdminController@index');
+Route::get('/murid', 'SiswaController@index');
 Route::get('/landing', 'BaseController@index');
 
 Route::get('/murid', function () {
     return view('murid/murid');
 });
 Route::get('/invoice', function () {
-    return view
-    ('murid/invoice');
+    return view('murid/invoice');
 });
 Route::get('/invoicenya', function () {
     return view('murid/invoicenya');
 });
+Route::get('/tutor', function () {
+    return view('tutor/tutor');
+});
+Route::get('/jadwal', function () {
+    return view('tutor/jadwal');
+});
+Route::get('/pendapatan', function () {
+    return view('tutor/pendapatan');
+});
 
 Auth::routes();
+//for role route
+Route::middleware(['admin'])->group(function () {
+    //Route::resource('admin', 'AdminController');
+});
+Route::middleware(['tutor'])->group(function () {
+    //Route::resource('tutor', 'TutorController');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/verify','VerifyController@getVerify')->name('getverify');
