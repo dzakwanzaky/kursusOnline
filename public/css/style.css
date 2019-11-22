@@ -183,7 +183,8 @@ h2 {
   font-family: DM Sans;
   font-size: 24px;
   text-align: center;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  margin-top: 20px; }
 
 .clear {
   clear: both; }
@@ -198,7 +199,7 @@ body {
   margin: 0px; }
 
 .main {
-  padding: 50px 0;
+  padding: 80px 0;
   position: relative; }
 
 h1 {
@@ -399,7 +400,8 @@ input[type=checkbox]:not(old):checked + label > span:before {
 .loginhere {
   text-align: center;
   color: #888;
-  margin-top: 10px; }
+  margin-top: 10px;
+  margin-bottom: 20px; }
 
   .daftarsebagai {
     text-align: center;

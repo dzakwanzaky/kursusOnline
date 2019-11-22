@@ -49,6 +49,7 @@ $router->get('/nexmo', function () use ($router) {
 
 //Kalau menggunakan Contoller
 Route::get('/admin', 'AdminController@index');
+Route::get('/murid', 'SiswaController@index');
 Route::get('/landing', 'BaseController@index');
 
 Route::get('/murid', function () {

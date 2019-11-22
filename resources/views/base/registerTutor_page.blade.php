@@ -111,9 +111,11 @@
             <p class="loginhere">
                 Sudah punya akun ?<a href="#" class="loginhere-link"> Masuk Sekarang</a>
             </p>
+            </div>
+            </div>
         </div>
     </div>
-
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-</html>
+    </div>
+    </div>
+    </div>
 @endsection
