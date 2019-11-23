@@ -23,10 +23,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
 <!-- HEADER -->
-@include('admin/header')
+@include('murid/header')
 
 <!-- Main Sidebar Container -->
-@include('admin/sidebar')
+@include('murid/sidebar')
  
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -52,7 +52,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.control-sidebar -->
 
 <!-- Main Footer -->
-@include('admin/footer')
+@include('murid/footer')
 
 <!-- ./wrapper -->
 

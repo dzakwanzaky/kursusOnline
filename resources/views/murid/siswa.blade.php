@@ -16,8 +16,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('/lte/plugins/fontawesome-free/css/all.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('/lte/dist/css/adminlte.min.css') }}">
-  <!-- Icons-->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -25,10 +23,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
 <!-- HEADER -->
-@include('dashboard_admin/header')
+@include('murid/header')
 
 <!-- Main Sidebar Container -->
-@include('dashboard_admin/sidebar')
+@include('murid/sidebar')
  
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -37,7 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard Admin</h1>
+            <h1 class="m-0 text-dark">Jadwal Les</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             
@@ -53,66 +51,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container">
             <div class="card mt-2">
               <div class="card-body">
-                <div class="row">
-                  <div class="col-lg-3 col-xs-6">
-                      <!-- small box -->
-                      <div class="small-box bg-red">
-                        <div class="inner">
-                          <h3>8.000</h3>
-                          
-                          <p>Visitor</p>
-                        </div>
-                      <div class="icon">
-                        <i class="ion-stats-bars"></i>
-                      </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-xs-6">
-                      <!-- small box -->
-                      <div class="small-box bg-yellow">
-                        <div class="inner">
-                          <h3>1550</h3>
-
-                            <p>Murid</p>
-                        </div>
-                      <div class="icon">
-                        <i class="ion ion-person-stalker"></i>
-                      </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-xs-6">
-                      <!-- small box -->
-                      <div class="small-box bg-green">
-                        <div class="inner">
-                          <h3>50</h3>
-
-                            <p>Tutor</p>
-                        </div>
-                      <div class="icon">
-                        <i class="ion ion-person"></i>
-                      </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-xs-6">
-                      <!-- small box -->
-                      <div class="small-box bg-blue">
-                        <div class="inner">
-                          <h3>15000000</h3>
-
-                            <p>Revenue</p>
-                        </div>
-                      <div class="icon">
-                        <i class="ion ion-ios-cart"></i>
-                      </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                  </div>
-                </div> 
+              <table class="table table-responsive-lg table-bordered small" id="jadwal">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>No.</th>
+                        <th>Kelas</th>
+                        <th>Mata Pelajaran</th>
+                        <th>Waktu</th>
+                        <th>Lokasi</th>
+                        <th>Konfirmasi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>6 SD</td>
+                        <td>Matematika</td>
+                        <td>Selasa, Rabu, Kamis</td>
+                        <td>Sendowo</td>
+                        <td>
+                            <a class=" btn btn-sm btn-danger" style="color:white;">
+                            <span>Belum Konfirmasi</span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
               </div>
             </div>
-          </div>
 
             
           <!-- /.col-md-6 -->
@@ -147,7 +113,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.control-sidebar -->
 
 <!-- Main Footer -->
-@include('dashboard_admin/footer')
+@include('murid/footer')
 
 <!-- ./wrapper -->
 
