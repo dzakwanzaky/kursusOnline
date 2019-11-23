@@ -24,7 +24,7 @@
             <a href="/murid" class="nav-link {{ Request::segment(1) === 'tutor' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>
-                Managemen Siswa 
+                Manajemen Siswa 
               </p>
             </a>
           </li>

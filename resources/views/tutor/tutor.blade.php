@@ -34,8 +34,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Managemen Siswa</h1>
+          <div class="col-sm-12">
+            <h1 class="m-0 text-dark">Manajemen Siswa</h1><br>
+            <p class="m-0 text-dark">Berikut data pengajuan dari siswa yang mendaftar les pada Anda. 
+            Di kolom Konfirmasi, silahkan pilih <b>Setuju</b>, jika jadwal mengajar Anda sesuai dengan 
+            jadwal yang diajukan. Pilih  <b>Tolak</b>, jika jadwal mengajar Anda tidak sesuai/tabrakan 
+            dengan jadwal yang diajukan</p>
           </div><!-- /.col -->
           <div class="col-sm-6">
             
@@ -73,10 +77,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <td>Selasa, Rabu, Kamis</td>
                         <td>Ruang HY - U202</td>
                         <td>
-                            <a class=" btn btn-sm btn-success" style="color:white;">
+                            <a class=" btn btn-sm btn-success" style="color:white; cursor:pointer;">
                                 <span>Setuju</span>
                             </a>
-                            <a class=" btn btn-sm btn-danger" style="color:white;">
+                            <a class=" btn btn-sm btn-danger" style="color:white; cursor:pointer">
                                 <span>Tolak</span>
                             </a>
                         </td>
