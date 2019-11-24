@@ -31,44 +31,26 @@
                                     style="text-transform: capitalize">
                             </div><br>
                     </label>                      
-                    <label for="program" style="float:right">Program
-                        <div class="form-textbox">
-                              <input id="program" type="text" class="form-control" name="alamat"  required autofocus
-                                    style="text-transform: capitalize">
-                            </div><br>
-                    </label>
 
-                    <label for="matkul">Mata Pelajaran
+                    <label for="matkul" style="float:right">Mata Pelajaran
                         <div class="form-textbox">
                               <input id="matkul" type="text" class="form-control" name="alamat"  required autofocus
                                     style="text-transform: capitalize">
                             </div><br>  
                     </label>
-                                          
-                    <label for="hari" style="float:right">Hari
+                </div>
+                <div class="panel-body">Program
                         <div class="form-textbox">
-                              <input id="hari" type="text" class="form-control" name="alamat"  required autofocus
-                                    style="text-transform: capitalize">
-                            </div><br>
-                    </label>
-
-                    <label for="kelas">Waktu
-                        <div class="form-textbox">
-                              <input id="waktu" type="text" class="form-control" name="alamat"  required autofocus
-                                    style="text-transform: capitalize">
-                            </div><br>  
-                    </label>              
-                    <label for="lokasi" style="float:right">Lokasi
-                        <div class="form-textbox">
-                              <input id="lokasi" type="text" class="form-control" name="alamat"  required autofocus
-                                    style="text-transform: capitalize">
-                            </div><br>
-                    </label>
-
-                  
+                            <select name="program" class="form-control">
+                                <option value="silver">Silver</option>
+                                <option value="gold">Gold</option>
+                                <option value="plat">Platinum</option>
+                            </select>
+                        </div><br>
+                </div>
                     
                     <div class="form-group">
-                            <button type="submit" class="button3">Daftar</button>
+                            <button type="submit" class="button3">Lanjut</button>
                         </div>
             </form>
         </div>
