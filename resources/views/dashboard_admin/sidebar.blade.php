@@ -11,7 +11,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block" style="margin: 0 0 0 10px;">Murid</a>
+          <a href="#" class="d-block" style="margin: 0 0 0 10px;">ADMIN</a>
         </div>
       </div>
 
@@ -20,19 +20,27 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
+         <li class="nav-item">
             <a href="/admin" class="nav-link {{ Request::segment(1) === 'admin' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>
-                Jadwal Les
+                Dashboard
+              </p>
+            </a>
+          </li> 
+         <li class="nav-item">
+            <a href="#" class="nav-link {{ Request::segment(1) === '#' ? 'nav-link active' : null }}">
+              <i class="far fa-circle nav-icon"></i>
+              <p>
+                Daftar Siswa
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/invoice" class="nav-link {{ Request::segment(1) === 'invoice' ? 'nav-link active' : null }}">
+            <a href="#" class="nav-link {{ Request::segment(1) === 'invoice' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>
-                Invoice
+                Manajemen Tutor
               </p>
             </a>
           </li>

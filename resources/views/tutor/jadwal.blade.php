@@ -23,10 +23,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
 <!-- HEADER -->
+<<<<<<< HEAD
 @include('/header')
 
 <!-- Main Sidebar Container -->
 @include('murid/sidebar')
+=======
+@include('tutor/header')
+
+<!-- Main Sidebar Container -->
+@include('tutor/sidebar')
+>>>>>>> 9066250bfd05fd696dcb57e927667e360c54b1f8
  
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -35,7 +42,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
+<<<<<<< HEAD
             <h1 class="m-0 text-dark">Invoice</h1>
+=======
+            <h1 class="m-0 text-dark">Jadwal Mengajar</h1>
+>>>>>>> 9066250bfd05fd696dcb57e927667e360c54b1f8
           </div><!-- /.col -->
           <div class="col-sm-6">
             
@@ -55,6 +66,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <table class="table table-responsive-lg table-bordered small" id="jadwal">
                 <thead class="thead-dark">
                     <tr>
+<<<<<<< HEAD
                         <th>No.</th>
                         <th>No. Invoice</th>
                         <th>Kelas</th>
@@ -63,10 +75,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <th>Status</th>
                         <th>Konfirmasi</th>
                         <th>Unduh</th>
+=======
+                        
+                        <th>Kelas</th>
+                        <th>Mata Pelajaran</th>
+                        <th>Waktu</th>
+                        <th>Lokasi</th>
+                        <th>Pengaturan</th>
+>>>>>>> 9066250bfd05fd696dcb57e927667e360c54b1f8
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+<<<<<<< HEAD
                         <td>1.</td>
                         <td>#190930001</td>
                         <td>6 SD</td>
@@ -90,6 +111,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </tr>
                 </tbody>
             </table>
+=======
+                        
+                        <td>6 SD</td>
+                        <td>Matematika</td>
+                        <td>Selasa, Rabu, Kamis</td>
+                        <td>Ruang HY - U202</td>
+                        <td>
+                            <a style="color:#158ADF; cursor:pointer">
+                            <span>Edit</span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+>>>>>>> 9066250bfd05fd696dcb57e927667e360c54b1f8
               </div>
             </div>
 
@@ -104,6 +140,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+<<<<<<< HEAD
 
 
 <!-- Main Footer -->
@@ -112,16 +149,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED SCRIPTS -->
 <script
+=======
+  <script
+>>>>>>> 9066250bfd05fd696dcb57e927667e360c54b1f8
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script> 
     <script>
       $(document).ready( function () {
+<<<<<<< HEAD
       $('#invoice').DataTable();
       });
     </script>
 
+=======
+      $('#tutor').DataTable();
+      });
+    </script>
+
+<!-- Main Footer -->
+@include('tutor/footer')
+
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+>>>>>>> 9066250bfd05fd696dcb57e927667e360c54b1f8
 <!-- jQuery -->
 <script src="{{ asset('/lte/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->

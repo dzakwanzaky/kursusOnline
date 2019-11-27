@@ -34,17 +34,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-<<<<<<< HEAD
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Manajemen Siswa</h1>
-=======
-          <div class="col-sm-12">
-            <h1 class="m-0 text-dark">Manajemen Siswa</h1><br>
-            <p class="m-0 text-dark">Berikut data pengajuan dari siswa yang mendaftar les pada Anda. 
-            Di kolom Konfirmasi, silahkan pilih <b>Setuju</b>, jika jadwal mengajar Anda sesuai dengan 
-            jadwal yang diajukan. Pilih  <b>Tolak</b>, jika jadwal mengajar Anda tidak sesuai/tabrakan 
-            dengan jadwal yang diajukan</p>
->>>>>>> 9066250bfd05fd696dcb57e927667e360c54b1f8
+            <h1 class="m-0 text-dark">Rincian Pendapatan</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             
@@ -64,43 +55,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <table class="table table-responsive-lg table-bordered small" id="jadwal">
                 <thead class="thead-dark">
                     <tr>
-                        <th>No.</th>
-                        <th>Nama</th>
-                        <th>Kelas</th>
-                        <th>Mata Pelajaran</th>
-                        <th>Waktu</th>
-                        <th>Lokasi</th>
-                        <th>Konfirmasi</th>
+                        
+                        <th>Program</th>
+                        <th>Jumlah Siswa</th>
+                        <th>Total Pendapatan</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1.</td>
-<<<<<<< HEAD
-                        <td>Daru</td>
-=======
-                        <td>Dewandaru</td>
->>>>>>> 9066250bfd05fd696dcb57e927667e360c54b1f8
-                        <td>6 SD</td>
-                        <td>Matematika</td>
-                        <td>Selasa, Rabu, Kamis</td>
-                        <td>Ruang HY - U202</td>
-                        <td>
-<<<<<<< HEAD
-                            <a class=" btn btn-sm btn-success" style="color:white;">
-                              <span>Terima</span>
-                            </a>
-                            <a class=" btn btn-sm btn-danger" style="color:white;">
-                              <span>Tolak</span>
-=======
-                            <a class=" btn btn-sm btn-success" style="color:white; cursor:pointer;">
-                                <span>Setuju</span>
-                            </a>
-                            <a class=" btn btn-sm btn-danger" style="color:white; cursor:pointer">
-                                <span>Tolak</span>
->>>>>>> 9066250bfd05fd696dcb57e927667e360c54b1f8
-                            </a>
-                        </td>
+                        
+                        <td>Reguler</td>
+                        <td>3</td>
+                        <td>Rp 6.000,00</td>
+                        
                     </tr>
                 </tbody>
                 </table>
