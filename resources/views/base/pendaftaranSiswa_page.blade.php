@@ -93,8 +93,10 @@
                             </div><br>
                     </div>
                     
-                    <div class="form-group">
-                            <button type="submit" class="button3">Daftar</button>
+                    <div class="form-group"> 
+                    <a href="/murid">
+                            <button type="submit" class="button3" >Daftar</button>
+                            </a>
                         </div>
             </form>
         </div>

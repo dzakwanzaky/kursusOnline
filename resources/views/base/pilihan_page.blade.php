@@ -26,7 +26,7 @@
                 </div>
               </div>
               <p class="loginhere">
-                Sudah punya akun ?<a href="#" class="loginhere-link"> Masuk Sekarang</a>
+                Sudah punya akun ?<a href="/login" class="loginhere-link"> Masuk Sekarang</a>
               </p>
             </div>
             </div>

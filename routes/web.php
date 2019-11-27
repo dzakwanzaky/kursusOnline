@@ -36,9 +36,7 @@ Route::get('/registerTutor', function () {
 Route::get('/registerPilih', function () {
     return view('base/pilihan_page');
 });
-Route::get('/pilihHari', function () {
-    return view('base/pilihhari_page');
-});
+
 Route::get('/pendaftaranSiswa', function () {
     return view('base/pendaftaranSiswa_page');
 });
