@@ -1,77 +1,121 @@
 @extends('base/script_page')
 @section('content')
     <div class="main">
-    <div class="container-content">
-        <div class="sign-up-content">
-            <form method="POST" action="{{ route('register')}}" class="signup-form">
-                @csrf
-
-                <h2 class="form-title">Daftar Akun Imam Courses</h2>
-                <form action="/pendaftaranSiswa">
-                    <button class="button2" style="float:left">Murid</button>
-                <form action="/pendaftaranTutor">
-                    <button class="button" disabled="disabled">Tutor</button>
-                </form>
-                <label for="nama">Nama Lengkap</label>
-                <div class="form-textbox">
-                    <input type="tel" name="no-telp" id="nama" placeholder="Nama Lengkap" 
-                        class="form-control @error('no-telp') is-invalid @enderror" value="{{ old('no-telp') }}" required autocomplete="no-telp"/>
-                </div><br>
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <br>
+                <div class="col-md-12 col-md-offset-1">
+                <div class="card" style="display:block; margin-left:auto; margin-right:auto;">
+                        <div class="card-body"> 
+            <form class="signup-form" role="form" method="POST" action="{{ url('/register') }}">
+                {{ csrf_field() }}
                 
-                <label for="nama">Alamat</label>
-                <div class="form-textbox">
-                    <input type="tel" name="no-telp" id="nama" placeholder="Alamat" 
-                        class="form-control @error('no-telp') is-invalid @enderror" value="{{ old('no-telp') }}" required autocomplete="no-telp"/>
-                </div><br>
+                <h2 class="form-title">Daftar Akun Imam Courses</h2>
 
-                <label for="notelp">No Telepon</label>
-                <div class="form-textbox">
-                    <input type="tel" name="no-telp" id="no-telp" placeholder="No Telepon" 
-                        class="form-control @error('no-telp') is-invalid @enderror" value="{{ old('no-telp') }}" required autocomplete="no-telp"/>
-                </div><br>
+                <form action="/registerSiswa">
+                    <button class="button2" disabled="disabled" style="float:left">Murid</button>
+                </form>
+                <form action="#">
+                    <button class="button">Tutor</button>
+                </form>
 
-                <label for="email">Email</label>
-                <div class="form-textbox">
-                    <input type="email" name="email" id="email" placeholder="Email"
-                        class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required autocomplete="email"/>
+                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    <label for="name">Nama Lengkap</label>
 
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
+                    <div class="form-title">
+                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+
+                        @if ($errors->has('name'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('name') }}</strong>
                             </span>
-                        @enderror
+                        @endif
+                    </div>
+                </div>
 
-                </div><br>
+                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                    <label for="phone">No Telepon</label>
 
-                <label for="pass">Kata Sandi</label>
-                <div class="form-textbox">
-                    <input type="password" name="pass" id="password" placeholder="Password"
-                        class="form-control @error('password') is-invalid @enderror" required autocomplete="new-password"/> 
+                    <div class="form-title">
+                        <input id="phone" type="number" class="form-control" name="phone" required>
 
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
+                        @if ($errors->has('phone'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('phone') }}</strong>
                             </span>
-                        @enderror
+                        @endif
+                    </div>
+                </div>
 
-                </div><br>
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <label for="email">Email</label>
 
-                <label for="confirm-password">Konfirmasi Password</label>
-                <div class="form-textbox">
-                    <input type="password" name="confirm-password" id="confirm-password" placeholder="Masukkan ulang password" 
-                        class="form-control" required autocomplete="new-password"/>
-                </div><br><br>
+                    <div class="form-title">
+                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+
+                        @if ($errors->has('email'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <label for="password">Kata Sandi</label>
+
+                    <div class="form-title">
+                        <input id="password" type="password" class="form-control" name="password" required>
+
+                        @if ($errors->has('password'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
 
                 <div class="form-group">
-                            <button type="submit" class="button3">Daftar</button>
-                        </div>
+                    <label for="password-confirm">Confirm Password</label>
+
+                    <div class="form-title">
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                    </div>
+                </div>
+                
+                
+
+                <div class="col-md-6">
+                    <input id="role" type="text" class="form-control" name="role" required style="display:none" value="tutor">
+
+                    @if ($errors->has('role'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('role') }}</strong>
+                        </span>
+                    @endif
+                </div>
+
+                
+
+                            
+                <div class="form-group">
+                    <div class="form-title">
+                        <button type="submit" class="btn btn-primary">
+                            Register
+                        </button>
+                    </div>
+                </div>
+                
             </form>
             <p class="loginhere">
                 Sudah punya akun ?<a href="#" class="loginhere-link"> Masuk Sekarang</a>
             </p>
+            </div>
+            </div>
         </div>
     </div>
-
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-</html>
+    </div>
+    </div>
+    </div>
 @endsection

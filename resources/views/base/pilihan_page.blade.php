@@ -7,7 +7,7 @@
         <br>
             <div class="col-md-12 col-md-offset-1">
             <div class="card" style="display:block; margin-left:auto; margin-right:auto;">
-              <div class="card-body">
+              <div class="card-header">
               <h2 class="form-title">Daftar Akun Imam Courses</h2>
               <br>
               <p class="loginhere">

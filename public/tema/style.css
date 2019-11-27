@@ -2335,7 +2335,7 @@ body.app_version .dev-list .widget-title small{
 
 .button {
     background-color: #158ADF;
-    border: 0.5px solid #158ADF;
+    border:0.5px solid #158ADF;
     color: white;
     font-weight: bold;
     text-align: center;
@@ -2343,10 +2343,9 @@ body.app_version .dev-list .widget-title small{
     display: inline-block;
     font-size: 18px;
     cursor: pointer;
-    width: 100px;
+    width: 180px;
     margin-bottom: 10px;
     height: 50px;
-    border-radius:5px;
 }
 .button2 {
     background-color: #92CD16;
@@ -2358,10 +2357,9 @@ body.app_version .dev-list .widget-title small{
     display: inline-block;
     font-size: 18px;
     cursor: pointer;
-    width: 100px;
+    width: 180px;
     margin-bottom: 10px;
     height: 50px;
-    border-radius:5px;
 }
 .button3 {
     background-color: #92CD16;

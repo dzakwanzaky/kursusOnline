@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use App\SendOTP;
+
 class RegisterController extends Controller
 {  
 
@@ -31,12 +32,13 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-public function register(Request $request)
-{
-    $this->validator($request->all())->validate();
-    event(new Registered($user = $this->create($request->all())));
-    return $this->registered($request,$user) ?: redirect('/verify?phone='.$request->phone);
-}
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        event(new Registered($user = $this->create($request->all())));
+        return $this->registered($request,$user) ?: redirect('/verify?phone='.$request->phone);
+    }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -50,6 +52,7 @@ public function register(Request $request)
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             'phone' => ['required', 'min:10', 'max:13'],
+        
         ]);
     }
 
@@ -61,13 +64,27 @@ public function register(Request $request)
      */
     protected function create(array $data)
     {
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'phone'=>$data['phone'],
-            'active'=>0,
-        ]);
+        if ($data ['role'] == 'siswa'){
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'phone'=>$data['phone'],
+                'role'=>$data['role'],
+                'active'=>0,
+            ]);
+        }else {
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'phone'=>$data['phone'],
+                'role'=>$data['role'],
+                'active'=>0,
+            ]);
+        }
+        
+       
         if($user){
             $user->code=SendOTP::sendOTP($user->phone);
             $user->save();
