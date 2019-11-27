@@ -91,13 +91,14 @@
                     <br>
                                 
                     <div class="form-group">
-                
-                            <button type="submit" class="btn btn-primary" style="width: 180px">
-                                Register
-                            </button>
-                        
+                        <button type="submit" class="btn btn-primary d-block" style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">
+                            Daftar
+                        </button>
                     </div>
                 </form>
+                <p class="loginhere">
+                Sudah punya akun ?<a href="/login" class="loginhere-link"> Masuk Sekarang</a>
+                </p>
            
             </div>
             </div>

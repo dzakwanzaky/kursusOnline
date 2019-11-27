@@ -20,7 +20,7 @@
                     <button type="submit" class="button">Murid</button>
                   </a>
                   <span style="text-align:center;">Atau</span>
-                  <a href="/registerTuror" class="link link--btn register-page__btn">
+                  <a href="/registerTutor" class="link link--btn register-page__btn">
                     <button type="submit" class="button2">Tutor</button>
                   </a>
                 </div>
