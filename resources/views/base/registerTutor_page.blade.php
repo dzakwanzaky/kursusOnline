@@ -13,13 +13,6 @@
                 
                 <h2 class="form-title">Daftar Akun Imam Courses</h2>
 
-                <form action="/registerSiswa">
-                    <button class="button2" disabled="disabled" style="float:left">Murid</button>
-                </form>
-                <form action="#">
-                    <button class="button">Tutor</button>
-                </form>
-
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                     <label for="name">Nama Lengkap</label>
 
@@ -101,15 +94,15 @@
                             
                 <div class="form-group">
                     <div class="form-title">
-                        <button type="submit" class="btn btn-primary">
-                            Register
+                        <button type="submit" class="btn btn-primary d-block" style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">
+                            Daftar
                         </button>
                     </div>
                 </div>
                 
             </form>
             <p class="loginhere">
-                Sudah punya akun ?<a href="#" class="loginhere-link"> Masuk Sekarang</a>
+                Sudah punya akun ?<a href="/login" class="loginhere-link"> Masuk Sekarang</a>
             </p>
             </div>
             </div>

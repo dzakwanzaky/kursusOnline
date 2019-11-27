@@ -21,10 +21,17 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
+<<<<<<< HEAD
+            <a href="/tutor" class="nav-link {{ Request::segment(1) === 'tutor' ? 'nav-link active' : null }}">
+              <i class="far fa-circle nav-icon"></i>
+              <p>
+                Manajemen Siswa
+=======
             <a href="/murid" class="nav-link {{ Request::segment(1) === 'tutor' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>
-                Managemen Siswa 
+                Manajemen Siswa 
+>>>>>>> 9066250bfd05fd696dcb57e927667e360c54b1f8
               </p>
             </a>
           </li>
@@ -41,7 +48,10 @@
               <i class="far fa-circle nav-icon"></i>
               <p>
                 Pendapatan
+<<<<<<< HEAD
+=======
           
+>>>>>>> 9066250bfd05fd696dcb57e927667e360c54b1f8
               </p>
             </a>
           </li>

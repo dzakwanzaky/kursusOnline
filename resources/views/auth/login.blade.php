@@ -61,7 +61,7 @@
             </form>
 
             <p class="loginhere">
-                Belum punya akun ?<a href="#" class="signuphere-link"> Daftar Sekarang</a>
+                Belum punya akun ?<a href="/registerPilih" class="signuphere-link"> Daftar Sekarang</a>
             </p>
         </div>
     </div>

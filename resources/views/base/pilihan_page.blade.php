@@ -20,13 +20,13 @@
                     <button type="submit" class="button">Murid</button>
                   </a>
                   <span style="text-align:center;">Atau</span>
-                  <a href="/registerTuror" class="link link--btn register-page__btn">
+                  <a href="/registerTutor" class="link link--btn register-page__btn">
                     <button type="submit" class="button2">Tutor</button>
                   </a>
                 </div>
               </div>
               <p class="loginhere">
-                Sudah punya akun ?<a href="#" class="loginhere-link"> Masuk Sekarang</a>
+                Sudah punya akun ?<a href="/login" class="loginhere-link"> Masuk Sekarang</a>
               </p>
             </div>
             </div>
