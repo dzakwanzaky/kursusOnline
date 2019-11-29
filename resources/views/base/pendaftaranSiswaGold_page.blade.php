@@ -20,12 +20,14 @@
         <div class="sign-up-content">
             <form method="POST" action="{{ route('login')}}">
                 @csrf
-                <h2 class="form-title">Pendaftaran Les di Imam Courses</h2>
+                <h2 class="form-title">Pendaftaran Les Program Paket GOLD</h2>
+                <br>
                 <div class="alert alert-danger">
-                        <strong>Isikan!</strong> Data dengan sebenarnya.
+                    <strong>Isikan!</strong> Data dengan sebenarnya.
                 </div>
+                <br>
                 <div class="panel-body">
-                    <label for="kelas">Kelas
+                    <label for="kelas" >Kelas
                         <select name="kelas" class="form-control" style="float:left">
                             <option value="1">1
                             <option value="2">2
@@ -45,7 +47,7 @@
                         </select> 
                     </label>
                 </div>
-                Pilih Hari
+                <br>
                 <div class="panel-body" >
                     <label for="hari">Hari 1
                     <select name="mapel" class="form-control" style="width:130px">
@@ -81,23 +83,23 @@
                         </select> 
                     </label>
                 </div>
-                
-                
-
-                                          
-                                  
-                <div class="panel-body" >Lokasi
-                        <div class="form-textbox">
-                              <input id="lokasi" type="text" class="form-control" name="lokasi"  required autofocus
-                                    style="text-transform: capitalize">
-                            </div><br>
-                    </div>
-                    
+                <br>
+                <div class="panel-body" >Waktu
+                    <select name="mapel" class="form-control">
+                        <option value="tiga">15.00 WIB
+                        <option value="empat">16.00 WIB
+                        <option value="lima">17.00 WIB
+                        <option value="enam">18.00 WIB
+                        <option value="tujuh">19.00 WIB
+                    </select> 
+                </div>
+                <br>
+                <br>
                     <div class="form-group"> 
-                    <a href="/murid">
+                        <a href="/murid">
                             <button type="submit" class="button3" >Daftar</button>
-                            </a>
-                        </div>
+                        </a>
+                    </div>
             </form>
         </div>
     </div>

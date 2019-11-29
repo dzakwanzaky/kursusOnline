@@ -11,7 +11,7 @@ list-type-ulli {
 
 /* poppins-300 - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
   src: url("../fonts/poppins/poppins-v5-latin-300.eot");
@@ -195,7 +195,7 @@ body {
   color: #222;
   background: #e7f0fd;
   font-weight: 600;
-  font-family: Poppins;
+  font-family: Roboto;
   margin: 0px; }
 
 .main {

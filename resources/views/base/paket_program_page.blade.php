@@ -26,7 +26,7 @@
                                             <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
                                         </div>
                                         <div class="pricing-table-sign-up">
-                                            <a href="#" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a>
+                                            <a href="/pendaftaranSiswaReg" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a>
                                         </div>
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@
                                             <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
                                         </div>
                                         <div class="pricing-table-sign-up">
-                                            <a href="#" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a>
+                                            <a href="/pendaftaranSiswaPrem" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a>
                                         </div>
                                     </div>
                                 </div>
@@ -68,7 +68,7 @@
                                             <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
                                         </div>
                                         <div class="pricing-table-sign-up">
-                                            <a href="#" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a>
+                                            <a href="/pendaftaranSiswaGold" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a>
                                         </div>
                                     </div>
                                 </div>
