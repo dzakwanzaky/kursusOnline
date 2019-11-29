@@ -49,14 +49,14 @@
 
 .main {
     background: #e7f0fd;
-    font-family: Poppins;
+    font-family: 'Roboto';
 }
 
 body {
     background: #e7f0fd;
     color: #999;
     font-size: 15px;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.80857;
 }
 

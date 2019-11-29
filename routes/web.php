@@ -15,9 +15,6 @@ use Nexmo\Laravel\Facade\Nexmo;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/program', function () {
-    return view('base/program_page');
-});
 Route::get('/kontak', function () {
     return view('base/kontak_page');
 });
@@ -27,6 +24,8 @@ Route::get('/paketProgram', function () {
 Route::get('/login', function () {
     return view('base/login_page');
 });
+
+//halaman proses register akun
 Route::get('/registerSiswa', function () {
     return view('base/registerSiswa_page');
 });
@@ -37,9 +36,17 @@ Route::get('/registerPilih', function () {
     return view('base/pilihan_page');
 });
 
-Route::get('/pendaftaranSiswa', function () {
-    return view('base/pendaftaranSiswa_page');
+//pendaftaran Siswa berdasarkan paket yang dipilih
+Route::get('/pendaftaranSiswaGold', function () {
+    return view('base/pendaftaranSiswaGold_page');
 });
+Route::get('/pendaftaranSiswaPrem', function () {
+    return view('base/pendaftaranSiswaPrem_page');
+});
+Route::get('/pendaftaranSiswaReg', function () {
+    return view('base/pendaftaranSiswaReg_page');
+});
+
 Route::get('/pendaftaranTutor', function () {
     return view('base/pendaftaranTutor_page');
 });
@@ -53,6 +60,7 @@ Route::get('/admin', 'AdminController@index');
 Route::get('/murid', 'SiswaController@index');
 Route::get('/landing', 'BaseController@index');
 
+//halaman dashboard Murid
 Route::get('/murid', function () {
     return view('murid/murid');
 });
@@ -62,6 +70,8 @@ Route::get('/invoice', function () {
 Route::get('/invoicenya', function () {
     return view('murid/invoicenya');
 });
+
+//halaman dashboard Tutor
 Route::get('/tutor', function () {
     return view('tutor/tutor');
 });
