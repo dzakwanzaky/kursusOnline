@@ -15,12 +15,6 @@ use Nexmo\Laravel\Facade\Nexmo;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/program', function () {
-    return view('base/program_page');
-});
-Route::get('/kontak', function () {
-    return view('base/kontak_page');
-});
 Route::get('/paketProgram', function () {
     return view('base/paket_program_page');
 });
@@ -53,6 +47,7 @@ Route::get('/admin', 'AdminController@index');
 Route::get('/murid', 'SiswaController@index');
 Route::get('/landing', 'BaseController@index');
 
+//Dashboard Murid
 Route::get('/murid', function () {
     return view('murid/murid');
 });
@@ -62,6 +57,8 @@ Route::get('/invoice', function () {
 Route::get('/invoicenya', function () {
     return view('murid/invoicenya');
 });
+
+//Dashboard Tutor
 Route::get('/tutor', function () {
     return view('tutor/tutor');
 });
@@ -72,6 +69,7 @@ Route::get('/pendapatan', function () {
     return view('tutor/pendapatan');
 });
 
+//Authentication
 Auth::routes();
 //for role route
 Route::middleware(['admin'])->group(function () {
@@ -81,6 +79,5 @@ Route::middleware(['tutor'])->group(function () {
     //Route::resource('tutor', 'TutorController');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/verify','VerifyController@getVerify')->name('getverify');
 Route::post('/verify','VerifyController@postVerify')->name('verify');
