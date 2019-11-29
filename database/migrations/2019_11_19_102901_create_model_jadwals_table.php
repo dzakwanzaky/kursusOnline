@@ -16,11 +16,11 @@ class CreateModelJadwalsTable extends Migration
         Schema::create('model_jadwals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('kelas');
-            $table->string('program');
             $table->string('mata_pelajaran');
-            $table->string('waktu');
+            $table->string('hari1');
+            $table->string('hari2')->nullable();
+            $table->string('hari3')->nullable();
             $table->string('lokasi');
-            $table->string('hari');
             $table->timestamps();
         });
     }
