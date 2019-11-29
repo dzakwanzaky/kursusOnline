@@ -11,15 +11,7 @@
                 <form class="signup-form" role="form" method="POST" action="{{ url('/register') }}">
                     {{ csrf_field() }}
 
-
                     <h2 class="form-title">Daftar Akun Imam Courses</h2>
-
-                    <form action="/pendaftaranSiswa">
-                        <button class="button" style="float:left">Murid</button>
-                    </form>
-                    <form action="#">
-                        <button class="button2" disabled="disabled">Tutor</button>
-                    </form>
 
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                         <label for="name">Nama Lengkap</label>
@@ -39,7 +31,7 @@
                         <label for="phone">No Telepon</label>
 
                         <div class="form-title">
-                            <input id="phone" type="number" class="form-control" name="phone" required>
+                            <input id="phone" type="text" class="form-control" name="phone" required>
 
                             @if ($errors->has('phone'))
                                 <span class="help-block">
@@ -96,21 +88,18 @@
                             </span>
                         @endif
                     </div>
-
-                    
-
+                    <br>
                                 
                     <div class="form-group">
-                        <div class="col-md-6 col-md-offset-4">
-                            <button type="submit" class="btn btn-primary">
-                                Register
-                            </button>
-                        </div>
+                        <button type="submit" class="btn btn-primary d-block" style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">
+                            Daftar
+                        </button>
                     </div>
                 </form>
-            <p class="loginhere">
-            Sudah punya akun ?<a href="{{ route ('login')}}" class="loginhere-link"> Masuk Sekarang</a>
-            </p>
+                <p class="loginhere">
+                Sudah punya akun ?<a href="/login" class="loginhere-link"> Masuk Sekarang</a>
+                </p>
+           
             </div>
             </div>
         </div>

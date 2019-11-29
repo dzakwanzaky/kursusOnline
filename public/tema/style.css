@@ -2343,21 +2343,21 @@ body.app_version .dev-list .widget-title small{
     display: inline-block;
     font-size: 18px;
     cursor: pointer;
-    width: 50%;
+    width: 180px;
     margin-bottom: 10px;
     height: 50px;
 }
 .button2 {
-    background-color: #ffffff;
+    background-color: #92CD16;
     font-weight: bold;
     border:0.5px solid #92CD16;
-    color: #92CD16;
+    color: #ffffff;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
     cursor: pointer;
-    width: 50%;
+    width: 180px;
     margin-bottom: 10px;
     height: 50px;
 }
