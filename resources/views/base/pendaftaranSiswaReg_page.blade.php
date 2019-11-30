@@ -1,4 +1,4 @@
-@extends('base/script_page')
+@extends('base/script_page2')
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
