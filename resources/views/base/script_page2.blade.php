@@ -57,12 +57,16 @@
 				</button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
                     <ul class="navbar-nav">
-						<li><div class="btn-register">Logout
-                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    <li class="nav-item">
+                    <a href="{{ url('/landing') }}" class="nav-link btn-login"
+                            onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                        LOGOUT
+                        </a>
+                    <form id="logout-form" action="{{ url('/landing') }}" method="GET" style="display: none;">
                       {{ csrf_field() }}
-                        </form>
-                        </a></div></li>
-                    </ul>
+                </form>
+              </li></ul>
                 </div>
             </div>
         </nav>
