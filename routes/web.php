@@ -60,7 +60,7 @@ Route::get('/admin', 'AdminController@index');
 Route::get('/murid', 'SiswaController@index');
 Route::get('/landing', 'BaseController@index');
 
-//halaman dashboard Murid
+//Halaman dashboard Murid
 Route::get('/murid', function () {
     return view('murid/murid');
 });
@@ -80,6 +80,11 @@ Route::get('/jadwal', function () {
 });
 Route::get('/pendapatan', function () {
     return view('tutor/pendapatan');
+});
+
+//halaman dashboard_admin
+Route::get('/daftarSiswa', function () {
+    return view('dashboard_admin/daftarSiswa');
 });
 
 //Authentication

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ModelJadwal;
+use Auth;
 
 class JadwalController extends Controller
 {

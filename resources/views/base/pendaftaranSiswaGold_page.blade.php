@@ -27,9 +27,9 @@
                 </div>
                 <br>
                 <div class="panel-body">
-                <!-- <input id="id_user" style="display:none" type="text" class="form-control" name="id_user"
+                <input id="id_user" style="display:none" type="text" class="form-control" name="id_user"
                             required autofocus
-                            value="{{ Auth::user()->id }}" style="text-transform: capitalize">                     -->
+                            value="{{ Auth::user()->id }}" style="text-transform: capitalize">                    
                     <label for="kelas" >Kelas
                         <select id="kelas" name="kelas" class="form-control" style="float:left">
                             <option value="1">1</option>
