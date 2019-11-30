@@ -36,9 +36,14 @@
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-header">Welcome, Admin</span>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <a href="{{ url('/landing') }}" class="nav-link btn-login"
+                            onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
           <i class="fas fa-sign-out-alt"></i>Logout 
           </a>
+          <form id="logout-form" action="{{ url('/landing') }}" method="GET" style="display: none;">
+                      {{ csrf_field() }}
+                </form>
       </li>
       </ul>
   </nav>
