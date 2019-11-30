@@ -1,4 +1,4 @@
-@extends('base/script_page2')
+@extends('base/script_page')
 @section('content')
 <div id="pricing" class="section lb">
         <div class="container">
