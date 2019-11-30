@@ -57,7 +57,11 @@
 				</button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
                     <ul class="navbar-nav">
-						<li><div class="btn-register"><a href="/registerPilih">Logout</a></div></li>
+						<li><div class="btn-register">Logout
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                        </form>
+                        </a></div></li>
                     </ul>
                 </div>
             </div>
