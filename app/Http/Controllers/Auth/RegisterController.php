@@ -82,6 +82,7 @@ class RegisterController extends Controller
                 'role'=>$data['role'],
                 'active'=>0,
             ]);
+            Auth::login($user);
         }
         
        

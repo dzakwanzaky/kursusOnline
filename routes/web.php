@@ -15,12 +15,9 @@ use Nexmo\Laravel\Facade\Nexmo;
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< HEAD
-=======
 Route::get('/kontak', function () {
     return view('base/kontak_page');
 });
->>>>>>> 05591428e7c4f54d2aa1f3f255f58ab98553b3b9
 Route::get('/paketProgram', function () {
     return view('base/paket_program_page');
 });
@@ -63,11 +60,7 @@ Route::get('/admin', 'AdminController@index');
 Route::get('/murid', 'SiswaController@index');
 Route::get('/landing', 'BaseController@index');
 
-<<<<<<< HEAD
-//Dashboard Murid
-=======
 //halaman dashboard Murid
->>>>>>> 05591428e7c4f54d2aa1f3f255f58ab98553b3b9
 Route::get('/murid', function () {
     return view('murid/murid');
 });
@@ -78,11 +71,7 @@ Route::get('/invoicenya', function () {
     return view('murid/invoicenya');
 });
 
-<<<<<<< HEAD
-//Dashboard Tutor
-=======
 //halaman dashboard Tutor
->>>>>>> 05591428e7c4f54d2aa1f3f255f58ab98553b3b9
 Route::get('/tutor', function () {
     return view('tutor/tutor');
 });
@@ -105,3 +94,6 @@ Route::middleware(['tutor'])->group(function () {
 
 Route::get('/verify','VerifyController@getVerify')->name('getverify');
 Route::post('/verify','VerifyController@postVerify')->name('verify');
+
+//pendaftaran
+Route::resource('pendaftaranSiswa','JadwalController');

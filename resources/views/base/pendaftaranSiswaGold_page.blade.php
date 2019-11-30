@@ -18,7 +18,7 @@
     <div class="main">
     <div class="container-content">
         <div class="sign-up-content">
-            <form method="POST" action="{{ route('login')}}">
+            <form method="POST" action="{{ route('pendaftaranSiswa.store')}}" enctype="multipart/form-data">
                 @csrf
                 <h2 class="form-title">Pendaftaran Les Program Paket GOLD</h2>
                 <br>
@@ -27,72 +27,76 @@
                 </div>
                 <br>
                 <div class="panel-body">
+                <!-- <input id="id_user" style="display:none" type="text" class="form-control" name="id_user"
+                            required autofocus
+                            value="{{ Auth::user()->id }}" style="text-transform: capitalize">                     -->
                     <label for="kelas" >Kelas
-                        <select name="kelas" class="form-control" style="float:left">
-                            <option value="1">1
-                            <option value="2">2
-                            <option value="3">3
-                            <option value="4">4
-                            <option value="5">5
-                            <option value="6">6
+                        <select id="kelas" name="kelas" class="form-control" style="float:left">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
                         </select>
                     </label>                      
 
-                    <label for="matkul" style="float:right">Mata Pelajaran
-                        <select name="mapel" class="form-control" style="float:right">
-                            <option value="Matematika">Matematika
-                            <option value="IPA">IPA
-                            <option value="IPS">IPS
-                            <option value="Bahasa Inggris">Bahasa Inggris
+                    <label for="mata_pelajaran" style="float:right">Mata Pelajaran
+                        <select id="mata_pelajaran" name="mata_pelajaran" class="form-control" style="float:right">
+                            <option value="Matematika">Matematika</option>
+                            <option value="IPA">IPA</option>
+                            <option value="IPS">IPS</option>
+                            <option value="Bahasa Inggris">Bahasa Inggris</option>
                         </select> 
                     </label>
                 </div>
                 <br>
                 <div class="panel-body" >
                     <label for="hari">Hari 1
-                    <select name="mapel" class="form-control" style="width:130px">
-                            <option value="Senin">Senin
-                            <option value="Selasa">Selasa
-                            <option value="Rabu">Rabu
-                            <option value="Kamis">Kamis
-                            <option value="Jum'at">Jum'at
-                            <option value="Sabtu">Sabtu
-                            <option value="Minggu">Minggu
+                    <select id="hari1" name="hari1" class="form-control" style="width:130px">
+                            <option value="Senin">Senin</option>
+                            <option value="Selasa">Selasa</option>
+                            <option value="Rabu">Rabu</option>
+                            <option value="Kamis">Kamis</option>
+                            <option value="Jum'at">Jum'at</option>
+                            <option value="Sabtu">Sabtu</option>
+                            <option value="Minggu">Minggu</option>
                         </select> 
                     </label>
                     <label for="hari">Hari 2 
-                    <select name="mapel" class="form-control" style="width:130px">
-                            <option value="Senin">Senin
-                            <option value="Selasa">Selasa
-                            <option value="Rabu">Rabu
-                            <option value="Kamis">Kamis
-                            <option value="Jum'at">Jum'at
-                            <option value="Sabtu">Sabtu
-                            <option value="Minggu">Minggu
+                    <select id="hari2" name="hari2" class="form-control" style="width:130px">
+                            <option value="Senin">Senin</option>
+                            <option value="Selasa">Selasa</option>
+                            <option value="Rabu">Rabu</option>
+                            <option value="Kamis">Kamis</option>
+                            <option value="Jum'at">Jum'at</option>
+                            <option value="Sabtu">Sabtu</option>
+                            <option value="Minggu">Minggu</option>
                         </select> 
                     </label>
                     <label for="hari">Hari 3 
-                    <select name="mapel" class="form-control" style="width:130px">
-                            <option value="Senin">Senin
-                            <option value="Selasa">Selasa
-                            <option value="Rabu">Rabu
-                            <option value="Kamis">Kamis
-                            <option value="Jum'at">Jum'at
-                            <option value="Sabtu">Sabtu
-                            <option value="Minggu">Minggu
+                    <select id="hari3" name="hari3" class="form-control" style="width:130px">
+                            <option value="Senin">Senin</option>
+                            <option value="Selasa">Selasa</option>
+                            <option value="Rabu">Rabu</option>
+                            <option value="Kamis">Kamis</option>
+                            <option value="Jum'at">Jum'at</option>
+                            <option value="Sabtu">Sabtu</option>
+                            <option value="Minggu">Minggu</option>
                         </select> 
                     </label>
                 </div>
                 <br>
                 <div class="panel-body" >Waktu
-                    <select name="mapel" class="form-control">
-                        <option value="tiga">15.00 WIB
-                        <option value="empat">16.00 WIB
-                        <option value="lima">17.00 WIB
-                        <option value="enam">18.00 WIB
-                        <option value="tujuh">19.00 WIB
+                    <select id="waktu" name="waktu" class="form-control">
+                        <option value="15.00">15.00 WIB</option>
+                        <option value="16.00">16.00 WIB</option>
+                        <option value="17.00">17.00 WIB</option>
+                        <option value="18.00">18.00 WIB</option>
+                        <option value="19.00">19.00 WIB</option>
                     </select> 
                 </div>
+                <!-- <input id="program" style="display:none" value="gold"> -->
                 <br>
                 <br>
                     <div class="form-group"> 

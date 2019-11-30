@@ -20,7 +20,7 @@ class CreateModelJadwalsTable extends Migration
             $table->string('hari1');
             $table->string('hari2')->nullable();
             $table->string('hari3')->nullable();
-            $table->string('lokasi');
+            $table->string('waktu');
             $table->timestamps();
         });
     }
