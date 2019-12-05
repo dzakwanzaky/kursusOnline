@@ -24,7 +24,7 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-              <table class="table table-bordered table-striped table-responsive-sm" id="datakaryawan"> 
+              <table class="table table-bordered table-striped table-responsive-sm" id="siswa"> 
               <thead>
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                   <th>No.</th>
@@ -79,7 +79,7 @@
   @section('sweet')
   <script>
          $(document).ready( function () {
-           $('#datakaryawan').DataTable();
+           $('#siswa').DataTable();
            });
       </script>
   @endsection
