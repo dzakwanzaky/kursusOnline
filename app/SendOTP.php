@@ -5,7 +5,7 @@ class SendOTP{
         $code=rand(1111,9999);
         $nexmo = app('Nexmo\Client');
         $nexmo->message()->send([
-            'to'=>'+6281218099939',
+            'to'=>'+6289613954111',
             'from'=> 'Properti',
             'text'=>'Verify code: '.$code,
         ]);

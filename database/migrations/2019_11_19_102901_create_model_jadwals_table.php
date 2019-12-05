@@ -15,6 +15,8 @@ class CreateModelJadwalsTable extends Migration
     {
         Schema::create('model_jadwals', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('user_id');
+            $table->string('program');            
             $table->string('kelas');
             $table->string('mata_pelajaran');
             $table->string('hari1');

@@ -56,26 +56,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <thead class="thead-dark">
                     <tr>
                         <th>No.</th>
+                        <th>Program</th>
                         <th>Kelas</th>
                         <th>Mata Pelajaran</th>
+                        <th>Hari</th>
+                        <th>Hari</th>
+                        <th>Hari</th>
                         <th>Waktu</th>
-                        <th>Lokasi</th>
-                        <th>Konfirmasi</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1.</td>
-                        <td>6 SD</td>
-                        <td>Matematika</td>
-                        <td>Selasa, Rabu, Kamis</td>
-                        <td>Ruang HY - U202</td>
+                    @php $no = 1; @endphp
+                @foreach($data as $d)
+                    <tr>
+                        <td>{{ $no++ }}</td>
+                        <td>{{ $d->program }}</td>
+                        <td>{{ $d->kelas }}</td>
+                        <td>{{ $d->mata_pelajaran }}</td>
+                        <td>{{ $d->hari1 }}</td>
+                        <td>{{ $d->hari2 }}</td>
+                        <td>{{ $d->hari3 }}</td>
+                        <td>{{ $d->waktu }}</td>
                         <td>
                             <a class=" btn btn-sm btn-danger" style="color:white;">
                             <span>Belum Konfirmasi</span>
                             </a>
                         </td>
                     </tr>
+                    @endforeach
+
                 </tbody>
                 </table>
               </div>

@@ -25,11 +25,15 @@
                 <div class="alert alert-danger">
                     <strong>Isikan!</strong> Data dengan sebenarnya.
                 </div>
+
                 <br>
                 <div class="panel-body">
-                <input id="id_user" style="display:none" type="text" class="form-control" name="id_user"
+                    <input id="user_id" style="display:none" type="text" class="form-control" name="user_id"
                             required autofocus
-                            value="{{ Auth::user()->id }}" style="text-transform: capitalize">                    
+                            value="{{ Auth::user()->id }}" style="text-transform: capitalize">
+
+                    <input type="text" class="form-control" id="program" name="program" style="display:none" value="gold">
+
                     <label for="kelas" >Kelas
                         <select id="kelas" name="kelas" class="form-control" style="float:left">
                             <option value="1">1</option>
@@ -96,7 +100,7 @@
                         <option value="19.00">19.00 WIB</option>
                     </select> 
                 </div>
-                <!-- <input id="program" style="display:none" value="gold"> -->
+                
                 <br>
                 <br>
                     <div class="form-group"> 

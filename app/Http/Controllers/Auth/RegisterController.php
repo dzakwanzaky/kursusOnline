@@ -55,6 +55,9 @@ class RegisterController extends Controller
             'phone' => ['required', 'min:10', 'max:13'],
         
         ]);
+
+        $id= $user->id; // Get current user id
+        return $user;
     }
 
     /**
@@ -83,11 +86,12 @@ class RegisterController extends Controller
                 'role'=>$data['role'],
                 'active'=>0,
             ]);
+            Auth::login($user);
         }
         
        
         if($user){
-            $user->code=SendOTP::sendOTP($user->phone);
+           // $user->code=SendOTP::sendOTP($user->phone);
             $user->save();
         }
     }

@@ -15,7 +15,8 @@ class JadwalController extends Controller
      */
     public function index()
     {
-        //
+        $data = ModelJadwal::where('user_id', '=', Auth::user()->id)->get();
+        return view('murid.murid', compact('data'));
     }
 
     /**
@@ -37,6 +38,8 @@ class JadwalController extends Controller
     public function store(Request $request)
     {
         $data = new ModelJadwal();
+        $data->user_id = $request->user_id;
+        $data->program = $request->program;
         $data->kelas = $request->kelas;
         $data->mata_pelajaran = $request->mata_pelajaran;
         $data->hari1 = $request->hari1;
@@ -91,4 +94,5 @@ class JadwalController extends Controller
     {
         //
     }
+
 }

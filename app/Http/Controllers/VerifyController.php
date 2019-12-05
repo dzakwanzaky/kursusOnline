@@ -16,7 +16,7 @@ class VerifyController extends Controller
             $user->active=1;
             $user->code=null;
             $user->save();
-            return redirect('paketProgram')->withMessage('Your account is active');
+            return redirect('login')->withMessage('Your account is active');
         }
         else{
             return back()->withMessage('verify code is not correct. Please try again');

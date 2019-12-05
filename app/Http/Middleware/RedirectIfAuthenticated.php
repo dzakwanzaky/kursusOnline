@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use App\ModelJadwal;
 
 class RedirectIfAuthenticated
 {
@@ -22,5 +23,8 @@ class RedirectIfAuthenticated
         }
 
         return $next($request);
+            
+              
     }
 }
+

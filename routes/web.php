@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +10,8 @@
 |
 */
 use Nexmo\Laravel\Facade\Nexmo;
+Route::get('/tes','Controller@tes');
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -102,3 +103,7 @@ Route::post('/verify','VerifyController@postVerify')->name('verify');
 
 //pendaftaran
 Route::resource('pendaftaranSiswa','JadwalController');
+Route::resource('murid','JadwalController');
+
+ 
+   // Route::get('/home', 'BaseController@home2');
