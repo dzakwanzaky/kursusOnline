@@ -11,6 +11,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <title>AdminLTE 3 | Starter</title>
 
+  <!-- DataTable -->  
+  <link rel="stylesheet" href="{{ asset('/lte/plugins/datatables/dataTables.bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('/lte/plugins/datatables/jquery.dataTables.min.css') }}">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('/lte/plugins/fontawesome-free/css/all.min.css') }}">
   <link rel="stylesheet" href="{{ asset('/lte/plugins/fontawesome-free/css/all.css') }}">
@@ -34,8 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-      <div class="container-fluid">
-        @yield('content')        
+      <div class="container-fluid">       
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -68,5 +70,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('/lte/dist/js/adminlte.min.js') }}"></script>
 <script src="{{ asset('/lte/plugins/datatables/jquery.dataTables.js') }}"></script>
 <script src="{{ asset('/lte/plugins/datatables/dataTables.bootstrap4.js') }}"></script>
+<!-- DataTables -->
+<script src="{{ asset('/lte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('/lte/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
+@yield('content') 
+@yield('sweet')
 </body>
 </html>
