@@ -5,7 +5,8 @@
             <a class="navbar-brand" href="/landing">
                 <img class="navbar-brand-full" src="{{('/tema/images/imam.png')}}" width="150" height="40" alt="imam Logo" href="/landing">
             </a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarApp" aria-controls="navbarApp" aria-expanded="false" aria-label="Toggle navigation">
+                @if (Auth::guest())
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarApp" aria-controls="navbarApp" aria-expanded="false" aria-label="Toggle navigation">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -20,6 +21,21 @@
 						<li><div class="btn-register"><a href="/registerPilih">Daftar</a></div></li>
                     </ul>
                 </div>
+                @else
+                <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
+                    <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a href="/landing" class="nav-link btn-login"
+                            onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                        LOGOUT
+                        </a>
+                    <form id="logout-form" action="/landing" method="GET" style="display: none;">
+                      {{ csrf_field() }}
+                </form>
+              </li></ul>
+                </div>
+                @endif
             </div>
         </nav>
     </header>

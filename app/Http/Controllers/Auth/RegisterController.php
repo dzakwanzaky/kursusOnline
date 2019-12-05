@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use App\SendOTP;
+use Auth;
 
 class RegisterController extends Controller
 {  

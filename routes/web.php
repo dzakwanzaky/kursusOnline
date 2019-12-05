@@ -60,7 +60,7 @@ Route::get('/admin', 'AdminController@index');
 Route::get('/murid', 'SiswaController@index');
 Route::get('/landing', 'BaseController@index');
 
-//halaman dashboard Murid
+//Halaman dashboard Murid
 Route::get('/murid', function () {
     return view('murid/murid');
 });
@@ -82,6 +82,15 @@ Route::get('/pendapatan', function () {
     return view('tutor/pendapatan');
 });
 
+//halaman dashboard_admin
+Route::get('/daftarSiswa', function () {
+    return view('dashboard_admin/daftarSiswa');
+});
+Route::get('/manajemenTutor', function () {
+    return view('dashboard_admin/manajemenTutor');
+});
+
+
 //Authentication
 Auth::routes();
 //for role route
@@ -94,3 +103,6 @@ Route::middleware(['tutor'])->group(function () {
 
 Route::get('/verify','VerifyController@getVerify')->name('getverify');
 Route::post('/verify','VerifyController@postVerify')->name('verify');
+
+//pendaftaran
+Route::resource('pendaftaranSiswa','JadwalController');
