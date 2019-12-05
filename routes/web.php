@@ -86,6 +86,10 @@ Route::get('/pendapatan', function () {
 Route::get('/daftarSiswa', function () {
     return view('dashboard_admin/daftarSiswa');
 });
+Route::get('/manajemenTutor', function () {
+    return view('dashboard_admin/manajemenTutor');
+});
+
 
 //Authentication
 Auth::routes();
