@@ -47,10 +47,11 @@
                 </div><br>
 
                 <div class="form-textbox">
-                    <button type="submit" class="btn btn-success">
+                    <button type="submit" class="btn-masuk">
                         {{ __('Masuk') }}
                     </button>
                 </div>
+                <br/>
 
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
