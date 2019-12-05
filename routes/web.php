@@ -87,6 +87,10 @@ Route::get('/pendapatan', function () {
 Route::get('/daftarSiswa', function () {
     return view('dashboard_admin/daftarSiswa');
 });
+Route::get('/manajemenTutor', function () {
+    return view('dashboard_admin/manajemenTutor');
+});
+
 
 //Authentication
 Auth::routes();
@@ -103,7 +107,13 @@ Route::post('/verify','VerifyController@postVerify')->name('verify');
 
 //pendaftaran
 Route::resource('pendaftaranSiswa','JadwalController');
-Route::resource('murid','JadwalController');
+Route::get('murid','JadwalController@index');
+Route::get('tutor','JadwalController@tutor');
+Route::get('/tutor/{id}','JadwalController@update')->name('tutor');
+
+
+
+//Route::resource('tutor','JadwalController');
 
  
    // Route::get('/home', 'BaseController@home2');

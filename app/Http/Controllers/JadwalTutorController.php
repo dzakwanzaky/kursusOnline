@@ -15,13 +15,7 @@ class JadwalController extends Controller
      */
     public function index()
     {
-        $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->get();
-        return view('murid.murid', compact('data'));
-    }
-
-    public function tutor()
-    {
-        $data = ModelJadwal::all();
+        $data = ModelJadwal::where('user_id', '=', Auth::user()->id)->get();
         return view('tutor.tutor', compact('data'));
     }
 
@@ -44,16 +38,19 @@ class JadwalController extends Controller
     public function store(Request $request)
     {
         $data = new ModelJadwal();
-        $data->murid_id = $request->murid_id;
-        $data->program = $request->program;
-        $data->kelas = $request->kelas;
-        $data->mata_pelajaran = $request->mata_pelajaran;
-        $data->hari1 = $request->hari1;
-        $data->hari2 = $request->hari2;
-        $data->hari3 = $request->hari3;
-        $data->waktu = $request->waktu;
+        // $data->user_id = $request->user_id;
+        $data->tutor_id = $request->tutor_id;
+        $data->nama_tutor = $request->nama_tutor;
+        // $data->program = $request->program;
+        // $data->kelas = $request->kelas;
+        // $data->mata_pelajaran = $request->mata_pelajaran;
+        // $data->hari1 = $request->hari1;
+        // $data->hari2 = $request->hari2;
+        // $data->hari3 = $request->hari3;
+        // $data->waktu = $request->waktu;
+        $data->status = $request->status;
         $data->save();
-        return redirect('murid')->withMessage('Kamu Berhasil Daftar Les');
+        return redirect('tutor')->withMessage('Berhasil Konfirmasi');
     }
 
     /**
@@ -87,21 +84,20 @@ class JadwalController extends Controller
      */
     public function update(Request $request, $id)
     {
-     
-        $data = ModelJadwal::where('id',$id)->first();
-        // $data->user_id = $request->user_id;
+        $data = new ModelJadwal();
+        $data->user_id = $request->user_id;
         $data->tutor_id = $request->tutor_id;
         $data->nama_tutor = $request->nama_tutor;
-        // $data->program = $request->program;
-        // $data->kelas = $request->kelas;
-        // $data->mata_pelajaran = $request->mata_pelajaran;
-        // $data->hari1 = $request->hari1;
-        // $data->hari2 = $request->hari2;
-        // $data->hari3 = $request->hari3;
-        // $data->waktu = $request->waktu;
+        $data->program = $request->program;
+        $data->kelas = $request->kelas;
+        $data->mata_pelajaran = $request->mata_pelajaran;
+        $data->hari1 = $request->hari1;
+        $data->hari2 = $request->hari2;
+        $data->hari3 = $request->hari3;
+        $data->waktu = $request->waktu;
         $data->status = $request->status;
         $data->save();
-        return redirect('tutor')->withMessage('Berhasil Konfirmasi');
+        return redirect('murid')->withMessage('Kamu Berhasil Daftar Les');
     }
 
     /**

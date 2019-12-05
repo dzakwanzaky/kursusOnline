@@ -25,12 +25,12 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
                     <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a href="{{ url('/logout') }}" class="nav-link btn-login"
+                    <a href="/landing" class="nav-link btn-login"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                         LOGOUT
                         </a>
-                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="/landing" method="GET" style="display: none;">
                       {{ csrf_field() }}
                 </form>
               </li></ul>

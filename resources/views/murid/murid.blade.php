@@ -56,6 +56,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <thead class="thead-dark">
                     <tr>
                         <th>No.</th>
+                        <th>Tutor</th>
                         <th>Program</th>
                         <th>Kelas</th>
                         <th>Mata Pelajaran</th>
@@ -72,6 +73,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 @foreach($data as $d)
                     <tr>
                         <td>{{ $no++ }}</td>
+                        <td>{{ $d->nama_tutor }}</td>
                         <td>{{ $d->program }}</td>
                         <td>{{ $d->kelas }}</td>
                         <td>{{ $d->mata_pelajaran }}</td>
@@ -80,8 +82,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <td>{{ $d->hari3 }}</td>
                         <td>{{ $d->waktu }}</td>
                         <td>
-                            <a class=" btn btn-sm btn-danger" style="color:white;">
-                            <span>Belum Konfirmasi</span>
+                            <a class=" btn btn-sm btn-primary" style="color:white;">
+                            <span>{{ $d->status }}</span>
                             </a>
                         </td>
                     </tr>

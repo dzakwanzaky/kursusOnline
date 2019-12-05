@@ -15,7 +15,7 @@ class CreateModelTutorsTable extends Migration
     {
         Schema::create('model_tutors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama');
+            $table->string('nama_tutor');
             $table->string('no_telepon');
             $table->string('jenis_kelamin');
             $table->string('mata_pelajaran');

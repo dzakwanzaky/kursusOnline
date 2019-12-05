@@ -29,7 +29,7 @@
             </a>
           </li> 
          <li class="nav-item">
-            <a href="#" class="nav-link {{ Request::segment(1) === '#' ? 'nav-link active' : null }}">
+            <a href="/daftarSiswa" class="nav-link {{ Request::segment(1) === 'daftarSiswa' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>
                 Daftar Siswa
@@ -37,7 +37,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link {{ Request::segment(1) === 'invoice' ? 'nav-link active' : null }}">
+            <a href="/manajemenTutor" class="nav-link {{ Request::segment(1) === 'manajemenTutor' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>
                 Manajemen Tutor

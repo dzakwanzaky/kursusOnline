@@ -28,7 +28,7 @@
 
                 <br>
                 <div class="panel-body">
-                    <input id="user_id" style="display:none" type="text" class="form-control" name="user_id"
+                    <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
                             required autofocus
                             value="{{ Auth::user()->id }}" style="text-transform: capitalize">
 
