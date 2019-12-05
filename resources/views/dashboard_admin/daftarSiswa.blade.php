@@ -60,9 +60,7 @@
                 </tbody>
           </table>
               </div>
-            </div>
-
-            
+            </div>            
           </div>
           <!-- /.col-md-6 -->
           
