@@ -25,11 +25,11 @@
             <div class="card">
               <div class="card-body">
               <table class="table table-bordered table-striped table-responsive-sm" id="datakaryawan"> 
-              <thead>
+              <thead class="thead-dark"> 
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                   <th>No.</th>
                   <th>Nama Lengkap</th>
-                  <th>Kelas</th>
+                  <th>Pendidikan</th>
                   <th>Mata Pelajaran</th>
                   <th>Alamat</th>
                   <th>Status</th>
@@ -39,10 +39,10 @@
               <tbody>
                     <tr>
                         <td>1.</td>
-                        <td>Vania Paramita Andika</td>
-                        <td>6 SD</td>
+                        <td>Dewandaru Aji Darma</td>
+                        <td>S1 Ilmu Komputer</td>
                         <td>Matematika</td>
-                        <td>Sendowo</td>
+                        <td>Pogung</td>
                         <td>
                           <a class=" btn btn-sm btn-success" style="color:white;">
                             <span>AKTIF</span>
@@ -52,8 +52,8 @@
                           <a class=" btn btn-sm btn-success" style="color:white;">
                             <span class="fa fa-envelope"></span>
                           </a>
-                          <a href="/invoicenya" class=" btn btn-sm btn-success" style="color:white;">
-                            <span class="fa fa-download"></span>
+                          <a href="/profileTutor" class=" btn btn-sm btn-danger" style="color:white;">
+                            <span>EDIT</span>
                           </a>
                         </td>
                     </tr>
@@ -73,10 +73,6 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
   @endsection
   @section('sweet')
   <script>

@@ -84,11 +84,23 @@ Route::get('/pendapatan', function () {
 });
 
 //halaman dashboard_admin
-Route::get('/daftarSiswa', function () {
-    return view('dashboard_admin/daftarSiswa');
-});
+// Route::get('/daftarSiswa', function () {
+//     return view('dashboard_admin/daftarSiswa');
+// });
 Route::get('/manajemenTutor', function () {
     return view('dashboard_admin/manajemenTutor');
+});
+Route::get('/profileSiswa', function () {
+    return view('dashboard_admin/profileSiswa');
+});
+Route::get('/profileTutor', function () {
+    return view('dashboard_admin/profileTutor');
+});
+Route::get('/list_pendaftaranSiswa', function () {
+    return view('dashboard_admin/list_pendaftaran_siswa');
+});
+Route::get('/list_pendaftaranTutor', function () {
+    return view('dashboard_admin/list_pendaftaran_tutor');
 });
 
 
@@ -110,6 +122,8 @@ Route::resource('pendaftaranSiswa','JadwalController');
 Route::get('murid','JadwalController@index');
 Route::get('tutor','JadwalController@tutor');
 Route::get('/tutor/{id}','JadwalController@update')->name('tutor');
+
+Route::resource('daftarSiswa','SiswaController');
 
 
 
