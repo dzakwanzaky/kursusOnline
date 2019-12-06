@@ -81,6 +81,9 @@ Route::get('/jadwal', function () {
 Route::get('/pendapatan', function () {
     return view('tutor/pendapatan');
 });
+Route::get('/profileTutor', function () {
+    return view('tutor/profile');
+});
 
 //halaman dashboard_admin
 Route::get('/daftarSiswa', function () {
