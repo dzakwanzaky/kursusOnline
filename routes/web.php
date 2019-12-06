@@ -74,6 +74,12 @@ Route::get('/invoice', function () {
 Route::get('/invoicenya', function () {
     return view('murid/invoicenya');
 });
+Route::get('/profile', function () {
+    return view('murid/profile');
+});
+Route::get('/editProfile', function () {
+    return view('murid/editProfile');
+});
 
 //halaman dashboard Tutor
 Route::get('/tutor', function () {

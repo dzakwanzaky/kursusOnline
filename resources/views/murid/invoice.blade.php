@@ -28,6 +28,7 @@
                     <tr>
                         <th>No.</th>
                         <th>No. Invoice</th>
+                        <th>Nama</th>
                         <th>Kelas</th>
                         <th>Program</th>
                         <th>Lokasi</th>
@@ -40,6 +41,7 @@
                     <tr>
                         <td>1.</td>
                         <td>#190930001</td>
+                        <td>Pania Paramita</td>
                         <td>6 SD</td>
                         <td>1</td>
                         <td>Sendowo</td>

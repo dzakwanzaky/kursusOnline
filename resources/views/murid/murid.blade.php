@@ -26,6 +26,7 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>No.</th>
+                        <th>Nama</th>
                         <th>Kelas</th>
                         <th>Mata Pelajaran</th>
                         <th>Waktu</th>
@@ -36,6 +37,7 @@
                 <tbody>
                     <tr>
                         <td>1.</td>
+                        <td>Pania Paramita</td>
                         <td>6 SD</td>
                         <td>Matematika</td>
                         <td>Selasa, Rabu, Kamis</td>

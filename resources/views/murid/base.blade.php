@@ -18,6 +18,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('/lte/plugins/fontawesome-free/css/all.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('/lte/dist/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('/lte/dist/css/adminlte.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
