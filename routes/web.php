@@ -24,6 +24,10 @@ Route::get('/paketProgram', function () {
 Route::get('/login', function () {
     return view('base/login_page');
 });
+Route::get('/dataSiswa', function () {
+    return view('base/dataSiswa');
+});
+
 
 //halaman proses register akun
 Route::get('/registerSiswa', function () {
@@ -91,6 +95,18 @@ Route::get('/daftarSiswa', function () {
 });
 Route::get('/manajemenTutor', function () {
     return view('dashboard_admin/manajemenTutor');
+});
+Route::get('/profileSiswa', function () {
+    return view('dashboard_admin/profileSiswa');
+});
+Route::get('/profileTutor', function () {
+    return view('dashboard_admin/profileTutor');
+});
+Route::get('/list_pendaftaranSiswa', function () {
+    return view('dashboard_admin/list_pendaftaran_siswa');
+});
+Route::get('/list_pendaftaranTutor', function () {
+    return view('dashboard_admin/list_pendaftaran_tutor');
 });
 
 

@@ -24,8 +24,8 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-              <table class="table table-bordered table-striped table-responsive-sm" id="datakaryawan"> 
-              <thead>
+              <table class="table table-bordered table-striped table-responsive-sm" id="siswa"> 
+              <thead class="thead-dark">
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                   <th>No.</th>
                   <th>Nama Lengkap</th>
@@ -49,20 +49,18 @@
                           </a>
                         </td>
                         <td>
-                          <a class=" btn btn-sm btn-success" style="color:white;">
-                            <span class="fa fa-envelope"></span>
-                          </a>
                           <a href="/invoicenya" class=" btn btn-sm btn-success" style="color:white;">
                             <span class="fa fa-download"></span>
+                          </a>
+                          <a href="/profileSiswa" class=" btn btn-sm btn-danger" style="color:white;">
+                            <span>DETAIL</span>
                           </a>
                         </td>
                     </tr>
                 </tbody>
           </table>
               </div>
-            </div>
-
-            
+            </div>            
           </div>
           <!-- /.col-md-6 -->
           
@@ -81,7 +79,7 @@
   @section('sweet')
   <script>
          $(document).ready( function () {
-           $('#datakaryawan').DataTable();
+           $('#siswa').DataTable();
            });
       </script>
   @endsection

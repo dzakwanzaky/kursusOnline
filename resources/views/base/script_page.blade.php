@@ -43,9 +43,10 @@
     <div id="preloader">
         <img class="preloader" src="tema/images/ajax-loader.gif" alt="">
     </div>
-    @include('base/header_page') 
- <script src="/tema/js/all.js"></script>
- 
+    @include('base/header_page')
+    
+    @yield('content')    
+    <script src="/tema/js/all.js"></script>
     <!-- ALL PLUGINS -->
     <script src="/tema/js/custom.js"></script>
 	<script src="/tema/js/zenith.js"></script>
@@ -59,6 +60,5 @@
 			autoplaySpeed: 2000
 		});
 	</script>
-    @yield('content')
 </body>
 </html>
