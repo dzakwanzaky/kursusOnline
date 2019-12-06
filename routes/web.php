@@ -85,8 +85,11 @@ Route::get('/jadwal', function () {
 Route::get('/pendapatan', function () {
     return view('tutor/pendapatan');
 });
-Route::get('/profileTutor', function () {
+Route::get('/profile', function () {
     return view('tutor/profile');
+});
+Route::get('/setting', function () {
+    return view('tutor/setting');
 });
 
 //halaman dashboard_admin

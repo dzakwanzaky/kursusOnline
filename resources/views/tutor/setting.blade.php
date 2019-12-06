@@ -85,38 +85,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 					<div class="form-group">
 						<label for="">Nama :</label>
-						<input type="text" class="form-control" id="nama" name="nama" value="Dewandaru Aji Darma" disabled>
+						<input type="text" class="form-control" id="nama" name="nama" value="Dewandaru Aji Darma">
 					</div>
 
 					<div class="form-group">
 						<label for="">Telepon :</label>
-						<input type="text" class="form-control" id="no_telepon" name="no_telepon" value="081218099939" disabled>
+						<input type="text" class="form-control" id="no_telepon" name="no_telepon" value="081218099939">
 					</div>
 
 					<div class="form-group">
 						<label for="">Jenis Kelamin :</label>
-						<input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" value="Pria" disabled>
+						<input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" value="Pria">
 					</div>
 
 					<div class="form-group">
 						<label for="">Mata Pelajaran :</label>
-						<input type="text" class="form-control" id="mata_pelajaran" name="mata_pelajaran" value="Matematika" disabled> 
+						<input type="text" class="form-control" id="mata_pelajaran" name="mata_pelajaran" value="Matematika"> 
 					</div>
 
 					<div class="form-group">
 						<label for="">Provinsi :</label>
-						<input type="text" class="form-control" id="provinsi" name="provinsi" value="Yogyakarta" disabled>
+						<input type="text" class="form-control" id="provinsi" name="provinsi" value="Yogyakarta">
 					</div>
 
           <div class="form-group">
 						<label for="">Kota/Kabupaten :</label>
-						<input type="text" class="form-control" id="kota" name="kota" value="Sleman" disabled>
+						<input type="text" class="form-control" id="kota" name="kota" value="Sleman">
 					</div>
 
           <div class="form-group">
 						<label for="">Kecamatan :</label>
-						<input type="text" class="form-control" id="kecamatan" name="kecamatan" value="Depok" disabled>
+						<input type="text" class="form-control" id="kecamatan" name="kecamatan" value="Depok">
 					</div>
+                    
 				</form>
             <br />
           </div><!-- /.col -->
@@ -124,9 +125,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
-    <!-- /.content -->
 </div>
-<!-- /.content-wrapper -->
+
   <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
