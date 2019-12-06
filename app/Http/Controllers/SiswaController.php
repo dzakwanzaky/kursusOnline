@@ -10,7 +10,7 @@ class SiswaController extends Controller
 {
     //
     public function index(){
-        $data = ModelSiswa::where('status', 'Menunggu Pembayaran')->get();
+        $data = ModelSiswa::all();
         return view('dashboard_admin.daftarSiswa', compact('data'));
     }
 
