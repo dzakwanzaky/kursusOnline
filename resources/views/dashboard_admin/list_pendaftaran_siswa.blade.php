@@ -26,37 +26,40 @@
               <div class="card-body">
               <table class="table table-bordered table-striped table-responsive-sm" id="siswa"> 
               <thead class="thead-dark">
-                <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
-                  <th>No.</th>
-                  <th>Nama Lengkap</th>
-                  <th>Kelas</th>
-                  <th>Mata Pelajaran</th>
-                  <th>Alamat</th>
-                  <th>Status</th>
-                  <th>Aksi</th>
-               </tr>
-              </thead>
-              <tbody>
+              <tr>
+                        <th>No.</th>
+                        <th>Tutor</th>
+                        <th>Program</th>
+                        <th>Kelas</th>
+                        <th>Mata Pelajaran</th>
+                        <th>Hari</th>
+                        <th>Hari</th>
+                        <th>Hari</th>
+                        <th>Waktu</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
                     <tr>
-                        <td>1.</td>
-                        <td>Vania Paramita Andika</td>
-                        <td>6 SD</td>
-                        <td>Matematika</td>
-                        <td>Sendowo</td>
+                    @php $no = 1; @endphp
+                @foreach($data as $d)
+                    <tr>
+                        <td>{{ $no++ }}</td>
+                        <td>{{ $d->nama_tutor }}</td>
+                        <td>{{ $d->program }}</td>
+                        <td>{{ $d->kelas }}</td>
+                        <td>{{ $d->mata_pelajaran }}</td>
+                        <td>{{ $d->hari1 }}</td>
+                        <td>{{ $d->hari2 }}</td>
+                        <td>{{ $d->hari3 }}</td>
+                        <td>{{ $d->waktu }}</td>
                         <td>
-                        <a class=" btn btn-sm btn-warning" style="color:white;">
-                            <span>TAHAP 1</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class=" btn btn-sm btn-success" style="color:white;">
-                            <span>TERIMA</span>
-                          </a>
-                          <a href="#" class=" btn btn-sm btn-danger" style="color:white;">
-                            <span>TOLAK</span>
-                          </a>
+                            <a class=" btn btn-sm btn-primary" style="color:white;">
+                            <span>{{ $d->status }}</span>
+                            </a>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
           </table>
               </div>

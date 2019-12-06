@@ -18,10 +18,10 @@ class CreateModelSiswasTable extends Migration
             $table->string('nama_siswa');
             $table->string('no_telepon');
             $table->string('jenis_kelamin');
-            $table->string('mata_pelajaran');
             $table->string('provinsi');
             $table->string('kota');
             $table->string('kecamatan');
+            $table->string('status');
             $table->timestamps();
         });
     }

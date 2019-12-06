@@ -30,7 +30,8 @@
 
                   <th>No.</th>
                   <th>Nama Lengkap</th>
-                  <th>Kelas</th>
+                  <th>No Telepon</th>
+                  <th>Jenis Kelamin</th>
                   <th>Alamat</th>
                   <th>Status</th>
                   <th>Aksi</th>
@@ -39,23 +40,28 @@
               <tbody>
                     <tr>
                     @php $no = 1; @endphp
-                @foreach($data as $d)
+                    @foreach($data as $d)
                         <td>{{ $no++ }}</td>
-                        <td>{{ name }}</td>
-                        <td>{{ kelas }}</td>
-                        <td>{{ alamat }}</td>
-                        <td>Sendowo</td>
+                        <td>{{ $d->nama_siswa }}</td>
+                        <td>{{ $d->no_telepon }}</td>
+                        <td>{{ $d->jenis_kelamin }}</td>
+                        <td>{{ $d->kota }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
+
+                      <form action="{{ route('daftarSiswa.update', $d->id) }}" method="post" enctype="multipart/form-data">
+                          {{ csrf_field() }}
+                          {{ method_field('PUT') }}
                         <td>
-                          <a class=" btn btn-sm btn-success" style="color:white;">
-                            <span>AKTIF</span>
-                          </a>
+                        <button value="Aktif" id="status" name="status" class=" btn btn-sm btn-primary">
+                        {{ $d->status }}</button>
                         </td>
+                      </form>
+
                         <td>
                           <a href="/invoicenya" class=" btn btn-sm btn-success" style="color:white;">
                             <span class="fa fa-download"></span>
                           </a>
                           <a href="/profileSiswa" class=" btn btn-sm btn-danger" style="color:white;">
-                            <span>EDIT</span>
+                            <span>HAPUS</span>
                           </a>
                         </td>
                     </tr>

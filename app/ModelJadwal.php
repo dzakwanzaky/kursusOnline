@@ -15,4 +15,8 @@ class ModelJadwal extends Model
     public function jadwal(){
         return $this->belongsTo('App\User', 'user_id');
     }
+
+    public function data(){
+        return $this->belongsTo('App\ModelSiswa', 'user_id');
+    }
 }

@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
     	return $this->hasOne('App\ModelTutor', 'id');
     }
+
+    public function dataa()
+    {
+    	return $this->hasOne('App\ModelSiswa', 'id');
+    }
 }

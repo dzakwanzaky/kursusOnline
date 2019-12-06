@@ -30,7 +30,7 @@
                                 document.getElementById('logout-form').submit();">
                         LOGOUT
                         </a>
-                    <form id="logout-form" action="/landing" method="GET" style="display: none;">
+                    <form id="logout-form" action="/logout" method="POST" style="display: none;">
                       {{ csrf_field() }}
                 </form>
               </li></ul>

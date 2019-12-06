@@ -121,6 +121,8 @@ Route::post('/verify','VerifyController@postVerify')->name('verify');
 Route::resource('pendaftaranSiswa','JadwalController');
 Route::get('murid','JadwalController@index');
 Route::get('tutor','JadwalController@tutor');
+Route::get('list_pendaftaranSiswa','JadwalController@admin');
+
 Route::get('/tutor/{id}','JadwalController@update')->name('tutor');
 
 Route::resource('daftarSiswa','SiswaController');

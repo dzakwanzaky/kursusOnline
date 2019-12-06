@@ -25,6 +25,12 @@ class JadwalController extends Controller
         return view('tutor.tutor', compact('data'));
     }
 
+    public function admin()
+    {
+        $data = ModelJadwal::all();
+        return view('dashboard_admin.list_pendaftaran_siswa', compact('data'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
