@@ -53,7 +53,7 @@
                             <span class="fa fa-envelope"></span>
                           </a>
                           <a href="/profileTutor" class=" btn btn-sm btn-danger" style="color:white;">
-                            <span>EDIT</span>
+                            <span>DETAIL</span>
                           </a>
                         </td>
                     </tr>

@@ -53,11 +53,14 @@
                         <td>{{ $d->hari2 }}</td>
                         <td>{{ $d->hari3 }}</td>
                         <td>{{ $d->waktu }}</td>
+                        <form action="{{ route('pendaftaranSiswa.update', $d->id) }}" method="post" enctype="multipart/form-data">
+                          {{ csrf_field() }}
+                          {{ method_field('PUT') }}
                         <td>
-                            <a class=" btn btn-sm btn-primary" style="color:white;">
-                            <span>{{ $d->status }}</span>
-                            </a>
+                        <button value="Approved" id="status" name="status" class=" btn btn-sm btn-primary">
+                        {{ $d->status }}</button>
                         </td>
+                        </form>
                     </tr>
                     @endforeach
                 </tbody>

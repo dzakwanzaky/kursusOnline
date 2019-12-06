@@ -41,7 +41,6 @@
               <i class="far fa-circle nav-icon"></i>
               <p>
                 Pendapatan
-          
               </p>
             </a>
           </li>

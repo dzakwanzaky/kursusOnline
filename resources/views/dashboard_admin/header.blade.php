@@ -41,7 +41,7 @@
                                 document.getElementById('logout-form').submit();">
           <i class="fas fa-sign-out-alt"></i>Logout 
           </a>
-          <form id="logout-form" action="{{ url('/landing') }}" method="GET" style="display: none;">
+          <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                       {{ csrf_field() }}
                 </form>
       </li>

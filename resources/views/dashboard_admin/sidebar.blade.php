@@ -48,7 +48,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-folder"></i>
               <p>
-                List Pendaftaran
+                Daftar Pengajuan Les
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -56,13 +56,13 @@
               <li class="nav-item">
                 <a href="/list_pendaftaranSiswa" class="nav-link {{ Request::segment(1) === 'list_pendaftaranSiswa' ? 'nav-link active' : null }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Siswa</p>
+                  <p>Pendaftaran Les Siswa</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="/list_pendaftaranTutor" class="nav-link {{ Request::segment(1) === 'list_pendaftaranTutor' ? 'nav-link active' : null }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Tutor</p>
+                  <p>Pengajuan Les Tutor</p>
                 </a>
               </li>
             </ul>

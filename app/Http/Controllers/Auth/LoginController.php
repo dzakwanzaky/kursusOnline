@@ -68,4 +68,33 @@ class LoginController extends Controller
 
 
     }
+
+    protected function authenticated(\Illuminate\Http\Request $request, $user)
+    {
+        if($user->role=='siswa')
+        {
+            return redirect('/murid');
+        }
+        else if(auth()->user()->role=='tutor')
+        {
+            return redirect('/tutor');
+        }
+        else if(auth()->user()->role=='admin')
+        {
+            return redirect('/admin');
+        } 
+        else
+        {
+            return redirect('/');
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return redirect('/landing');
+    }
 }
