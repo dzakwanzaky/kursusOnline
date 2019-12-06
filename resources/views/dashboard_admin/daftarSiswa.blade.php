@@ -53,7 +53,7 @@
                             <span class="fa fa-download"></span>
                           </a>
                           <a href="/profileSiswa" class=" btn btn-sm btn-danger" style="color:white;">
-                            <span>EDIT</span>
+                            <span>DETAIL</span>
                           </a>
                         </td>
                     </tr>

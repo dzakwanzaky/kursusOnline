@@ -24,6 +24,10 @@ Route::get('/paketProgram', function () {
 Route::get('/login', function () {
     return view('base/login_page');
 });
+Route::get('/dataSiswa', function () {
+    return view('base/dataSiswa');
+});
+
 
 //halaman proses register akun
 Route::get('/registerSiswa', function () {
