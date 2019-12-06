@@ -36,8 +36,11 @@
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-header">Welcome, Tutor</span>
           <div class="dropdown-divider"></div>
+          <a href="/profile" class="dropdown-item">
+            <i class="far fa-user"></i>Profile 
+          </a>
           <a href="#" class="dropdown-item">
-          <i class="fas fa-sign-out-alt"></i>Logout 
+            <i class="fas fa-sign-out-alt"></i>Logout 
           </a>
       </li>
       </ul>
