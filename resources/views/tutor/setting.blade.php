@@ -116,10 +116,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="form-group">
 						<label for="">Kecamatan :</label>
 						<input type="text" class="form-control" id="kecamatan" name="kecamatan" value="Depok">
-					</div>
-                    
+					</div>   
+
+          <a class=" btn btn-sm btn-success" style="color:white; cursor:pointer;">
+                                <span>Ubah</span>
+                            </a>
 				</form>
-            <br />
+            <br/>
           </div><!-- /.col -->
 
         </div><!-- /.row -->
