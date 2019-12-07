@@ -113,6 +113,9 @@ Route::get('/list_pendaftaranSiswa', function () {
 Route::get('/list_pendaftaranTutor', function () {
     return view('dashboard_admin/list_pendaftaran_tutor');
 });
+Route::get('/list_pendaftaran', function () {
+    return view('dashboard_admin/list_pendaftaran_siswa2');
+});
 
 Auth::routes();
 

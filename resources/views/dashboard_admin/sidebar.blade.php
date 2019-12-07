@@ -32,7 +32,7 @@
             <a href="/daftarSiswa" class="nav-link {{ Request::segment(1) === 'daftarSiswa' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>
-                Daftar Siswa
+                Manajemen Siswa
               </p>
             </a>
           </li>
@@ -44,8 +44,10 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview {{ Request::segment(1) === 'list_pendaftaranSiswa' ? 'menu-open' : null }}
+                  {{ Request::segment(1) === 'list_pendaftaranTutor' ? 'menu-open' : null }}">
+            <a href="#" class="nav-link nav-link {{ Request::segment(1) === 'list_pendaftaranSiswa' ? 'nav-link active' : null }}
+                {{ Request::segment(1) === 'list_pendaftaranTutor' ? 'nav-link active' : null }}">
               <i class="nav-icon fas fa-folder"></i>
               <p>
                 Daftar Pengajuan Les
