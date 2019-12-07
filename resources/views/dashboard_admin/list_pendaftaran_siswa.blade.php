@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Daftar Pendaftaran Les Siswa</h1>
+            <h1 class="m-0 text-dark">Daftar Siswa</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             
@@ -26,7 +26,8 @@
               <div class="card-body">
               <table class="table table-bordered table-striped table-responsive-sm" id="siswa"> 
               <thead class="thead-dark">
-              <tr>
+                <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
+
                         <th>No.</th>
                         <th>Tutor</th>
                         <th>Program</th>
@@ -40,10 +41,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
                     @php $no = 1; @endphp
-                @foreach($data as $d)
-                    <tr>
+                    @foreach($data as $d)
+                    <tr>   
                         <td>{{ $no++ }}</td>
                         <td>{{ $d->nama_tutor }}</td>
                         <td>{{ $d->program }}</td>
