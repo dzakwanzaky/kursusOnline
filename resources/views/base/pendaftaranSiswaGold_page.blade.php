@@ -32,7 +32,13 @@
                             required autofocus
                             value="{{ Auth::user()->id }}" style="text-transform: capitalize">
 
-                    <input type="text" class="form-control" id="program" name="program" style="display:none" value="gold">
+                    <input id="nama_murid" style="display:none" type="text" class="form-control" name="nama_murid"
+                            required autofocus
+                            value="{{ Auth::user()->name }}" style="text-transform: capitalize">
+
+                    <input type="text" class="form-control" id="program" name="program" style="display:none" value="GOLD">
+
+                    <input type="text" class="form-control" id="status" name="status" style="display:none" value="Menunggu Pembayaran">
 
                     <label for="kelas" >Kelas
                         <select id="kelas" name="kelas" class="form-control" style="float:left">

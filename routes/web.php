@@ -140,6 +140,7 @@ Route::get('tutor','JadwalController@tutor');
 Route::get('list_pendaftaranSiswa','JadwalController@admin');
 Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
 
+Route::get('jadwal','JadwalController@jadwalTutor');
 
 Route::get('/tutor/{id}','JadwalController@update')->name('tutor');
 

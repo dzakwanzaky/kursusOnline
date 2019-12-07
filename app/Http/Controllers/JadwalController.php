@@ -37,6 +37,12 @@ class JadwalController extends Controller
         return view('dashboard_admin.list_pendaftaran_tutor', compact('data'));
     }
 
+    public function jadwalTutor()
+    {
+        $data = ModelJadwal::where('status', 'Approved')->get();
+        return view('tutor.jadwal', compact('data'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -59,6 +65,8 @@ class JadwalController extends Controller
         $data = new ModelJadwal();
         $data->murid_id = $request->murid_id;
         $data->program = $request->program;
+        $data->nama_murid = $request->nama_murid;
+        $data->status = $request->status;
         $data->kelas = $request->kelas;
         $data->mata_pelajaran = $request->mata_pelajaran;
         $data->hari1 = $request->hari1;
