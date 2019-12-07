@@ -31,7 +31,7 @@
                         <label for="phone">No Telepon</label>
 
                         <div class="form-title">
-                            <input id="phone" type="text" class="form-control" name="phone" required>
+                            <input id="phone" type="phone" class="form-control" name="phone" required>
 
                             @if ($errors->has('phone'))
                                 <span class="help-block">
