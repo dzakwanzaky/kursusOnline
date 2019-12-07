@@ -84,7 +84,7 @@
                 <br>
                 <br>
                     <div class="form-group"> 
-                        <a href="/murid">
+                        <a href="/dataSiswa">
                             <button type="submit" class="button3" >Daftar</button>
                         </a>
                     </div>

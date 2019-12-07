@@ -13,6 +13,12 @@ class JadwalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->get();
@@ -21,7 +27,7 @@ class JadwalController extends Controller
 
     public function tutor()
     {
-        $data = ModelJadwal::all();
+        $data = ModelJadwal::where('status', 'Aktif');
         return view('tutor.tutor', compact('data'));
     }
 
@@ -74,7 +80,7 @@ class JadwalController extends Controller
         $data->hari3 = $request->hari3;
         $data->waktu = $request->waktu;
         $data->save();
-        return redirect('murid')->withMessage('Kamu Berhasil Daftar Les');
+        return redirect('dataSiswa')->withMessage('Kamu Berhasil Daftar Les');
     }
 
     /**
@@ -110,16 +116,8 @@ class JadwalController extends Controller
     {
      
         $data = ModelJadwal::where('id',$id)->first();
-        // $data->user_id = $request->user_id;
         $data->tutor_id = $request->tutor_id;
         $data->nama_tutor = $request->nama_tutor;
-        // $data->program = $request->program;
-        // $data->kelas = $request->kelas;
-        // $data->mata_pelajaran = $request->mata_pelajaran;
-        // $data->hari1 = $request->hari1;
-        // $data->hari2 = $request->hari2;
-        // $data->hari3 = $request->hari3;
-        // $data->waktu = $request->waktu;
         $data->status = $request->status;
         $data->save();
         return redirect('tutor')->withMessage('Berhasil Konfirmasi');

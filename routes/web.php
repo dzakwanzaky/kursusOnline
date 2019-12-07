@@ -61,8 +61,7 @@ $router->get('/nexmo', function () use ($router) {
 });
 
 //Kalau menggunakan Contoller
-Route::get('/admin', 'AdminController@index');
-Route::get('/murid', 'SiswaController@index');
+// Route::get('/murid', 'SiswaController@index');
 Route::get('/landing', 'BaseController@index');
 
 //Halaman dashboard Murid
@@ -99,10 +98,6 @@ Route::get('/setting', function () {
     return view('tutor/setting');
 });
 
-//halaman dashboard_admin
-// Route::get('/daftarSiswa', function () {
-//     return view('dashboard_admin/daftarSiswa');
-// });
 Route::get('/manajemenTutor', function () {
     return view('dashboard_admin/manajemenTutor');
 });
@@ -119,36 +114,33 @@ Route::get('/list_pendaftaranTutor', function () {
     return view('dashboard_admin/list_pendaftaran_tutor');
 });
 
-
-//Authentication
 Auth::routes();
-//for role route
+
 Route::middleware(['admin'])->group(function () {
-    //Route::resource('admin', 'AdminController');
+    Route::get('/admin', 'AdminController@index');
+    Route::get('list_pendaftaranSiswa','JadwalController@admin');
+    Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
 });
 Route::middleware(['tutor'])->group(function () {
-    //Route::resource('tutor', 'TutorController');
+    Route::get('/tutor','JadwalController@tutor');
+    Route::get('jadwal','JadwalController@jadwalTutor');
 });
+
+Route::middleware(['siswa'])->group(function () {
+    Route::get('/murid','JadwalController@index');
+    Route::get('dataSiswa','SiswaController@dataSiswa');
+    Route::get('dataTutor','TutorController@dataTutor');
+});
+
 
 Route::get('/verify','VerifyController@getVerify')->name('getverify');
 Route::post('/verify','VerifyController@postVerify')->name('verify');
 
-//pendaftaran
 Route::resource('pendaftaranSiswa','JadwalController');
-Route::get('murid','JadwalController@index');
-Route::get('tutor','JadwalController@tutor');
-Route::get('list_pendaftaranSiswa','JadwalController@admin');
-Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
-
-Route::get('jadwal','JadwalController@jadwalTutor');
 
 Route::get('/tutor/{id}','JadwalController@update')->name('tutor');
 
-Route::resource('daftarSiswa','SiswaController');
+Route::resource('dataSiswa','SiswaController');
+Route::resource('dataTutor','TutorController');
 
 
-
-//Route::resource('tutor','JadwalController');
-
- 
-   // Route::get('/home', 'BaseController@home2');
