@@ -28,7 +28,9 @@ Route::get('/login', function () {
 Route::get('/dataSiswa', function () {
     return view('base/dataSiswa');
 });
-
+Route::get('/infoPaket', function () {
+    return view('base/info_paket');
+});
 
 //halaman proses register akun
 Route::get('/registerSiswa', function () {
@@ -42,20 +44,18 @@ Route::get('/registerPilih', function () {
 });
 
 //pendaftaran Siswa berdasarkan paket yang dipilih
-// Route::get('pendaftaranSiswaGold', function () {
-//     return view('base/pendaftaranSiswaGold_page');
-// });
+Route::get('pendaftaranSiswaGold', function () {
+    return view('base/pendaftaranSiswaGold_page');
+});
 
-Route::get('pendaftaranSiswaReg','InvoiceController@reg')->name('reguler');
-Route::get('pendaftaranSiswaPrem','InvoiceController@prem')->name('premium');
-Route::get('pendaftaranSiswaGold','InvoiceController@gold')->name('gold');
 
-// Route::get('/pendaftaranSiswaPrem', function () {
-//     return view('base/pendaftaranSiswaPrem_page');
-// });
-// Route::get('/pendaftaranSiswaReg', function () {
-//     return view('base/pendaftaranSiswaReg_page');
-// });
+
+Route::get('/pendaftaranSiswaPrem', function () {
+    return view('base/pendaftaranSiswaPrem_page');
+});
+Route::get('/pendaftaranSiswaReg', function () {
+    return view('base/pendaftaranSiswaReg_page');
+});
 
 Route::get('/pendaftaranTutor', function () {
     return view('base/pendaftaranTutor_page');
@@ -79,7 +79,7 @@ Route::get('/invoice', function () {
 Route::get('/invoicenya', function () {
     return view('murid/invoicenya');
 });
-Route::get('/profile', function () {
+Route::get('/profileMurid', function () {
     return view('murid/profile');
 });
 Route::get('/editProfile', function () {
@@ -128,16 +128,16 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin', 'AdminController@index');
     Route::get('list_pendaftaranSiswa','JadwalController@admin');
     Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
+    Route::get('daftarSiswa','SiswaController@daftarSiswa');
 });
 Route::middleware(['tutor'])->group(function () {
     Route::get('/tutor','JadwalController@tutor');
     Route::get('jadwal','JadwalController@jadwalTutor');
+
 });
 
 Route::middleware(['siswa'])->group(function () {
     Route::get('/murid','JadwalController@index');
-    Route::get('dataSiswa','SiswaController@dataSiswa');
-    Route::get('dataTutor','TutorController@dataTutor');
 });
 
 
@@ -148,7 +148,11 @@ Route::resource('pendaftaranSiswa','JadwalController');
 
 Route::get('/tutor/{id}','JadwalController@update')->name('tutor');
 
-Route::resource('dataSiswa','SiswaController');
 Route::resource('dataTutor','TutorController');
+Route::resource('dataSiswa','SiswaController');
+
+Route::resource('paketProgram','InvoiceController');
+
+
 
 

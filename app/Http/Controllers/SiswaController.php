@@ -15,12 +15,12 @@ class SiswaController extends Controller
         $this->middleware('auth');
     }
     
-    public function index(){
+    public function daftarSiswa(){
         $data = ModelSiswa::all();
         return view('dashboard_admin.daftarSiswa', compact('data'));
     }
 
-    public function dataSiswa(){
+    public function index(){
         $data = ModelSiswa::all();
         return view('base.dataSiswa', compact('data'));
     }
