@@ -94,8 +94,7 @@
                 <p class="loginhere">
                 Sudah punya akun ?<a href="/login" class="loginhere-link"> Masuk Sekarang</a>
                 </p>
-           
-            </div>
             </div>
         </div>
+    </div>
 @endsection
