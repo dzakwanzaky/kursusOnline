@@ -380,6 +380,7 @@ a img.aligncenter {
 	line-height: 25px;
     font-weight: 500;
     border-radius: 75px;
+    width: 100%;
     font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
@@ -2361,6 +2362,7 @@ body.app_version .dev-list .widget-title small{
     width: 180px;
     margin-bottom: 10px;
     height: 50px;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 .button2 {
     background-color: #92CD16;
@@ -2375,6 +2377,7 @@ body.app_version .dev-list .widget-title small{
     width: 180px;
     margin-bottom: 10px;
     height: 50px;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 .button3 {
     background-color: #92CD16;

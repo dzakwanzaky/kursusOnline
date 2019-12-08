@@ -3,7 +3,7 @@
 <div id="pricing" class="section lb">
         <div class="container">
             <div class="section-title text-center">
-                <h3>Program Imam Course</h3>
+                <h4>Program Imam Course</h4>
             </div><!-- end title -->
 
             <div class="row">

@@ -47,7 +47,7 @@
                 </div><br>
 
                 <div class="form-textbox">
-                    <button type="submit" class="btn-success">
+                    <button type="submit" class="btn-masuk">
                         {{ __('Masuk') }}
                     </button>
                 </div>
