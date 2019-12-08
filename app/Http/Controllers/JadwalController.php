@@ -58,7 +58,10 @@ class JadwalController extends Controller
     {
         $data = new ModelJadwal();
         $data->murid_id = $request->murid_id;
+        $data->invoice = $request->invoice;
+        $data->nama_murid = $request->nama_murid;
         $data->program = $request->program;
+        $data->status = $request->status;
         $data->kelas = $request->kelas;
         $data->mata_pelajaran = $request->mata_pelajaran;
         $data->hari1 = $request->hari1;
