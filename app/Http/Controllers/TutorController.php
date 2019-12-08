@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\ModelSiswa;
-use Auth;
+use App\ModelTutor;
 
-class SiswaController extends Controller
+class TutorController extends Controller
 {
-    //
 
     public function __construct()
     {
@@ -16,27 +14,27 @@ class SiswaController extends Controller
     }
     
     public function index(){
-        $data = ModelSiswa::all();
-        return view('dashboard_admin.daftarSiswa', compact('data'));
+        $data = ModelTutor::all();
+        return view('dashboard_admin.daftarTutor', compact('data'));
     }
 
-    public function dataSiswa(){
-        $data = ModelSiswa::all();
-        return view('base.dataSiswa', compact('data'));
+    public function dataTutor(){
+        $data = ModelTutor::all();
+        return view('base.dataTutor', compact('data'));
     }
 
     public function store(Request $request)
     {
-        $data = new ModelSiswa();
+        $data = new ModelTutor();
         $data->id = $request->id;
-        $data->nama_siswa = $request->nama_siswa;
+        $data->nama_tutor = $request->nama_tutor;
         $data->jenis_kelamin = $request->jenis_kelamin;
         $data->provinsi = $request->provinsi;
         $data->kota = $request->kota;
         $data->kecamatan = $request->kecamatan;
         $data->status = $request->status;
         $data->save();
-        return redirect('murid')->withMessage('Kamu Berhasil Daftar Les');
+        return redirect('tutor');
     }
 
     public function update(Request $request, $id)

@@ -31,14 +31,16 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $user = Auth::user();    
     }
 
     public function register(Request $request)
     {
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
-        return $this->registered($request,$user) ?: redirect('/verify?phone='.$request->phone);
+        return $this->registered($request,$user) ?: 
+        redirect('/verify?phone='.$request->phone);
+ 
     }
     /**
      * Get a validator for an incoming registration request.
@@ -90,7 +92,11 @@ class RegisterController extends Controller
             'active'=>0,
         ]);
         if($user){
+<<<<<<< HEAD
             //$user->code=SendOTP::sendOTP($user->phone);
+=======
+           //$user->code=SendOTP::sendOTP($user->phone);
+>>>>>>> 947ddaaf5bdf8df6f3d0e7537ae1ee68a57d6a97
             $user->save();
         }
     }

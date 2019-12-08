@@ -8,14 +8,14 @@
             <div class="col-md-12 col-md-offset-1">
             <div class="card" style="display:block; margin-left:auto; margin-right:auto;">
               <div class="card-body">
-              <form method="POST" action="{{ route('dataSiswa.store')}}" enctype="multipart/form-data">                 
+              <form method="POST" action="{{ route('dataTutor.store')}}" enctype="multipart/form-data">                 
                  {{ csrf_field() }}
 
                     <h2 class="form-title">Profile Siswa</h2>
 
                     <input id="id" value="{{ Auth::user()->id }}" type="text" class="form-control" name="id" required autofocus style="display:none">
 
-                    <input id="nama_siswa" value="{{ Auth::user()->name }}" type="text" class="form-control" name="nama_siswa" required autofocus style="display:none">
+                    <input id="nama_tutor" value="{{ Auth::user()->name }}" type="text" class="form-control" name="nama_tutor" required autofocus style="display:none">
 
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                         <label for="email">Jenis Kelamin</label>
@@ -58,7 +58,7 @@
                             <input id="kecamatan" type="text" class="form-control" name="kecamatan" required>
                         </div>
                     </div>                      
-                            <input id="status" type="text" name="status" class="form-control" value="Menunggu Pembayaran" style="display:none" required>
+                            <input id="status" type="text" name="status" class="form-control" value="Menunggu Konfirmasi" style="display:none" required>
                                 
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary d-block" style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">

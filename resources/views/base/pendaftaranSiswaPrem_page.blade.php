@@ -27,6 +27,17 @@
                 </div>
                 <br>
                 <div class="panel-body">
+                <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
+                            required autofocus
+                            value="{{ Auth::user()->id }}" style="text-transform: capitalize">
+
+                    <input id="nama_murid" style="display:none" type="text" class="form-control" name="nama_murid"
+                            required autofocus
+                            value="{{ Auth::user()->name }}" style="text-transform: capitalize">
+
+                    <input type="text" class="form-control" id="program" name="program" style="display:none" value="PREMIUM">
+
+                    <input type="text" class="form-control" id="status" name="status" style="display:none" value="Menunggu Pembayaran">
                     <label for="kelas" >Kelas
                         <select id="kelas" name="kelas" class="form-control" style="float:left">
                             <option value="1">1</option>
@@ -84,7 +95,7 @@
                 <br>
                 <br>
                     <div class="form-group"> 
-                        <a href="/murid">
+                        <a href="/dataSiswa">
                             <button type="submit" class="button3" >Daftar</button>
                         </a>
                     </div>

@@ -51,17 +51,19 @@
                           {{ csrf_field() }}
                           {{ method_field('PUT') }}
                         <td>
-                        <button value="Aktif" id="status" name="status" class=" btn btn-sm btn-primary">
+                        <button value="Aktif" id="status" name="status" class=" btn btn-sm btn-success" style="text-align:center"> 
                         {{ $d->status }}</button>
                         </td>
                       </form>
 
                         <td>
-                          <a href="/invoicenya" class=" btn btn-sm btn-success" style="color:white;">
+                          <a href="/invoicenya" class=" btn btn-sm btn-warning">
                             <span class="fa fa-download"></span>
                           </a>
+                          <a href="/profileSiswa" class=" btn btn-sm btn-primary">
+                            <span>PROFILE</span>
                           <a href="/profileSiswa" class=" btn btn-sm btn-danger" style="color:white;">
-                            <span>HAPUS</span>
+                            <span>HAPUS</span>  
                           </a>
                         </td>
                     </tr>
