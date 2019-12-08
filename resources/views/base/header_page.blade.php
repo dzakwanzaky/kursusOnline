@@ -3,7 +3,7 @@
         <nav class="navbar header-nav navbar-expand-lg">
             <div class="container">
             <a class="navbar-brand" href="/landing">
-                <img class="navbar-brand-full" src="{{('/tema/images/imam.png')}}" width="150" height="40" alt="imam Logo" href="/landing">
+                <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="150" height="40" alt="imam Logo" href="/landing">
             </a>
                 @if (Auth::guest())
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarApp" aria-controls="navbarApp" aria-expanded="false" aria-label="Toggle navigation">

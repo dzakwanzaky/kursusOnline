@@ -9,13 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
      <!-- Site Metas -->
-    <title>Imam Courses</title>  
+    <title>Inofa Course</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="/tema/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/tema/images/inofaLogo.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/tema/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
