@@ -21,14 +21,6 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/murid" class="nav-link {{ Request::segment(1) === 'tutor' ? 'nav-link active' : null }}">
-              <i class="far fa-circle nav-icon"></i>
-              <p>
-                Manajemen Siswa 
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="/jadwal" class="nav-link {{ Request::segment(1) === 'jadwal' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>

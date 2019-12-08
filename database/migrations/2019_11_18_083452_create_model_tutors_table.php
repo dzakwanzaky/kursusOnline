@@ -14,14 +14,13 @@ class CreateModelTutorsTable extends Migration
     public function up()
     {
         Schema::create('model_tutors', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->string('id');
             $table->string('nama_tutor');
-            $table->string('no_telepon');
             $table->string('jenis_kelamin');
-            $table->string('mata_pelajaran');
             $table->string('provinsi');
             $table->string('kota');
             $table->string('kecamatan');
+            $table->string('status');
             $table->timestamps();
         });
     }
