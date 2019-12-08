@@ -81,7 +81,7 @@ Route::get('/invoice', function () {
 Route::get('/invoicenya', function () {
     return view('murid/invoicenya');
 });
-Route::get('/profile', function () {
+Route::get('/profileMurid', function () {
     return view('murid/profile');
 });
 Route::get('/editProfile', function () {
