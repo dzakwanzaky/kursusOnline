@@ -13,12 +13,12 @@ class TutorController extends Controller
         $this->middleware('auth');
     }
     
-    public function index(){
+    public function daftarTutor(){
         $data = ModelTutor::all();
         return view('dashboard_admin.daftarTutor', compact('data'));
     }
 
-    public function dataTutor(){
+    public function index(){
         $data = ModelTutor::all();
         return view('base.dataTutor', compact('data'));
     }

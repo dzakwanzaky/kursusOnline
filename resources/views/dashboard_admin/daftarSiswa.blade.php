@@ -47,7 +47,7 @@
                         <td>{{ $d->jenis_kelamin }}</td>
                         <td>{{ $d->kota }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
 
-                      <form action="{{ route('daftarSiswa.update', $d->id) }}" method="post" enctype="multipart/form-data">
+                      <form action="{{ route('dataSiswa.update', $d->id) }}" method="post" enctype="multipart/form-data">
                           {{ csrf_field() }}
                           {{ method_field('PUT') }}
                         <td>

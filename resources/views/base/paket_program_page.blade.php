@@ -14,7 +14,7 @@
                                 <div class="col-md-4" style="margin:140px 0 0 0;">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header grd1">
-                                        <form method="POST" action="{{ route('reguler')}}" enctype="multipart/form-data">
+                                        <form method="POST" action="{{  route('paketProgram.store')}}" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                         {{ method_field('POST') }}
                                             <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
@@ -46,9 +46,9 @@
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header grd1">
-                                        <form method="POST" action="{{ route('premium')}}" enctype="multipart/form-data">
+                                        <form method="POST" action="{{ route('paketProgram.store')}}" enctype="multipart/form-data">
                                         {{ csrf_field() }}
-                                        {{ method_field('PUT') }}
+                                
                                         <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
                                                 required autofocus
                                                 value="{{ Auth::user()->id }}" style="text-transform: capitalize">
@@ -82,7 +82,7 @@
                                 <div class="col-md-4" style="margin:140px 0 0 0;">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header grd1">
-                                        <form method="POST" action="{{ route('gold')}}" enctype="multipart/form-data">
+                                        <form method="POST" action="{{ route('paketProgram.store')}}" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                         {{ method_field('POST') }}
                                         <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
