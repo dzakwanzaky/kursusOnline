@@ -51,7 +51,14 @@ body.app_version .grd1:hover,
 body.app_version .grd1:focus {
     background-position: 100px;
     color: #ffffff;
-    background: #C62828;    
+    background: #92CD16;    
+	box-shadow: 0px 1px 27px -3px rgba(0, 0, 0, 0.2);
+}
+
+body.app_version .grd1:hover{
+    background-position: 100px;
+    color: #ffffff;
+    background: #158ADF;    
 	box-shadow: 0px 1px 27px -3px rgba(0, 0, 0, 0.2);
 }
 
