@@ -33,7 +33,7 @@ class JadwalController extends Controller
 
     public function admin()
     {
-        $data = ModelJadwal::where('status', null);
+        $data = ModelJadwal::all();
         return view('dashboard_admin.list_pendaftaran_siswa', compact('data'));
     }
 
