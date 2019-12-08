@@ -34,17 +34,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-<<<<<<< HEAD
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Manajemen Siswa</h1>
-=======
           <div class="col-sm-12">
             <h1 class="m-0 text-dark">Manajemen Siswa</h1><br>
             <p class="m-0 text-dark">Berikut data pengajuan dari siswa yang mendaftar les pada Anda. 
             Di kolom Konfirmasi, silahkan pilih <b>Setuju</b>, jika jadwal mengajar Anda sesuai dengan 
             jadwal yang diajukan. Pilih  <b>Tolak</b>, jika jadwal mengajar Anda tidak sesuai/tabrakan 
             dengan jadwal yang diajukan</p>
->>>>>>> 9066250bfd05fd696dcb57e927667e360c54b1f8
           </div><!-- /.col -->
           <div class="col-sm-6">
             
@@ -65,43 +60,51 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <thead class="thead-dark">
                     <tr>
                         <th>No.</th>
-                        <th>Nama</th>
+                        <th>Program</th>
                         <th>Kelas</th>
                         <th>Mata Pelajaran</th>
+                        <th>Hari</th>
+                        <th>Hari</th>
+                        <th>Hari</th>
                         <th>Waktu</th>
-                        <th>Lokasi</th>
-                        <th>Konfirmasi</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1.</td>
-<<<<<<< HEAD
-                        <td>Daru</td>
-=======
-                        <td>Dewandaru</td>
->>>>>>> 9066250bfd05fd696dcb57e927667e360c54b1f8
-                        <td>6 SD</td>
-                        <td>Matematika</td>
-                        <td>Selasa, Rabu, Kamis</td>
-                        <td>Ruang HY - U202</td>
+                    @php $no = 1; @endphp
+                @foreach($data as $d)
+                    <tr>
+                        <td>{{ $no++ }}</td>
+                        <td>{{ $d->program }}</td>
+                        <td>{{ $d->kelas }}</td>
+                        <td>{{ $d->mata_pelajaran }}</td>
+                        <td>{{ $d->hari1 }}</td>
+                        <td>{{ $d->hari2 }}</td>
+                        <td>{{ $d->hari3 }}</td>
+                        <td>{{ $d->waktu }}</td>
+              <form action="{{ route('pendaftaranSiswa.update', $d->id) }}" method="post" enctype="multipart/form-data">
+		      	  {{ csrf_field() }}
+			        {{ method_field('PUT') }}
+             
+						<input style="display:none" type="text" class="form-control" id="tutor_id" name="tutor_id" value="{{ Auth::user()->id }}">
+            <input style="display:none" type="text" class="form-control" id="nama_tutor" name="nama_tutor" value="{{ Auth::user()->name }}">
+
                         <td>
-<<<<<<< HEAD
-                            <a class=" btn btn-sm btn-success" style="color:white;">
-                              <span>Terima</span>
-                            </a>
-                            <a class=" btn btn-sm btn-danger" style="color:white;">
-                              <span>Tolak</span>
-=======
-                            <a class=" btn btn-sm btn-success" style="color:white; cursor:pointer;">
-                                <span>Setuju</span>
-                            </a>
-                            <a class=" btn btn-sm btn-danger" style="color:white; cursor:pointer">
-                                <span>Tolak</span>
->>>>>>> 9066250bfd05fd696dcb57e927667e360c54b1f8
-                            </a>
+                        <!-- <input id="tutor_id" style="display:none" type="text" class="form-control" name="tutor_id"
+                            required autofocus
+                            value="{{ Auth::user()->id }}" style="text-transform: capitalize">
+
+                       <input id="nama_tutor" style="display:none" type="text" class="form-control" name="nama_tutor"
+                            required autofocus
+                            value="{{ Auth::user()->nama }}" style="text-transform: capitalize"> -->
+                            
+                        <button value="Diajukan Tutor" id="status" name="status" type="submit" class=" btn btn-sm btn-primary">{{ $d->status }}</button>
                         </td>
+                        </form>
                     </tr>
+                    @endforeach
+                  
                 </tbody>
                 </table>
               </div>

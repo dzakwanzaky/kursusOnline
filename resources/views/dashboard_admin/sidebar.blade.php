@@ -29,20 +29,45 @@
             </a>
           </li> 
          <li class="nav-item">
-            <a href="#" class="nav-link {{ Request::segment(1) === '#' ? 'nav-link active' : null }}">
+            <a href="/daftarSiswa" class="nav-link {{ Request::segment(1) === 'daftarSiswa' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>
-                Daftar Siswa
+                Manajemen Siswa
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link {{ Request::segment(1) === 'invoice' ? 'nav-link active' : null }}">
+            <a href="/manajemenTutor" class="nav-link {{ Request::segment(1) === 'manajemenTutor' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>
                 Manajemen Tutor
               </p>
             </a>
+          </li>
+          <li class="nav-item has-treeview {{ Request::segment(1) === 'list_pendaftaranSiswa' ? 'menu-open' : null }}
+                  {{ Request::segment(1) === 'list_pendaftaranTutor' ? 'menu-open' : null }}">
+            <a href="#" class="nav-link nav-link {{ Request::segment(1) === 'list_pendaftaranSiswa' ? 'nav-link active' : null }}
+                {{ Request::segment(1) === 'list_pendaftaranTutor' ? 'nav-link active' : null }}">
+              <i class="nav-icon fas fa-folder"></i>
+              <p>
+                Daftar Pengajuan Les
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/list_pendaftaranSiswa" class="nav-link {{ Request::segment(1) === 'list_pendaftaranSiswa' ? 'nav-link active' : null }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pendaftaran Les Siswa</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/list_pendaftaranTutor" class="nav-link {{ Request::segment(1) === 'list_pendaftaranTutor' ? 'nav-link active' : null }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pengajuan Les Tutor</p>
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>

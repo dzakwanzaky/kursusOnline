@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+     protected $redirectTo = 'landing';
 
     /**
      * Create a new controller instance.
@@ -38,34 +38,62 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    public function login(Request $request)
-    {
-        $this->validateLogin($request);
-        if($this->hasTooManyLoginAttempts($request)){
-            $this->fireLockoutResponse($request);
-            return $this->sendLockoutResponse($request);
-        }
-         //-------------------
 
-               if($this->guard()->validate($this->credentials($request))){
-                $user=$this->guard()->getLastAttempted();
-                if($user->active && $this->attemptLogin($request)){
-                    return $this->sendLoginResponse($request);
-                }
+    // public function login(Request $request)
+    // {
+    //     $this->validateLogin($request);
+    //     if($this->hasTooManyLoginAttempts($request)){
+    //         $this->fireLockoutResponse($request);
+    //         return $this->sendLockoutResponse($request);
+    //     }
+    //      //-------------------
+
+    //            if($this->guard()->validate($this->credentials($request))){
+    //             $user=$this->guard()->getLastAttempted();
+    //             if($user->active && $this->attemptLogin($request)){
+    //                 return $this->sendLoginResponse($request);
+    //             }
               
-               else{
-                $this->incrementLoginAttempts($request);
-                $user->code=SendOTP::sendOTP($user->phone);
-                if($user->save()){
-                    return redirect('/verify?phone='.$user->phone);
-                }
-               }
-               }
+    //            else{
+    //             $this->incrementLoginAttempts($request);
+    //             $user->code=SendOTP::sendOTP($user->phone);
+    //             if($user->save()){
+    //                 return redirect('/verify?phone='.$user->phone);
+    //             }
+    //            }
+    //         }
         //-----------
-       $this->incrementLoginAttempts($request);
-       return $this->sendFailedLoginResponse($request);
+    //    $this->incrementLoginAttempts($request);
+    //    return $this->sendFailedLoginResponse($request);
 
+    // }
 
+    protected function authenticated(\Illuminate\Http\Request $request, $user)
+    {
+        if($user->role=='siswa')
+        {
+            return redirect('/murid');
+        }
+        else if(auth()->user()->role=='tutor')
+        {
+            return redirect('/tutor');
+        }
+        else if(auth()->user()->role=='admin')
+        {
+            return redirect('/admin');
+        } 
+        else
+        {
+            return redirect('/');
+        }
+    }
 
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return redirect('/landing');
     }
 }

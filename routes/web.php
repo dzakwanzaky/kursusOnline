@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,12 +10,11 @@
 |
 */
 use Nexmo\Laravel\Facade\Nexmo;
+Route::get('/tes','Controller@tes');
+
 
 Route::get('/', function () {
     return view('welcome');
-});
-Route::get('/program', function () {
-    return view('base/program_page');
 });
 Route::get('/kontak', function () {
     return view('base/kontak_page');
@@ -27,6 +25,12 @@ Route::get('/paketProgram', function () {
 Route::get('/login', function () {
     return view('base/login_page');
 });
+Route::get('/dataSiswa', function () {
+    return view('base/dataSiswa');
+});
+
+
+//halaman proses register akun
 Route::get('/registerSiswa', function () {
     return view('base/registerSiswa_page');
 });
@@ -37,9 +41,17 @@ Route::get('/registerPilih', function () {
     return view('base/pilihan_page');
 });
 
-Route::get('/pendaftaranSiswa', function () {
-    return view('base/pendaftaranSiswa_page');
+//pendaftaran Siswa berdasarkan paket yang dipilih
+Route::get('/pendaftaranSiswaGold', function () {
+    return view('base/pendaftaranSiswaGold_page');
 });
+Route::get('/pendaftaranSiswaPrem', function () {
+    return view('base/pendaftaranSiswaPrem_page');
+});
+Route::get('/pendaftaranSiswaReg', function () {
+    return view('base/pendaftaranSiswaReg_page');
+});
+
 Route::get('/pendaftaranTutor', function () {
     return view('base/pendaftaranTutor_page');
 });
@@ -49,10 +61,10 @@ $router->get('/nexmo', function () use ($router) {
 });
 
 //Kalau menggunakan Contoller
-Route::get('/admin', 'AdminController@index');
-Route::get('/murid', 'SiswaController@index');
+// Route::get('/murid', 'SiswaController@index');
 Route::get('/landing', 'BaseController@index');
 
+//Halaman dashboard Murid
 Route::get('/murid', function () {
     return view('murid/murid');
 });
@@ -62,6 +74,14 @@ Route::get('/invoice', function () {
 Route::get('/invoicenya', function () {
     return view('murid/invoicenya');
 });
+Route::get('/profile', function () {
+    return view('murid/profile');
+});
+Route::get('/editProfile', function () {
+    return view('murid/editProfile');
+});
+
+//halaman dashboard Tutor
 Route::get('/tutor', function () {
     return view('tutor/tutor');
 });
@@ -71,16 +91,59 @@ Route::get('/jadwal', function () {
 Route::get('/pendapatan', function () {
     return view('tutor/pendapatan');
 });
+Route::get('/profile', function () {
+    return view('tutor/profile');
+});
+Route::get('/setting', function () {
+    return view('tutor/setting');
+});
+
+Route::get('/manajemenTutor', function () {
+    return view('dashboard_admin/manajemenTutor');
+});
+Route::get('/profileSiswa', function () {
+    return view('dashboard_admin/profileSiswa');
+});
+Route::get('/profileTutor', function () {
+    return view('dashboard_admin/profileTutor');
+});
+Route::get('/list_pendaftaranSiswa', function () {
+    return view('dashboard_admin/list_pendaftaran_siswa');
+});
+Route::get('/list_pendaftaranTutor', function () {
+    return view('dashboard_admin/list_pendaftaran_tutor');
+});
+Route::get('/list_pendaftaran', function () {
+    return view('dashboard_admin/list_pendaftaran_siswa2');
+});
 
 Auth::routes();
-//for role route
+
 Route::middleware(['admin'])->group(function () {
-    //Route::resource('admin', 'AdminController');
+    Route::get('/admin', 'AdminController@index');
+    Route::get('list_pendaftaranSiswa','JadwalController@admin');
+    Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
 });
 Route::middleware(['tutor'])->group(function () {
-    //Route::resource('tutor', 'TutorController');
+    Route::get('/tutor','JadwalController@tutor');
+    Route::get('jadwal','JadwalController@jadwalTutor');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(['siswa'])->group(function () {
+    Route::get('/murid','JadwalController@index');
+    Route::get('dataSiswa','SiswaController@dataSiswa');
+    Route::get('dataTutor','TutorController@dataTutor');
+});
+
+
 Route::get('/verify','VerifyController@getVerify')->name('getverify');
 Route::post('/verify','VerifyController@postVerify')->name('verify');
+
+Route::resource('pendaftaranSiswa','JadwalController');
+
+Route::get('/tutor/{id}','JadwalController@update')->name('tutor');
+
+Route::resource('dataSiswa','SiswaController');
+Route::resource('dataTutor','TutorController');
+
+

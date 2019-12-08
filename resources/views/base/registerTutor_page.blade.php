@@ -1,17 +1,12 @@
 @extends('base/script_page')
 @section('content')
-    <div class="main">
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <br>
-                <div class="col-md-12 col-md-offset-1">
-                <div class="card" style="display:block; margin-left:auto; margin-right:auto;">
-                        <div class="card-body"> 
+    <div class="main">    
+        <div class="card">
+            <div class="card-body"> 
             <form class="signup-form" role="form" method="POST" action="{{ url('/register') }}">
                 {{ csrf_field() }}
                 
-                <h2 class="form-title">Daftar Akun Imam Courses</h2>
+                <h2 class="form-title">Daftar Akun Imam Courses Daftar Tutor</h2>
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                     <label for="name">Nama Lengkap</label>
@@ -88,13 +83,10 @@
                         </span>
                     @endif
                 </div>
-
-                
-
-                            
+                <br>           
                 <div class="form-group">
                     <div class="form-title">
-                        <button type="submit" class="btn btn-primary d-block" style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">
+                        <button type="submit" class="btn btn-masuk">
                             Daftar
                         </button>
                     </div>
@@ -107,8 +99,5 @@
             </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
     </div>
 @endsection

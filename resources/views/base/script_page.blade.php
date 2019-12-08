@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   
    
     <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
  
      <!-- Site Metas -->
     <title>Imam Courses</title>  
@@ -43,9 +43,10 @@
     <div id="preloader">
         <img class="preloader" src="tema/images/ajax-loader.gif" alt="">
     </div>
-    @include('base/header_page') 
- <script src="/tema/js/all.js"></script>
- 
+    @include('base/header_page')
+    
+    @yield('content')    
+    <script src="/tema/js/all.js"></script>
     <!-- ALL PLUGINS -->
     <script src="/tema/js/custom.js"></script>
 	<script src="/tema/js/zenith.js"></script>
@@ -59,6 +60,5 @@
 			autoplaySpeed: 2000
 		});
 	</script>
-    @yield('content')
 </body>
 </html>

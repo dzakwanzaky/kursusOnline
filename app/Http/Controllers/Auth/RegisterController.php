@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use App\SendOTP;
+use Auth;
 
 class RegisterController extends Controller
 {  
@@ -30,14 +31,16 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $user = Auth::user();    
     }
 
     public function register(Request $request)
     {
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
-        return $this->registered($request,$user) ?: redirect('/verify?phone='.$request->phone);
+        return $this->registered($request,$user) ?: 
+        redirect('/verify?phone='.$request->phone);
+ 
     }
     /**
      * Get a validator for an incoming registration request.
@@ -54,6 +57,9 @@ class RegisterController extends Controller
             'phone' => ['required', 'min:10', 'max:13'],
         
         ]);
+
+        $id= $user->id; // Get current user id
+        return $user;
     }
 
     /**
@@ -82,11 +88,12 @@ class RegisterController extends Controller
                 'role'=>$data['role'],
                 'active'=>0,
             ]);
+            Auth::login($user);
         }
         
        
         if($user){
-            $user->code=SendOTP::sendOTP($user->phone);
+           //$user->code=SendOTP::sendOTP($user->phone);
             $user->save();
         }
     }
