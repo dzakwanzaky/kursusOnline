@@ -123,16 +123,16 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin', 'AdminController@index');
     Route::get('list_pendaftaranSiswa','JadwalController@admin');
     Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
+    Route::get('daftarSiswa','SiswaController@daftarSiswa');
 });
 Route::middleware(['tutor'])->group(function () {
     Route::get('/tutor','JadwalController@tutor');
     Route::get('jadwal','JadwalController@jadwalTutor');
+
 });
 
 Route::middleware(['siswa'])->group(function () {
     Route::get('/murid','JadwalController@index');
-    Route::get('dataSiswa','SiswaController@dataSiswa');
-    Route::get('dataTutor','TutorController@dataTutor');
 });
 
 
@@ -143,7 +143,9 @@ Route::resource('pendaftaranSiswa','JadwalController');
 
 Route::get('/tutor/{id}','JadwalController@update')->name('tutor');
 
-Route::resource('dataSiswa','SiswaController');
 Route::resource('dataTutor','TutorController');
+Route::resource('dataSiswa','SiswaController');
+
+
 
 
