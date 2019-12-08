@@ -28,7 +28,9 @@ Route::get('/login', function () {
 Route::get('/dataSiswa', function () {
     return view('base/dataSiswa');
 });
-
+Route::get('/infoPaket', function () {
+    return view('base/info_paket');
+});
 
 //halaman proses register akun
 Route::get('/registerSiswa', function () {
@@ -42,15 +44,20 @@ Route::get('/registerPilih', function () {
 });
 
 //pendaftaran Siswa berdasarkan paket yang dipilih
-Route::get('/pendaftaranSiswaGold', function () {
-    return view('base/pendaftaranSiswaGold_page');
-});
-Route::get('/pendaftaranSiswaPrem', function () {
-    return view('base/pendaftaranSiswaPrem_page');
-});
-Route::get('/pendaftaranSiswaReg', function () {
-    return view('base/pendaftaranSiswaReg_page');
-});
+// Route::get('pendaftaranSiswaGold', function () {
+//     return view('base/pendaftaranSiswaGold_page');
+// });
+
+Route::get('pendaftaranSiswaReg','InvoiceController@reg')->name('reguler');
+Route::get('pendaftaranSiswaPrem','InvoiceController@prem')->name('premium');
+Route::get('pendaftaranSiswaGold','InvoiceController@gold')->name('gold');
+
+// Route::get('/pendaftaranSiswaPrem', function () {
+//     return view('base/pendaftaranSiswaPrem_page');
+// });
+// Route::get('/pendaftaranSiswaReg', function () {
+//     return view('base/pendaftaranSiswaReg_page');
+// });
 
 Route::get('/pendaftaranTutor', function () {
     return view('base/pendaftaranTutor_page');

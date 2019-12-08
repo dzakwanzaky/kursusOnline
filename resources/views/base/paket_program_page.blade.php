@@ -14,6 +14,15 @@
                                 <div class="col-md-4" style="margin:140px 0 0 0;">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header grd1">
+                                        <form method="POST" action="{{ route('reguler')}}" enctype="multipart/form-data">
+                                        {{ csrf_field() }}
+                                        {{ method_field('POST') }}
+                                            <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
+                                                    required autofocus
+                                                    value="{{ Auth::user()->id }}" style="text-transform: capitalize">
+                                            <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
+                                            <input type="text" class="form-control" id="program" name="program" style="display:none" value="REGULER">
+                                            <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="2000">
                                             <h2>PAKET REGULER</h2>
                                             <h3>RP.2.000,00</h3>
                                         </div>
@@ -26,13 +35,26 @@
                                             <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
                                         </div>
                                         <div class="pricing-table-sign-up">
-                                            <a href="/pendaftaranSiswaReg" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a>
+                                            <a href="/pendaftaranSiswaReg">
+                                                <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</button>
+                                            </a>
+                                            <!-- <a href="/pendaftaranSiswaGold" type="submit" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a> -->
                                         </div>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header grd1">
+                                        <form method="POST" action="{{ route('premium')}}" enctype="multipart/form-data">
+                                        {{ csrf_field() }}
+                                        {{ method_field('PUT') }}
+                                        <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
+                                                required autofocus
+                                                value="{{ Auth::user()->id }}" style="text-transform: capitalize">
+                                        <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
+                                        <input type="text" class="form-control" id="program" name="program" style="display:none" value="PREMIUM">
+                                        <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="2000">
                                             <h2>PAKET PREMIUM</h2>
                                             <h3>Rp.2.000,00</h3>
                                         </div>
@@ -48,14 +70,28 @@
                                             <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
                                         </div>
                                         <div class="pricing-table-sign-up">
-                                            <a href="/pendaftaranSiswaPrem" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a>
+                                            <a href="/pendaftaranSiswaPrem">
+                                                <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</button>
+                                            </a>
+                                            <!-- <a href="/pendaftaranSiswaGold" type="submit" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a> -->
                                         </div>
+                                        </form>
                                     </div>
                                 </div>
 
                                 <div class="col-md-4" style="margin:140px 0 0 0;">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header grd1">
+                                        <form method="POST" action="{{ route('gold')}}" enctype="multipart/form-data">
+                                        {{ csrf_field() }}
+                                        {{ method_field('POST') }}
+                                        <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
+                                                required autofocus
+                                                value="{{ Auth::user()->id }}" style="text-transform: capitalize">
+                                        <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
+                                        <input type="text" class="form-control" id="program" name="program" style="display:none" value="GOLD">
+                                        <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="2000">
+
                                             <h2>PAKET GOLD</h2>
                                             <h3>RP.2.000,00</h3>
                                         </div>
@@ -68,8 +104,12 @@
                                             <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
                                         </div>
                                         <div class="pricing-table-sign-up">
-                                            <a href="/pendaftaranSiswaGold" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a>
+                                            <a href="/pendaftaranSiswaGold">
+                                                <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</button>
+                                            </a>
+                                            <!-- <a href="/pendaftaranSiswaGold" type="submit" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</a> -->
                                         </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div><!-- end row -->
