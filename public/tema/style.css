@@ -371,6 +371,7 @@ a img.aligncenter {
 }
 
 .btn-masuk {
+    width: 100%;
     display: block;
 	padding: 5px 20px;
 	font-size: 16px;
@@ -2369,11 +2370,11 @@ body.app_version .dev-list .widget-title small{
     color: #ffffff;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     font-size: 18px;
     cursor: pointer;
     width: 180px;
-    margin-bottom: 10px;
+    margin: auto;
     height: 50px;
 }
 .button3 {
