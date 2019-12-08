@@ -65,7 +65,7 @@ $router->get('/nexmo', function () use ($router) {
     app(Nexmo\Client::class);
 });
 
-//Kalau menggunakan Contoller
+//Kalau menggunakan Controller
 // Route::get('/murid', 'SiswaController@index');
 Route::get('/landing', 'BaseController@index');
 
@@ -97,10 +97,10 @@ Route::get('/pendapatan', function () {
     return view('tutor/pendapatan');
 });
 Route::get('/profile', function () {
-    return view('tutor/profile');
+    return view('tutor/profiletutor');
 });
-Route::get('/setting', function () {
-    return view('tutor/setting');
+Route::get('/edit', function () {
+    return view('tutor/editprofile');
 });
 
 Route::get('/manajemenTutor', function () {

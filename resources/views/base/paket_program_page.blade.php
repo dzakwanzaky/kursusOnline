@@ -13,7 +13,7 @@
                             <div class="row text-center">
                                 <div class="col-md-4" style="margin:140px 0 0 0;">
                                     <div class="pricing-table pricing-table-highlighted">
-                                        <div class="pricing-table-header grd1">
+                                        <div class="pricing-table-header">
                                         <form method="POST" action="{{  route('paketProgram.store')}}" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                         {{ method_field('POST') }}
@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
-                                        <div class="pricing-table-header grd1">
+                                        <div class="pricing-table-header">
                                         <form method="POST" action="{{ route('paketProgram.store')}}" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                 
@@ -81,7 +81,7 @@
 
                                 <div class="col-md-4" style="margin:140px 0 0 0;">
                                     <div class="pricing-table pricing-table-highlighted">
-                                        <div class="pricing-table-header grd1">
+                                        <div class="pricing-table-header">
                                         <form method="POST" action="{{ route('paketProgram.store')}}" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                         {{ method_field('POST') }}
