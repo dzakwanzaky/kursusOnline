@@ -31,13 +31,20 @@
                     <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
                             required autofocus
                             value="{{ Auth::user()->id }}" style="text-transform: capitalize">
+                    <input id="nama_murid" style="display:none" type="text" class="form-control" name="nama_murid"
+                            required autofocus
+                            value="{{ Auth::user()->name }}" style="text-transform: capitalize">
+                    <input type="text" class="form-control" id="program" name="program" style="display:none" value="GOLD">
 
+<<<<<<< HEAD
+=======
                     <input id="nama_murid" style="display:none" type="text" class="form-control" name="nama_murid"
                             required autofocus
                             value="{{ Auth::user()->name }}" style="text-transform: capitalize">
 
                     <input type="text" class="form-control" id="program" name="program" style="display:none" value="GOLD">
 
+>>>>>>> 947ddaaf5bdf8df6f3d0e7537ae1ee68a57d6a97
                     <input type="text" class="form-control" id="status" name="status" style="display:none" value="Menunggu Pembayaran">
 
                     <label for="kelas" >Kelas

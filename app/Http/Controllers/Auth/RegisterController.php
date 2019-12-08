@@ -70,30 +70,33 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        if ($data ['role'] == 'siswa'){
-            $user = User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
-                'phone'=>$data['phone'],
-                'role'=>$data['role'],
-                'active'=>0,
-            ]);
-        }else {
-            $user = User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
-                'phone'=>$data['phone'],
-                'role'=>$data['role'],
-                'active'=>0,
-            ]);
-            Auth::login($user);
-        }
-        
-       
+        //     $user = User::create([
+        //         'name' => $data['name'],
+        //         'email' => $data['email'],
+        //         'password' => Hash::make($data['password']),
+        //         'phone'=>$data['phone'],
+        //         'role'=>$data['role'],
+        //         'active'=>0,
+        //     ]);
+        //     Auth::login($user);       
+        // if($user){
+        //     $user->code=SendOTP::sendOTP($user->phone);
+        //     $user->save();
+        // }
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'phone'=>$data['phone'],
+            'role'=>$data['role'],
+            'active'=>0,
+        ]);
         if($user){
+<<<<<<< HEAD
+            //$user->code=SendOTP::sendOTP($user->phone);
+=======
            //$user->code=SendOTP::sendOTP($user->phone);
+>>>>>>> 947ddaaf5bdf8df6f3d0e7537ae1ee68a57d6a97
             $user->save();
         }
     }
