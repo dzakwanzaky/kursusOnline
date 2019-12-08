@@ -28,7 +28,9 @@ Route::get('/login', function () {
 Route::get('/dataSiswa', function () {
     return view('base/dataSiswa');
 });
-
+Route::get('/infoPaket', function () {
+    return view('base/info_paket');
+});
 
 //halaman proses register akun
 Route::get('/registerSiswa', function () {
