@@ -6,7 +6,7 @@
             <form class="signup-form" role="form" method="POST" action="{{ url('/register') }}">
                 {{ csrf_field() }}
                 
-                <h2 class="form-title">Daftar Akun Imam Courses Daftar Tutor</h2>
+                <h2 class="form-title">Daftar Akun Tutor Inofa Courses</h2>
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                     <label for="name">Nama Lengkap</label>
