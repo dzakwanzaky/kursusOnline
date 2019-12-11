@@ -7,7 +7,7 @@
             <form method="POST" action="{{ route('login')}}">
                 @csrf
 
-                <h2 class="form-title">Masuk Akun Imam Courses</h2>
+                <h2 class="form-title">Masuk Akun Inofa Courses</h2>
 
                 <label for="email">Email</label>
                 <div class="form-textbox">
