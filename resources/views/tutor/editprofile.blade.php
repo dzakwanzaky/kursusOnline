@@ -66,7 +66,7 @@
 
           <div class="form-group">
             <button type="submit" class="btn btn-md btn-success">Simpan</button>
-            <a href="/profiletutor" class="btn btn-md btn-danger">Batal</a>
+            <a href="/profile" class="btn btn-md btn-danger">Batal</a>
           </div>
 				</form>
               </div>

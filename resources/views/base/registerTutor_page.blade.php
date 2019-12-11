@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="password-confirm">Confirm Password</label>
+                    <label for="password-confirm">Konfirmasi Kata Sandi</label>
 
                     <div class="form-title">
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
