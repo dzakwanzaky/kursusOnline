@@ -140,8 +140,10 @@ Route::middleware(['siswa'])->group(function () {
     Route::get('/murid','JadwalController@index');
     Route::get('/invoicenya','ProgramController@index');
     Route::get('/invoice','ProgramController@data');
-    Route::get('/invoicenya_pdf', 'ProgramController@cetak');
+    Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
 });
+
+Route::post('/upload', 'InvoiceController@proses_upload');
 
 
 Route::get('/verify','VerifyController@getVerify')->name('getverify');

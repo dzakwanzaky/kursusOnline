@@ -61,9 +61,14 @@
                           </a>
                         </td>
                         <td>
+                        <form action="/upload" method="POST" enctype="multipart/form-data">
+					              {{ csrf_field() }}
                           <a class=" btn btn-sm btn-success" style="color:white;">
+                            <input type="file" name="file">
                             <span class="fa fa-upload"></span>
+                            <input type="submit" value="Upload" class="btn btn-primary">
                           </a>
+                        </form>
                         </td>
                         <td>
                           <a href="invoicenya_pdf" class=" btn btn-sm btn-success" style="color:white;">

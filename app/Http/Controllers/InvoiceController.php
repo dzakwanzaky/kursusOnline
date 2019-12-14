@@ -31,5 +31,23 @@ class InvoiceController extends Controller
             return redirect('/pendaftaranSiswaGold');
         }
     }
+    
+
+    public function proses_upload(Request $request){
+        $data = ModelInvoice::where('murid_id', '=', Auth::user()->id)->first();
+
+		// menyimpan data file yang diupload ke variabel $file
+        $file = $request->file('file');
+        $nama_file = time()."_".$file->getClientOriginalName();  
+      	// isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'data_file';
+        $file->move($tujuan_upload,$nama_file);
+        $data->bukti = $nama_file;
+        $data->save();
+ 
+                // upload file
+        //$file->move($tujuan_upload,$file->getClientOriginalName());
+        return redirect('/invoice');
+    }
 
 }

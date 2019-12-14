@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <style>
         body{
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
             color:#333;
             text-align:left;
             font-size:18px;
@@ -55,7 +55,7 @@
             </caption>
             <thead>
                 <tr>
-                    <th colspan="2">Pendaftaran <strong>#1</strong></th>
+                    <th colspan="2">Pendaftaran<strong>#1</strong></th>
                     <th colspan="2">
 					<?php 
                     echo date("d-m-Y")
