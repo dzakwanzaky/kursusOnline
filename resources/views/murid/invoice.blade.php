@@ -62,7 +62,7 @@
                         </td>
                         <td>
                           <a class=" btn btn-sm btn-success" style="color:white;">
-                            <span class="fa fa-envelope"></span>
+                            <span class="fa fa-upload"></span>
                           </a>
                         </td>
                         <td>
