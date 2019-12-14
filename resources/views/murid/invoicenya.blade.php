@@ -25,12 +25,14 @@
         caption{
             font-size:28px;
             margin-bottom:15px;
+            margin-right:120px;
         }
         table{
             border:1px solid #333;
             border-collapse:collapse;
             margin:0 auto;
-            width:740px;
+            margin-left:20px;
+            width:600px;
         }
         td, tr, th{
             padding:12px;
@@ -49,7 +51,7 @@
     <div class="container">
         <table>
             <caption>
-                Imam Course
+                Inova Course
             </caption>
             <thead>
                 <tr>

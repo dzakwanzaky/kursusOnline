@@ -39,12 +39,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1.</td>
-                        <td>#190930001</td>
-                        <td>Pania Paramita</td>
-                        <td>6 SD</td>
-                        <td>1</td>
-                        <td>Sendowo</td>
+                    @php $no = 1; @endphp
+                    @foreach($data as $d)
+                        <td>{{ $no++ }}. </td>
+                        <td># 
+                        @foreach($invoice as $i)
+                        {{ $i->invoice }}
+                        @endforeach
+                        </td>
+                        <td>{{ Auth::user()->name }}</td>
+                        <td>{{ $d->kelas }} SD</td>
+                        <td>{{ $d->program }}</td>
+                        <td>
+                        @foreach($alamat as $a)
+                        {{ $a->kecamatan }}, {{ $a->kota }}, {{ $a->provinsi }}
+                        @endforeach
+                        </td>
                         <td>
                           <a class=" btn btn-sm btn-danger" style="color:white;">
                             <span>Belum Konfirmasi</span>
@@ -56,10 +66,11 @@
                           </a>
                         </td>
                         <td>
-                          <a href="/invoicenya" class=" btn btn-sm btn-success" style="color:white;">
+                          <a href="invoicenya_pdf" class=" btn btn-sm btn-success" style="color:white;">
                             <span class="fa fa-download"></span>
                           </a>
                         </td>
+                        @endforeach
                     </tr>
                 </tbody>
             </table>
