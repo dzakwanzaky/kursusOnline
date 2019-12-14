@@ -35,11 +35,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12">
-            <h1 class="m-0 text-dark">Manajemen Siswa</h1><br>
-            <p class="m-0 text-dark">Berikut data pengajuan dari siswa yang mendaftar les pada Anda. 
-            Di kolom Konfirmasi, silahkan pilih <b>Setuju</b>, jika jadwal mengajar Anda sesuai dengan 
-            jadwal yang diajukan. Pilih  <b>Tolak</b>, jika jadwal mengajar Anda tidak sesuai/tabrakan 
-            dengan jadwal yang diajukan</p>
+            <h1 class="m-0 text-dark">Manajemen Murid</h1><br>
+            <p class="m-0 text-dark">Berikut data pengajuan dari murid yang mendaftar les pada Anda. 
+            Di kolom Status, silahkan klik tombol <b>Waiting</b>, jika jadwal mengajar Anda sesuai dengan 
+            jadwal yang diajukan.</p>
           </div><!-- /.col -->
           <div class="col-sm-6">
             
