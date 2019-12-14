@@ -14,7 +14,7 @@ Route::get('/tes','Controller@tes');
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('base/home_page');
 });
 Route::get('/kontak', function () {
     return view('base/kontak_page');
@@ -138,6 +138,7 @@ Route::middleware(['tutor'])->group(function () {
 
 Route::middleware(['siswa'])->group(function () {
     Route::get('/murid','JadwalController@index');
+    Route::get('/invoicenya','ProgramController@index');
 });
 
 
