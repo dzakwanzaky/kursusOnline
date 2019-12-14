@@ -139,6 +139,8 @@ Route::middleware(['tutor'])->group(function () {
 Route::middleware(['siswa'])->group(function () {
     Route::get('/murid','JadwalController@index');
     Route::get('/invoicenya','ProgramController@index');
+    Route::get('/invoice','ProgramController@data');
+    Route::get('/invoicenya_pdf', 'ProgramController@cetak');
 });
 
 
@@ -153,6 +155,7 @@ Route::resource('dataTutor','TutorController');
 Route::resource('dataSiswa','SiswaController');
 
 Route::resource('paketProgram','InvoiceController');
+//Route::resource('invoice','ProgramController');
 
 
 
