@@ -14,7 +14,7 @@ Route::get('/tes','Controller@tes');
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('base/home_page');
 });
 Route::get('/kontak', function () {
     return view('base/kontak_page');
@@ -65,7 +65,7 @@ $router->get('/nexmo', function () use ($router) {
     app(Nexmo\Client::class);
 });
 
-//Kalau menggunakan Contoller
+//Kalau menggunakan Controller
 // Route::get('/murid', 'SiswaController@index');
 Route::get('/landing', 'BaseController@index');
 
@@ -79,7 +79,7 @@ Route::get('/invoice', function () {
 Route::get('/invoicenya', function () {
     return view('murid/invoicenya');
 });
-Route::get('/profile', function () {
+Route::get('/profileMurid', function () {
     return view('murid/profile');
 });
 Route::get('/editProfile', function () {
@@ -97,10 +97,10 @@ Route::get('/pendapatan', function () {
     return view('tutor/pendapatan');
 });
 Route::get('/profile', function () {
-    return view('tutor/profile');
+    return view('tutor/profiletutor');
 });
-Route::get('/setting', function () {
-    return view('tutor/setting');
+Route::get('/edit', function () {
+    return view('tutor/editprofile');
 });
 
 Route::get('/manajemenTutor', function () {
@@ -138,6 +138,7 @@ Route::middleware(['tutor'])->group(function () {
 
 Route::middleware(['siswa'])->group(function () {
     Route::get('/murid','JadwalController@index');
+    Route::get('/invoicenya','ProgramController@index');
 });
 
 

@@ -19,7 +19,7 @@
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-header">Pania Paramita</span>
           <div class="dropdown-divider"></div>
-          <a href="/profile" class="dropdown-item">
+          <a href="/profileMurid" class="dropdown-item">
             <i class="fas fa-user"></i> Profile 
           </a>
           <a href="#" class="dropdown-item">

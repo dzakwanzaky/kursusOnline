@@ -54,7 +54,12 @@
             <thead>
                 <tr>
                     <th colspan="2">Pendaftaran <strong>#1</strong></th>
-                    <th colspan="2">2 November 2019</th>
+                    <th colspan="2">
+					<?php 
+                    echo date("d-m-Y")
+                    ?>
+                    </th>
+					</th>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -67,10 +72,13 @@
                     </td>
                     <td colspan="2">
                         <h4>Pelanggan: </h4>
-                        <p>Murid<br>
-                        Sendowo<br>
-                        081227787948 <br>
-                        murid@gmail.com
+                        <p>{{ Auth::user()->name }}<br>
+                        @php $no = 1; @endphp
+                        @foreach($alamat as $a)
+                        {{ $a->kecamatan }}, {{ $a->kota }}, {{ $a->provinsi }}
+                        @endforeach<br>
+                        {{ Auth::user()->phone }} <br>
+                        {{ Auth::user()->email }}
                         </p>
                     </td>
                 </tr>
@@ -81,8 +89,14 @@
                     <th colspan="2">Harga</th>
                 </tr>
                 <tr>
-                    <td colspan="2">Regular</td>
+                    <td colspan="2">
+                    @php $no = 1; @endphp
+                    @foreach($data as $d)
+                    {{ $d->program }}
+                    @endforeach
+                    </td>
                     <td colspan="2">Rp2000</td>
+                
                 </tr>
             </tbody>
             <tfoot>

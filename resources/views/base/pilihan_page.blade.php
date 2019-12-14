@@ -3,7 +3,7 @@
     <div class="main">
             <div class="card">
               <div class="card-body">
-              <h2 class="form-title">Daftar Akun Imam Courses</h2>
+              <h2 class="form-title">Daftar Akun Inofa Courses</h2>
               <p class="loginhere">
                 Daftar Sebagai
               </p>
