@@ -3,7 +3,7 @@
         <nav class="navbar header-nav navbar-expand-lg">
             <div class="container">
             <a class="navbar-brand" href="/landing">
-                <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="150" height="40" alt="imam Logo" href="/landing">
+                <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="140" height="30" alt="imam Logo" href="/landing">
             </a>
                 @if (Auth::guest())
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarApp" aria-controls="navbarApp" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,8 +15,8 @@
                     <ul class="navbar-nav">
                         <li><a class="nav-link" href="/landing">Beranda</a></li>
                         <li><a class="nav-link" href="/infoPaket">Program</a></li>
-                        <li><div class="btn-login" style="width:100px;"><a href="/login">Masuk</a></div></li>
-						<li><div class="btn-register" style="width:100px;"><a href="/registerPilih">Daftar</a></div></li>
+                        <li><div class="btn-login"><a href="/login">Masuk</a></div></li>
+						<li><div class="btn-register"><a href="/registerPilih">Daftar</a></div></li>
                     </ul>
                 </div>
                 @else

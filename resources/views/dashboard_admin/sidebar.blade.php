@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <span class="brand-text font-weight-light">
-        <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="150" height="40" alt="imam Logo" href="/landing" style="display:block; margin-left:auto; margin-right:auto;">
+        <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="120" height="40" alt="inofa Logo" href="/landing" style="display:block; margin-left:auto; margin-right:auto;">
       </span>
     </a>
 
@@ -11,7 +11,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block" style="margin: 0 0 0 10px;">ADMIN</a>
+          <a href="#" class="d-block" style="margin: 0 0 0 10px;">Admin</a>
         </div>
       </div>
 
