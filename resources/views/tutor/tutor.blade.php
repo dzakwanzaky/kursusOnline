@@ -99,7 +99,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             required autofocus
                             value="{{ Auth::user()->nama }}" style="text-transform: capitalize"> -->
                             
-                        <button value="Diajukan Tutor" id="status" name="status" type="submit" class=" btn btn-sm btn-primary">{{ $d->status }}</button>
+                        <button value="PICKED UP" id="status" name="status" type="submit" class=" btn btn-sm btn-primary">{{ $d->status }}</button>
                         </td>
                         </form>
                     </tr>

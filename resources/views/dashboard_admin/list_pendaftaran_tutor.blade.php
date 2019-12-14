@@ -56,7 +56,7 @@
                           {{ csrf_field() }}
                           {{ method_field('PUT') }}
                         <td>
-                        <button value="Approved" id="status" name="status" class=" btn btn-sm btn-primary">
+                        <button value="ACTIVE" id="status" name="status" class=" btn btn-sm btn-primary">
                         {{ $d->status }}</button>
                         </td>
                         </form>
