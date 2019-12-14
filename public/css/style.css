@@ -400,8 +400,8 @@ input[type=checkbox]:not(old):checked + label > span:before {
 .loginhere {
   text-align: center;
   color: #888;
-  margin-top: 10px;
-  margin-bottom: 20px; }
+  margin-top: 20px;
+  }
 
   .daftarsebagai {
     text-align: center;

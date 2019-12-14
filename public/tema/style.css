@@ -56,7 +56,8 @@ body {
     background: #e7f0fd;
     color: #999;
     font-size: 15px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     line-height: 1.80857;
 }
 
@@ -96,6 +97,8 @@ a {
     -ms-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 h3{
@@ -133,11 +136,14 @@ h2 {
 }
 
 h3 {
-    font-size: 38px; font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 38px; 
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 h4 {
-    font-size: 38px; color : #158ADF
+    font-size: 38px; color : #158ADF;
+    
 }
 
 h5 {
@@ -200,6 +206,8 @@ a,
     color: #767676;
     margin: 0;
     padding: 0;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 blockquote {
@@ -351,7 +359,7 @@ a img.aligncenter {
 }
 
 .header-nav .navbar-toggler span {
-  background: #121212;
+  background: #158adf;
 }
 
 .header-nav .navbar-brand {
@@ -387,27 +395,28 @@ a img.aligncenter {
 
 .btn-register a{
 	display: inline-block;
-	padding: 5px 20px;
+    padding: 5px 20px;
 	font-size: 16px;
-	border: 1px solid #ffffff;
+	
 	color: #ffffff;
 	background-color: #92CD16;
-	line-height: 25px;
-	float: right;
+	line-height: 28px;
     font-weight: 500;
     border-radius: 75px;
+    text-align: center;
 }
 .btn-login a{
 	display: inline-block;
-	padding: 5px 20px;
+    padding: 5px 20px;
+    margin-right: 10px;
 	font-size: 16px;
 	border: 1px solid #92CD16;
 	color: #92CD16;
 	background-color:#ffffff ;
 	line-height: 25px;
-	float: right;
     font-weight: 500;
     border-radius: 75px;
+    text-align: center;
 }
 .right-btn a:hover{
 	background-color: #C62828;
@@ -417,7 +426,6 @@ a img.aligncenter {
 
 /*Navbar Toogle*/
 .navbar-toggler {
-	background: #C62828;
 	border: none;
 	padding: 10px 6px;
 	outline: none !important;
@@ -446,12 +454,12 @@ a img.aligncenter {
 	font-size: 14px;
 }
 
-.navbar-expand-lg .navbar-nav .nav-link:hover{
+/* .navbar-expand-lg .navbar-nav .nav-link:hover{
 	background: #acf514;
 	color: #ffffff;
     border-radius: 2px;
     padding: 8px 18px;
-}
+} */
 
 .navbar-expand-lg .navbar-nav .nav-link.active{
 	background: #92CD16;
@@ -614,6 +622,7 @@ li.social-links a:hover {
 
 .navbar-nav li {
     position: relative;
+    padding : 5px;
 }
 
 .navbar-nav span {
@@ -667,7 +676,7 @@ body.app_version .header_style_01.fixed-menu{
     display: block;
     position: relative;
     overflow: hidden;
-    padding: 50px 0;
+    padding: 50px 0 0 0;
 }
 
 .noover {
@@ -745,6 +754,8 @@ body.app_version .header_style_01.fixed-menu{
     color: #999;
     font-weight: 400;
     font-size: 18px;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     line-height: 33px;
     margin: 0;
 }
@@ -1619,9 +1630,10 @@ body.app_version .customwidget li i{
 #features h4 {
     text-transform: capitalize;
     margin: 0;
-    font-size: 42px;
+    font-size: 33px;
     padding-bottom: 15px;
-    font-family: DM Sans;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 600;
 }
 
