@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <span class="brand-text font-weight-light">
-        <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="120" height="40" alt="inofa Logo" href="/landing" style="display:block; margin-left:auto; margin-right:auto;">
+        <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="120" height="43" alt="inofa Logo" href="/landing" style="display:block; margin-left:auto; margin-right:auto;">
       </span>
     </a>
 
