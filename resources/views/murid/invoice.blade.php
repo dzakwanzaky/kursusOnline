@@ -33,7 +33,7 @@
                         <th>Program</th>
                         <th>Lokasi</th>
                         <th>Status</th>
-                        <th>Konfirmasi</th>
+                        <th>Bukti Pembayaran</th>
                         <th>Unduh</th>
                     </tr>
                 </thead>
@@ -60,11 +60,20 @@
                             <span>Belum Konfirmasi</span>
                           </a>
                         </td>
+                        <form action="{{route('invoice', $d->id)}}" method="post" enctype="multipart/form-data" id="tambah_izins">
+                    {{ csrf_field() }}
+                    {{ method_field('PUT') }}
+
                         <td>
-                          <a class=" btn btn-sm btn-success" style="color:white;">
-                            <span class="fa fa-upload"></span>
-                          </a>
+                          <!-- <a class=" btn btn-sm btn-success" style="color:white;"  id="file"> -->
+                          <input type="file" class="form-control" id="file" name="file">
+                            <!-- <span class="fa fa-upload"> -->
+                            <!-- </span> -->
+                          <!-- </a> -->
+                          <button type="submit" class="btn btn-md btn-primary">Submit</button>
+
                         </td>
+                        </form>
                         <td>
                           <a href="invoicenya_pdf" class=" btn btn-sm btn-success" style="color:white;">
                             <span class="fa fa-download"></span>
@@ -86,10 +95,25 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
+  
   <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
+  <script>
+		//buat profile
+		$(function () {
+			$("#file").change(function () {
+				readURL(this);
+			});
+    	});
+    	function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.readAsDataURL(input.files[0]);
+			}
+    	}
+	</script> 
   @endsection
   @section('dataTables')
   <script>
