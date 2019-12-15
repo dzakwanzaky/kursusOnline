@@ -61,12 +61,35 @@
                           </a>
                         </td>
                         <td>
-                        <form action="/upload" method="POST" enctype="multipart/form-data">
-					              {{ csrf_field() }}
-                            <input type="file" name="file" style="float:left">
-                            <input type="submit" value="Upload" class="btn btn-primary" style="float:right;font-size:10px">
-                        </form>
+                        <a class="btn btn-sm btn-success" style="color:white;" target="_blank" data-toggle="modal" data-target="#importExcel">
+                    <span class="fa fa-upload"></span>
+                    </a>
                         </td>
+                        <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <form method="post" action="/upload" enctype="multipart/form-data">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Upload Bukti</h5>
+                            </div>
+                            <div class="modal-body">
+                        
+                              {{ csrf_field() }}
+                        
+                              <label>Pilih file</label>
+                              <div class="form-group">
+                                <input type="file" name="file" required="required">
+                              </div>
+                        
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Upload</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
                         <td>
                           <a href="invoicenya_pdf" class=" btn btn-sm btn-success" style="color:white;">
                             <span class="fa fa-download"></span>
