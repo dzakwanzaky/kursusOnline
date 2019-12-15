@@ -14,10 +14,10 @@
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-user"></i>
-          <span>Halo, Pania</span>
+          <span>Halo, {{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-header">Pania Paramita</span>
+          <span class="dropdown-header">{{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
           <div class="dropdown-divider"></div>
           <a href="/profileMurid" class="dropdown-item">
             <i class="fas fa-user"></i> Profile 
