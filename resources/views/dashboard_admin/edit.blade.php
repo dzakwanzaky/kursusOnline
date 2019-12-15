@@ -80,7 +80,7 @@
 					</div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-md btn-success">Simpan</button>
-                        <a href="/profileMurid" class="btn btn-md btn-danger">Batal</a>
+                        <a href="/profileAdmin" class="btn btn-md btn-danger">Batal</a>
                 </div>
 				</form>
               </div>
