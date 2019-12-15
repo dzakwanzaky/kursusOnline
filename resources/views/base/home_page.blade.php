@@ -92,7 +92,8 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->
-    @include('base/features_page')    
+    @include('base/features_page') 
+    @include('base/footer_page')   
     <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 @endsection
    

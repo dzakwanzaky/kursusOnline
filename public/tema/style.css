@@ -690,7 +690,7 @@ body.app_version .header_style_01.fixed-menu{
     display: block;
     position: relative;
     overflow: hidden;
-    padding: 50px 0 0 0;
+    padding: 50px;
 }
 
 .noover {
@@ -710,7 +710,7 @@ body.app_version .header_style_01.fixed-menu{
 }
 
 .section.wb {
-    background-color: #333e44;
+    background-color: #ffffff;
 }
 
 .section.lb {
@@ -1913,12 +1913,11 @@ body.app_version .bootstrap-select .btn-light:hover{
 }
 
 .copyrights {
-    border-top: 1px dashed rgba(255, 255, 255, 0.1);
     background-color: #1f1f1f;
     box-sizing: border-box;
     width: 100%;
     text-align: left;
-    padding: 50px 60px;
+    padding: 30px 60px;
     overflow: hidden;
 }
 
@@ -1938,24 +1937,23 @@ body.app_version .bootstrap-select .btn-light:hover{
 .footer-distributed .footer-links a {
     display: inline-block;
     line-height: 1.8;
-    margin: 0 10px 0 10px;
     text-decoration: none;
 }
 
 .footer-distributed .footer-company-name {
-    font-weight: 300;
     margin: 0 10px;
     color: #666;
     padding: 0;
-	text-align: center;
+    text-align: center;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .footer-distributed .footer-company-name a{
-	color: #ffffff;
+	color: #158ADF;
 }
 
 .footer-distributed .footer-company-name a:hover{
-	color: #AD1457;
+	color: #92CD16;
 }
 
 
