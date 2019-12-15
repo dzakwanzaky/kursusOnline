@@ -51,11 +51,14 @@
     <div class="container">
         <table>
             <caption>
-                Inova Course
+                Inofa Course
             </caption>
             <thead>
                 <tr>
-                    <th colspan="2">Pendaftaran<strong>#1</strong></th>
+                    <th colspan="2"><strong>#</strong>
+                    @foreach($invoice as $i)
+                    {{ $i->invoice }}
+                    @endforeach</th>
                     <th colspan="2">
 					<?php 
                     echo date("d-m-Y")
@@ -66,10 +69,10 @@
                 <tr>
                     <td colspan="2">
                         <h4>Bimbingan Belajar: </h4>
-                        <p>Imam Course<br>
+                        <p>Inofa Course<br>
                             Jl Persatuan<br>
                             085343966997<br>
-                            imamcourse@web.id
+                            inofacourse.co.id
                         </p>
                     </td>
                     <td colspan="2">
