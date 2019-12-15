@@ -78,10 +78,3 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
   @endsection
-  @section('dataTables')
-  <script>
-         $(document).ready( function () {
-           $('#jadwal').DataTable();
-           });
-      </script>
-  @endsection

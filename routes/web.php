@@ -133,6 +133,7 @@ Route::middleware(['admin'])->group(function () {
 Route::middleware(['tutor'])->group(function () {
     Route::get('/tutor','JadwalController@tutor');
     Route::get('jadwal','JadwalController@jadwalTutor');
+    Route::get('profile','TutorController@profileTutor');
 
 });
 
@@ -140,10 +141,10 @@ Route::middleware(['siswa'])->group(function () {
     Route::get('/murid','JadwalController@index');
     Route::get('/invoicenya','ProgramController@index');
     Route::get('/invoice','ProgramController@data');
-    Route::get('/invoicenya_pdf', 'ProgramController@cetak');
-    Route::post('/invoice', 'InvoiceController@proses_upload');
-
+    Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
 });
+
+Route::post('/upload', 'InvoiceController@proses_upload');
 
 
 Route::get('/verify','VerifyController@getVerify')->name('getverify');

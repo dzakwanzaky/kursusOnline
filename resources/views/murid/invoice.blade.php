@@ -60,18 +60,23 @@
                             <span>Belum Konfirmasi</span>
                           </a>
                         </td>
-                        <form action="{{route('invoice', $d->id)}}" method="post" enctype="multipart/form-data" id="tambah_izins">
-                    {{ csrf_field() }}
-                    {{ method_field('PUT') }}
 
                         <td>
-                          <!-- <a class=" btn btn-sm btn-success" style="color:white;"  id="file"> -->
-                          <input type="file" class="form-control" id="file" name="file">
-                            <!-- <span class="fa fa-upload"> -->
-                            <!-- </span> -->
-                          <!-- </a> -->
-                          <button type="submit" class="btn btn-md btn-primary">Submit</button>
+                        @foreach($data as $d)
+                        <a href="{{asset('public/file')}}" target="_blank">
+						<img width="150px" height="200px" src="{{asset('public/file')}}" style="display:block;margin-left:auto;margin-right:auto">
+						</a>
+            @endforeach
 
+                        <form action="/upload" method="POST" enctype="multipart/form-data">
+					              {{ csrf_field() }}
+                        
+                          <a class=" btn btn-sm btn-success" style="color:white;">
+                            <input type="file" name="file">
+                            <span class="fa fa-upload"></span>
+                            <input type="submit" value="Upload" class="btn btn-primary">
+                          </a>
+                        </form>
                         </td>
                         </form>
                         <td>
@@ -100,25 +105,4 @@
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
-  <script>
-		//buat profile
-		$(function () {
-			$("#file").change(function () {
-				readURL(this);
-			});
-    	});
-    	function readURL(input) {
-			if (input.files && input.files[0]) {
-				var reader = new FileReader();
-				reader.readAsDataURL(input.files[0]);
-			}
-    	}
-	</script> 
-  @endsection
-  @section('dataTables')
-  <script>
-         $(document).ready( function () {
-           $('#jadwal').DataTable();
-           });
-      </script>
   @endsection

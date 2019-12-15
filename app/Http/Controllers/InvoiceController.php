@@ -32,20 +32,17 @@ class InvoiceController extends Controller
             return redirect('/pendaftaranSiswaGold');
         }
     }
+    
 
-    public function proses_upload(Request $request, $id)
-
-    {
-            $data = ModelKaryawan::where('id',$id)->first();
-            $photoFileName = 'avatar-'.time().'.'.request()->file->getClientOriginalExtension();
-            $path = asset('uploads').'/'.$photoFileName;
-            $data->file = $path;
-            request()->photo->move(public_path('uploads'), $photoFileName);
-            $data->save();
-            return redirect('/invoice');   
+    public function proses_upload(Request $request){
+        $data = ModelInvoice::where('murid_id', '=', Auth::user()->id)->first();
+        $file = $request->file('file');
+        $nama_file = time()."_".$file->getClientOriginalName();  
+        $tujuan_upload = 'data_file';
+        $file->move($tujuan_upload,$nama_file);
+        $data->file = $nama_file;
+        $data->save();
+        return redirect('/invoice');
     }
-
-
-
 
 }

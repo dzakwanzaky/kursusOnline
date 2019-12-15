@@ -57,7 +57,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <tr>
                         
                         <th>Program</th>
-                        <th>Jumlah Siswa</th>
+                        <th>Jumlah Murid</th>
                         <th>Total Pendapatan</th>
                         
                     </tr>
