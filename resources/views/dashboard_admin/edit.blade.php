@@ -5,23 +5,25 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-	  <div class="content-header">
+	 <!-- Content Wrapper. Contains page content -->
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-md-12 col-md-offset-6" >
             <div class="box box-primary">
                 <div class="container-fluid">
                 <div class="row mb-2">
-					        <div class="col-sm-6">
-						        <p style="font-size:24px">Profile Siswa</p>
+					  <div class="col-sm-6">
+						  <p style="font-size:24px">Profile Admin</p>
 					  </div>
                         <div class="col-sm-6">
-                            <ol class="breadcrumb float-md-right" style="font-size:14px">
+                            <ol class="breadcrumb float-sm-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/daftarSiswa">Siswa</a>
+                                    <a href="/admin">Admin</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Profile Siswa
+                                    Profile Admin
                                 </li>
                             </ol>
                         </div>			
@@ -41,6 +43,11 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
+                <!-- <div class="form-group">
+                    <button type="submit" class="btn-edit" style="margin-left:auto;">
+                        Edit
+                    </button>
+                </div> -->
                 <div class="form-group">
                     <div class="form-group">
                         <label for="">Foto :</label>
@@ -54,23 +61,27 @@
 
 					<div class="form-group">
 						<label for="">Nama Lengkap :</label>
-						<input type="text" class="form-control" id="nama" name="nama" value="Pania Paramita Andika" disabled>
+						<input type="text" class="form-control" id="nama" name="nama" value="Pania Paramita Andika">
 					</div>
 
 					<div class="form-group">
 						<label for="">No Telepon :</label>
-						<input type="text" class="form-control" id="no" name="no" value="081218099939" disabled>
+						<input type="text" class="form-control" id="no" name="no" value="081218099939">
 					</div>
 
 					<div class="form-group">
 						<label for="">Email :</label>
-						<input type="text" class="form-control" id="email" name="email" value="vania.paramita23@gmail.com" disabled>
+						<input type="text" class="form-control" id="email" name="email" value="vania.paramita23@gmail.com">
 					</div>
 
 					<div class="form-group">
 						<label for="">Kata Sandi :</label>
-						<input type="password" class="form-control" id="password" name="password" value="vania.p.a15" disabled> 
+						<input type="password" class="form-control" id="password" name="password" value="vania.p.a15"> 
 					</div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-md btn-success">Simpan</button>
+                        <a href="/profileAdmin" class="btn btn-md btn-danger">Batal</a>
+                </div>
 				</form>
               </div>
             </div>

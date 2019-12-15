@@ -85,6 +85,9 @@ Route::get('/profileMurid', function () {
 Route::get('/editProfile', function () {
     return view('murid/editProfile');
 });
+Route::get('/editMurid', function () {
+    return view('murid/editMuridLogin');
+});
 
 //halaman dashboard Tutor
 Route::get('/tutor', function () {
@@ -102,7 +105,11 @@ Route::get('/profile', function () {
 Route::get('/edit', function () {
     return view('tutor/editprofile');
 });
+Route::get('/editTutor', function () {
+    return view('tutor/editTutorLogin');
+});
 
+//DASHBOARD ADMIN
 Route::get('/manajemenTutor', function () {
     return view('dashboard_admin/manajemenTutor');
 });
@@ -112,14 +119,17 @@ Route::get('/profileSiswa', function () {
 Route::get('/profileTutor', function () {
     return view('dashboard_admin/profileTutor');
 });
+Route::get('/profileAdmin', function () {
+    return view('dashboard_admin/profileAdmin');
+});
 Route::get('/list_pendaftaranSiswa', function () {
     return view('dashboard_admin/list_pendaftaran_siswa');
 });
 Route::get('/list_pendaftaranTutor', function () {
     return view('dashboard_admin/list_pendaftaran_tutor');
 });
-Route::get('/list_pendaftaran', function () {
-    return view('dashboard_admin/list_pendaftaran_siswa2');
+Route::get('/editAdmin', function () {
+    return view('dashboard_admin/edit');
 });
 
 Auth::routes();

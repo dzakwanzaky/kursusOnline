@@ -19,9 +19,12 @@
           <span>Halo, {{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-header">Welcome, Admin</span>
+          <span class="dropdown-header">{{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
           <div class="dropdown-divider"></div>
-          <a href="{{ url('/landing') }}" class="nav-link btn-login"
+          <a href="/profileAdmin" class="dropdown-item">
+            <i class="fas fa-user"></i> Profile 
+          </a>
+          <a href="{{ url('/landing') }}" class="dropdown-item"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
           <i class="fas fa-sign-out-alt"></i>Logout 
@@ -29,6 +32,7 @@
           <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                       {{ csrf_field() }}
                 </form>
+      <br>
       </li>
       </ul>
   </nav>

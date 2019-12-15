@@ -55,9 +55,10 @@
             </caption>
             <thead>
                 <tr>
-                    <th colspan="2">@foreach($invoice as $i)
-                        {{ $i->invoice }}
-                        @endforeach<strong>#1</strong></th>
+                    <th colspan="2"><strong>#</strong>
+                    @foreach($invoice as $i)
+                    {{ $i->invoice }}
+                    @endforeach</th>
                     <th colspan="2">
 					<?php 
                     echo date("d-m-Y")

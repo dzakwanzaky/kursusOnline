@@ -44,7 +44,7 @@ class ProgramController extends Controller
         $alamat = ModelSiswa::where('id', '=', Auth::user()->id)->get();
         $invoice = ModelInvoice::where('murid_id', '=', Auth::user()->id)->get();
 
-        $pdf = PDF::loadView('murid/invoicenya', ['data'=>$data], ['alamat'=>$alamat], ['invoice'=>$invoice])->setPaper('A4');
+        $pdf = PDF::loadView('murid/invoicenya', ['data'=>$data, 'alamat'=>$alamat, 'invoice'=>$invoice])->setPaper('A4');
         return $pdf->stream('invoice');
     }
 }

@@ -98,11 +98,11 @@ body.app_version .cac {
 body.app_version .dmtop,
 body.app_version .footer,
 body.app_version .affix {
-    background-color: #201b25;
+    background-color: #333e44;
 }
 
 body.app_version .copyrights {
-    background-color: #1c1721;
+    background-color: #2e383d;
 }
 
 body.app_version .footer-distributed form input {
@@ -133,7 +133,7 @@ body.app_version .cac a h3,
 body.app_version .footer-distributed form input,
 body.app_version .footer-distributed .footer-company-name,
 body.app_version .footer {
-    color: #736e78;
+    color: #ffffff;
 }
 
 body.app_version .footer-distributed form input::-webkit-input-placeholder {

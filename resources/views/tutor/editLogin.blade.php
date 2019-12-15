@@ -1,27 +1,24 @@
-@extends('dashboard_admin/base')
+@extends('tutor/base')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-	  <div class="content-header">
-      <div class="container-fluid">
         <div class="row mb-2">
-        <div class="col-md-12 col-md-offset-6" >
+        <div class="col-md-8 col-md-offset-6" >
             <div class="box box-primary">
                 <div class="container-fluid">
                 <div class="row mb-2">
-					        <div class="col-sm-6">
-						        <p style="font-size:24px">Profile Siswa</p>
+					  <div class="col-sm-5">
+						  <p style="font-size:24px">Profile Tutor</p>
 					  </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-md-right" style="font-size:14px">
+                        <div class="col-sm-5">
+                            <ol class="breadcrumb float-sm-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/daftarSiswa">Siswa</a>
+                                    <a href="/tutor">Tutor</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Profile Siswa
+                                    Profile Tutor
                                 </li>
                             </ol>
                         </div>			
@@ -44,13 +41,8 @@
                 <div class="form-group">
                     <div class="form-group">
                         <label for="">Foto :</label>
-                        <img width="200px" height="200px" src="/tema/images/bimbel.jpg" style="display:block;margin-left:auto;margin-right:auto">
+                        <img width="200px" height="200px" src="/tema/uploads/testi_02.png" style="display:block;margin-left:auto;margin-right:auto">
                     </div>
-					<!-- <label for="nama">Foto :</label>
-					<div> <a href="#" target="_blank">
-						<img width="150px" height="200px" src="/tema/images/bimbel.jpg" style="display:block;margin-left:auto;margin-right:auto">
-						</a>
-					</div> -->
 
 					<div class="form-group">
 						<label for="">Nama Lengkap :</label>
@@ -71,6 +63,11 @@
 						<label for="">Kata Sandi :</label>
 						<input type="password" class="form-control" id="password" name="password" value="vania.p.a15" disabled> 
 					</div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-md btn-success">Simpan</button>
+            <a href="/profile" class="btn btn-md btn-danger">Batal</a>
+          </div>
 				</form>
               </div>
             </div>
@@ -84,8 +81,5 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
-</div>
-</div>
-</div>
-    <!-- /.content-header -->
-@endsection
+ 
+  @endsection

@@ -101,7 +101,9 @@
             </table>
               </div>
             </div>
-
+            @foreach($invoice as $i)
+            <img width="400px" src="{{ url('/data_file/'.$i->bukti) }}">
+            @endforeach
             
           </div>
           <!-- /.col-md-6 -->

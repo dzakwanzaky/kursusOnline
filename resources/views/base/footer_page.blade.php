@@ -4,54 +4,46 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div class="widget clearfix">
                         <div class="widget-title">
-                            <img src="tema/images/logos/logo-app.png" alt="">
-                            <small>App Landing Template</small>                        </div>
-                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis montes.</p>
-                        <p>Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis montes.</p>
-                    </div><!-- end clearfix -->
+                            <img src="{{('/tema/images/inofaLogo2.png')}}" alt="inofalogo">
+                        </div>
+                        </div><!-- end clearfix -->
                 </div><!-- end col -->
 
-                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-1 col-md-6 col-sm-12 col-xs-12">
                     <div class="widget clearfix">
-                        <div class="widget-title">
-                            <h3>Contact Details</h3>
-                        </div>
-
-                        <ul class="footer-links">
-                            <li><a href="mailto:#">info@yoursite.com</a></li>
-                            <li><a href="#">www.yoursite.com</a></li>
-                            <li>91 Leeton Ridge Lane Bettendorf, IA 52722</li>
-                            <li>+61 3 8376 6000</li>
-                        </ul><!-- end links -->
+                        
                     </div><!-- end clearfix -->
                 </div><!-- end col -->
 
                 <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                     <div class="footer-distributed widget clearfix">
-                        <div class="widget-title">
-                            <h3>Newsletter</h3>
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                    <div class="widget-title">
+                            <h3>KONTAK KAMI</h3>
                         </div>
-						<div class="footer-right">
-							<form method="get" action="#">
-								<input placeholder="Subscribe our newsletter.." name="search">
-								<i class="fa fa-envelope-o"></i>
-							</form>
-						</div>
+
+                        <ul class="footer-links">
+                            <li><a>inofacourse.co.id</a></li>
+                            <li><a>Jl. Yacaranda, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</a></li>
+                            <li><a href="#" class="fa fa-whatsapp"> &nbsp; 081218099939</a></li>
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+                <div class="col-lg-1 col-md-6 col-sm-12 col-xs-12">
+                    <div class="widget clearfix">
+                        
                     </div><!-- end clearfix -->
                 </div><!-- end col -->
 
-                <div class="col-lg-2 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                     <div class="widget clearfix">
                         <div class="widget-title">
-                            <h3>Social</h3>
+                            <h3>IKUTI KAMI DI</h3>
                         </div>
                         <ul class="footer-links">
-                            <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
-                            <li><a href="#"><i class="fa fa-github"></i> Github</a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
-                            <li><a href="#"><i class="fa fa-dribbble"></i> Dribbble</a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i> Pinterest</a></li>
+                            <li><a href="{{url('https://facebook.com')}}"><i class="fa fa-facebook"></i> Facebook</a></li>
+                            <li><a href="{{url('https://instagram.com')}}"><i class="fa fa-instagram"></i> Instagram</a></li>
+                            <li><a href="{{url('https://twitter.com')}}"><i class="fa fa-twitter"></i> Twitter</a></li>
+                            <li><a href="{{url('https://youtube.com')}}"><i class="fa fa-youtube"></i> Youtube</a></li>
                         </ul><!-- end links -->
                     </div><!-- end clearfix -->
                 </div><!-- end col -->
@@ -63,19 +55,7 @@
         <div class="container">
             <div class="footer-distributed">
                 <div class="footer-left">                    
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">Appfast</a> Design By : 
-					<a href="https://html.design/">html design</a></p>
+                    <p class="footer-company-name">&copy; <a href="/landing">Inofa Course</a>. All rights reserved  </p>
                 </div>
             </div>
         </div><!-- end container -->
-    </div><!-- end copyrights -->
-    <div class="copyrights">
-        <div class="container">
-            <div class="footer-distributed">
-                <div class="footer-left">                    
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">Appfast</a> Design By : 
-					<a href="https://html.design/">html design</a></p>
-                </div>
-            </div>
-        </div><!-- end container -->
-    </div><!-- end copyrights -->
