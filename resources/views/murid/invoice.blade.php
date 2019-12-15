@@ -63,11 +63,8 @@
                         <td>
                         <form action="/upload" method="POST" enctype="multipart/form-data">
 					              {{ csrf_field() }}
-                          <a class=" btn btn-sm btn-success" style="color:white;">
-                            <input type="file" name="file">
-                            <span class="fa fa-upload"></span>
-                            <input type="submit" value="Upload" class="btn btn-primary">
-                          </a>
+                            <input type="file" name="file" style="float:left">
+                            <input type="submit" value="Upload" class="btn btn-primary" style="float:right;font-size:10px">
                         </form>
                         </td>
                         <td>
