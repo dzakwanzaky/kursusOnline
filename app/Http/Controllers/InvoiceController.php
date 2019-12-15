@@ -34,7 +34,7 @@ class InvoiceController extends Controller
     
 
     public function proses_upload(Request $request){
-        $data = ModelInvoice::where('murid_id', '=', Auth::user()->id)->first();
+        if($data = ModelInvoice::where('murid_id', '=', Auth::user()->id)->first()){
 
 		// menyimpan data file yang diupload ke variabel $file
         $file = $request->file('file');
@@ -48,6 +48,7 @@ class InvoiceController extends Controller
                 // upload file
         //$file->move($tujuan_upload,$file->getClientOriginalName());
         return redirect('/invoice');
+        }
     }
 
 }

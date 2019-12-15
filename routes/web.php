@@ -143,7 +143,7 @@ Route::middleware(['siswa'])->group(function () {
     Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
 });
 
-Route::post('/upload', 'InvoiceController@proses_upload');
+Route::post('upload', 'InvoiceController@proses_upload')->name('upload');
 
 
 Route::get('/verify','VerifyController@getVerify')->name('getverify');
