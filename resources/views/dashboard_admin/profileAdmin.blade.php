@@ -13,15 +13,15 @@
                 <div class="container-fluid">
                 <div class="row mb-2">
 					        <div class="col-sm-6">
-						        <p style="font-size:24px">Profile Siswa</p>
+						        <p style="font-size:24px">Profile Admin</p>
 					  </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-md-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/daftarSiswa">Siswa</a>
+                                    <a href="/admin">Admin</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Profile Siswa
+                                    Profile Admin
                                 </li>
                             </ol>
                         </div>			
@@ -42,6 +42,9 @@
             <div class="card">
               <div class="card-body">
                 <div class="form-group">
+                    <a class="btn-edit" style="margin-left:auto;" href="/editAdmin">
+                       Edit profile
+                    </a>
                     <div class="form-group">
                         <label for="">Foto :</label>
                         <img width="200px" height="200px" src="/tema/images/bimbel.jpg" style="display:block;margin-left:auto;margin-right:auto">
