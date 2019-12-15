@@ -57,14 +57,14 @@
                       </form>
 
                         <td>
-                          <a href="/invoicenya" class=" btn btn-sm btn-warning">
+                          <!--<a href="/invoicenya" class=" btn btn-sm btn-warning">
                             <span class="fa fa-download"></span>
+                          </a> -->
+                          <a href="/profileSiswa" class=" btn btn-sm btn-danger" style="color:white;">
+                          <span class="fa fa-trash"></span>  
                           </a>
                           <a href="/profileSiswa" class=" btn btn-sm btn-primary">
-                            <span>PROFILE</span>
-                          <a href="/profileSiswa" class=" btn btn-sm btn-danger" style="color:white;">
-                            <span>HAPUS</span>  
-                          </a>
+                            <span>DETAIL</span>
                         </td>
                     </tr>
                     @endforeach
