@@ -61,17 +61,9 @@
                           </a>
                         </td>
                         <td>
-<<<<<<< HEAD
                         <a class="btn btn-sm btn-success" style="color:white;" target="_blank" data-toggle="modal" data-target="#importExcel">
                     <span class="fa fa-upload"></span>
                     </a>
-=======
-                        <form action="/upload" method="POST" enctype="multipart/form-data">
-					              {{ csrf_field() }}
-                            <input type="file" name="file" style="float:left">
-                            <input type="submit" value="Upload" class="btn btn-primary" style="float:right;font-size:10px">
-                        </form>
->>>>>>> 6cb050c46c9e482b1bc5cab06f8304b25a6fb862
                         </td>
                         <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
