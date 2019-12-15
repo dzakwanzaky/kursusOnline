@@ -61,9 +61,15 @@
                           </a>
                         </td>
                         <td>
+                      @foreach($invoice as $i)
+                      @if($i->bukti==null)
                         <a class="btn btn-sm btn-success" style="color:white;" target="_blank" data-toggle="modal" data-target="#importExcel">
-                    <span class="fa fa-upload"></span>
+                        <span class="fa fa-upload"></span>
                     </a>
+                      @else
+                      <p>Terupload</p>
+                      @endif
+                    @endforeach
                         </td>
                         <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
@@ -101,10 +107,6 @@
             </table>
               </div>
             </div>
-            @foreach($invoice as $i)
-            <img width="400px" src="{{ url('/data_file/'.$i->bukti) }}">
-            @endforeach
-            
           </div>
           <!-- /.col-md-6 -->
           

@@ -14,25 +14,31 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
                     <ul class="navbar-nav">
                         <li><a class="nav-link" href="/landing">Beranda</a></li>
-                        <li><a class="nav-link" href="#paket">Program</a></li>
+                        <li><a class="nav-link" href="/infoPaket">Program</a></li>
                         <li><div class="btn-login"><a href="/login">Masuk</a></div></li>
 						<li><div class="btn-register"><a href="/registerPilih">Daftar</a></div></li>
                     </ul>
                 </div>
                 @else
-                <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
-                    <ul class="navbar-nav">
-                    <li class="nav-item">
-                    <a href="/landing" class="nav-link btn-login"
+                    <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                            <span>Halo, {{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <span class="dropdown-header" style="text-transform: uppercase;text-align:center">{{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
+                        <div class="dropdown-divider"></div>
+                        <a href="/murid" class="dropdown-item">
+                            Dashboard
+                        </a>
+                        <a href="/landing" class="dropdown-item"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                        LOGOUT
+                            Logout
                         </a>
                     <form id="logout-form" action="/logout" method="POST" style="display: none;">
                       {{ csrf_field() }}
                 </form>
-              </li></ul>
-                </div>
+              </li>
                 @endif
             </div>
         </nav>
