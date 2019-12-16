@@ -2420,6 +2420,23 @@ body.app_version .dev-list .widget-title small{
     margin-bottom: 10px;
 }
 
+.button4{
+    background-color: #c8d3db;
+    font-weight:bold;
+    border: 0.5px solid;
+    color: #ffffff;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 70%;
+    margin:auto;
+    margin-bottom: 5px;
+    height: 84px;
+}
+
 .register-page__btn {
     margin: 20px;
 }

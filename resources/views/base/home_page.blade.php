@@ -20,7 +20,7 @@
     <div id="paket" class="section lb">
         <div class="container">
             <div class="section-title text-center">
-                <h4>Program Imam Course</h4>
+                <h4>Program Inofa Course</h4>
             </div><!-- end title -->
 
             <div class="row">
@@ -92,6 +92,56 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->
+    <div id="bayar" class="section lb">
+        <div class="container">
+            <div class="section-title text-center">
+                <h4>Cara Bayar Kursus di Inofa Course</h4><br>
+                <li class="nav-item dropdown">
+                <p style="text-align:left;margin-left:15%">Transfer Bank/Transfer Virtual Account</p>
+                <a class="nav-link button4" data-toggle="dropdown" href="#">
+                    <img src="https://bimbel.ruangguru.com/hubfs/Bank_Central_Asia.png" style="width:58px;">
+                <br>Bank Transfer BCA
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg">
+                <ol>
+                    <li>Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
+                    <li>Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
+                    <li>Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
+                    <li>Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
+                    <li>Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                </ol>
+            </div><!-- end title -->
+            <a class="nav-link button4" data-toggle="dropdown" href="#" style="margin-buttom:10px">
+                    <img src="https://bimbel.ruangguru.com/hubfs/Bank_Central_Asia.png" style="width:58px;">
+                <br>Bank Transfer Mandiri
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg">
+                <ol>
+                    <li>Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
+                    <li>Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
+                    <li>Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
+                    <li>Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
+                    <li>Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                </ol>
+            </div>
+            <li class="nav-item dropdown" style="margin-bottom:10%">
+                <p style="text-align:left;margin-left:15%">Minimarket</p>
+                <a class="nav-link button4" data-toggle="dropdown" href="#">
+                    <img src="https://bimbel.ruangguru.com/hubfs/Indomaret.png" style="width:58px;">
+                <br>Pembayaran Via Indomaret
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg">
+                <ol>
+                    <li>Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
+                    <li>Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
+                    <li>Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
+                    <li>Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
+                    <li>Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                </ol>
+            </div><!-- end title -->
+            </div>
+        </div>
+    </div>
     @include('base/features_page') 
     @include('base/footer_page')   
     <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
