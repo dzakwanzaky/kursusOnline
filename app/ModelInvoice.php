@@ -11,4 +11,10 @@ class ModelInvoice extends Model
     protected $fillable = [
         'id', 'invoice', 'murid_id', 'program', 'harga', 'file'
     ];
+
+    public function data()
+    {
+    	return $this->belongsTo('App\ModelSiswa', 'id');
+    }
+   
 }

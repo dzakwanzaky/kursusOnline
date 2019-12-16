@@ -56,20 +56,16 @@
                         @endforeach
                         </td>
                         <td>
+                        @foreach($alamat as $a)
                           <a class=" btn btn-sm btn-danger" style="color:white;">
-                            <span>Belum Konfirmasi</span>
+                            <span> {{ $a->status }}</span>
                           </a>
+                        @endforeach
                         </td>
 
                         <td>
-                              
-                        @foreach($invoice as $i)
-                        <a href="{{ url('/data_file/'.$i->file) }} " target="_blank">
-                           <img width="400px" src="{{ url('/data_file/'.$i->file) }}"  target="_blank">
-                        </a>
-                            @endforeach
                       @foreach($invoice as $i)
-                      @if($i->bukti==null)
+                      @if($i->file==null)
                         <a class="btn btn-sm btn-success" style="color:white;" target="_blank" data-toggle="modal" data-target="#importExcel">
                         <span class="fa fa-upload"></span>
                     </a>
@@ -86,7 +82,6 @@
                               <h5 class="modal-title" id="exampleModalLabel">Upload Bukti</h5>
                             </div>
                             <div class="modal-body">
-                      
                         
                               {{ csrf_field() }}
                         
@@ -95,14 +90,15 @@
                                 <input type="file" name="file" required="required">
                               </div>
                         
-                          <a class=" btn btn-sm btn-success" style="color:white;">
-                            <!-- <input type="file" name="file"> -->
-                            <span class="fa fa-upload"></span>
-                            <input type="submit" value="Upload" class="btn btn-primary">
-                          </a>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Upload</button>
+                            </div>
+                          </div>
                         </form>
-                        </td>
-                        </form>
+                      </div>
+                    </div>
                         <td>
                           <a href="invoicenya_pdf" class=" btn btn-sm btn-success" style="color:white;">
                             <span class="fa fa-download"></span>

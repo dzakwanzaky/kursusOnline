@@ -139,6 +139,8 @@ Route::middleware(['admin'])->group(function () {
     Route::get('list_pendaftaranSiswa','JadwalController@admin');
     Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
     Route::get('daftarSiswa','SiswaController@daftarSiswa');
+    Route::get('manajemenTutor','TutorController@manajemenTutor');
+
 });
 Route::middleware(['tutor'])->group(function () {
     Route::get('/tutor','JadwalController@tutor');

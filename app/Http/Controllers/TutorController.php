@@ -15,9 +15,9 @@ class TutorController extends Controller
         $this->middleware('auth');
     }
     
-    public function daftarTutor(){
+    public function manajemenTutor(){
         $data = ModelTutor::all();
-        return view('dashboard_admin.daftarTutor', compact('data'));
+        return view('dashboard_admin.manajemenTutor', compact('data'));
     }
 
     public function index(){
@@ -64,10 +64,13 @@ class TutorController extends Controller
     {
         $data = ModelTutor::where('id',$id)->first();
         $data->nama_tutor = $request->nama_tutor;
+        $data->pendidikan = $request->pendidikan;
+        $data->mata_pelajaran = $request->mata_pelajaran;
         $data->provinsi = $request->kota;
         $data->kecamatan = $request->kecamatan;
+        $data->provinsi = $request->provinsi;
         $data->status = $request->status;
         $data->save();
-        return redirect('profile')->withMessage('Berhasil Konfirmasi');
+        return redirect('manajemenTutor')->withMessage('Berhasil Konfirmasi');
     }
 }

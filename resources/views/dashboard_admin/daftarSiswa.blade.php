@@ -30,11 +30,10 @@
 
                   <th>No.</th>
                   <th>Nama Lengkap</th>
-                  <th>No Telepon</th>
                   <th>Jenis Kelamin</th>
                   <th>Alamat</th>
                   <th>Status</th>
-                  <th>Aksi</th>
+                  <th>Bukti Pembayaran</th>
                </tr>
               </thead>
               <tbody>
@@ -43,31 +42,33 @@
                     @foreach($data as $d)
                         <td>{{ $no++ }}</td>
                         <td>{{ $d->nama_siswa }}</td>
-                        <td>{{ $d->no_telepon }}</td>
                         <td>{{ $d->jenis_kelamin }}</td>
                         <td>{{ $d->kota }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
 
                       <form action="{{ route('dataSiswa.update', $d->id) }}" method="post" enctype="multipart/form-data">
                           {{ csrf_field() }}
                           {{ method_field('PUT') }}
+                         
+
                         <td>
-                        <button value="Aktif" id="status" name="status" class=" btn btn-sm btn-success" style="text-align:center"> 
+                        <input style="display:none" type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="{{ $d->nama_siswa }}">
+                        <input style="display:none" type="text" class="form-control" id="provinsi" name="provinsi" value="{{ $d->provinsi }}">
+                          <input style="display:none" type="text" class="form-control" id="kota" name="kota" value="{{ $d->kota }}">
+                          <input style="display:none" type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{ $d->kecamatan }}">
+                        <button value="ACTIVE" id="status" name="status" type="submit" class=" btn btn-sm btn-primary" style="text-align:center"> 
                         {{ $d->status }}</button>
                         </td>
                       </form>
-
+                    
                         <td>
-                          <!--<a href="/invoicenya" class=" btn btn-sm btn-warning">
-                            <span class="fa fa-download"></span>
-                          </a> -->
-                          <a href="/profileSiswa" class=" btn btn-sm btn-danger" style="color:white;">
-                          <span class="fa fa-trash"></span>  
+                        <a href="{{ url('/data_file/'.$d->files->file) }}" target="_blank">
+                          <img width="100px" src="{{ url('/data_file/'.$d->files->file) }}">
                           </a>
-                          <a href="/profileSiswa" class=" btn btn-sm btn-primary">
-                            <span>DETAIL</span>
                         </td>
+
                     </tr>
                     @endforeach
+
                 </tbody>
           </table>
               </div>

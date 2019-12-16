@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\ModelSiswa;
 use Auth;
 use App\User;
+use App\ModelInvoice;
 
 class SiswaController extends Controller
 {
@@ -17,7 +18,8 @@ class SiswaController extends Controller
     }
     
     public function daftarSiswa(){
-        $data = ModelSiswa::all();
+        // $data = ModelSiswa::all();
+        $data = ModelSiswa::with('files')->get();
         return view('dashboard_admin.daftarSiswa', compact('data'));
     }
 
@@ -69,6 +71,6 @@ class SiswaController extends Controller
         $data->kota = $request->kota;
         $data->status = $request->status;
         $data->save();
-        return redirect('profileMurid')->withMessage('Berhasil Konfirmasi');
+        return redirect('daftarSiswa')->withMessage('Berhasil Konfirmasi');
     }
 }

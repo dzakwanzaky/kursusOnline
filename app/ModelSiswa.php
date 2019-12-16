@@ -12,11 +12,16 @@ class ModelSiswa extends Model
 
     public function siswa()
     {
-    	return $this->hasOne('App\ModelJadwal', 'id');
+    	return $this->hasOne('App\ModelJadwal', 'murid_id');
     }
 
     public function data()
     {
     	return $this->belongsTo('App\ModelUser', 'id');
+    }
+
+    public function files()
+    {
+    	return $this->hasOne('App\ModelInvoice', 'murid_id');
     }
 }

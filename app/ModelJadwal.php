@@ -16,7 +16,7 @@ class ModelJadwal extends Model
         return $this->belongsTo('App\User', 'user_id');
     }
 
-    public function data(){
-        return $this->belongsTo('App\ModelSiswa', 'user_id');
+    public function datas(){
+        return $this->belongsTo('App\ModelSiswa', 'id');
     }
 }
