@@ -13,8 +13,9 @@
 				</button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
                     <ul class="navbar-nav">
-                        <li><a class="nav-link" href="/landing">Beranda</a></li>
-                        <li><a class="nav-link" href="/infoPaket">Program</a></li>
+                        <li><a class="nav-link" href="#home">Beranda</a></li>
+                        <li><a class="nav-link" href="#paket">Program</a></li>
+                        <li><a class="nav-link" href="#bayar">Cara Bayar</a></li>
                         <li><div class="btn-login"><a href="/login">Masuk</a></div></li>
 						<li><div class="btn-register"><a href="/registerPilih">Daftar</a></div></li>
                     </ul>
