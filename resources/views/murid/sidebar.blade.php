@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a class="brand-link">
+    <a class="brand-link" href="/">
       <span class="brand-text font-weight-light">
         <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="120" height="43" alt="inofa Logo" style="display:block; margin-left:auto; margin-right:auto;">
       </span>

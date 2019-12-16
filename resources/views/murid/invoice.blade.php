@@ -62,17 +62,41 @@
                         </td>
 
                         <td>
-                        @foreach($data as $d)
-                        <a href="{{asset('public/file')}}" target="_blank">
-						<img width="150px" height="200px" src="{{asset('public/file')}}" style="display:block;margin-left:auto;margin-right:auto">
-						</a>
-            @endforeach
-
-                        <form action="/upload" method="POST" enctype="multipart/form-data">
-					              {{ csrf_field() }}
+                              
+                        @foreach($invoice as $i)
+                        <a href="{{ url('/data_file/'.$i->file) }} " target="_blank">
+                           <img width="400px" src="{{ url('/data_file/'.$i->file) }}"  target="_blank">
+                        </a>
+                            @endforeach
+                      @foreach($invoice as $i)
+                      @if($i->bukti==null)
+                        <a class="btn btn-sm btn-success" style="color:white;" target="_blank" data-toggle="modal" data-target="#importExcel">
+                        <span class="fa fa-upload"></span>
+                    </a>
+                      @else
+                      <p>Terupload</p>
+                      @endif
+                    @endforeach
+                        </td>
+                        <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <form method="post" action="/upload" enctype="multipart/form-data">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Upload Bukti</h5>
+                            </div>
+                            <div class="modal-body">
+                      
+                        
+                              {{ csrf_field() }}
+                        
+                              <label>Pilih file</label>
+                              <div class="form-group">
+                                <input type="file" name="file" required="required">
+                              </div>
                         
                           <a class=" btn btn-sm btn-success" style="color:white;">
-                            <input type="file" name="file">
+                            <!-- <input type="file" name="file"> -->
                             <span class="fa fa-upload"></span>
                             <input type="submit" value="Upload" class="btn btn-primary">
                           </a>
@@ -90,8 +114,6 @@
             </table>
               </div>
             </div>
-
-            
           </div>
           <!-- /.col-md-6 -->
           

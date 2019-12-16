@@ -156,7 +156,7 @@ Route::middleware(['siswa'])->group(function () {
 
 });
 
-Route::post('upload', 'InvoiceController@proses_upload')->name('upload');
+Route::post('/upload', 'InvoiceController@proses_upload')->name('upload');
 
 
 Route::get('/verify','VerifyController@getVerify')->name('getverify');
