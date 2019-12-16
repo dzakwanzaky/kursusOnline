@@ -22,8 +22,7 @@
           <a href="/profileMurid" class="dropdown-item">
             <i class="fas fa-user"></i> Profile 
           </a>
-          <a href="#" class="dropdown-item">
-          <a href="{{ url('/landing') }}" class="nav-link btn-login"
+          <a href="{{ url('/landing') }}" class="nav-link btn-login; dropdown-item"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
           <i class="fas fa-sign-out-alt"></i>Logout 
@@ -31,7 +30,7 @@
           <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                       {{ csrf_field() }}
                 </form>
-          </a>
+          
       </li>
       </ul>
   </nav>
