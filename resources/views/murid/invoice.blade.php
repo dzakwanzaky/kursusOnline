@@ -62,7 +62,7 @@
                         </td>
                         <td>
                       @foreach($invoice as $i)
-                      @if($i->bukti==null)
+                      @if($i->file==null)
                         <a class="btn btn-sm btn-success" style="color:white;" target="_blank" data-toggle="modal" data-target="#importExcel">
                         <span class="fa fa-upload"></span>
                     </a>

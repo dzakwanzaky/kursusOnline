@@ -28,9 +28,19 @@
                         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <span class="dropdown-header" style="text-transform: uppercase;text-align:center">{{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
                         <div class="dropdown-divider"></div>
+                        @if(Auth::user('admin')->role)
+                        <a href="/admin" class="dropdown-item">
+                            Dashboard
+                        </a>
+                        @elseif(Auth::user('siswa')->role)
                         <a href="/murid" class="dropdown-item">
                             Dashboard
                         </a>
+                        @elseif(Auth::user('tutor')->role)
+                        <a href="/tutor" class="dropdown-item">
+                            Dashboard
+                        </a>
+                        @endif
                         <a href="/landing" class="dropdown-item"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">

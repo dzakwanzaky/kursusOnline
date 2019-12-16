@@ -37,6 +37,8 @@
                                             <h3>RP.2.000,00</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                        </div>
                                         <div class="pricing-table-features">
                                             <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
                                             <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
@@ -74,6 +76,8 @@
                                             <h3>RP.2.000,00</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                        </div>
                                         <div class="pricing-table-features">
                                             <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
                                             <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
@@ -97,46 +101,88 @@
             <div class="section-title text-center">
                 <h4>Cara Bayar Kursus di Inofa Course</h4><br>
                 <li class="nav-item dropdown">
-                <p style="text-align:left;margin-left:15%">Transfer Bank/Transfer Virtual Account</p>
-                <a class="nav-link button4" data-toggle="dropdown" href="#">
-                    <img src="https://bimbel.ruangguru.com/hubfs/Bank_Central_Asia.png" style="width:58px;">
+                <p style="text-align:left;margin-left:15%; margin-bottom: 10px;">Transfer Bank/Transfer Virtual Account</p>
+                <a class="nav-link button4" data-toggle="dropdown" href="#" style="text-align:left">
+                    <img src="https://bimbel.ruangguru.com/hubfs/Bank_Central_Asia.png" style="width:58px; margin-bottom: 10px;margin-top: 10px;">
                 <br>Bank Transfer BCA
                 </a>
-                <div class="dropdown-menu dropdown-menu-lg">
+                <div class="dropdown-menu">
                 <ol>
-                    <li>Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
-                    <li>Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
-                    <li>Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
-                    <li>Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
-                    <li>Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                    <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
+                    <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
+                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
+                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
+                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
                 </ol>
-            </div><!-- end title -->
-            <a class="nav-link button4" data-toggle="dropdown" href="#" style="margin-buttom:10px">
-                    <img src="https://bimbel.ruangguru.com/hubfs/Bank_Central_Asia.png" style="width:58px;">
+            </div>
+            
+            <a class="nav-link button4" data-toggle="dropdown" href="#" style="margin-buttom:10px; text-align:left">
+                    <img src="https://bimbel.ruangguru.com/hubfs/Bank-Mandiri-Logo-Vector-Image.png" style="width:58px; margin-bottom: 10px;margin-top: 10px;">
                 <br>Bank Transfer Mandiri
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg">
                 <ol>
-                    <li>Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
-                    <li>Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
-                    <li>Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
-                    <li>Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
-                    <li>Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                    <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
+                    <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
+                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
+                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
+                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
                 </ol>
             </div>
-            <li class="nav-item dropdown" style="margin-bottom:10%">
-                <p style="text-align:left;margin-left:15%">Minimarket</p>
-                <a class="nav-link button4" data-toggle="dropdown" href="#">
-                    <img src="https://bimbel.ruangguru.com/hubfs/Indomaret.png" style="width:58px;">
+            <a class="nav-link button4" data-toggle="dropdown" href="#" style="margin-buttom:10px; text-align:left">
+                    <img src="https://bimbel.ruangguru.com/hubfs/BNI.png" style="width:58px; margin-bottom: 10px;margin-top: 10px;">
+                <br>Bank Transfer BNI
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg">
+                <ol>
+                    <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
+                    <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
+                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
+                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
+                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                </ol>
+            </div>
+            <a class="nav-link button4" data-toggle="dropdown" href="#" style="margin-buttom:10px; text-align:left">
+                    <img src="https://bimbel.ruangguru.com/hubfs/Logo_BRI.png" style="width:58px; margin-bottom: 10px;margin-top: 10px;">
+                <br>Bank Transfer BRI
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg">
+                <ol>
+                    <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
+                    <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
+                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
+                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
+                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                </ol>
+            </div>
+            <li class="nav-item dropdown">
+                <p style="text-align:left;margin-left:15%; margin-bottom: 10px;">Minimarket</p>
+                <a class="nav-link button4" data-toggle="dropdown" href="#" style="text-align:left">
+                    <img src="https://bimbel.ruangguru.com/hubfs/Indomaret.png" style="width:58px; margin-bottom: 10px;margin-top: 10px;">
                 <br>Pembayaran Via Indomaret
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg">
                 <ol>
-                    <li>Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
-                    <li>Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
-                    <li>Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
-                    <li>Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
-                    <li>Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                    <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
+                    <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
+                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
+                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
+                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                </ol>
+            </div><!-- end title -->
+            <li class="nav-item dropdown" style="margin-bottom:5%">
+                <p style="text-align:left;margin-left:15%; margin-bottom: 10px;">GO-PAY</p>
+                <a class="nav-link button4" data-toggle="dropdown" href="#" style="text-align:left">
+                    <img src="https://bimbel.ruangguru.com/hubfs/Logo%20GoPay%20Vector%20CDR%20dan%20PNG.png" style="width:58px; margin-bottom: 10px;margin-top: 10px;">
+                <br>Pembayaran Via GO-PAY
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg">
+                <ol>
+                    <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
+                    <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
+                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
+                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
+                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
                 </ol>
             </div><!-- end title -->
             </div>
@@ -146,4 +192,3 @@
     @include('base/footer_page')   
     <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 @endsection
-   
