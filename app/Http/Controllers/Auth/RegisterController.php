@@ -68,32 +68,69 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    public function store(Request $request)
     {
-        if ($data ['role'] == 'siswa'){
-            $user = User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
-                'phone'=>$data['phone'],
-                'role'=>$data['role'],
-                'active'=>0,
-            ]);
-        }else {
-            $user = User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
-                'phone'=>$data['phone'],
-                'role'=>$data['role'],
-                'active'=>0,
-            ]);
-            Auth::login($user);
-        }
+        // if ($data ['role'] == 'siswa'){
+                $user = new User;
+                $user->name = $request->input('name');
+                $user->email = $request->input('email');
+                $user->password = Hash::make($request->input('password'));
+                $user->phone= $request->input('phone');
+                $user->role = $request->input('role');
+                $user->active= 0;
+              
+ 
+        //     ;     
+        // }else {
+        //     $user = new User;
+        //         $user->name = $request->input('name');
+        //         $user->email = $request->input('email');
+        //         $user->password = Hash::make($request->input('password'));
+        //         $user->phone= $request->input('phone');
+        //         $user->role = $request->input('role');
+        //         $user->active= 0;
+            // Auth::login($user);
+        // }
 
         if($user){
             //$user->code=SendOTP::sendOTP($user->phone);
             $user->save();
+            return redirect('verify');
         }
     }
+
+    public function edit($id)
+    {
+        $data = User::where('id','=',$id)->get();
+        return view('tutor.editLogin', compact('data'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data = User::where('id',$id)->first();
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+        $data->save();
+        if ($data ['role'] == 'tutor'){
+        return redirect('profile')->withMessage('Berhasil Merubah Data');
+        } else {
+            return redirect('profileMurid')->withMessage('Berhasil Merubah Data');
+        }
+    }
+
+    public function editMurid($id)
+    {
+        $data = User::where('id','=',$id)->get();
+        return view('murid.editLogin', compact('data'));
+    }
+
+    // public function updateMurid(Request $request, $id)
+    // {
+    //     $data = User::where('id',$id)->first();
+    //     $data->email = $request->email;
+    //     $data->phone = $request->phone;
+    //     $data->save();
+    //     return redirect('profileMurid')->withMessage('Berhasil Konfirmasi');
+    // }
+
 }

@@ -9,11 +9,11 @@
             <div class="box box-primary">
                 <div class="container-fluid">
                 <div class="row mb-2">
-					        <div class="col-sm-6">
-						        <p style="font-size:24px">Profile Siswa</p>
+					  <div class="col-sm-6">
+						  <p style="font-size:24px">Profile Siswa</p>
 					  </div>
                         <div class="col-sm-6">
-                            <ol class="breadcrumb float-md-right" style="font-size:14px">
+                            <ol class="breadcrumb float-sm-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
                                     <a href="/murid">Siswa</a>
                                 </li>
@@ -38,46 +38,35 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <div class="form-group">
-                  
-                </div>
-                @php $no = 1; @endphp
-      @foreach($data as $d)
-          <td>
-				<a href="{{route('dataSiswa.edit',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Profile</a>       
-			</td>
-                <div class="form-group">
-                    <div class="form-group">
-                        <label for="">Foto :</label>
-                        <img width="200px" height="200px" src="/tema/images/bimbel.jpg" style="display:block;margin-left:auto;margin-right:auto">
-                    </div>
-                    <div class="form-group">
-						<label for="">Nama Lengkap :</label>
-						<input type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="{{ $d->nama_siswa }}" disabled >
-					</div>
-          <div class="form-group">
-						<label for="">Alamat :</label>
-						<input type="text" class="form-control" id="email" name="email" value="{{ $d->provinsi }} {{ $d->kota }} {{ $d->kecamatan }}" disabled>
-					</div>
+              <div class="form-group">
 
-				  @endforeach
-          <a href="{{route('editMurid',$d->id)}}"  class="btn-edit" style="margin-left:auto;">Edit Data Login</a> 
-      
-          @foreach($user as $u)
+              @php $no = 1; @endphp
+                @foreach($data as $d)
+                <form action="{{ route('register.update', $d->id) }}" method="post" enctype="multipart/form-data">
+			{{ csrf_field() }}
+			{{ method_field('PUT') }}
+
           <div class="form-group">
 						<label for="">No Telepon :</label>
-						<input type="text" class="form-control" id="phone" name="phone" value="{{ $u->phone }}" disabled>
+						<input type="text" class="form-control" id="phone" name="phone" value="{{$d->phone}}">
 					</div>
+
 					<div class="form-group">
 						<label for="">Email :</label>
-						<input type="text" class="form-control" id="email" name="email" value="{{ $u->email }}" disabled>
+						<input type="text" class="form-control" id="email" name="email" value="{{$d->email}}">
 					</div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-md btn-success">Simpan</button>
+            <a href="/profile" class="btn btn-md btn-danger">Batal</a>
+          </div>
+                  
 				</form>
               </div>
             </div>
+            @endforeach
 
-            @endforeach            
-
+            
           </div>
           <!-- /.col-md-6 -->
           

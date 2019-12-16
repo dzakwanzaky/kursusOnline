@@ -16,15 +16,15 @@ class CreateModelTutorsTable extends Migration
         Schema::create('model_tutors', function (Blueprint $table) {
             $table->string('id');
             $table->string('nama_tutor');
-            $table->string('email');
             $table->string('jenis_kelamin');
             $table->string('provinsi');
             $table->string('kota');
             $table->string('kecamatan');
-            $table->string('pendididikan');
+            $table->string('pendidikan');
             $table->string('kelas');
             $table->string('mata_pelajaran');
             $table->string('file');
+            $table->string('foto');
             $table->string('status');
             $table->timestamps();
         });

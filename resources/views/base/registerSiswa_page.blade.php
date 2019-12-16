@@ -3,7 +3,7 @@
     <div class="main">
             <div class="card">
               <div class="card-body">
-                <form class="signup-form" role="form" method="POST" action="{{ url('/register') }}">
+                <form class="signup-form" role="form" method="POST" action="{{ route('register.store') }}">
                     {{ csrf_field() }}
 
                     <h2 class="form-title">Daftar Akun Murid Inofa Course</h2>

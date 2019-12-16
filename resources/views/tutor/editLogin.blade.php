@@ -39,46 +39,33 @@
             <div class="card">
               <div class="card-body">
                 <div class="form-group">
-                    <!-- <a class="btn-edit" style="margin-left:auto;" href="/edit">
-                       Edit profile
-                    </a> -->
-                </div>
-          <!-- @php $no = 1; @endphp -->
-          @php $no = 1; @endphp
-      @foreach($data as $d)
-          <td>
-				<a href="{{route('dataTutor.edit',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Profile</a>       
-			</td>
-  
-                <div class="form-group">
-                    <div class="form-group">
-                        <label for="">Foto :</label>
-                        <img width="200px" height="200px" src="/tema/uploads/testi_02.png" style="display:block;margin-left:auto;margin-right:auto">
-                    </div>
+                @php $no = 1; @endphp
+                @foreach($data as $d)
+                <form action="{{ route('register.update', $d->id) }}" method="post" enctype="multipart/form-data">
+			{{ csrf_field() }}
+			{{ method_field('PUT') }}
+                  
+
 					<div class="form-group">
-						<label for="">Nama Lengkap :</label>
-						<input type="text" class="form-control" id="name" name="nama" value="{{ $d->nama_tutor }}" disabled >
-					</div>
-          <div class="form-group">
-						<label for="">Alamat :</label>
-						<input type="text" class="form-control" id="email" name="email" value="{{ $d->provinsi }} {{ $d->kota }} {{ $d->kecamatan }}" disabled>
-					</div>
-          @endforeach
-          <a href="{{route('register.edit',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Informasi Login</a> 
-      
-          @foreach($user as $u)
-          <div class="form-group">
 						<label for="">No Telepon :</label>
-						<input type="text" class="form-control" id="no" name="no" value="{{ $u->phone }}" disabled>
+						<input type="text" class="form-control" id="phone" name="phone" value="{{$d->phone}}">
 					</div>
+
 					<div class="form-group">
 						<label for="">Email :</label>
-						<input type="text" class="form-control" id="email" name="email" value="{{ $u->email }}" disabled>
+						<input type="text" class="form-control" id="email" name="email" value="{{$d->email}}">
 					</div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-md btn-success">Simpan</button>
+            <a href="/profile" class="btn btn-md btn-danger">Batal</a>
+          </div>
 				</form>
-           </div>
+              </div>
             </div>
-            @endforeach            
+            @endforeach
+
+            
           </div>
           <!-- /.col-md-6 -->
           

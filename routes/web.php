@@ -85,6 +85,9 @@ Route::get('/profileMurid', function () {
 Route::get('/editProfile', function () {
     return view('murid/editProfile');
 });
+Route::get('/editMurid', function () {
+    return view('murid/editMuridLogin');
+});
 
 //halaman dashboard Tutor
 Route::get('/tutor', function () {
@@ -102,7 +105,11 @@ Route::get('/profile', function () {
 Route::get('/edit', function () {
     return view('tutor/editprofile');
 });
+Route::get('/editTutor', function () {
+    return view('tutor/editTutorLogin');
+});
 
+//DASHBOARD ADMIN
 Route::get('/manajemenTutor', function () {
     return view('dashboard_admin/manajemenTutor');
 });
@@ -112,14 +119,17 @@ Route::get('/profileSiswa', function () {
 Route::get('/profileTutor', function () {
     return view('dashboard_admin/profileTutor');
 });
+Route::get('/profileAdmin', function () {
+    return view('dashboard_admin/profileAdmin');
+});
 Route::get('/list_pendaftaranSiswa', function () {
     return view('dashboard_admin/list_pendaftaran_siswa');
 });
 Route::get('/list_pendaftaranTutor', function () {
     return view('dashboard_admin/list_pendaftaran_tutor');
 });
-Route::get('/list_pendaftaran', function () {
-    return view('dashboard_admin/list_pendaftaran_siswa2');
+Route::get('/editAdmin', function () {
+    return view('dashboard_admin/edit');
 });
 
 Auth::routes();
@@ -142,9 +152,11 @@ Route::middleware(['siswa'])->group(function () {
     Route::get('/invoicenya','ProgramController@index');
     Route::get('/invoice','ProgramController@data');
     Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
+    Route::get('profileMurid','SiswaController@profileSiswa');
+
 });
 
-Route::post('/upload', 'InvoiceController@proses_upload');
+Route::post('upload', 'InvoiceController@proses_upload')->name('upload');
 
 
 Route::get('/verify','VerifyController@getVerify')->name('getverify');
@@ -161,6 +173,11 @@ Route::resource('paketProgram','InvoiceController');
 
 //Route::resource('invoice','ProgramController');
 
+ Route::resource('register', 'Auth\RegisterController');
+Route::get('/editMurid/{id}', 'Auth\RegisterController@editMurid')->name('editMurid');
+// Route::get('/register/{id}', 'Auth\RegisterController@update')->name('register.update');
+Route::get('/editProfile/{id}', 'Auth\RegisterController@editProfile')->name('editProfile');
+// Route::get('/updateMurid/{id}', 'Auth\RegisterController@updateMurid')->name('updateMurid');
 
 
 

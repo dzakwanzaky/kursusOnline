@@ -49,7 +49,6 @@ class TutorController extends Controller
         $tujuan_upload = 'data_file';
         $file->move($tujuan_upload,$nama_file);
         $data->file = $nama_file;
-        
         $data->status = $request->status;
         $data->save();
         return redirect('tutor');
