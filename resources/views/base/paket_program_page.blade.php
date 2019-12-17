@@ -11,7 +11,7 @@
                     <div class="tab-content">
                         <div class="tab-pane active fade show" id="tab1">
                             <div class="row text-center">
-                                <div class="col-md-4" style="margin:140px 0 0 0;">
+                                <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
                                         <form method="POST" action="{{  route('paketProgram.store')}}" enctype="multipart/form-data">
@@ -82,7 +82,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4" style="margin:140px 0 0 0;">
+                                <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
                                         <form method="POST" action="{{ route('paketProgram.store')}}" enctype="multipart/form-data">

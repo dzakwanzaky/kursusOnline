@@ -61,7 +61,7 @@
 					</div>
 
 				  @endforeach
-          <a href="{{route('editMurid',$d->id)}}"  class="btn-edit" style="margin-left:auto;">Edit Data Login</a> 
+          <a href="{{route('editMurid',$d->id)}}"  class="btn-edit-login" style="margin-left:auto;">Edit Data Login</a> 
       
           @foreach($user as $u)
           <div class="form-group">

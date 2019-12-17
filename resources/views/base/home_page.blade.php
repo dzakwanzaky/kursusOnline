@@ -28,7 +28,7 @@
                     <div class="tab-content">
                         <div class="tab-pane active fade show" id="tab1">
                             <div class="row text-center">
-                                <div class="col-md-4" style="margin:140px 0 0 0;">
+                                <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
                                             <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
@@ -69,7 +69,7 @@
                                      </div>
                                 </div>
 
-                                <div class="col-md-4" style="margin:140px 0 0 0;">
+                                <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
                                             <h2>PAKET GOLD</h2>
@@ -101,7 +101,7 @@
             <div class="section-title text-center">
                 <h4>Cara Bayar Kursus di Inofa Course</h4><br>
                 <li class="nav-item dropdown">
-                <p style="text-align:left;margin-left:15%; margin-bottom: 10px;">Transfer Bank/Transfer Virtual Account</p>
+                <p style="text-align:left;margin-left:15%; margin-bottom: 10px;">Transfer Bank</p>
                 <a class="nav-link button4" data-toggle="collapse" style="text-align:left" data-target="#bca">
                     <img src="https://bimbel.ruangguru.com/hubfs/Bank_Central_Asia.png" style="width:58px; margin-bottom: 10px;margin-top: 10px;">
                 <br>Bank Transfer BCA
