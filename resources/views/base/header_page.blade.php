@@ -15,8 +15,8 @@
                     <ul class="navbar-nav">
                         <li><a class="nav-link" href="/landing">Beranda</a></li>
                         <li><a class="nav-link" href="/infoPaket">Program</a></li>
-                        <li><div class="btn-login" style="width:100px;"><a href="/login">Masuk</a></div></li>
-						<li><div class="btn-register" style="width:100px;"><a href="/registerPilih">Daftar</a></div></li>
+                        <li><div class="btn-login"><a href="/login">Masuk</a></div></li>
+						<li><div class="btn-register"><a href="/registerPilih">Daftar</a></div></li>
                     </ul>
                 </div>
                 @else
