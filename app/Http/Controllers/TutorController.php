@@ -70,7 +70,18 @@ class TutorController extends Controller
         $data->kecamatan = $request->kecamatan;
         $data->provinsi = $request->provinsi;
         $data->status = $request->status;
+        if($request->foto){
+            $foto = $request->file('foto');
+            $nama_file = time()."_".$foto->getClientOriginalName();  
+            $tujuan_upload = 'data_file';
+            $foto->move($tujuan_upload,$nama_file);
+            $data->foto = $nama_file;  
+         }
         $data->save();
-        return redirect('manajemenTutor')->withMessage('Berhasil Konfirmasi');
+        if(Auth::user()->role == 'tutor'){
+            return redirect('profile')->withMessage('Berhasil Konfirmasi');
+            } else {
+                return redirect('manajemenTutor')->withMessage('Berhasil Konfirmasi');
+            }
     }
 }

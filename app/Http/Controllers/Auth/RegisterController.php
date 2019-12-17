@@ -132,5 +132,8 @@ class RegisterController extends Controller
     //     $data->save();
     //     return redirect('profileMurid')->withMessage('Berhasil Konfirmasi');
     // }
-
+        public function data(){
+            $data = User::where('id', '=', Auth::user()->id)->get();
+            return view('dashboard_admin.profileAdmin', compact('data'));
+        }
 }

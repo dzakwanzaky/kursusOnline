@@ -53,8 +53,10 @@
                 <div class="form-group">
                     <div class="form-group">
                         <label for="">Foto :</label>
-                        <img width="200px" height="200px" src="/tema/uploads/testi_02.png" style="display:block;margin-left:auto;margin-right:auto">
-                    </div>
+                        <a href="{{ url('/data_file/'.$d->foto) }}" target="_blank">
+                          <img width="300px" src="{{ url('/data_file/'.$d->foto) }}">
+                        </a>                   
+                 </div>
 					<div class="form-group">
 						<label for="">Nama Lengkap :</label>
 						<input type="text" class="form-control" id="name" name="nama" value="{{ $d->nama_tutor }}" disabled >
