@@ -140,7 +140,6 @@ Route::middleware(['admin'])->group(function () {
     Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
     Route::get('daftarSiswa','SiswaController@daftarSiswa');
     Route::get('manajemenTutor','TutorController@manajemenTutor');
-    Route::get('profileAdmin','Auth\RegisterController@data');
 
 });
 Route::middleware(['tutor'])->group(function () {
@@ -181,3 +180,4 @@ Route::get('/editMurid/{id}', 'Auth\RegisterController@editMurid')->name('editMu
 // Route::get('/register/{id}', 'Auth\RegisterController@update')->name('register.update');
 Route::get('/editProfile/{id}', 'Auth\RegisterController@editProfile')->name('editProfile');
 // Route::get('/updateMurid/{id}', 'Auth\RegisterController@updateMurid')->name('updateMurid');
+Route::get('profileAdmin','Auth\RegisterController@data');

@@ -5,7 +5,7 @@ class SendOTP{
         $code=rand(1111,9999);
         $nexmo = app('Nexmo\Client');
         $nexmo->message()->send([
-            'to'=>'+6283897710862',
+            'to'=>'+62'.(float) $phone,
             'from'=> 'Properti',
             'text'=>'Verify code: '.$code,
         ]);
