@@ -11,7 +11,7 @@
               <form method="POST" action="{{ route('dataTutor.store')}}" enctype="multipart/form-data">                 
                  {{ csrf_field() }}
 
-                    <h2 class="form-title">Profile Siswa</h2>
+                    <h2 class="form-title">Profile Tutor</h2>
 
                     <input id="id" value="{{ Auth::user()->id }}" type="text" class="form-control" name="id" required autofocus style="display:none">
 
@@ -57,8 +57,52 @@
                         <div class="form-title">
                             <input id="kecamatan" type="text" class="form-control" name="kecamatan" required>
                         </div>
-                    </div>                      
-                            <input id="status" type="text" name="status" class="form-control" value="Menunggu Konfirmasi" style="display:none" required>
+                    </div>          
+
+                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
+                        <label for="pendidikan">Pendidikan Terakhir</label>
+
+                        <div class="form-title">
+                            <input id="pendidikan" type="text" class="form-control" name="pendidikan" required>
+
+                          
+                        </div>
+                    </div>         
+
+                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
+                        <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+
+                        <select id="kelas" name="kelas" class="form-control">
+                            <option value="1">Kelas 1 SD</option>
+                            <option value="2">Kelas 2 SD</option>
+                            <option value="3">Kelas 3 SD</option>
+                            <option value="4">Kelas 4 SD</option>
+                            <option value="5">Kelas 5 SD</option>
+                            <option value="6">Kelas 6 SD</option>
+                        </select>
+                    </div>       
+
+                    
+                    <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
+                        <label for="mata_pelajaran">Mata Pelajaran</label>
+
+                        <div class="form-title">
+                            <input id="mata_pelajaran" type="text" class="form-control" name="mata_pelajaran" required>
+
+                         
+                        </div>
+                    </div>       
+
+                    <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
+                        <label for="file">Curriculum Vitae</label>
+
+                        <div class="form-title">
+                            <input id="file" type="file" class="form-control" name="file" required>
+
+                           
+                        </div>
+                    </div>       
+                            <input id="status" type="text" name="status" class="form-control" value="WAITING" style="display:none" required>
                                 
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary d-block" style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">

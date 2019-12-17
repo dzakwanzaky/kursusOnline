@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ModelInvoice;
 use Auth;
+use App\Image_uploaded;
 
 class InvoiceController extends Controller
 {
@@ -21,7 +22,7 @@ class InvoiceController extends Controller
         $data->invoice = $request->invoice;
         $data->program = $request->program;
         $data->harga = $request->harga;
-        $data->bukti = $request->bukti;
+        $data->file = $request->file;
         $data->save();
         if ($data ['program'] == 'PREMIUM'){
             return redirect('/pendaftaranSiswaPrem');
@@ -39,14 +40,10 @@ class InvoiceController extends Controller
 		// menyimpan data file yang diupload ke variabel $file
         $file = $request->file('file');
         $nama_file = time()."_".$file->getClientOriginalName();  
-      	// isi dengan nama folder tempat kemana file diupload
         $tujuan_upload = 'data_file';
         $file->move($tujuan_upload,$nama_file);
-        $data->bukti = $nama_file;
+        $data->file = $nama_file;
         $data->save();
- 
-                // upload file
-        //$file->move($tujuan_upload,$file->getClientOriginalName());
         return redirect('/invoice');
         }
     }

@@ -27,7 +27,15 @@ class JadwalController extends Controller
 
     public function tutor()
     {
-        $data = ModelJadwal::where('status', 'Aktif');
+        //kan aku pingin nampilin data pengajuan les, dimana status siswa aktif
+        //data pengajuan les dr tabel jadwal
+        //data siswa dari tabel siswa
+        // $data = ModelJadwal::with('datas')
+        // // ->where('status', 'WAITING') //aku pengen nampilin status pengajuan les yang statusnya waiting
+        // ->whereHas('datas', function($q) 
+        //  {$q->where('status', 'Aktif');}
+        // )
+        $data = ModelJadwal::where('status', 'WAITING')->orWhere('status', 'PICKED UP')->get();
         return view('tutor.tutor', compact('data'));
     }
 
@@ -39,13 +47,13 @@ class JadwalController extends Controller
 
     public function adminTutor()
     {
-        $data = ModelJadwal::where('status', 'Diajukan Tutor')->get();
+        $data = ModelJadwal::where('status', 'PICKED UP')->get();
         return view('dashboard_admin.list_pendaftaran_tutor', compact('data'));
     }
 
     public function jadwalTutor()
     {
-        $data = ModelJadwal::where('status', 'Approved')->get();
+        $data = ModelJadwal::where('status', 'ACTIVE')->get();
         return view('tutor.jadwal', compact('data'));
     }
 
@@ -120,7 +128,11 @@ class JadwalController extends Controller
         $data->nama_tutor = $request->nama_tutor;
         $data->status = $request->status;
         $data->save();
+        if(Auth::user()->role == 'tutor'){
         return redirect('tutor')->withMessage('Berhasil Konfirmasi');
+        } else {
+            return redirect('list_pendaftaranTutor')->withMessage('Berhasil Konfirmasi');
+        }
     }
 
     /**

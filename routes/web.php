@@ -139,10 +139,13 @@ Route::middleware(['admin'])->group(function () {
     Route::get('list_pendaftaranSiswa','JadwalController@admin');
     Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
     Route::get('daftarSiswa','SiswaController@daftarSiswa');
+    Route::get('manajemenTutor','TutorController@manajemenTutor');
+
 });
 Route::middleware(['tutor'])->group(function () {
     Route::get('/tutor','JadwalController@tutor');
     Route::get('jadwal','JadwalController@jadwalTutor');
+    Route::get('profile','TutorController@profileTutor');
 
 });
 
@@ -151,6 +154,8 @@ Route::middleware(['siswa'])->group(function () {
     Route::get('/invoicenya','ProgramController@index');
     Route::get('/invoice','ProgramController@data');
     Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
+    Route::get('profileMurid','SiswaController@profileSiswa');
+
 });
 
 Route::post('/upload', 'InvoiceController@proses_upload')->name('upload');
@@ -167,8 +172,14 @@ Route::resource('dataTutor','TutorController');
 Route::resource('dataSiswa','SiswaController');
 
 Route::resource('paketProgram','InvoiceController');
+
 //Route::resource('invoice','ProgramController');
 
+ Route::resource('register', 'Auth\RegisterController');
+Route::get('/editMurid/{id}', 'Auth\RegisterController@editMurid')->name('editMurid');
+// Route::get('/register/{id}', 'Auth\RegisterController@update')->name('register.update');
+Route::get('/editProfile/{id}', 'Auth\RegisterController@editProfile')->name('editProfile');
+// Route::get('/updateMurid/{id}', 'Auth\RegisterController@updateMurid')->name('updateMurid');
 
 
 

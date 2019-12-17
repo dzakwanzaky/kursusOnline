@@ -39,6 +39,11 @@
             <div class="card">
               <div class="card-body">
                 <div class="form-group">
+                @php $no = 1; @endphp
+                @foreach($data as $d)
+                <form action="{{ route('dataTutor.update', $d->id) }}" method="post" enctype="multipart/form-data">
+			{{ csrf_field() }}
+			{{ method_field('PUT') }}
                     <div class="form-group">
                         <label for="">Foto :</label>
                         <img width="200px" height="200px" src="/tema/uploads/testi_02.png" style="display:block;margin-left:auto;margin-right:auto">
@@ -46,23 +51,26 @@
 
 					<div class="form-group">
 						<label for="">Nama Lengkap :</label>
-						<input type="text" class="form-control" id="nama" name="nama" value="Pania Paramita Andika" disabled>
+						<input type="text" class="form-control" id="nama_tutor" name="nama_tutor" value="{{$d->nama_tutor}}">
 					</div>
 
 					<div class="form-group">
-						<label for="">No Telepon :</label>
-						<input type="text" class="form-control" id="no" name="no" value="081218099939" disabled>
+						<label for="">Provinsi :</label>
+						<input type="text" class="form-control" id="provinsi" name="provinsi" value="{{ $d->provinsi }}">
 					</div>
 
 					<div class="form-group">
-						<label for="">Email :</label>
-						<input type="text" class="form-control" id="email" name="email" value="vania.paramita23@gmail.com" disabled>
+						<label for="">Kecamatan :</label>
+						<input type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{ $d->kecamatan }}">
 					</div>
 
 					<div class="form-group">
-						<label for="">Kata Sandi :</label>
-						<input type="password" class="form-control" id="password" name="password" value="vania.p.a15" disabled> 
+						<label for="">Kota :</label>
+						<input type="text" class="form-control" id="kota" name="kota" value=" {{ $d->kota }}"> 
 					</div>
+
+          <input type="text" class="form-control" id="status" name="status" value=" {{ $d->status }}" style="display:none"> 
+
 
           <div class="form-group">
             <button type="submit" class="btn btn-md btn-success">Simpan</button>
@@ -71,6 +79,8 @@
 				</form>
               </div>
             </div>
+            @endforeach            
+
 
             
           </div>

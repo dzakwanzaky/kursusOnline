@@ -33,7 +33,7 @@
                         <th>Program</th>
                         <th>Lokasi</th>
                         <th>Status</th>
-                        <th>Konfirmasi</th>
+                        <th>Bukti Pembayaran</th>
                         <th>Unduh</th>
                     </tr>
                 </thead>
@@ -56,10 +56,13 @@
                         @endforeach
                         </td>
                         <td>
+                        @foreach($alamat as $a)
                           <a class=" btn btn-sm btn-danger" style="color:white;">
-                            <span>Belum Konfirmasi</span>
+                            <span> {{ $a->status }}</span>
                           </a>
+                        @endforeach
                         </td>
+
                         <td>
                       @foreach($invoice as $i)
                       @if($i->file==null)
@@ -115,6 +118,7 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
+  
   <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

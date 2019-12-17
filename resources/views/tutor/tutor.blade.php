@@ -36,8 +36,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="row mb-2">
           <div class="col-sm-12">
             <h1 class="m-0 text-dark">Manajemen Murid</h1><br>
-            <p class="m-0 text-dark">Berikut data pengajuan dari murid yang mendaftar les pada Anda. 
-            Di kolom Status, silahkan klik tombol <b>Waiting</b>, jika jadwal mengajar Anda sesuai dengan 
+            <p class="m-0 text-dark">Berikut data pengajuan dari murid yang mendaftar les. 
+            Di kolom Status, silahkan klik tombol <b>WAITING</b>, jika jadwal mengajar Anda sesuai dengan 
             jadwal yang diajukan.</p>
           </div><!-- /.col -->
           <div class="col-sm-6">
@@ -98,7 +98,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             required autofocus
                             value="{{ Auth::user()->nama }}" style="text-transform: capitalize"> -->
                             
-                        <button value="Diajukan Tutor" id="status" name="status" type="submit" class=" btn btn-sm btn-primary">{{ $d->status }}</button>
+                        <button value="PICKED UP" id="status" name="status" type="submit" class=" btn btn-sm btn-primary">{{ $d->status }}</button>
                         </td>
                         </form>
                     </tr>

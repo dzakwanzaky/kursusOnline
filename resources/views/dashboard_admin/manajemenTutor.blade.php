@@ -33,30 +33,35 @@
                   <th>Mata Pelajaran</th>
                   <th>Alamat</th>
                   <th>Status</th>
-                  <th>Aksi</th>
                </tr>
               </thead>
               <tbody>
                     <tr>
-                        <td>1.</td>
-                        <td>Dewandaru Aji Darma</td>
-                        <td>S1 Ilmu Komputer</td>
-                        <td>Matematika</td>
-                        <td>Pogung</td>
+                    @php $no = 1; @endphp
+                    @foreach($data as $d)
+                        <td>{{ $no++ }}</td>
+                        <td>{{ $d->nama_tutor }}</td>
+                        <td>{{ $d->pendidikan }}</td>
+                        <td>{{ $d->mata_pelajaran }}</td>
+                        <td>{{ $d->kota }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
+
+                      <form action="{{ route('dataTutor.update', $d->id) }}" method="post" enctype="multipart/form-data">
+                          {{ csrf_field() }}
+                          {{ method_field('PUT') }}
                         <td>
-                          <a class=" btn btn-sm btn-success" style="color:white;">
-                            <span>AKTIF</span>
-                          </a>
+                        <input style="display:none" type="text" class="form-control" id="nama_tutor" name="nama_tutor" value="{{ $d->nama_tutor }}">
+                         <input style="display:none" type="text" class="form-control" id="pendidikan" name="pendidikan" value="{{ $d->pendidikan }}">
+                          <input style="display:none" type="text" class="form-control" id="mata_pelajaran" name="mata_pelajaran" value="{{ $d->mata_pelajaran }}">
+                          <input style="display:none"  type="text" class="form-control" id="kota" name="kota" value="{{ $d->kota }}">
+                          <input  style="display:none" type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{ $d->kecamatan }}">
+                          <input style="display:none" type="text" class="form-control" id="provinsi" name="provinsi" value="{{ $d->provinsi }}">
+                        <button value="ACTIVE" id="status" name="status" class="btn btn-sm btn-primary" type="submit" style="text-align:center"> 
+                        {{ $d->status }}</button>
                         </td>
-                        <td>
-                          <a class=" btn btn-sm btn-success" style="color:white;">
-                            <span class="fa fa-envelope"></span>
-                          </a>
-                          <a href="/profileTutor" class=" btn btn-sm btn-danger" style="color:white;">
-                            <span>DETAIL</span>
-                          </a>
-                        </td>
+                      </form>
                     </tr>
+                    @endforeach
+
                 </tbody>
           </table>
               </div>

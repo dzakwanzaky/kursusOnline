@@ -3,7 +3,7 @@
     <div class="main">
         <div class="card">
               <div class="card-body">
-            <form method="POST" action="{{ route('register')}}" class="signup-form">
+            <form method="POST" action="{{ route('register.create')}}" class="signup-form">
                 @csrf
 
                 <h2 class="form-title">Daftar Akun Imam Courses</h2>

@@ -39,45 +39,45 @@
             <div class="card">
               <div class="card-body">
                 <div class="form-group">
-                    <a class="btn-edit" style="margin-left:auto;" href="/editProfile">
-                       Edit profile
-                    </a>
+                  
                 </div>
+                @php $no = 1; @endphp
+      @foreach($data as $d)
+          <td>
+				<a href="{{route('dataSiswa.edit',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Profile</a>       
+			</td>
                 <div class="form-group">
                     <div class="form-group">
                         <label for="">Foto :</label>
                         <img width="200px" height="200px" src="/tema/images/bimbel.jpg" style="display:block;margin-left:auto;margin-right:auto">
                     </div>
-					<!-- <label for="nama">Foto :</label>
-					<div> <a href="#" target="_blank">
-						<img width="150px" height="200px" src="/tema/images/bimbel.jpg" style="display:block;margin-left:auto;margin-right:auto">
-						</a>
-					</div> -->
-
-					<div class="form-group">
+                    <div class="form-group">
 						<label for="">Nama Lengkap :</label>
-						<input type="text" class="form-control" id="nama" name="nama" value="Pania Paramita Andika" disabled>
+						<input type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="{{ $d->nama_siswa }}" disabled >
+					</div>
+          <div class="form-group">
+						<label for="">Alamat :</label>
+						<input type="text" class="form-control" id="email" name="email" value="{{ $d->provinsi }} {{ $d->kota }} {{ $d->kecamatan }}" disabled>
 					</div>
 
-					<div class="form-group">
+				  @endforeach
+          <a href="{{route('editMurid',$d->id)}}"  class="btn-edit" style="margin-left:auto;">Edit Data Login</a> 
+      
+          @foreach($user as $u)
+          <div class="form-group">
 						<label for="">No Telepon :</label>
-						<input type="text" class="form-control" id="no" name="no" value="081218099939" disabled>
+						<input type="text" class="form-control" id="phone" name="phone" value="{{ $u->phone }}" disabled>
 					</div>
-
 					<div class="form-group">
 						<label for="">Email :</label>
-						<input type="text" class="form-control" id="email" name="email" value="vania.paramita23@gmail.com" disabled>
-					</div>
-
-					<div class="form-group">
-						<label for="">Kata Sandi :</label>
-						<input type="password" class="form-control" id="password" name="password" value="vania.p.a15" disabled> 
+						<input type="text" class="form-control" id="email" name="email" value="{{ $u->email }}" disabled>
 					</div>
 				</form>
               </div>
             </div>
 
-            
+            @endforeach            
+
           </div>
           <!-- /.col-md-6 -->
           
