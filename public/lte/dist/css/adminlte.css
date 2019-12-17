@@ -264,6 +264,20 @@ button {
   font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.btn-edit-info {
+  display: block;
+  padding: 5px 20px;
+  font-size: 16px;
+  border: 1px solid #158ADF;
+  color: #158ADF;
+  background-color: #ffffff;
+  line-height: 25px;
+  font-weight: 500;
+  border-radius: 75px;
+  width: 188px;
+  font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 button:focus {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;

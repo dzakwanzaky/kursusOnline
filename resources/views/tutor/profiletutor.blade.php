@@ -5,15 +5,15 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-        <div class="col-md-8 col-md-offset-6" >
+        <div class="col-md-12 col-md-offset-6" >
             <div class="box box-primary">
                 <div class="container-fluid">
                 <div class="row mb-2">
-					  <div class="col-sm-5">
+					  <div class="col-sm-6">
 						  <p style="font-size:24px">Profile Tutor</p>
 					  </div>
-                        <div class="col-sm-5">
-                            <ol class="breadcrumb float-sm-right" style="font-size:14px">
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-md-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
                                     <a href="/tutor">Tutor</a>
                                 </li>
@@ -65,9 +65,9 @@
 						<label for="">Alamat :</label>
 						<input type="text" class="form-control" id="email" name="email" value="{{ $d->provinsi }} {{ $d->kota }} {{ $d->kecamatan }}" disabled>
 					</div>
+          
+          <a href="{{route('register.edit',$d->id)}}" class="btn-edit-info" style="margin-left:auto;">Edit Informasi Login</a> 
           @endforeach
-          <a href="{{route('register.edit',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Informasi Login</a> 
-      
           @foreach($user as $u)
           <div class="form-group">
 						<label for="">No Telepon :</label>
