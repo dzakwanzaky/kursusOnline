@@ -28,7 +28,7 @@
                       <!-- small box -->
                       <div class="small-box bg-red">
                         <div class="inner">
-                          <h3>8.000</h3>
+                          <h3>10</h3>
                           
                           <p>Visitor</p>
                         </div>
@@ -42,8 +42,7 @@
                       <!-- small box -->
                       <div class="small-box bg-yellow">
                         <div class="inner">
-                          <h3>1550</h3>
-
+                          <h3>{{ DB::table('users')->where('role','siswa')->count()}}</h3>
                             <p>Murid</p>
                         </div>
                       <div class="icon">
@@ -56,7 +55,7 @@
                       <!-- small box -->
                       <div class="small-box bg-green">
                         <div class="inner">
-                          <h3>50</h3>
+                          <h3>{{ DB::table('users')->where('role','tutor')->count()}}</h3>
 
                             <p>Tutor</p>
                         </div>
@@ -70,9 +69,9 @@
                       <!-- small box -->
                       <div class="small-box bg-blue">
                         <div class="inner">
-                          <h3>15000000</h3>
+                          <h3>{{ DB::table('model_invoice')->count()}}</h3>
 
-                            <p>Revenue</p>
+                            <p>Invoice</p>
                         </div>
                       <div class="icon">
                         <i class="ion ion-ios-cart"></i>

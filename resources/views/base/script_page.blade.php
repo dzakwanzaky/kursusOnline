@@ -52,6 +52,7 @@
 	<script src="/tema/js/zenith.js"></script>
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="/lte/plugins/bootstrap/js/bootstrap.min.js">
     <script src="js/main.js"></script>
 	<script>
 		$('#default').zenith({
