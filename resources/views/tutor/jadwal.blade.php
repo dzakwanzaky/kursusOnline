@@ -56,6 +56,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <thead class="thead-dark">
                 <tr>
                         <th>No.</th>
+                        <th>Nama Murid</th>
                         <th>Kelas</th>
                         <th>Mata Pelajaran</th>
                         <th>Hari</th>

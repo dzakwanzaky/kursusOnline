@@ -7,7 +7,7 @@
             <form method="POST" action="{{ route('login')}}">
                 @csrf
 
-                <h2 class="form-title">Masuk Akun Imam Courses</h2>
+                <h2 class="form-title">Masuk Akun Inofa Courses</h2>
 
                 <label for="email">Email</label>
                 <div class="form-textbox">
@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}></input>
                         <label class="form-check-label" for="remember">Ingat saya ?</label>
                         <a href="#" style="font-weight: inherit;color: #408ABD;;"> | Lupa Kata Sandi</a>
                 </div>
@@ -56,6 +56,6 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/main.js"></script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>
 @endsection

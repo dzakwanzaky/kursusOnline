@@ -20,9 +20,11 @@
                                             <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
                                                     required autofocus
                                                     value="{{ Auth::user()->id }}" style="text-transform: capitalize">
+                                                    
                                             <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
                                             <input type="text" class="form-control" id="program" name="program" style="display:none" value="REGULER">
                                             <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="2000">
+
                                             <h2>PAKET REGULER</h2>
                                             <h3>RP.2.000,00</h3>
                                         </div>
@@ -55,6 +57,7 @@
                                         <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
                                         <input type="text" class="form-control" id="program" name="program" style="display:none" value="PREMIUM">
                                         <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="2000">
+
                                             <h2>PAKET PREMIUM</h2>
                                             <h3>Rp.2.000,00</h3>
                                         </div>

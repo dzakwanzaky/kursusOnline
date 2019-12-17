@@ -33,40 +33,83 @@
                         <th>Program</th>
                         <th>Lokasi</th>
                         <th>Status</th>
-                        <th>Konfirmasi</th>
+                        <th>Bukti Pembayaran</th>
                         <th>Unduh</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1.</td>
-                        <td>#190930001</td>
-                        <td>Pania Paramita</td>
-                        <td>6 SD</td>
-                        <td>1</td>
-                        <td>Sendowo</td>
+                    @php $no = 1; @endphp
+                    @foreach($data as $d)
+                        <td>{{ $no++ }}. </td>
+                        <td># 
+                        @foreach($invoice as $i)
+                        {{ $i->invoice }}
+                        @endforeach
+                        </td>
+                        <td>{{ Auth::user()->name }}</td>
+                        <td>{{ $d->kelas }} SD</td>
+                        <td>{{ $d->program }}</td>
                         <td>
+                        @foreach($alamat as $a)
+                        {{ $a->kecamatan }}, {{ $a->kota }}, {{ $a->provinsi }}
+                        @endforeach
+                        </td>
+                        <td>
+                        @foreach($alamat as $a)
                           <a class=" btn btn-sm btn-danger" style="color:white;">
-                            <span>Belum Konfirmasi</span>
+                            <span> {{ $a->status }}</span>
                           </a>
+                        @endforeach
                         </td>
+
                         <td>
-                          <a class=" btn btn-sm btn-success" style="color:white;">
-                            <span class="fa fa-envelope"></span>
-                          </a>
+                      @foreach($invoice as $i)
+                      @if($i->file==null)
+                        <a class="btn btn-sm btn-success" style="color:white;" target="_blank" data-toggle="modal" data-target="#importExcel">
+                        <span class="fa fa-upload"></span>
+                    </a>
+                      @else
+                      <p>Terupload</p>
+                      @endif
+                    @endforeach
                         </td>
+                        <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <form method="post" action="/upload" enctype="multipart/form-data">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Upload Bukti</h5>
+                            </div>
+                            <div class="modal-body">
+                        
+                              {{ csrf_field() }}
+                        
+                              <label>Pilih file</label>
+                              <div class="form-group">
+                                <input type="file" name="file" required="required">
+                              </div>
+                        
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Upload</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
                         <td>
-                          <a href="/invoicenya" class=" btn btn-sm btn-success" style="color:white;">
+                          <a href="invoicenya_pdf" class=" btn btn-sm btn-success" style="color:white;">
                             <span class="fa fa-download"></span>
                           </a>
                         </td>
+                        @endforeach
                     </tr>
                 </tbody>
             </table>
               </div>
             </div>
-
-            
           </div>
           <!-- /.col-md-6 -->
           
@@ -75,15 +118,9 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
+  
   <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
-  @endsection
-  @section('dataTables')
-  <script>
-         $(document).ready( function () {
-           $('#jadwal').DataTable();
-           });
-      </script>
   @endsection

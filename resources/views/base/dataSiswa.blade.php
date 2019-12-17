@@ -57,8 +57,18 @@
                         <div class="form-title">
                             <input id="kecamatan" type="text" class="form-control" name="kecamatan" required>
                         </div>
-                    </div>                      
-                            <input id="status" type="text" name="status" class="form-control" value="Menunggu Pembayaran" style="display:none" required>
+                    </div>        
+                    
+                   
+                <div class="panel-body">
+                    <div class="alert alert-info">
+                        <strong>Info!</strong> Maximum Size Upload : 2MB
+                    </div>
+                        Foto Diri
+                          <div class="form-group">
+                            <input type="file" class="form-control" id="file" name="file">
+                    </div>              
+                            <input id="status" type="text" name="status" class="form-control" value="UNPAID" style="display:none" required>
                                 
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary d-block" style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">

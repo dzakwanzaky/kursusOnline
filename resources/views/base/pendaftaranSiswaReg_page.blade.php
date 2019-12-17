@@ -37,7 +37,7 @@
 
                     <input type="text" class="form-control" id="program" name="program" style="display:none" value="REGULAR">
 
-                    <input type="text" class="form-control" id="status" name="status" style="display:none" value="Menunggu Pembayaran">
+                    <input type="text" class="form-control" id="status" name="status" style="display:none" value="WAITING">
                     <label for="kelas" >Kelas
                         <select id="kelas" name="kelas" class="form-control" style="float:left">
                             <option value="1">1</option>

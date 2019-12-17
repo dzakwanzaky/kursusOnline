@@ -42,10 +42,10 @@
                     @php $no = 1; @endphp
                 @foreach($data as $d)
                     <tr>
-                        <td>{{ $no++ }}</td>
+                        <td>{{ $no++ }}. </td>
                         <td>{{ $d->nama_tutor }}</td>
                         <td>{{ $d->program }}</td>
-                        <td>{{ $d->kelas }}</td>
+                        <td>{{ $d->kelas }} SD</td>
                         <td>{{ $d->mata_pelajaran }}</td>
                         <td>{{ $d->hari1 }}</td>
                         <td>{{ $d->hari2 }}</td>
@@ -77,11 +77,4 @@
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
-  @endsection
-  @section('dataTables')
-  <script>
-         $(document).ready( function () {
-           $('#jadwal').DataTable();
-           });
-      </script>
   @endsection

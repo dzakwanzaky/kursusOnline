@@ -20,6 +20,11 @@ class CreateModelTutorsTable extends Migration
             $table->string('provinsi');
             $table->string('kota');
             $table->string('kecamatan');
+            $table->string('pendidikan');
+            $table->string('kelas');
+            $table->string('mata_pelajaran');
+            $table->string('file');
+            $table->string('foto');
             $table->string('status');
             $table->timestamps();
         });

@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <style>
         body{
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
             color:#333;
             text-align:left;
             font-size:18px;
@@ -25,12 +25,14 @@
         caption{
             font-size:28px;
             margin-bottom:15px;
+            margin-right:120px;
         }
         table{
             border:1px solid #333;
             border-collapse:collapse;
             margin:0 auto;
-            width:740px;
+            margin-left:20px;
+            width:600px;
         }
         td, tr, th{
             padding:12px;
@@ -49,28 +51,39 @@
     <div class="container">
         <table>
             <caption>
-                Imam Course
+                Inofa Course
             </caption>
             <thead>
                 <tr>
-                    <th colspan="2">Pendaftaran <strong>#1</strong></th>
-                    <th colspan="2">2 November 2019</th>
+                    <th colspan="2"><strong>#</strong>
+                    @foreach($invoice as $i)
+                    {{ $i->invoice }}
+                    @endforeach</th>
+                    <th colspan="2">
+					<?php 
+                    echo date("d-m-Y")
+                    ?>
+                    </th>
+					</th>
                 </tr>
                 <tr>
                     <td colspan="2">
                         <h4>Bimbingan Belajar: </h4>
-                        <p>Imam Course<br>
+                        <p>Inofa Course<br>
                             Jl Persatuan<br>
                             085343966997<br>
-                            imamcourse@web.id
+                            inofacourse.co.id
                         </p>
                     </td>
                     <td colspan="2">
                         <h4>Pelanggan: </h4>
-                        <p>Murid<br>
-                        Sendowo<br>
-                        081227787948 <br>
-                        murid@gmail.com
+                        <p>{{ Auth::user()->name }}<br>
+                        @php $no = 1; @endphp
+                        @foreach($alamat as $a)
+                        {{ $a->kecamatan }}, {{ $a->kota }}, {{ $a->provinsi }}
+                        @endforeach<br>
+                        {{ Auth::user()->phone }} <br>
+                        {{ Auth::user()->email }}
                         </p>
                     </td>
                 </tr>
@@ -81,8 +94,14 @@
                     <th colspan="2">Harga</th>
                 </tr>
                 <tr>
-                    <td colspan="2">Regular</td>
+                    <td colspan="2">
+                    @php $no = 1; @endphp
+                    @foreach($data as $d)
+                    {{ $d->program }}
+                    @endforeach
+                    </td>
                     <td colspan="2">Rp2000</td>
+                
                 </tr>
             </tbody>
             <tfoot>

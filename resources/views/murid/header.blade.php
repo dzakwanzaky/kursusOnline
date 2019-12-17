@@ -14,16 +14,15 @@
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-user"></i>
-          <span>Halo, Pania</span>
+          <span>Halo, {{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-header">Pania Paramita</span>
+          <span class="dropdown-header">{{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
           <div class="dropdown-divider"></div>
           <a href="/profileMurid" class="dropdown-item">
             <i class="fas fa-user"></i> Profile 
           </a>
-          <a href="#" class="dropdown-item">
-          <a href="{{ url('/landing') }}" class="nav-link btn-login"
+          <a href="{{ url('/landing') }}" class="nav-link btn-login; dropdown-item"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
           <i class="fas fa-sign-out-alt"></i>Logout 
@@ -31,7 +30,7 @@
           <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                       {{ csrf_field() }}
                 </form>
-          </a>
+          
       </li>
       </ul>
   </nav>
