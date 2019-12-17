@@ -107,7 +107,7 @@
                 <br>Bank Transfer BCA
                 </a>
                 <div class="collapse" id="bca">
-                <ol>
+                <ol style="text-align:left;margin-left:20%">
                     <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunjuk di layar</li>
                     <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
                     <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
@@ -121,12 +121,12 @@
                 <br>Bank Transfer Mandiri
                 </a>
                 <div class="collapse" id="mandiri">
-                <ol>
-                    <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
+                <ol style="text-align:left;margin-left:20%">
+                    <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunjuk di layar</li>
                     <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
-                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
+                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening Mandiri</b></li>
                     <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Inofa Course</li>
-                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
+                    <li>5. Masukkan nomor rekening Mandiri yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
                 </ol>
             </div>
             <a class="nav-link button4" data-toggle="collapse" data-target="#bni" style="margin-buttom:10px; text-align:left">
@@ -134,12 +134,12 @@
                 <br>Bank Transfer BNI
                 </a>
                 <div class="collapse" id="bni">
-                <ol>
-                    <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
+                <ol style="text-align:left;margin-left:20%">
+                    <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunjuk di layar</li>
                     <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
-                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
+                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BNI</b></li>
                     <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Inofa Course</li>
-                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
+                    <li>5. Masukkan nomor rekening BNI yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
                 </ol>
             </div>
             <a class="nav-link button4" data-toggle="collapse" data-target="#bri" style="margin-buttom:10px; text-align:left">
@@ -147,12 +147,12 @@
                 <br>Bank Transfer BRI
                 </a>
                 <div class="collapse" id="bri">
-                <ol>
-                    <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
+                <ol style="text-align:left;margin-left:20%">
+                    <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunjuk di layar</li>
                     <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
-                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
+                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BRI</b></li>
                     <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Inofa Course</li>
-                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
+                    <li>5. Masukkan nomor rekening BRI yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
                 </ol>
             </div>
             <li class="nav-item dropdown">
@@ -162,12 +162,12 @@
                 <br>Via Indomaret
                 </a>
                 <div class="collapse" id="indo">
-                <ol>
+                <ol style="text-align:left;margin-left:20%">
                     <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
                     <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
-                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
+                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening Indomaret</b></li>
                     <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Inofa Course</li>
-                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
+                    <li>5. Masukkan nomor rekening Indomaret yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
                 </ol>
             </div><!-- end title -->
             <li class="nav-item dropdown" style="margin-bottom:5%">
@@ -177,12 +177,12 @@
                 <br>Via GO-PAY
                 </a>
                 <div class="collapse" id="go">
-                <ol>
+                <ol style="text-align:left;margin-left:20%">
                     <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
                     <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
-                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
+                    <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening GO-PAY</b></li>
                     <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Inofa Course</li>
-                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
+                    <li>5. Masukkan nomor rekening GO-PAY yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
                 </ol>
             </div><!-- end title -->
             </div>
