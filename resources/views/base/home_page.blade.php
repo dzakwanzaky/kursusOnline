@@ -102,86 +102,87 @@
                 <h4>Cara Bayar Kursus di Inofa Course</h4><br>
                 <li class="nav-item dropdown">
                 <p style="text-align:left;margin-left:15%; margin-bottom: 10px;">Transfer Bank/Transfer Virtual Account</p>
-                <a class="nav-link button4" data-toggle="dropdown" href="#" style="text-align:left">
+                <a class="nav-link button4" data-toggle="collapse" style="text-align:left" data-target="#bca">
                     <img src="https://bimbel.ruangguru.com/hubfs/Bank_Central_Asia.png" style="width:58px; margin-bottom: 10px;margin-top: 10px;">
                 <br>Bank Transfer BCA
                 </a>
-                <div class="dropdown-menu dropdown-menu-lg">
+                <div class="collapse" id="bca">
                 <ol>
-                    <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
+                    <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunjuk di layar</li>
                     <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
                     <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
-                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
-                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Inofa Course</li>
+                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
                 </ol>
-            </div><!-- end title -->
-            <a class="nav-link button4" data-toggle="dropdown" href="#" style="margin-buttom:10px; text-align:left">
+            </div>
+            
+            <a class="nav-link button4" data-toggle="collapse" data-target="#mandiri" style="margin-buttom:10px; text-align:left">
                     <img src="https://bimbel.ruangguru.com/hubfs/Bank-Mandiri-Logo-Vector-Image.png" style="width:58px; margin-bottom: 10px;margin-top: 10px;">
                 <br>Bank Transfer Mandiri
                 </a>
-                <div class="dropdown-menu dropdown-menu-lg">
+                <div class="collapse" id="mandiri">
                 <ol>
                     <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
                     <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
                     <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
-                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
-                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Inofa Course</li>
+                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
                 </ol>
             </div>
-            <a class="nav-link button4" data-toggle="dropdown" href="#" style="margin-buttom:10px; text-align:left">
+            <a class="nav-link button4" data-toggle="collapse" data-target="#bni" style="margin-buttom:10px; text-align:left">
                     <img src="https://bimbel.ruangguru.com/hubfs/BNI.png" style="width:58px; margin-bottom: 10px;margin-top: 10px;">
                 <br>Bank Transfer BNI
                 </a>
-                <div class="dropdown-menu dropdown-menu-lg">
+                <div class="collapse" id="bni">
                 <ol>
                     <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
                     <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
                     <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
-                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
-                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Inofa Course</li>
+                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
                 </ol>
             </div>
-            <a class="nav-link button4" data-toggle="dropdown" href="#" style="margin-buttom:10px; text-align:left">
+            <a class="nav-link button4" data-toggle="collapse" data-target="#bri" style="margin-buttom:10px; text-align:left">
                     <img src="https://bimbel.ruangguru.com/hubfs/Logo_BRI.png" style="width:58px; margin-bottom: 10px;margin-top: 10px;">
                 <br>Bank Transfer BRI
                 </a>
-                <div class="dropdown-menu dropdown-menu-lg">
+                <div class="collapse" id="bri">
                 <ol>
                     <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
                     <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
                     <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
-                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
-                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Inofa Course</li>
+                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
                 </ol>
             </div>
             <li class="nav-item dropdown">
                 <p style="text-align:left;margin-left:15%; margin-bottom: 10px;">Minimarket</p>
-                <a class="nav-link button4" data-toggle="dropdown" href="#" style="text-align:left">
+                <a class="nav-link button4" data-toggle="collapse" data-target="#indo" style="text-align:left">
                     <img src="https://bimbel.ruangguru.com/hubfs/Indomaret.png" style="width:58px; margin-bottom: 10px;margin-top: 10px;">
-                <br>Pembayaran Via Indomaret
+                <br>Via Indomaret
                 </a>
-                <div class="dropdown-menu dropdown-menu-lg">
+                <div class="collapse" id="indo">
                 <ol>
                     <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
                     <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
                     <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
-                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
-                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Inofa Course</li>
+                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
                 </ol>
             </div><!-- end title -->
             <li class="nav-item dropdown" style="margin-bottom:5%">
                 <p style="text-align:left;margin-left:15%; margin-bottom: 10px;">GO-PAY</p>
-                <a class="nav-link button4" data-toggle="dropdown" href="#" style="text-align:left">
+                <a class="nav-link button4" data-toggle="collapse" data-target="#go" style="text-align:left">
                     <img src="https://bimbel.ruangguru.com/hubfs/Logo%20GoPay%20Vector%20CDR%20dan%20PNG.png" style="width:58px; margin-bottom: 10px;margin-top: 10px;">
-                <br>Pembayaran Via GO-PAY
+                <br>Via GO-PAY
                 </a>
-                <div class="dropdown-menu dropdown-menu-lg">
+                <div class="collapse" id="go">
                 <ol>
                     <li>1. Masukkan kartu, pilih <b>bahasa</b>, dan masukkan PIN sesuai petunguk di layar</li>
                     <li>2. Pada menu utama, pilih <b>Transaksi Lainnya</b></li>
                     <li>3. Pilih <b>Transfer</b> dan pilih <b>ke rekening BCA</b></li>
-                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Ruangguru</li>
-                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Ruangguru sebagai tujuan transfer</li>
+                    <li>4. Masukkan nominal transfer sesuai dengan total tagihan transaksi di aplikasi Inofa Course</li>
+                    <li>5. Masukkan nomor rekening BCA yang tertera di aplikasi Inofa Course sebagai tujuan transfer</li>
                 </ol>
             </div><!-- end title -->
             </div>
@@ -191,4 +192,3 @@
     @include('base/footer_page')   
     <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 @endsection
-   
