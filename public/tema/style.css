@@ -2473,4 +2473,12 @@ body.app_version .dev-list .widget-title small{
     margin: auto;
 }
 
+.small-line {
+    width: 75px;
+    height: 7px;
+    background-color: #158adf;
+    border-radius: 10px;
+    border: 0;
+}
+
 

@@ -12,10 +12,10 @@ use Auth;
 class VerifyController extends Controller
 {
 
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
     public function getVerify(){
         return view('verify');
@@ -37,4 +37,5 @@ class VerifyController extends Controller
             return back()->withMessage('verify code is not correct. Please try again');
         }
     }
+
 }

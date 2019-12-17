@@ -20,7 +20,8 @@
     <div id="paket" class="section lb">
         <div class="container">
             <div class="section-title text-center">
-                <h4>Program Inofa Course</h4>
+                <h4 style="color:#4a4a4a">Program Inofa Course</h4>
+                <hr class="small-line" style="center">
             </div><!-- end title -->
 
             <div class="row">
@@ -99,7 +100,8 @@
     <div id="bayar" class="section lb">
         <div class="container">
             <div class="section-title text-center">
-                <h4>Cara Bayar Kursus di Inofa Course</h4><br>
+                <h4 style="color:#4a4a4a">Cara Bayar Kursus di Inofa Course</h4><br>
+                <hr class="small-line" style="center">
                 <li class="nav-item dropdown">
                 <p style="text-align:left;margin-left:15%; margin-bottom: 10px;">Transfer Bank</p>
                 <a class="nav-link button4" data-toggle="collapse" style="text-align:left" data-target="#bca">

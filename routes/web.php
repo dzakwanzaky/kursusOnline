@@ -181,6 +181,3 @@ Route::get('/editMurid/{id}', 'Auth\RegisterController@editMurid')->name('editMu
 // Route::get('/register/{id}', 'Auth\RegisterController@update')->name('register.update');
 Route::get('/editProfile/{id}', 'Auth\RegisterController@editProfile')->name('editProfile');
 // Route::get('/updateMurid/{id}', 'Auth\RegisterController@updateMurid')->name('updateMurid');
-
-
-

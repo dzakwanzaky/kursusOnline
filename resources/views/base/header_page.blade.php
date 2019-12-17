@@ -20,7 +20,8 @@
 						<li><div class="btn-register"><a href="/registerPilih">Daftar</a></div></li>
                     </ul>
                 </div>
-                @else
+
+                @elseif(Auth::check())
                     <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                             <span>Halo, {{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
@@ -28,9 +29,15 @@
                         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <span class="dropdown-header" style="text-transform: uppercase;text-align:center">{{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
                         <div class="dropdown-divider"></div>
-                        <a href="/murid" class="dropdown-item">
-                            Dashboard
+
+                        @if(Auth::user()->role == 'siswa')
+                            <a href="/murid" class="dropdown-item">Dashboard</a>
+                        @elseif(Auth::user()->role == 'tutor')
+                            <a href="/tutor" class="dropdown-item">Dashboard</a>
                         </a>
+                   
+
+                        <br>
                         <a href="/landing" class="dropdown-item"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
@@ -39,8 +46,9 @@
                     <form id="logout-form" action="/logout" method="POST" style="display: none;">
                       {{ csrf_field() }}
                 </form>
-              </li>
                 @endif
+                        @endif
+              </li>
             </div>
         </nav>
     </header>

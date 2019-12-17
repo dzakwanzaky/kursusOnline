@@ -85,4 +85,16 @@ class SiswaController extends Controller
                 return redirect('daftarSiswa')->withMessage('Berhasil Konfirmasi');
             }
     }
+
+    public function dashboard()
+    {
+        if (Auth::user()->role == 'siswa') { // Role Guru
+            return view('murid.murid');
+        } elseif (Auth::user()->role == 'tutor') { // Role Murid
+            return view('tutor.tutor');
+        } elseif (Auth::user()->role == 'admin') { // Role Admin
+            return view('dashboard_admin.admin');
+        }
+               
+    }
 }
