@@ -140,6 +140,7 @@ Route::middleware(['admin'])->group(function () {
     Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
     Route::get('daftarSiswa','SiswaController@daftarSiswa');
     Route::get('manajemenTutor','TutorController@manajemenTutor');
+    Route::get('profileAdmin','Auth\RegisterController@data');
 
 });
 Route::middleware(['tutor'])->group(function () {

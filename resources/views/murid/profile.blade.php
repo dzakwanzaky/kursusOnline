@@ -49,8 +49,10 @@
                 <div class="form-group">
                     <div class="form-group">
                         <label for="">Foto :</label>
-                        <img width="200px" height="200px" src="/tema/images/bimbel.jpg" style="display:block;margin-left:auto;margin-right:auto">
-                    </div>
+                        <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
+                          <img width="300px" src="{{ url('/data_file/'.$d->file) }}">
+                        </a>                     
+                     </div>
                     <div class="form-group">
 						<label for="">Nama Lengkap :</label>
 						<input type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="{{ $d->nama_siswa }}" disabled >
