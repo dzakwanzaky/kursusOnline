@@ -1,3 +1,4 @@
+@include('base/header_page2')
 @extends('base/script_page')
 @section('content')
     <div class="main">    

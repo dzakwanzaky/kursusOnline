@@ -5,15 +5,15 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-        <div class="col-md-8 col-md-offset-6" >
+        <div class="col-md-12 col-md-offset-6" >
             <div class="box box-primary">
                 <div class="container-fluid">
                 <div class="row mb-2">
-					  <div class="col-sm-5">
+					  <div class="col-sm-6">
 						  <p style="font-size:24px">Profile Tutor</p>
 					  </div>
-                        <div class="col-sm-5">
-                            <ol class="breadcrumb float-sm-right" style="font-size:14px">
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-md-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
                                     <a href="/tutor">Tutor</a>
                                 </li>
@@ -46,6 +46,7 @@
 			{{ method_field('PUT') }}
                     <div class="form-group">
                         <label for="">Foto :</label>
+                        <br/>
                         <a href="{{ url('/data_file/'.$d->foto) }}" target="_blank">
                           <img width="300px" src="{{ url('/data_file/'.$d->foto) }}">
                         </a>                      </div>

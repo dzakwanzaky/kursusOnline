@@ -10,15 +10,15 @@
                 <div class="container-fluid">
                 <div class="row mb-2">
 					        <div class="col-sm-6">
-						        <p style="font-size:24px">Profile Siswa</p>
+						        <p style="font-size:24px">Profile Murid</p>
 					  </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-md-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/murid">Siswa</a>
+                                    <a href="/murid">Murid</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Profile Siswa
+                                    Profile Murid
                                 </li>
                             </ol>
                         </div>			
@@ -49,6 +49,7 @@
                 <div class="form-group">
                     <div class="form-group">
                         <label for="">Foto :</label>
+                        <br/>
                         <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
                           <img width="300px" src="{{ url('/data_file/'.$d->file) }}">
                         </a>                     

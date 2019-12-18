@@ -1,10 +1,9 @@
-@extends('murid/base')
+@extends('tutor/base')
 @section('content')
-<!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
+      <div class="row mb-2">
         <div class="col-md-12 col-md-offset-6" >
             <div class="box box-primary">
                 <div class="container-fluid">
@@ -13,9 +12,9 @@
 						  <p style="font-size:24px">Profile Murid</p>
 					  </div>
                         <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right" style="font-size:14px">
+                            <ol class="breadcrumb float-md-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/murid">Murid</a>
+                                    <a href="/tutor">Murid</a>
                                 </li>
                                 <li class="breadcrumb-item active">
                                     Profile Murid
@@ -29,8 +28,8 @@
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
-    </div>
     <!-- /.content-header -->
+
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
@@ -38,35 +37,29 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-              <div class="form-group">
-
-              @php $no = 1; @endphp
-                @foreach($data as $d)
-                <form action="{{ route('register.update', $d->id) }}" method="post" enctype="multipart/form-data">
-			{{ csrf_field() }}
-			{{ method_field('PUT') }}
-
-          <div class="form-group">
-						<label for="">No Telepon :</label>
-						<input type="text" class="form-control" id="phone" name="phone" value="{{$d->phone}}">
-					</div>
-
-					<div class="form-group">
-						<label for="">Email :</label>
-						<input type="text" class="form-control" id="email" name="email" value="{{$d->email}}">
-					</div>
-
-          <div class="form-group">
-            <button type="submit" class="btn btn-md btn-success">Simpan</button>
-            <a href="/profileMurid" class="btn btn-md btn-danger">Batal</a>
-          </div>
-                  
-				</form>
-              </div>
+              <!-- @foreach($data as $d) -->
+       
+            <div class="form-group">
+                          <div class="form-group">
+                              <label for="">Foto :</label>
+                              <a href="" target="_blank">
+                                <img width="300px" src="">
+                              </a>                   
             </div>
-            @endforeach
 
-            
+            <div class="form-group">
+                  <label for="">Nama Lengkap :</label>
+                  <input type="text" class="form-control" id="name" name="nama" value="{{ $d->nama_siswa }}" disabled >
+            </div>
+
+           <div class="form-group">
+                  <label for="">Alamat :</label>
+                  <input type="text" class="form-control" id="email" name="email" value="" disabled>
+            </div>
+<!-- @endforeach -->
+                </div>
+              </div>
+            </div>           
           </div>
           <!-- /.col-md-6 -->
           
@@ -75,5 +68,8 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
- 
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
   @endsection
