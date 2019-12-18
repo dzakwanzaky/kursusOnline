@@ -34,8 +34,11 @@
                             <a href="/murid" class="dropdown-item">Dashboard</a>
                         @elseif(Auth::user()->role == 'tutor')
                             <a href="/tutor" class="dropdown-item">Dashboard</a>
+                        @elseif(Auth::user()->role == 'admin')
+                            <a href="/admin" class="dropdown-item">Dashboard</a>
                         </a>
                    
+                        @endif
 
                         <br>
                         <a href="/landing" class="dropdown-item"
@@ -46,7 +49,6 @@
                     <form id="logout-form" action="/logout" method="POST" style="display: none;">
                       {{ csrf_field() }}
                 </form>
-                @endif
                         @endif
               </li>
             </div>

@@ -37,31 +37,29 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-              <div class="form-group">
-                    <!-- <a class="btn-edit" style="margin-left:auto;" href="/edit">
-                       Edit profile
-                    </a> -->
-                </div>
-      <div class="form-group">
-                    <div class="form-group">
-                        <label for="">Foto :</label>
-                        <a href="" target="_blank">
-                          <img width="300px" src="">
-                        </a>                   
-                 </div>
-					<div class="form-group">
-						<label for="">Nama Lengkap :</label>
-						<input type="text" class="form-control" id="name" name="nama" value="" disabled >
-					</div>
-          <div class="form-group">
-						<label for="">Alamat :</label>
-						<input type="text" class="form-control" id="email" name="email" value="" disabled>
-					</div>
-          </div>
-              </div>
+              <!-- @foreach($data as $d) -->
+       
+            <div class="form-group">
+                          <div class="form-group">
+                              <label for="">Foto :</label>
+                              <a href="" target="_blank">
+                                <img width="300px" src="">
+                              </a>                   
             </div>
 
-            
+            <div class="form-group">
+                  <label for="">Nama Lengkap :</label>
+                  <input type="text" class="form-control" id="name" name="nama" value="{{ $d->nama_siswa }}" disabled >
+            </div>
+
+           <div class="form-group">
+                  <label for="">Alamat :</label>
+                  <input type="text" class="form-control" id="email" name="email" value="" disabled>
+            </div>
+<!-- @endforeach -->
+                </div>
+              </div>
+            </div>           
           </div>
           <!-- /.col-md-6 -->
           

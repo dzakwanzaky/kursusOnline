@@ -184,3 +184,4 @@ Route::get('/editMurid/{id}', 'Auth\RegisterController@editMurid')->name('editMu
 Route::get('/editProfile/{id}', 'Auth\RegisterController@editProfile')->name('editProfile');
 // Route::get('/updateMurid/{id}', 'Auth\RegisterController@updateMurid')->name('updateMurid');
 Route::get('profileAdmin','Auth\RegisterController@data');
+// Route::get('detail','SiswaController@show');

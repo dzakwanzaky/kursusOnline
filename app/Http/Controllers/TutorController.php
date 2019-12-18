@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\ModelTutor;
 use Auth;
 use App\User;
+use App\ModelSiswa;
 
 class TutorController extends Controller
 {
@@ -83,5 +84,11 @@ class TutorController extends Controller
             } else {
                 return redirect('manajemenTutor')->withMessage('Berhasil Konfirmasi');
             }
+    }
+
+    public function show($id)
+     {
+     $data = ModelSiswa::where('id','=',$id)->get();
+        return view('tutor.detailProfile', compact('data'));
     }
 }

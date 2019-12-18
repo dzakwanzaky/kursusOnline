@@ -97,4 +97,10 @@ class SiswaController extends Controller
         }
                
     }
+
+    // public function show($id)
+    // {
+    //     $data = ModelSiswa::where('id','=',$id)->get();
+    //     return view('tutor.detailProfile', compact('data'));
+    // }
 }
