@@ -29,8 +29,10 @@ class JadwalController extends Controller
     public function tutor()
     {
        
-        $data = ModelJadwal::where('status', 'WAITING')->orWhere('status', 'PICKED UP')->get();
-        return view('tutor.tutor', compact('data', 'alamat'));
+        $data = ModelJadwal::with('datas')
+        ->where('status', 'WAITING')->orWhere('status', 'PICKED UP')->get();
+        // dd($data);
+        return view('tutor.tutor', compact('data'));
     }
 
     public function admin()

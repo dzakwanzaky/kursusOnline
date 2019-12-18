@@ -8,6 +8,11 @@
                 @if (Auth::guest())
                 <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
                     <ul class="navbar-nav">
+                        <li><a class="nav-link" href="/">Beranda</a></li>
+                        <li><a class="nav-link" href="/paketProgram">Program</a></li>
+                        <li><a class="nav-link" href="/">Cara Bayar</a></li>
+                        <li><div class="btn-login"><a href="/login">Masuk</a></div></li>
+						<li><div class="btn-register"><a href="/registerPilih">Daftar</a></div></li>
                     </ul>
                 </div>
                 @else

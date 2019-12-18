@@ -30,6 +30,7 @@
                     <tr>
                         <th>No.</th>
                         <th>Nama</th>
+                        <th>Alamat</th>
                         <th>Program</th>
                         <th>Kelas</th>
                         <th>Mata Pelajaran</th>
@@ -46,7 +47,17 @@
                 @foreach($data as $d)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $d->nama_murid }}</td>
+                        <td>
+                        {{ $d->nama_murid }}
+                        </td>
+                        <td>
+                        Kota
+                        {{ $d->datas->kota }}
+                        Kecamatan
+                        {{ $d->datas->kecamatan }}
+                        Provinsi
+                        {{ $d->datas->provinsi }}
+                        </td>
                         <td>{{ $d->program }}</td>
                         <td>{{ $d->kelas }}</td>
                         <td>{{ $d->mata_pelajaran }}</td>
