@@ -36,14 +36,6 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="/pendapatan" class="nav-link {{ Request::segment(1) === 'pendapatan' ? 'nav-link active' : null }}">
-              <i class="far fa-circle nav-icon"></i>
-              <p>
-                Pendapatan
-              </p>
-            </a>
-          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

@@ -16,7 +16,6 @@
 
     <!-- Site Icons -->
     <link rel="shortcut icon" href="/tema/images/inofaLogo.png" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/tema/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/tema/css/bootstrap.min.css">

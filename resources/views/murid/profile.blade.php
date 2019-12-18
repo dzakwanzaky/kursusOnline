@@ -44,11 +44,12 @@
                 @php $no = 1; @endphp
       @foreach($data as $d)
           <td>
-				<a href="{{route('dataMurid.edit',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Profile</a>       
+				<a href="{{route('dataSiswa.edit',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Profile</a>       
 			</td>
                 <div class="form-group">
                     <div class="form-group">
                         <label for="">Foto :</label>
+                        <br/>
                         <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
                           <img width="300px" src="{{ url('/data_file/'.$d->file) }}">
                         </a>                     
