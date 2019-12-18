@@ -10,15 +10,15 @@
                 <div class="container-fluid">
                 <div class="row mb-2">
 					        <div class="col-sm-6">
-						        <p style="font-size:24px">Profile Siswa</p>
+						        <p style="font-size:24px">Profile Murid</p>
 					  </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-md-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/murid">Siswa</a>
+                                    <a href="/murid">Murid</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Profile Siswa
+                                    Profile Murid
                                 </li>
                             </ol>
                         </div>			
@@ -44,7 +44,7 @@
                 @php $no = 1; @endphp
       @foreach($data as $d)
           <td>
-				<a href="{{route('dataSiswa.edit',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Profile</a>       
+				<a href="{{route('dataMurid.edit',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Profile</a>       
 			</td>
                 <div class="form-group">
                     <div class="form-group">

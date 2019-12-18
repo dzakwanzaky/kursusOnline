@@ -43,7 +43,6 @@
     <div id="preloader">
         <img class="preloader" src="tema/images/ajax-loader.gif" alt="">
     </div>
-    @include('base/header_page')
     
     @yield('content')    
     <script src="/tema/js/all.js"></script>

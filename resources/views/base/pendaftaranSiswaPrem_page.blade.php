@@ -1,3 +1,4 @@
+@include('base/header_page')
 @extends('base/script_page')
 @section('content')
 <!DOCTYPE html>
