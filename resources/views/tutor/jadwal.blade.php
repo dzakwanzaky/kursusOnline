@@ -26,6 +26,7 @@
                 <thead class="thead-dark">
                 <tr>
                         <th>No.</th>
+                        <th>Nama</th>
                         <th>Kelas</th>
                         <th>Mata Pelajaran</th>
                         <th>Hari</th>
@@ -40,6 +41,7 @@
                 @foreach($data as $d)
                     <tr>
                         <td>{{ $no++ }}</td>
+                        <td>{{ $d->name }}</td>
                         <td>{{ $d->kelas }}</td>
                         <td>{{ $d->mata_pelajaran }}</td>
                         <td>{{ $d->hari1 }}</td>

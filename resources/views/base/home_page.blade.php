@@ -7,12 +7,21 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-12">
                     <div class="row mb-4">
+                    @if(Auth::guest())
                         <div class="col-md-7">
                             <h3>Gabung bersama kami dan</h3>
                             <h3>menjadi juara!</h3>
                             <p class="lead"></p>
                             <a data-scroll href="/registerPilih" class="btn btn-light btn-radius btn-brd" style="font-weight:bold"> GABUNG SEKARANG! </a>
                         </div>
+                    @else
+                    <div class="col-md-7">
+                            <h3>Gabung bersama kami dan</h3>
+                            <h3>menjadi juara!</h3>
+                            <p class="lead"></p>
+                            <a data-scroll href="/" class="btn btn-light btn-radius btn-brd" style="font-weight:bold">ANDA SUDAH BERGABUNG</a>
+                        </div>
+                    @endif    
                     </div>
                 </div>
             </div><!-- end row -->
