@@ -12,14 +12,15 @@ use Auth;
 class VerifyController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     
     public function getVerify(){
         return view('verify');
     }
+
     public function postVerify(Request $request){
         if($user=User::where('code',$request->code)->first()){
             $user->active=1;
