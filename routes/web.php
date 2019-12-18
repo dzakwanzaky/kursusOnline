@@ -108,6 +108,9 @@ Route::get('/edit', function () {
 Route::get('/editTutor', function () {
     return view('tutor/editTutorLogin');
 });
+Route::get('/detail', function () {
+    return view('tutor/detailProfile');
+});
 
 //DASHBOARD ADMIN
 Route::get('/manajemenTutor', function () {
