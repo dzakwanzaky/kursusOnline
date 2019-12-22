@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="/" class="brand-link">
       <span class="brand-text font-weight-light">
         <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="120" height="43" alt="inofa Logo" href="/landing" style="display:block; margin-left:auto; margin-right:auto;">
       </span>
@@ -11,7 +11,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="/tutor" class="d-block" style="margin: 0 0 0 10px;">Tutor</a>
+          <a class="d-block" style="margin: 0 0 0 10px;">Tutor</a>
         </div>
       </div>
 
@@ -33,14 +33,6 @@
               <i class="far fa-circle nav-icon"></i>
               <p>
                 Jadwal Mengajar
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/pendapatan" class="nav-link {{ Request::segment(1) === 'pendapatan' ? 'nav-link active' : null }}">
-              <i class="far fa-circle nav-icon"></i>
-              <p>
-                Pendapatan
               </p>
             </a>
           </li>

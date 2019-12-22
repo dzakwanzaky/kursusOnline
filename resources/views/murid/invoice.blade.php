@@ -100,7 +100,7 @@
                       </div>
                     </div>
                         <td>
-                          <a href="invoicenya_pdf" class=" btn btn-sm btn-success" style="color:white;">
+                          <a href="invoicenya_pdf" target="_blank" class=" btn btn-sm btn-success" style="color:white;">
                             <span class="fa fa-download"></span>
                           </a>
                         </td>

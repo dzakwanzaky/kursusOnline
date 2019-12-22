@@ -5,15 +5,15 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-        <div class="col-md-8 col-md-offset-6" >
+        <div class="col-md-12 col-md-offset-6" >
             <div class="box box-primary">
                 <div class="container-fluid">
                 <div class="row mb-2">
-					  <div class="col-sm-5">
+					  <div class="col-sm-6">
 						  <p style="font-size:24px">Profile Tutor</p>
 					  </div>
-                        <div class="col-sm-5">
-                            <ol class="breadcrumb float-sm-right" style="font-size:14px">
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-md-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
                                     <a href="/tutor">Tutor</a>
                                 </li>
@@ -46,8 +46,23 @@
 			{{ method_field('PUT') }}
                     <div class="form-group">
                         <label for="">Foto :</label>
-                        <img width="200px" height="200px" src="/tema/uploads/testi_02.png" style="display:block;margin-left:auto;margin-right:auto">
-                    </div>
+                        <br/>
+                        <a href="{{ url('/data_file/'.$d->foto) }}" target="_blank">
+                          <img width="300px" src="{{ url('/data_file/'.$d->foto) }}">
+                        </a>                      </div>
+
+                        <div class="middles">
+				<div class="text">
+				  <label for="change_pic">Change Photo</label>
+				  <div class="form-group">
+				  <div class="alert alert-info">
+							<strong>Info!</strong> Maximum Size Upload : 2MB
+					</div>
+					<input id="foto" class="form-control" name ="foto" type="file">
+				  	</div>
+				</div>
+			  </div>
+			</div>
 
 					<div class="form-group">
 						<label for="">Nama Lengkap :</label>
@@ -68,6 +83,17 @@
 						<label for="">Kota :</label>
 						<input type="text" class="form-control" id="kota" name="kota" value=" {{ $d->kota }}"> 
 					</div>
+
+          <div class="form-group">
+						<label for="">Pendidikan :</label>
+						<input type="text" class="form-control" id="pendidikan" name="pendidikan" value=" {{ $d->pendidikan }}"> 
+					</div>
+
+          <div class="form-group">
+						<label for="">Mata Pelajaran :</label>
+						<input type="text" class="form-control" id="mata_pelajaran" name="mata_pelajaran" value=" {{ $d->mata_pelajaran }}"> 
+					</div>
+          
 
           <input type="text" class="form-control" id="status" name="status" value=" {{ $d->status }}" style="display:none"> 
 

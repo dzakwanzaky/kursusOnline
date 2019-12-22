@@ -108,6 +108,9 @@ Route::get('/edit', function () {
 Route::get('/editTutor', function () {
     return view('tutor/editTutorLogin');
 });
+Route::get('/detail', function () {
+    return view('tutor/detailProfile');
+});
 
 //DASHBOARD ADMIN
 Route::get('/manajemenTutor', function () {
@@ -130,6 +133,9 @@ Route::get('/list_pendaftaranTutor', function () {
 });
 Route::get('/editAdmin', function () {
     return view('dashboard_admin/edit');
+});
+Route::get('/manajemenProgram', function () {
+    return view('dashboard_admin/manajemenProgram');
 });
 
 Auth::routes();
@@ -173,13 +179,12 @@ Route::resource('dataSiswa','SiswaController');
 
 Route::resource('paketProgram','InvoiceController');
 
-//Route::resource('invoice','ProgramController');
+Route::resource('program','ProgramController');
 
  Route::resource('register', 'Auth\RegisterController');
 Route::get('/editMurid/{id}', 'Auth\RegisterController@editMurid')->name('editMurid');
 // Route::get('/register/{id}', 'Auth\RegisterController@update')->name('register.update');
 Route::get('/editProfile/{id}', 'Auth\RegisterController@editProfile')->name('editProfile');
 // Route::get('/updateMurid/{id}', 'Auth\RegisterController@updateMurid')->name('updateMurid');
-
-
-
+Route::get('profileAdmin','Auth\RegisterController@data');
+// Route::get('detail','SiswaController@show');

@@ -10,15 +10,15 @@
                 <div class="container-fluid">
                 <div class="row mb-2">
 					  <div class="col-sm-6">
-						  <p style="font-size:24px">Profile Siswa</p>
+						  <p style="font-size:24px">Profile Murid</p>
 					  </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/murid">Siswa</a>
+                                    <a href="/murid">Murid</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Profile Siswa
+                                    Profile Murid
                                 </li>
                             </ol>
                         </div>			
@@ -58,7 +58,7 @@
 
           <div class="form-group">
             <button type="submit" class="btn btn-md btn-success">Simpan</button>
-            <a href="/profile" class="btn btn-md btn-danger">Batal</a>
+            <a href="/profileMurid" class="btn btn-md btn-danger">Batal</a>
           </div>
                   
 				</form>

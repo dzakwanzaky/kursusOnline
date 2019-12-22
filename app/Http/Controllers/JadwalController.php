@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ModelJadwal;
 use Auth;
+use App\ModelSIswa;
 
 class JadwalController extends Controller
 {
@@ -27,15 +28,10 @@ class JadwalController extends Controller
 
     public function tutor()
     {
-        //kan aku pingin nampilin data pengajuan les, dimana status siswa aktif
-        //data pengajuan les dr tabel jadwal
-        //data siswa dari tabel siswa
-        // $data = ModelJadwal::with('datas')
-        // // ->where('status', 'WAITING') //aku pengen nampilin status pengajuan les yang statusnya waiting
-        // ->whereHas('datas', function($q) 
-        //  {$q->where('status', 'Aktif');}
-        // )
-        $data = ModelJadwal::where('status', 'WAITING')->orWhere('status', 'PICKED UP')->get();
+       
+        $data = ModelJadwal::with('datas')
+        ->where('status', 'WAITING')->orWhere('status', 'PICKED UP')->get();
+        // dd($data);
         return view('tutor.tutor', compact('data'));
     }
 

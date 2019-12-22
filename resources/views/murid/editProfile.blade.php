@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<meta charset=utf-8 />
+</head>
+</html>
 @extends('murid/base')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
@@ -10,15 +19,15 @@
                 <div class="container-fluid">
                 <div class="row mb-2">
 					  <div class="col-sm-6">
-						  <p style="font-size:24px">Profile Siswa</p>
+						  <p style="font-size:24px">Profile Murid</p>
 					  </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/murid">Siswa</a>
+                                    <a href="/murid">Murid</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Profile Siswa
+                                    Profile Murid
                                 </li>
                             </ol>
                         </div>			
@@ -45,9 +54,27 @@
 			{{ method_field('PUT') }}
                 <div class="form-group">
                     <div class="form-group">
-                        <label for="">Foto :</label>
-                        <img width="200px" height="200px" src="/tema/images/bimbel.jpg" style="display:block;margin-left:auto;margin-right:auto">
-                    </div>
+                        <label for="file">Foto :</label>
+                        <br/>
+                        <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
+                          <img width="300px" src="{{ url('/data_file/'.$d->file) }}">
+                          </a>                   
+                 </div>
+
+                 <div class="middles">
+				<div class="text">
+				  <label for="change_pic">Change Photo</label>
+				  <div class="form-group">
+				  <div class="alert alert-info">
+							<strong>Info!</strong> Maximum Size Upload : 2MB
+					</div>
+					<input id="file" class="form-control" name ="file" type="file">
+				  	</div>
+				</div>
+			  </div>
+			</div>
+
+
                     <div class="form-group">
 						<label for="">Nama Lengkap :</label>
 						<input type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="{{$d->nama_siswa}}">
@@ -88,5 +115,27 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
+    <script>
+		//buat profile
+		$(function () {
+			$("#file").change(function () {
+				readURL(this);
+			});
+    	});
+
+
+    	function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+
+				reader.onload = function (e) {
+					//alert(e.target.result);
+					$('#profile-picture').attr('src', e.target.result);
+				}
+
+				reader.readAsDataURL(input.files[0]);
+			}
+    	}
+	</script>
  
   @endsection

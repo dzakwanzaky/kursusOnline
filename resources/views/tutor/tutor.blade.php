@@ -1,35 +1,5 @@
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-  <title>Dashboard | Tutor</title>
-
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{ asset('/lte/plugins/fontawesome-free/css/all.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('/lte/plugins/fontawesome-free/css/all.css') }}">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('/lte/dist/css/adminlte.min.css') }}">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-</head>
-<body class="hold-transition sidebar-mini">
-<div class="wrapper">
-
-<!-- HEADER -->
-@include('tutor/header')
-
-<!-- Main Sidebar Container -->
-@include('tutor/sidebar')
- 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+@extends('tutor/base')
+@section('content')
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -59,7 +29,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <thead class="thead-dark">
                     <tr>
                         <th>No.</th>
-                        <th>Nama Murid</th>
+                        <th>Nama</th>
+                        <th>Alamat</th>
                         <th>Program</th>
                         <th>Kelas</th>
                         <th>Mata Pelajaran</th>
@@ -76,6 +47,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 @foreach($data as $d)
                     <tr>
                         <td>{{ $no++ }}</td>
+                        <td>
+                        {{ $d->nama_murid }}
+                        </td>
+                        <td>
+                        Kota
+                        {{ $d->datas->kota }}
+                        Kecamatan
+                        {{ $d->datas->kecamatan }}
+                        Provinsi
+                        {{ $d->datas->provinsi }}
+                        </td>
                         <td>{{ $d->program }}</td>
                         <td>{{ $d->kelas }}</td>
                         <td>{{ $d->mata_pelajaran }}</td>
@@ -119,31 +101,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <script
+    <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script> 
-    <script>
-      $(document).ready( function () {
-      $('#tutor').DataTable();
-      });
-    </script>
-
-<!-- Main Footer -->
-@include('tutor/footer')
-
-<!-- ./wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
-
-<!-- jQuery -->
-<script src="{{ asset('/lte/plugins/jquery/jquery.min.js') }}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('/lte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('/lte/dist/js/adminlte.min.js') }}"></script>
-</body>
-</html>
+  @endsection
+ 

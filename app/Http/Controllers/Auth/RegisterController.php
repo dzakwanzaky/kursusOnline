@@ -78,22 +78,9 @@ class RegisterController extends Controller
                 $user->phone= $request->input('phone');
                 $user->role = $request->input('role');
                 $user->active= 0;
-              
- 
-        //     ;     
-        // }else {
-        //     $user = new User;
-        //         $user->name = $request->input('name');
-        //         $user->email = $request->input('email');
-        //         $user->password = Hash::make($request->input('password'));
-        //         $user->phone= $request->input('phone');
-        //         $user->role = $request->input('role');
-        //         $user->active= 0;
-            // Auth::login($user);
-        // }
-
+  
         if($user){
-            //$user->code=SendOTP::sendOTP($user->phone);
+            $user->code=SendOTP::sendOTP($user->phone);
             $user->save();
             return redirect('verify');
         }
@@ -124,13 +111,8 @@ class RegisterController extends Controller
         return view('murid.editLogin', compact('data'));
     }
 
-    // public function updateMurid(Request $request, $id)
-    // {
-    //     $data = User::where('id',$id)->first();
-    //     $data->email = $request->email;
-    //     $data->phone = $request->phone;
-    //     $data->save();
-    //     return redirect('profileMurid')->withMessage('Berhasil Konfirmasi');
-    // }
-
+        public function data(){
+            $data = User::where('id', '=', Auth::user()->id)->get();
+            return view('dashboard_admin.profileAdmin', compact('data'));
+        }
 }

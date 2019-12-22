@@ -7,6 +7,7 @@ use App\ModelSiswa;
 use Auth;
 use App\User;
 use App\ModelInvoice;
+use Image;
 
 class SiswaController extends Controller
 {
@@ -70,7 +71,36 @@ class SiswaController extends Controller
         $data->kecamatan = $request->kecamatan;
         $data->kota = $request->kota;
         $data->status = $request->status;
+        if($request->file){
+            $file = $request->file('file');
+            $nama_file = time()."_".$file->getClientOriginalName();  
+            $tujuan_upload = 'data_file';
+            $file->move($tujuan_upload,$nama_file);
+            $data->file = $nama_file;  
+        }
         $data->save();
-        return redirect('daftarSiswa')->withMessage('Berhasil Konfirmasi');
+        if(Auth::user()->role == 'siswa'){
+            return redirect('profileMurid')->withMessage('Berhasil Konfirmasi');
+            } else {
+                return redirect('daftarSiswa')->withMessage('Berhasil Konfirmasi');
+            }
     }
+
+    public function dashboard()
+    {
+        if (Auth::user()->role == 'siswa') { // Role Guru
+            return view('murid.murid');
+        } elseif (Auth::user()->role == 'tutor') { // Role Murid
+            return view('tutor.tutor');
+        } elseif (Auth::user()->role == 'admin') { // Role Admin
+            return view('dashboard_admin.admin');
+        }
+               
+    }
+
+    // public function show($id)
+    // {
+    //     $data = ModelSiswa::where('id','=',$id)->get();
+    //     return view('tutor.detailProfile', compact('data'));
+    // }
 }

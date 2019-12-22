@@ -1,3 +1,4 @@
+@include('base/header_page2')
 @extends('base/script_page')
 @section('content')
     <div class="main">
@@ -86,7 +87,7 @@
                     <br>
                                 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-masuk" style="border-radius:50px; margin-left:auto; margin-right:auto;">
+                        <button  type="submit" class="btn btn-masuk" style="border-radius:50px; margin-left:auto; margin-right:auto;">
                             Daftar
                         </button>
                     </div>

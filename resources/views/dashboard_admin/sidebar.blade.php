@@ -11,7 +11,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block" style="margin: 0 0 0 10px">Admin</a>
+          <a class="d-block" style="margin: 0 0 0 10px">Admin</a>
         </div>
       </div>
 
@@ -41,6 +41,14 @@
               <i class="far fa-circle nav-icon"></i>
               <p>
                 Manajemen Tutor
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/manajemenProgram" class="nav-link {{ Request::segment(1) === 'manajemenProgram' ? 'nav-link active' : null }}">
+              <i class="far fa-circle nav-icon"></i>
+              <p>
+                Manajemen Program
               </p>
             </a>
           </li>

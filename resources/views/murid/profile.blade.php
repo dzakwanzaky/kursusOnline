@@ -10,15 +10,15 @@
                 <div class="container-fluid">
                 <div class="row mb-2">
 					        <div class="col-sm-6">
-						        <p style="font-size:24px">Profile Siswa</p>
+						        <p style="font-size:24px">Profile Murid</p>
 					  </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-md-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/murid">Siswa</a>
+                                    <a href="/murid">Murid</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Profile Siswa
+                                    Profile Murid
                                 </li>
                             </ol>
                         </div>			
@@ -49,8 +49,11 @@
                 <div class="form-group">
                     <div class="form-group">
                         <label for="">Foto :</label>
-                        <img width="200px" height="200px" src="/tema/images/bimbel.jpg" style="display:block;margin-left:auto;margin-right:auto">
-                    </div>
+                        <br/>
+                        <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
+                          <img width="300px" src="{{ url('/data_file/'.$d->file) }}">
+                        </a>                     
+                     </div>
                     <div class="form-group">
 						<label for="">Nama Lengkap :</label>
 						<input type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="{{ $d->nama_siswa }}" disabled >
@@ -61,7 +64,7 @@
 					</div>
 
 				  @endforeach
-          <a href="{{route('editMurid',$d->id)}}"  class="btn-edit" style="margin-left:auto;">Edit Data Login</a> 
+          <a href="{{route('editMurid',$d->id)}}"  class="btn-edit-login" style="margin-left:auto;">Edit Data Login</a> 
       
           @foreach($user as $u)
           <div class="form-group">
