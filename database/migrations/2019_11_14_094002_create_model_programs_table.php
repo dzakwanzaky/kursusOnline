@@ -16,7 +16,11 @@ class CreateModelProgramsTable extends Migration
         Schema::create('model_programs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('program');
+            $table->string('fasilitas');
+            $table->string('durasi');
+            $table->string('jumlah_pertemuan');
             $table->string('harga');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }

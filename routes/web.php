@@ -134,6 +134,9 @@ Route::get('/list_pendaftaranTutor', function () {
 Route::get('/editAdmin', function () {
     return view('dashboard_admin/edit');
 });
+Route::get('/manajemenProgram', function () {
+    return view('dashboard_admin/manajemenProgram');
+});
 
 Auth::routes();
 
@@ -176,7 +179,7 @@ Route::resource('dataSiswa','SiswaController');
 
 Route::resource('paketProgram','InvoiceController');
 
-//Route::resource('invoice','ProgramController');
+Route::resource('program','ProgramController');
 
  Route::resource('register', 'Auth\RegisterController');
 Route::get('/editMurid/{id}', 'Auth\RegisterController@editMurid')->name('editMurid');
