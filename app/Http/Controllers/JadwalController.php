@@ -82,7 +82,9 @@ class JadwalController extends Controller
         $data->hari1 = $request->hari1;
         $data->hari2 = $request->hari2;
         $data->hari3 = $request->hari3;
-        $data->waktu = $request->waktu;
+        $data->waktu_hari1 = $request->waktu_hari1;
+        $data->waktu_hari2 = $request->waktu_hari2;
+        $data->waktu_hari3 = $request->waktu_hari3;
         $data->save();
         return redirect('dataSiswa')->withMessage('Kamu Berhasil Daftar Les');
     }
