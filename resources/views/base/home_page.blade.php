@@ -44,41 +44,23 @@
                                         <div class="pricing-table-header">
                                             <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
                                                     required autofocus>
-                                                    <h2>PAKET REGULER</h2>
+                                            <h2>PAKET FREE</h2>
                                             <h3>FREE</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                            <p>Program les gratis untuk satu mata pelajaran dalam 1 semester dengan pengajar yang berpengalaman</p>
+                                        </div>
                                         <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>MATEMATIKA</strong>
-                                            <p><i class="fa fa-rocket"></i> <strong>IPA</strong>
-                                            <p><i class="fa fa-database"></i> <strong>BAHASA INDONESIA</strong>
-                                            <p><i class="fa fa-link"></i> <strong>BAHASA INGGRIS</strong>
-                                            <p><i class="fa fa-life-ring"></i> <strong>VIDEO MATERI</strong>    
-                                        <br>
+                                            <p><i class="fa fa-envelope-o"></i> <strong>MATA PELAJARAN :</strong><p style="margin-left:18%">Matematika, IPA, Bahasa Indonesia, dan Bahasa Inggris.</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>DURASI :</strong><p style="margin-left:18%">90 Menit/sesi
+                                            <p><i class="fa fa-database"></i> <strong>PERTEMUAN :</strong><p style="margin-left:18%">20 Pertemuan/6bln
+                                            <p><i class="fa fa-link"></i> <strong>PILIHAN HARI :</strong><p style="margin-left:18%">Setiap Hari.</p>
+                                            <p><i class="fa fa-link"></i> <strong>FASILITAS :</strong><p style="margin-left:18%">Soal latihan dan buku modul.</p>     
+                                            <br>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="pricing-table pricing-table-highlighted">
-                                        <div class="pricing-table-header">
-                                        <h2>PAKET PREMIUM</h2>
-                                            <h3>Rp.75.000,00</h3>
-                                        </div>
-                                        <div class="pricing-table-space"></div>
-                                        <div class="pricing-table-text">
-                                            <p>Untuk Hidup yang Lebih Baik</p>
-                                        </div>
-                                        <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>MATEMATIKA</strong>
-                                            <p><i class="fa fa-rocket"></i> <strong>IPA</strong>
-                                            <p><i class="fa fa-database"></i> <strong>BAHASA INDONESIA</strong>
-                                            <p><i class="fa fa-link"></i> <strong>BAHASA INGGRIS</strong>
-                                            <p><i class="fa fa-life-ring"></i> <strong>SOAL DAN VIDEO MATERI</strong> 
-                                        <br>
-                                        </div>
-                                     </div>
-                                </div>
-
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
@@ -86,16 +68,41 @@
                                             <h3>RP.100.000,00</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                            <p>Program les berbayar dengan keunggulan waktu pertemuan yang lebih banyak dan pengajar yang sudah berpengalaman.</p>
+                                        </div>
                                         <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>MATEMATIKA</strong>
-                                            <p><i class="fa fa-rocket"></i> <strong>IPA</strong>
-                                            <p><i class="fa fa-database"></i> <strong>BAHASA INDONESIA</strong>
-                                            <p><i class="fa fa-link"></i> <strong>BAHASA INGGRIS</strong>
-                                            <p><i class="fa fa-life-ring"></i> <strong>SEMINAR, SOAL, DAN VIDEO MATERI</strong>
-                                            <br>
+                                            <p><i class="fa fa-envelope-o"></i> <strong>MATA PELAJARAN :</strong><p style="margin-left:18%">Matematika, IPA, Bahasa Indonesia, dan Bahasa Inggris.</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>DURASI :</strong><p style="margin-left:18%">90 Menit/sesi
+                                            <p><i class="fa fa-database"></i> <strong>PERTEMUAN :</strong><p style="margin-left:18%">56 Pertemuan/6bln
+                                            <p><i class="fa fa-link"></i> <strong>PILIHAN HARI :</strong><p style="margin-left:18%">Setiap Hari.</p>
+                                            <p><i class="fa fa-link"></i> <strong>FASILITAS :</strong><p style="margin-left:18%">Soal latihan, buku modul, video materi, dan seminar</p>        
+                                        <br>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header">
+                                        <h2>PAKET REGULER</h2>
+                                            <h3>Rp.75.000,00</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                            <p>Program les eksklusif untuk kamu dengan lebih banyak keunggulan.</p>
+                                        </div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>MATA PELAJARAN :</strong><p style="margin-left:18%">Matematika, IPA, Bahasa Indonesia, dan Bahasa Inggris.</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>DURASI :</strong><p style="margin-left:18%">90 Menit/sesi
+                                            <p><i class="fa fa-database"></i> <strong>PERTEMUAN :</strong><p style="margin-left:18%">40 Pertemuan/6bln
+                                            <p><i class="fa fa-link"></i> <strong>PILIHAN HARI :</strong><p style="margin-left:18%">Setiap Hari.</p>
+                                            <p><i class="fa fa-link"></i> <strong>FASILITAS :</strong><p style="margin-left:18%">Soal latihan, buku modul, dan video materi</p>     
+                                        <br>
+                                        </div>
+                                     </div>
+                                </div>
+
+                                
                             </div><!-- end row -->
                             <br>
                         </div><!-- end pane -->

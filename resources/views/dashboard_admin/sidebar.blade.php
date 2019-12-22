@@ -45,10 +45,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/manajemenTutor" class="nav-link ">
+            <a href="/manajemenProgram" class="nav-link {{ Request::segment(1) === 'manajemenProgram' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>
-                Manajemen Paket Program
+                Manajemen Program
               </p>
             </a>
           </li>

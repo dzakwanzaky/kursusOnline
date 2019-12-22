@@ -30,6 +30,30 @@ class ProgramController extends Controller
         return view('murid/invoicenya', compact('data', 'alamat', 'invoice'));
     }
 
+    public function store(Request $request)
+    {
+        $data = new ModelJadwal();
+        $data->program = $request->program;
+        $data->fasilitas = $request->fasilitas;
+        $data->durasi = $request->durasi;
+        $data->jumlah_pertemuan = $request->jumlah_pertemuan;
+        $data->harga = $request->harga;
+        $data->save();
+        return redirect('dataSiswa')->withMessage('Kamu Berhasil Daftar Les');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $data = ModelSiswa::where('id',$id)->first();
+        $data->program = $request->program;
+        $data->fasilitas = $request->fasilitas;
+        $data->durasi = $request->durasi;
+        $data->jumlah_pertemuan = $request->jumlah_pertemuan;
+        $data->harga = $request->harga;
+        $data->save();
+    }
+
+
     public function data()
     {
         $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->get();
@@ -48,3 +72,5 @@ class ProgramController extends Controller
         return $pdf->stream('invoice');
     }
 }
+
+

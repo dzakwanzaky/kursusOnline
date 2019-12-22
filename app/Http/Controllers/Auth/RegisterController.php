@@ -80,7 +80,7 @@ class RegisterController extends Controller
                 $user->active= 0;
   
         if($user){
-            // $user->code=SendOTP::sendOTP($user->phone);
+            //$user->code=SendOTP::sendOTP($user->phone);
             $user->save();
             return redirect('verify');
         }
