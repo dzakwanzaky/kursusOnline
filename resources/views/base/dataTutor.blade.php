@@ -62,9 +62,12 @@
                         <label for="pendidikan">Pendidikan Terakhir</label>
 
                         <div class="form-title">
-                            <input id="pendidikan" type="text" class="form-control" name="pendidikan" required>
-
-                          
+                        <select id="pendidikan" name="pendidikan" class="form-control" required>
+                            <option value="SMA">SMA/SMK sederajat</option>
+                            <option value="D3">D3</option>
+                            <option value="S1">S1</option>
+                            <option value="S2">S2</option>   
+                        </select>
                         </div>
                     </div>         
 
@@ -89,10 +92,10 @@
 
                         <div class="col-md-6">
                         <form action="" method="post">
-                            <input type="checkbox" value="1"/> Matematika <br>
-                            <input type="checkbox" value="2"/> IPA <br>
-                            <input type="checkbox" value="3"/> IPS <br>
-                            <input type="checkbox" value="4"/> Bahasa Inggris <br>
+                            <input type="checkbox" value="Matematika"/> Matematika <br>
+                            <input type="checkbox" value="IPA"/> IPA <br>
+                            <input type="checkbox" value="IPS"/> IPS <br>
+                            <input type="checkbox" value="Bahasa Inggris"/> Bahasa Inggris <br>
                         </form>
                         </div>
                     </div>       
