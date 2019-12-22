@@ -22,12 +22,10 @@
                         <label for="email">Jenis Kelamin</label>
 
                         <div class="form-title">
-
-                        <select id="jenis_kelamin" name="jenis_kelamin" class="form-control">
-                            <option value="Laki-Laki">Laki-Laki</option>
-                            <option value="Perempuan">Perempuan</option>
-                        </select>
-
+                        <form action="">
+                            <input type="radio" value="laki" /> Laki-laki <br>  
+                            <input type="radio" value="perempuan" /> Perempuan
+                        </form>
                         </div>
                     </div>
 
@@ -73,34 +71,39 @@
                      <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                         <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
 
-                        <select id="kelas" name="kelas" class="form-control">
-                            <option value="1">Kelas 1 SD</option>
-                            <option value="2">Kelas 2 SD</option>
-                            <option value="3">Kelas 3 SD</option>
-                            <option value="4">Kelas 4 SD</option>
-                            <option value="5">Kelas 5 SD</option>
-                            <option value="6">Kelas 6 SD</option>
-                        </select>
+                        <div class="col-md-6">
+                        <form action="" method="post">
+                            <input type="checkbox" value="1"/> Kelas 1 SD <br>
+                            <input type="checkbox" value="2"/> Kelas 2 SD <br>
+                            <input type="checkbox" value="3"/> Kelas 3 SD <br>
+                            <input type="checkbox" value="4"/> Kelas 4 SD <br>
+                            <input type="checkbox" value="5"/> Kelas 5 SD <br>
+                            <input type="checkbox" value="6"/> Kelas 6 SD <br>
+                        </form>
+                        </div>
                     </div>       
 
                     
                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                         <label for="mata_pelajaran">Mata Pelajaran</label>
 
-                        <div class="form-title">
-                            <input id="mata_pelajaran" type="text" class="form-control" name="mata_pelajaran" required>
-
-                         
+                        <div class="col-md-6">
+                        <form action="" method="post">
+                            <input type="checkbox" value="1"/> Matematika <br>
+                            <input type="checkbox" value="2"/> IPA <br>
+                            <input type="checkbox" value="3"/> IPS <br>
+                            <input type="checkbox" value="4"/> Bahasa Inggris <br>
+                        </form>
                         </div>
                     </div>       
 
                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
-                        <label for="file">Curriculum Vitae</label>
+                        <label for="file">Curriculum Vitae (.pdf / .docx)</label>
+                        
 
                         <div class="form-title">
-                            <input id="file" type="file" class="form-control" name="file" required>
+                            <input id="file" accept=".docx, .pdf" type="file" class="form-control" name="file" required>
 
-                           
                         </div>
                     </div>       
                             <input id="status" type="text" name="status" class="form-control" value="WAITING" style="display:none" required>

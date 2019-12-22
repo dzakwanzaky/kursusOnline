@@ -44,6 +44,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="/manajemenProgram" class="nav-link {{ Request::segment(1) === 'manajemenProgram' ? 'nav-link active' : null }}">
+              <i class="far fa-circle nav-icon"></i>
+              <p>
+                Manajemen Program
+              </p>
+            </a>
+          </li>
           <li class="nav-item has-treeview {{ Request::segment(1) === 'list_pendaftaranSiswa' ? 'menu-open' : null }}
                   {{ Request::segment(1) === 'list_pendaftaranTutor' ? 'menu-open' : null }}">
             <a href="#" class="nav-link nav-link {{ Request::segment(1) === 'list_pendaftaranSiswa' ? 'nav-link active' : null }}
