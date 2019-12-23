@@ -86,6 +86,11 @@ class ProgramController extends Controller
         $data3 = ModelProgram::where('id', '=', '3')->get();
         return view('base/paket_program_page', compact('data1', 'data2', 'data3'));
     }
+
+    public function paketAdmin(){
+        $data = ModelProgram::all();
+        return view('dashboard_admin/manajemenProgram', compact('data'));
+    }
 }
 
 

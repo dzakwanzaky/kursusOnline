@@ -34,9 +34,26 @@
                   <th>Jumlah Pertemuan</th>
                   <th>Harga</th>
                   <th>Keterangan</th>
+                  <th>Aksi</th>
                </tr>
               </thead>
               <tbody>
+              @php $no = 1; @endphp
+                    @foreach($data as $d)
+                    <tr>   
+                        <td>{{ $no++ }}</td>
+                        <td>{{ $d->program }}</td>
+                        <td>{{ $d->fasilitas }}</td>
+                        <td>{{ $d->durasi }}</td>
+                        <td>{{ $d->jumlah_pertemuan }}</td>
+                        <td>{{ $d->harga}}</td>
+                        <td>{{ $d->keterangan}}</td>
+                        <td>
+				<a href="{{route('karyawan.edit',$d->nik)}}" class="btn btn-md btn-success" style="float:right">Edit</a>       
+			</td>
+            
+                    </tr>
+                    @endforeach
                 </tbody>
           </table>
               </div>

@@ -193,3 +193,4 @@ Route::get('/', 'ProgramController@program');
 Route::get('/landing', 'ProgramController@program');
 Route::get('/paketProgram', 'ProgramController@paket');
 Route::get('/provinsi', 'RajaController@index');
+Route::get('/manajemenProgram', 'ProgramController@paketAdmin');

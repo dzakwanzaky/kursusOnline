@@ -30,7 +30,7 @@ class JadwalController extends Controller
     {
        
         $data = ModelJadwal::with('datas')
-        ->where('status', 'WAITING')->orWhere('status', 'PICKED UP')->get();
+        ->where('status', 'MENUNGGU')->orWhere('status', 'DIPILIH TUTOR')->get();
         // dd($data);
         return view('tutor.tutor', compact('data'));
     }
@@ -43,13 +43,13 @@ class JadwalController extends Controller
 
     public function adminTutor()
     {
-        $data = ModelJadwal::where('status', 'PICKED UP')->get();
+        $data = ModelJadwal::all();
         return view('dashboard_admin.list_pendaftaran_tutor', compact('data'));
     }
 
     public function jadwalTutor()
     {
-        $data = ModelJadwal::where('status', 'ACTIVE')->get();
+        $data = ModelJadwal::where('status', 'AKTIF')->get();
         return view('tutor.jadwal', compact('data'));
     }
 

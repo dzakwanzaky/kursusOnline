@@ -59,7 +59,7 @@
                           <input style="display:none"  type="text" class="form-control" id="kota" name="kota" value="{{ $d->kota }}">
                           <input  style="display:none" type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{ $d->kecamatan }}">
                           <input style="display:none" type="text" class="form-control" id="provinsi" name="provinsi" value="{{ $d->provinsi }}">
-                        <button value="ACTIVE" id="status" name="status" class="btn btn-sm btn-primary" type="submit" style="text-align:center"> 
+                        <button value="AKTIF" id="status" name="status" class="btn btn-sm btn-primary" type="submit" style="text-align:center"> 
                         {{ $d->status }}</button>
                         </td>
                       </form>

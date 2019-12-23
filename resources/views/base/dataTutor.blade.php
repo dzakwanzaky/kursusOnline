@@ -99,7 +99,7 @@
 
                         </div>
                     </div>       
-                            <input id="status" type="text" name="status" class="form-control" value="WAITING" style="display:none" required>
+                            <input id="status" type="text" name="status" class="form-control" value="MENUNGGU" style="display:none" required>
                                 
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary d-block" style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">

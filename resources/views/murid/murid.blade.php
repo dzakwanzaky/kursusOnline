@@ -30,10 +30,9 @@
                         <th>Program</th>
                         <th>Kelas</th>
                         <th>Mata Pelajaran</th>
-                        <th>Hari</th>
-                        <th>Hari</th>
-                        <th>Hari</th>
-                        <th>Waktu</th>
+                        <th>Hari Waktu</th>
+                        <th>Hari Waktu</th>
+                        <th>Hari Waktu</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -47,10 +46,9 @@
                         <td>{{ $d->program }}</td>
                         <td>{{ $d->kelas }} SD</td>
                         <td>{{ $d->mata_pelajaran }}</td>
-                        <td>{{ $d->hari1 }}</td>
-                        <td>{{ $d->hari2 }}</td>
-                        <td>{{ $d->hari3 }}</td>
-                        <td>{{ $d->waktu }}</td>
+                        <td>{{ $d->hari1 }}, PUKUL {{ $d->waktu_hari1 }}</td>
+                        <td>{{ $d->hari2 }}, PUKUL {{ $d->waktu_hari2 }}</td>
+                        <td>{{ $d->hari3 }}, PUKUL {{ $d->waktu_hari3 }}</td>
                         <td>
                             <a class=" btn btn-sm btn-primary" style="color:white;">
                             <span>{{ $d->status }}</span>

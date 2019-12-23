@@ -23,7 +23,7 @@
                             value="{{ Auth::user()->name }}" style="text-transform: capitalize">
                     <input type="text" class="form-control" id="program" name="program" style="display:none" value="GOLD">
 
-                    <input type="text" class="form-control" id="status" name="status" style="display:none" value="WAITING">
+                    <input type="text" class="form-control" id="status" name="status" style="display:none" value="MENUNGGU">
 
                     <label for="kelas" >Kelas
                         <select id="kelas" name="kelas" class="form-control" style="float:left">
@@ -87,8 +87,8 @@
                 </div>
                 <br>
                 <div class="panel-body" >
-                <div for="waktu1">Waktu Hari 1
-                    <select id="waktu1" name="waktu" class="form-control">
+                <div for="waktu_hari1">Waktu Hari 1
+                    <select id="waktu_hari1" name="waktu_hari1" class="form-control">
                         <option value="_none">-Pilih Jam-</option>
                         <option value="15.00 - 16.00">15.00 - 16.00 WIB</option>
                         <option value="16.00 - 17.00">16.00 - 17.00 WIB</option>
@@ -99,8 +99,8 @@
                 </div>
                 </div>
                 <div class="panel-body" >
-                <div for="waktu2">Waktu Hari 2
-                    <select id="waktu2" name="waktu" class="form-control">
+                <div for="waktu_hari2">Waktu Hari 2
+                    <select id="waktu_hari2" name="waktu_hari2" class="form-control">
                         <option value="_none">-Pilih Jam-</option>
                         <option value="15.00 - 16.00">15.00 - 16.00 WIB</option>
                         <option value="16.00 - 17.00">16.00 - 17.00 WIB</option>
@@ -110,8 +110,8 @@
                     </select> 
                 </div>
                 </div>
-                <div class="panel-body" >Waktu Harti 3
-                    <select id="waktu3" name="waktu" class="form-control">
+                <div class="panel-body" >Waktu Hari 3
+                    <select id="waktu_hari3" name="waktu_hari3" class="form-control">
                         <option value="_none">-Pilih Jam-</option>
                         <option value="15.00 - 16.00">15.00 - 16.00 WIB</option>
                         <option value="16.00 - 17.00">16.00 - 17.00 WIB</option>
@@ -146,7 +146,7 @@
     </script>
     <script>
         $(document).ready(function() {
-            $("#waktu1").change(function(){
+            $("#waktu_hari1").change(function(){
                 var nilai1 = $(this).val();
                 $("#p1").html("pukul "+nilai1);
             });
@@ -162,7 +162,7 @@
     </script>
     <script>
         $(document).ready(function() {
-            $("#waktu2").change(function(){
+            $("#waktu_hari2").change(function(){
                 var nilai1 = $(this).val();
                 $("#p3").html("pukul "+nilai1);
             });
@@ -178,7 +178,7 @@
     </script>
     <script>
         $(document).ready(function() {
-            $("#waktu3").change(function(){
+            $("#waktu_hari3").change(function(){
                 var nilai1 = $(this).val();
                 $("#p5").html("pukul "+nilai1);
             });
