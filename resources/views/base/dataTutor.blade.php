@@ -22,12 +22,13 @@
                         <label for="email">Jenis Kelamin</label>
 
                         <div class="form-title">
-                        <form action="">
-                            <input type="radio" value="laki" /> Laki-laki <br>  
-                            <input type="radio" value="perempuan" /> Perempuan
-                        </form>
+
+                       <select id="jenis_kelamin" name="jenis_kelamin" class="form-control">
+                            <option value="Laki-Laki">Laki-Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
                         </div>
-                    </div>
+                        </div>
 
                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                         <label for="provinsi">Provinsi</label>
@@ -75,14 +76,14 @@
                         <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
 
                         <div class="col-md-6">
-                        <form action="" method="post">
-                            <input type="checkbox" value="1"/> Kelas 1 SD <br>
-                            <input type="checkbox" value="2"/> Kelas 2 SD <br>
-                            <input type="checkbox" value="3"/> Kelas 3 SD <br>
-                            <input type="checkbox" value="4"/> Kelas 4 SD <br>
-                            <input type="checkbox" value="5"/> Kelas 5 SD <br>
-                            <input type="checkbox" value="6"/> Kelas 6 SD <br>
-                        </form>
+                      
+                            <input id="kelas1" type="checkbox" name="kelas[]" value="1"/> Kelas 1 SD <br>
+                            <input id="kelas2" type="checkbox" name="kelas[]" value="2"/> Kelas 2 SD <br>
+                            <input id="kelas3" type="checkbox" name="kelas[]" value="3"/> Kelas 3 SD <br>
+                            <input id="kelas4" type="checkbox" name="kelas[]" value="4"/> Kelas 4 SD <br>
+                            <input id="kelas5" type="checkbox" name="kelas[]" value="5"/> Kelas 5 SD <br>
+                            <input id="kelas6" type="checkbox" name="kelas[]" value="6"/> Kelas 6 SD <br>
+      
                         </div>
                     </div>       
 
@@ -91,12 +92,10 @@
                         <label for="mata_pelajaran">Mata Pelajaran</label>
 
                         <div class="col-md-6">
-                        <form action="" method="post">
-                            <input type="checkbox" value="Matematika"/> Matematika <br>
-                            <input type="checkbox" value="IPA"/> IPA <br>
-                            <input type="checkbox" value="IPS"/> IPS <br>
-                            <input type="checkbox" value="Bahasa Inggris"/> Bahasa Inggris <br>
-                        </form>
+                            <input  id="mata_pelajaran1" name="mata_pelajaran[]" type="checkbox" value="Matematika"/> Matematika <br>
+                            <input  id="mata_pelajaran2" name="mata_pelajaran[]"  type="checkbox" value="IPA"/> IPA <br>
+                            <input  id="mata_pelajaran3" name="mata_pelajaran[]" type="checkbox" value="IPS"/> IPS <br>
+                            <input  id="mata_pelajaran4" name="mata_pelajaran[]" type="checkbox" value="Bahasa Inggris"/> Bahasa Inggris <br>
                         </div>
                     </div>       
 

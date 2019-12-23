@@ -25,21 +25,22 @@
                                             <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
                                             <input type="text" class="form-control" id="program" name="program" style="display:none" value="REGULER">
                                             <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="2000">
+                                         @foreach($data1 as $d)
 
-                                            <h2>PAKET FREE</h2>
-                                            <h3>FREE</h3>
+                                            <h2>PAKET {{ $d->program }}</h2>
+                                            <h3>{{ $d->harga }}</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
                                         <div class="pricing-table-text">
-                                            <p>Program les gratis untuk satu mata pelajaran dalam 1 semester dengan pengajar yang berpengalaman</p>
+                                            <p>{{ $d->keterangan }}</p>
                                         </div>
                                         <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>MATA PELAJARAN :</strong><p style="margin-left:18%">Matematika, IPA, Bahasa Indonesia, dan Bahasa Inggris.</p>
-                                            <p><i class="fa fa-rocket"></i> <strong>DURASI :</strong><p style="margin-left:18%">90 Menit/sesi
-                                            <p><i class="fa fa-database"></i> <strong>PERTEMUAN :</strong><p style="margin-left:18%">20 Pertemuan/6bln
-                                            <p><i class="fa fa-link"></i> <strong>PILIHAN HARI :</strong><p style="margin-left:18%">Setiap Hari.</p>
-                                            <p><i class="fa fa-link"></i> <strong>FASILITAS :</strong><p style="margin-left:18%">Soal latihan dan buku modul.</p>     
+                                            <p><i class="fa fa-rocket"></i> <strong>FASILITAS :</strong><p style="margin-left:18%">{{ $d->fasilitas }}
+                                            <p><i class="fa fa-database"></i> <strong>DURASI :</strong><p style="margin-left:18%">{{ $d->durasi }}
+                                            <p><i class="fa fa-link"></i> <strong>JUMLAH PERTEMUAN :</strong><p style="margin-left:18%">{{ $d->jumlah_pertemuan }}</p>
                                             <br>                                       </div>
+                                            @endforeach
+
                                         <div class="pricing-table-sign-up">
                                             <a href="/pendaftaranSiswaReg">
                                                 <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</button>
@@ -62,20 +63,21 @@
                                         <input type="text" class="form-control" id="program" name="program" style="display:none" value="PREMIUM">
                                         <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="2000">
 
-                                        <h2>PAKET GOLD</h2>
-                                            <h3>RP.100.000,00</h3>
+                                            @foreach($data2 as $d)
+
+                                            <h2>PAKET {{ $d->program }}</h2>
+                                            <h3>{{ $d->harga }}</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
                                         <div class="pricing-table-text">
-                                            <p>Program les berbayar dengan keunggulan waktu pertemuan yang lebih banyak dan pengajar yang sudah berpengalaman.</p>
+                                            <p>{{ $d->keterangan }}</p>
                                         </div>
                                         <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>MATA PELAJARAN :</strong><p style="margin-left:18%">Matematika, IPA, Bahasa Indonesia, dan Bahasa Inggris.</p>
-                                            <p><i class="fa fa-rocket"></i> <strong>DURASI :</strong><p style="margin-left:18%">90 Menit/sesi
-                                            <p><i class="fa fa-database"></i> <strong>PERTEMUAN :</strong><p style="margin-left:18%">56 Pertemuan/6bln
-                                            <p><i class="fa fa-link"></i> <strong>PILIHAN HARI :</strong><p style="margin-left:18%">Setiap Hari.</p>
-                                            <p><i class="fa fa-link"></i> <strong>FASILITAS :</strong><p style="margin-left:18%">Soal latihan, buku modul, video materi, dan seminar</p>        
-                                        <br> </div>
+                                            <p><i class="fa fa-rocket"></i> <strong>FASILITAS :</strong><p style="margin-left:18%">{{ $d->fasilitas }}
+                                            <p><i class="fa fa-database"></i> <strong>DURASI :</strong><p style="margin-left:18%">{{ $d->durasi }}
+                                            <p><i class="fa fa-link"></i> <strong>JUMLAH PERTEMUAN :</strong><p style="margin-left:18%">{{ $d->jumlah_pertemuan }}</p>
+                                            <br>                                       </div>
+                                            @endforeach
                                         <div class="pricing-table-sign-up">
                                             <a href="/pendaftaranSiswaPrem">
                                                 <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</button>
@@ -99,20 +101,21 @@
                                         <input type="text" class="form-control" id="program" name="program" style="display:none" value="GOLD">
                                         <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="2000">
 
-                                        <h2>PAKET REGULER</h2>
-                                            <h3>Rp.75.000,00</h3>
-                                        </div>
-                                        <div class="pricing-table-space"></div>
-                                        <div class="pricing-table-text">
-                                            <p>Program les eksklusif untuk kamu dengan lebih banyak keunggulan.</p>
-                                        </div>
-                                        <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>MATA PELAJARAN :</strong><p style="margin-left:18%">Matematika, IPA, Bahasa Indonesia, dan Bahasa Inggris.</p>
-                                            <p><i class="fa fa-rocket"></i> <strong>DURASI :</strong><p style="margin-left:18%">90 Menit/sesi
-                                            <p><i class="fa fa-database"></i> <strong>PERTEMUAN :</strong><p style="margin-left:18%">40 Pertemuan/6bln
-                                            <p><i class="fa fa-link"></i> <strong>PILIHAN HARI :</strong><p style="margin-left:18%">Setiap Hari.</p>
-                                            <p><i class="fa fa-link"></i> <strong>FASILITAS :</strong><p style="margin-left:18%">Soal latihan, buku modul, dan video materi</p>     
-                                        <br> </div>
+                                            @foreach($data3 as $d)
+
+                                            <h2>PAKET {{ $d->program }}</h2>
+                                            <h3>{{ $d->harga }}</h3>
+                                            </div>
+                                            <div class="pricing-table-space"></div>
+                                            <div class="pricing-table-text">
+                                            <p>{{ $d->keterangan }}</p>
+                                            </div>
+                                            <div class="pricing-table-features">
+                                            <p><i class="fa fa-rocket"></i> <strong>FASILITAS :</strong><p style="margin-left:18%">{{ $d->fasilitas }}
+                                            <p><i class="fa fa-database"></i> <strong>DURASI :</strong><p style="margin-left:18%">{{ $d->durasi }}
+                                            <p><i class="fa fa-link"></i> <strong>JUMLAH PERTEMUAN :</strong><p style="margin-left:18%">{{ $d->jumlah_pertemuan }}</p>
+                                            <br>                                       </div>
+                                            @endforeach
                                         <div class="pricing-table-sign-up">
                                             <a href="/pendaftaranSiswaGold">
                                                 <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</button>
