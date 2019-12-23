@@ -34,10 +34,45 @@
                   <th>Jumlah Pertemuan</th>
                   <th>Harga</th>
                   <th>Keterangan</th>
+                  <th>Aksi</th>
                </tr>
               </thead>
               <tbody>
-                </tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>Gold</td>
+                  <td>Fasilitas</td>
+                  <td>Durasi</td>
+                  <td>Jumlah Pertemuan</td>
+                  <td>Harga</td>
+                  <td>Keterangan</td>
+                  <td>
+                    <a href="/editProgram" class=" btn btn-sm btn-success">
+                      <span class="fa fa-edit"></span>
+                    </a>
+                    <button class="btn btn-sm btn-danger" type="submit">
+                      <span class="fa fa-trash"></span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1.</td>
+                  <td>Premium</td>
+                  <td>Fasilitas</td>
+                  <td>Durasi</td>
+                  <td>Jumlah Pertemuan</td>
+                  <td>Harga</td>
+                  <td>Keterangan</td>
+                  <td>
+                    <a href="/editProgram" class=" btn btn-sm btn-success">
+                      <span class="fa fa-edit"></span>
+                    </a>
+                    <button class="btn btn-sm btn-danger" type="submit">
+                      <span class="fa fa-trash"></span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
           </table>
               </div>
             </div>
