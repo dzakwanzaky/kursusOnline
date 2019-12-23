@@ -50,11 +50,13 @@
                                             <h3>{{ $d->harga }}</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                            <p>{{ $d->keterangan }}</p>
+                                        </div>
                                         <div class="pricing-table-features">
                                             <p><i class="fa fa-envelope-o"></i> <strong>{{ $d->fasilitas }}</strong>
                                             <p><i class="fa fa-rocket"></i> <strong>{{ $d->durasi }}</strong>
                                             <p><i class="fa fa-database"></i> <strong>{{ $d->jumlah_pertemuan }}</strong>
-                                            <p><i class="fa fa-link"></i> <strong>{{ $d->keterangan }}</strong>
                                         <br>
                                         </div>
                                         @endforeach
@@ -71,17 +73,18 @@
                                             <h3>{{ $d->harga }}</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                            <p>{{ $d->keterangan }}</p>
+                                        </div>
                                         <div class="pricing-table-features">
                                             <p><i class="fa fa-envelope-o"></i> <strong>{{ $d->fasilitas }}</strong>
                                             <p><i class="fa fa-rocket"></i> <strong>{{ $d->durasi }}</strong>
                                             <p><i class="fa fa-database"></i> <strong>{{ $d->jumlah_pertemuan }}</strong>
-                                            <p><i class="fa fa-link"></i> <strong>{{ $d->keterangan }}</strong>
                                         <br>
                                         </div>
                                         @endforeach
                                      </div>
                                 </div>
-
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
@@ -93,16 +96,20 @@
                                             <h3>{{ $d->harga }}</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                        <p>{{ $d->keterangan }}</p>
+                                        </div>
                                         <div class="pricing-table-features">
                                             <p><i class="fa fa-envelope-o"></i> <strong>{{ $d->fasilitas }}</strong>
                                             <p><i class="fa fa-rocket"></i> <strong>{{ $d->durasi }}</strong>
                                             <p><i class="fa fa-database"></i> <strong>{{ $d->jumlah_pertemuan }}</strong>
-                                            <p><i class="fa fa-link"></i> <strong>{{ $d->keterangan }}</strong>
                                         <br>
                                         </div>
                                         @endforeach
                                     </div>
                                 </div>
+
+                                
                             </div><!-- end row -->
                             <br>
                         </div><!-- end pane -->

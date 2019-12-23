@@ -24,8 +24,7 @@
           <div class="col-lg-12">
             <div class="card">                 
               <div class="card-body">
-              <table class="table table-bordered table-striped table-responsive-sm" id="datakaryawan"> 
-              <a href="#" class="btn-edit" style="margin-left:auto;">Tambah Program</a>  
+              <table class="table table-bordered table-striped table-responsive-sm" id="program"> 
               <thead class="thead-dark"> 
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                   <th>No.</th>
@@ -38,9 +37,6 @@
                </tr>
               </thead>
               <tbody>
-                    <tr>
-
-                    </tr>
                 </tbody>
           </table>
               </div>
@@ -61,7 +57,7 @@
   @section('sweet')
   <script>
          $(document).ready( function () {
-           $('#datakaryawan').DataTable();
+           $('#program').DataTable();
            });
       </script>
   @endsection

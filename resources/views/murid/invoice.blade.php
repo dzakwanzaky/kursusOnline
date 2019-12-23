@@ -62,7 +62,6 @@
                           </a>
                         @endforeach
                         </td>
-
                         <td>
                       @foreach($invoice as $i)
                       @if($i->file==null)

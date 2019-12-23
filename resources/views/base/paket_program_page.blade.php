@@ -4,7 +4,7 @@
 <div id="pricing" class="section lb">
         <div class="container">
             <div class="section-title text-center">
-                <h4>Program Imam Course</h4>
+                <h4>Program Inofa Course</h4>
             </div><!-- end title -->
 
             <div class="row">
@@ -25,18 +25,22 @@
                                             <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
                                             <input type="text" class="form-control" id="program" name="program" style="display:none" value="REGULER">
                                             <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="2000">
+                                         @foreach($data1 as $d)
 
-                                            <h2>PAKET REGULER</h2>
-                                            <h3>FREE</h3>
+                                            <h2>PAKET {{ $d->program }}</h2>
+                                            <h3>{{ $d->harga }}</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                            <p>{{ $d->keterangan }}</p>
+                                        </div>
                                         <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>MATEMATIKA</strong>
-                                            <p><i class="fa fa-rocket"></i> <strong>IPA</strong>
-                                            <p><i class="fa fa-database"></i> <strong>BAHASA INDONESIA</strong>
-                                            <p><i class="fa fa-link"></i> <strong>BAHASA INGGRIS</strong>
-                                            <p><i class="fa fa-life-ring"></i> <strong>VIDEO MATERI
-                                            </strong>                                        </div>
+                                            <p><i class="fa fa-rocket"></i> <strong>FASILITAS :</strong><p style="margin-left:18%">{{ $d->fasilitas }}
+                                            <p><i class="fa fa-database"></i> <strong>DURASI :</strong><p style="margin-left:18%">{{ $d->durasi }}
+                                            <p><i class="fa fa-link"></i> <strong>JUMLAH PERTEMUAN :</strong><p style="margin-left:18%">{{ $d->jumlah_pertemuan }}</p>
+                                            <br>                                       </div>
+                                            @endforeach
+
                                         <div class="pricing-table-sign-up">
                                             <a href="/pendaftaranSiswaReg">
                                                 <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</button>
@@ -59,20 +63,21 @@
                                         <input type="text" class="form-control" id="program" name="program" style="display:none" value="PREMIUM">
                                         <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="2000">
 
-                                            <h2>PAKET PREMIUM</h2>
-                                            <h3>Rp.75.000,00</h3>
+                                            @foreach($data2 as $d)
+
+                                            <h2>PAKET {{ $d->program }}</h2>
+                                            <h3>{{ $d->harga }}</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
                                         <div class="pricing-table-text">
-                                            <p>Untuk Hidup yang Lebih Baik</p>
+                                            <p>{{ $d->keterangan }}</p>
                                         </div>
                                         <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>MATEMATIKA</strong>
-                                            <p><i class="fa fa-rocket"></i> <strong>IPA</strong>
-                                            <p><i class="fa fa-database"></i> <strong>BAHASA INDONESIA</strong>
-                                            <p><i class="fa fa-link"></i> <strong>BAHASA INGGRIS</strong>
-                                            <p><i class="fa fa-life-ring"></i> <strong>SOAL DAN VIDEO MATERI</strong> 
-                                        </div>
+                                            <p><i class="fa fa-rocket"></i> <strong>FASILITAS :</strong><p style="margin-left:18%">{{ $d->fasilitas }}
+                                            <p><i class="fa fa-database"></i> <strong>DURASI :</strong><p style="margin-left:18%">{{ $d->durasi }}
+                                            <p><i class="fa fa-link"></i> <strong>JUMLAH PERTEMUAN :</strong><p style="margin-left:18%">{{ $d->jumlah_pertemuan }}</p>
+                                            <br>                                       </div>
+                                            @endforeach
                                         <div class="pricing-table-sign-up">
                                             <a href="/pendaftaranSiswaPrem">
                                                 <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</button>
@@ -96,17 +101,21 @@
                                         <input type="text" class="form-control" id="program" name="program" style="display:none" value="GOLD">
                                         <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="2000">
 
-                                            <h2>PAKET GOLD</h2>
-                                            <h3>RP.100.000,00</h3>
-                                        </div>
-                                        <div class="pricing-table-space"></div>
-                                        <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>MATEMATIKA</strong>
-                                            <p><i class="fa fa-rocket"></i> <strong>IPA</strong>
-                                            <p><i class="fa fa-database"></i> <strong>BAHASA INDONESIA</strong>
-                                            <p><i class="fa fa-link"></i> <strong>BAHASA INGGRIS</strong>
-                                            <p><i class="fa fa-life-ring"></i> <strong>SEMINAR, SOAL, DAN VIDEO MATERI</strong>
-                                        </div>
+                                            @foreach($data3 as $d)
+
+                                            <h2>PAKET {{ $d->program }}</h2>
+                                            <h3>{{ $d->harga }}</h3>
+                                            </div>
+                                            <div class="pricing-table-space"></div>
+                                            <div class="pricing-table-text">
+                                            <p>{{ $d->keterangan }}</p>
+                                            </div>
+                                            <div class="pricing-table-features">
+                                            <p><i class="fa fa-rocket"></i> <strong>FASILITAS :</strong><p style="margin-left:18%">{{ $d->fasilitas }}
+                                            <p><i class="fa fa-database"></i> <strong>DURASI :</strong><p style="margin-left:18%">{{ $d->durasi }}
+                                            <p><i class="fa fa-link"></i> <strong>JUMLAH PERTEMUAN :</strong><p style="margin-left:18%">{{ $d->jumlah_pertemuan }}</p>
+                                            <br>                                       </div>
+                                            @endforeach
                                         <div class="pricing-table-sign-up">
                                             <a href="/pendaftaranSiswaGold">
                                                 <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">Daftar Sekarang</button>

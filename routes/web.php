@@ -190,3 +190,5 @@ Route::get('profileAdmin','Auth\RegisterController@data');
 // Route::get('detail','SiswaController@show');
 
 Route::get('/', 'ProgramController@program'); 
+Route::get('/landing', 'ProgramController@program');
+Route::get('/paketProgram', 'ProgramController@paket');

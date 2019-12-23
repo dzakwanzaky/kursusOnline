@@ -24,6 +24,10 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
+              <div class="alert alert-info" style="font-size:14px">
+                        <strong>INFO!</strong> Jika bukti pembayaran sudah sesuai, klik tombol <strong>UNPAID</strong>
+                        pada tabel status sebagai tanda pembayaran telah diterima.
+                    </div>
               <table class="table table-bordered table-striped table-responsive-sm" id="siswa"> 
               <thead class="thead-dark">
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
