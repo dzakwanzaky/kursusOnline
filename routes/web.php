@@ -191,3 +191,8 @@ Route::get('/editProfile/{id}', 'Auth\RegisterController@editProfile')->name('ed
 // Route::get('/updateMurid/{id}', 'Auth\RegisterController@updateMurid')->name('updateMurid');
 Route::get('profileAdmin','Auth\RegisterController@data');
 // Route::get('detail','SiswaController@show');
+
+Route::get('/', 'ProgramController@program'); 
+Route::get('/landing', 'ProgramController@program');
+Route::get('/paketProgram', 'ProgramController@paket');
+Route::get('/provinsi', 'RajaController@index');

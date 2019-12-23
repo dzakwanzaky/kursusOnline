@@ -41,7 +41,7 @@
                 </div>
                 <div class="card-footer">
                     <a href="">Request new code</a>
-                    <input type="hidden" name="phone" value="{{request()->phone}}">
+                    <input type="hidden" name="phone" value="$request['phone']">
                 </div>
             </div>
         </div>
