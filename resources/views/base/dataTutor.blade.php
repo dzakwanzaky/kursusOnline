@@ -74,31 +74,22 @@
 
                      <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                         <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
-
-                        <div class="col-md-6">
+                    </div>  
                       
-                            <input id="kelas1" type="checkbox" name="kelas[]" value="1"/> Kelas 1 SD <br>
-                            <input id="kelas2" type="checkbox" name="kelas[]" value="2"/> Kelas 2 SD <br>
-                            <input id="kelas3" type="checkbox" name="kelas[]" value="3"/> Kelas 3 SD <br>
-                            <input id="kelas4" type="checkbox" name="kelas[]" value="4"/> Kelas 4 SD <br>
-                            <input id="kelas5" type="checkbox" name="kelas[]" value="5"/> Kelas 5 SD <br>
-                            <input id="kelas6" type="checkbox" name="kelas[]" value="6"/> Kelas 6 SD <br>
-      
-                        </div>
-                    </div>       
-
+                            <input id="kelas1" type="checkbox" name="kelas1" value="1"/> Kelas 1 SD <br>
+                            <input id="kelas2" type="checkbox" name="kelas2" value="2"/> Kelas 2 SD <br>
+                            <input id="kelas3" type="checkbox" name="kelas3" value="3"/> Kelas 3 SD <br>
+                            <input id="kelas4" type="checkbox" name="kelas4" value="4"/> Kelas 4 SD <br>
+                            <input id="kelas5" type="checkbox" name="kelas5" value="5"/> Kelas 5 SD <br>
+                            <input id="kelas6" type="checkbox" name="kelas6" value="6"/> Kelas 6 SD <br>
                     
                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                         <label for="mata_pelajaran">Mata Pelajaran</label>
-
-                        <div class="col-md-6">
-                            <input  id="mata_pelajaran1" name="mata_pelajaran[]" type="checkbox" value="Matematika"/> Matematika <br>
-                            <input  id="mata_pelajaran2" name="mata_pelajaran[]"  type="checkbox" value="IPA"/> IPA <br>
-                            <input  id="mata_pelajaran3" name="mata_pelajaran[]" type="checkbox" value="IPS"/> IPS <br>
-                            <input  id="mata_pelajaran4" name="mata_pelajaran[]" type="checkbox" value="Bahasa Inggris"/> Bahasa Inggris <br>
-                        </div>
-                    </div>       
-
+                    </div>  
+                            <input  id="mata_pelajaran1"  type="checkbox" value="Matematika"/> Matematika <br>
+                            <input  id="mata_pelajaran2"  type="checkbox" value="IPA"/> IPA <br>
+                            <input  id="mata_pelajaran3"  type="checkbox" value="IPS"/> IPS <br>
+                            <input  id="mata_pelajaran4"  type="checkbox" value="Bahasa Inggris"/> Bahasa Inggris <br>
                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                         <label for="file">Curriculum Vitae (.pdf / .docx)</label>
                         
