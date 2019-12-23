@@ -35,8 +35,7 @@
                         <label for="provinsi">Provinsi</label>
 
                         <div class="form-title">
-                            <input id="provinsi" type="text" class="form-control" name="provinsi" required>
-
+                            <select id="provinsi" class="form-control" name="provinsi" required>
                             @if ($errors->has('password'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('password') }}</strong>
