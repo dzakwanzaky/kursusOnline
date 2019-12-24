@@ -137,6 +137,9 @@ Route::get('/editAdmin', function () {
 Route::get('/manajemenProgram', function () {
     return view('dashboard_admin/manajemenProgram');
 });
+Route::get('/editProgram', function () {
+    return view('dashboard_admin/editProgram');
+});
 
 Auth::routes();
 

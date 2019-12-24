@@ -45,13 +45,15 @@ class ProgramController extends Controller
 
     public function update(Request $request, $id)
     {
-        $data = ModelSiswa::where('id',$id)->first();
+        $data = ModelProgram::where('id',$id)->first();
         $data->program = $request->program;
         $data->fasilitas = $request->fasilitas;
         $data->durasi = $request->durasi;
         $data->jumlah_pertemuan = $request->jumlah_pertemuan;
         $data->harga = $request->harga;
         $data->save();
+        return redirect('manajemenProgram')->withMessage('Kamu Berhasil Daftar Les');
+
     }
 
 
@@ -91,6 +93,14 @@ class ProgramController extends Controller
         $data = ModelProgram::all();
         return view('dashboard_admin/manajemenProgram', compact('data'));
     }
+
+    public function edit($id)
+    {
+        $data = ModelProgram::where('id','=',$id)->get();
+        return view('dashboard_admin.editProgram', compact('data'));
+    }
+
+   
 }
 
 

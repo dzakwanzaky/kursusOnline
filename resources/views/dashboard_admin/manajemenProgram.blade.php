@@ -49,7 +49,7 @@
                         <td>{{ $d->harga}}</td>
                         <td>{{ $d->keterangan}}</td>
                         <td>
-				<a href="{{route('karyawan.edit',$d->nik)}}" class="btn btn-md btn-success" style="float:right">Edit</a>       
+				<a href="{{route('program.edit',$d->id)}}" class="btn btn-md btn-success" style="float:right">Edit</a>       
 			</td>
             
                     </tr>
