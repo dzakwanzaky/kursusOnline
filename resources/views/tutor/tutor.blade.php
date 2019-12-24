@@ -43,7 +43,7 @@
                 <tbody>
                     <tr>
                     @php $no = 1; @endphp
-                @foreach($data as $d)
+                @foreach($jadwal as $d)
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>

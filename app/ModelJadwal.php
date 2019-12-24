@@ -19,4 +19,5 @@ class ModelJadwal extends Model
     public function datas(){
         return $this->belongsTo('App\ModelSiswa', 'murid_id');
     }
+
 }

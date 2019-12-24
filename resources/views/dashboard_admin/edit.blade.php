@@ -46,19 +46,24 @@
                        Edit profile
                     </a> -->
       
+                    @php $no = 1; @endphp
+                @foreach($data as $d)
+                <form action="{{ route('register.update', $d->id) }}" method="post" enctype="multipart/form-data">
+			{{ csrf_field() }}
+			{{ method_field('PUT') }}
 					<div class="form-group">
 						<label for="">Nama Lengkap :</label>
-						<input type="text" class="form-control" id="nama" name="nama" value="Admin" >
+						<input type="text" class="form-control" id="name" name="name" value="{{$d->name}}" >
 					</div>
 
 					<div class="form-group">
 						<label for="">No Telepon :</label>
-						<input type="text" class="form-control" id="no" name="no" value="" >
+						<input type="text" class="form-control" id="phone" name="phone" value="{{$d->phone}}" >
 					</div>
 
 					<div class="form-group">
 						<label for="">Email :</label>
-						<input type="text" class="form-control" id="email" name="email" value="admin@gmail.com" >
+						<input type="text" class="form-control" id="email" name="email" value="{{$d->email}}" >
 					</div>
           <div class="form-group">
                         <button type="submit" class="btn btn-md btn-success">Simpan</button>
@@ -67,7 +72,7 @@
               </div>
             </div>
 
-            
+            @endforeach
           </div>
           <!-- /.col-md-6 -->
           
