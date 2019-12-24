@@ -4,7 +4,7 @@
 <div id="pricing" class="section lb">
         <div class="container">
             <div class="section-title text-center">
-                <h4>Program Imam Course</h4>
+                <h4>Program Inofa Course</h4>
             </div><!-- end title -->
 
             <div class="row">

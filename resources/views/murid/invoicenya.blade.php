@@ -100,14 +100,14 @@
                     {{ $d->program }}
                     @endforeach
                     </td>
-                    <td colspan="2">Rp2000</td>
+                    <td colspan="2">Rp100.000</td>
                 
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="2">Total</th>
-                    <td colspan="2">Rp2000</td>
+                    <td colspan="2">Rp100.000</td>
                 </tr>
             </tfoot>
         </table>

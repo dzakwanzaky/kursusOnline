@@ -16,7 +16,8 @@
         "laravel/tinker": "^1.0",
         "laravel/ui": "^1.1",
         "nexmo/laravel": "^2.1",
-        "yajra/laravel-datatables-oracle": "^9.7"
+        "yajra/laravel-datatables-oracle": "^9.7",
+        "rizalafani/rajaongkirlaravel": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

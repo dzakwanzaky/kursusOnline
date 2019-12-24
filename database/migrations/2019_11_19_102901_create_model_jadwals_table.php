@@ -23,9 +23,11 @@ class CreateModelJadwalsTable extends Migration
             $table->string('kelas');
             $table->string('mata_pelajaran');
             $table->string('hari1');
+            $table->string('waktu_hari1')->nullable();;
             $table->string('hari2')->nullable();
+            $table->string('waktu_hari2')->nullable();;
             $table->string('hari3')->nullable();
-            $table->string('waktu');
+            $table->string('waktu_hari3')->nullable();;
             $table->string('status')->nullable();
             $table->timestamps();
         });
