@@ -51,7 +51,7 @@
 				<a href="{{route('editAdmin',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Profile</a>       
 			</td>
       <td>
-				<a href="/changePassword" class="btn-edit" style="margin-left:auto;">Change Password</a>       
+				<a href="/changePassword" class="btn-edit" style="margin-left:auto;">Edit Password</a>       
 			</td>
 					<div class="form-group">
 						<label for="">Nama Lengkap :</label>

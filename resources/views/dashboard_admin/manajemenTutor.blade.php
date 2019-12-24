@@ -28,7 +28,7 @@
                         <strong>INFO!</strong> Jika jadwal sudah sesuai dan tutor memenuhi syarat, klik tombol <strong>WAITING</strong>
                         pada tabel status sebagai tanda tutor berhak mengajar.
                     </div>
-              <table class="table table-bordered table-striped table-responsive-sm" id="datakaryawan"> 
+              <table class="table table-bordered table-striped table-responsive-md" id="datakaryawan"> 
               <thead class="thead-dark"> 
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                   <th>No.</th>
