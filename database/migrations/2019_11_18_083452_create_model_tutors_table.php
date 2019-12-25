@@ -21,8 +21,16 @@ class CreateModelTutorsTable extends Migration
             $table->string('kota');
             $table->string('kecamatan');
             $table->string('pendidikan');
-            $table->string('kelas');
-            $table->string('mata_pelajaran');
+            $table->string('kelas1')->nullable();
+            $table->string('kelas2')->nullable();;
+            $table->string('kelas3')->nullable();;
+            $table->string('kelas4')->nullable();;
+            $table->string('kelas5')->nullable();;
+            $table->string('kelas6')->nullable();;
+            $table->string('mata_pelajaran1')->nullable();;
+            $table->string('mata_pelajaran2')->nullable();;
+            $table->string('mata_pelajaran3')->nullable();;
+            $table->string('mata_pelajaran4')->nullable();;
             $table->string('file');
             $table->string('foto');
             $table->string('status');

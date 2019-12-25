@@ -24,8 +24,7 @@
           <div class="col-lg-12">
             <div class="card">                 
               <div class="card-body">
-              <table class="table table-bordered table-striped table-responsive-sm" id="datakaryawan"> 
-              <a href="#" class="btn-edit" style="margin-left:auto;">Tambah Program</a>  
+              <table class="table table-bordered table-striped table-responsive-sm" id="program"> 
               <thead class="thead-dark"> 
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                   <th>No.</th>
@@ -35,12 +34,26 @@
                   <th>Jumlah Pertemuan</th>
                   <th>Harga</th>
                   <th>Keterangan</th>
+                  <th>Aksi</th>
                </tr>
               </thead>
               <tbody>
-                    <tr>
-
+              @php $no = 1; @endphp
+                    @foreach($data as $d)
+                    <tr>   
+                        <td>{{ $no++ }}</td>
+                        <td>{{ $d->program }}</td>
+                        <td>{{ $d->fasilitas }}</td>
+                        <td>{{ $d->durasi }}</td>
+                        <td>{{ $d->jumlah_pertemuan }}</td>
+                        <td>{{ $d->harga}}</td>
+                        <td>{{ $d->keterangan}}</td>
+                        <td>
+				<a href="{{route('program.edit',$d->id)}}" class="btn btn-md btn-success" style="float:right">Edit</a>       
+			</td>
+            
                     </tr>
+                    @endforeach
                 </tbody>
           </table>
               </div>
@@ -61,7 +74,7 @@
   @section('sweet')
   <script>
          $(document).ready( function () {
-           $('#datakaryawan').DataTable();
+           $('#program').DataTable();
            });
       </script>
   @endsection

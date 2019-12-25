@@ -9,6 +9,6 @@ class ModelProgram extends Model
     protected $table = "model_programs";
 
     protected $fillable = [
-        'id', 'program', 'harga',
+        'id', 'program', 'harga', 'jumlah_pertemuan',
     ];
 }

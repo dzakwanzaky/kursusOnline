@@ -38,7 +38,7 @@
 
                     <input type="text" class="form-control" id="program" name="program" style="display:none" value="PREMIUM">
 
-                    <input type="text" class="form-control" id="status" name="status" style="display:none" value="WAITING">
+                    <input type="text" class="form-control" id="status" name="status" style="display:none" value="MENUNGGU">
                     <label for="kelas" >Kelas
                         <select id="kelas" name="kelas" class="form-control" style="float:left">
                             <option value="1">1</option>
@@ -62,6 +62,7 @@
                 <div class="panel-body" >
                     <label for="hari1">Hari 1
                     <select id="hari1" name="hari1" class="form-control" style="width:195px">
+                            <option value="_none">-Pilih Hari-</option>
                             <option value="Senin">Senin</option>
                             <option value="Selasa">Selasa</option>
                             <option value="Rabu">Rabu</option>
@@ -73,6 +74,7 @@
                     </label>
                     <label for="hari2">Hari 2 
                     <select id="hari2" name="hari2" class="form-control" style="width:195px">
+                            <option value="_none">-Pilih Hari-</option>
                             <option value="Senin">Senin</option>
                             <option value="Selasa">Selasa</option>
                             <option value="Rabu">Rabu</option>
@@ -84,8 +86,19 @@
                     </label>
                 </div>
                 <br>
-                <div class="panel-body" >Waktu
-                <select id="waktu" name="waktu" class="form-control">
+                <div class="panel-body" >Waktu Hari 1
+                <select id="waktu_hari1" name="waktu" class="form-control" >
+                        <option value="_none">-Pilih Waktu-</option>
+                        <option value="15.00">15.00 WIB</option>
+                        <option value="16.00">16.00 WIB</option>
+                        <option value="17.00">17.00 WIB</option>
+                        <option value="18.00">18.00 WIB</option>
+                        <option value="19.00">19.00 WIB</option>
+                    </select> 
+                </div>
+                <div class="panel-body" >Waktu Hari 2
+                <select id="waktu_hari2" name="waktu" class="form-control">
+                        <option value="_none">-Pilih Waktu-</option>
                         <option value="15.00">15.00 WIB</option>
                         <option value="16.00">16.00 WIB</option>
                         <option value="17.00">17.00 WIB</option>
@@ -94,6 +107,10 @@
                     </select> 
                 </div>
                 <br>
+                <div class="panel-body">
+                    <label id="p"></label>&nbsp;<label id="p1"></label><label id="p2">&nbsp;</label>
+                    <label id="p3"></label>&nbsp;<label id="p4"></label>&nbsp;<label id="p5"></label>
+                </div>
                 <br>
                     <div class="form-group"> 
                         <a href="/dataSiswa">
@@ -105,3 +122,38 @@
     </div>
 
 @endsection
+@section('day')
+    <script>
+        $(document).ready(function() {
+            $("#hari1").change(function(){
+                var nilai = $(this).val();
+                $("#p").html("Anda memilih hari "+nilai);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#waktu_hari1").change(function(){
+                var nilai1 = $(this).val();
+                $("#p1").html("pukul "+nilai1);
+            });
+        });
+    </script>
+      <script>
+        $(document).ready(function() {
+            $("#hari2").change(function(){
+                var nilai = $(this).val();
+                $("#p2").html(", "+nilai);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#waktu_hari2").change(function(){
+                var nilai1 = $(this).val();
+                $("#p3").html("pukul "+nilai1);
+            });
+        });
+    </script>
+@endsection
+
