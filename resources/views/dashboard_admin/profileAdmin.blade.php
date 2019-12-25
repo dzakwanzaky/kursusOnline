@@ -48,8 +48,9 @@
       @php $no = 1; @endphp
       @foreach($data as $d)
       <td>
-				<a href="/editAdmin" class="btn-edit" style="margin-left:auto;">Edit Profile</a>       
+				<a href="{{route('editAdmin',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Profile</a>       
 			</td>
+     
 					<div class="form-group">
 						<label for="">Nama Lengkap :</label>
 						<input type="text" class="form-control" id="nama" name="nama" value="{{ $d->name }}" disabled>

@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ModelJadwal;
 use Auth;
-use App\ModelSIswa;
+use App\ModelSiswa;
+use App\ModelTutor;
 
 class JadwalController extends Controller
 {
@@ -28,11 +29,15 @@ class JadwalController extends Controller
 
     public function tutor()
     {
-       
-        $data = ModelJadwal::with('datas')
-        ->where('status', 'MENUNGGU')->orWhere('status', 'DIPILIH TUTOR')->get();
+        // $data = ModelJadwal::
+        
+        // where('status', 'MENUNGGU')->orWhere('status', 'DIPILIH TUTOR')->get();
+        $data = ModelTutor::where('id', '=', Auth::user()->id)->first();
+        $jadwal = ModelJadwal::whereIn('kelas',
+        [$data->kelas1, $data->kelas2, $data->kelas3, $data->kelas4, $data->kelas5, $data->kelas6])->get();
         // dd($data);
-        return view('tutor.tutor', compact('data'));
+
+        return view('tutor.tutor', compact('jadwal'));
     }
 
     public function admin()

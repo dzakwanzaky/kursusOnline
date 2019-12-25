@@ -24,7 +24,7 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-              <table class="table table-bordered table-striped table-responsive-sm" id="datakaryawan"> 
+              <table class="table table-bordered table-striped table-responsive-md" id="datakaryawan"> 
               <thead class="thead-dark"> 
               <tr>
                         <th>No.</th>

@@ -2318,7 +2318,7 @@ body.app_version .dev-list .widget-title small{
     top: 71px;
 }
  .hgi.active{
-    visibility: visible;
+    visibility: visible;z
 }
 .left-row{
     float: left;

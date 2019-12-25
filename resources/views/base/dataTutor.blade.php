@@ -31,33 +31,29 @@
                         </div>
 
                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
-                        <label for="provinsi">Provinsi</label>
+                        <label for="kota">Kota/Kabupaten</label>
 
                         <div class="form-title">
-                            <input id="provinsi" type="text" class="form-control" name="provinsi" required>
-
-                            @if ($errors->has('password'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif
+                        <select class="form-control" id="kota">
+                        @php $no = 1; @endphp
+                        @foreach($kota as $k)
+                        <option value="{{ $k->kabupaten }}">{{ $k->kabupaten }}</option>
+                        @endforeach
+                        </select>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="kota">Kota</label>
-
+                        <label for="inputGroupSelect01">Kecamatan</label>
                         <div class="form-title">
-                            <input id="kota" type="text" class="form-control" name="kota" required>
+                        <select class="form-control" id="inputGroupSelect01">
+                        @php $no = 1; @endphp
+                        @foreach($kec as $c)
+                        <option value="{{ $c->kecamatan }}">{{ $c->kecamatan }}</option>
+                        @endforeach
+                        </select>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="kecamatan">Kecamatan</label>
-
-                        <div class="form-title">
-                            <input id="kecamatan" type="text" class="form-control" name="kecamatan" required>
-                        </div>
-                    </div>          
+                    </div>     
 
                      <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                         <label for="pendidikan">Pendidikan Terakhir</label>
@@ -86,10 +82,10 @@
                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                         <label for="mata_pelajaran">Mata Pelajaran</label>
                     </div>  
-                            <input  id="mata_pelajaran1"  type="checkbox" value="Matematika"/> Matematika <br>
-                            <input  id="mata_pelajaran2"  type="checkbox" value="IPA"/> IPA <br>
-                            <input  id="mata_pelajaran3"  type="checkbox" value="IPS"/> IPS <br>
-                            <input  id="mata_pelajaran4"  type="checkbox" value="Bahasa Inggris"/> Bahasa Inggris <br>
+                            <input  id="mata_pelajaran1" name="mata_pelajaran1"  type="checkbox" value="Matematika"/> Matematika <br>
+                            <input  id="mata_pelajaran2" name="mata_pelajaran2"  type="checkbox" value="IPA"/> IPA <br>
+                            <input  id="mata_pelajaran3" name="mata_pelajaran3"  type="checkbox" value="IPS"/> IPS <br>
+                            <input  id="mata_pelajaran4"  name="mata_pelajaran4" type="checkbox" value="Bahasa Inggris"/> Bahasa Inggris <br>
                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                         <label for="file">Curriculum Vitae (.pdf / .docx)</label>
                         

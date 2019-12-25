@@ -65,8 +65,17 @@
 						<label for="">Alamat :</label>
 						<input type="text" class="form-control" id="email" name="email" value="{{ $d->provinsi }} {{ $d->kota }} {{ $d->kecamatan }}" disabled>
 					</div>
+          <div class="form-group">
+						<label for="">Pendidikan :</label>
+						<input type="text" class="form-control" id="pendidikan" name="pendidikan" value=" {{ $d->pendidikan }} " disabled> 
+					</div>
+
+          <div class="form-group">
+						<label for="">Mata Pelajaran :</label>
+						<input type="text" class="form-control" id="mata_pelajaran1" name="mata_pelajaran1" value="{{ $d->mata_pelajaran1 }}  {{ $d->mata_pelajaran2 }}  {{ $d->mata_pelajaran3 }}   {{ $d->mata_pelajaran4 }}" disabled> 
+					</div>
           
-          <a href="{{route('register.edit',$d->id)}}" class="btn-edit-info" style="margin-left:auto;">Edit Informasi Login</a> 
+          <a href="{{route('register.edit',$d->id)}}" class="btn-edit-info" style="margin-left:auto;">Edit Informasi Login</a> 			
           @endforeach
           @foreach($user as $u)
           <div class="form-group">

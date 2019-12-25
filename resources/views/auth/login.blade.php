@@ -42,7 +42,7 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}></input>
                         <label class="form-check-label" for="remember">Ingat saya ?</label>
-                        <a href="#" style="font-weight: inherit;color: #408ABD;;"> | Lupa Kata Sandi</a>
+                        <a href="{{ url('/password/reset') }}" style="font-weight: inherit;color: #408ABD;;"> | Lupa Kata Sandi</a>
                 </div>
             </form>
 
