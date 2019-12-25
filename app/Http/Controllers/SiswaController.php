@@ -7,6 +7,7 @@ use App\ModelSiswa;
 use Auth;
 use App\User;
 use App\ModelInvoice;
+use App\Provinsi;
 use Image;
 
 class SiswaController extends Controller
@@ -96,6 +97,14 @@ class SiswaController extends Controller
             return view('dashboard_admin.admin');
         }
                
+    }
+
+    public function json()
+    {
+        $data = Provinsi::all();
+        $provinsi = $data->pluck('provinsi');
+        $provinsi->all();
+        return response()->json($provinsi);
     }
 
     // public function show($id)

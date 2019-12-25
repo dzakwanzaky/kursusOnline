@@ -31,7 +31,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
+                    <div class="form-group">
                         <label for="provinsi">Provinsi</label>
                         <input id="provinsi" type="text" class="form-control" name="provinsi" required>
                         <div class="form-title">
@@ -79,4 +79,21 @@
     </div>
     </div>
     </div>
+@endsection
+@section('day')
+<script>
+	$( function(){
+		$.ajax({
+			url: "http://127.0.0.1:8000/dataSiswa",
+			dataType: "json",
+			success: function(data){
+				console.log(data);
+				auto = data;
+				$("#provinsi").autocomplete({
+					source: data
+				});
+			} 
+		});
+})
+</script>
 @endsection

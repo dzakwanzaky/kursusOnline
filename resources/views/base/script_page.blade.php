@@ -61,7 +61,5 @@
 		});
 	</script>
 @yield('day')
-@yield('day1')
-@yield('day2')
 </body>
 </html>
