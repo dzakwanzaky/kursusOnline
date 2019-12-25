@@ -9,26 +9,25 @@
             <div class="box box-primary">
                 <div class="container-fluid">
                 <div class="row mb-2">
-					  <div class="col-sm-6">
-						  <p style="font-size:24px">Ubah Password</p>
-					  </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-md-right" style="font-size:14px">
-                                <li class="breadcrumb-item">
-                                    <a href="/tutor">Tutor</a>
-                                </li>
-                                <li class="breadcrumb-item active">
-                                    Profile Tutor
-                                </li>
-                            </ol>
-                        </div>			
-			  	    </div>			
+					<div class="col-sm-6">
+						<p style="font-size:24px">Ubah Password</p>
+					</div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-md-right" style="font-size:14px">
+                            <li class="breadcrumb-item">
+                                <a href="/tutor">Tutor</a>
+                            </li>
+                            <li class="breadcrumb-item active">
+                                Profile Tutor
+                            </li>
+                        </ol>
+                    </div>			
+			  	</div>			
                 </div>
             </div>
         </div>
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
-    </div>
     </div>
     <!-- /.content-header -->
     <!-- Main content -->
@@ -79,13 +78,16 @@
                             </div>
                         </div>
                     </form>
-          </div>
-          <!-- /.col-md-6 -->
+                </div>
+          <!-- /.form-group -->
           
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
+    </div>
+    </div>
+</div>
  
   @endsection
