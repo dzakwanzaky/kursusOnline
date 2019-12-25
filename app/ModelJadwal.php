@@ -9,7 +9,7 @@ class ModelJadwal extends Model
     protected $table = "model_jadwals";
 
     protected $fillable = [
-        'id', 'invoice', 'user_id', 'kelas', 'program', 'mata_pelajaran', 'waktu', 'hari'
+        'id', 'invoice', 'user_id', 'kelas', 'program', 'mata_pelajaran', 'waktu_hari1',  'waktu_hari2',  'waktu_hari3',  'hari'
     ];
 
     public function jadwal(){
@@ -19,4 +19,5 @@ class ModelJadwal extends Model
     public function datas(){
         return $this->belongsTo('App\ModelSiswa', 'murid_id');
     }
+
 }

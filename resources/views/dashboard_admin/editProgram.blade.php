@@ -13,7 +13,7 @@
                 <div class="container-fluid">
                 <div class="row mb-2">
 					        <div class="col-sm-6">
-						        <p style="font-size:24px">Profile Admin</p>
+						        <p style="font-size:24px"> Edit Program</p>
 					  </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-md-right" style="font-size:14px">
@@ -21,7 +21,7 @@
                                     <a href="/admin">Admin</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Profile Admin
+                                    Edit Program
                                 </li>
                             </ol>
                         </div>			
@@ -41,36 +41,49 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
+              @foreach($data as $d)
+            <form action="{{ route('program.update', $d->id) }}" method="post" enctype="multipart/form-data">
+			{{ csrf_field() }}
+			{{ method_field('PUT') }}
                 <div class="form-group">
-                    <!-- <a class="btn-edit" style="margin-left:auto;" href="/editAdmin">
-                       Edit profile
-                    </a> -->
-      @php $no = 1; @endphp
-      @foreach($data as $d)
-      <td>
-				<a href="{{route('editAdmin',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Profile</a>       
-			</td>
-     
+      
 					<div class="form-group">
-						<label for="">Nama Lengkap :</label>
-						<input type="text" class="form-control" id="nama" name="nama" value="{{ $d->name }}" disabled>
+						<label for="">Nama Program :</label>
+						<input type="text" class="form-control" id="program" name="program" value="{{ $d->program }}" >
 					</div>
 
 					<div class="form-group">
-						<label for="">No Telepon :</label>
-						<input type="text" class="form-control" id="no" name="no" value="{{ $d->phone }}" disabled>
+						<label for="">Fasilitas :</label>
+						<input type="text" class="form-control" id="fasilitas" name="fasilitas" value="{{ $d->fasilitas }}" >
 					</div>
 
 					<div class="form-group">
-						<label for="">Email :</label>
-						<input type="text" class="form-control" id="email" name="email" value="{{ $d->email }}" disabled>
+						<label for="">Durasi :</label>
+						<input type="text" class="form-control" id="durasi" name="durasi" value="{{ $d->durasi }}" >
 					</div>
 
-				@endforeach
-				</form>
+                    <div class="form-group">
+						<label for="">Jumlah Pertemuan :</label>
+						<input type="text" class="form-control" id="jumlah_pertemuan" name="jumlah_pertemuan" value="{{ $d->jumlah_pertemuan }}" >
+					</div>
+
+                    <div class="form-group">
+						<label for="">Harga :</label>
+						<input type="text" class="form-control" id="harga" name="harga" value="{{ $d->harga}}" >
+					</div>
+
+                    <div class="form-group">
+						<label for="">Keterangan :</label>
+						<input type="text" class="form-control" id="keterangan" name="keterangan" value="{{ $d->keterangan}}" >
+					</div>
+
+                    <div class="form-group">
+                            <button type="submit" class="btn btn-md btn-success">Simpan</button>
+                            <a href="/manajemenProgram" class="btn btn-md btn-danger">Batal</a>
+                    </div>
               </div>
             </div>
-
+@endforeach
             
           </div>
           <!-- /.col-md-6 -->

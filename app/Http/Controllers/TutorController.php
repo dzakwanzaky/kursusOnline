@@ -42,14 +42,24 @@ class TutorController extends Controller
         $data->kota = $request->kota;
         $data->kecamatan = $request->kecamatan;
         $data->pendidikan = $request->pendidikan;
-        $data->kelas = $request->kelas;
-        $data->mata_pelajaran = $request->mata_pelajaran;
+        $data->kelas1 = $request->kelas1;
+        $data->kelas2 = $request->kelas2;
+        $data->kelas3 = $request->kelas3;
+        $data->kelas4 = $request->kelas4;
+        $data->kelas5 = $request->kelas5;
+        $data->kelas6 = $request->kelas6;
+        $data->mata_pelajaran1 = $request->mata_pelajaran1;
+        $data->mata_pelajaran2 = $request->mata_pelajaran2;
+        $data->mata_pelajaran3 = $request->mata_pelajaran3;
+        $data->mata_pelajaran4 = $request->mata_pelajaran4;
+
 
         $file = $request->file('file');
         $nama_file = time()."_".$file->getClientOriginalName();  
         $tujuan_upload = 'data_file';
         $file->move($tujuan_upload,$nama_file);
         $data->file = $nama_file;
+
         $data->status = $request->status;
         $data->save();
         return redirect('tutor');
@@ -66,7 +76,10 @@ class TutorController extends Controller
         $data = ModelTutor::where('id',$id)->first();
         $data->nama_tutor = $request->nama_tutor;
         $data->pendidikan = $request->pendidikan;
-        $data->mata_pelajaran = $request->mata_pelajaran;
+        $data->mata_pelajaran1 = $request->mata_pelajaran1;
+        $data->mata_pelajaran2 = $request->mata_pelajaran2;
+        $data->mata_pelajaran3 = $request->mata_pelajaran3;
+        $data->mata_pelajaran4 = $request->mata_pelajaran4;
         $data->provinsi = $request->kota;
         $data->kecamatan = $request->kecamatan;
         $data->provinsi = $request->provinsi;

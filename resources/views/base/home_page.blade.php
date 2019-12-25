@@ -42,60 +42,74 @@
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
+                                        @php $no = 1; @endphp
+                                         @foreach($data1 as $d)
                                             <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
                                                     required autofocus>
-                                                    <h2>PAKET REGULER</h2>
-                                            <h3>FREE</h3>
-                                        </div>
-                                        <div class="pricing-table-space"></div>
-                                        <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>MATEMATIKA</strong>
-                                            <p><i class="fa fa-rocket"></i> <strong>IPA</strong>
-                                            <p><i class="fa fa-database"></i> <strong>BAHASA INDONESIA</strong>
-                                            <p><i class="fa fa-link"></i> <strong>BAHASA INGGRIS</strong>
-                                            <p><i class="fa fa-life-ring"></i> <strong>VIDEO MATERI</strong>    
-                                        <br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="pricing-table pricing-table-highlighted">
-                                        <div class="pricing-table-header">
-                                        <h2>PAKET PREMIUM</h2>
-                                            <h3>Rp.75.000,00</h3>
+                                                    <h2> PAKET {{ $d->program }}</h2>
+                                            <h3>{{ $d->harga }}</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
                                         <div class="pricing-table-text">
-                                            <p>Untuk Hidup yang Lebih Baik</p>
+                                            <p>{{ $d->keterangan }}</p>
                                         </div>
                                         <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>MATEMATIKA</strong>
-                                            <p><i class="fa fa-rocket"></i> <strong>IPA</strong>
-                                            <p><i class="fa fa-database"></i> <strong>BAHASA INDONESIA</strong>
-                                            <p><i class="fa fa-link"></i> <strong>BAHASA INGGRIS</strong>
-                                            <p><i class="fa fa-life-ring"></i> <strong>SOAL DAN VIDEO MATERI</strong> 
+                                            <p><i class="fa fa-envelope-o"></i> <strong>{{ $d->fasilitas }}</strong>
+                                            <p><i class="fa fa-rocket"></i> <strong>{{ $d->durasi }}</strong>
+                                            <p><i class="fa fa-database"></i> <strong>{{ $d->jumlah_pertemuan }}</strong>
                                         <br>
                                         </div>
-                                     </div>
+                                        @endforeach
+                                    </div>
                                 </div>
-
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
-                                        <h2>PAKET GOLD</h2>
-                                            <h3>RP.100.000,00</h3>
+                                        @php $no = 1; @endphp
+                                         @foreach($data2 as $d)
+                                            <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
+                                                    required autofocus>
+                                                    <h2> PAKET {{ $d->program }}</h2>
+                                            <h3>{{ $d->harga }}</h3>
                                         </div>
                                         <div class="pricing-table-space"></div>
-                                        <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>MATEMATIKA</strong>
-                                            <p><i class="fa fa-rocket"></i> <strong>IPA</strong>
-                                            <p><i class="fa fa-database"></i> <strong>BAHASA INDONESIA</strong>
-                                            <p><i class="fa fa-link"></i> <strong>BAHASA INGGRIS</strong>
-                                            <p><i class="fa fa-life-ring"></i> <strong>SEMINAR, SOAL, DAN VIDEO MATERI</strong>
-                                            <br>
+                                        <div class="pricing-table-text">
+                                            <p>{{ $d->keterangan }}</p>
                                         </div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>{{ $d->fasilitas }}</strong>
+                                            <p><i class="fa fa-rocket"></i> <strong>{{ $d->durasi }}</strong>
+                                            <p><i class="fa fa-database"></i> <strong>{{ $d->jumlah_pertemuan }}</strong>
+                                        <br>
+                                        </div>
+                                        @endforeach
+                                     </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header">
+                                        @php $no = 1; @endphp
+                                         @foreach($data3 as $d)
+                                            <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
+                                                    required autofocus>
+                                                    <h2> PAKET {{ $d->program }}</h2>
+                                            <h3>{{ $d->harga }}</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                        <p>{{ $d->keterangan }}</p>
+                                        </div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>{{ $d->fasilitas }}</strong>
+                                            <p><i class="fa fa-rocket"></i> <strong>{{ $d->durasi }}</strong>
+                                            <p><i class="fa fa-database"></i> <strong>{{ $d->jumlah_pertemuan }}</strong>
+                                        <br>
+                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
+
+                                
                             </div><!-- end row -->
                             <br>
                         </div><!-- end pane -->

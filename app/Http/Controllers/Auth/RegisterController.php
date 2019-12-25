@@ -100,8 +100,10 @@ class RegisterController extends Controller
         $data->save();
         if ($data ['role'] == 'tutor'){
         return redirect('profile')->withMessage('Berhasil Merubah Data');
-        } else {
+        } else if ($data ['role'] == 'siswa') {
             return redirect('profileMurid')->withMessage('Berhasil Merubah Data');
+        } else {
+            return redirect('profileAdmin')->withMessage('Berhasil Merubah Data');
         }
     }
 
@@ -109,6 +111,12 @@ class RegisterController extends Controller
     {
         $data = User::where('id','=',$id)->get();
         return view('murid.editLogin', compact('data'));
+    }
+
+    public function editAdmin($id)
+    {
+        $data = User::where('id','=',$id)->get();
+        return view('dashboard_admin.edit', compact('data'));
     }
 
         public function data(){

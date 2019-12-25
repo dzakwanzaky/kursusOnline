@@ -36,17 +36,16 @@
                         <th>Program</th>
                         <th>Kelas</th>
                         <th>Mata Pelajaran</th>
-                        <th>Hari</th>
-                        <th>Hari</th>
-                        <th>Hari</th>
-                        <th>Waktu</th>
+                        <th>Hari Waktu</th>
+                        <th>Hari Waktu</th>
+                        <th>Hari Waktu</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                     @php $no = 1; @endphp
-                @foreach($data as $d)
+                @foreach($jadwal as $d)
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>
@@ -63,10 +62,9 @@
                         <td>{{ $d->program }}</td>
                         <td>{{ $d->kelas }}</td>
                         <td>{{ $d->mata_pelajaran }}</td>
-                        <td>{{ $d->hari1 }}</td>
-                        <td>{{ $d->hari2 }}</td>
-                        <td>{{ $d->hari3 }}</td>
-                        <td>{{ $d->waktu }}</td>
+                        <td>{{ $d->hari1 }}, PUKUL {{ $d->waktu_hari1 }}</td>
+                        <td>{{ $d->hari2 }}, PUKUL {{ $d->waktu_hari2 }}</td>
+                        <td>{{ $d->hari3 }}, PUKUL {{ $d->waktu_hari3 }}</td>
               <form action="{{ route('pendaftaranSiswa.update', $d->id) }}" method="post" enctype="multipart/form-data">
 		      	  {{ csrf_field() }}
 			        {{ method_field('PUT') }}
@@ -83,7 +81,7 @@
                             required autofocus
                             value="{{ Auth::user()->nama }}" style="text-transform: capitalize"> -->
                             
-                        <button value="PICKED UP" id="status" name="status" type="submit" class=" btn btn-sm btn-primary">{{ $d->status }}</button>
+                        <button value="DIPILIH TUTOR" id="status" name="status" type="submit" class=" btn btn-sm btn-primary">{{ $d->status }}</button>
                         </td>
                         </form>
                     </tr>

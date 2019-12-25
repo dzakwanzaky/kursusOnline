@@ -24,7 +24,11 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-              <table class="table table-bordered table-striped table-responsive-sm" id="siswa"> 
+              <div class="alert alert-info" style="font-size:14px">
+                        <strong>INFO!</strong> Jika bukti pembayaran sudah sesuai, klik tombol <strong>UNPAID</strong>
+                        pada tabel status sebagai tanda pembayaran telah diterima.
+                    </div>
+              <table class="table table-bordered table-striped table-responsive-md" id="siswa"> 
               <thead class="thead-dark">
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
 
@@ -55,7 +59,7 @@
                         <input style="display:none" type="text" class="form-control" id="provinsi" name="provinsi" value="{{ $d->provinsi }}">
                           <input style="display:none" type="text" class="form-control" id="kota" name="kota" value="{{ $d->kota }}">
                           <input style="display:none" type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{ $d->kecamatan }}">
-                        <button value="PAID" id="status" name="status" type="submit" class=" btn btn-sm btn-primary" style="text-align:center"> 
+                        <button value="SUDAH DIBAYAR" id="status" name="status" type="submit" class=" btn btn-sm btn-primary" style="text-align:center"> 
                         {{ $d->status }}</button>
                         </td>
                       </form>

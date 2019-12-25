@@ -33,15 +33,9 @@
 
                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                         <label for="provinsi">Provinsi</label>
-
+                        <input id="provinsi" type="text" class="form-control" name="provinsi" required>
                         <div class="form-title">
-                            <input id="provinsi" type="text" class="form-control" name="provinsi" required>
-
-                            @if ($errors->has('password'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif
+                           
                         </div>
                     </div>
 
@@ -69,7 +63,7 @@
                           <div class="form-group">
                             <input type="file" class="form-control" id="file" name="file">
                     </div>              
-                            <input id="status" type="text" name="status" class="form-control" value="UNPAID" style="display:none" required>
+                            <input id="status" type="text" name="status" class="form-control" value="BELUM DIBAYAR" style="display:none" required>
                                 
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary d-block" style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">

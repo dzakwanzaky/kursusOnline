@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ModelJadwal;
 use Auth;
-use App\ModelSIswa;
+use App\ModelSiswa;
+use App\ModelTutor;
 
 class JadwalController extends Controller
 {
@@ -28,11 +29,15 @@ class JadwalController extends Controller
 
     public function tutor()
     {
-       
-        $data = ModelJadwal::with('datas')
-        ->where('status', 'WAITING')->orWhere('status', 'PICKED UP')->get();
+        // $data = ModelJadwal::
+        
+        // where('status', 'MENUNGGU')->orWhere('status', 'DIPILIH TUTOR')->get();
+        $data = ModelTutor::where('id', '=', Auth::user()->id)->first();
+        $jadwal = ModelJadwal::whereIn('kelas',
+        [$data->kelas1, $data->kelas2, $data->kelas3, $data->kelas4, $data->kelas5, $data->kelas6])->get();
         // dd($data);
-        return view('tutor.tutor', compact('data'));
+
+        return view('tutor.tutor', compact('jadwal'));
     }
 
     public function admin()
@@ -43,13 +48,13 @@ class JadwalController extends Controller
 
     public function adminTutor()
     {
-        $data = ModelJadwal::where('status', 'PICKED UP')->get();
+        $data = ModelJadwal::all();
         return view('dashboard_admin.list_pendaftaran_tutor', compact('data'));
     }
 
     public function jadwalTutor()
     {
-        $data = ModelJadwal::where('status', 'ACTIVE')->get();
+        $data = ModelJadwal::where('status', 'AKTIF')->get();
         return view('tutor.jadwal', compact('data'));
     }
 
@@ -82,7 +87,9 @@ class JadwalController extends Controller
         $data->hari1 = $request->hari1;
         $data->hari2 = $request->hari2;
         $data->hari3 = $request->hari3;
-        $data->waktu = $request->waktu;
+        $data->waktu_hari1 = $request->waktu_hari1;
+        $data->waktu_hari2 = $request->waktu_hari2;
+        $data->waktu_hari3 = $request->waktu_hari3;
         $data->save();
         return redirect('dataSiswa')->withMessage('Kamu Berhasil Daftar Les');
     }

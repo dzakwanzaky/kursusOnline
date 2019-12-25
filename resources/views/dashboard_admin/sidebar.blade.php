@@ -52,6 +52,7 @@
               </p>
             </a>
           </li>
+          
           <li class="nav-item has-treeview {{ Request::segment(1) === 'list_pendaftaranSiswa' ? 'menu-open' : null }}
                   {{ Request::segment(1) === 'list_pendaftaranTutor' ? 'menu-open' : null }}">
             <a href="#" class="nav-link nav-link {{ Request::segment(1) === 'list_pendaftaranSiswa' ? 'nav-link active' : null }}

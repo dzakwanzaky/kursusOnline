@@ -91,7 +91,22 @@
 
           <div class="form-group">
 						<label for="">Mata Pelajaran :</label>
-						<input type="text" class="form-control" id="mata_pelajaran" name="mata_pelajaran" value=" {{ $d->mata_pelajaran }}"> 
+						<input type="text" class="form-control" id="mata_pelajaran1" name="mata_pelajaran1" value=" {{ $d->mata_pelajaran1 }}"> 
+					</div>
+
+          <div class="form-group">
+						<label for="">Mata Pelajaran :</label>
+						<input type="text" class="form-control" id="mata_pelajaran2" name="mata_pelajaran2" value=" {{ $d->mata_pelajaran2 }}"> 
+					</div>
+
+          <div class="form-group">
+						<label for="">Mata Pelajaran :</label>
+						<input type="text" class="form-control" id="mata_pelajaran3" name="mata_pelajaran3" value=" {{ $d->mata_pelajaran3 }}"> 
+					</div>
+
+          <div class="form-group">
+						<label for="">Mata Pelajaran :</label>
+						<input type="text" class="form-control" id="mata_pelajaran4" name="mata_pelajaran4" value=" {{ $d->mata_pelajaran4 }}"> 
 					</div>
           
 
