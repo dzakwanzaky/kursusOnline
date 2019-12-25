@@ -30,7 +30,7 @@
           </li>
           <li class="nav-item">
             <a href="/jadwal" class="nav-link {{ Request::segment(1) === 'jadwal' ? 'nav-link active' : null }}">
-              <i class="far fa-circle nav-icon"></i>
+              <i class="far fa-calendar nav-icon"></i>
               <p>
                 Jadwal Mengajar
               </p>

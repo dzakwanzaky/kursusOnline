@@ -7,6 +7,8 @@ use App\ModelTutor;
 use Auth;
 use App\User;
 use App\ModelSiswa;
+use App\ModelKab;
+use App\ModelKecamatan;
 
 class TutorController extends Controller
 {
@@ -23,7 +25,9 @@ class TutorController extends Controller
 
     public function index(){
         $data = ModelTutor::all();
-        return view('base.dataTutor', compact('data'));
+        $kota = ModelKab::all();
+        $kec = ModelKecamatan::all();
+        return view('base.dataTutor', compact('data', 'kota', 'kec'));
     }
 
     public function profileTutor(){
@@ -76,7 +80,10 @@ class TutorController extends Controller
         $data = ModelTutor::where('id',$id)->first();
         $data->nama_tutor = $request->nama_tutor;
         $data->pendidikan = $request->pendidikan;
-        $data->mata_pelajaran = $request->mata_pelajaran;
+        $data->mata_pelajaran1 = $request->mata_pelajaran1;
+        $data->mata_pelajaran2 = $request->mata_pelajaran2;
+        $data->mata_pelajaran3 = $request->mata_pelajaran3;
+        $data->mata_pelajaran4 = $request->mata_pelajaran4;
         $data->provinsi = $request->kota;
         $data->kecamatan = $request->kecamatan;
         $data->provinsi = $request->provinsi;

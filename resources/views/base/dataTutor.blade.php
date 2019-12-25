@@ -31,33 +31,124 @@
                         </div>
 
                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
-                        <label for="provinsi">Provinsi</label>
+                        <label for="kota">Kota/Kabupaten</label>
 
                         <div class="form-title">
-                            <input id="provinsi" type="text" class="form-control" name="provinsi" required>
-
-                            @if ($errors->has('password'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif
+                        <select class="form-control" id="kota">
+                        @php $no = 1; @endphp
+                        @foreach($kota as $k)
+                        <option value="{{ $k->kabupaten }}">{{ $k->kabupaten }}</option>
+                        @endforeach
+                        <option value="">---Kabupaten/Kota---</option>
+                        <option value="Kabupaten Bantul">Kabupaten Bantul</option>
+                            <option value="Kabupaten Gunung Kidul">Kabupaten Gunung Kidul</option>
+                            <option value="Kabupaten Kulon Progo">Kabupaten Kulon Progo</option>
+                            <option value="Kabupaten Sleman">Kabupaten Sleman</option>
+                            <option value="Kota Yogyakarta">Kota Yogyakarta</option>
+                        </select>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="kota">Kota</label>
-
+                        <label for="inputGroupSelect01">Kecamatan</label>
                         <div class="form-title">
-                            <input id="kota" type="text" class="form-control" name="kota" required>
+                        <select class="form-control" id="inputGroupSelect01">
+                        @php $no = 1; @endphp
+                        @foreach($kec as $c)
+                        <option value="{{ $c->kecamatan }}">{{ $c->kecamatan }}</option>
+                        @endforeach
+                        </select>
+                        <option value="" selected disabled>---Kabupaten Bantul---</option>
+                        <option value="Bambanglipuro">Bambanglipuro</option>
+                            <option value="Bangutapan">Bangutapan</option>
+                            <option value="Bantul">Bantul</option>
+                            <option value="Dlingo">Dlingo</option>
+                            <option value="Imogiri">Imogiri</option>
+                            <option value="Jetis">Jetis</option>
+                            <option value="Kasihan">Kasihan</option>
+                            <option value="Kretek">Kretek</option>
+                            <option value="Pajangan">Pajangan</option>
+                            <option value="Pandak">Pandak</option>
+                            <option value="Piyungan">Piyungan</option>
+                            <option value="Pleret">Pleret</option>
+                            <option value="Pundong">Pundong</option>
+                            <option value="Sanden">Sanden</option>
+                            <option value="Sedayu">Sedayu</option>
+                            <option value="Sewon">Sewon</option>
+                            <option value="Srandakan">Srandakan</option>
+                            <!-- 2 -->
+                            
+                            <option value="" selected disabled>---Kabupaten Gunung Kidul---</option>
+                            <option value="Gedangsari">Gedangsari</option>
+                            <option value="Girisubo">Girisubo</option>
+                            <option value="Karangmojo">Karangmojo</option>
+                            <option value="Ngawen">Ngawen</option>
+                            <option value="Nglipar">Nglipar</option>
+                            <option value="Paliyan">Paliyan</option>
+                            <option value="Panggang">Panggang</option>
+                            <option value="Patuk">Patuk</option>
+                            <option value="Playen">Playen</option>
+                            <option value="Ponjong">Ponjong</option>
+                            <option value="Purwosari">Purwosari</option>
+                            <option value="Rongkop">Rongkop</option>
+                            <option value="Saptosari">Saptosari</option>
+                            <option value="Semanu">Semanu</option>
+                            <option value="Semin">Semin</option>
+                            <option value="Tanjungsari">Tanjungsari</option>
+                            <option value="Tepus">Tepus</option>
+                            <option value="Wonosari">Wonosari</option>
+                            <!-- 3 -->
+                            <option value="" selected disabled>---Kabupaten Kulon Progo---</option>
+                            <option value="Galur">Galur</option>
+                            <option value="Girimulyo">Girimulyo</option>
+                            <option value="Kalibawang">Kalibawang</option>
+                            <option value="Kokap">Kokap</option>
+                            <option value="Lendah">Lendah</option>
+                            <option value="Nanggulan">Nanggulan</option>
+                            <option value="Panjatan">Panjatan</option>
+                            <option value="Pengasih">Pengasih</option>
+                            <option value="Samigaluh">Samigaluh</option>
+                            <option value="Sentolo">Sentolo</option>
+                            <option value="Temon">Temon</option>
+                            <option value="Wates">Wates</option>
+                            <!-- 4 -->
+                            <option value="" selected disabled>---Kabupaten Sleman---</option>
+                            <option value="Berbah">Berbah</option>
+                            <option value="Cangkringan">Cangkringan</option>
+                            <option value="Depok">Depok</option>
+                            <option value="Gamping">Gamping</option>
+                            <option value="Godean">Godean</option>
+                            <option value="Kalasan">Kalasan</option>
+                            <option value="Minggir">Minggir</option>
+                            <option value="Mlati">Mlati</option>
+                            <option value="Moyudan">Moyudan</option>
+                            <option value="Ngaglik">Ngaglik</option>
+                            <option value="Ngemplak">Ngemplak</option>
+                            <option value="Pakem">Pakem</option>
+                            <option value="Prambanan">Prambanan</option>
+                            <option value="Seyegan">Seyegan</option>
+                            <option value="Sleman">Sleman</option>
+                            <option value="Tempel">Tempel</option>
+                            <option value="Turi">Turi</option>
+                            <!-- 5 -->
+                            <option value="" selected disabled>---Kota Yogyakarta---</option>
+                            <option value="Danurejan">Danurejan</option>                            
+                            <option value="Gedongtengen">Gedongtengen</option>
+                            <option value="Gondokusuman">Gondokusuman</option>
+                            <option value="Gondoman">Gondoman</option>
+                            <option value="Jetis">Jetis</option>
+                            <option value="Kotagede">Kotagede</option>
+                            <option value="Kraton">Kraton</option>
+                            <option value="Mantrijeron">Mantrijeron</option>
+                            <option value="Mergangsan">Mergangsan</option>
+                            <option value="Ngampilan">Ngampilan</option>
+                            <option value="Pakualaman">Pakualaman</option>
+                            <option value="Tegalrejo">Tegalrejo</option>
+                            <option value="Umbulharjo">Umbulharjo</option>
+                            <option value="Wirobrajan">Wirobrajan</option>
+                        <option value="" selected disabled>---Kecamatan---</option>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="kecamatan">Kecamatan</label>
-
-                        <div class="form-title">
-                            <input id="kecamatan" type="text" class="form-control" name="kecamatan" required>
-                        </div>
-                    </div>          
+                    </div>     
 
                      <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                         <label for="pendidikan">Pendidikan Terakhir</label>
@@ -86,10 +177,10 @@
                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                         <label for="mata_pelajaran">Mata Pelajaran</label>
                     </div>  
-                            <input  id="mata_pelajaran1"  type="checkbox" value="Matematika"/> Matematika <br>
-                            <input  id="mata_pelajaran2"  type="checkbox" value="IPA"/> IPA <br>
-                            <input  id="mata_pelajaran3"  type="checkbox" value="IPS"/> IPS <br>
-                            <input  id="mata_pelajaran4"  type="checkbox" value="Bahasa Inggris"/> Bahasa Inggris <br>
+                            <input  id="mata_pelajaran1" name="mata_pelajaran1"  type="checkbox" value="Matematika"/> Matematika <br>
+                            <input  id="mata_pelajaran2" name="mata_pelajaran2"  type="checkbox" value="IPA"/> IPA <br>
+                            <input  id="mata_pelajaran3" name="mata_pelajaran3"  type="checkbox" value="IPS"/> IPS <br>
+                            <input  id="mata_pelajaran4"  name="mata_pelajaran4" type="checkbox" value="Bahasa Inggris"/> Bahasa Inggris <br>
                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                         <label for="file">Curriculum Vitae (.pdf / .docx)</label>
                         

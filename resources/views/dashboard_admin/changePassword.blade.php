@@ -13,7 +13,7 @@
                 <div class="container-fluid">
                 <div class="row mb-2">
 					        <div class="col-sm-6">
-						        <p style="font-size:24px">Edit Password</p>
+						        <p style="font-size:24px">Ubah Password</p>
 					  </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-md-right" style="font-size:14px">

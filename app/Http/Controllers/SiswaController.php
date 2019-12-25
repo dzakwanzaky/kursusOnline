@@ -7,7 +7,8 @@ use App\ModelSiswa;
 use Auth;
 use App\User;
 use App\ModelInvoice;
-use App\Provinsi;
+use App\ModelKab;
+use App\ModelKecamatan;
 use Image;
 
 class SiswaController extends Controller
@@ -27,7 +28,9 @@ class SiswaController extends Controller
 
     public function index(){
         $data = ModelSiswa::all();
-        return view('base.dataSiswa', compact('data'));
+        $kota = ModelKab::all();
+        $kec = ModelKecamatan::all();
+        return view('base.dataSiswa', compact('data', 'kota', 'kec'));
     }
 
     
@@ -98,15 +101,6 @@ class SiswaController extends Controller
         }
                
     }
-
-    public function json()
-    {
-        $data = Provinsi::all();
-        $provinsi = $data->pluck('provinsi');
-        $provinsi->all();
-        return response()->json($provinsi);
-    }
-
     // public function show($id)
     // {
     //     $data = ModelSiswa::where('id','=',$id)->get();

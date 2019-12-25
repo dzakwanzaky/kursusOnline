@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e5049307020abaa9687bb9cc606cba0",
+    "content-hash": "1b1aaf68778c17a6ed6310f397d55353",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -501,67 +501,6 @@
                 "trusted proxy"
             ],
             "time": "2019-12-20T13:11:11+00:00"
-        },
-        {
-            "name": "filp/whoops",
-            "version": "2.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/filp/whoops.git",
-                "reference": "ee9699e79d8fcdd15c107e035d7b965e4fa854ac"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/ee9699e79d8fcdd15c107e035d7b965e4fa854ac",
-                "reference": "ee9699e79d8fcdd15c107e035d7b965e4fa854ac",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5.9 || ^7.0",
-                "psr/log": "^1.0.1"
-            },
-            "require-dev": {
-                "mockery/mockery": "^0.9 || ^1.0",
-                "phpunit/phpunit": "^4.8.35 || ^5.7",
-                "symfony/var-dumper": "^2.6 || ^3.0 || ^4.0"
-            },
-            "suggest": {
-                "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
-                "whoops/soap": "Formats errors as SOAP responses"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Whoops\\": "src/Whoops/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Filipe Dobreira",
-                    "homepage": "https://github.com/filp",
-                    "role": "Developer"
-                }
-            ],
-            "description": "php error handling for cool kids",
-            "homepage": "https://filp.github.io/whoops/",
-            "keywords": [
-                "error",
-                "exception",
-                "handling",
-                "library",
-                "throwable",
-                "whoops"
-            ],
-            "time": "2019-12-21T10:00:00+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1685,262 +1624,35 @@
             "time": "2019-11-08T13:50:10+00:00"
         },
         {
-            "name": "o2system/curl",
-            "version": "v2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/o2system/curl.git",
-                "reference": "e42f18c79191a4205114e9da1a407986fa692d53"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/o2system/curl/zipball/e42f18c79191a4205114e9da1a407986fa692d53",
-                "reference": "e42f18c79191a4205114e9da1a407986fa692d53",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-simplexml": "*",
-                "o2system/kernel": "*",
-                "php": "^7.2.0"
-            },
-            "type": "package",
-            "autoload": {
-                "psr-4": {
-                    "O2System\\Curl\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Steeven Andrian Salim",
-                    "email": "steevenz@steevenz.com",
-                    "homepage": "http://www.steevenz.com",
-                    "role": "Founder and Lead Project"
-                },
-                {
-                    "name": "Teguh Rianto",
-                    "email": "teguh.rianto22@gmail.com",
-                    "homepage": "http://teguhrianto22.pusku.com",
-                    "role": "Template Designer"
-                }
-            ],
-            "description": "PHP Lightweight HTTP Request Client Libraries",
-            "keywords": [
-                "driver",
-                "framework",
-                "libraries",
-                "php",
-                "utilities"
-            ],
-            "time": "2019-10-10T14:59:59+00:00"
-        },
-        {
-            "name": "o2system/kernel",
-            "version": "v2.0.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/o2system/kernel.git",
-                "reference": "0ff70ef0f055b226dc6ef6a28f86477cc416c2e6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/o2system/kernel/zipball/0ff70ef0f055b226dc6ef6a28f86477cc416c2e6",
-                "reference": "0ff70ef0f055b226dc6ef6a28f86477cc416c2e6",
-                "shasum": ""
-            },
-            "require": {
-                "filp/whoops": "^2.3",
-                "o2system/spl": "*",
-                "php": "^7.2.0"
-            },
-            "require-dev": {
-                "o2system/gear": "*"
-            },
-            "type": "package",
-            "autoload": {
-                "psr-4": {
-                    "O2System\\Kernel\\": "src"
-                },
-                "files": [
-                    "src/Config/Constants.php",
-                    "src/Helpers/Common.php",
-                    "src/Helpers/Inflector.php",
-                    "src/Helpers/Cookie.php",
-                    "src/Kernel.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Steeven Andrian Salim",
-                    "email": "steevenz@steevenz.com",
-                    "homepage": "http://www.steevenz.com",
-                    "role": "Founder and Lead Project"
-                },
-                {
-                    "name": "Teguh Rianto",
-                    "email": "teguh.rianto22@gmail.com",
-                    "homepage": "http://teguhrianto22.pusku.com",
-                    "role": "Template Designer"
-                }
-            ],
-            "description": "O2System Framework Kernel",
-            "keywords": [
-                "driver",
-                "framework",
-                "libraries",
-                "php",
-                "singleton"
-            ],
-            "time": "2019-12-06T10:16:43+00:00"
-        },
-        {
-            "name": "o2system/psr",
-            "version": "v1.2.156",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/o2system/psr.git",
-                "reference": "a379467c3aad955eeb0f9cb4a5911153bc9c75c8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/o2system/psr/zipball/a379467c3aad955eeb0f9cb4a5911153bc9c75c8",
-                "reference": "a379467c3aad955eeb0f9cb4a5911153bc9c75c8",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.2.0",
-                "psr/cache": "*",
-                "psr/container": "*",
-                "psr/http-message": "*",
-                "psr/http-server-middleware": "*",
-                "psr/log": "*",
-                "psr/simple-cache": "*"
-            },
-            "type": "package",
-            "autoload": {
-                "psr-4": {
-                    "O2System\\Psr\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Steeven Andrian Salim",
-                    "email": "steevenz@steevenz.com",
-                    "homepage": "http://www.steevenz.com",
-                    "role": "Founder and Lead Project"
-                },
-                {
-                    "name": "Teguh Rianto",
-                    "email": "teguh.rianto22@gmail.com",
-                    "homepage": "http://teguhrianto22.pusku.com",
-                    "role": "Template Designer"
-                }
-            ],
-            "description": "O2System PSR it's build based on PHP Framework Interop Group (PHP-FIG) standards recommendations. This repository contains a collection of PHP interfaces based on the PSR-0 until the PSR-7.",
-            "keywords": [
-                "framework",
-                "interfaces",
-                "libraries",
-                "php",
-                "utilities"
-            ],
-            "time": "2019-11-12T19:40:04+00:00"
-        },
-        {
-            "name": "o2system/spl",
-            "version": "v1.0.147",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/o2system/spl.git",
-                "reference": "d356101e89b7b7e7185dd1ffddee4ade87733b61"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/o2system/spl/zipball/d356101e89b7b7e7185dd1ffddee4ade87733b61",
-                "reference": "d356101e89b7b7e7185dd1ffddee4ade87733b61",
-                "shasum": ""
-            },
-            "require": {
-                "o2system/psr": "*",
-                "php": "^7.2.0"
-            },
-            "type": "package",
-            "autoload": {
-                "psr-4": {
-                    "O2System\\Spl\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Steeven Andrian Salim",
-                    "email": "steevenz@steevenz.com",
-                    "homepage": "http://www.steevenz.com",
-                    "role": "Founder and Lead Project"
-                },
-                {
-                    "name": "Teguh Rianto",
-                    "email": "teguh.rianto22@gmail.com",
-                    "homepage": "http://teguhrianto22.pusku.com",
-                    "role": "Template Designer"
-                }
-            ],
-            "description": "O2System Standard PHP Library (SPL) it's build based on original standard PHP library. It's made up primarily of commonly needed datastructure classes, iterators, handlers and exceptions for O2System PHP Framework, but also can be used independently outside O2System PHP Framework environment.",
-            "keywords": [
-                "framework",
-                "interfaces",
-                "libraries",
-                "php",
-                "utilities"
-            ],
-            "time": "2019-11-12T19:41:18+00:00"
-        },
-        {
             "name": "ocramius/package-versions",
-            "version": "1.5.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ocramius/PackageVersions.git",
-                "reference": "1d32342b8c1eb27353c8887c366147b4c2da673c"
+                "reference": "44af6f3a2e2e04f2af46bcb302ad9600cba41c7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/1d32342b8c1eb27353c8887c366147b4c2da673c",
-                "reference": "1d32342b8c1eb27353c8887c366147b4c2da673c",
+                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/44af6f3a2e2e04f2af46bcb302ad9600cba41c7d",
+                "reference": "44af6f3a2e2e04f2af46bcb302ad9600cba41c7d",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0.0",
-                "php": "^7.3.0"
+                "php": "^7.1.0"
             },
             "require-dev": {
-                "composer/composer": "^1.8.6",
-                "doctrine/coding-standard": "^6.0.0",
+                "composer/composer": "^1.6.3",
+                "doctrine/coding-standard": "^5.0.1",
                 "ext-zip": "*",
-                "infection/infection": "^0.13.4",
-                "phpunit/phpunit": "^8.2.5",
-                "vimeo/psalm": "^3.4.9"
+                "infection/infection": "^0.7.1",
+                "phpunit/phpunit": "^7.5.17"
             },
             "type": "composer-plugin",
             "extra": {
                 "class": "PackageVersions\\Installer",
                 "branch-alias": {
-                    "dev-master": "1.6.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -1959,7 +1671,7 @@
                 }
             ],
             "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
-            "time": "2019-07-17T15:49:50+00:00"
+            "time": "2019-11-15T16:17:10+00:00"
         },
         {
             "name": "opis/closure",
@@ -2370,52 +2082,6 @@
             "time": "2019-12-15T19:35:24+00:00"
         },
         {
-            "name": "psr/cache",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/cache.git",
-                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
-                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Cache\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for caching libraries",
-            "keywords": [
-                "cache",
-                "psr",
-                "psr-6"
-            ],
-            "time": "2016-08-06T20:24:11+00:00"
-        },
-        {
             "name": "psr/container",
             "version": "1.0.0",
             "source": {
@@ -2614,112 +2280,6 @@
                 "response"
             ],
             "time": "2016-08-06T14:39:51+00:00"
-        },
-        {
-            "name": "psr/http-server-handler",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/http-server-handler.git",
-                "reference": "aff2f80e33b7f026ec96bb42f63242dc50ffcae7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-server-handler/zipball/aff2f80e33b7f026ec96bb42f63242dc50ffcae7",
-                "reference": "aff2f80e33b7f026ec96bb42f63242dc50ffcae7",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0",
-                "psr/http-message": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Http\\Server\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for HTTP server-side request handler",
-            "keywords": [
-                "handler",
-                "http",
-                "http-interop",
-                "psr",
-                "psr-15",
-                "psr-7",
-                "request",
-                "response",
-                "server"
-            ],
-            "time": "2018-10-30T16:46:14+00:00"
-        },
-        {
-            "name": "psr/http-server-middleware",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/http-server-middleware.git",
-                "reference": "2296f45510945530b9dceb8bcedb5cb84d40c5f5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-server-middleware/zipball/2296f45510945530b9dceb8bcedb5cb84d40c5f5",
-                "reference": "2296f45510945530b9dceb8bcedb5cb84d40c5f5",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0",
-                "psr/http-message": "^1.0",
-                "psr/http-server-handler": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Http\\Server\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for HTTP server-side middleware",
-            "keywords": [
-                "http",
-                "http-interop",
-                "middleware",
-                "psr",
-                "psr-15",
-                "psr-7",
-                "request",
-                "response"
-            ],
-            "time": "2018-10-30T17:12:04+00:00"
         },
         {
             "name": "psr/log",
@@ -3063,49 +2623,6 @@
             "time": "2019-02-22T07:42:52+00:00"
         },
         {
-            "name": "steevenz/rajaongkir",
-            "version": "v2.2.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/steevenz/rajaongkir.git",
-                "reference": "333cbdbb6ab603a666b3322186aa60e7ad3a6cd4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/steevenz/rajaongkir/zipball/333cbdbb6ab603a666b3322186aa60e7ad3a6cd4",
-                "reference": "333cbdbb6ab603a666b3322186aa60e7ad3a6cd4",
-                "shasum": ""
-            },
-            "require": {
-                "o2system/curl": "*",
-                "php": ">=7.2.0"
-            },
-            "type": "php-class",
-            "autoload": {
-                "files": [
-                    "src/Rajaongkir.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Steeve Andrian",
-                    "email": "steevenz@steevenz.com",
-                    "homepage": "http://www.steevenz.com",
-                    "role": "PHP Programmer"
-                }
-            ],
-            "description": "Advanced RajaOngkir API PHP Class",
-            "keywords": [
-                "api",
-                "rajaongkir"
-            ],
-            "time": "2019-08-15T06:48:31+00:00"
-        },
-        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.2.3",
             "source": {
@@ -3245,25 +2762,25 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v5.0.2",
+            "version": "v4.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "19d29e7098b7b2c3313cb03902ca30f100dcb837"
+                "reference": "64acec7e0d67125e9f4656c68d4a38a42ab5a0b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/19d29e7098b7b2c3313cb03902ca30f100dcb837",
-                "reference": "19d29e7098b7b2c3313cb03902ca30f100dcb837",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/64acec7e0d67125e9f4656c68d4a38a42ab5a0b7",
+                "reference": "64acec7e0d67125e9f4656c68d4a38a42ab5a0b7",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2.5"
+                "php": "^7.1.3"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.0-dev"
+                    "dev-master": "4.4-dev"
                 }
             },
             "autoload": {
@@ -3294,7 +2811,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2019-11-18T17:27:11+00:00"
+            "time": "2019-10-12T00:35:04+00:00"
         },
         {
             "name": "symfony/debug",
@@ -3732,20 +3249,20 @@
         },
         {
             "name": "symfony/mime",
-            "version": "v5.0.2",
+            "version": "v4.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "0e6a4ced216e49d457eddcefb61132173a876d79"
+                "reference": "010cc488e56cafe5f7494dea70aea93100c234df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/0e6a4ced216e49d457eddcefb61132173a876d79",
-                "reference": "0e6a4ced216e49d457eddcefb61132173a876d79",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/010cc488e56cafe5f7494dea70aea93100c234df",
+                "reference": "010cc488e56cafe5f7494dea70aea93100c234df",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2.5",
+                "php": "^7.1.3",
                 "symfony/polyfill-intl-idn": "^1.10",
                 "symfony/polyfill-mbstring": "^1.0"
             },
@@ -3754,12 +3271,12 @@
             },
             "require-dev": {
                 "egulias/email-validator": "^2.1.10",
-                "symfony/dependency-injection": "^4.4|^5.0"
+                "symfony/dependency-injection": "^3.4|^4.1|^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.0-dev"
+                    "dev-master": "4.4-dev"
                 }
             },
             "autoload": {
@@ -3790,7 +3307,7 @@
                 "mime",
                 "mime-type"
             ],
-            "time": "2019-11-30T14:12:50+00:00"
+            "time": "2019-11-30T08:27:26+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -4270,20 +3787,20 @@
         },
         {
             "name": "symfony/service-contracts",
-            "version": "v2.0.1",
+            "version": "v1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "144c5e51266b281231e947b51223ba14acf1a749"
+                "reference": "ffc7f5692092df31515df2a5ecf3b7302b3ddacf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/144c5e51266b281231e947b51223ba14acf1a749",
-                "reference": "144c5e51266b281231e947b51223ba14acf1a749",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/ffc7f5692092df31515df2a5ecf3b7302b3ddacf",
+                "reference": "ffc7f5692092df31515df2a5ecf3b7302b3ddacf",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2.5",
+                "php": "^7.1.3",
                 "psr/container": "^1.0"
             },
             "suggest": {
@@ -4292,7 +3809,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -4324,7 +3841,7 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2019-11-18T17:27:11+00:00"
+            "time": "2019-10-14T12:27:06+00:00"
         },
         {
             "name": "symfony/translation",
@@ -4404,20 +3921,20 @@
         },
         {
             "name": "symfony/translation-contracts",
-            "version": "v2.0.1",
+            "version": "v1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation-contracts.git",
-                "reference": "8cc682ac458d75557203b2f2f14b0b92e1c744ed"
+                "reference": "364518c132c95642e530d9b2d217acbc2ccac3e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/8cc682ac458d75557203b2f2f14b0b92e1c744ed",
-                "reference": "8cc682ac458d75557203b2f2f14b0b92e1c744ed",
+                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/364518c132c95642e530d9b2d217acbc2ccac3e6",
+                "reference": "364518c132c95642e530d9b2d217acbc2ccac3e6",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2.5"
+                "php": "^7.1.3"
             },
             "suggest": {
                 "symfony/translation-implementation": ""
@@ -4425,7 +3942,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -4457,7 +3974,7 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2019-11-18T17:27:11+00:00"
+            "time": "2019-09-17T11:12:18+00:00"
         },
         {
             "name": "symfony/var-dumper",
@@ -5005,6 +4522,67 @@
                 "ignition"
             ],
             "time": "2019-08-30T14:06:08+00:00"
+        },
+        {
+            "name": "filp/whoops",
+            "version": "2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filp/whoops.git",
+                "reference": "ee9699e79d8fcdd15c107e035d7b965e4fa854ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/ee9699e79d8fcdd15c107e035d7b965e4fa854ac",
+                "reference": "ee9699e79d8fcdd15c107e035d7b965e4fa854ac",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9 || ^7.0",
+                "psr/log": "^1.0.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9 || ^1.0",
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
+                "symfony/var-dumper": "^2.6 || ^3.0 || ^4.0"
+            },
+            "suggest": {
+                "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
+                "whoops/soap": "Formats errors as SOAP responses"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Whoops\\": "src/Whoops/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Filipe Dobreira",
+                    "homepage": "https://github.com/filp",
+                    "role": "Developer"
+                }
+            ],
+            "description": "php error handling for cool kids",
+            "homepage": "https://filp.github.io/whoops/",
+            "keywords": [
+                "error",
+                "exception",
+                "handling",
+                "library",
+                "throwable",
+                "whoops"
+            ],
+            "time": "2019-12-21T10:00:00+00:00"
         },
         {
             "name": "fzaninotto/faker",
