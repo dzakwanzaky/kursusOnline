@@ -24,7 +24,7 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-              <table class="table table-bordered table-striped table-responsive-sm" id="siswa"> 
+              <table class="table table-bordered table-striped table-responsive-md" id="siswa"> 
               <thead class="thead-dark">
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
 

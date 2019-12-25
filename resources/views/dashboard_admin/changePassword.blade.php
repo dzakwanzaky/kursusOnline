@@ -18,10 +18,10 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-md-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/admin">Admin</a>
+                                    <a href="/profileAdmin">Profile Admin</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Profile Admin
+                                    Edit Password
                                 </li>
                             </ol>
                         </div>			
@@ -52,7 +52,7 @@
                          @foreach ($errors->all() as $error)
                             <p class="text-danger">{{ $error }}</p>
                          @endforeach 
-  
+                        </br>        
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">Current Password</label>
   
@@ -85,6 +85,8 @@
                             </div>
                         </div>
                     </form>
+                </div>
+                </div>
           </div>
           <!-- /.col-md-6 -->
           

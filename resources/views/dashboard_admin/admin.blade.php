@@ -28,9 +28,9 @@
                       <!-- small box -->
                       <div class="small-box bg-red">
                         <div class="inner">
-                          <h3>10</h3>
+                          <h3>{{ DB::table('users')->where('role','!=','admin')->count()}}</h3>
                           
-                          <p>Visitor</p>
+                          <p>Pendaftaran</p>
                         </div>
                       <div class="icon">
                         <i class="ion ion-stats-bars"></i>
@@ -42,41 +42,41 @@
                       <!-- small box -->
                       <div class="small-box bg-yellow">
                         <div class="inner">
-                          <h3>{{ DB::table('users')->where('role','siswa')->count()}}</h3>
-                            <p>Murid</p>
+                          <h3>{{ DB::table('model_siswas')->where('status','ACTIVE')->count()}}</h3>
+                            <p>Murid Aktif</p>
                         </div>
                       <div class="icon">
                         <i class="ion ion-person-stalker"></i>
                       </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="/daftarSiswa" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <div class="col-lg-3 col-xs-6">
                       <!-- small box -->
                       <div class="small-box bg-green">
                         <div class="inner">
-                          <h3>{{ DB::table('users')->where('role','tutor')->count()}}</h3>
+                          <h3>{{ DB::table('model_tutors')->where('status','ACTIVE')->count()}}</h3>
 
-                            <p>Tutor</p>
+                            <p>Tutor Aktif</p>
                         </div>
                       <div class="icon">
                         <i class="ion ion-person"></i>
                       </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="/manajemenTutor" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <div class="col-lg-3 col-xs-6">
                       <!-- small box -->
                       <div class="small-box bg-blue">
                         <div class="inner">
-                          <h3>{{ DB::table('model_invoice')->count()}}</h3>
+                          <h3>{{ DB::table('model_invoice')->where('file','!=','null')->count()}}</h3>
 
                             <p>Invoice</p>
                         </div>
                       <div class="icon">
                         <i class="ion ion-ios-cart"></i>
                       </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="/daftarSiswa" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                   </div>
                 </div> 
               </div>
