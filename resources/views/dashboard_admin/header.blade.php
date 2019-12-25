@@ -24,6 +24,9 @@
           <a href="/profileAdmin" class="dropdown-item">
             <i class="fas fa-user"></i> Profile 
           </a>
+          <a href="/changePassword" class="dropdown-item">
+            <i class="fas fa-user"></i> Profile 
+          </a>
           <a href="{{ url('/landing') }}" class="dropdown-item"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">

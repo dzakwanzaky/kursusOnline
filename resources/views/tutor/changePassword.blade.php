@@ -1,27 +1,24 @@
-@extends('dashboard_admin/base')
+@extends('tutor/base')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-      <div class="container-fluid">
-	  <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-md-12 col-md-offset-6" >
             <div class="box box-primary">
                 <div class="container-fluid">
                 <div class="row mb-2">
-					        <div class="col-sm-6">
-						        <p style="font-size:24px">Ubah Password</p>
+					  <div class="col-sm-6">
+						  <p style="font-size:24px">Ubah Password</p>
 					  </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-md-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/admin">Admin</a>
+                                    <a href="/tutor">Tutor</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Profile Admin
+                                    Profile Tutor
                                 </li>
                             </ol>
                         </div>			
@@ -42,11 +39,8 @@
             <div class="card">
               <div class="card-body">
                 <div class="form-group">
-                    <!-- <a class="btn-edit" style="margin-left:auto;" href="/editAdmin">
-                       Edit profile
-                    </a> -->
-      
-                    <form method="POST" action="{{ route('change.password') }}">
+           
+                <form method="POST" action="{{ route('change.password') }}">
                         @csrf 
    
                          @foreach ($errors->all() as $error)
@@ -93,8 +87,5 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
-</div>
-</div>
-</div>
-    <!-- /.content-header -->
-@endsection
+ 
+  @endsection

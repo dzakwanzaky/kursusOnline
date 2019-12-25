@@ -143,6 +143,12 @@ Route::get('/editProgram', function () {
 Route::get('/changePassword', function () {
     return view('dashboard_admin/changePassword');
 });
+Route::get('/changePasswordTutor', function () {
+    return view('tutor/changePassword');
+});
+Route::get('/changePasswordMurid', function () {
+    return view('murid/changePassword');
+});
 
 Auth::routes();
 

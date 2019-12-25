@@ -76,7 +76,10 @@ class TutorController extends Controller
         $data = ModelTutor::where('id',$id)->first();
         $data->nama_tutor = $request->nama_tutor;
         $data->pendidikan = $request->pendidikan;
-        $data->mata_pelajaran = $request->mata_pelajaran;
+        $data->mata_pelajaran1 = $request->mata_pelajaran1;
+        $data->mata_pelajaran2 = $request->mata_pelajaran2;
+        $data->mata_pelajaran3 = $request->mata_pelajaran3;
+        $data->mata_pelajaran4 = $request->mata_pelajaran4;
         $data->provinsi = $request->kota;
         $data->kecamatan = $request->kecamatan;
         $data->provinsi = $request->provinsi;

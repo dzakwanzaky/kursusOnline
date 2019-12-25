@@ -1,27 +1,33 @@
-@extends('dashboard_admin/base')
+<!DOCTYPE html>
+<html>
+<head>
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<meta charset=utf-8 />
+</head>
+</html>
+@extends('murid/base')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-      <div class="container-fluid">
-	  <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-md-12 col-md-offset-6" >
             <div class="box box-primary">
                 <div class="container-fluid">
                 <div class="row mb-2">
-					        <div class="col-sm-6">
-						        <p style="font-size:24px">Ubah Password</p>
+					  <div class="col-sm-6">
+						  <p style="font-size:24px">Ubah Password</p>
 					  </div>
                         <div class="col-sm-6">
-                            <ol class="breadcrumb float-md-right" style="font-size:14px">
+                            <ol class="breadcrumb float-sm-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/admin">Admin</a>
+                                    <a href="/murid">Murid</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Profile Admin
+                                    Profile Murid
                                 </li>
                             </ol>
                         </div>			
@@ -41,12 +47,7 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <div class="form-group">
-                    <!-- <a class="btn-edit" style="margin-left:auto;" href="/editAdmin">
-                       Edit profile
-                    </a> -->
-      
-                    <form method="POST" action="{{ route('change.password') }}">
+              <form method="POST" action="{{ route('change.password') }}">
                         @csrf 
    
                          @foreach ($errors->all() as $error)
@@ -85,6 +86,7 @@
                             </div>
                         </div>
                     </form>
+            
           </div>
           <!-- /.col-md-6 -->
           
@@ -93,8 +95,27 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
-</div>
-</div>
-</div>
-    <!-- /.content-header -->
-@endsection
+    <script>
+		//buat profile
+		$(function () {
+			$("#file").change(function () {
+				readURL(this);
+			});
+    	});
+
+
+    	function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+
+				reader.onload = function (e) {
+					//alert(e.target.result);
+					$('#profile-picture').attr('src', e.target.result);
+				}
+
+				reader.readAsDataURL(input.files[0]);
+			}
+    	}
+	</script>
+ 
+  @endsection
