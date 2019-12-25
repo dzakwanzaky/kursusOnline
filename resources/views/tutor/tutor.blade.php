@@ -6,9 +6,11 @@
         <div class="row mb-2">
           <div class="col-sm-12">
             <h1 class="m-0 text-dark">Manajemen Murid</h1><br>
-            <p class="m-0 text-dark">Berikut data pengajuan dari murid yang mendaftar les. 
-            Di kolom Status, silahkan klik tombol <b>WAITING</b>, jika jadwal mengajar Anda sesuai dengan 
-            jadwal yang diajukan.</p>
+            <div class="alert alert-info" style="font-size:14px">
+                <strong>INFO!</strong> Berikut data pengajuan dari murid yang mendaftar les. 
+                  Di kolom Status, silahkan klik tombol <b>AMBIL</b>, jika jadwal mengajar Anda sesuai dengan 
+                  jadwal yang diajukan dan tunggu hingga Pengelola menampilkan jadwal mengajar di halaman Jadwal Mengajar.
+            </div>
           </div><!-- /.col -->
           <div class="col-sm-6">
             
