@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
-<meta charset=utf-8 />
-</head>
-</html>
 @extends('murid/base')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
@@ -27,7 +18,7 @@
                                     <a href="/murid">Murid</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Profile Murid
+                                    Ubah Password
                                 </li>
                             </ol>
                         </div>			
@@ -93,6 +84,7 @@
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
+    </div>
     </div>
     <!-- /.content -->
     <script>
