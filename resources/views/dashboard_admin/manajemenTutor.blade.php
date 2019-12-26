@@ -25,8 +25,8 @@
             <div class="card">
               <div class="card-body">
               <div class="alert alert-info" style="font-size:14px">
-                        <strong>INFO!</strong> Jika jadwal sudah sesuai dan tutor memenuhi syarat, klik tombol <strong>WAITING</strong>
-                        pada tabel status sebagai tanda tutor berhak mengajar.
+                        <strong>INFO!</strong> Jika jadwal sudah sesuai dan tutor memenuhi syarat, klik tombol <strong>MENUNGGU</strong>
+                        pada tabel status dan status akan berubah menjadi <strong>AKTIF</strong>.
                     </div>
               <table class="table table-bordered table-striped table-responsive-md" id="datakaryawan"> 
               <thead class="thead-dark"> 

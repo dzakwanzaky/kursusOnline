@@ -24,6 +24,7 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
+              <strong>INFO!</strong>Tombol <strong>DIPILIH TUTOR</strong> pada status, jika jadwal tutor sudah diterima dari pihak pengelola.
               <table class="table table-bordered table-striped table-responsive-md" id="datakaryawan"> 
               <thead class="thead-dark"> 
               <tr>
