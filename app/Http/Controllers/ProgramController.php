@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use App\ModelJadwal;
 use App\ModelSiswa;
 use App\ModelInvoice;
+use App\ModelProgram;
 use Auth;
 use PDF;
 class ProgramController extends Controller
@@ -13,10 +14,10 @@ class ProgramController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     public function index()
     {
         $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->get();
@@ -24,6 +25,7 @@ class ProgramController extends Controller
         $invoice = ModelInvoice::where('murid_id', '=', Auth::user()->id)->get();
         return view('murid/invoicenya', compact('data', 'alamat', 'invoice'));
     }
+    
     public function data()
     {
         $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->get();
@@ -31,6 +33,7 @@ class ProgramController extends Controller
         $invoice = ModelInvoice::where('murid_id', '=', Auth::user()->id)->get();
         return view('murid/invoice', compact('data', 'alamat', 'invoice'));
     }
+
     public function pdf()
     {
         $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->get();
@@ -63,6 +66,20 @@ class ProgramController extends Controller
     {
         $data = ModelProgram::where('id','=',$id)->get();
         return view('dashboard_admin.editProgram', compact('data'));
+    }
+
+    public function update(Request $request, $id)
+    {
+     
+        $data = ModelProgram::where('id',$id)->first();
+        $data->program = $request->program;
+        $data->fasilitas = $request->fasilitas;
+        $data->durasi = $request->durasi;
+        $data->jumlah_pertemuan = $request->jumlah_pertemuan;
+        $data->harga = $request->harga;
+        $data->keterangan = $request->keterangan;
+        $data->save();
+            return redirect('manajemenProgram')->withMessage('Berhasil Merubah Data');
     }
 
    

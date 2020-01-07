@@ -65,11 +65,16 @@
                       </form>
                     
                         <td>
+                        @if($d->files->file==null)
+                        <button name="status" class=" btn btn-sm btn-danger" style="text-align:center">BELUM UPLOAD</button>
+
+                    </a>
+                      @else
                         <a href="{{ url('/data_file/'.$d->files->file) }}" target="_blank">
                           <img width="100px" src="{{ url('/data_file/'.$d->files->file) }}">
                           </a>
+                          @endif
                         </td>
-
                     </tr>
                     @endforeach
 

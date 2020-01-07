@@ -171,12 +171,13 @@ Route::middleware(['siswa'])->group(function () {
     Route::get('/murid','JadwalController@index');
     Route::get('/invoicenya','ProgramController@index');
     Route::get('/invoice','ProgramController@data');
-    Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
     Route::get('profileMurid','SiswaController@profileSiswa');
 
 });
 
 Route::post('/upload', 'InvoiceController@proses_upload')->name('upload');
+Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
+
 
 
 Route::get('/verify','VerifyController@getVerify')->name('getverify');

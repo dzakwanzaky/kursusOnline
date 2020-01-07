@@ -19,7 +19,7 @@
                             <h3>Gabung bersama kami dan</h3>
                             <h3>menjadi juara!</h3>
                             <p class="lead"></p>
-                            <a data-scroll href="/" class="btn btn-light btn-radius btn-brd" style="font-weight:bold">ANDA SUDAH BERGABUNG</a>
+                            <a data-scroll href="/" class="btn btn-light btn-radius btn-brd" style="font-weight:bold">INOFA COURSE</a>
                         </div>
                     @endif    
                     </div>

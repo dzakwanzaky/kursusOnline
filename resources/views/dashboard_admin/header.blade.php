@@ -25,7 +25,7 @@
             <i class="fas fa-user"></i> Profile 
           </a>
           <a href="/changePassword" class="dropdown-item">
-            <i class="fas fa-user"></i> Profile 
+          <i class="fas fa-edit"></i> Ubah Password 
           </a>
           <a href="{{ url('/landing') }}" class="dropdown-item"
                             onclick="event.preventDefault();

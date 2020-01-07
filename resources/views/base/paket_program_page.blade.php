@@ -23,9 +23,10 @@
                                                     value="{{ Auth::user()->id }}" style="text-transform: capitalize">
                                                     
                                             <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
-                                            <input type="text" class="form-control" id="program" name="program" style="display:none" value="REGULER">
-                                            <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="2000">
+                                            
                                          @foreach($data1 as $d)
+                                         <input type="text" class="form-control" id="program" name="program" style="display:none" value="{{ $d->program }}">
+                                            <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="{{ $d->harga }}">
 
                                             <h2>PAKET {{ $d->program }}</h2>
                                             <h3>{{ $d->harga }}</h3>
@@ -60,10 +61,10 @@
                                                 required autofocus
                                                 value="{{ Auth::user()->id }}" style="text-transform: capitalize">
                                         <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
-                                        <input type="text" class="form-control" id="program" name="program" style="display:none" value="PREMIUM">
-                                        <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="2000">
 
                                             @foreach($data2 as $d)
+                                            <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="{{ $d->harga }}">
+                                            <input type="text" class="form-control" id="program" name="program" style="display:none" value="{{ $d->program }}">
 
                                             <h2>PAKET {{ $d->program }}</h2>
                                             <h3>{{ $d->harga }}</h3>
@@ -99,9 +100,9 @@
                                                 value="{{ Auth::user()->id }}" style="text-transform: capitalize">
                                         <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
                                         <input type="text" class="form-control" id="program" name="program" style="display:none" value="GOLD">
-                                        <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="2000">
 
                                             @foreach($data3 as $d)
+                                            <input type="number" class="form-control" id="harga" name="harga" style="display:none" value="{{ $d->harga }}">
 
                                             <h2>PAKET {{ $d->program }}</h2>
                                             <h3>{{ $d->harga }}</h3>

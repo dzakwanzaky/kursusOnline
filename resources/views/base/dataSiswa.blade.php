@@ -35,7 +35,7 @@
                         <div class="input-group-prepend">
                         <label for="kota">Kota/Kabupaten</label>
                         </div>
-                        <select class="form-control" id="kota">
+                        <select class="form-control" id="kota" name="kota">
                         @php $no = 1; @endphp
                         @foreach($kota as $k)
                         <option value="{{ $k->kabupaten }}">{{ $k->kabupaten }}</option>
@@ -55,9 +55,9 @@
 
                     <div class="form-group">
                     <div class="input-group-prepend">
-                        <label for="inputGroupSelect01">Kecamatan</label>
+                        <label for="kecamatan">Kecamatan</label>
                         </div>
-                        <select class="form-control" id="inputGroupSelect01">
+                        <select class="form-control" id="kecamatan" name="kecamatan">
                         @php $no = 1; @endphp
                         @foreach($kec as $c)
                         <option value="{{ $c->kecamatan }}">{{ $c->kecamatan }}</option>

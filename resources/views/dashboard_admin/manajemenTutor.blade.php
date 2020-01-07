@@ -34,8 +34,10 @@
                   <th>No.</th>
                   <th>Nama Lengkap</th>
                   <th>Pendidikan</th>
+                  <th>Kelas Yang Diajar</th>
                   <th>Mata Pelajaran</th>
                   <th>Alamat</th>
+                  <th>CV</th>
                   <th>Status</th>
                </tr>
               </thead>
@@ -46,8 +48,14 @@
                         <td>{{ $no++ }}</td>
                         <td>{{ $d->nama_tutor }}</td>
                         <td>{{ $d->pendidikan }}</td>
-                        <td>{{ $d->mata_pelajaran }}</td>
+                        <td>{{ $d->kelas1 }} {{ $d->kelas2 }} {{ $d->kelas3 }} {{ $d->kelas4 }} {{ $d->kelas5 }} {{ $d->kelas6 }}</td>
+                        <td>{{ $d->mata_pelajaran1 }} {{ $d->mata_pelajaran2 }} {{ $d->mata_pelajaran3 }} {{ $d->mata_pelajaran4 }}</td>
                         <td>{{ $d->kota }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
+                        <td>
+                        
+                          <a width="100px" href="{{ url('/data_file/'.$d->file) }}">File</a>
+                      
+                          </td>
 
                       <form action="{{ route('dataTutor.update', $d->id) }}" method="post" enctype="multipart/form-data">
                           {{ csrf_field() }}

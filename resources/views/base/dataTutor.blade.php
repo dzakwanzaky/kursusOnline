@@ -34,7 +34,7 @@
                         <label for="kota">Kota/Kabupaten</label>
 
                         <div class="form-title">
-                        <select class="form-control" id="kota">
+                        <select class="form-control" id="kota" name="kota">
                         @php $no = 1; @endphp
                         @foreach($kota as $k)
                         <option value="{{ $k->kabupaten }}">{{ $k->kabupaten }}</option>
@@ -49,15 +49,15 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                  <div class="form-group">
+                    <div class="input-group-prepend">
                         <label for="inputGroupSelect01">Kecamatan</label>
-                        <div class="form-title">
-                        <select class="form-control" id="inputGroupSelect01">
+                        </div>
+                        <select class="form-control" id="kecamatan" name="kecamatan">
                         @php $no = 1; @endphp
                         @foreach($kec as $c)
                         <option value="{{ $c->kecamatan }}">{{ $c->kecamatan }}</option>
                         @endforeach
-                        </select>
                         <option value="" selected disabled>---Kabupaten Bantul---</option>
                         <option value="Bambanglipuro">Bambanglipuro</option>
                             <option value="Bangutapan">Bangutapan</option>
@@ -147,8 +147,8 @@
                             <option value="Umbulharjo">Umbulharjo</option>
                             <option value="Wirobrajan">Wirobrajan</option>
                         <option value="" selected disabled>---Kecamatan---</option>
-                        </div>
-                    </div>     
+                        </select>
+                    </div>  
 
                      <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                         <label for="pendidikan">Pendidikan Terakhir</label>

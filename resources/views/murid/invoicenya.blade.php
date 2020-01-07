@@ -100,14 +100,21 @@
                     {{ $d->program }}
                     @endforeach
                     </td>
-                    <td colspan="2">Rp100.000</td>
+                    <td colspan="2"> 
+                    @php $no = 1; @endphp
+                    @foreach($invoice as $d)
+                    {{ $d->harga }}
+                    @endforeach</td>
                 
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="2">Total</th>
-                    <td colspan="2">Rp100.000</td>
+                    <td colspan="2"> @php $no = 1; @endphp
+                    @foreach($invoice as $d)
+                    {{ $d->harga }}
+                    @endforeach</td>
                 </tr>
             </tfoot>
         </table>

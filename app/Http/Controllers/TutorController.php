@@ -42,7 +42,6 @@ class TutorController extends Controller
         $data->id = $request->id;
         $data->nama_tutor = $request->nama_tutor;
         $data->jenis_kelamin = $request->jenis_kelamin;
-        $data->provinsi = $request->provinsi;
         $data->kota = $request->kota;
         $data->kecamatan = $request->kecamatan;
         $data->pendidikan = $request->pendidikan;
