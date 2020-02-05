@@ -44,18 +44,40 @@ Route::get('/registerPilih', function () {
 });
 
 //pendaftaran Siswa berdasarkan paket yang dipilih
-Route::get('pendaftaranSiswaGold', function () {
-    return view('base/pendaftaranSiswaGold_page');
+Route::get('pendaftaranProgram3', function () {
+    return view('base/pendaftaranProgram3');
 });
 
 
 
-Route::get('/pendaftaranSiswaPrem', function () {
-    return view('base/pendaftaranSiswaPrem_page');
+Route::get('/pendaftaranProgram1', function () {
+    return view('base/pendaftaranProgram1');
 });
-Route::get('/pendaftaranSiswaReg', function () {
-    return view('base/pendaftaranSiswaReg_page');
+Route::get('/pendaftaranProgram2', function () {
+    return view('base/pendaftaranProgram2');
 });
+Route::get('/pendaftaranProgram3', function () {
+    return view('base/pendaftaranProgram3');
+});
+Route::get('/pendaftaranProgram4', function () {
+    return view('base/pendaftaranProgram4');
+});
+Route::get('/pendaftaranProgram5', function () {
+    return view('base/pendaftaranProgram5');
+});
+Route::get('/pendaftaranProgram6', function () {
+    return view('base/pendaftaranProgram6');
+});
+Route::get('/pendaftaranProgram7', function () {
+    return view('base/pendaftaranProgram7');
+});
+Route::get('/pendaftaranProgram8', function () {
+    return view('base/pendaftaranProgram8');
+});
+Route::get('/pendaftaranProgram9', function () {
+    return view('base/pendaftaranProgram9');
+});
+
 
 Route::get('/pendaftaranTutor', function () {
     return view('base/pendaftaranTutor_page');
@@ -78,6 +100,9 @@ Route::get('/invoice', function () {
 });
 Route::get('/invoicenya', function () {
     return view('murid/invoicenya');
+});
+Route::get('/invoiceDetail', function () {
+    return view('base/invoiceDetail');
 });
 Route::get('/profileMurid', function () {
     return view('murid/profile');
@@ -149,6 +174,9 @@ Route::get('/changePasswordTutor', function () {
 Route::get('/changePasswordMurid', function () {
     return view('murid/changePassword');
 });
+Route::get('/video', function () {
+    return view('murid/video');
+});
 
 Auth::routes();
 
@@ -171,6 +199,7 @@ Route::middleware(['siswa'])->group(function () {
     Route::get('/murid','JadwalController@index');
     Route::get('/invoicenya','ProgramController@index');
     Route::get('/invoice','ProgramController@data');
+    Route::get('/invoiceDetail','ProgramController@detail');
     Route::get('profileMurid','SiswaController@profileSiswa');
 
 });
@@ -199,6 +228,10 @@ Route::get('/editMurid/{id}', 'Auth\RegisterController@editMurid')->name('editMu
 // Route::get('/register/{id}', 'Auth\RegisterController@update')->name('register.update');
 Route::get('/editProfile/{id}', 'Auth\RegisterController@editProfile')->name('editProfile');
 Route::get('/editAdmin/{id}', 'Auth\RegisterController@editAdmin')->name('editAdmin');
+Route::get('/getKabupaten/{id}', 'SiswaController@getKabupaten')->name('getKabupaten');
+Route::get('/getKecamatan/{id}', 'SiswaController@getKecamatan')->name('getKecamatan');
+
+
 
 // Route::get('/updateMurid/{id}', 'Auth\RegisterController@updateMurid')->name('updateMurid');
 Route::get('profileAdmin','Auth\RegisterController@data');

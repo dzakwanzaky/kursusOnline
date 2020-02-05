@@ -1,6 +1,21 @@
 @include('base/header_page')
 @extends('base/script_page')
 @section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pendaftaran Inofa Course</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/ material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
     <div class="main">
     <div class="content">
       <div class="container-fluid">
@@ -31,132 +46,55 @@
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
-                        <div class="input-group-prepend">
-                        <label for="kota">Kota/Kabupaten</label>
-                        </div>
-                        <select class="form-control" id="kota" name="kota">
-                        @php $no = 1; @endphp
-                        @foreach($kota as $k)
-                        <option value="{{ $k->kabupaten }}">{{ $k->kabupaten }}</option>
-                        @endforeach
-                        <option value="" selected disabled>---Kabupaten/Kota---</option>
-                        <option value="Kabupaten Bantul">Kabupaten Bantul</option>
-                            <option value="Kabupaten Gunung Kidul">Kabupaten Gunung Kidul</option>
-                            <option value="Kabupaten Kulon Progo">Kabupaten Kulon Progo</option>
-                            <option value="Kabupaten Sleman">Kabupaten Sleman</option>
-                            <option value="Kota Yogyakarta">Kota Yogyakarta</option>
-                        </select>
+                    <div class="form-group">
+                        <label id="prov" for="prov">Provinsi</label>
+                      
+                        <select class="form-control" id="provinsi-select" name="provinsi-select">
+                        <option value="">Provinsi</option>
 
+                        @foreach($provinsi as $key => $value)
+                        <option value="{{ $key }}">{{ $value }}</option>
+                        @endforeach
+                        </select>
+                    </div>
+
+                    <div name="provinsi" id="provinsi"></div>
+
+
+                    <div class="form-group">
+                        <div class="input-group-prepend">
+                        <label for="kabkot">Kota/Kabupaten</label>
+                        </div>
+                        <select class="form-control" id="kabupaten-select" name="kabupaten-select">
+                        <option>Kota/Kabupaten</option>                      
+                        </select>
+                    </div>
+
+                    <div name="kabupaten" id="kabupaten"></div>
+
+
+                    <div class="form-group">
+                        <div class="input-group-prepend">
+                            <label>Kecamatan</label>
+                        </div>
+                        <select class="form-control" id="kecamatan-select" name="kecamatan-select">
+                            <option>Kecamatan</option>                      
+                        </select>
+                    </div>
+
+                    <div name="kecamatan" id="kecamatan"></div>
+
+
+                    <div class="form-group">
+                        <label for="alamat_detail">Alamat Detail</label>
                         <div class="form-title">
-                           
+                            <textarea id="alamat_detail" type="text" class="form-control" name="alamat_detail" rows="3" placeholder="Petunjuk arah atau alamat detail untuk menuju alamat rumah" required></textarea>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                    <div class="input-group-prepend">
-                        <label for="kecamatan">Kecamatan</label>
-                        </div>
-                        <select class="form-control" id="kecamatan" name="kecamatan">
-                        @php $no = 1; @endphp
-                        @foreach($kec as $c)
-                        <option value="{{ $c->kecamatan }}">{{ $c->kecamatan }}</option>
-                        @endforeach
-                        <option value="" selected disabled>---Kabupaten Bantul---</option>
-                        <option value="Bambanglipuro">Bambanglipuro</option>
-                            <option value="Bangutapan">Bangutapan</option>
-                            <option value="Bantul">Bantul</option>
-                            <option value="Dlingo">Dlingo</option>
-                            <option value="Imogiri">Imogiri</option>
-                            <option value="Jetis">Jetis</option>
-                            <option value="Kasihan">Kasihan</option>
-                            <option value="Kretek">Kretek</option>
-                            <option value="Pajangan">Pajangan</option>
-                            <option value="Pandak">Pandak</option>
-                            <option value="Piyungan">Piyungan</option>
-                            <option value="Pleret">Pleret</option>
-                            <option value="Pundong">Pundong</option>
-                            <option value="Sanden">Sanden</option>
-                            <option value="Sedayu">Sedayu</option>
-                            <option value="Sewon">Sewon</option>
-                            <option value="Srandakan">Srandakan</option>
-                            <!-- 2 -->
-                            
-                            <option value="" selected disabled>---Kabupaten Gunung Kidul---</option>
-                            <option value="Gedangsari">Gedangsari</option>
-                            <option value="Girisubo">Girisubo</option>
-                            <option value="Karangmojo">Karangmojo</option>
-                            <option value="Ngawen">Ngawen</option>
-                            <option value="Nglipar">Nglipar</option>
-                            <option value="Paliyan">Paliyan</option>
-                            <option value="Panggang">Panggang</option>
-                            <option value="Patuk">Patuk</option>
-                            <option value="Playen">Playen</option>
-                            <option value="Ponjong">Ponjong</option>
-                            <option value="Purwosari">Purwosari</option>
-                            <option value="Rongkop">Rongkop</option>
-                            <option value="Saptosari">Saptosari</option>
-                            <option value="Semanu">Semanu</option>
-                            <option value="Semin">Semin</option>
-                            <option value="Tanjungsari">Tanjungsari</option>
-                            <option value="Tepus">Tepus</option>
-                            <option value="Wonosari">Wonosari</option>
-                            <!-- 3 -->
-                            <option value="" selected disabled>---Kabupaten Kulon Progo---</option>
-                            <option value="Galur">Galur</option>
-                            <option value="Girimulyo">Girimulyo</option>
-                            <option value="Kalibawang">Kalibawang</option>
-                            <option value="Kokap">Kokap</option>
-                            <option value="Lendah">Lendah</option>
-                            <option value="Nanggulan">Nanggulan</option>
-                            <option value="Panjatan">Panjatan</option>
-                            <option value="Pengasih">Pengasih</option>
-                            <option value="Samigaluh">Samigaluh</option>
-                            <option value="Sentolo">Sentolo</option>
-                            <option value="Temon">Temon</option>
-                            <option value="Wates">Wates</option>
-                            <!-- 4 -->
-                            <option value="" selected disabled>---Kabupaten Sleman---</option>
-                            <option value="Berbah">Berbah</option>
-                            <option value="Cangkringan">Cangkringan</option>
-                            <option value="Depok">Depok</option>
-                            <option value="Gamping">Gamping</option>
-                            <option value="Godean">Godean</option>
-                            <option value="Kalasan">Kalasan</option>
-                            <option value="Minggir">Minggir</option>
-                            <option value="Mlati">Mlati</option>
-                            <option value="Moyudan">Moyudan</option>
-                            <option value="Ngaglik">Ngaglik</option>
-                            <option value="Ngemplak">Ngemplak</option>
-                            <option value="Pakem">Pakem</option>
-                            <option value="Prambanan">Prambanan</option>
-                            <option value="Seyegan">Seyegan</option>
-                            <option value="Sleman">Sleman</option>
-                            <option value="Tempel">Tempel</option>
-                            <option value="Turi">Turi</option>
-                            <!-- 5 -->
-                            <option value="" selected disabled>---Kota Yogyakarta---</option>
-                            <option value="Danurejan">Danurejan</option>                            
-                            <option value="Gedongtengen">Gedongtengen</option>
-                            <option value="Gondokusuman">Gondokusuman</option>
-                            <option value="Gondoman">Gondoman</option>
-                            <option value="Jetis">Jetis</option>
-                            <option value="Kotagede">Kotagede</option>
-                            <option value="Kraton">Kraton</option>
-                            <option value="Mantrijeron">Mantrijeron</option>
-                            <option value="Mergangsan">Mergangsan</option>
-                            <option value="Ngampilan">Ngampilan</option>
-                            <option value="Pakualaman">Pakualaman</option>
-                            <option value="Tegalrejo">Tegalrejo</option>
-                            <option value="Umbulharjo">Umbulharjo</option>
-                            <option value="Wirobrajan">Wirobrajan</option>
-                        <option value="" selected disabled>---Kecamatan---</option>
-                        </select>
-                    </div>  
-                    
-                   
+                <br>        
                 <div class="panel-body">
-                    <div class="alert alert-info">
+                    <div class="alert alert-danger">
                         <strong>Info!</strong> Maximum Size Upload : 2MB
                     </div>
                         Foto Diri
@@ -179,16 +117,74 @@
     </div>
     </div>
     </div>
-    <!-- <script>
-    function yesnoCheck(that) {
-        if (that.value == "other") {
-        alert("check");
-            document.getElementById("ifYes").style.display = "block";
-        } else {
-            document.getElementById("ifYes").style.display = "none";
-            }
-        }
-    </script> -->
+
+    
+    
+
 @endsection
 @section('day')
+    <script>
+        // $('#kabupaten').hide();
+        $(document).ready(function(){
+            $('#provinsi-select').change(function(){
+                var provinsi_id = $(this).val();
+                var provinsi_name = $("select[name='provinsi-select'] option:selected").text();  //add this
+                if(provinsi_id){
+                    $.ajax({
+                        url: '/getKabupaten/' + provinsi_id,
+                        type : 'GET',
+                        dataType : 'json',
+                        success: function(data){
+                            $('#provinsi').empty();  //add this
+                            $('#provinsi')
+                                .append("<input type='text' style='display:none' name='provinsi' id='provinsi' value='"+provinsi_name+"'>");
+                            console.log(data);
+                            $('#kabupaten-select').empty();
+                            $.each(data, function(key, value){
+                                $('#kabupaten-select')
+                                    .append('<option value="'+key+'">'+ value + '</option>');
+                            });
+
+                        }
+
+                    });
+                } else {
+                    $('#kabupaten-select').empty();
+                }
+         });
+         $('#kabupaten-select').change(function(){
+                var kabupaten_id = $(this).val();
+                var kabupaten_name = $("select[name='kabupaten-select'] option:selected").text();  //add this
+                if(kabupaten_id){
+                    $.ajax({
+                        url: '/getKecamatan/' + kabupaten_id,
+                        type : 'GET',
+                        dataType : 'json',
+                        success: function(data){
+                            $('#kabupaten').empty();  //add this
+                            $('#kabupaten')
+                                .append("<input type='text' style='display:none' name='kabupaten' id='kabupaten' value='"+kabupaten_name+"'>");
+                            console.log(data);
+                            $('#kecamatan-select').empty();
+                            $.each(data, function(key, value){
+                                $('#kecamatan-select')
+                                    .append('<option value="'+key+'">'+ value + '</option>');
+                            });
+
+                        }
+
+                    });
+                } else {
+                    $('#kecamatan-select').empty();
+                }
+         });
+         $('#kecamatan-select').change(function(){
+                var kecamatan_name = $("select[name='kecamatan-select'] option:selected").text();  //add this
+                            $('#kecamatan').empty();  //add this
+                            $('#kecamatan')
+                                .append("<input type='text' style='display:none' name='kecamatan' id='kecamatan' value='"+kecamatan_name+"'>");
+                           
+         });
+        });
+    </script>
 @endsection

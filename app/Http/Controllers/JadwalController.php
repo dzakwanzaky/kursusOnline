@@ -82,6 +82,8 @@ class JadwalController extends Controller
         $data->nama_murid = $request->nama_murid;
         $data->program = $request->program;
         $data->status = $request->status;
+        $data->bulan = $request->bulan;
+        $data->sesi = $request->sesi;
         $data->kelas = $request->kelas;
         $data->mata_pelajaran = $request->mata_pelajaran;
         $data->hari1 = $request->hari1;

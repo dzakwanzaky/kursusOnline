@@ -19,8 +19,9 @@ class CreateModelSiswasTable extends Migration
             $table->string('file');
             $table->string('jenis_kelamin');
             $table->string('provinsi');
-            $table->string('kota');
+            $table->string('kabupaten');
             $table->string('kecamatan');
+            $table->string('alamat_detail');
             $table->string('status');
             $table->timestamps();
         });

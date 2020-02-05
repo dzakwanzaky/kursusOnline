@@ -10,6 +10,8 @@ use App\ModelInvoice;
 use App\ModelKab;
 use App\ModelKecamatan;
 use Image;
+use App\Provinsi;
+use DB;
 
 class SiswaController extends Controller
 {
@@ -28,9 +30,20 @@ class SiswaController extends Controller
 
     public function index(){
         $data = ModelSiswa::all();
-        $kota = ModelKab::all();
-        $kec = ModelKecamatan::all();
-        return view('base.dataSiswa', compact('data', 'kota', 'kec'));
+        $provinsi = Provinsi::all()->pluck("provinsi", "id");
+        return view('base.dataSiswa', compact('data', 'provinsi'));
+    }
+
+    public function getKabupaten($id){
+       
+        $kabupaten = ModelKab::where('provinsi_id', '=', $id)->pluck("kabupaten_kota", "id");
+        return json_encode($kabupaten);
+    }
+
+    public function getKecamatan($id){
+       
+        $kecamatan = ModelKecamatan::where('kab_id', '=', $id)->pluck("kecamatan", "id");
+        return json_encode($kecamatan);
     }
 
     
@@ -54,11 +67,12 @@ class SiswaController extends Controller
         $data->file = $nama_file;      
           
         $data->provinsi = $request->provinsi;
-        $data->kota = $request->kota;
+        $data->kabupaten = $request->kabupaten;
         $data->kecamatan = $request->kecamatan;
+        $data->alamat_detail = $request->alamat_detail;
         $data->status = $request->status;
         $data->save();
-        return redirect('murid')->withMessage('Kamu Berhasil Daftar Les');
+        return redirect('invoiceDetail')->withMessage('Kamu Berhasil Daftar Les');
     }
 
     public function edit($id)
@@ -101,9 +115,5 @@ class SiswaController extends Controller
         }
                
     }
-    // public function show($id)
-    // {
-    //     $data = ModelSiswa::where('id','=',$id)->get();
-    //     return view('tutor.detailProfile', compact('data'));
-    // }
+  
 }

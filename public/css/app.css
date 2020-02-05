@@ -1168,6 +1168,7 @@ pre code {
     -webkit-box-flex: 0;
             flex: 0 0 33.3333333333%;
     max-width: 33.3333333333%;
+    margin-top: 15px;
   }
 
   .col-md-5 {

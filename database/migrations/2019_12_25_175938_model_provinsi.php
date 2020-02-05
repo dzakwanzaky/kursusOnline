@@ -17,6 +17,7 @@ class ModelProvinsi extends Migration
         Schema::create('model_provinsi', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('provinsi');
+            $table->string('p_bsni');
         });
     }
 

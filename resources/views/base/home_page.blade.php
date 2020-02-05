@@ -39,76 +39,67 @@
                     <div class="tab-content">
                         <div class="tab-pane active fade show" id="tab1">
                             <div class="row text-center">
+                            <!-- grid 1 -->
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
-                                        @php $no = 1; @endphp
-                                         @foreach($data1 as $d)
+                                       
                                             <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
                                                     required autofocus>
-                                                    <h2> PAKET {{ $d->program }}</h2>
-                                            <h3>{{ $d->harga }}</h3>
+                                                    <h2> SD</h2>
                                         </div>
                                         <div class="pricing-table-space"></div>
                                         <div class="pricing-table-text">
-                                            <p>{{ $d->keterangan }}</p>
+                                            <p>KETERANGAN</p>
                                         </div>
                                         <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>{{ $d->fasilitas }}</strong>
-                                            <p><i class="fa fa-rocket"></i> <strong>{{ $d->durasi }}</strong>
-                                            <p><i class="fa fa-database"></i> <strong>{{ $d->jumlah_pertemuan }}</strong>
+                                            
                                         <br>
                                         </div>
-                                        @endforeach
                                     </div>
+                            <!-- grid 2 -->
+
                                 </div>
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
-                                        @php $no = 1; @endphp
-                                         @foreach($data2 as $d)
+                                     
                                             <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
                                                     required autofocus>
-                                                    <h2> PAKET {{ $d->program }}</h2>
-                                            <h3>{{ $d->harga }}</h3>
+                                                    <h2> SMP</h2>
                                         </div>
                                         <div class="pricing-table-space"></div>
                                         <div class="pricing-table-text">
-                                            <p>{{ $d->keterangan }}</p>
+                                            <p>KETERANGAN</p>
                                         </div>
                                         <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>{{ $d->fasilitas }}</strong>
-                                            <p><i class="fa fa-rocket"></i> <strong>{{ $d->durasi }}</strong>
-                                            <p><i class="fa fa-database"></i> <strong>{{ $d->jumlah_pertemuan }}</strong>
+                                          
                                         <br>
                                         </div>
-                                        @endforeach
                                      </div>
                                 </div>
+
+                              <!-- grid 3 -->
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
-                                        @php $no = 1; @endphp
-                                         @foreach($data3 as $d)
+                                
                                             <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
                                                     required autofocus>
-                                                    <h2> PAKET {{ $d->program }}</h2>
-                                            <h3>{{ $d->harga }}</h3>
+                                                    <h2> SMA</h2>
                                         </div>
                                         <div class="pricing-table-space"></div>
                                         <div class="pricing-table-text">
-                                        <p>{{ $d->keterangan }}</p>
+                                        <p>KETERANGAN</p>
                                         </div>
                                         <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>{{ $d->fasilitas }}</strong>
-                                            <p><i class="fa fa-rocket"></i> <strong>{{ $d->durasi }}</strong>
-                                            <p><i class="fa fa-database"></i> <strong>{{ $d->jumlah_pertemuan }}</strong>
+                                            
                                         <br>
                                         </div>
-                                        @endforeach
                                     </div>
                                 </div>
 
+                          
                                 
                             </div><!-- end row -->
                             <br>
@@ -118,6 +109,172 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->
+
+    <div id="paket" class="section lb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tab-content">
+                        <div class="tab-pane active fade show" id="tab1">
+                            <div class="row text-center">
+                            <!-- grid 1 -->
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header">
+                                     
+                                            <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
+                                                    required autofocus>
+                                                    <h2> SBMPTN</h2>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                            <p>KETERANGAN</p>
+                                        </div>
+                                        <div class="pricing-table-features">
+                                            
+                                        <br>
+                                        </div>
+                                     
+                                    </div>
+                            <!-- grid 2 -->
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header">
+                                     
+                                            <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
+                                                    required autofocus>
+                                                    <h2> SELEKSI MANDIRI PTN</h2>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                            <p>KETERANGAN</p>
+                                        </div>
+                                        <div class="pricing-table-features">
+                                          
+                                        <br>
+                                        </div>
+                                  
+                                     </div>
+                                </div>
+
+                              <!-- grid 3 -->
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header">
+                                      
+                                            <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
+                                                    required autofocus>
+                                                    <h2> CPNS</h2>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                        <p>KETERANGAN</p>
+                                        </div>
+                                        <div class="pricing-table-features">
+                                            
+                                        <br>
+                                        </div>
+                                 
+                                    </div>
+                                </div>
+
+                          
+                                
+                            </div><!-- end row -->
+                            <br>
+                        </div><!-- end pane -->
+                    </div><!-- end content -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+    <div id="paket" class="section lb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tab-content">
+                        <div class="tab-pane active fade show" id="tab1">
+                            <div class="row text-center">
+                            <!-- grid 1 -->
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header">
+                                     
+                                            <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
+                                                    required autofocus>
+                                                    <h2>BAHASA INGGRIS</h2>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                            <p>KETERANGAN</p>
+                                        </div>
+                                        <div class="pricing-table-features">
+                                            
+                                        <br>
+                                        </div>
+                                   
+                                    </div>
+                            <!-- grid 2 -->
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header">
+                                      
+                                            <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
+                                                    required autofocus>
+                                                    <h2>KOMPUTER</h2>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                            <p>KETERANGAN</p>
+                                        </div>
+                                        <div class="pricing-table-features">
+                                          
+                                        <br>
+                                        </div>
+                                    
+                                     </div>
+                                </div>
+
+                              <!-- grid 3 -->
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header">
+                                       
+                                            <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
+                                                    required autofocus>
+                                                    <h2> MENGAJI</h2>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-text">
+                                        <p>KETERANGAN</p>
+                                        </div>
+                                        <div class="pricing-table-features">
+                                            
+                                        <br>
+                                        </div>
+                                
+                                    </div>
+                                </div>
+
+                          
+                                
+                            </div><!-- end row -->
+                            <br>
+                        </div><!-- end pane -->
+                    </div><!-- end content -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+
+    
+
     <div id="bayar" class="section lb">
         <div class="container">
             <div class="section-title text-center">

@@ -17,11 +17,13 @@ class CreateModelJadwalsTable extends Migration
             $table->bigIncrements('id');
             $table->string('murid_id');
             $table->string('nama_murid');
+            $table->string('bulan');
+            $table->string('sesi');
             $table->string('tutor_id')->nullable();
             $table->string('nama_tutor')->nullable();
             $table->string('program');            
-            $table->string('kelas');
-            $table->string('mata_pelajaran');
+            $table->string('kelas')->nullable();
+            $table->string('mata_pelajaran')->nullable();
             $table->string('hari1');
             $table->string('waktu_hari1')->nullable();;
             $table->string('hari2')->nullable();

@@ -12,4 +12,5 @@ class Provinsi extends Model
     public function model_provinsi(){
     	return $this->hasMany('App\User');
 }
+
 }

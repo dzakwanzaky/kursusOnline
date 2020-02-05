@@ -34,6 +34,14 @@ class ProgramController extends Controller
         return view('murid/invoice', compact('data', 'alamat', 'invoice'));
     }
 
+    public function detail()
+    {
+        $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->get();
+        $alamat = ModelSiswa::where('id', '=', Auth::user()->id)->get();
+        $invoice = ModelInvoice::where('murid_id', '=', Auth::user()->id)->get();
+        return view('base/invoiceDetail', compact('data', 'alamat', 'invoice'));
+    }
+
     public function pdf()
     {
         $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->get();

@@ -15,7 +15,10 @@ class CreateModelKabsTable extends Migration
     {
         Schema::create('model_kabs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('kabupaten');
+            $table->string('provinsi_id');
+            $table->string('kabupaten_kota');
+            $table->string('ibu_kota');
+            $table->string('k_bsni');
             $table->timestamps();
         });
     }

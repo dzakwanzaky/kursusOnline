@@ -24,14 +24,35 @@ class InvoiceController extends Controller
         $data->harga = $request->harga;
         $data->file = $request->file;
         $data->save();
-        if ($data ['program'] == 'PREMIUM'){
-            return redirect('/pendaftaranSiswaPrem');
-        } else if ($data ['program'] == 'REGULER'){
-            return redirect('/pendaftaranSiswaReg');
-        }else if ($data ['program'] == 'GOLD'){
-            return redirect('/pendaftaranSiswaGold');
+        if ($data ['program'] == 'SD'){
+            return redirect('/pendaftaranProgram1');
+        } else if ($data ['program'] == 'SMP'){
+            return redirect('/pendaftaranProgram2');
+        }else if ($data ['program'] == 'SMA'){
+            return redirect('/pendaftaranProgram3');
+        }else if ($data ['program'] == 'SBMPTN'){
+            return redirect('/pendaftaranProgram4');
+        }else if ($data ['program'] == 'Seleksi PTN'){
+            return redirect('/pendaftaranProgram5');
+        }else if ($data ['program'] == 'CPNS'){
+            return redirect('/pendaftaranProgram6');
+        } else if ($data ['program'] == 'Bahasa Inggris'){
+            return redirect('/pendaftaranProgram7');
+        } else if ($data ['program'] == 'Komputer'){
+            return redirect('/pendaftaranProgram8');
+        } else if ($data ['program'] == 'Mengaji'){
+            return redirect('/pendaftaranProgram9');
         }
     }
+
+    public function update(Request $request, $id)
+    {
+        $data = ModelInvoice::where('id',$id)->first();
+        $data->harga = $request->harga;
+        $data->save();
+        return redirect('murid')->withMessage('Berhasil Mendaftar'); 
+    }
+
     
 
     public function proses_upload(Request $request){

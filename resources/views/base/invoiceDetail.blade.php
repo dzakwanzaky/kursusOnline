@@ -1,3 +1,6 @@
+@include('base/header_page')
+@extends('base/script_page')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +17,7 @@
             font-size:18px;
             margin:0;
         }
-        .container{
+        .containerr{
             margin:0 auto;
             margin-top:35px;
             padding:40px;
@@ -48,11 +51,10 @@
     </style>
 </head>
 <body>
-    <div >
+    <div class="containerr">
         <table>
-            <caption>
-                Inofa Course
-            </caption>
+        <h2 class="form-title">Invoice</h2>
+
             <thead>
                 <tr>
                     <th colspan="2"><strong>#</strong>
@@ -68,7 +70,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <h4>Bimbingan Belajar: </h4>
+                        <b>Bimbingan Belajar: </b>
                         <p>Inofa Course<br>
                             Jl Persatuan<br>
                             085343966997<br>
@@ -76,11 +78,11 @@
                         </p>
                     </td>
                     <td colspan="2">
-                        <h4>Pelanggan: </h4>
+                        <b>Pelanggan: </b>
                         <p>{{ Auth::user()->name }}<br>
                         @php $no = 1; @endphp
                         @foreach($alamat as $a)
-                        {{ $a->kecamatan }}, {{ $a->kota }}, {{ $a->provinsi }}
+                        {{ $a->kecamatan }}, {{ $a->kabupaten }}, {{ $a->provinsi }}
                         @endforeach<br>
                         {{ Auth::user()->phone }} <br>
                         {{ Auth::user()->email }}
@@ -91,33 +93,51 @@
             <tbody>
                 <tr>
                     <th colspan="2">Program</th>
-                    <th colspan="2">Harga</th>
+                    <th colspan="2">Jumlah Sesi</th>
                 </tr>
                 <tr>
                     <td colspan="2">
                     @php $no = 1; @endphp
                     @foreach($data as $d)
                     {{ $d->program }}
-                    @endforeach
                     </td>
                     <td colspan="2"> 
-                    @php $no = 1; @endphp
-                    @foreach($invoice as $d)
-                    {{ $d->harga }}
-                    @endforeach</td>
+                  {{$d->sesi}} Sesi / Minggu Dalam {{$d->bulan}} bulan
+                   </td>
                 
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="2">Total</th>
-                    <td colspan="2"> @php $no = 1; @endphp
-                    @foreach($invoice as $d)
-                    {{ $d->harga }}
-                    @endforeach</td>
+                    <td colspan="2">
+                    <?php
+                    $e = $d["sesi"];
+                    $d =  $d["bulan"];
+                    $b = 4;
+                    $a = 30000;
+                    $sum = ($e * $b) * $d * $a;
+                    echo $sum;  
+                    ?>
+                     @endforeach
+                   </td>
+
                 </tr>
+
             </tfoot>
         </table>
+        @foreach($invoice as $i)
+        <form action="{{ route('paketProgram.update', $i->id) }}" method="post" enctype="multipart/form-data">
+                          {{ csrf_field() }}
+                          {{ method_field('PUT') }}
+                         
+       
+      
+        <input id="harga" value="<?php echo $sum?>" type="text" class="form-control" name="harga" required autofocus style="display:none">
+        <button type="submit" class="btn btn-sm btn-primary" style="float:right"> 
+                        OK</button>
+        @endforeach 
+        </form>
     </div>
 </body>
 </html>
