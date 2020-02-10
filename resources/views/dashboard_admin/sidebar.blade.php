@@ -28,6 +28,14 @@
               </p>
             </a>
           </li> 
+          <li class="nav-item">
+            <a href="/daftarTryout" class="nav-link {{ Request::segment(1) === 'daftarTryout' ? 'nav-link active' : null }}">
+              <i class="far fa-circle nav-icon"></i>
+              <p>
+                Manajemen Tryout
+              </p>
+            </a>
+          </li>
          <li class="nav-item">
             <a href="/daftarSiswa" class="nav-link {{ Request::segment(1) === 'daftarSiswa' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>

@@ -48,8 +48,6 @@ Route::get('pendaftaranProgram3', function () {
     return view('base/pendaftaranProgram3');
 });
 
-
-
 Route::get('/pendaftaranProgram1', function () {
     return view('base/pendaftaranProgram1');
 });
@@ -177,6 +175,15 @@ Route::get('/changePasswordMurid', function () {
 Route::get('/video', function () {
     return view('murid/video');
 });
+Route::get('/daftarTryout', function () {
+    return view('dashboard_admin/daftarTryout');
+});
+Route::get('/tambahTryout', function () {
+    return view('dashboard_admin/tambahTryout');
+});
+Route::get('/tambahProgram', function () {
+    return view('dashboard_admin/tambahProgram');
+});
 
 Auth::routes();
 
@@ -185,9 +192,12 @@ Route::middleware(['admin'])->group(function () {
     Route::get('list_pendaftaranSiswa','JadwalController@admin');
     Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
     Route::get('daftarSiswa','SiswaController@daftarSiswa');
+    Route::get('daftarTryout','TryoutController@index')->name('daftarTryout');
+    Route::get('tambahTryout','TryoutController@tambah')->name('tambahTryout');
     Route::get('manajemenTutor','TutorController@manajemenTutor');
-
+    Route::get('tambahSoal/{id}','SoalController@index')->name('tambahSoal');
 });
+
 Route::middleware(['tutor'])->group(function () {
     Route::get('/tutor','JadwalController@tutor');
     Route::get('jadwal','JadwalController@jadwalTutor');
@@ -204,39 +214,26 @@ Route::middleware(['siswa'])->group(function () {
 
 });
 
-Route::post('/upload', 'InvoiceController@proses_upload')->name('upload');
-Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
-
-
-
-Route::get('/verify','VerifyController@getVerify')->name('getverify');
-Route::post('/verify','VerifyController@postVerify')->name('verify');
-
-Route::resource('pendaftaranSiswa','JadwalController');
-
-Route::get('/tutor/{id}','JadwalController@update')->name('tutor');
-
 Route::resource('dataTutor','TutorController');
 Route::resource('dataSiswa','SiswaController');
-
 Route::resource('paketProgram','InvoiceController');
-
 Route::resource('program','ProgramController');
+Route::resource('register', 'Auth\RegisterController');
+Route::resource('soal', 'SoalController');
+Route::resource('pendaftaranSiswa','JadwalController');
+Route::resource('tryout','TryoutController');
 
- Route::resource('register', 'Auth\RegisterController');
 Route::get('/editMurid/{id}', 'Auth\RegisterController@editMurid')->name('editMurid');
-// Route::get('/register/{id}', 'Auth\RegisterController@update')->name('register.update');
 Route::get('/editProfile/{id}', 'Auth\RegisterController@editProfile')->name('editProfile');
 Route::get('/editAdmin/{id}', 'Auth\RegisterController@editAdmin')->name('editAdmin');
 Route::get('/getKabupaten/{id}', 'SiswaController@getKabupaten')->name('getKabupaten');
 Route::get('/getKecamatan/{id}', 'SiswaController@getKecamatan')->name('getKecamatan');
-
-
-
-// Route::get('/updateMurid/{id}', 'Auth\RegisterController@updateMurid')->name('updateMurid');
+Route::post('/upload', 'InvoiceController@proses_upload')->name('upload');
+Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
+Route::get('/verify','VerifyController@getVerify')->name('getverify');
+Route::post('/verify','VerifyController@postVerify')->name('verify');
+Route::get('/tutor/{id}','JadwalController@update')->name('tutor');
 Route::get('profileAdmin','Auth\RegisterController@data');
-// Route::get('detail','SiswaController@show');
-
 Route::get('/', 'ProgramController@program'); 
 Route::get('/landing', 'ProgramController@program');
 Route::get('/paketProgram', 'ProgramController@paket');
@@ -244,3 +241,8 @@ Route::get('/provinsi', 'RajaController@index');
 Route::get('/manajemenProgram', 'ProgramController@paketAdmin');
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
+
+
+
+
+
