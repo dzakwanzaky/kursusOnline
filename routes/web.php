@@ -22,9 +22,7 @@ Route::get('/kontak', function () {
 Route::get('/paketProgram', function () {
     return view('base/paket_program_page');
 });
-Route::get('/login', function () {
-    return view('base/login_page');
-});
+
 Route::get('/dataSiswa', function () {
     return view('base/dataSiswa');
 });
@@ -192,10 +190,15 @@ Route::middleware(['admin'])->group(function () {
     Route::get('list_pendaftaranSiswa','JadwalController@admin');
     Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
     Route::get('daftarSiswa','SiswaController@daftarSiswa');
+    Route::get('daftarSiswaBelumAktif','SiswaController@daftarSiswaBelumAktif');
+    Route::get('daftarSiswaTidakAktif','SiswaController@daftarSiswaTidakAktif');
     Route::get('daftarTryout','TryoutController@index')->name('daftarTryout');
     Route::get('tambahTryout','TryoutController@tambah')->name('tambahTryout');
     Route::get('manajemenTutor','TutorController@manajemenTutor');
     Route::get('tambahSoal/{id}','SoalController@index')->name('tambahSoal');
+    Route::get('daftarSoal/{id_to}','TryoutController@lihatSoal')->name('daftarSoal');
+    Route::get('status','SiswaController@status')->name('status');
+
 });
 
 Route::middleware(['tutor'])->group(function () {
@@ -237,7 +240,6 @@ Route::get('profileAdmin','Auth\RegisterController@data');
 Route::get('/', 'ProgramController@program'); 
 Route::get('/landing', 'ProgramController@program');
 Route::get('/paketProgram', 'ProgramController@paket');
-Route::get('/provinsi', 'RajaController@index');
 Route::get('/manajemenProgram', 'ProgramController@paketAdmin');
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');

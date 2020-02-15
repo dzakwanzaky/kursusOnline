@@ -48,7 +48,7 @@
                         <td>{{ $d->kategori }}</td>
                         <td>
                             <form action="{{ route('tryout.destroy', $d->id) }}" method="post" class="destroy">
-                            <a type="button" class="btn btn-success" href="{{route('tryout.edit',$d->id)}}">Lihat Soal</a>
+                            <a type="button" class="btn btn-success" href="{{route('daftarSoal', $d->id)}}">Lihat Soal</a>
                             <a type="button" class="btn btn-primary" href="{{route('tryout.edit',$d->id)}}">Edit</a>
                               {{ csrf_field() }}
                               {{ method_field('DELETE') }}       
@@ -57,7 +57,6 @@
                         </td>
                     </tr>
                     @endforeach
-                      
                 </tbody>
                   </table>
               </div>

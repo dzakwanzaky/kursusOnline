@@ -23,9 +23,19 @@ class SiswaController extends Controller
     }
     
     public function daftarSiswa(){
-        // $data = ModelSiswa::all();
-        $data = ModelSiswa::with('files')->get();
+        $data = ModelSiswa::with('files')->where('status', 'AKTIF')->get();
         return view('dashboard_admin.daftarSiswa', compact('data'));
+    }
+
+     
+    public function daftarSiswaBelumAktif(){
+        $data = ModelSiswa::with('files')->where('status', 'BELUM DIBAYAR')->get();
+        return view('dashboard_admin.daftarSiswaBelumAktif', compact('data'));
+    }
+
+    public function daftarSiswaTidakAktif(){
+        $data = ModelSiswa::with('files')->where('status', 'TIDAK AKTIF')->get();
+        return view('dashboard_admin.daftarSiswaTidakAktif', compact('data'));
     }
 
     public function index(){
@@ -87,7 +97,7 @@ class SiswaController extends Controller
         $data->nama_siswa = $request->nama_siswa;
         $data->provinsi = $request->provinsi;
         $data->kecamatan = $request->kecamatan;
-        $data->kota = $request->kota;
+        $data->kabupaten = $request->kabupaten;
         $data->status = $request->status;
         if($request->file){
             $file = $request->file('file');
@@ -102,6 +112,12 @@ class SiswaController extends Controller
             } else {
                 return redirect('daftarSiswa')->withMessage('Berhasil Konfirmasi');
             }
+    }
+
+    public function status(Request $request, $id){
+            $data = ModelSiswa::where('id', $id)->first();
+            $data->status = $request->status;
+            return redirect('daftarSiswaBelumAktif');
     }
 
     public function dashboard()

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ModelTryout;
+use App\ModelSoal;
 
 
 class TryoutController extends Controller
@@ -16,6 +17,11 @@ class TryoutController extends Controller
 
     public function tambah(){
         return view('dashboard_admin.tambahTryout');
+    }
+
+    public function lihatSoal($id){
+        $data = ModelSoal::where('id_to', $id)->get();
+        return view('dashboard_admin.daftarSoal', compact('data'));   
     }
     
     public function store(Request $request)

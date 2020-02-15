@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 id="div1" name="div1" class="m-0 text-dark">Daftar Tryout</h1>
+            <h1 id="div1" name="div1" class="m-0 text-dark">Daftar Soal</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             
@@ -44,21 +44,20 @@
                     @foreach($data as $d)
                     <tr>   
                         <td>{{ $d->nomor_soal }}</td>
-                        <td>{{ $d->soal }}</td>
+                        <td>{!! $d->soal !!}</td>
                         <td>{{ $d->option_a }}</td>
                         <td>{{ $d->option_b }}</td>
                         <td>{{ $d->option_c }}</td>
                         <td>{{ $d->option_d }}</td>
                         <td>{{ $d->option_e }}</td>
-                        <td>{{ $d->jawaban }}</td>
+                        <td>{!! $d->jawaban !!}</td>
                         <td>
-                            <form action="{{ route('tryout.destroy', $d->id) }}" method="post" class="destroy">
-                            <a type="button" class="btn btn-success" href="{{route('tryout.edit',$d->id)}}">Lihat Soal</a>
-                            <a type="button" class="btn btn-primary" href="{{route('tryout.edit',$d->id)}}">Edit</a>
-                              {{ csrf_field() }}
-                              {{ method_field('DELETE') }}       
-                            <button type="submit" class="btn btn-md btn-danger" style="color:white">Hapus</button>
-                            </form>
+                        <form action="{{ route('soal.destroy', $d->id) }}" method="post" class="destroy">
+                        <a type="button" class="btn btn-primary" href="{{route('soal.edit',$d->id)}}">Edit</a>
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}   
+                        <button type="submit" class="btn btn-md btn-danger" style="color:white">Hapus</button>
+                        </form>
                         </td>
                     </tr>
                     @endforeach

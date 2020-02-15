@@ -12,7 +12,25 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+//Siswa Controller
+Route::get('dataSiswa','API\SiswaControllerAPI@index');
+Route::post('dataSiswa','API\SiswaControllerAPI@store');
+Route::get('dataSiswa/{id}','API\SiswaControllerAPI@show');
+Route::put('dataSiswa/{id}','API\SiswaControllerAPI@update');
+Route::get('profilSiswa','API\SiswaControllerAPI@profileSiswa');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//TutorController
+Route::get('dataTutor','API\TutorControllerAPI@index');
+Route::post('dataTutor','API\TutorControllerAPI@store');
+Route::get('dataTutor/{id}','API\TutorControllerAPI@show');
+Route::put('dataTutor/{id}','API\TutorControllerAPI@update');
+Route::get('profilTutor','API\TutorControllerAPI@profileTutor');
+
+//Register Login Controller
+Route::post('auth','API\AuthControllerAPI@store');
+Route::get('auth','API\AuthControllerAPI@login');
+
+
+
+
+

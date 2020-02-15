@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Daftar Siswa</h1>
+            <h1 class="m-0 text-dark">Daftar Siswa Aktif</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             
@@ -38,6 +38,7 @@
                   <th>Alamat</th>
                   <th>Status</th>
                   <th>Bukti Pembayaran</th>
+                  <th>Aksi</th>
                </tr>
               </thead>
               <tbody>
@@ -57,7 +58,7 @@
                         <td>
                         <input style="display:none" type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="{{ $d->nama_siswa }}">
                         <input style="display:none" type="text" class="form-control" id="provinsi" name="provinsi" value="{{ $d->provinsi }}">
-                          <input style="display:none" type="text" class="form-control" id="kota" name="kota" value="{{ $d->kota }}">
+                          <input style="display:none" type="text" class="form-control" id="kabupaten" name="kabupaten" value="{{ $d->kabupaten }}">
                           <input style="display:none" type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{ $d->kecamatan }}">
                         <button value="SUDAH DIBAYAR" id="status" name="status" type="submit" class=" btn btn-sm btn-primary" style="text-align:center"> 
                         {{ $d->status }}</button>
@@ -75,6 +76,17 @@
                           </a>
                           @endif
                         </td>
+
+                      <td>
+                      @endforeach
+                      @foreach($data as $d)
+                    <form action="{{route('status', $d->id)}}" enctype="multipart/form-data">                 
+                    {{ csrf_field() }}
+                      <input style="display:none"value="TIDAK AKTIF" id="status" name="status"></input>
+                      <button type="submit" class="btn btn-sm btn-primary" style="text-align:center">HAPUS</button> 
+                    </form>
+                     </td>
+
                     </tr>
                     @endforeach
 

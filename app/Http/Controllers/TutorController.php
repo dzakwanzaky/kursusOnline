@@ -9,6 +9,7 @@ use App\User;
 use App\ModelSiswa;
 use App\ModelKab;
 use App\ModelKecamatan;
+use App\Provinsi;
 
 class TutorController extends Controller
 {
@@ -25,9 +26,18 @@ class TutorController extends Controller
 
     public function index(){
         $data = ModelTutor::all();
-        $kota = ModelKab::all();
-        $kec = ModelKecamatan::all();
-        return view('base.dataTutor', compact('data', 'kota', 'kec'));
+        $provinsi = Provinsi::all()->pluck("provinsi", "id");
+        return view('base.dataTutor', compact('data', 'provinsi'));
+    }
+
+    public function getKabupaten($id){
+        $kabupaten = ModelKab::where('provinsi_id', '=', $id)->pluck("kabupaten_kota", "id");
+        return json_encode($kabupaten);
+    }
+
+    public function getKecamatan($id){
+        $kecamatan = ModelKecamatan::where('kab_id', '=', $id)->pluck("kecamatan", "id");
+        return json_encode($kecamatan);
     }
 
     public function profileTutor(){
@@ -42,7 +52,8 @@ class TutorController extends Controller
         $data->id = $request->id;
         $data->nama_tutor = $request->nama_tutor;
         $data->jenis_kelamin = $request->jenis_kelamin;
-        $data->kota = $request->kota;
+        $data->provinsi = $request->provinsi;
+        $data->kabupaten = $request->kabupaten;
         $data->kecamatan = $request->kecamatan;
         $data->pendidikan = $request->pendidikan;
         $data->kelas1 = $request->kelas1;
