@@ -31,8 +31,13 @@ class CreateModelTutorsTable extends Migration
             $table->string('mata_pelajaran2')->nullable();
             $table->string('mata_pelajaran3')->nullable();
             $table->string('mata_pelajaran4')->nullable();
+            $table->string('mata_pelajaran5')->nullable();
+            $table->string('mata_pelajaran6')->nullable();
+            $table->string('mata_pelajaran7')->nullable();
+            $table->string('mata_pelajaran8')->nullable();
+            $table->string('mata_pelajaran9')->nullable();
             $table->string('file');
-            $table->string('foto')->nulabble();
+            $table->string('foto')->nulable();
             $table->string('status');
             $table->timestamps();
         });

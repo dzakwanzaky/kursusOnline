@@ -46,6 +46,8 @@
                         </div>
                     </div>
 
+                   
+
                     <div class="form-group">
                         <label id="prov" for="prov">Provinsi</label>
                       
@@ -102,11 +104,30 @@
                             <option value="S2">S2</option>   
                         </select>
                         </div>
-                    </div>         
+                    </div>     
+                    <div class="form-group" name="program">
+                        <label for="progran">Program Yang Ingin Diajar</label>
 
-                     <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
-                        <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
                         <div class="form-title">
+
+                        <select id="program" name="program" class="form-control">
+                        <option value="_none">Pilih Program</option>
+                            <option value="SD">SD</option>
+                            <option value="SMP">SMP</option>
+                            <option value="SMA">SMA</option>
+                            <option value="SBMPTN">SBMPTN</option>
+                            <option value="STAN">STAN</option>
+                            <option value="UTUL UGM">UTUL UGM</option>
+                            <option value="CPNS">CPNS</option>
+                            <option value="KOMPUTER">KOMPUTER</option>
+                        </select>
+
+                        </div>
+                    </div>    
+
+                     <div class="form-group" id="kelasSD">
+                        <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                        <div class="form-round">
                             <input id="kelas1" type="checkbox" name="kelas1" value="1"/> Kelas 1 SD <br>
                             <input id="kelas2" type="checkbox" name="kelas2" value="2"/> Kelas 2 SD <br>
                             <input id="kelas3" type="checkbox" name="kelas3" value="3"/> Kelas 3 SD <br>
@@ -114,15 +135,59 @@
                             <input id="kelas5" type="checkbox" name="kelas5" value="5"/> Kelas 5 SD <br>
                             <input id="kelas6" type="checkbox" name="kelas6" value="6"/> Kelas 6 SD <br>
                             </div>
+                        </div>
+
+                        <div class="form-group" id="kelasSMP" name="kelasSMP">
+                        <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                        <div class="form-round">
+                            <input id="kelas1" type="checkbox" name="kelas1" value="7"/> Kelas 7 SMP <br>
+                            <input id="kelas2" type="checkbox" name="kelas2" value="8"/> Kelas 8 SMP <br>
+                            <input id="kelas3" type="checkbox" name="kelas3" value="9"/> Kelas 9 SMP <br>
+                          
                             </div>
+                        </div>
+
+                        <div class="form-group" id="kelasSMA" name="kelasSMA">
+                        <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                        <div class="form-round">
+                            <input id="kelas1" type="checkbox" name="kelas1" value="10"/> Kelas 10 SMA <br>
+                            <input id="kelas2" type="checkbox" name="kelas2" value="11"/> Kelas 11 SMA <br>
+                            <input id="kelas3" type="checkbox" name="kelas3" value="12"/> Kelas 12 SMA <br>
+                            </div>
+                        </div>
         
-                    <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
+                    <div class="form-group" id="matpelSD" name="matpelSD">
                         <label for="mata_pelajaran">Mata Pelajaran</label>
-                        <div class="form-title">
+                        <div class="form-round">
+                            <input  id="mata_pelajaran1" name="mata_pelajaran1"  type="checkbox" value="Matematika"/> Matematika <br>
+                            <input  id="mata_pelajaran2" name="mata_pelajaran2"  type="checkbox" value="IPA"/> IPA <br>
+                            <input  id="mata_pelajaran3"  name="mata_pelajaran3" type="checkbox" value="Bahasa Indonesia"/> Bahasa Indonesia <br>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="matpelSMP" name="matpelSMP">
+                        <label for="mata_pelajaran">Mata Pelajaran</label>
+                        <div class="form-round">
                             <input  id="mata_pelajaran1" name="mata_pelajaran1"  type="checkbox" value="Matematika"/> Matematika <br>
                             <input  id="mata_pelajaran2" name="mata_pelajaran2"  type="checkbox" value="IPA"/> IPA <br>
                             <input  id="mata_pelajaran3" name="mata_pelajaran3"  type="checkbox" value="IPS"/> IPS <br>
-                            <input  id="mata_pelajaran4"  name="mata_pelajaran4" type="checkbox" value="Bahasa Inggris"/> Bahasa Inggris <br>
+                            <input  id="mata_pelajaran4"  name="mata_pelajaran4" type="checkbox" value="Bahasa Indonesia"/> Bahasa Indonesia <br>
+                            <input  id="mata_pelajaran5"  name="mata_pelajaran5" type="checkbox" value="Bahasa Inggris"/> Bahasa Inggris <br>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="matpelSMA" name="matpelSMA">
+                        <label for="mata_pelajaran">Mata Pelajaran</label>
+                        <div class="form-round">
+                            <input  id="mata_pelajaran1" name="mata_pelajaran1"  type="checkbox" value="Matematika"/> Matematika <br>
+                            <input  id="mata_pelajaran2" name="mata_pelajaran2"  type="checkbox" value="Fisika"/> Fisika <br>
+                            <input  id="mata_pelajaran3" name="mata_pelajaran3"  type="checkbox" value="Kimia"/> Kimia <br>
+                            <input  id="mata_pelajaran4" name="mata_pelajaran4"  type="checkbox" value="Biologi"/> Biologi <br>
+                            <input  id="mata_pelajaran5" name="mata_pelajaran5"  type="checkbox" value="Ekonomi"/> Ekonomi <br>
+                            <input  id="mata_pelajaran6" name="mata_pelajaran6"  type="checkbox" value="Sosiologi"/> Sosiologi <br>
+                            <input  id="mata_pelajaran7" name="mata_pelajaran7"  type="checkbox" value="Geografi"/> Geografi <br>
+                            <input  id="mata_pelajaran8" name="mata_pelajaran8"  type="checkbox" value="Sejarah"/> Sejarah <br>
+                            <input  id="mata_pelajaran9" name="mata_pelajaran9" type="checkbox" value="Bahasa Inggris"/> Bahasa Inggris <br>
                         </div>
                     </div>
   
@@ -144,6 +209,7 @@
             </div>
             </div>
         </div>
+        
     </div>
     </div>
     </div>
@@ -214,6 +280,49 @@
                                 .append("<input type='text' style='display:none' name='kecamatan' id='kecamatan' value='"+kecamatan_name+"'>");
                            
          });
+$('#kelasSMP').hide();
+$('#kelasSMA').hide();
+$('#kelasSD').hide();
+$('#matpelSD').hide();
+$('#matpelSMP').hide();
+$('#matpelSMA').hide();
+    $(document).ready(function() {
+        $("#program").change(function () {
+     if ($(this).val() == "SD") {
+        $('#kelasSD').show();
+        $('#kelasSMP').hide();
+        $('#kelasSMA').hide();
+        $('#matpelSD').show();
+        $('#matpelSMP').hide();
+        $('#matpelSMA').hide();
+     } else if ($(this).val() == "SMP") {
+        $('#kelasSMP').show();
+        $('#kelasSD').hide();
+        $('#kelasSMA').hide();
+        $('#matpelSMP').show();
+        $('#matpelSD').hide();
+        $('#matpelSMA').hide();
+     } else if ($(this).val() == "SMA") {
+        $('#kelasSMA').show();
+        $('#kelasSD').hide();
+        $('#kelasSMP').hide();
+        $('#matpelSMA').show();
+        $('#matpelSD').hide();
+        $('#matpelSMP').hide()
+      } else {
+        $('#matpel').hide();
+        $('#kelasSD').hide();
+        $('#kelasSMP').hide();
+        $('#kelasSMA').hide();
+        $('#matpelSD').hide();
+        $('#matpelSMP').hide();
+        $('#matpelSMA').hide();
+      }
+
         });
+    });
+
+        });
+        
     </script>
 @endsection
