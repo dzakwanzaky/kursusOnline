@@ -81,7 +81,7 @@
 
 					<div class="form-group">
 						<label for="">Kota :</label>
-						<input type="text" class="form-control" id="kota" name="kota" value=" {{ $d->kota }}"> 
+						<input type="text" class="form-control" id="kota" name="kota" value=" {{ $d->kabupaten }}"> 
 					</div>
 
           <div class="form-group">

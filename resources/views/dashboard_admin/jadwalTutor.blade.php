@@ -1,12 +1,13 @@
-@extends('murid/base')
+@extends('dashboard_admin/base')
 @section('content')
-<!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
+    <div class="content-wrapper">
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Jadwal Les</h1>
+            <h1 class="m-0 text-dark">Jadwal Tutor</h1>
+            
           </div><!-- /.col -->
           <div class="col-sm-6">
             
@@ -15,6 +16,7 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
@@ -23,8 +25,8 @@
             <div class="card">
               <div class="card-body">
               <table class="table table-responsive-lg table-bordered small" id="jadwal">
-                <thead class="thead-dark">
-                <tr>
+                <thead class="thead-dark"> 
+                   <tr>
                         <th>No.</th>
                         <th>Nama Murid</th>
                         <th>Kelas</th>
@@ -32,7 +34,6 @@
                         <th>Sesi 1</th>   
                         <th id="hari2">Sesi 2</th>
                         <th id="hari3">Sesi 3</th>
-                        <th>Status</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -48,11 +49,8 @@
                         <td id="hari2td">{{ $d->hari2 }} {{ $d->waktu_hari2 }}</td>
                         <td id="hari3td">{{ $d->hari3 }} {{ $d->waktu_hari3 }}</td>
                         <td>
-                        <button class="btn btn-sm btn-primary">{{$d->status}}</button>
-                        </td>
-                        <td>
-                        <a type="button" class="btn btn-sm btn-primary" href="{{route('absen.show', $d->id)}}">
-                        Lihat Kehadiran
+                        <a type="button" class="btn btn-sm btn-primary" href="{{route('kehadiranTutor', $d->id)}}">
+                        Liat Kehadiran
                         </a>
                         </td>
                     </tr>
@@ -60,15 +58,15 @@
                 </tbody>
                 </table>
               </div>
-            </div>          
+            </div>     
           </div>
-          <!-- /.col-md-6 --> 
+          <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
+    </div>
     <!-- /.content -->
-
   @endsection
   @section('sweet')
   <script>

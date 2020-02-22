@@ -75,44 +75,45 @@
         </ul>
       </li>
 
-      <li class="nav-item has-treeview {{ Request::segment(1) === 'daftarSiswa' ? 'menu-open' : null }}
-                  {{ Request::segment(1) === 'daftarSiswaBelumAktif' ? 'menu-open' : null }} {{ Request::segment(1) === 'daftarSiswaTidakAktif' ? 'menu-open' : null }}">
-            <a href="#" class="nav-link nav-link {{ Request::segment(1) === 'daftar Siswa' ? 'nav-link active' : null }}
-                {{ Request::segment(1) === 'daftarSiswaBelumAktif' ? 'nav-link active' : null }} {{ Request::segment(1) === 'daftarSiswaTidakAktif' ? 'menu-open' : null }}">
-                <i class="fas fa-user-graduate nav-icon"></i>
+      <li class="nav-item has-treeview {{ Request::segment(1) === 'daftarTutor' ? 'menu-open' : null }}
+                  {{ Request::segment(1) === 'daftarTutorBelumAktif' ? 'menu-open' : null }} {{ Request::segment(1) === 'daftarTutorTidakAktif' ? 'menu-open' : null }}">
+            <a href="#" class="nav-link nav-link {{ Request::segment(1) === 'daftarTutor' ? 'nav-link active' : null }}
+                {{ Request::segment(1) === 'daftarTutorBelumAktif' ? 'nav-link active' : null }} {{ Request::segment(1) === 'daftarTutorTidakAktif' ? 'menu-open' : null }}">
+                <i class="fas fa-chalkboard-teacher nav-icon"></i>
               <p>
-                Manajemen Murid
+                Manajemen Tutor
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
           <li class="nav-item-sub">
-            <a href="/manajemenTutor" class="nav-link {{ Request::segment(1) === 'manajemenTutor' ? 'nav-link active' : null }}">
-            <i class="fas fa-chalkboard-teacher nav-icon"></i>
+            <a href="/daftarTutor" class="nav-link {{ Request::segment(1) === 'daftarTutor' ? 'nav-link active' : null }}">
+            <i class="far fa-circle nav-icon"></i>
                             <p>
                 Tutor Aktif
               </p>
             </a>
           </li>
           <li class="nav-item-sub">
-            <a href="/manajemenTutor" class="nav-link {{ Request::segment(1) === 'manajemenTutor' ? 'nav-link active' : null }}">
-            <i class="fas fa-chalkboard-teacher nav-icon"></i>
+            <a href="/daftarTutorBelumAktif" class="nav-link {{ Request::segment(1) === 'daftarTutorBelumAktif' ? 'nav-link active' : null }}">
+            <i class="far fa-circle nav-icon"></i>
                             <p>
                 Tutor Belum Aktif
               </p>
             </a>
           </li>
-
-          </ul>
           <li class="nav-item-sub">
-            <a href="/manajemenProgram" class="nav-link {{ Request::segment(1) === 'manajemenProgram' ? 'nav-link active' : null }}">
-            <i class="fas fa-cogs nav-icon"></i>              
+            <a href="/daftarTutorTidakAktif" class="nav-link {{ Request::segment(1) === 'daftarTutorTidakAktif' ? 'nav-link active' : null }}">
+            <i class="far fa-circle nav-icon"></i>
             <p>
                 Tutor Tidak Aktif
               </p>
             </a>
           </li>
           
+
+          </ul>
+         
           <li class="nav-item has-treeview {{ Request::segment(1) === 'list_pendaftaranSiswa' ? 'menu-open' : null }}
                   {{ Request::segment(1) === 'list_pendaftaranTutor' ? 'menu-open' : null }}">
             <a href="#" class="nav-link nav-link {{ Request::segment(1) === 'list_pendaftaranSiswa' ? 'nav-link active' : null }}

@@ -111,9 +111,6 @@ Route::get('/editMurid', function () {
 });
 
 //halaman dashboard Tutor
-Route::get('/tutor', function () {
-    return view('tutor/tutor');
-});
 Route::get('/jadwal', function () {
     return view('tutor/jadwal');
 });
@@ -134,15 +131,10 @@ Route::get('/detail', function () {
 });
 
 //DASHBOARD ADMIN
-Route::get('/manajemenTutor', function () {
-    return view('dashboard_admin/manajemenTutor');
-});
 Route::get('/profileSiswa', function () {
     return view('dashboard_admin/profileSiswa');
 });
-Route::get('/profileTutor', function () {
-    return view('dashboard_admin/profileTutor');
-});
+
 Route::get('/profileAdmin', function () {
     return view('dashboard_admin/profileAdmin');
 });
@@ -182,6 +174,13 @@ Route::get('/tambahTryout', function () {
 Route::get('/tambahProgram', function () {
     return view('dashboard_admin/tambahProgram');
 });
+Route::get('/presensi', function () {
+    return view('murid/presensi');
+});
+Route::get('/kehadiranLes', function () {
+    return view('murid/kehadiranLes');
+});
+
 
 Auth::routes();
 
@@ -189,20 +188,25 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin', 'AdminController@index');
     Route::get('list_pendaftaranSiswa','JadwalController@admin');
     Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
+    Route::get('jadwalTutor/{id}','JadwalController@jadwalTutorAdmin')->name('jadwalTutor');
     Route::get('daftarSiswa','SiswaController@daftarSiswa');
     Route::get('daftarSiswaBelumAktif','SiswaController@daftarSiswaBelumAktif');
     Route::get('daftarSiswaTidakAktif','SiswaController@daftarSiswaTidakAktif');
     Route::get('daftarTryout','TryoutController@index')->name('daftarTryout');
     Route::get('tambahTryout','TryoutController@tambah')->name('tambahTryout');
-    Route::get('manajemenTutor','TutorController@manajemenTutor');
+    Route::get('daftarTutor','TutorController@daftarTutor');
+    Route::get('daftarTutorBelumAktif','TutorController@daftarTutorBelumAktif');
+    Route::get('daftarTutorTidakAktif','TutorController@daftarTutorTidakAktif');
     Route::get('tambahSoal/{id}','SoalController@index')->name('tambahSoal');
     Route::get('daftarSoal/{id_to}','TryoutController@lihatSoal')->name('daftarSoal');
-    Route::get('status','SiswaController@status')->name('status');
-
+    Route::get('status/{id}','SiswaController@status')->name('status');
+    Route::get('statusTutor/{id}','TutorController@statusTutor')->name('statusTutor');
+    Route::get('kehadiranTutor/{id}','AbsenController@kehadiranTutor')->name('kehadiranTutor');
+    Route::get('profileTutorAdmin/{id}','TutorController@profileTutorAdmin')->name('profileTutorAdmin');
 });
 
 Route::middleware(['tutor'])->group(function () {
-    Route::get('/tutor','JadwalController@tutor');
+    Route::get('tutor','JadwalController@tutor')->name('tutor');
     Route::get('jadwal','JadwalController@jadwalTutor');
     Route::get('profile','TutorController@profileTutor');
 
@@ -214,6 +218,8 @@ Route::middleware(['siswa'])->group(function () {
     Route::get('/invoice','ProgramController@data');
     Route::get('/invoiceDetail','ProgramController@detail');
     Route::get('profileMurid','SiswaController@profileSiswa');
+    Route::get('presensi/{id}','AbsenController@indexPresensi')->name('presensi');
+    Route::get('kehadiranLes/{id}','AbsenController@kehadiranLes')->name('kehadiranLes');
 
 });
 
@@ -225,6 +231,8 @@ Route::resource('register', 'Auth\RegisterController');
 Route::resource('soal', 'SoalController');
 Route::resource('pendaftaranSiswa','JadwalController');
 Route::resource('tryout','TryoutController');
+Route::resource('absen','AbsenController');
+
 
 Route::get('/editMurid/{id}', 'Auth\RegisterController@editMurid')->name('editMurid');
 Route::get('/editProfile/{id}', 'Auth\RegisterController@editProfile')->name('editProfile');
@@ -235,7 +243,6 @@ Route::post('/upload', 'InvoiceController@proses_upload')->name('upload');
 Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
 Route::get('/verify','VerifyController@getVerify')->name('getverify');
 Route::post('/verify','VerifyController@postVerify')->name('verify');
-Route::get('/tutor/{id}','JadwalController@update')->name('tutor');
 Route::get('profileAdmin','Auth\RegisterController@data');
 Route::get('/', 'ProgramController@program'); 
 Route::get('/landing', 'ProgramController@program');
@@ -243,7 +250,7 @@ Route::get('/paketProgram', 'ProgramController@paket');
 Route::get('/manajemenProgram', 'ProgramController@paketAdmin');
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
-
+Route::get('informasiTutor','TutorController@informasiTutor');
 
 
 

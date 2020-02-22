@@ -11,6 +11,7 @@ use App\ModelKab;
 use App\ModelKecamatan;
 use App\Provinsi;
 
+
 class TutorController extends Controller
 {
 
@@ -19,9 +20,31 @@ class TutorController extends Controller
         $this->middleware('auth');
     }
     
-    public function manajemenTutor(){
-        $data = ModelTutor::all();
-        return view('dashboard_admin.manajemenTutor', compact('data'));
+    public function daftarTutor(){
+        $data = ModelTutor::where('status', 'AKTIF')->get();
+        return view('dashboard_admin.daftarTutor', compact('data'));
+    }
+
+    public function profileTutorAdmin($id){
+        $data = ModelTutor::where('id', $id)->get();
+        return view('dashboard_admin.profileTutor', compact('data'));
+    }
+
+    public function statusTutor(Request $request, $id){
+        $data = ModelTutor::where('id', $id)->first();
+        $data->status = $request->status;
+        $data->save();
+        return redirect('daftarTutorTidakAktif');
+    }
+
+    public function daftarTutorBelumAktif(){
+        $data = ModelTutor::where('status', 'MENUNGGU')->get();
+        return view('dashboard_admin.daftarTutorBelumAktif', compact('data'));
+    }
+
+    public function daftarTutorTidakAktif(){
+        $data = ModelTutor::where('status', 'TIDAK AKTIF')->get();
+        return view('dashboard_admin.daftarTutorTidakAktif', compact('data'));
     }
 
     public function index(){
@@ -46,6 +69,11 @@ class TutorController extends Controller
         return view('tutor.profiletutor', compact('data', 'user'));
     }
 
+    public function informasiTutor(){
+        $data = ModelTutor::where('id', '=', Auth::user()->id)->get();
+        return view('base.informasiTutor', compact('data',));
+    }
+
     public function store(Request $request)
     {
         $data = new ModelTutor();
@@ -56,6 +84,7 @@ class TutorController extends Controller
         $data->kabupaten = $request->kabupaten;
         $data->kecamatan = $request->kecamatan;
         $data->pendidikan = $request->pendidikan;
+        $data->program = $request->program;
         $data->kelas1 = $request->kelas1;
         $data->kelas2 = $request->kelas2;
         $data->kelas3 = $request->kelas3;
@@ -66,7 +95,11 @@ class TutorController extends Controller
         $data->mata_pelajaran2 = $request->mata_pelajaran2;
         $data->mata_pelajaran3 = $request->mata_pelajaran3;
         $data->mata_pelajaran4 = $request->mata_pelajaran4;
-
+        $data->mata_pelajaran5 = $request->mata_pelajaran5;
+        $data->mata_pelajaran6 = $request->mata_pelajaran6;
+        $data->mata_pelajaran7 = $request->mata_pelajaran7;
+        $data->mata_pelajaran8 = $request->mata_pelajaran8;
+        $data->mata_pelajaran9 = $request->mata_pelajaran9;
 
         $file = $request->file('file');
         $nama_file = time()."_".$file->getClientOriginalName();  
@@ -76,7 +109,7 @@ class TutorController extends Controller
 
         $data->status = $request->status;
         $data->save();
-        return redirect('tutor');
+        return redirect('informasiTutor');
     }
 
     public function edit($id)
@@ -109,7 +142,7 @@ class TutorController extends Controller
         if(Auth::user()->role == 'tutor'){
             return redirect('profile')->withMessage('Berhasil Konfirmasi');
             } else {
-                return redirect('manajemenTutor')->withMessage('Berhasil Konfirmasi');
+                return redirect('daftarTutor')->withMessage('Berhasil Konfirmasi');
             }
     }
 

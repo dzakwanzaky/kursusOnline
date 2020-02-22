@@ -117,7 +117,8 @@ class SiswaController extends Controller
     public function status(Request $request, $id){
             $data = ModelSiswa::where('id', $id)->first();
             $data->status = $request->status;
-            return redirect('daftarSiswaBelumAktif');
+            $data->save();
+            return redirect('daftarSiswaTidakAktif');
     }
 
     public function dashboard()

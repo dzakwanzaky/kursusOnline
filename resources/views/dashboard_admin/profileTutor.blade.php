@@ -18,7 +18,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-md-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/daftarSiswa">Tutor</a>
+                                    <a href="/daftarTutor">Tutor</a>
                                 </li>
                                 <li class="breadcrumb-item active">
                                     Profile Tutor
@@ -42,36 +42,45 @@
             <div class="card">
               <div class="card-body">
                 <div class="form-group">
-                    <div class="form-group">
-                        <label for="">Foto :</label>
-                        <img width="200px" height="200px" src="/tema/images/bimbel.jpg" style="display:block;margin-left:auto;margin-right:auto">
-                    </div>
-					<!-- <label for="nama">Foto :</label>
-					<div> <a href="#" target="_blank">
-						<img width="150px" height="200px" src="/tema/images/bimbel.jpg" style="display:block;margin-left:auto;margin-right:auto">
-						</a>
-					</div> -->
+                @php $no = 1; @endphp
+                @foreach($data as $d)
+          <div class="form-group">
+            <a href="{{ url('/data_file/'.$d->foto) }}" target="_blank">
+            <img width="300px" src="{{ url('/data_file/'.$d->foto) }}">
+            </a>
+          </div>
 
-					<div class="form-group">
+          <div class="form-group">
 						<label for="">Nama Lengkap :</label>
-						<input type="text" class="form-control" id="nama" name="nama" value="Pania Paramita Andika" disabled>
+						<input type="text" class="form-control" id="nama_tutor" name="nama_tutor" value="{{$d->nama_tutor}}" disabled>
 					</div>
 
 					<div class="form-group">
-						<label for="">No Telepon :</label>
-						<input type="text" class="form-control" id="no" name="no" value="081218099939" disabled>
+						<label for="">Provinsi :</label>
+						<input type="text" class="form-control" id="provinsi" name="provinsi" value="{{ $d->provinsi }}" disabled>
 					</div>
 
 					<div class="form-group">
-						<label for="">Email :</label>
-						<input type="text" class="form-control" id="email" name="email" value="vania.paramita23@gmail.com" disabled>
+						<label for="">Kecamatan :</label>
+						<input type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{ $d->kecamatan }}" disabled>
 					</div>
 
 					<div class="form-group">
-						<label for="">Kata Sandi :</label>
-						<input type="password" class="form-control" id="password" name="password" value="vania.p.a15" disabled> 
+						<label for="">Kota :</label>
+						<input type="text" class="form-control" id="kota" name="kota" value=" {{ $d->kabupaten }}" disabled> 
 					</div>
-				</form>
+
+          <div class="form-group">
+						<label for="">Pendidikan :</label>
+						<input type="text" class="form-control" id="pendidikan" name="pendidikan" value=" {{ $d->pendidikan }}" disabled> 
+					</div>
+
+          <div class="form-group">
+						<label for="">Mata Pelajaran :</label>
+						<input type="text" class="form-control" id="mata_pelajaran1" name="mata_pelajaran1" value=" {{ $d->mata_pelajaran1 }} {{ $d->mata_pelajaran2 }} {{ $d->mata_pelajaran3 }} {{ $d->mata_pelajaran4 }} {{ $d->mata_pelajaran5 }} {{ $d->mata_pelajaran6 }} {{ $d->mata_pelajaran7 }} {{ $d->mata_pelajaran8 }} {{ $d->mata_pelajaran9 }}" disabled> 
+					</div>
+@endforeach
+				
               </div>
             </div>
 

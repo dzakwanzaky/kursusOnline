@@ -14,13 +14,14 @@ class CreateModelTutorsTable extends Migration
     public function up()
     {
         Schema::create('model_tutors', function (Blueprint $table) {
-            $table->string('id');
+            $table->string('id')->primary();
             $table->string('nama_tutor');
             $table->string('jenis_kelamin');
             $table->string('provinsi');
             $table->string('kabupaten');
             $table->string('kecamatan');
             $table->string('pendidikan');
+            $table->string('program');
             $table->string('kelas1')->nullable();
             $table->string('kelas2')->nullable();
             $table->string('kelas3')->nullable();
@@ -37,7 +38,7 @@ class CreateModelTutorsTable extends Migration
             $table->string('mata_pelajaran8')->nullable();
             $table->string('mata_pelajaran9')->nullable();
             $table->string('file');
-            $table->string('foto')->nulable();
+            $table->string('foto')->nullable();
             $table->string('status');
             $table->timestamps();
         });

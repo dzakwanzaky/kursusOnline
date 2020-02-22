@@ -35,14 +35,14 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="/video" class="nav-link {{ Request::segment(1) === 'video' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>
                 Materi
               </p>
             </a>
-          </li>
+          </li> -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

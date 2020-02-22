@@ -29,12 +29,9 @@ class JadwalController extends Controller
 
     public function tutor()
     {
-        // $data = ModelJadwal:: 
-        // where('status', 'MENUNGGU')->orWhere('status', 'DIPILIH TUTOR')->get();
         $data = ModelTutor::where('id', '=', Auth::user()->id)->first();
-        $jadwal = ModelJadwal::whereIn('kelas',
-        [$data->kelas1, $data->kelas2, $data->kelas3, $data->kelas4, $data->kelas5, $data->kelas6])->get();
-        // dd($data);
+        $jadwal = ModelJadwal::whereIn('program',
+        [$data->program])->get();
         return view('tutor.tutor', compact('jadwal'));
     }
 
@@ -56,6 +53,11 @@ class JadwalController extends Controller
         return view('tutor.jadwal', compact('data'));
     }
 
+    public function jadwalTutorAdmin($id)
+    {
+        $data = ModelJadwal::where('tutor_id', $id)->get();
+        return view('dashboard_admin.jadwalTutor', compact('data'));
+    }
 
     /**
      * Show the form for creating a new resource.
