@@ -34,9 +34,9 @@
                   <th>Alamat</th>
                   <th>Status</th>
                   <th>Aksi</th>
-
                </tr>
               </thead>
+
               <tbody>
                     <tr>
                     @php $no = 1; @endphp
@@ -45,11 +45,6 @@
                         <td>{{ $d->nama_tutor }}</td>
                         <td>{{ $d->jenis_kelamin }}</td>
                         <td>{{ $d->kota }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
-                        <!-- <td>
-                        
-                          <a width="100px" href="{{ url('/data_file/'.$d->file) }}">File</a>
-                      
-                          </td> -->
                         <td>  
                         <button id="status" name="status" class="btn btn-sm btn-primary" type="submit" style="text-align:center"> 
                         {{ $d->status }}</button>
@@ -61,10 +56,10 @@
                     {{ csrf_field() }}
                     <input style="display:none"value="TIDAK AKTIF" id="status" name="status"></input>
                         <a id="status" name="status" class="btn btn-sm btn-primary mr-2" style="color:white" href="{{route('profileTutorAdmin', $d->id)}}"> DETAIL</a>
-                        <a id="status" name="status" class="btn btn-sm btn-primary mr-2" type="submit" style="color:white" href="{{route('jadwalTutor', $d->id)}}">JADWAL</a>
+                        <a class="btn btn-sm btn-primary mr-2" type="submit" style="color:white" href="{{route('jadwalTutor', $d->id)}}">JADWAL</a>
                         <button type="submit" class="btn btn-sm btn-primary" style="text-align:center">HAPUS</button> 
                         </td>
-                      </form>
+                    </form>
                     </tr>
                     @endforeach
 
@@ -90,5 +85,5 @@
          $(document).ready( function () {
            $('#datakaryawan').DataTable();
            });
-      </script>
+  </script>
   @endsection

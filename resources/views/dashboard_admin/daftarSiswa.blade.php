@@ -80,10 +80,13 @@
                       <td>
                       @endforeach
                       @foreach($data as $d)
-                    <form action="{{route('status', $d->id)}}" enctype="multipart/form-data">                 
+                    <form action="{{route('status', $d->id)}}" enctype="multipart/form-data">  
+                    <a class="btn btn-sm btn-primary mr-2" type="submit" style="color:white" href="{{route('jadwalSiswa', $d->id)}}">JADWAL</a>
+               
                     {{ csrf_field() }}
                       <input style="display:none"value="TIDAK AKTIF" id="status" name="status"></input>
                       <button type="submit" class="btn btn-sm btn-primary" style="text-align:center">HAPUS</button> 
+
                     </form>
                      </td>
 

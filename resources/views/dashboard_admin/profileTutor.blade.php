@@ -25,7 +25,7 @@
                                 </li>
                             </ol>
                         </div>			
-			  	    </div>			
+			  	           </div>			
                 </div>
             </div>
         </div>
@@ -53,6 +53,11 @@
           <div class="form-group">
 						<label for="">Nama Lengkap :</label>
 						<input type="text" class="form-control" id="nama_tutor" name="nama_tutor" value="{{$d->nama_tutor}}" disabled>
+          </div>
+          
+          <div class="form-group">
+						<label for="">Curriculum Vitae :</label>
+            <a class="form-control-grey" width="100px" href="{{ url('/data_file/'.$d->file) }}" target="_blank">Curriculum Vitae</a>
 					</div>
 
 					<div class="form-group">
@@ -79,6 +84,8 @@
 						<label for="">Mata Pelajaran :</label>
 						<input type="text" class="form-control" id="mata_pelajaran1" name="mata_pelajaran1" value=" {{ $d->mata_pelajaran1 }} {{ $d->mata_pelajaran2 }} {{ $d->mata_pelajaran3 }} {{ $d->mata_pelajaran4 }} {{ $d->mata_pelajaran5 }} {{ $d->mata_pelajaran6 }} {{ $d->mata_pelajaran7 }} {{ $d->mata_pelajaran8 }} {{ $d->mata_pelajaran9 }}" disabled> 
 					</div>
+
+       
 @endforeach
 				
               </div>

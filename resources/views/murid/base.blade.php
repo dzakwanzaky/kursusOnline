@@ -21,6 +21,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('/lte/dist/css/adminlte.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- Clockpicker and minified CSS -->
+    <link rel="stylesheet" href="{{ asset('/lte/plugins/clockpicker-gh-pages/dist/bootstrap-clockpicker.min.css') }}">
+    
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -72,6 +76,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- DataTables -->
 <script src="{{ asset('/lte/plugins/datatables/jquery.dataTables.js') }}"></script>
 <script src="{{ asset('/lte/plugins/datatables/dataTables.bootstrap4.js') }}"></script>
+<!--- Time Picker -->
+<script src="{{ asset('/lte/plugins/clockpicker-gh-pages/assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/lte/plugins/clockpicker-gh-pages/assets/js/highlight.min.js') }}"></script>
+<script src="{{ asset('/lte/plugins/clockpicker-gh-pages/dist/jquery-clockpicker.min.js') }}"></script>
+
+<!--  jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<script src="https://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.js"></script>
+<link href="https://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet"/>
+
 
 @yield('sweet')
 </body>

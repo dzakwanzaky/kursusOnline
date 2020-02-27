@@ -47,13 +47,17 @@
                     <div class="form-group">
                         <label for="">Foto :</label>
                         <br/>
+                        @if($d->foto==null)
+                    <img class="navbar-brand-full" src="{{('/tema/images/user.png')}}" width="300px" alt="upload foto" style="display:block; margin-left:auto; margin-right:auto;">
+                    @else
                         <a href="{{ url('/data_file/'.$d->foto) }}" target="_blank">
-                          <img width="300px" src="{{ url('/data_file/'.$d->foto) }}">
-                        </a>                      </div>
+                          <img id="gambar" width="300px" src="{{ url('/data_file/'.$d->foto) }}" style="display:block; margin-left:auto; margin-right:auto;">
+                        </a>   
+                    @endif                        </div>
 
                         <div class="middles">
 				<div class="text">
-				  <label for="change_pic">Change Photo</label>
+				  <label for="change_pic">Ganti Gambar</label>
 				  <div class="form-group">
 				  <div class="alert alert-info">
 							<strong>Info!</strong> Maximum Size Upload : 2MB
@@ -130,7 +134,27 @@
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
-    </div>
+
     <!-- /.content -->
  
+  @endsection
+  @section('sweet')
+  <script>
+		//buat profile
+		$(function () {
+			$("#foto").change(function () {
+				readURL(this);
+			  });
+    	});
+    	function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+
+				reader.onload = function (e) {
+					$('#gambar').attr('src', e.target.result);
+				}
+				reader.readAsDataURL(input.files[0]);
+			  }
+    	}
+	</script>
   @endsection

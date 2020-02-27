@@ -16,11 +16,11 @@ class CreateModelAbsensTable extends Migration
         Schema::create('model_absens', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('id_jadwal');
-            $table->string('tanggal');
-            $table->string('waktu_mulai');
-            $table->string('waktu_selesai');
-            $table->string('kehadiran');
-            $table->string('report');
+            $table->string('tanggal')->nullable();
+            $table->string('waktu_mulai')->nullable();
+            $table->string('waktu_selesai')->nullable();
+            $table->string('kehadiran')->nullable();
+            $table->string('report')->nullable();
             $table->timestamps();
         });
     }

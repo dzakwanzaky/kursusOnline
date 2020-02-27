@@ -33,18 +33,28 @@
       <input style="display:none" id="id_to" name="id_to" value="{{$d->id_to}}"></input>
       <div class="panel-body">
       <div>
-          <b>Masukkan Nomor Soal :</b>
+          <b>Nomor Soal :</b>
       </div>     
       <input type="text" class="form-control" id="nomor_soal" name="nomor_soal" style="width:12%" value="{{$d->id_to}}">
-
       <br>
       <div>
-          <b>Masukkan Isi Soal :</b>
+         <b> Gambar : </b>
+      </div> 
+      <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
+          <img id="gambar" width="200px" src="{{ url('/data_file/'.$d->file) }}">
+      </a> 
+      <div>
+         <b> Ganti Gambar : </b>
+      </div>  
+      <input type="file" class="form-control" id="file" name="file">
+      <br>
+      <div>
+          <b>Isi Soal :</b>
       </div>
             <textarea id="soal" name="soal" value="{{$d->soal}}">{{$d->soal}}</textarea>
       <br>
       <div>
-          <b>Masukkan Pilihan Jawaban :</b>
+          <b>Pilihan Jawaban :</b>
       </div>
       
       <label>A
@@ -70,7 +80,7 @@
       <br>
       <br>
       <div>
-          <b>Masukkan Jawaban Benar dan Pembahasan :</b>
+          <b>Jawaban Benar dan Pembahasan :</b>
       </div>
             <textarea id="jawaban" name="jawaban" value="{{$d->jawaban}}">{{$d->jawaban}}</textarea>
 
@@ -110,5 +120,25 @@
       });
   </script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+		//buat profile
+		$(function () {
+			$("#file").change(function () {
+				readURL(this);
+			  });
+    	});
+    	function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+
+				reader.onload = function (e) {
+					//alert(e.target.result);
+					$('#gambar').attr('src', e.target.result);
+				}
+
+				reader.readAsDataURL(input.files[0]);
+			}
+    	}
+	</script>
   
   @endpush

@@ -23,6 +23,13 @@ class SoalController extends Controller
             $data = new ModelSoal();
             $data->id_to = $request->id_to;
             $data->nomor_soal = $value;
+
+            $file = $request->file[$key];
+            $nama_file = time()."_".$file->getClientOriginalName();  
+            $tujuan_upload = 'data_file';
+            $file->move($tujuan_upload,$nama_file);
+            $data->file = $nama_file;
+
             $data->soal = $request->soal[$key];
             $data->option_a = $request->option_a[$key];
             $data->option_b = $request->option_b[$key];
@@ -32,7 +39,7 @@ class SoalController extends Controller
             $data->jawaban = $request->jawaban[$key];
             $data->save();
         }  
-        return redirect('daftarSoal');
+        return redirect()->route('daftarSoal', $data->id_to);
     }
 
     public function edit($id)
@@ -46,6 +53,13 @@ class SoalController extends Controller
         $data = ModelSoal::where('id',$id)->first();
         $data->id_to = $request->id_to;
         $data->nomor_soal = $request->nomor_soal;
+        if($request->file){
+            $file = $request->file('file');
+            $nama_file = time()."_".$file->getClientOriginalName();  
+            $tujuan_upload = 'data_file';
+            $file->move($tujuan_upload,$nama_file);
+            $data->file = $nama_file;  
+        }
         $data->soal = $request->soal;
         $data->option_a = $request->option_a;
         $data->option_b = $request->option_b;

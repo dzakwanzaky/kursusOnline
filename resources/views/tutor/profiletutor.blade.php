@@ -52,10 +52,13 @@
   
                 <div class="form-group">
                     <div class="form-group">
-                        <label for="">Foto :</label>
+                    @if($d->foto==null)
+                    <img class="navbar-brand-full" src="{{('/tema/images/user.png')}}" width="300px" alt="upload foto" style="display:block; margin-left:auto; margin-right:auto;">
+                    @else
                         <a href="{{ url('/data_file/'.$d->foto) }}" target="_blank">
-                          <img width="300px" src="{{ url('/data_file/'.$d->foto) }}">
-                        </a>                   
+                          <img width="300px" src="{{ url('/data_file/'.$d->foto) }}" style="display:block; margin-left:auto; margin-right:auto;">
+                        </a>   
+                    @endif                
                  </div>
 					<div class="form-group">
 						<label for="">Nama Lengkap :</label>
@@ -72,7 +75,7 @@
 
           <div class="form-group">
 						<label for="">Mata Pelajaran :</label>
-						<input type="text" class="form-control" id="mata_pelajaran1" name="mata_pelajaran1" value="{{ $d->mata_pelajaran1 }}  {{ $d->mata_pelajaran2 }}  {{ $d->mata_pelajaran3 }}   {{ $d->mata_pelajaran4 }}" disabled> 
+						<input type="text" class="form-control" id="mata_pelajaran1" name="mata_pelajaran1" value="{{ $d->mata_pelajaran1 }}  {{ $d->mata_pelajaran2 }}  {{ $d->mata_pelajaran3 }}   {{ $d->mata_pelajaran4 }} {{ $d->mata_pelajaran5 }} {{ $d->mata_pelajaran6 }} {{ $d->mata_pelajaran7 }} {{ $d->mata_pelajaran8 }} {{ $d->mata_pelajaran9 }}" disabled> 
 					</div>
           
           <a href="{{route('register.edit',$d->id)}}" class="btn-edit-info" style="margin-left:auto;">Edit Informasi Login</a> 			
@@ -100,3 +103,4 @@
     <!-- /.content -->
  
   @endsection
+  

@@ -24,7 +24,8 @@ class JadwalController extends Controller
     public function index()
     {
         $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->get();
-        return view('murid.murid', compact('data'));
+        $datas = ModelSiswa::where('id', '=', Auth::user()->id)->get();
+        return view('murid.murid', compact('data', 'datas'));
     }
 
     public function tutor()
@@ -37,13 +38,13 @@ class JadwalController extends Controller
 
     public function admin()
     {
-        $data = ModelJadwal::all();
+        $data = ModelJadwal::where('status', 'MENUNGGU')->get();
         return view('dashboard_admin.list_pendaftaran_siswa', compact('data'));
     }
 
     public function adminTutor()
     {
-        $data = ModelJadwal::all();
+        $data = ModelJadwal::where('status', 'DIPILIH TUTOR')->get();
         return view('dashboard_admin.list_pendaftaran_tutor', compact('data'));
     }
 
@@ -57,6 +58,12 @@ class JadwalController extends Controller
     {
         $data = ModelJadwal::where('tutor_id', $id)->get();
         return view('dashboard_admin.jadwalTutor', compact('data'));
+    }
+
+    public function jadwalSiswaAdmin($id)
+    {
+        $data = ModelJadwal::where('murid_id', $id)->get();
+        return view('dashboard_admin.jadwalSiswa', compact('data'));
     }
 
     /**

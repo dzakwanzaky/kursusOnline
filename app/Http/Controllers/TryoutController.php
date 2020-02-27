@@ -21,7 +21,8 @@ class TryoutController extends Controller
 
     public function lihatSoal($id){
         $data = ModelSoal::where('id_to', $id)->get();
-        return view('dashboard_admin.daftarSoal', compact('data'));   
+        $datas = ModelTryout::where('id', $id)->get();
+        return view('dashboard_admin.daftarSoal', compact('data', 'datas'));   
     }
     
     public function store(Request $request)

@@ -45,7 +45,7 @@
                 <tbody>
                     <tr>
                     @php $no = 1; @endphp
-                @foreach($jadwal as $d)
+                    @foreach($jadwal as $d)
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>
@@ -53,7 +53,7 @@
                         </td>
                         <td>
                         Kota
-                        {{ $d->datas->kota }}
+                        {{ $d->datas->kabupaten }}
                         Kecamatan
                         {{ $d->datas->kecamatan }}
                         Provinsi

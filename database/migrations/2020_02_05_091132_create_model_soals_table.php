@@ -17,6 +17,7 @@ class CreateModelSoalsTable extends Migration
             $table->bigIncrements('id');
             $table->string('id_to');
             $table->string('nomor_soal');
+            $table->string('file');
             $table->string('soal');
             $table->string('option_a');
             $table->string('option_b');

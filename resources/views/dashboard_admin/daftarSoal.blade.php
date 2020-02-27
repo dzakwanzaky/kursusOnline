@@ -24,17 +24,26 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-              <table class="table table-bordered table-striped table-responsive-md" id="siswa"> 
+              <table class="table table-bordered table-striped table-responsive-md" id="siswa">
+
+              
+              @foreach($datas as $d)
+              <a href="{{route('tambahSoal', $d->id)}}"
+              class="btn btn-md btn-success" style="float:right">Tambah Soal</a> 
+             @endforeach
+              <br>
+              <br>
               <thead class="thead-dark">
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
-                        <th>Nomor Soal</th>
+                        <th>No</th>
                         <th>Soal</th>
+                        <th>Gambar</th>
                         <th>Option A</th>
                         <th>Option B</th>
                         <th>Option C</th>
                         <th>Option D</th>
                         <th>Option E</th>
-                        <th>Jawaban dan Pembahasan</th>
+                        <th>Jawaban</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -45,19 +54,24 @@
                     <tr>   
                         <td>{{ $d->nomor_soal }}</td>
                         <td>{!! $d->soal !!}</td>
+                        <td>
+                        <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
+                          <img width="50px" src="{{ url('/data_file/'.$d->file) }}">
+                        </a> 
+                        </td>
                         <td>{{ $d->option_a }}</td>
                         <td>{{ $d->option_b }}</td>
                         <td>{{ $d->option_c }}</td>
                         <td>{{ $d->option_d }}</td>
                         <td>{{ $d->option_e }}</td>
                         <td>{!! $d->jawaban !!}</td>
-                        <td>
-                        <form action="{{ route('soal.destroy', $d->id) }}" method="post" class="destroy">
-                        <a type="button" class="btn btn-primary" href="{{route('soal.edit',$d->id)}}">Edit</a>
-                        {{ csrf_field() }}
-                        {{ method_field('DELETE') }}   
-                        <button type="submit" class="btn btn-md btn-danger" style="color:white">Hapus</button>
-                        </form>
+                        <td class="d-flex">
+                          <form action="{{ route('soal.destroy', $d->id) }}" method="post" class="destroy">
+                          <a type="button" class="btn btn-sm btn-primary mr-2" href="{{route('soal.edit',$d->id)}}">Edit</a>
+                          {{ csrf_field() }}
+                          {{ method_field('DELETE') }}   
+                          <button type="submit" class="btn btn-sm btn-danger mr-2" style="color:white">Hapus</button>
+                          </form>
                         </td>
                     </tr>
                     @endforeach

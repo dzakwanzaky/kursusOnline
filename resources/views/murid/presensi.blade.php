@@ -1,3 +1,4 @@
+
 @extends('murid/base')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
@@ -26,17 +27,17 @@
             <form action="{{ route('absen.update', $d->id) }}" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			{{ method_field('PUT') }}
+              <div class="form-group"> <!-- Date input -->
+                <label  class="control-label" for="tanggal">Date</label>
+                <input class="form-control" id="tanggal" name="tanggal" placeholder="MM/DD/YYY" type="text"/>
+              </div>
               <div class="form-group">
-						    <label for="">Tanggal :</label>
-						    <input type="text" class="form-control" id="tanggal" name="tanggal">
-					    </div>
+              <label for="name" >Waktu Mulai</label>
+              <input class="form-control" id="single-input" name="waktu_mulai" value="">
+              </div>
               <div class="form-group">
-						    <label for="">Waktu Mulai :</label>
-						    <input type="text" class="form-control" id="waktu_mulai" name="waktu_mulai">
-					    </div>
-              <div class="form-group">
-						    <label for="">Waktu Selesai :</label>
-						    <input type="text" class="form-control" id="waktu_selesai" name="waktu_selesai">
+						    <label for="name">Waktu Selesai :</label>
+                <input class="form-control" id="single-input-2" name="waktu_selesai" value="">
 					    </div>
               <div class="form-group">
 						    <label for="">Saran, Kritikan dan Masukkan :</label>
@@ -63,8 +64,42 @@
   @endsection
   @section('sweet')
   <script>
-  $(function(){
-  $('#datepicker').datepicker();
-  });
+   $(document).ready(function(){
+      var date_input=$('input[name="tanggal"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'dd MM yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+      
+  
+    })
   </script>
+  <script>
+var input = $('#single-input').clockpicker({
+    placement: 'bottom',
+    align: 'left',
+    autoclose: true,
+    'default': 'now'
+});
+var input = $('#single-input-2').clockpicker({
+    placement: 'bottom',
+    align: 'left',
+    autoclose: true,
+    'default': 'now'
+});
+
+// Manually toggle to the minutes view
+$('#check-minutes').click(function(e){
+    // Have to stop propagation here
+    e.stopPropagation();
+    input.clockpicker('show')
+            .clockpicker('toggleView', 'minutes');
+});
+  </script>
+
+ 
   @endsection

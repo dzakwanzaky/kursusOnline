@@ -33,12 +33,11 @@
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                   <th>No.</th>
                   <th>Nama Lengkap</th>
-                  <th>Pendidikan</th>
-                  <th>Kelas Yang Diajar</th>
-                  <th>Mata Pelajaran</th>
+                  <th>Jenis Kelamin</th>
                   <th>Alamat</th>
-                  <th>CV</th>
                   <th>Status</th>
+                  <th>Aksi</th>
+
                </tr>
               </thead>
               <tbody>
@@ -46,22 +45,13 @@
                     @php $no = 1; @endphp
                     @foreach($data as $d)
                         <td>{{ $no++ }}</td>
+                        <td>{{ $d->jenis_kelamin }}</td>
                         <td>{{ $d->nama_tutor }}</td>
-                        <td>{{ $d->pendidikan }}</td>
-                        <td>{{ $d->kelas1 }} {{ $d->kelas2 }} {{ $d->kelas3 }} {{ $d->kelas4 }} {{ $d->kelas5 }} {{ $d->kelas6 }}</td>
-                        <td>{{ $d->mata_pelajaran1 }} {{ $d->mata_pelajaran2 }} {{ $d->mata_pelajaran3 }} {{ $d->mata_pelajaran4 }}</td>
-                        <td>{{ $d->kota }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
-                        <td>
-                        
-                          <a width="100px" href="{{ url('/data_file/'.$d->file) }}">File</a>
-                      
-                          </td>
-
-                      <form action="{{ route('dataTutor.update', $d->id) }}" method="post" enctype="multipart/form-data">
+                        <td>{{ $d->kabupaten }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
+                      <td><form action="{{ route('dataTutor.update', $d->id) }}" method="post" enctype="multipart/form-data">
                           {{ csrf_field() }}
                           {{ method_field('PUT') }}
-                        <td>
-                        <input style="display:none" type="text" class="form-control" id="nama_tutor" name="nama_tutor" value="{{ $d->nama_tutor }}">
+                          <input style="display:none" type="text" class="form-control" id="nama_tutor" name="nama_tutor" value="{{ $d->nama_tutor }}">
                          <input style="display:none" type="text" class="form-control" id="pendidikan" name="pendidikan" value="{{ $d->pendidikan }}">
                           <input style="display:none" type="text" class="form-control" id="mata_pelajaran" name="mata_pelajaran" value="{{ $d->mata_pelajaran }}">
                           <input style="display:none"  type="text" class="form-control" id="kota" name="kota" value="{{ $d->kota }}">
@@ -69,6 +59,12 @@
                           <input style="display:none" type="text" class="form-control" id="provinsi" name="provinsi" value="{{ $d->provinsi }}">
                         <button value="AKTIF" id="status" name="status" class="btn btn-sm btn-primary" type="submit" style="text-align:center"> 
                         {{ $d->status }}</button>
+                        </td>
+                        <td>
+                        <a id="status" name="status" class="btn btn-sm btn-primary mr-2" style="color:white" href="{{route('profileTutorAdmin', $d->id)}}"> DETAIL</a>
+                        <a class="btn btn-sm btn-primary mr-2" type="submit" style="color:white" href="{{route('jadwalTutor', $d->id)}}">JADWAL</a>
+
+                  
                         </td>
                       </form>
                     </tr>

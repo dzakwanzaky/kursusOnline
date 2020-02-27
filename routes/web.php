@@ -189,6 +189,7 @@ Route::middleware(['admin'])->group(function () {
     Route::get('list_pendaftaranSiswa','JadwalController@admin');
     Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
     Route::get('jadwalTutor/{id}','JadwalController@jadwalTutorAdmin')->name('jadwalTutor');
+    Route::get('jadwalSiswa/{id}','JadwalController@jadwalSiswaAdmin')->name('jadwalSiswa');
     Route::get('daftarSiswa','SiswaController@daftarSiswa');
     Route::get('daftarSiswaBelumAktif','SiswaController@daftarSiswaBelumAktif');
     Route::get('daftarSiswaTidakAktif','SiswaController@daftarSiswaTidakAktif');
