@@ -1,4 +1,4 @@
-@extends('dashboard_admin/base')
+@extends('dashboard_admin/baseTutor')
 @section('content')
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
@@ -59,7 +59,7 @@
                         <button value="AKTIF" id="status" name="status" class="btn btn-sm btn-primary" type="submit" style="text-align:center"> 
                         {{ $d->status }}</button>
                         </td>
-                        <td>
+                        <td class="d-flex">
                         <a id="status" name="status" class="btn btn-sm btn-primary mr-2" style="color:white" href="{{route('profileTutorAdmin', $d->id)}}"> DETAIL</a>
                         <a class="btn btn-sm btn-primary mr-2" type="submit" style="color:white" href="{{route('jadwalTutor', $d->id)}}">JADWAL</a>
 

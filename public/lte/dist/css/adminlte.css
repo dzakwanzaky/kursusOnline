@@ -238,7 +238,7 @@ button {
 
 .btn-edit {
   display: block;
-  padding: 5px 20px;
+  padding: 5px 23px;
   font-size: 16px;
   border: 1px solid #158ADF;
   color: #158ADF;
@@ -266,7 +266,7 @@ button {
 
 .btn-edit-info {
   display: block;
-  padding: 5px 20px;
+  padding: 5px 28px;
   font-size: 16px;
   border: 1px solid #158ADF;
   color: #158ADF;
@@ -10008,6 +10008,12 @@ body,
 
 .content-header {
   padding: 15px 0.5rem;
+}
+
+.content-header-2 {
+  padding: 15px 0.5rem;
+  background: #F4F6F9;
+
 }
 
 .content-header h1 {

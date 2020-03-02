@@ -27,8 +27,8 @@ Route::put('dataTutor/{id}','API\TutorControllerAPI@update');
 Route::get('profilTutor','API\TutorControllerAPI@profileTutor');
 
 //Register Login Controller
-Route::post('auth','API\AuthControllerAPI@store');
-Route::get('auth','API\AuthControllerAPI@login');
+Route::post('register','API\AuthControllerAPI@store');
+Route::post('login','API\AuthControllerAPI@login');
 
 
 

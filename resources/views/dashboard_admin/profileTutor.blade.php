@@ -83,10 +83,8 @@
           <div class="form-group">
 						<label for="">Mata Pelajaran :</label>
 						<input type="text" class="form-control" id="mata_pelajaran1" name="mata_pelajaran1" value=" {{ $d->mata_pelajaran1 }} {{ $d->mata_pelajaran2 }} {{ $d->mata_pelajaran3 }} {{ $d->mata_pelajaran4 }} {{ $d->mata_pelajaran5 }} {{ $d->mata_pelajaran6 }} {{ $d->mata_pelajaran7 }} {{ $d->mata_pelajaran8 }} {{ $d->mata_pelajaran9 }}" disabled> 
-					</div>
-
-       
-@endforeach
+					</div>    
+      @endforeach
 				
               </div>
             </div>

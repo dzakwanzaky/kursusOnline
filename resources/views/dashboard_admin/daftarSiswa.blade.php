@@ -1,4 +1,4 @@
-@extends('dashboard_admin/base')
+@extends('dashboard_admin/baseMurid')
 @section('content')
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Daftar Siswa Aktif</h1>
+            <h1 class="m-0 text-dark" style="float:left">Daftar Siswa Aktif</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             
@@ -24,16 +24,13 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-              <div class="alert alert-info" style="font-size:14px">
-                        <strong>INFO!</strong> Jika bukti pembayaran sudah sesuai, klik tombol <strong>BELUM DIBAYAR</strong>
-                        pada tabel status sebagai tanda pembayaran telah diterima. 
-                    </div>
+
               <table class="table table-bordered table-striped table-responsive-md" id="siswa"> 
               <thead class="thead-dark">
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
 
                   <th>No.</th>
-                  <th>Nama Lengkap</th>
+                  <th>Nama</th>
                   <th>Jenis Kelamin</th>
                   <th>Alamat</th>
                   <th>Status</th>
@@ -53,8 +50,6 @@
                       <form action="{{ route('dataSiswa.update', $d->id) }}" method="post" enctype="multipart/form-data">
                           {{ csrf_field() }}
                           {{ method_field('PUT') }}
-                         
-
                         <td>
                         <input style="display:none" type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="{{ $d->nama_siswa }}">
                         <input style="display:none" type="text" class="form-control" id="provinsi" name="provinsi" value="{{ $d->provinsi }}">
@@ -69,7 +64,7 @@
                         @if($d->files->file==null)
                         <button name="status" class=" btn btn-sm btn-danger" style="text-align:center">BELUM UPLOAD</button>
 
-                    </a>
+                         
                       @else
                         <a href="{{ url('/data_file/'.$d->files->file) }}" target="_blank">
                           <img width="100px" src="{{ url('/data_file/'.$d->files->file) }}">
@@ -77,19 +72,17 @@
                           @endif
                         </td>
 
-                      <td>
+                      <td class="d-flex">
                       @endforeach
                       @foreach($data as $d)
-                    <form action="{{route('status', $d->id)}}" enctype="multipart/form-data">  
-                    <a class="btn btn-sm btn-primary mr-2" type="submit" style="color:white" href="{{route('jadwalSiswa', $d->id)}}">JADWAL</a>
-               
+                    <form action="{{route('status', $d->id)}}" enctype="multipart/form-data">                      
                     {{ csrf_field() }}
-                      <input style="display:none"value="TIDAK AKTIF" id="status" name="status"></input>
-                      <button type="submit" class="btn btn-sm btn-primary" style="text-align:center">HAPUS</button> 
-
-                    </form>
+                    <input style="display:none" value="TIDAK AKTIF" id="status" name="status"></input>
+                    <a class="btn btn-sm btn-info mr-2" data-toggle="tooltip" data-placement="top" title="Detail Profil" style="color:white" href="{{route('profileSiswaAdmin', $d->id)}}"> <i class="fas fa-info-circle"></i></a>
+                    <a class="btn btn-sm btn-warning mr-2" data-toggle="tooltip" data-placement="top" title="Jadwal Siswa" type="submit" style="color:white" href="{{route('jadwalSiswa', $d->id)}}"><i class="fas fa-calendar-alt"></i></a>
+                    <button type="submit" class="btn btn-sm btn-danger mr-2" data-toggle="tooltip" data-placement="top" title="Hapus" style="text-align:center"><i class="far fa-trash-alt"></i></button>
                      </td>
-
+                     </form>
                     </tr>
                     @endforeach
 
@@ -117,5 +110,9 @@
          $(document).ready( function () {
            $('#siswa').DataTable();
            });
-      </script>
+
+           $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+  </script>
   @endsection

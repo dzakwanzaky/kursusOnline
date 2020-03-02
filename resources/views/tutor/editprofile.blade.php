@@ -44,8 +44,9 @@
                 <form action="{{ route('dataTutor.update', $d->id) }}" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			{{ method_field('PUT') }}
+      <a href="{{route('register.edit',$d->id)}}" class="btn-edit-info" style="margin-left:auto;">Pengaturan Akun</a> 			
+
                     <div class="form-group">
-                        <label for="">Foto :</label>
                         <br/>
                         @if($d->foto==null)
                     <img class="navbar-brand-full" src="{{('/tema/images/user.png')}}" width="300px" alt="upload foto" style="display:block; margin-left:auto; margin-right:auto;">

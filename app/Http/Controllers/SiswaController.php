@@ -63,6 +63,12 @@ class SiswaController extends Controller
         return view('murid.profile', compact('data', 'user'));
     }
 
+    
+    public function profileSiswaAdmin($id){
+        $data = ModelSiswa::where('id', $id)->get();
+        return view('dashboard_admin.profileSiswa', compact('data'));
+    }
+
     public function store(Request $request)
     {
         $data = new ModelSiswa();

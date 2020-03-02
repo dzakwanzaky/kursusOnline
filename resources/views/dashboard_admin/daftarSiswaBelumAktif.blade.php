@@ -1,4 +1,4 @@
-@extends('dashboard_admin/base')
+@extends('dashboard_admin/baseMurid')
 @section('content')
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
@@ -38,6 +38,7 @@
                   <th>Alamat</th>
                   <th>Status</th>
                   <th>Bukti Pembayaran</th>
+                  <th>Aksi</th>
                </tr>
               </thead>
               <tbody>
@@ -49,19 +50,15 @@
                         <td>{{ $d->jenis_kelamin }}</td>
                         <td>{{ $d->kabupaten }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
 
-                      <form action="{{ route('dataSiswa.update', $d->id) }}" method="post" enctype="multipart/form-data">
-                          {{ csrf_field() }}
-                          {{ method_field('PUT') }}
+              
                          
 
                         <td>
-                        <input style="display:none" type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="{{ $d->nama_siswa }}">
-                        <input style="display:none" type="text" class="form-control" id="provinsi" name="provinsi" value="{{ $d->provinsi }}">
-                          <input style="display:none" type="text" class="form-control" id="kabupaten" name="kabupaten" value="{{ $d->kabupaten }}">
-                          <input style="display:none" type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{ $d->kecamatan }}">
-                        <button value="AKTIF" id="status" name="status" type="submit" class=" btn btn-sm btn-primary" style="text-align:center"> 
+                  
+                        <button class=" btn btn-sm btn-primary" style="text-align:center"> 
                         {{ $d->status }}</button>
                         </td>
+                       
                       </form>
                     
                         <td>
@@ -74,6 +71,19 @@
                           <img width="100px" src="{{ url('/data_file/'.$d->files->file) }}">
                           </a>
                           @endif
+                        </td>
+                        <form action="{{ route('dataSiswa.update', $d->id) }}" method="post" enctype="multipart/form-data">
+                          {{ csrf_field() }}
+                          {{ method_field('PUT') }}
+                        <td class="d-flex">
+                        <input style="display:none" type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="{{ $d->nama_siswa }}">
+                        <input style="display:none" type="text" class="form-control" id="provinsi" name="provinsi" value="{{ $d->provinsi }}">
+                          <input style="display:none" type="text" class="form-control" id="kabupaten" name="kabupaten" value="{{ $d->kabupaten }}">
+                          <input style="display:none" type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{ $d->kecamatan }}">
+                          <a class="btn btn-sm btn-info mr-2" data-toggle="tooltip" data-placement="top" title="Detail Profil" style="color:white" href="{{route('profileSiswaAdmin', $d->id)}}"> <i class="fas fa-info-circle"></i></a>
+                          <a class="btn btn-sm btn-warning mr-2" data-toggle="tooltip" data-placement="top" title="Jadwal Siswa" type="submit" style="color:white" href="{{route('jadwalSiswa', $d->id)}}"><i class="fas fa-calendar-alt"></i></a>
+                        <button value="AKTIF" id="status" data-toggle="tooltip" data-placement="top" title="Konfirmasi" name="status" type="submit" class=" btn btn-sm btn-success" style="text-align:center"> 
+                        <i class="fas fa-check"></i></button>
                         </td>
                     </tr>
                     @endforeach
@@ -102,5 +112,9 @@
          $(document).ready( function () {
            $('#siswa').DataTable();
            });
+
+           $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
       </script>
   @endsection

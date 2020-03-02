@@ -204,6 +204,9 @@ Route::middleware(['admin'])->group(function () {
     Route::get('statusTutor/{id}','TutorController@statusTutor')->name('statusTutor');
     Route::get('kehadiranTutor/{id}','AbsenController@kehadiranTutor')->name('kehadiranTutor');
     Route::get('profileTutorAdmin/{id}','TutorController@profileTutorAdmin')->name('profileTutorAdmin');
+    Route::get('profileSiswaAdmin/{id}','SiswaController@profileSiswaAdmin')->name('profileSiswaAdmin');
+    Route::post('importExcel','SoalController@importExcel')->name('importExcel');
+
 });
 
 Route::middleware(['tutor'])->group(function () {

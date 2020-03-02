@@ -48,7 +48,7 @@
       @php $no = 1; @endphp
       @foreach($data as $d)
       <td>
-				<a href="{{route('editAdmin',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Profile</a>       
+				<a href="{{route('editAdmin',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Profil</a>       
 			</td>
      
 					<div class="form-group">

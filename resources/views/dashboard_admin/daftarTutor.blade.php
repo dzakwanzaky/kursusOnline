@@ -1,4 +1,4 @@
-@extends('dashboard_admin/base')
+@extends('dashboard_admin/baseTutor')
 @section('content')
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">

@@ -18,8 +18,7 @@
     </div>
     
     <!-- /.content-header -->
-    <form method="POST" action="{{ route('soal.store')}}" enctype="multipart/form-data">                 
-                  {{ csrf_field() }}
+ 
     <!-- Main content -->
     <div id="content" class="content">
     <div class="container-fluid">
@@ -31,61 +30,41 @@
               
       <input style="display:none" id="id_to" name="id_to" value="{{ $id }}"></input>
       <div class="panel-body">
-      <button type="button" name="add" id="add" class="btn btn-success" style="float:right">+ Tambah Soal</button>       
-      <div>
-          <b>Masukkan Nomor Soal :</b>
-      </div>     
-      <input type="text" class="form-control" id="nomor_soal" name="nomor_soal[]" style="width:12%" placeholder="Nomor Soal">
+      <button type="button" name="add" id="add" class="btn btn-success mr-2" style="float:right">+ Tambah Soal</button>       
+      <button type="button" name="add" id="add" class="btn btn-primary mr-2" style="float:right" target="_blank" data-toggle="modal" data-target="#importExcel">+ Upload Soal</button>       
 
-      <br>
-      <div>
-         <b> Gambar : </b>
-      </div>  
-      <input type="file" class="form-control" id="file" name="file[]">
-            
-      <br>
-      <div>
-          <b>Masukkan Isi Soal :</b>
-      </div>
-            <textarea id="soal" name="soal[]"></textarea>
-      <br>
-      <div>
-          <b>Masukkan Pilihan Jawaban :</b>
-      </div>
-      
-      <label>A
-      <input type="text" class="form-control" id="option_a" name="option_a[]">
-      </label>
+      <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                      <form method="post" action="{{ route('importExcel')}}" enctype="multipart/form-data">
+                      {{ csrf_field() }}
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Upload Soal</h5>
+                            </div>
+                            <div class="modal-body">
+                            <input style="display:none" id="id_to" name="id_to" value="{{ $id }}"></input>
 
-      <label>B
-      <input type="text" class="form-control" id="option_b" name="option_b[]">
-      </label>
-
-      <label>C
-      <input type="text" class="form-control" id="option_c" name="option_c[]">
-      </label>
-
-      <label>D
-      <input type="text" class="form-control" id="option_d" name="option_d[]">
-      </label>
-
-      <label>E
-      <input type="text" class="form-control" id="option_e" name="option_e[]">
-      </label>
-
-      <br>
-      <br>
-      <div>
-          <b>Masukkan Jawaban Benar dan Pembahasan :</b>
-      </div>
-            <textarea id="jawaban" name="jawaban[]"></textarea>
-
+                              <label>Pilih file</label>
+                              <div class="form-group">
+                                <input type="file" name="file" required="required">
+                              </div>
+                        
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary">Upload</button>
+                            </div>
+                          </div>
+                     </form>
+                      </div>
+                    </div>
         </div>
       </div>
     </div>
   </div>
   </div>
-
+  <form method="POST" action="{{ route('soal.store')}}" enctype="multipart/form-data">                 
+                  {{ csrf_field() }}
 <div id="body" class="content"></div> 
 
 </div>

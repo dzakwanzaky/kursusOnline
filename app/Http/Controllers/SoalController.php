@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\ModelSoal;
+use App\Imports\SoalImport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class SoalController extends Controller
 {
@@ -46,6 +49,17 @@ class SoalController extends Controller
     {
         $data = ModelSoal::where('id','=',$id)->get();
         return view('dashboard_admin.editSoal', compact('data'));
+    }
+
+    public function importExcel(Request $request)
+    {
+        $file = $request->file;
+        $nama_file = time()."_".$file->getClientOriginalName();  
+        $tujuan_upload = 'data_file';
+        $file->move($tujuan_upload, $nama_file);
+        Excel::import(new SoalImport($request->id_to), public_path('/data_file/'.$nama_file));
+        return redirect()->route('daftarTryout');
+
     }
 
     public function update(Request $request, $id)
