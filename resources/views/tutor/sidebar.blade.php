@@ -27,9 +27,9 @@
                with font-awesome or any other icon font library -->
                <li class="nav-item">
             <a href="/tutor" class="nav-link {{ Request::segment(1) === 'tutor' ? 'nav-link active' : null }}">
-              <i class="far fa-circle nav-icon"></i>
+            <i class="fas fa-user-graduate nav-icon"></i>
               <p>
-                Manajemen Murid
+                Pendaftaran Les Siswa
               </p>
             </a>
           </li>

@@ -32,7 +32,7 @@ class JadwalController extends Controller
     {
         $data = ModelTutor::where('id', '=', Auth::user()->id)->first();
         $jadwal = ModelJadwal::whereIn('program',
-        [$data->program])->get();
+        [$data->program])->where('status', 'MENUNGGU')->get();
         return view('tutor.tutor', compact('jadwal'));
     }
 
@@ -50,7 +50,7 @@ class JadwalController extends Controller
 
     public function jadwalTutor()
     {
-        $data = ModelJadwal::where('status', 'AKTIF')->get();
+        $data = ModelJadwal::where('tutor_id', '=', Auth::user()->id)->where('status', 'DIPILIH TUTOR', 'AKTIF')->get();
         return view('tutor.jadwal', compact('data'));
     }
 
@@ -64,6 +64,13 @@ class JadwalController extends Controller
     {
         $data = ModelJadwal::where('murid_id', $id)->get();
         return view('dashboard_admin.jadwalSiswa', compact('data'));
+    }
+
+    
+    public function jadwalSiswaTutor($id)
+    {
+        $data = ModelJadwal::where('murid_id', $id)->get();
+        return view('tutor.detailJadwal', compact('data'));
     }
 
     /**

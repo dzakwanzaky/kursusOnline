@@ -22,14 +22,13 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12">
-            <div class="card">
-              <div class="card-body">
-             
+            <div class="card" >
+            <div class="card-body table-responsive-m"  style="overflow-x:auto;" >             
               <table class="table table-bordered table-striped table-responsive-md" id="datakaryawan"> 
               <thead class="thead-dark"> 
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                   <th>No.</th>
-                  <th>Nama Lengkap</th>
+                  <th>Nama</th>
                   <th>Jenis Kelamin</th>
                   <th>Alamat</th>
                   <th>Status</th>
@@ -49,15 +48,15 @@
                         <button id="status" name="status" class="btn btn-sm btn-primary" type="submit" style="text-align:center"> 
                         {{ $d->status }}</button>
                         </td>
-                        <td class="d-flex ">
+                        <td class="text-center d-flex">
                         @endforeach
                       @foreach($data as $d)
                     <form action="{{route('statusTutor', $d->id)}}" enctype="multipart/form-data">                 
                     {{ csrf_field() }}
                     <input style="display:none"value="TIDAK AKTIF" id="status" name="status"></input>
-                        <a id="status" name="status" class="btn btn-sm btn-primary mr-2" style="color:white" href="{{route('profileTutorAdmin', $d->id)}}"> DETAIL</a>
-                        <a class="btn btn-sm btn-primary mr-2" type="submit" style="color:white" href="{{route('jadwalTutor', $d->id)}}">JADWAL</a>
-                        <button type="submit" class="btn btn-sm btn-primary" style="text-align:center">HAPUS</button> 
+                        <a id="status" name="status" class="btn btn-sm btn-info mr-2"  data-toggle="tooltip" data-placement="top" title="Detail Profil" style="color:white" href="{{route('profileTutorAdmin', $d->id)}}"><i class="fas fa-info-circle"></i></a>
+                        <a class="btn btn-sm btn-warning mr-2"  data-toggle="tooltip" data-placement="top" title="Jadwal Siswa" type="submit" style="color:white" href="{{route('jadwalTutor', $d->id)}}"><i class="fas fa-calendar-alt"></i></a>
+                        <button type="submit" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="Hapus" style="text-align:center"><i class="far fa-trash-alt"></i></button> 
                         </td>
                     </form>
                     </tr>
@@ -85,5 +84,9 @@
          $(document).ready( function () {
            $('#datakaryawan').DataTable();
            });
+
+           $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
   </script>
   @endsection

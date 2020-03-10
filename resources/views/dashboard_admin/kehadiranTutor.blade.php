@@ -23,7 +23,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card">
-              <div class="card-body">
+            <div class="card-body table-responsive-m"  style="overflow-x:auto;" >             
               <table class="table table-responsive-lg table-bordered small" id="jadwal">
                 <thead class="thead-dark"> 
                    <tr>

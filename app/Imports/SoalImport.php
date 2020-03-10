@@ -6,7 +6,7 @@ use App\ModelSoal;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class SoalImport implements ToModel
+class SoalImport implements ToModel, WithHeadingRow
 {
     public function __construct($id_to) {
         $this->_id_to = $id_to;
@@ -20,17 +20,22 @@ class SoalImport implements ToModel
     {
         return new ModelSoal([
             'id_to' => $this->_id_to,
-            'nomor_soal' => $row[0],
-            'file' => $row[1], 
-            'soal' => $row[2], 
-            'option_a' => $row[3], 
-            'option_b' => $row[4],
-            'option_c' => $row[5],
-            'option_d' => $row[6],
-            'option_e' => $row[7],
-            'jawaban' => $row[8],
-            'pembahasan' => $row[9],
+            'nomor_soal' => $row['nomor_soal'],
+            'file' => $row['gambar'], 
+            'soal' => $row['soal'], 
+            'option_a' => $row['pilihan_a'], 
+            'option_b' => $row['pilihan_b'],
+            'option_c' => $row['pilihan_c'],
+            'option_d' => $row['pilihan_d'],
+            'option_e' => $row['pilihan_e'],
+            'jawaban' => $row['jawaban'],
+            'pembahasan' => $row['pembahasan'],
         ]);
+    }
+
+    public function headingRow(): int
+    {
+        return 4;
     }
     
 

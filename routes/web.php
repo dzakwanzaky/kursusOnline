@@ -213,6 +213,7 @@ Route::middleware(['tutor'])->group(function () {
     Route::get('tutor','JadwalController@tutor')->name('tutor');
     Route::get('jadwal','JadwalController@jadwalTutor');
     Route::get('profile','TutorController@profileTutor');
+    Route::get('detailJadwal/{id}','JadwalController@jadwalSiswaTutor')->name('detailJadwal');
 
 });
 

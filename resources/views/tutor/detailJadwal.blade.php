@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Jadwal Mengajar</h1>
+            <h1 class="m-0 text-dark">Detail Jadwal Siswa</h1>
             
           </div><!-- /.col -->
           <div class="col-sm-6">
@@ -25,20 +25,17 @@
               <div class="card-body">
               <table class="table table-responsive-lg table-bordered small" id="jadwal">
                 <thead class="thead-dark">
-                <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
-                                    <th rowspan="2">No.</th>
-                                    <th rowspan="2">Nama</th>
-                                    <th rowspan="2">Jenis Kelamin</th>
-                                    <th rowspan="2">Alamat</th>
-                                    <th rowspan="2">Mata Pelajaran</th>
-                                    <th colspan="3">Sesi</th>
-                                    <th rowspan="2">Aksi</th>
-                                </tr>
-                                <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
-                                    <th>1</th>
-                                    <th>2</th>
-                                    <th style="border-right:1px solid">3</th>
-                                </tr>
+                <tr>
+                        <th>No.</th>
+                        <th>Nama</th>
+                        <th>Program</th>
+                        <th>Kelas</th>
+                        <th>Mata Pelajaran</th>
+                        <th>Hari</th>
+                        <th>Hari</th>
+                        <th>Hari</th>
+                        <th>Waktu</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -46,7 +43,8 @@
                 @foreach($data as $d)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $d->name }}</td>
+                        <td>{{ $d->nama_murid }}</td>
+                        <td>{{ $d->program }}</td>
                         <td>{{ $d->kelas }}</td>
                         <td>{{ $d->mata_pelajaran }}</td>
                         <td>{{ $d->hari1 }}</td>
@@ -69,16 +67,8 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
-  
-@endsection
-@section('sweet')
-<script>
-    $(document).ready(function () {
-        $('#jadwal').DataTable();
-    });
-
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-</script>
-@endsection
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+  @endsection

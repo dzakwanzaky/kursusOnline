@@ -23,10 +23,8 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card">
-              <div class="card-body">
+              <div class="card-body table-responsive-sm" style="overflow-x:auto;">
               <table class="table table-bordered table-striped table-responsive-md" id="siswa">
-
-              
               @foreach($datas as $d)
               <a href="{{route('tambahSoal', $d->id)}}"
               class="btn btn-md btn-success" style="float:right">Tambah Soal</a> 
@@ -35,17 +33,20 @@
               <br>
               <thead class="thead-dark">
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
-                        <th>No</th>
-                        <th>Soal</th>
-                        <th>Gambar</th>
-                        <th>Option A</th>
-                        <th>Option B</th>
-                        <th>Option C</th>
-                        <th>Option D</th>
-                        <th>Option E</th>
-                        <th>Jawaban</th>
-                        <th>Aksi</th>
-                    </tr>
+                        <th rowspan="2">No</th>
+                        <th rowspan="2">Soal</th>
+                        <th rowspan="2">Gambar</th>
+                        <th colspan="5">Option</th>
+                        <th rowspan="2">Jawaban</th>
+                        <th rowspan="2">Aksi</th>
+                </tr>
+                <tr  class="table-secondary" style="text-align:center; text-transform: uppercase">
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th style="border-right:1px solid">E</th>
+                </tr>
                 </thead>
                 <tbody>
                       
@@ -96,10 +97,12 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
   @endsection
-  @section('sweet')
+  @push('script')
   <script>
          $(document).ready( function () {
-           $('#siswa').DataTable();
+           $('#siswa').DataTable({
+            responsive: true
+           });
            });
       </script>
-  @endsection
+  @endpush

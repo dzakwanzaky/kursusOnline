@@ -23,7 +23,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card">
-              <div class="card-body">
+            <div class="card-body table-responsive-m"  style="overflow-x:auto;" >             
               <div class="alert alert-info" style="font-size:14px">
                         <strong>INFO!</strong> Jika jadwal sudah sesuai dan tutor memenuhi syarat, klik tombol <strong>MENUNGGU</strong>
                         pada tabel status dan status akan berubah menjadi <strong>AKTIF</strong>.
@@ -60,9 +60,9 @@
                         {{ $d->status }}</button>
                         </td>
                         <td class="d-flex">
-                        <a id="status" name="status" class="btn btn-sm btn-primary mr-2" style="color:white" href="{{route('profileTutorAdmin', $d->id)}}"> DETAIL</a>
-                        <a class="btn btn-sm btn-primary mr-2" type="submit" style="color:white" href="{{route('jadwalTutor', $d->id)}}">JADWAL</a>
-
+                        <a id="status" data-toggle="tooltip"
+                                                data-placement="top" title="Detail Profil" name="status" class="btn btn-sm btn-info mr-2" style="color:white" href="{{route('profileTutorAdmin', $d->id)}}"><i
+                                                    class="fas fa-info-circle"></i></a>
                   
                         </td>
                       </form>
@@ -91,5 +91,9 @@
          $(document).ready( function () {
            $('#datakaryawan').DataTable();
            });
+
+           $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
       </script>
   @endsection

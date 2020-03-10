@@ -23,7 +23,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card">                 
-              <div class="card-body">
+            <div class="card-body table-responsive-m"  style="overflow-x:auto;" >             
               <div class="alert alert-info" style="font-size:14px">
                         <strong>INFO!</strong> Jika ingin mengubah isi paket program, klik tombol<strong>EDIT</strong>
                         pada kolom aksi dan nanti akan menuju ke halaman edit untuk mengubah isi paket program.

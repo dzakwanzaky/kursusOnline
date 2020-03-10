@@ -42,7 +42,7 @@
             nav-link {{ Request::segment(1) === 'daftarSiswaTidakAktif' ? 'nav-link active' : null }}">
                 <i class="fas fa-user-graduate nav-icon"></i>
               <p>
-                Manajemen Murid
+                Manajemen Siswa
               </p>
             </a>
        
