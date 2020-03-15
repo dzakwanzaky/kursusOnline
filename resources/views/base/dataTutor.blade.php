@@ -110,7 +110,7 @@
 
                         <div class="form-title">
 
-                        <select id="program" name="program" class="form-control">
+                        <select id="program" name="program" class="form-control" required>
                         <option value="_none">Pilih Program</option>
                             <option value="SD">SD</option>
                             <option value="SMP">SMP</option>
@@ -125,7 +125,7 @@
                         </div>
                     </div>    
 
-                     <div class="form-group" id="kelasSD">
+                     <div class="form-group" id="kelasSD" required>
                         <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
                         <div class="form-round">
                             <input id="kelas1" type="checkbox" name="kelas1" value="1"/> Kelas 1 SD <br>
@@ -137,7 +137,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group" id="kelasSMP" name="kelasSMP">
+                        <div class="form-group" id="kelasSMP" name="kelasSMP" required>
                         <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
                         <div class="form-round">
                             <input id="kelas1" type="checkbox" name="kelas1" value="7"/> Kelas 7 SMP <br>
@@ -147,7 +147,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group" id="kelasSMA" name="kelasSMA">
+                        <div class="form-group" id="kelasSMA" name="kelasSMA" required>
                         <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
                         <div class="form-round">
                             <input id="kelas1" type="checkbox" name="kelas1" value="10"/> Kelas 10 SMA <br>
@@ -156,7 +156,7 @@
                             </div>
                         </div>
         
-                    <div class="form-group" id="matpelSD" name="matpelSD">
+                    <div class="form-group" id="matpelSD" name="matpelSD" required>
                         <label for="mata_pelajaran">Mata Pelajaran</label>
                         <div class="form-round">
                             <input  id="mata_pelajaran1" name="mata_pelajaran1"  type="checkbox" value="Matematika"/> Matematika <br>
@@ -165,7 +165,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group" id="matpelSMP" name="matpelSMP">
+                    <div class="form-group" id="matpelSMP" name="matpelSMP" required>
                         <label for="mata_pelajaran">Mata Pelajaran</label>
                         <div class="form-round">
                             <input  id="mata_pelajaran1" name="mata_pelajaran1"  type="checkbox" value="Matematika"/> Matematika <br>
@@ -176,7 +176,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group" id="matpelSMA" name="matpelSMA">
+                    <div class="form-group" id="matpelSMA" name="matpelSMA" required>
                         <label for="mata_pelajaran">Mata Pelajaran</label>
                         <div class="form-round">
                             <input  id="mata_pelajaran1" name="mata_pelajaran1"  type="checkbox" value="Matematika"/> Matematika <br>

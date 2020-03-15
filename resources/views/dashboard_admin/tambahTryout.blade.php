@@ -31,15 +31,22 @@
                                     {{ csrf_field() }}
 
                                     <div class="card-body">
-                                        <div class="text-center" style="float:left">
+                                        <div class="text-center{{ $errors->has('nama') ? ' has-error' : '' }}" style="float:left">
                                             <label>Nama Tryout</label>
                                             <input type="text" class="form-control-half" id="nama" name="nama"
-                                                style="float:left">
+                                                style="float:left" required>
+
+                                            @if ($errors->has('nama'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('nama') }}</strong>
+                                            </span>
+                                            @endif
+
                                         </div>
                                         <div style="float:right">
                                             <label>Jumlah Soal</label>
                                             <input type="text" class="form-control-half" id="jumlah_soal"
-                                                name="jumlah_soal" style="float:right">
+                                                name="jumlah_soal" style="float:right" required>
                                         </div>
 
 
@@ -47,7 +54,7 @@
 
                                     <div class="card-body">
                                         <label for="">Kategori :</label>
-                                        <select id="kategori" name="kategori" class="form-control">
+                                        <select id="kategori" name="kategori" class="form-control" required>
                                             <option value="_none">-Pilih Kategori-</option>
                                             <option value="Senin">SD</option>
                                             <option value="Selasa">SMP</option>

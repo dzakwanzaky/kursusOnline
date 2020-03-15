@@ -138,12 +138,6 @@ Route::get('/profileSiswa', function () {
 Route::get('/profileAdmin', function () {
     return view('dashboard_admin/profileAdmin');
 });
-Route::get('/list_pendaftaranSiswa', function () {
-    return view('dashboard_admin/list_pendaftaran_siswa');
-});
-Route::get('/list_pendaftaranTutor', function () {
-    return view('dashboard_admin/list_pendaftaran_tutor');
-});
 Route::get('/editAdmin', function () {
     return view('dashboard_admin/edit');
 });
@@ -188,6 +182,8 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin', 'AdminController@index');
     Route::get('list_pendaftaranSiswa','JadwalController@admin');
     Route::get('list_pendaftaranTutor','JadwalController@adminTutor');
+    Route::get('jadwalAktif','JadwalController@jadwalAktif')->name('jadwalAktif');
+    Route::get('jadwalTidakAktif','JadwalController@jadwalTidakAktif');
     Route::get('jadwalTutor/{id}','JadwalController@jadwalTutorAdmin')->name('jadwalTutor');
     Route::get('jadwalSiswa/{id}','JadwalController@jadwalSiswaAdmin')->name('jadwalSiswa');
     Route::get('daftarSiswa','SiswaController@daftarSiswa');
@@ -213,7 +209,8 @@ Route::middleware(['tutor'])->group(function () {
     Route::get('tutor','JadwalController@tutor')->name('tutor');
     Route::get('jadwal','JadwalController@jadwalTutor');
     Route::get('profile','TutorController@profileTutor');
-    Route::get('detailJadwal/{id}','JadwalController@jadwalSiswaTutor')->name('detailJadwal');
+    Route::get('detailPendaftaran/{id}','JadwalController@jadwalSiswaTutor')->name('detailJadwal');
+    Route::get('detailJadwal/{id}','JadwalController@detailJadwalTutor')->name('detailJadwal');
 
 });
 

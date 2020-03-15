@@ -44,14 +44,32 @@ class JadwalController extends Controller
 
     public function adminTutor()
     {
-        $data = ModelJadwal::where('status', 'DIPILIH TUTOR')->get();
+        $data = ModelJadwal::with('tutor', 'jadwal')->where('status', 'DIPILIH TUTOR')->get();
         return view('dashboard_admin.list_pendaftaran_tutor', compact('data'));
+    }
+
+    public function jadwalAktif()
+    {
+        $data = ModelJadwal::where('status', 'AKTIF')->get();
+        return view('dashboard_admin.jadwalAktif', compact('data'));
+    }
+
+    public function jadwalTidakAktif()
+    {
+        $data = ModelJadwal::where('status', 'TIDAK AKTIF')->get();
+        return view('dashboard_admin.jadwalTidakAktif', compact('data'));
     }
 
     public function jadwalTutor()
     {
-        $data = ModelJadwal::where('tutor_id', '=', Auth::user()->id)->where('status', 'DIPILIH TUTOR', 'AKTIF')->get();
+        $data = ModelJadwal::with('datas', 'jadwal')->where('tutor_id', '=', Auth::user()->id)->where('status', 'AKTIF')->orWhere('status', 'DIPILIH TUTOR')->get();
         return view('tutor.jadwal', compact('data'));
+    }
+
+    public function detailJadwalTutor($id)
+    {
+        $data = ModelJadwal::with('datas', 'jadwal')->where('id', $id)->get();
+        return view('tutor.detailJadwal', compact('data'));
     }
 
     public function jadwalTutorAdmin($id)

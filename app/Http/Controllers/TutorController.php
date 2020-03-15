@@ -26,7 +26,7 @@ class TutorController extends Controller
     }
 
     public function profileTutorAdmin($id){
-        $data = ModelTutor::where('id', $id)->get();
+        $data = ModelTutor::with('tutor')->where('id', $id)->get();
         return view('dashboard_admin.profileTutor', compact('data'));
     }
 
@@ -78,7 +78,6 @@ class TutorController extends Controller
     {
         $data = new ModelTutor();
         $data->id = $request->id;
-        $data->nama_tutor = $request->nama_tutor;
         $data->jenis_kelamin = $request->jenis_kelamin;
         $data->provinsi = $request->provinsi;
         $data->kabupaten = $request->kabupaten;
@@ -121,13 +120,7 @@ class TutorController extends Controller
     public function update(Request $request, $id)
     {
         $data = ModelTutor::where('id',$id)->first();
-        $data->nama_tutor = $request->nama_tutor;
-        $data->pendidikan = $request->pendidikan;
-        $data->mata_pelajaran1 = $request->mata_pelajaran1;
-        $data->mata_pelajaran2 = $request->mata_pelajaran2;
-        $data->mata_pelajaran3 = $request->mata_pelajaran3;
-        $data->mata_pelajaran4 = $request->mata_pelajaran4;
-        $data->provinsi = $request->kota;
+        $data->kabupaten = $request->kabupaten;
         $data->kecamatan = $request->kecamatan;
         $data->provinsi = $request->provinsi;
         $data->status = $request->status;

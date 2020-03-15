@@ -41,7 +41,11 @@ class User extends Authenticatable
     ];
 
     public function user(){
-        return $this->hasOne('App\ModelJadwal', 'id');
+        return $this->hasOne('App\ModelJadwal', 'murid_id');
+    }
+
+    public function tutor(){
+        return $this->hasOne('App\ModelJadwal', 'tutor_id');
     }
 
     public function data()

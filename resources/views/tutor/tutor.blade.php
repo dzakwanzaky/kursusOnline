@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-body">
+                <div class="card-body table-responsive-sm" style="overflow-x:auto;">
                         <table class="table table-bordered table-striped table-responsive-sm" id="jadwal">
                             <thead class="thead-dark">
                                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
@@ -67,7 +67,7 @@
                                     <td>{{ $d->hari2 }} {{ $d->waktu_hari2 }}</td>
                                     <td>{{ $d->hari3 }} {{ $d->waktu_hari3 }}</td>
                                     <form action="{{ route('pendaftaranSiswa.update', $d->id) }}" method="post"
-                                        enctype="multipart/form-data">
+                                        enctype="multipart/form-data" id="formStatus" name="formStatus">
                                         {{ csrf_field() }}
                                         {{ method_field('PUT') }}
 
@@ -81,7 +81,7 @@
                                                     data-placement="top" title="Detail Jadwal"
                                                     style="color:white" href="{{route('detailJadwal', $d->id)}}"><i
                                                         class="fas fa-calendar-alt"></i></a>
-                                                <button value="DIPILIH TUTOR" id="status" name="status"
+                                                <button value="DIPILIH TUTOR" id="status" name="btnSubmit"
                                                 data-toggle="tooltip" data-placement="top" title="Ajukan" type="submit"
                                                 class=" btn btn-sm btn-success mr-2 accept"> <i
                                                     class="fas fa-check"></i></button>
@@ -103,7 +103,7 @@
 <!-- /.content -->
 
 @endsection
-@section('sweet')
+<!-- @section('sweet')
 <script>
     $(document).ready(function () {
         $('#jadwal').DataTable();
@@ -114,7 +114,7 @@
     })
     </script>
     <script>
-           $('.accept').click(function(e){
+           $('.accept').submit(function(e){
             e.preventDefault();
           swal({
             title: 'Apakah anda yakin untuk mengajukan jadwal?',
@@ -126,11 +126,12 @@
                 },
           }).then((result)=> {
               if (result.value){
-                swal( 
-                )
-                this.submit();
-              }
-              else {
+                   swal(
+                       
+                   )
+                   this.submit();
+                }
+                else {
                 swal("Dibatalkan", "Data masih belum diajukan", "error");
             }
           })
@@ -149,4 +150,4 @@
     </script>
 
 
-@endsection
+@endsection -->

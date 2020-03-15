@@ -13,11 +13,16 @@ class ModelJadwal extends Model
     ];
 
     public function jadwal(){
-        return $this->belongsTo('App\User', 'user_id');
+        return $this->belongsTo('App\User', 'murid_id');
+    }
+
+    public function tutor(){
+        return $this->belongsTo('App\User', 'tutor_id');
     }
 
     public function datas(){
-        return $this->belongsTo('App\ModelSiswa', 'murid_id');
+        return $this->belongsTo('App\ModelSiswa', 'murid_id'); //this is forbidden
     }
+
 
 }

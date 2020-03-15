@@ -1,147 +1,139 @@
 @extends('tutor/base')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
         <div class="row mb-2">
-        <div class="col-md-12 col-md-offset-6" >
-            <div class="box box-primary">
-                <div class="container-fluid">
-                <div class="row mb-2">
-					  <div class="col-sm-6">
-						  <p style="font-size:24px">Profile Tutor</p>
-					  </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-md-right" style="font-size:14px">
-                                <li class="breadcrumb-item">
-                                    <a href="/tutor">Tutor</a>
-                                </li>
-                                <li class="breadcrumb-item active">
-                                    Profile Tutor
-                                </li>
-                            </ol>
-                        </div>			
-			  	    </div>			
+            <div class="col-md-12 col-md-offset-6">
+                <div class="box box-primary">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <p style="font-size:24px">Edit Profil</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-md-right" style="font-size:14px">
+                                    <li class="breadcrumb-item">
+                                        <a href="/tutor">Tutor</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">
+                                        Profile Tutor
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
         </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    </div>
-    <!-- /.content-header -->
-    <!-- Main content -->
-    <div class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="card">
-              <div class="card-body">
-                <div class="form-group">
-                @php $no = 1; @endphp
+    </div><!-- /.container-fluid -->
+</div>
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+@php $no = 1; @endphp
                 @foreach($data as $d)
                 <form action="{{ route('dataTutor.update', $d->id) }}" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			{{ method_field('PUT') }}
-      <a href="{{route('register.edit',$d->id)}}" class="btn-edit-info" style="margin-left:auto;">Pengaturan Akun</a> 			
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="fas fa-user mr-2"></i>Foto Profile
 
-                    <div class="form-group">
-                        <br/>
-                        @if($d->foto==null)
-                    <img class="navbar-brand-full" src="{{('/tema/images/user.png')}}" width="300px" alt="upload foto" style="display:block; margin-left:auto; margin-right:auto;">
-                    @else
-                        <a href="{{ url('/data_file/'.$d->foto) }}" target="_blank">
-                          <img id="gambar" width="300px" src="{{ url('/data_file/'.$d->foto) }}" style="display:block; margin-left:auto; margin-right:auto;">
-                        </a>   
-                    @endif                        </div>
-
-                        <div class="middles">
-				<div class="text">
-				  <label for="change_pic">Ganti Gambar</label>
-				  <div class="form-group">
-				  <div class="alert alert-info">
-							<strong>Info!</strong> Maximum Size Upload : 2MB
-					</div>
-					<input id="foto" class="form-control" name ="foto" type="file">
-				  	</div>
-				</div>
-			  </div>
-			</div>
-
-					<div class="form-group">
-						<label for="">Nama Lengkap :</label>
-						<input type="text" class="form-control" id="nama_tutor" name="nama_tutor" value="{{$d->nama_tutor}}">
-					</div>
-
-					<div class="form-group">
-						<label for="">Provinsi :</label>
-						<input type="text" class="form-control" id="provinsi" name="provinsi" value="{{ $d->provinsi }}">
-					</div>
-
-					<div class="form-group">
-						<label for="">Kecamatan :</label>
-						<input type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{ $d->kecamatan }}">
-					</div>
-
-					<div class="form-group">
-						<label for="">Kota :</label>
-						<input type="text" class="form-control" id="kota" name="kota" value=" {{ $d->kabupaten }}"> 
-					</div>
-
-          <div class="form-group">
-						<label for="">Pendidikan :</label>
-						<input type="text" class="form-control" id="pendidikan" name="pendidikan" value=" {{ $d->pendidikan }}"> 
-					</div>
-
-          <div class="form-group">
-						<label for="">Mata Pelajaran :</label>
-						<input type="text" class="form-control" id="mata_pelajaran1" name="mata_pelajaran1" value=" {{ $d->mata_pelajaran1 }}"> 
-					</div>
-
-          <div class="form-group">
-						<label for="">Mata Pelajaran :</label>
-						<input type="text" class="form-control" id="mata_pelajaran2" name="mata_pelajaran2" value=" {{ $d->mata_pelajaran2 }}"> 
-					</div>
-
-          <div class="form-group">
-						<label for="">Mata Pelajaran :</label>
-						<input type="text" class="form-control" id="mata_pelajaran3" name="mata_pelajaran3" value=" {{ $d->mata_pelajaran3 }}"> 
-					</div>
-
-          <div class="form-group">
-						<label for="">Mata Pelajaran :</label>
-						<input type="text" class="form-control" id="mata_pelajaran4" name="mata_pelajaran4" value=" {{ $d->mata_pelajaran4 }}"> 
-					</div>
-          
-
-          <input type="text" class="form-control" id="status" name="status" value=" {{ $d->status }}" style="display:none"> 
-
-
-          <div class="form-group">
-            <button type="submit" class="btn btn-md btn-success">Simpan</button>
-            <a href="/profile" class="btn btn-md btn-danger">Batal</a>
-          </div>
-				</form>
-              </div>
+                        <hr class="photo">
+                        <div class="d-flex justify-content-center" style="overflow-x:auto;">
+                            @if($d->foto==null)
+                            <img id="gambar" class="navbar-brand-full" src="{{('/tema/images/user.png')}}" width="300px"
+                                alt="upload foto" style="display:block; margin-left:auto; margin-right:auto;">
+                            @else
+                            <a href="{{ url('/data_file/'.$d->foto) }}" target="_blank">
+                                <img id="gambar" width="250px" src="{{ url('/data_file/'.$d->foto) }}"
+                                    style="display:block; margin-left:auto; margin-right:auto;">
+                            </a>
+                            @endif
+                            
+                        </div>
+                        <br>
+                        <div style="text-align:center">
+                        <label for="change_pic">Ganti Foto Profile</label>
+                        
+                        <br>
+							          <strong style=>Info!</strong> Maximum Size Upload : 2MB
+					              <input id="foto" class="form-control" name ="foto" type="file">
+                        </div>
+                    </div>
+                </div>
             </div>
-            @endforeach            
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="w-100 table-responsive-md">
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        Provinsi
+                                        <input name="provinsi" type="text" class="form-control"
+                                            value="{{ $d->provinsi }}"
+                                            style="margin-right:190px;">
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Kabupaten
+                                        <input name="kabupaten" type="text" class="form-control"
+                                            value="{{ $d->kabupaten }}"
+                                            style="margin-right:190px;">
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Kecamatan
+                                        <input name="kecamatan" type="text" class="form-control"
+                                            value="{{ $d->kecamatan }}"
+                                            style="margin-right:190px;">
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Jenis Kelamin
+                                        <input name="jenis_kelamin" type="text" class="form-control" value="{{ $d->jenis_kelamin }}"
+                                            style="margin-right:190px;">
+                                    </th>
+                                </tr>
+                                <input type="text" class="form-control" id="status" name="status" value=" {{ $d->status }}" style="display:none"> 
+                            </tbody>
+                        </table>
+                        <div class="form-group">
+                        </div>
+                        <td>
+                        <button type="submit" class="btn btn-md btn-success">Simpan</button>
+            <a href="/profile" class="btn btn-md btn-danger">Batal</a>
+                        </td>
 
 
-            
-          </div>
-          <!-- /.col-md-6 -->
-          
+                    
+                
+            </div>
+            </form>
+            <!-- /.col-md-6 -->
+            @endforeach
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+    </div>
 
-    <!-- /.content -->
+<!-- /.row -->
+</div><!-- /.container-fluid -->
+</div>
+<!-- /.content -->
  
   @endsection
   @section('sweet')
   <script>
-		//buat profile
+    //buat profile
 		$(function () {
 			$("#foto").change(function () {
 				readURL(this);

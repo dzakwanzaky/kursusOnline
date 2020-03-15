@@ -65,7 +65,7 @@ class SiswaController extends Controller
 
     
     public function profileSiswaAdmin($id){
-        $data = ModelSiswa::where('id', $id)->get();
+        $data = ModelSiswa::with('user')->where('id', $id)->get();
         return view('dashboard_admin.profileSiswa', compact('data'));
     }
 
@@ -73,7 +73,6 @@ class SiswaController extends Controller
     {
         $data = new ModelSiswa();
         $data->id = $request->id;
-        $data->nama_siswa = $request->nama_siswa;
         $data->jenis_kelamin = $request->jenis_kelamin;
         
         $file = $request->file('file');
@@ -100,7 +99,6 @@ class SiswaController extends Controller
     public function update(Request $request, $id)
     {
         $data = ModelSiswa::where('id',$id)->first();
-        $data->nama_siswa = $request->nama_siswa;
         $data->provinsi = $request->provinsi;
         $data->kecamatan = $request->kecamatan;
         $data->kabupaten = $request->kabupaten;

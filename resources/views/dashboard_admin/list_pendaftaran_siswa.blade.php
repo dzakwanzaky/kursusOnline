@@ -1,4 +1,4 @@
-@extends('dashboard_admin/base')
+@extends('dashboard_admin/baseJadwal')
 @section('content')
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Daftar Siswa</h1>
+            <h1 class="m-0 text-dark">Daftar Pendaftaran Jadwal Siswa</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             
@@ -29,8 +29,7 @@
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
 
                         <th>No.</th>
-                        <th>Nama Tutor</th>
-                        <th>Nama Murid</th>
+                        <th>Nama</th>
                         <th>Program</th>
                         <th>Kelas</th>
                         <th>Mata Pelajaran</th>
@@ -46,7 +45,6 @@
                     @foreach($data as $d)
                     <tr>   
                         <td>{{ $no++ }}</td>
-                        <td>{{ $d->nama_tutor }}</td>
                         <td>{{ $d->nama_murid }}</td>
                         <td>{{ $d->program }}</td>
                         <td>{{ $d->kelas }}</td>

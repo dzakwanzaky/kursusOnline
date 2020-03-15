@@ -15,7 +15,6 @@ class CreateModelTutorsTable extends Migration
     {
         Schema::create('model_tutors', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->string('nama_tutor');
             $table->string('jenis_kelamin');
             $table->string('provinsi');
             $table->string('kabupaten');
