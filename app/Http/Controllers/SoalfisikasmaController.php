@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+class SoalfisikasmaController extends Controller
+{
+	public function index()
+{
+    	        // mengambil data dari table 
+		$soalfisikasma = DB::table('soalfisikasma')->SimplePaginate(1);
+ 		$many_data = DB::table('soalfisikasma')->count('*');
+    	        // mengirim data pegawai ke view index
+		return view('base/soalfisikasma',['soalfisikasma' => $soalfisikasma,'max_number'=>$many_data]);
+ 
+	}
+}
