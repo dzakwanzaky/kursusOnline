@@ -24,40 +24,72 @@ class JadwalController extends Controller
     public function index()
     {
         $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->get();
-        return view('murid.murid', compact('data'));
+        $datas = ModelSiswa::where('id', '=', Auth::user()->id)->get();
+        return view('murid.murid', compact('data', 'datas'));
     }
 
     public function tutor()
     {
-        // $data = ModelJadwal::
-        
-        // where('status', 'MENUNGGU')->orWhere('status', 'DIPILIH TUTOR')->get();
         $data = ModelTutor::where('id', '=', Auth::user()->id)->first();
-        $jadwal = ModelJadwal::whereIn('kelas',
-        [$data->kelas1, $data->kelas2, $data->kelas3, $data->kelas4, $data->kelas5, $data->kelas6])->get();
-        // dd($data);
-
+        $jadwal = ModelJadwal::whereIn('program',
+        [$data->program])->where('status', 'MENUNGGU')->get();
         return view('tutor.tutor', compact('jadwal'));
     }
 
     public function admin()
     {
-        $data = ModelJadwal::all();
+        $data = ModelJadwal::where('status', 'MENUNGGU')->get();
         return view('dashboard_admin.list_pendaftaran_siswa', compact('data'));
     }
 
     public function adminTutor()
     {
-        $data = ModelJadwal::all();
+        $data = ModelJadwal::with('tutor', 'jadwal')->where('status', 'DIPILIH TUTOR')->get();
         return view('dashboard_admin.list_pendaftaran_tutor', compact('data'));
+    }
+
+    public function jadwalAktif()
+    {
+        $data = ModelJadwal::where('status', 'AKTIF')->get();
+        return view('dashboard_admin.jadwalAktif', compact('data'));
+    }
+
+    public function jadwalTidakAktif()
+    {
+        $data = ModelJadwal::where('status', 'TIDAK AKTIF')->get();
+        return view('dashboard_admin.jadwalTidakAktif', compact('data'));
     }
 
     public function jadwalTutor()
     {
-        $data = ModelJadwal::where('status', 'AKTIF')->get();
+        $data = ModelJadwal::with('datas', 'jadwal')->where('tutor_id', '=', Auth::user()->id)->where('status', 'AKTIF')->orWhere('status', 'DIPILIH TUTOR')->get();
         return view('tutor.jadwal', compact('data'));
     }
 
+    public function detailJadwalTutor($id)
+    {
+        $data = ModelJadwal::with('datas', 'jadwal')->where('id', $id)->get();
+        return view('tutor.detailJadwal', compact('data'));
+    }
+
+    public function jadwalTutorAdmin($id)
+    {
+        $data = ModelJadwal::where('tutor_id', $id)->get();
+        return view('dashboard_admin.jadwalTutor', compact('data'));
+    }
+
+    public function jadwalSiswaAdmin($id)
+    {
+        $data = ModelJadwal::where('murid_id', $id)->get();
+        return view('dashboard_admin.jadwalSiswa', compact('data'));
+    }
+
+    
+    public function jadwalSiswaTutor($id)
+    {
+        $data = ModelJadwal::where('murid_id', $id)->get();
+        return view('tutor.detailJadwal', compact('data'));
+    }
 
     /**
      * Show the form for creating a new resource.

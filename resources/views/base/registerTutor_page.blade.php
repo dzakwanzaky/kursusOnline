@@ -1,20 +1,19 @@
-@include('base/header_page')
+@include('base/header_page2')
 @extends('base/script_page')
 @section('content')
-
     <div class="main">    
         <div class="card">
             <div class="card-body"> 
             <form class="signup-form" role="form" method="POST" action="{{ url('/register') }}">
                 {{ csrf_field() }}
                 
-                <h2 class="form-title">Daftar Akun Tutor</h2>
+                <h2 class="form-title">Daftar Akun Tutor Inofa Courses</h2>
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                     <label for="name">Nama Lengkap</label>
 
                     <div class="form-title">
-                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Masukan nama Anda" required autofocus>
+                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
                         @if ($errors->has('name'))
                             <span class="help-block">
@@ -28,7 +27,7 @@
                     <label for="phone">No Telepon</label>
 
                     <div class="form-title">
-                        <input id="phone" type="number" class="form-control" name="phone" placeholder="Masukan no telp Anda" required>
+                        <input id="phone" type="number" class="form-control" name="phone" required>
 
                         @if ($errors->has('phone'))
                             <span class="help-block">
@@ -42,7 +41,7 @@
                     <label for="email">Email</label>
 
                     <div class="form-title">
-                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Masukan email Anda" required>
+                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
                         @if ($errors->has('email'))
                             <span class="help-block">
@@ -55,12 +54,8 @@
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                     <label for="password">Kata Sandi</label>
 
-                      <div class="input-group">
-                      <input id="password" type="password" name="password" class="form-control" data-toggle="password" placeholder="Masukan kata sandi Anda" required>
-                      <div class="input-group-append">
-                      <span class="input-group-text"><i class="fa fa-eye"></i></span>
-                      </div>
-
+                    <div class="form-title">
+                        <input id="password" type="password" class="form-control" name="password" required>
 
                         @if ($errors->has('password'))
                             <span class="help-block">
@@ -73,11 +68,9 @@
                 <div class="form-group">
                     <label for="password-confirm">Konfirmasi Kata Sandi</label>
 
-                    <div class="input-group">
-                      <input id="password_confirmation" type="password" name="password_confirmation" class="form-control" data-toggle="password" placeholder="Masukan ulang kata sandi Anda" required>
-                      <div class="input-group-append">
-                      <span class="input-group-text"><i class="fa fa-eye"></i></span>
-                      </div>
+                    <div class="form-title">
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                    </div>
                 </div>
                 
                 

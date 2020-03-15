@@ -15,9 +15,9 @@ class ModelSiswa extends Model
     	return $this->hasOne('App\ModelJadwal', 'murid_id');
     }
 
-    public function data()
+    public function user()
     {
-    	return $this->belongsTo('App\ModelUser', 'id');
+    	return $this->belongsTo('App\User', 'id');
     }
 
     public function files()

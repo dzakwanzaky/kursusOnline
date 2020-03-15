@@ -20,15 +20,15 @@
           <span class="dropdown-header">{{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
           <div class="dropdown-divider"></div>
           <a href="/profile" class="dropdown-item">
-            <i class="fas fa-user"></i> Profile 
+            <i class="fas fa-user"></i> Profil 
           </a>
           <a href="/changePasswordTutor" class="dropdown-item">
-            <i class="fas fa-edit"></i> Ubah Password 
+            <i class="fas fa-edit"></i> Ganti Password
           </a>
           <a href="{{ url('/landing') }}" class="nav-link btn-login; dropdown-item"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-          <i class="fas fa-sign-out-alt"></i>Logout 
+          <i class="fas fa-sign-out-alt"></i> Keluar 
           </a>
           <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                       {{ csrf_field() }}

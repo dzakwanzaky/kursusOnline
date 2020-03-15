@@ -238,7 +238,7 @@ button {
 
 .btn-edit {
   display: block;
-  padding: 5px 20px;
+  padding: 5px 23px;
   font-size: 16px;
   border: 1px solid #158ADF;
   color: #158ADF;
@@ -266,7 +266,7 @@ button {
 
 .btn-edit-info {
   display: block;
-  padding: 5px 20px;
+  padding: 5px 28px;
   font-size: 16px;
   border: 1px solid #158ADF;
   color: #158ADF;
@@ -1766,6 +1766,22 @@ pre code {
   line-height: 1.5;
   color: #495057;
   background-color: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control-grey {
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #e9ecef;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
@@ -9992,6 +10008,12 @@ body,
 
 .content-header {
   padding: 15px 0.5rem;
+}
+
+.content-header-2 {
+  padding: 15px 0.5rem;
+  background: #F4F6F9;
+
 }
 
 .content-header h1 {

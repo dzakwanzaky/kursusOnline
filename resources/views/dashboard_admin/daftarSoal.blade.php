@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 id="div1" name="div1" class="m-0 text-dark">Daftar Tryout</h1>
+            <h1 id="div1" name="div1" class="m-0 text-dark">Daftar Soal</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             
@@ -23,20 +23,30 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card">
-              <div class="card-body">
-              <table class="table table-bordered table-striped table-responsive-md" id="siswa"> 
+              <div class="card-body table-responsive-sm" style="overflow-x:auto;">
+              <table class="table table-bordered table-striped table-responsive-md" id="siswa">
+              @foreach($datas as $d)
+              <a href="{{route('tambahSoal', $d->id)}}"
+              class="btn btn-md btn-success" style="float:right">Tambah Soal</a> 
+             @endforeach
+              <br>
+              <br>
               <thead class="thead-dark">
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
-                        <th>Nomor Soal</th>
-                        <th>Soal</th>
-                        <th>Option A</th>
-                        <th>Option B</th>
-                        <th>Option C</th>
-                        <th>Option D</th>
-                        <th>Option E</th>
-                        <th>Jawaban dan Pembahasan</th>
-                        <th>Aksi</th>
-                    </tr>
+                        <th rowspan="2">No</th>
+                        <th rowspan="2">Soal</th>
+                        <th rowspan="2">Gambar</th>
+                        <th colspan="5">Option</th>
+                        <th rowspan="2">Jawaban</th>
+                        <th rowspan="2">Aksi</th>
+                </tr>
+                <tr  class="table-secondary" style="text-align:center; text-transform: uppercase">
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th style="border-right:1px solid">E</th>
+                </tr>
                 </thead>
                 <tbody>
                       
@@ -44,21 +54,25 @@
                     @foreach($data as $d)
                     <tr>   
                         <td>{{ $d->nomor_soal }}</td>
-                        <td>{{ $d->soal }}</td>
+                        <td>{!! $d->soal !!}</td>
+                        <td>
+                        <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
+                          <img width="50px" src="{{ url('/data_file/'.$d->file) }}">
+                        </a> 
+                        </td>
                         <td>{{ $d->option_a }}</td>
                         <td>{{ $d->option_b }}</td>
                         <td>{{ $d->option_c }}</td>
                         <td>{{ $d->option_d }}</td>
                         <td>{{ $d->option_e }}</td>
-                        <td>{{ $d->jawaban }}</td>
-                        <td>
-                            <form action="{{ route('tryout.destroy', $d->id) }}" method="post" class="destroy">
-                            <a type="button" class="btn btn-success" href="{{route('tryout.edit',$d->id)}}">Lihat Soal</a>
-                            <a type="button" class="btn btn-primary" href="{{route('tryout.edit',$d->id)}}">Edit</a>
-                              {{ csrf_field() }}
-                              {{ method_field('DELETE') }}       
-                            <button type="submit" class="btn btn-md btn-danger" style="color:white">Hapus</button>
-                            </form>
+                        <td>{!! $d->jawaban !!}</td>
+                        <td class="d-flex">
+                          <form action="{{ route('soal.destroy', $d->id) }}" method="post" class="destroy">
+                          <a type="button" class="btn btn-sm btn-primary mr-2" href="{{route('soal.edit',$d->id)}}">Edit</a>
+                          {{ csrf_field() }}
+                          {{ method_field('DELETE') }}   
+                          <button type="submit" class="btn btn-sm btn-danger mr-2" style="color:white">Hapus</button>
+                          </form>
                         </td>
                     </tr>
                     @endforeach
@@ -83,10 +97,12 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
   @endsection
-  @section('sweet')
+  @push('script')
   <script>
          $(document).ready( function () {
-           $('#siswa').DataTable();
+           $('#siswa').DataTable({
+            responsive: true
+           });
            });
       </script>
-  @endsection
+  @endpush

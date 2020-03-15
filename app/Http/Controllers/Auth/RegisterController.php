@@ -70,7 +70,6 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        // if ($data ['role'] == 'siswa'){
                 $user = new User;
                 $user->name = $request->input('name');
                 $user->email = $request->input('email');
@@ -78,9 +77,7 @@ class RegisterController extends Controller
                 $user->phone= $request->input('phone');
                 $user->role = $request->input('role');
                 $user->active= 0;
-  
         if($user){
-            //$user->code=SendOTP::sendOTP($user->phone);
             $user->save();
             return redirect('verify');
         }

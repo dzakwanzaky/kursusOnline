@@ -115,6 +115,7 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
+    @section('sweet')
     <script>
 		//buat profile
 		$(function () {

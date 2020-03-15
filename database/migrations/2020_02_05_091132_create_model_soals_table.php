@@ -17,6 +17,7 @@ class CreateModelSoalsTable extends Migration
             $table->bigIncrements('id');
             $table->string('id_to');
             $table->string('nomor_soal');
+            $table->string('file')->nullable();
             $table->string('soal');
             $table->string('option_a');
             $table->string('option_b');
@@ -24,6 +25,7 @@ class CreateModelSoalsTable extends Migration
             $table->string('option_d');
             $table->string('option_e');
             $table->string('jawaban');
+            $table->string('pembahasan');
             $table->timestamps();
         });
     }

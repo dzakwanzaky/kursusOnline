@@ -46,9 +46,8 @@
           <td>
 				<a href="{{route('dataSiswa.edit',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit Profile</a>       
 			</td>
-                <div class="form-group">
+                <div class="center">
                     <div class="form-group">
-                        <label for="">Foto :</label>
                         <br/>
                         <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
                           <img width="300px" src="{{ url('/data_file/'.$d->file) }}">

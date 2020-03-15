@@ -23,11 +23,11 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card">
-              <div class="card-body">
+              <div class="card-body table-responsive-m"  style="overflow-x:auto;" >
              <form action="{{route('tambahTryout')}}"> <button class=" btn btn-md btn-success" style="float:right">Tambah Tryout</button></form>
               <br>
               <br>
-              <table class="table table-bordered table-striped table-responsive-md" id="siswa"> 
+              <table class="table table-bordered table-striped table-responsive-md" id="siswa" style="overflow-x:auto;"> 
               <thead class="thead-dark">
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                         <th>No.</th>
@@ -46,18 +46,17 @@
                         <td>{{ $d->nama }}</td>
                         <td>{{ $d->jumlah_soal }}</td>
                         <td>{{ $d->kategori }}</td>
-                        <td>
+                        <td class="text-center">
                             <form action="{{ route('tryout.destroy', $d->id) }}" method="post" class="destroy">
-                            <a type="button" class="btn btn-success" href="{{route('tryout.edit',$d->id)}}">Lihat Soal</a>
-                            <a type="button" class="btn btn-primary" href="{{route('tryout.edit',$d->id)}}">Edit</a>
+                            <a type="button" class="btn btn-info mr-2" href="{{route('daftarSoal', $d->id)}}"><i class="far fa-eye"></i></a>
+                            <a type="button" class="btn btn-primary mr-2" href="{{route('tryout.edit',$d->id)}}"><i class="far fa-edit"></i></a>
                               {{ csrf_field() }}
                               {{ method_field('DELETE') }}       
-                            <button type="submit" class="btn btn-md btn-danger" style="color:white">Hapus</button>
+                            <button type="submit" class="btn btn-md btn-danger" style="color:white"><i class="far fa-trash-alt"></i></button>
                             </form>
                         </td>
                     </tr>
                     @endforeach
-                      
                 </tbody>
                   </table>
               </div>

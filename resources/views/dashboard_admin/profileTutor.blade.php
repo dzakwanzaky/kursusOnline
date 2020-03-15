@@ -2,90 +2,136 @@
 @section('content')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
+  <!-- Content Wrapper. Contains page content -->
+<!-- Content Header (Page header) -->
+<div class="content-header">
+<div class="container-fluid">
 	  <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-        <div class="col-md-12 col-md-offset-6" >
-            <div class="box box-primary">
-                <div class="container-fluid">
-                <div class="row mb-2">
-					        <div class="col-sm-6">
-						        <p style="font-size:24px">Profile Tutor</p>
-					  </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-md-right" style="font-size:14px">
-                                <li class="breadcrumb-item">
-                                    <a href="/daftarSiswa">Tutor</a>
-                                </li>
-                                <li class="breadcrumb-item active">
-                                    Profile Tutor
-                                </li>
-                            </ol>
-                        </div>			
-			  	    </div>			
+            <div class="col-md-12 col-md-offset-6">
+                <div class="box box-primary">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <p style="font-size:24px">Profile Tutor</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-md-right" style="font-size:14px">
+                                    <li class="breadcrumb-item">
+                                        <a href="/tutor">Tutor</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">
+                                        Profile Tutor
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
         </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    </div>
-    <!-- /.content-header -->
-    <!-- Main content -->
-    <div class="content">
-      <div class="container-fluid">
+    </div><!-- /.container-fluid -->
+</div>
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+@php $no = 1; @endphp
+@foreach($data as $d)
+<div class="content">
+    <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-12">
-            <div class="card">
-              <div class="card-body">
-                <div class="form-group">
-                    <div class="form-group">
-                        <label for="">Foto :</label>
-                        <img width="200px" height="200px" src="/tema/images/bimbel.jpg" style="display:block;margin-left:auto;margin-right:auto">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="fas fa-user mr-2"></i>Foto Profile
+
+                        <hr class="photo">
+                        <div class="d-flex justify-content-center" style="overflow-x:auto;">
+                            @if($d->foto==null)
+                            <img class="navbar-brand-full" src="{{('/tema/images/user.png')}}" width="300px"
+                                alt="upload foto" style="display:block; margin-left:auto; margin-right:auto;">
+                            @else
+                            <a href="{{ url('/data_file/'.$d->foto) }}" target="_blank">
+                                <img width="250px" src="{{ url('/data_file/'.$d->foto) }}"
+                                    style="display:block; margin-left:auto; margin-right:auto;">
+                            </a>
+                            @endif
+                        </div>
+                        <hr class="photo">
+                        <h4 class="font-weight-normal" style="text-align:center" >{{ $d->tutor->name }}
+                        </h4>
+                        <h6 class="font-weight-normal" style="text-align:center" >{{ $d->tutor->email }}
+                            </h4>
+                            <h6 class="font-weight-normal" style="text-align:center" >
+                                {{ $d->tutor->phone }}</h6>
                     </div>
-					<!-- <label for="nama">Foto :</label>
-					<div> <a href="#" target="_blank">
-						<img width="150px" height="200px" src="/tema/images/bimbel.jpg" style="display:block;margin-left:auto;margin-right:auto">
-						</a>
-					</div> -->
-
-					<div class="form-group">
-						<label for="">Nama Lengkap :</label>
-						<input type="text" class="form-control" id="nama" name="nama" value="Pania Paramita Andika" disabled>
-					</div>
-
-					<div class="form-group">
-						<label for="">No Telepon :</label>
-						<input type="text" class="form-control" id="no" name="no" value="081218099939" disabled>
-					</div>
-
-					<div class="form-group">
-						<label for="">Email :</label>
-						<input type="text" class="form-control" id="email" name="email" value="vania.paramita23@gmail.com" disabled>
-					</div>
-
-					<div class="form-group">
-						<label for="">Kata Sandi :</label>
-						<input type="password" class="form-control" id="password" name="password" value="vania.p.a15" disabled> 
-					</div>
-				</form>
-              </div>
+                </div>
             </div>
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="w-100 table-responsive-md">
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        Alamat
+                                        <input type="text" class="form-control"
+                                            value="{{ $d->provinsi }} {{ $d->kabupaten }} {{ $d->kecamatan }}"
+                                            style="margin-right:190px;background:white;border:none" disabled>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Jenis Kelamin
+                                        <input type="text" class="form-control" value="{{ $d->jenis_kelamin }}"
+                                            style="margin-right:190px;background:white;border:none" disabled>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Pendidikan
+                                        <input type="text" class="form-control" value="{{ $d->pendidikan }}"
+                                            style="margin-right:190px;background:white;border:none" disabled>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Preferensi Mata Pelajaran
+                                        <input type="text" class="form-control" value="{{ $d->mata_pelajaran1 }} {{ $d->mata_pelajaran2 }} {{ $d->mata_pelajaran3 }} {{ $d->mata_pelajaran4 }} {{ $d->mata_pelajaran5 }} {{ $d->mata_pelajaran6 }} {{ $d->mata_pelajaran7 }} {{ $d->mata_pelajaran8 }} {{ $d->mata_pelajaran9 }}"
+                                            style="margin-right:190px;background:white;border:none" disabled>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Preferensi Kelas
+                                        <input type="text" class="form-control" value="{{ $d->kelas1 }} {{ $d->kelas2 }} {{ $d->kelas3 }} {{ $d->kelas4 }}{{ $d->kelas5 }} {{ $d->kelas6 }} {{ $d->program }}"
+                                            style="margin-right:190px;background:white;border:none" disabled>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="form-group">
+                        </div>
+                       
 
-            
-          </div>
-          <!-- /.col-md-6 -->
-          
+
+                    
+                
+            </div>
+            <!-- /.col-md-6 -->
+            @endforeach
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
     </div>
-    <!-- /.content -->
+
+<!-- /.row -->
+</div><!-- /.container-fluid -->
+</div>
+<!-- /.content -->
 </div>
 </div>
 </div>
+
+
     <!-- /.content-header -->
 @endsection

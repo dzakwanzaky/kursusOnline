@@ -52,7 +52,7 @@
                         <td>{{ $d->program }}</td>
                         <td>
                         @foreach($alamat as $a)
-                        {{ $a->kecamatan }}, {{ $a->kota }}, {{ $a->provinsi }}
+                        {{ $a->kecamatan }}, {{ $a->kabupaten }}, {{ $a->provinsi }}
                         @endforeach
                         </td>
                         <td>

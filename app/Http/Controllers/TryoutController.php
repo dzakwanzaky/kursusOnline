@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ModelTryout;
-
+use App\ModelSoal;
+use Illuminate\Support\Facades\Validator;
 
 class TryoutController extends Controller
 {
@@ -17,9 +18,22 @@ class TryoutController extends Controller
     public function tambah(){
         return view('dashboard_admin.tambahTryout');
     }
-    
+
+    public function lihatSoal($id){
+        $data = ModelSoal::where('id_to', $id)->get();
+        $datas = ModelTryout::where('id', $id)->get();
+        return view('dashboard_admin.daftarSoal', compact('data', 'datas'));   
+    }
+
     public function store(Request $request)
     {
+        $validatedData = $request->validate(
+            [
+            'nama' => 'required',
+            'jumlah_soal' => 'required',
+            'kategori' => 'required',
+            ],
+        );
         $data = new ModelTryout();
         $data->nama = $request->nama;
         $data->jumlah_soal = $request->jumlah_soal;

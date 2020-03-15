@@ -320,6 +320,14 @@ h1 {
     margin-bottom: 40px;
 }
 
+.form-round {
+    border:1px solid;
+    border-radius:5px;
+    padding: .375rem .75rem;
+    border-color :#ced4da;
+    color: #495057;
+}
+
 .form-radio input {
     width: 0;
     height: 0;

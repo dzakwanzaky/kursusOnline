@@ -11,9 +11,15 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a class="d-block" style="margin: 0 0 0 10px;">Murid</a>
+        <a class="d-block" style="margin: 0 0 0 0px;">
+     
+        <img src="{{url('/data_file/'.DB::table('model_siswas')->where('id', '=', Auth::user()->id)->value('file'))}}" class="img-circle elevation-2" alt="User Image" style="width:30px;height:30px;border: 1.5px solid">
+
+          Murid</a>
         </div>
+    
       </div>
+ 
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -35,14 +41,14 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="/video" class="nav-link {{ Request::segment(1) === 'video' ? 'nav-link active' : null }}">
               <i class="far fa-circle nav-icon"></i>
               <p>
                 Materi
               </p>
             </a>
-          </li>
+          </li> -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
