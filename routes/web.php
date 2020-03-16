@@ -58,10 +58,6 @@ Route::get('/sbmptn', function () {
     return view('base/partsbmptn');
 });
 
-Route::get('/sd', function () {
-    return view('base/sd');
-});
-
 Route::get('/smp', function () {
     return view('base/smp');
 });
@@ -294,6 +290,7 @@ Route::middleware(['siswa'])->group(function () {
     Route::get('profileMurid','SiswaController@profileSiswa');
     Route::get('presensi/{id}','AbsenController@indexPresensi')->name('presensi');
     Route::get('kehadiranLes/{id}','AbsenController@kehadiranLes')->name('kehadiranLes');
+    Route::post('formulirStore/{id}','FormulirController@store')->name('formulirStore');
 
 });
 
@@ -306,6 +303,8 @@ Route::resource('soal', 'SoalController');
 Route::resource('pendaftaranSiswa','JadwalController');
 Route::resource('tryout','TryoutController');
 Route::resource('absen','AbsenController');
+// Route::resource('formulir','FormulirController');
+
 
 
 Route::get('/editMurid/{id}', 'Auth\RegisterController@editMurid')->name('editMurid');
@@ -325,6 +324,10 @@ Route::get('/manajemenProgram', 'ProgramController@paketAdmin');
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
 Route::get('informasiTutor','TutorController@informasiTutor');
+
+Route::get('sd','TryoutController@tryoutSD')->name('sd');
+Route::get('soalTO/{id}','TryoutController@soal')->name('soalTO');
+
 
 
 

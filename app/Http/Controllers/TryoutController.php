@@ -25,6 +25,19 @@ class TryoutController extends Controller
         return view('dashboard_admin.daftarSoal', compact('data', 'datas'));   
     }
 
+    public function tryoutSD(){
+        $data = ModelTryout::where('kategori', 'SD')->get();
+        
+        return view('base.sd', compact('data'));   
+    }
+
+    public function soal($id){
+        $data = ModelSoal::where('id_to', $id)->SimplePaginate(1);
+        $many_data = ModelSoal::count('*');
+		return view('base/soal',['data' => $data,'max_number'=>$many_data]);
+    }
+
+
     public function store(Request $request)
     {
         $validatedData = $request->validate(
