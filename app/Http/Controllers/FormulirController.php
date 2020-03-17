@@ -8,14 +8,25 @@ use Illuminate\Http\Request;
 
 class FormulirController extends Controller
 {
-    public function store(Request $request, $id)
+
+    public function index(){
+        return view('base.endhalaman');
+    }
+    public function store(Request $request)
     {
         $data = new ModelFormulir();
         $data->namalengkap = $request->namalengkap;
         $data->notelp = $request->notelp;
         $data->asalsekolah = $request->asalsekolah;
         $data->email = $request->email;
+
+        $file = $request->file('file');
+        $nama_file = time()."_".$file->getClientOriginalName();  
+        $tujuan_upload = 'data_file';
+        $file->move($tujuan_upload,$nama_file);
+        $data->file = $nama_file;
+
         $data->save();
-        return redirect()->route('soalTO', $id);
+        return redirect()->route('endhalaman');
     }
 }

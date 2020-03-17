@@ -26,9 +26,8 @@ class TryoutController extends Controller
     }
 
     public function tryoutSD(){
-        $data = ModelTryout::where('kategori', 'SD')->get();
+        $data = ModelTryout::where('kategori', 'SD')->where('mata_pelajaran', 'Bahasa Indonesia')->get();
         $datas = ModelTryout::where('kategori', 'SMA')->get();
-
         return view('base.sd', compact('data'));   
     }
 
@@ -52,6 +51,7 @@ class TryoutController extends Controller
         $data->nama = $request->nama;
         $data->jumlah_soal = $request->jumlah_soal;
         $data->kategori = $request->kategori;
+        $data->mata_pelajaran = $request->mata_pelajaran;
         $data->save();
         return redirect()->route('tambahSoal', $data->id);
     }

@@ -18,6 +18,7 @@ class CreateModelTryoutsTable extends Migration
             $table->string('nama');
             $table->string('jumlah_soal');
             $table->string('kategori');
+            $table->string('mata_pelajaran');
             $table->timestamps();
         });
     }

@@ -19,6 +19,7 @@ class CreateModelFormulirsTable extends Migration
             $table->string('notelp');
             $table->string('asalsekolah')->nullable();
             $table->string('email');
+            $table->string('file');
             $table->timestamps();
         });
     }

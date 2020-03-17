@@ -15,9 +15,7 @@ Route::get('/wizardsbm', function () {
     return view('base/aksessoal');
 });
 
-Route::get('/endhalaman', function () {
-    return view('base/endhalaman');
-});
+
 
 
 Route::get('/soalbindosbm','SoalbindosbmController@index');
@@ -290,8 +288,6 @@ Route::middleware(['siswa'])->group(function () {
     Route::get('profileMurid','SiswaController@profileSiswa');
     Route::get('presensi/{id}','AbsenController@indexPresensi')->name('presensi');
     Route::get('kehadiranLes/{id}','AbsenController@kehadiranLes')->name('kehadiranLes');
-    Route::post('formulirStore/{id}','FormulirController@store')->name('formulirStore');
-
 });
 
 Route::resource('dataTutor','TutorController');
@@ -303,7 +299,7 @@ Route::resource('soal', 'SoalController');
 Route::resource('pendaftaranSiswa','JadwalController');
 Route::resource('tryout','TryoutController');
 Route::resource('absen','AbsenController');
-// Route::resource('formulir','FormulirController');
+Route::resource('formulir','FormulirController');
 
 
 
@@ -327,6 +323,7 @@ Route::get('informasiTutor','TutorController@informasiTutor');
 
 Route::get('sd','TryoutController@tryoutSD')->name('sd');
 Route::get('soalTO/{id}','TryoutController@soal')->name('soalTO');
+Route::get('endhalaman','FormulirController@index')->name('endhalaman');
 
 
 

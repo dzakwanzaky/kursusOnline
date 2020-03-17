@@ -55,15 +55,32 @@
                                     <div class="card-body">
                                         <label for="">Kategori :</label>
                                         <select id="kategori" name="kategori" class="form-control" required>
-                                            <option value="_none">-Pilih Kategori-</option>
-                                            <option value="Senin">SD</option>
-                                            <option value="Selasa">SMP</option>
-                                            <option value="Rabu">SMA</option>
-                                            <option value="Kamis">SBMPTN</option>
-                                            <option value="Jum'at">STAN</option>
-                                            <option value="Sabtu">UTUL UGM</option>
-                                            <option value="Minggu">CPNS</option>
-                                            <option value="Minggu">KOMPUTER</option>
+                                            <option value="">-Pilih Kategori-</option>
+                                            <option value="SD">SD</option>
+                                            <option value="SMP">SMP</option>
+                                            <option value="SMA">SMA</option>
+                                            <option value="SBMPTN">SBMPTN</option>
+                                            <option value="STAN">STAN</option>
+                                            <option value="UTUL UGM">UTUL UGM</option>
+                                            <option value="CPNS">CPNS</option>
+                                            <option value="KOMPUTER">KOMPUTER</option>
+                                        </select>
+                                   
+                                   <br>
+                                        <label for="">Mata Pelajaran :</label>
+                                        <select id="mata_pelajaran" name="mata_pelajaran" class="form-control" required>
+                                            <option value="">-Pilih Mata Pelajaran-</option>
+                                            <option value="Matematika">Matematika</option>
+                                            <option value="Fisika">Fisika</option>
+                                            <option value="Kimia">Kimia</option>
+                                            <option value="Biologi">Biologi</option>
+                                            <option value="Ekonomi">Ekonomi</option>
+                                            <option value="Sosiologi">Sosiologi</option>
+                                            <option value="Geografi">Geografi</option>
+                                            <option value="Sejarah">Sejarah</option>
+                                            <option value="Bahasa Inggris">Bahasa Inggris</option>
+                                            <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+
                                         </select>
                                     </div>
 

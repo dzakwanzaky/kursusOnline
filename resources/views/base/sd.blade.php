@@ -1145,7 +1145,7 @@
                                     <div class="img">
                                         <img class="kiri" src="{{asset('/images')}}/about.jpg" />
                                     </div>
-                                    <a type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal-{{$d->id}}"
+                                    <a href="{{route('soalTO', $d->id)}}" type="button" class="btn btn-link"
                                      >
                                         <h2>{{$d->nama}}<br>
                                             <p>{{$d->jumlah_soal}}<br>
@@ -1158,7 +1158,7 @@
                         </div>
                     </div>
                 
-                   
+                    @endforeach
                
                     <form method="POST" action="{{ route('formulirStore', $d->id)}}" enctype="multipart/form-data">
    
@@ -1207,7 +1207,7 @@
 
                     <script type="text/javascript" src="{{asset('/frontend')}}/js/bootstrap.js"></script>
 
-                    @endforeach
+                  
 
 
                     <div class="jq-tab-content" data-tab="2">
