@@ -27,13 +27,14 @@ class TryoutController extends Controller
 
     public function tryoutSD(){
         $data = ModelTryout::where('kategori', 'SD')->get();
-        
+        $datas = ModelTryout::where('kategori', 'SMA')->get();
+
         return view('base.sd', compact('data'));   
     }
 
     public function soal($id){
         $data = ModelSoal::where('id_to', $id)->SimplePaginate(1);
-        $many_data = ModelSoal::count('*');
+        $many_data = ModelSoal::where('id_to', $id)->count();
 		return view('base/soal',['data' => $data,'max_number'=>$many_data]);
     }
 

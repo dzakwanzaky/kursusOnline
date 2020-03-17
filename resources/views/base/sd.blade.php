@@ -1184,7 +1184,6 @@
                                         <input type="text" name="notelp" class="form-control" placeholder="No telp">
                                     </div>
 
-                                    <input type="text" name="id" class="form-control" placeholder="No telp" value="{{$d->id}}">
 
                                     <div class="form-group">
                                         <input type="text" name="asalsekolah" class="form-control"
