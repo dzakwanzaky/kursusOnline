@@ -268,6 +268,9 @@ Route::middleware(['admin'])->group(function () {
     Route::get('kehadiranTutor/{id}','AbsenController@kehadiranTutor')->name('kehadiranTutor');
     Route::get('profileTutorAdmin/{id}','TutorController@profileTutorAdmin')->name('profileTutorAdmin');
     Route::get('profileSiswaAdmin/{id}','SiswaController@profileSiswaAdmin')->name('profileSiswaAdmin');
+    Route::get('tryoutAktif','FormulirController@formulirAktif')->name('tryoutAktif');
+    Route::get('tryoutBelumAktif','FormulirController@formulirBelumAktif')->name('tryoutAktif');
+
     Route::post('importExcel','SoalController@importExcel')->name('importExcel');
 });
 

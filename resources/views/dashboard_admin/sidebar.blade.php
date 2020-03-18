@@ -69,6 +69,19 @@
             </a>
           
           </li>
+
+          <li class="nav-item">
+            <a href="/tryoutAktif" class="nav-link nav-link {{ Request::segment(1) === 'tryoutAktif' ? 'nav-link active' : null }}
+                {{ Request::segment(1) === 'tryoutBelumAktif' ? 'nav-link active' : null }} " >
+              <i class="nav-icon fas fa-folder"></i>
+              <p>
+                Pendaftaran Tryout
+               
+              </p>
+            </a>
+          
+          </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

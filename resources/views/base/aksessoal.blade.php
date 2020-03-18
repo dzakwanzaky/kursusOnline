@@ -625,6 +625,7 @@
                                     <input id="file"  type="file" class="form-control" name="file"
                                        required>
                                 </div>
+                                <input type="text" style="display:none" value="BELUM AKTIF" name="status" class="form-control">
 
                                 <div class="section">
                                     <button type="submit" class="butn">Kirim</button>
