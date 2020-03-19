@@ -26,9 +26,11 @@ class TryoutController extends Controller
     }
 
     public function tryoutSD(){
-        $data = ModelTryout::where('kategori', 'SD')->where('mata_pelajaran', 'Bahasa Indonesia')->get();
-        $datas = ModelTryout::where('kategori', 'SMA')->get();
-        return view('base.sd', compact('data'));   
+        $bind = ModelTryout::where('kategori', 'SD')->where('mata_pelajaran', 'Bahasa Indonesia')->get();
+        $ipa = ModelTryout::where('kategori', 'SD')->where('mata_pelajaran', 'IPA')->get();
+        $mat = ModelTryout::where('kategori', 'SD')->where('mata_pelajaran', 'Matematika')->get();
+        $bing = ModelTryout::where('kategori', 'SD')->where('mata_pelajaran', 'Bahasa Inggris')->get();
+        return view('base.sd', compact('bind', 'ipa', 'mat', 'bing'));   
     }
 
     public function soal($id){

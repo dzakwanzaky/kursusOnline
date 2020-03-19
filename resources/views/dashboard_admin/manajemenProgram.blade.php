@@ -23,11 +23,14 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card">                 
-            <div class="card-body table-responsive-m"  style="overflow-x:auto;" >             
+            <div class="card-body table-responsive-m"  style="overflow-x:auto;" > 
+            
               <div class="alert alert-info" style="font-size:14px">
                         <strong>INFO!</strong> Jika ingin mengubah isi paket program, klik tombol<strong>EDIT</strong>
                         pada kolom aksi dan nanti akan menuju ke halaman edit untuk mengubah isi paket program.
                     </div>
+                    <form action="{{route('tambahProgram')}}"> <button class=" btn btn-md btn-success" style="float:right">Tambah Program</button></form>
+
               <table class="table table-bordered table-striped table-responsive-md" id="program"> 
               <thead class="thead-dark"> 
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">

@@ -1136,7 +1136,7 @@
                     </div>
 
                     @php $no = 1; @endphp
-                    @foreach($data as $d)
+                    @foreach($bind as $d)
                     <div class="jq-tab-content active" data-tab="1">
 
                         <div class="cards">
@@ -1160,9 +1160,8 @@
                 
                     @endforeach
                
-                    <form method="POST" action="{{ route('formulirStore', $d->id)}}" enctype="multipart/form-data">
    
-                @csrf
+         
                     <div class="modal fade" role="dialog" id="loginModal-{{$d->id}}">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -1197,7 +1196,7 @@
                                 <div class="modal-footer">
                                     <button type="submit" class="tombol_login">Kirim</button>
                                 </div>
-                                </form>
+                            
                               
                             </div>
                         </div>
@@ -1210,7 +1209,9 @@
                   
 
 
-                    <div class="jq-tab-content" data-tab="2">
+                    @php $no = 1; @endphp
+                    @foreach($mat as $d)
+                    <div class="jq-tab-content active" data-tab="2">
 
                         <div class="cards">
                             <div class="services">
@@ -1218,18 +1219,20 @@
                                     <div class="img">
                                         <img class="kiri" src="{{asset('/images')}}/about.jpg" />
                                     </div>
-                                    <button type="button" class="btn btn-link" data-toggle="modal"
-                                        data-target="#loginModal">
-                                        <h2>Soal Matematika<br>
-                                            <p>50 soal pilihan ganda<br>
+                                    <a href="{{route('soalTO', $d->id)}}" type="button" class="btn btn-link"
+                                     >
+                                        <h2>{{$d->nama}}<br>
+                                            <p>{{$d->jumlah_soal}}<br>
                                             </p>
                                         </h2>
-                                    </button>
+                                    </a>
                                 </div>
 
                             </div>
                         </div>
                     </div>
+                
+                    @endforeach
                     <div class="modal fade" role="dialog" id="loginModal">
                   
                         <div class="modal-dialog">
@@ -1274,23 +1277,30 @@
                     <script type="text/javascript" src="{{asset('/frontend')}}/js/bootstrap.js"></script>
 
 
-                    <div class="jq-tab-content" data-tab="3">
+                    @php $no = 1; @endphp
+                    @foreach($mat as $d)
+                    <div class="jq-tab-content active" data-tab="3">
+
                         <div class="cards">
                             <div class="services">
                                 <div class="content">
                                     <div class="img">
                                         <img class="kiri" src="{{asset('/images')}}/about.jpg" />
                                     </div>
-                                    <button type="button" class="btn btn-link" data-toggle="modal"
-                                        data-target="#loginModal">
-                                        <h2>Soal Ilmu Pengetahuan Alam<br>
-                                            <p>50 soal pilihan ganda<br>
+                                    <a href="{{route('soalTO', $d->id)}}" type="button" class="btn btn-link"
+                                     >
+                                        <h2>{{$d->nama}}<br>
+                                            <p>{{$d->jumlah_soal}}<br>
                                             </p>
                                         </h2>
-                                    </button>
+                                    </a>
                                 </div>
+
                             </div>
                         </div>
+                    </div>
+                
+                    @endforeach
                         <div class="modal fade" role="dialog" id="loginModal">
                             <div class="modal-dialog">
                                 <div class="modal-content">

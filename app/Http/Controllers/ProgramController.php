@@ -65,10 +65,11 @@ class ProgramController extends Controller
         return view('base/paket_program_page', compact('data1', 'data2', 'data3'));
     }
 
-    public function paketAdmin(){
+    public function manajemenProgram(){
         $data = ModelProgram::all();
         return view('dashboard_admin/manajemenProgram', compact('data'));
     }
+    
 
     public function edit($id)
     {

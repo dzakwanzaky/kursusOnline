@@ -82,6 +82,17 @@
           
           </li>
 
+          <li class="nav-item">
+            <a href="/manajemenProgram" class="nav-link nav-link {{ Request::segment(1) === 'manajemenProgram' ? 'nav-link active' : null }}">
+              <i class="nav-icon fas fa-folder"></i>
+              <p>
+                Manajemen Program
+              </p>
+            </a>
+          
+          </li>
+
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

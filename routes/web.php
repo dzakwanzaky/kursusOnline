@@ -215,9 +215,6 @@ Route::get('/list_pendaftaranTutor', function () {
 Route::get('/editAdmin', function () {
     return view('dashboard_admin/edit');
 });
-Route::get('/manajemenProgram', function () {
-    return view('dashboard_admin/manajemenProgram');
-});
 Route::get('/editProgram', function () {
     return view('dashboard_admin/editProgram');
 });
@@ -270,7 +267,6 @@ Route::middleware(['admin'])->group(function () {
     Route::get('profileSiswaAdmin/{id}','SiswaController@profileSiswaAdmin')->name('profileSiswaAdmin');
     Route::get('tryoutAktif','FormulirController@formulirAktif')->name('tryoutAktif');
     Route::get('tryoutBelumAktif','FormulirController@formulirBelumAktif')->name('tryoutAktif');
-
     Route::post('importExcel','SoalController@importExcel')->name('importExcel');
 });
 
@@ -319,7 +315,9 @@ Route::get('profileAdmin','Auth\RegisterController@data');
 Route::get('/', 'ProgramController@program'); 
 Route::get('/landing', 'ProgramController@program');
 Route::get('/paketProgram', 'ProgramController@paket');
-Route::get('/manajemenProgram', 'ProgramController@paketAdmin');
+Route::get('/manajemenProgram', 'ProgramController@manajemenProgram')->name('manajemenProgram');
+Route::get('/tambahProgram','ProgramController@tambah')->name('tambahProgram');
+
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
 Route::get('informasiTutor','TutorController@informasiTutor');
