@@ -15,39 +15,6 @@ Route::get('/wizardsbm', function () {
     return view('base/aksessoal');
 });
 
-
-
-
-Route::get('/soalbindosbm','SoalbindosbmController@index');
-Route::get('/soalbingsbm','SoalbingsbmController@index');
-Route::get('/soaltpasbm','SoaltpasbmController@index');
-Route::get('/soalmtksainsbm','SoalmtksainsbmController@index');
-Route::get('/soalkimiasbm','SoalkimiasbmController@index');
-Route::get('/soalfisikasbm','SoalfisikasbmController@index');
-Route::get('/soalbiologisbm','SoalbiologisbmController@index');
-Route::get('/soalmtksoshumsbm','SoalmtksoshumsbmController@index');
-Route::get('/soalekonomisbm','SoalekonomisbmController@index');
-Route::get('/soalsosiologisbm','SoalsosiologisbmController@index');
-
-Route::get('/soalbindosd','SoalbindosdController@index');
-Route::get('/soalmtksd','SoalmtksdController@index');
-Route::get('/soalipasd','SoalipasdController@index');
-
-Route::get('/soalbindosmp','SoalbindosmpController@index');
-Route::get('/soalmtksmp','SoalmtksmpController@index');
-Route::get('/soalipasmp','SoalipasmpController@index');
-Route::get('/soalbingsmp','SoalbingsmpController@index');
-
-Route::get('/soalbindosma','SoalbindosmaController@index');
-Route::get('/soalmtkipasma','SoalmtkipasmaController@index');
-Route::get('/soalmtkipssma','SoalmtkipssmaController@index');
-Route::get('/soalbiologisma','SoalbiologismaController@index');
-Route::get('/soalkimiasma','SoalkimiasmaController@index');
-Route::get('/soalfisikasma','SoalfisikasmaController@index');
-Route::get('/soalbingsma','SoalbingsmaController@index');
-Route::get('/soalsosiologisma','SoalsosiologismaController@index');
-Route::get('/soalgeografisma','SoalgeografismaController@index');
-Route::get('/soalekonomisma','SoalekonomismaController@index');
 Route::get('/card', function () {
     return view('base/card');
 });
@@ -65,6 +32,10 @@ Route::get('/sma', function () {
 
 Route::get('/probel', function () {
     return view('probel');
+});
+
+Route::get('/probel-dinamis', function () {
+    return view('probel-dinamis');
 });
 
 use Nexmo\Laravel\Facade\Nexmo;
@@ -240,6 +211,7 @@ Route::get('/tambahProgram', function () {
     return view('dashboard_admin/tambahProgram');
 });
 
+
 Auth::routes();
 
 Route::middleware(['admin'])->group(function () {
@@ -313,16 +285,18 @@ Route::get('/verify','VerifyController@getVerify')->name('getverify');
 Route::post('/verify','VerifyController@postVerify')->name('verify');
 Route::get('profileAdmin','Auth\RegisterController@data');
 Route::get('/', 'ProgramController@program'); 
-Route::get('/landing', 'ProgramController@program');
 Route::get('/paketProgram', 'ProgramController@paket');
 Route::get('/manajemenProgram', 'ProgramController@manajemenProgram')->name('manajemenProgram');
 Route::get('/tambahProgram','ProgramController@tambah')->name('tambahProgram');
+Route::get('/probel-dinamis','ProgramController@program')->name('probel-dinamis');
 
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
 Route::get('informasiTutor','TutorController@informasiTutor');
 
 Route::get('sd','TryoutController@tryoutSD')->name('sd');
+Route::get('smp','TryoutController@tryoutSMP')->name('smp');
+Route::get('sma','TryoutController@tryoutSMA')->name('sma');
 Route::get('soalTO/{id}','TryoutController@soal')->name('soalTO');
 Route::get('endhalaman','FormulirController@index')->name('endhalaman');
 

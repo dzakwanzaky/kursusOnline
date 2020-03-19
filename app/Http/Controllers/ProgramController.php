@@ -7,6 +7,8 @@ use App\ModelInvoice;
 use App\ModelProgram;
 use Auth;
 use PDF;
+
+
 class ProgramController extends Controller
 {
     /**
@@ -52,10 +54,8 @@ class ProgramController extends Controller
     }
 
     public function program(){
-        $data1 = ModelProgram::where('id', '=', '1')->get();
-        $data2 = ModelProgram::where('id', '=', '2')->get();
-        $data3 = ModelProgram::where('id', '=', '3')->get();
-        return view('base/home_page', compact('data1', 'data2', 'data3'));
+        $data = ModelProgram::all();
+        return view('probel-dinamis', compact('data'));
     }
 
     public function paket(){
@@ -77,18 +77,28 @@ class ProgramController extends Controller
         return view('dashboard_admin.editProgram', compact('data'));
     }
 
+    public function tambah(){
+        return view('dashboard_admin.tambahProgram');
+    }
+
+    public function store(Request $request)
+    {
+        $data = new ModelProgram();
+        $data->program = $request->program;
+        $data->keterangan = $request->keterangan;
+        $data->save();
+        return redirect('manajemenProgram')->withMessage('Berhasil Merubah Data');
+        
+    }
+
     public function update(Request $request, $id)
     {
      
         $data = ModelProgram::where('id',$id)->first();
         $data->program = $request->program;
-        $data->fasilitas = $request->fasilitas;
-        $data->durasi = $request->durasi;
-        $data->jumlah_pertemuan = $request->jumlah_pertemuan;
-        $data->harga = $request->harga;
         $data->keterangan = $request->keterangan;
         $data->save();
-            return redirect('manajemenProgram')->withMessage('Berhasil Merubah Data');
+        return redirect('manajemenProgram')->withMessage('Berhasil Merubah Data');
     }
 
    

@@ -36,10 +36,6 @@
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                   <th>No.</th>
                   <th>Nama Program</th>
-                  <th>Fasilitas</th>
-                  <th>Durasi</th>
-                  <th>Jumlah Pertemuan</th>
-                  <th>Harga</th>
                   <th>Keterangan</th>
                   <th>Aksi</th>
                </tr>
@@ -49,11 +45,7 @@
                     @foreach($data as $d)
                     <tr>   
                         <td>{{ $no++ }}</td>
-                        <td>{{ $d->program }}</td>
-                        <td>{{ $d->fasilitas }}</td>
-                        <td>{{ $d->durasi }}</td>
-                        <td>{{ $d->jumlah_pertemuan }}</td>
-                        <td>{{ $d->harga}}</td>
+                        <td>{{ $d->program}}</td>
                         <td>{{ $d->keterangan}}</td>
                         <td>
 				<a href="{{route('program.edit',$d->id)}}" class="btn btn-md btn-success" style="float:right">Edit</a>       
