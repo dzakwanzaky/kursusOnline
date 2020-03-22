@@ -7,6 +7,8 @@ use App\ModelJadwal;
 use Auth;
 use App\ModelSiswa;
 use App\ModelTutor;
+use App\ModelInvoice;
+
 
 class JadwalController extends Controller
 {
@@ -109,22 +111,28 @@ class JadwalController extends Controller
      */
     public function store(Request $request)
     {
+        $invoice = new ModelInvoice();
+        $invoice->invoice = $request->invoice;
+        $invoice->id_murid = $request->id_murid;
+        $invoice->program = $request->program;
+        $invoice->kelas = $request->kelas;
+        $invoice->jumlah_sesi = $request->jumlah_sesi;
+        $invoice->jumlah_mapel = $request->jumlah_mapel;
+        $invoice->harga = $request->harga;
+        $invoice->save();
+
+        foreach ($request->mata_pelajaran as $key => $value){
         $data = new ModelJadwal();
-        $data->murid_id = $request->murid_id;
-        $data->nama_murid = $request->nama_murid;
-        $data->program = $request->program;
-        $data->status = $request->status;
-        $data->bulan = $request->bulan;
-        $data->sesi = $request->sesi;
-        $data->kelas = $request->kelas;
-        $data->mata_pelajaran = $request->mata_pelajaran;
-        $data->hari1 = $request->hari1;
-        $data->hari2 = $request->hari2;
-        $data->hari3 = $request->hari3;
-        $data->waktu_hari1 = $request->waktu_hari1;
-        $data->waktu_hari2 = $request->waktu_hari2;
-        $data->waktu_hari3 = $request->waktu_hari3;
+        $data->invoice_id = $invoice->id;
+        $data->murid_id = $request->murid_id[$key];
+        $data->mata_pelajaran = $value;
+        $data->hari1 = $request->hari1[$key];
+        $data->hari2 = $request->hari2[$key];
+        $data->waktu_hari1 = $request->waktu_hari1[$key];
+        $data->waktu_hari2 = $request->waktu_hari2[$key];
+        $data->status = $request->status[$key];
         $data->save();
+        }
         return redirect('dataSiswa')->withMessage('Kamu Berhasil Daftar Les');
     }
 
@@ -162,7 +170,6 @@ class JadwalController extends Controller
      
         $data = ModelJadwal::where('id',$id)->first();
         $data->tutor_id = $request->tutor_id;
-        $data->nama_tutor = $request->nama_tutor;
         $data->status = $request->status;
         $data->save();
         if(Auth::user()->role == 'tutor'){

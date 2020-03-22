@@ -15,16 +15,6 @@
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
-                                        <form method="POST" action="{{  route('paketProgram.store')}}" enctype="multipart/form-data">
-                                        {{ csrf_field() }}
-                                        {{ method_field('POST') }}
-
-                                        <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
-                                            required autofocus
-                                            value="{{ Auth::user()->id }}" style="text-transform: capitalize">
-                                                    
-                                        <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
-                                        <input type="text" class="form-control" id="program" name="program" style="display:none" value="SD">
 
                                             <h2>SD</h2>
                                         </div>
@@ -37,21 +27,13 @@
                                                 <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">PILIH</button>
                                             </a>
                                         </div>
-                                        </form>
+                                  
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
-                                        <form method="POST" action="{{ route('paketProgram.store')}}" enctype="multipart/form-data">
-                                        {{ csrf_field() }}
-                                
-                                        <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
-                                                required autofocus
-                                                value="{{ Auth::user()->id }}" style="text-transform: capitalize">
-                                        <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
-
-                                            <input type="text" class="form-control" id="program" name="program" style="display:none" value="SMP">
+                                    
 
                                             <h2>SMP</h2>
                                         </div>
@@ -65,22 +47,14 @@
                                                 <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">PILIH</button>
                                             </a>
                                         </div>
-                                        </form>
+                                    
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
-                                        <form method="POST" action="{{ route('paketProgram.store')}}" enctype="multipart/form-data">
-                                        {{ csrf_field() }}
-                                        {{ method_field('POST') }}
-                                        <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
-                                                required autofocus
-                                                value="{{ Auth::user()->id }}" style="text-transform: capitalize">
-                                        <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
-
-                                            <input type="text" class="form-control" id="program" name="program" style="display:none" value="SMA">
+                                   
 
                                             <h2>SMA</h2>
                                           
@@ -95,7 +69,7 @@
                                                 <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">PILIH</button>
                                             </a>
                                         </div>
-                                        </form>
+                                  
                                     </div>
                                 </div>
                             </div><!-- end row -->
@@ -117,13 +91,7 @@
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
-                                        <form method="POST" action="{{  route('paketProgram.store')}}" enctype="multipart/form-data">
-                                        {{ csrf_field() }}
-                                        {{ method_field('POST') }}
-                                            <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
-                                            required autofocus
-                                            value="{{ Auth::user()->id }}" style="text-transform: capitalize">
-                                                    
+                           
                                             <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
                                             
                                          <input type="text" class="form-control" id="program" name="program" style="display:none" value="SBMPTN">
@@ -139,22 +107,13 @@
                                                 <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">PILIH</button>
                                             </a>
                                         </div>
-                                        </form>
+                                     
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
-                                        <form method="POST" action="{{ route('paketProgram.store')}}" enctype="multipart/form-data">
-                                        {{ csrf_field() }}
-                                
-                                        <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
-                                                required autofocus
-                                                value="{{ Auth::user()->id }}" style="text-transform: capitalize">
-                                        <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
-
-                                            <input type="text" class="form-control" id="program" name="program" style="display:none" value="Seleksi PTN">
-
+                                       
                                             <h2>SELEKSI PTN</h2>
                                         </div>
                                         <div class="pricing-table-space"></div>
@@ -174,15 +133,7 @@
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
-                                        <form method="POST" action="{{ route('paketProgram.store')}}" enctype="multipart/form-data">
-                                        {{ csrf_field() }}
-                                        {{ method_field('POST') }}
-                                        <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
-                                                required autofocus
-                                                value="{{ Auth::user()->id }}" style="text-transform: capitalize">
-                                        <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
-
-                                            <input type="text" class="form-control" id="program" name="program" style="display:none" value="CPNS">
+                                      
 
                                             <h2>CPNS</h2>
                                           
@@ -197,7 +148,7 @@
                                                 <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">PILIH</button>
                                             </a>
                                         </div>
-                                        </form>
+                                    
                                     </div>
                                 </div>
                             </div><!-- end row -->
@@ -219,12 +170,7 @@
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
-                                        <form method="POST" action="{{  route('paketProgram.store')}}" enctype="multipart/form-data">
-                                        {{ csrf_field() }}
-                                        {{ method_field('POST') }}
-                                            <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
-                                            required autofocus
-                                            value="{{ Auth::user()->id }}" style="text-transform: capitalize">
+                                     
                                                     
                                             <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
                                             
@@ -241,22 +187,13 @@
                                                 <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">PILIH</button>
                                             </a>
                                         </div>
-                                        </form>
+                                      
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
-                                        <form method="POST" action="{{ route('paketProgram.store')}}" enctype="multipart/form-data">
-                                        {{ csrf_field() }}
-                                
-                                        <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
-                                                required autofocus
-                                                value="{{ Auth::user()->id }}" style="text-transform: capitalize">
-                                        <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
-
-                                            <input type="text" class="form-control" id="program" name="program" style="display:none" value="Komputer">
-
+                                     
                                             <h2>KOMPUTER</h2>
                                         </div>
                                         <div class="pricing-table-space"></div>
@@ -269,20 +206,14 @@
                                                 <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">PILIH</button>
                                             </a>
                                         </div>
-                                        </form>
+                                      
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="pricing-table pricing-table-highlighted">
                                         <div class="pricing-table-header">
-                                        <form method="POST" action="{{ route('paketProgram.store')}}" enctype="multipart/form-data">
-                                        {{ csrf_field() }}
-                                        {{ method_field('POST') }}
-                                        <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
-                                                required autofocus
-                                                value="{{ Auth::user()->id }}" style="text-transform: capitalize">
-                                        <input type="number" class="form-control" id="invoice" name="invoice" style="display:none" value="<?php echo (rand(190000000,199999999)) ?>">
+                                
 
                                             <input type="text" class="form-control" id="program" name="program" style="display:none" value="Mengaji">
 
@@ -299,7 +230,7 @@
                                                 <button type="submit" class="btn btn-dark btn-radius btn-brd effect-1">PILIH</button>
                                             </a>
                                         </div>
-                                        </form>
+                                    
                                     </div>
                                 </div>
                             </div><!-- end row -->

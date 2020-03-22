@@ -15,12 +15,9 @@ class CreateModelJadwalsTable extends Migration
     {
         Schema::create('model_jadwals', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('invoice_id');
             $table->string('murid_id');
-            $table->string('nama_murid');
-            $table->string('bulan');
-            $table->string('sesi');
             $table->string('tutor_id')->nullable();
-            $table->string('nama_tutor')->nullable();
             $table->string('program');            
             $table->string('kelas')->nullable();
             $table->string('mata_pelajaran')->nullable();
@@ -28,8 +25,6 @@ class CreateModelJadwalsTable extends Migration
             $table->string('waktu_hari1')->nullable();;
             $table->string('hari2')->nullable();
             $table->string('waktu_hari2')->nullable();;
-            $table->string('hari3')->nullable();
-            $table->string('waktu_hari3')->nullable();;
             $table->string('status')->nullable();
             $table->timestamps();
         });

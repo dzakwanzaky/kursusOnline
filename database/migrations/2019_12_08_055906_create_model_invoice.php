@@ -18,6 +18,9 @@ class CreateModelInvoice extends Migration
             $table->string('invoice');
             $table->string('murid_id');
             $table->string('program');
+            $table->string('kelas')->nullable();
+            $table->string('jumlah_sesi');
+            $table->string('jumlah_mapel');
             $table->string('harga')->nullable();            
             $table->string('file')->nullable();
             $table->timestamps();

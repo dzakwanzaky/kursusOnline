@@ -255,7 +255,6 @@ Route::middleware(['siswa'])->group(function () {
     Route::get('/murid','JadwalController@index');
     Route::get('/invoicenya','ProgramController@index');
     Route::get('/invoice','ProgramController@data');
-    Route::get('/invoiceDetail','ProgramController@detail');
     Route::get('profileMurid','SiswaController@profileSiswa');
     Route::get('presensi/{id}','AbsenController@indexPresensi')->name('presensi');
     Route::get('kehadiranLes/{id}','AbsenController@kehadiranLes')->name('kehadiranLes');
@@ -284,11 +283,12 @@ Route::get('/invoicenya_pdf', 'ProgramController@pdf');
 Route::get('/verify','VerifyController@getVerify')->name('getverify');
 Route::post('/verify','VerifyController@postVerify')->name('verify');
 Route::get('profileAdmin','Auth\RegisterController@data');
-Route::get('/', 'ProgramController@program'); 
 Route::get('/paketProgram', 'ProgramController@paket');
 Route::get('/manajemenProgram', 'ProgramController@manajemenProgram')->name('manajemenProgram');
 Route::get('/tambahProgram','ProgramController@tambah')->name('tambahProgram');
 Route::get('/probel-dinamis','ProgramController@program')->name('probel-dinamis');
+Route::get('/invoiceDetail','ProgramController@detail');
+
 
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');

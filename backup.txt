@@ -24,7 +24,7 @@
             <div class="sign-up-content">
                 <form method="POST" action="{{ route('pendaftaranSiswa.store')}}" enctype="multipart/form-data">
                     @csrf
-                    <h2 class="form-title">Pendaftaran Bimbel Program SD</h2>
+                    <h2 class="form-title">Pendaftaran Bimbel Program SMA</h2>
 
                     <br>
                     <div class="panel-body">
@@ -33,37 +33,33 @@
                         <label for="kelas">Kelas
                             <select id="kelas" name="kelas" class="form-control" style="float:left">
                                 <option value=" ">Kelas</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
                             </select>
                         </label>
 
                         <label for="mata_pelajaran" style="float:right">Jumlah
-                            <select id="jumlah_mapel" name="jumlah_mapel" class="form-control" style="float:right">
+                            <select id="jumlah_matpel" name="jumlah_matpel" class="form-control" style="float:right">
                                 <option value=" ">Jumlah Mata Pelajaran</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                             </select>
                         </label>
-
                         <input type="number" class="form-control" id="invoice" name="invoice" style="display:none"
                             value="<?php echo (rand(190000000,199999999)) ?>">
                             
                         <input type="text" class="form-control" id="program" name="program" style="display:none"
-                            value="SD">
+                            value="SMA">
 
-                            <input id="murid_id" style="display:none" type="text" class="form-control" name="id_murid"
+                            <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id"
                             required autofocus value="{{ Auth::user()->id }}" style="text-transform: capitalize">
 
                     </div>
 
                     <div id="sesi1">
+
                         <label style="width:100%"> Jumlah Pertemuan
                             <select id="sesi1-select" name="jumlah_sesi" class="form-control" style="width:100%">
                                 <option value="">Pilih Sesi</option>
@@ -102,8 +98,11 @@
                         <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id[]"
                             required autofocus value="{{ Auth::user()->id }}" style="text-transform: capitalize">
 
+                        <input type="text" class="form-control" id="program" name="program[]" style="display:none"
+                            value="SMA">
+
                         <input type="text" class="form-control" id="status" name="status[]" style="display:none"
-                            value="MENUNGGU" >
+                            value="MENUNGGU">
 
                         <div class="alert alert-primary">
                             Masukkan detail jadwal untuk Sesi 1!
@@ -180,12 +179,17 @@
                         <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id[]"
                             required autofocus value="{{ Auth::user()->id }}" style="text-transform: capitalize">
 
+                        <input type="text" class="form-control" id="program" name="program[]" style="display:none"
+                            value="SMA">
+
+                        <input type="text" class="form-control" id="status" name="status[]" style="display:none"
+                            value="MENUNGGU">
+
+
                         <div class="alert alert-primary">
                             Masukkan detail jadwal untuk mata pelajaran 2!
                         </div>
 
-                        <input type="text" class="form-control" id="status" name="status[]" style="display:none"
-                            value="MENUNGGU">
                         <div>
                             <label for="mata_pelajaran" style="width:100%">Mata Pelajaran
                                 <select id="mata_pelajaran" name="mata_pelajaran[]" class="form-control"
@@ -258,7 +262,10 @@
                         <input id="murid_id" style="display:none" type="text" class="form-control" name="murid_id[]"
                             required autofocus value="{{ Auth::user()->id }}" style="text-transform: capitalize">
 
-                            <input type="text" class="form-control" id="status" name="status[]" style="display:none"
+                        <input type="text" class="form-control" id="program" name="program[]" style="display:none"
+                            value="SMA">
+
+                        <input type="text" class="form-control" id="status" name="status[]" style="display:none"
                             value="MENUNGGU">
 
                         <div class="alert alert-primary">
@@ -330,8 +337,7 @@
                         </div>
 
                     </div>
-               
-                  
+
                     <br>
                     <div class="form-group">
                         <a>
@@ -354,23 +360,23 @@
             $('#div2').hide();
             $('#div3').hide();
             $(document).ready(function () {
-                $("#jumlah_mapel").change(function () {
+                $("#jumlah_matpel").change(function () {
                     if ($(this).val() == "1") {
-                        $('#sesi1').show().find('input, textarea, select').prop('disabled', false);
-                        $('#sesi2').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
+                        $('#sesi1').show();
+                        $('#sesi2').hide();
+                        $('#sesi3').hide();
 
-                        $('#div1').show().prop('disabled', false);
-                        $('#div2').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#div3').hide().find('input, textarea, select').prop('disabled', true);
+                        $('#div1').show();
+                        $('#div2').hide();
+                        $('#div3').hide();
                     } else if ($(this).val() == "2") {
-                        $('#sesi1').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#sesi2').show().find('input, textarea, select').prop('disabled', false);
-                        $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
+                        $('#sesi1').hide();
+                        $('#sesi2').show();
+                        $('#sesi3').hide();
 
-                        $('#div1').show().find('input, textarea, select').prop('disabled', false);
-                        $('#div2').show().find('input, textarea, select').prop('disabled', false);
-                        $('#div3').hide().find('input, textarea, select').prop('disabled', true);
+                        $('#div1').show();
+                        $('#div2').show();
+                        $('#div3').hide();
                     } else if ($(this).val() == "3") {
                         $('#sesi1').hide();
                         $('#sesi2').hide();
