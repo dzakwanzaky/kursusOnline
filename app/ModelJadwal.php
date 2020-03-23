@@ -20,9 +20,11 @@ class ModelJadwal extends Model
         return $this->belongsTo('App\User', 'tutor_id');
     }
 
-    public function datas(){
-        return $this->belongsTo('App\ModelSiswa', 'murid_id'); //this is forbidden
+    public function invoice(){
+        return $this->belongsTo('App\ModelInvoice', 'invoice_id');
     }
 
+
+  
 
 }

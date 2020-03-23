@@ -101,5 +101,12 @@ class ProgramController extends Controller
         return redirect('manajemenProgram')->withMessage('Berhasil Merubah Data');
     }
 
+    public function destroy($id)
+    {
+        $data = ModelProgram::where('id',$id)->first();
+        $data->delete();
+        return redirect()->route('manajemenProgram')->with('destroy','Yakin ingin menghapus data?'); 
+    }
+
    
 }

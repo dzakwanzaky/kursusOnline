@@ -42,7 +42,7 @@
                                         @php $no = 1; @endphp
                                         @foreach($data as $d)
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $d->nama_siswa }}</td>
+                                        <td>{{ $d->user->name }}</td>
                                         <td>{{ $d->jenis_kelamin }}</td>
                                         <td>{{ $d->kota }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
                                             <td>   

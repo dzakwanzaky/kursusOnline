@@ -23,18 +23,18 @@ class SiswaController extends Controller
     }
     
     public function daftarSiswa(){
-        $data = ModelSiswa::with('files')->where('status', 'AKTIF')->get();
+        $data = ModelSiswa::where('status', 'AKTIF')->get();
         return view('dashboard_admin.daftarSiswa', compact('data'));
     }
 
      
     public function daftarSiswaBelumAktif(){
-        $data = ModelSiswa::with('files')->where('status', 'BELUM DIBAYAR')->get();
+        $data = ModelSiswa::where('status', 'BELUM DIBAYAR')->get();
         return view('dashboard_admin.daftarSiswaBelumAktif', compact('data'));
     }
 
     public function daftarSiswaTidakAktif(){
-        $data = ModelSiswa::with('files')->where('status', 'TIDAK AKTIF')->get();
+        $data = ModelSiswa::where('status', 'TIDAK AKTIF')->get();
         return view('dashboard_admin.daftarSiswaTidakAktif', compact('data'));
     }
 

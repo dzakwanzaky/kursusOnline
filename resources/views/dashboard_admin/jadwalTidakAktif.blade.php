@@ -36,7 +36,6 @@
                         <th>Mata Pelajaran</th>
                         <th>Sesi 1</th>
                         <th id="hari2">Sesi 2</th>
-                        <th id="hari3">Sesi 3</th>
                         <th>Status</th>
                         <th>Aksi</th>
                     </tr>
@@ -53,7 +52,6 @@
                         <td>{{ $d->mata_pelajaran }}</td>
                         <td>{{ $d->hari1 }} {{ $d->waktu_hari1 }}</td>
                         <td id="hari2td">{{ $d->hari2 }} {{ $d->waktu_hari2 }}</td>
-                        <td id="hari3td">{{ $d->hari3 }} {{ $d->waktu_hari3 }}</td>
                         <td>
                             <a class=" btn btn-sm btn-primary" style="color:white;">
                             <span>{{ $d->status }}</span>

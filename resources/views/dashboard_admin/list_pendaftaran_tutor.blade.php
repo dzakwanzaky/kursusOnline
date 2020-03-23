@@ -36,7 +36,6 @@
                         <th>Mata Pelajaran</th>
                         <th>Sesi 1</th>
                         <th>Sesi 2</th>
-                        <th>Sesi 3</th>
                         <th>Status</th>
                         <th>Aksi</th>
 
@@ -54,7 +53,6 @@
                         <td>{{ $d->mata_pelajaran }}</td>
                         <td>{{ $d->hari1 }}, PUKUL {{ $d->waktu_hari1 }}</td>
                         <td>{{ $d->hari2 }}, PUKUL {{ $d->waktu_hari2 }}</td>
-                        <td>{{ $d->hari3 }}, PUKUL {{ $d->waktu_hari3 }}</td>
                         <td>
                         {{ $d->status }}
                         </td>
