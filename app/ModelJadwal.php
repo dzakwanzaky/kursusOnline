@@ -20,6 +20,11 @@ class ModelJadwal extends Model
         return $this->belongsTo('App\User', 'tutor_id');
     }
 
+    public function siswa(){
+        return $this->belongsTo('App\ModelSiswa', 'murid_id');
+    }
+
+
     public function invoice(){
         return $this->belongsTo('App\ModelInvoice', 'invoice_id');
     }

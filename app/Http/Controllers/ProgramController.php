@@ -58,18 +58,10 @@ class ProgramController extends Controller
         return view('probel-dinamis', compact('data'));
     }
 
-    public function paket(){
-        $data1 = ModelProgram::where('id', '=', '1')->get();
-        $data2 = ModelProgram::where('id', '=', '2')->get();
-        $data3 = ModelProgram::where('id', '=', '3')->get();
-        return view('base/paket_program_page', compact('data1', 'data2', 'data3'));
-    }
-
     public function manajemenProgram(){
         $data = ModelProgram::all();
         return view('dashboard_admin/manajemenProgram', compact('data'));
     }
-    
 
     public function edit($id)
     {

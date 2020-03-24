@@ -52,15 +52,15 @@
 
                                     <td>{{ $no++ }}</td>
                                     <td>
-                                        {{ $d->nama_murid }}
+                                        {{ $d->jadwal->nama_murid }}
                                     </td>
                                     <td>
-                                        {{ $d->datas->jenis_kelamin }}
+                                        {{ $d->siswa->jenis_kelamin }}
                                     </td>
                                     <td>
-                                        {{ $d->datas->provinsi }},
-                                        {{ $d->datas->kabupaten }},
-                                        {{ $d->datas->kecamatan }}
+                                        {{ $d->siswa->provinsi }},
+                                        {{ $d->siswa->kabupaten }},
+                                        {{ $d->siswa->kecamatan }}
                                     </td>
                                     <td>{{ $d->mata_pelajaran }}</td>
                                     <td>{{ $d->hari1 }} {{ $d->waktu_hari1 }}</td>
