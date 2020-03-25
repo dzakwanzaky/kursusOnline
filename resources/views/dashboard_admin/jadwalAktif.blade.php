@@ -28,17 +28,20 @@
               <thead class="thead-dark">
                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
 
-                        <th>No.</th>
-                        <th>Nama Tutor</th>
-                        <th>Nama Siswa</th>
-                        <th>Program</th>
-                        <th>Kelas</th>
-                        <th>Mata Pelajaran</th>
-                        <th>Sesi 1</th>
-                        <th id="hari2">Sesi 2</th>
-                        <th>Status</th>
-                        <th>Aksi</th>
+                        <th rowspan="2">No.</th>
+                        <th rowspan="2">Nama Tutor</th>
+                        <th rowspan="2">Nama Siswa</th>
+                        <th rowspan="2">Program</th>
+                        <th rowspan="2">Kelas</th>
+                        <th rowspan="2">Mata Pelajaran</th>
+                        <th colspan="2">Sesi </th>
+                        <th rowspan="2">Status</th>
+                        <th rowspan="2">Aksi</th>
                     </tr>
+                    <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
+                                    <th>1</th>
+                                    <th style="border-right:1px solid">2</th>
+                                </tr>
                 </thead>
                 <tbody>
                     @php $no = 1; @endphp

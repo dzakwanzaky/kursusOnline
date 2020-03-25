@@ -69,13 +69,13 @@ class JadwalController extends Controller
 
     public function jadwalTutor()
     {
-        $data = ModelJadwal::with('datas', 'jadwal')->where('tutor_id', '=', Auth::user()->id)->where('status', 'AKTIF')->orWhere('status', 'DIPILIH TUTOR')->get();
+        $data = ModelJadwal::where('tutor_id', '=', Auth::user()->id)->where('status', 'AKTIF')->orWhere('status', 'DIPILIH TUTOR')->get();
         return view('tutor.jadwal', compact('data'));
     }
 
     public function detailJadwalTutor($id)
     {
-        $data = ModelJadwal::with('datas', 'jadwal')->where('id', $id)->get();
+        $data = ModelJadwal::where('id', $id)->get();
         return view('tutor.detailJadwal', compact('data'));
     }
 
@@ -85,18 +85,19 @@ class JadwalController extends Controller
         return view('dashboard_admin.jadwalTutor', compact('data'));
     }
 
+    public function jadwalSiswaTutor($id)
+    {
+        $data = ModelJadwal::where('id', $id)->get();
+        return view('tutor.detailPendaftaran', compact('data'));
+    }
+
     public function jadwalSiswaAdmin($id)
     {
         $data = ModelJadwal::where('murid_id', $id)->get();
         return view('dashboard_admin.jadwalSiswa', compact('data'));
     }
 
-    
-    public function jadwalSiswaTutor($id)
-    {
-        $data = ModelJadwal::where('murid_id', $id)->get();
-        return view('tutor.detailJadwal', compact('data'));
-    }
+  
 
     /**
      * Show the form for creating a new resource.

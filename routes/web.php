@@ -246,7 +246,7 @@ Route::middleware(['tutor'])->group(function () {
     Route::get('tutor','JadwalController@tutor')->name('tutor');
     Route::get('jadwal','JadwalController@jadwalTutor');
     Route::get('profile','TutorController@profileTutor');
-    Route::get('detailPendaftaran/{id}','JadwalController@jadwalSiswaTutor')->name('detailJadwal');
+    Route::get('detailPendaftaran/{id}','JadwalController@jadwalSiswaTutor')->name('detailPendaftaran');
     Route::get('detailJadwal/{id}','JadwalController@detailJadwalTutor')->name('detailJadwal');
 
 });

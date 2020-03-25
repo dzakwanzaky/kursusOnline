@@ -83,27 +83,25 @@ class JadwalControllerAPI extends Controller
         $invoice->jumlah_mapel = $request->jumlah_mapel;
         $invoice->harga = $request->harga;
         if($invoice->save()){
-            $res['message'] = "Success!";
-            $res['value'] = "$data";
-            return response($res);
+            foreach ($request->mata_pelajaran as $key => $value){
+                $data = new ModelJadwal();
+                $data->invoice_id = $invoice->id;
+                $data->murid_id = $request->murid_id[$key];
+                $data->mata_pelajaran = $value;
+                $data->hari1 = $request->hari1[$key];
+                $data->hari2 = $request->hari2[$key];
+                $data->waktu_hari1 = $request->waktu_hari1[$key];
+                $data->waktu_hari2 = $request->waktu_hari2[$key];
+                $data->status = $request->status[$key];
+                if($data->save()){
+                    $res['message'] = "Success!";
+                    $res['value'] = "$data";
+                    return response($res);
+                    }  
+                }
         }  
         
-        foreach ($request->mata_pelajaran as $key => $value){
-        $data = new ModelJadwal();
-        $data->invoice_id = $invoice->id;
-        $data->murid_id = $request->murid_id[$key];
-        $data->mata_pelajaran = $value;
-        $data->hari1 = $request->hari1[$key];
-        $data->hari2 = $request->hari2[$key];
-        $data->waktu_hari1 = $request->waktu_hari1[$key];
-        $data->waktu_hari2 = $request->waktu_hari2[$key];
-        $data->status = $request->status[$key];
-        if($data->save()){
-            $res['message'] = "Success!";
-            $res['value'] = "$data";
-            return response($res);
-            }  
-        }
+ 
     }
 
     /**

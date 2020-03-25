@@ -20,6 +20,8 @@ class ProgramController extends Controller
     // {
     //     $this->middleware('auth');
     // }
+
+    //untuk invoice
     public function index()
     {
         $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->first();
@@ -28,6 +30,7 @@ class ProgramController extends Controller
         return view('murid/invoicenya', compact('data', 'alamat', 'invoice'));
     }
     
+    //untuk invoice
     public function data()
     {
         $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->first();
@@ -36,6 +39,7 @@ class ProgramController extends Controller
         return view('murid/invoice', compact('data', 'alamat', 'invoice'));
     }
 
+    //untuk invoice
     public function detail()
     {
         $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->get();
@@ -44,6 +48,7 @@ class ProgramController extends Controller
         return view('base/invoiceDetail', compact('data', 'alamat', 'invoice'));
     }
 
+    //untuk invoice
     public function pdf()
     {
         $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->get();
