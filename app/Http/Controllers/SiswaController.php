@@ -12,6 +12,7 @@ use App\ModelKecamatan;
 use Image;
 use App\Provinsi;
 use DB;
+use App\ModelJadwal;
 
 class SiswaController extends Controller
 {
@@ -19,7 +20,7 @@ class SiswaController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['verified', 'auth']);
     }
     
     public function daftarSiswa(){
@@ -65,8 +66,9 @@ class SiswaController extends Controller
 
     
     public function profileSiswaAdmin($id){
-        $data = ModelSiswa::with('user')->where('id', $id)->get();
-        return view('dashboard_admin.profileSiswa', compact('data'));
+        $data = ModelSiswa::where('id', $id)->get();
+        $jadwal = ModelJadwal::where('murid_id', $id)->get();
+        return view('dashboard_admin.profileSiswa', compact('data', 'jadwal'));
     }
 
     public function store(Request $request)

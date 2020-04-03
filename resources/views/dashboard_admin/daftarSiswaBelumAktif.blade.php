@@ -24,10 +24,12 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body table-responsive-m" style="overflow-x:auto;">
-                            <div class="alert alert-info" style="font-size:14px">
-                                <strong>INFO!</strong> Jika bukti pembayaran sudah sesuai, klik tombol <strong>BELUM
-                                    DIBAYAR</strong>
-                                pada tabel status sebagai tanda pembayaran telah diterima.
+                        <div class="alert alert-info" style="font-size:14px">
+                                <strong>INFO!</strong> Jika pembayaran sudah valid, klik tombol
+                               <button  class="btn btn-sm btn-success">
+                               <i class="fas fa-check"></i>
+                               </button> 
+                                untuk mengonfirmasi pembayaran.
                             </div>
                             <table class="table table-bordered table-striped table-responsive-md" id="siswa">
                                 <thead class="thead-dark">
@@ -52,7 +54,7 @@
                                         <td>{{ $d->kabupaten }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
                                         <td>
 
-                                            <button class=" btn btn-sm btn-primary" style="text-align:center">
+                                            <button class=" btn btn-sm btn-warning" style="text-align:center;color:white">
                                                 {{ $d->status }}</button>
                                         </td>
 
@@ -66,10 +68,11 @@
                                             </a>
                                             @else
                                             <a href="{{ url('/data_file/'.$d->files->file) }}" target="_blank">
-                                                <img width="100px" src="{{ url('/data_file/'.$d->files->file) }}">
+                                               {{ $d->files->file }}
                                             </a>
                                             @endif
                                         </td>
+
                                         <form action="{{ route('dataSiswa.update', $d->id) }}" method="post"
                                             enctype="multipart/form-data">
                                             {{ csrf_field() }}
@@ -83,17 +86,17 @@
                                                     id="kabupaten" name="kabupaten" value="{{ $d->kabupaten }}">
                                                 <input style="display:none" type="text" class="form-control"
                                                     id="kecamatan" name="kecamatan" value="{{ $d->kecamatan }}">
+                                                <a href="{{route('invoicePDF', $d->user->id)}}" target="_blank"
+                                                    class=" btn btn-sm btn-success mr-2" style="color:white;"
+                                                    data-toggle="tooltip" data-placement="top" title="Download Invoice">
+                                                    <span class="fa fa-download"></span></a>
                                                 <a class="btn btn-sm btn-info mr-2" data-toggle="tooltip"
-                                                    data-placement="top" title="Detail Profil" style="color:white"
+                                                    data-placement="top" title="Detail Siswa" style="color:white"
                                                     href="{{route('profileSiswaAdmin', $d->id)}}"> <i
                                                         class="fas fa-info-circle"></i></a>
-                                                <a class="btn btn-sm btn-warning mr-2" data-toggle="tooltip"
-                                                    data-placement="top" title="Jadwal Siswa" type="submit"
-                                                    style="color:white" href="{{route('jadwalSiswa', $d->id)}}"><i
-                                                        class="fas fa-calendar-alt"></i></a>
                                                 <button value="AKTIF" id="status" data-toggle="tooltip"
                                                     data-placement="top" title="Konfirmasi" name="status" type="submit"
-                                                    class=" btn btn-sm btn-success" style="text-align:center">
+                                                    class=" btn btn-sm btn-success" style="text-align:center" onclick="return confirm('Anda yakin ingin mengkonfirmasi pembayaran ini?')">
                                                     <i class="fas fa-check"></i></button>
                                             </td>
                                     </tr>

@@ -24,11 +24,14 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body table-responsive-m" style="overflow-x:auto;">
-                            <div class="alert alert-info" style="font-size:14px">
-                                <strong>INFO!</strong> Jika jadwal sudah sesuai dan tutor memenuhi syarat, klik tombol
-                                <strong>MENUNGGU</strong>
-                                pada tabel status dan status akan berubah menjadi <strong>AKTIF</strong>.
+                        <div class="alert alert-info" style="font-size:14px">
+                                <strong>INFO!</strong> Klik tombol
+                               <button  class="btn btn-sm btn-success">
+                               <i class="fas fa-check"></i>
+                               </button> 
+                                untuk mengonfirmasi tutor.
                             </div>
+                          
                             <table class="table table-bordered table-striped table-responsive-md" id="datakaryawan">
                                 <thead class="thead-dark">
                                     <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
@@ -50,7 +53,7 @@
                                         <td>{{ $d->nama_tutor }}</td>
                                         <td>{{ $d->kabupaten }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
                                         <td>
-                                            <button class="btn btn-sm btn-primary" style="text-align:center">
+                                            <button class="btn btn-sm btn-warning" style="color:white" >
                                                 {{ $d->status }}</button>
                                         </td>
                                         <td class="d-flex">
@@ -65,8 +68,8 @@
                                                 <input style="display:none" type="text" class="form-control"
                                                     id="mata_pelajaran" name="mata_pelajaran"
                                                     value="{{ $d->mata_pelajaran }}">
-                                                <input style="display:none" type="text" class="form-control" id="kota"
-                                                    name="kota" value="{{ $d->kota }}">
+                                                <input style="display:none" type="text" class="form-control" id="kabupaten"
+                                                    name="kabupaten" value="{{ $d->kabupaten }}">
                                                 <input style="display:none" type="text" class="form-control"
                                                     id="kecamatan" name="kecamatan" value="{{ $d->kecamatan }}">
                                                 <input style="display:none" type="text" class="form-control"
@@ -82,8 +85,8 @@
                                                         class="fas fa-calendar-alt"></i></a>
                                                 <button value="AKTIF" id="status" name="status"
                                                     class="btn btn-sm btn-success" data-toggle="tooltip"
-                                                    data-placement="top" title="Konfirmasi" type="submit"
-                                                    style="text-align:center"><i class="fas fa-check"></i>
+                                                    data-placement="top" title="Setujui" type="submit"
+                                                    style="text-align:center" onclick="return confirm('Anda yakin ingin menyetujui pendaftaran tutor?')"><i class="fas fa-check"></i>
                                                 </button>
                                         </td>
                                         </form>

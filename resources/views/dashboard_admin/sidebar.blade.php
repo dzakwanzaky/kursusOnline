@@ -28,14 +28,7 @@
               </p>
             </a>
           </li> 
-          <li class="nav-item">
-            <a href="/daftarTryout" class="nav-link {{ Request::segment(1) === 'daftarTryout' ? 'nav-link active' : null }}">
-            <i class="fas fa-book-reader nav-icon"></i>
-              <p>
-                Manajemen Tryout
-              </p>
-            </a>
-          </li>
+         
 
           <li class="nav-item">
             <a href="/daftarSiswa" class="nav-link {{ Request::segment(1) === 'daftarSiswa' ? 'nav-link active' : null }} nav-link {{ Request::segment(1) === 'daftarSiswaBelumAktif' ? 'nav-link active' : null }}
@@ -81,7 +74,14 @@
             </a>
           
           </li>
-
+          <li class="nav-item">
+            <a href="/daftarTryout" class="nav-link {{ Request::segment(1) === 'daftarTryout' ? 'nav-link active' : null }}">
+            <i class="fas fa-book-reader nav-icon"></i>
+              <p>
+                Manajemen Tryout
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="/manajemenProgram" class="nav-link nav-link {{ Request::segment(1) === 'manajemenProgram' ? 'nav-link active' : null }}">
             <i class="nav-icon far fa-clipboard"></i>
@@ -91,6 +91,7 @@
             </a>
           
           </li>
+        
 
 
         </ul>

@@ -51,9 +51,11 @@
                                         <td>{{ $d->keterangan}}</td>
                                         <td class="d-flex">
                                         <a href="{{route('program.edit',$d->id)}}" class="btn btn-sm btn-primary mr-2"
-                                                ><i class="far fa-edit"></i></a>
-                                            <form action="{{ route('program.destroy', $d->id) }}" method="post"
-                                                class="destroy"> 
+                                        data-toggle="tooltip"
+                                                data-placement="top" title="Edit Program"><i class="far fa-edit"></i></a>
+                                            <form action="{{ route('program.destroy', $d->id) }}" method="post" data-toggle="tooltip"
+                                                data-placement="top" title="Hapus Program"
+                                                class="destroy" onclick="return confirm('Anda yakin ingin menghapus data?')"> 
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
                                                 <button type="submit" class="btn btn-sm btn-danger mr-2"
@@ -85,6 +87,10 @@
 <script>
     $(document).ready(function () {
         $('#program').DataTable();
+    });
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
     });
 </script>
 @endsection

@@ -24,4 +24,5 @@ class ModelSiswa extends Model
     {
     	return $this->hasOne('App\ModelInvoice', 'id_murid');
     }
+
 }

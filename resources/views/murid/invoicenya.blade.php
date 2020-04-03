@@ -68,9 +68,9 @@
             <thead>
                 <tr>
                     <th colspan="4"><strong>#</strong>
-                        @foreach($invoice as $i)
-                        {{ $i->invoice }}
-                        @endforeach</th>
+                        @foreach($data as $d)
+                        {{ $d->invoice }}
+                        </th>
                     <th colspan="4">
                         <?php 
                     echo date("d-m-Y")
@@ -89,13 +89,12 @@
                     </td>
                     <td colspan="4">
                         <b>Pelanggan: </b>
-                        <p>{{ Auth::user()->name }}<br>
-                            @php $no = 1; @endphp
-                            @foreach($alamat as $a)
-                            {{ $a->kecamatan }}, {{ $a->kabupaten }}, {{ $a->provinsi }}
-                            @endforeach<br>
-                            {{ Auth::user()->phone }} <br>
-                            {{ Auth::user()->email }}
+                        <p>{{ $d->user->name }}<br>
+                        {{ $d->siswa->kabupaten }} {{ $d->siswa->kecamatan }} {{ $d->siswa->provinsi }}
+                            <br>
+                            {{ $d->user->phone }} <br>
+                            {{ $d->user->email }}
+
                         </p>
                     </td>
                 </tr>
@@ -108,25 +107,22 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        @php $no = 1; @endphp
-                        @foreach($invoice as $d)
+                       
                         {{ $d->program }}
                     </td>
                     <td colspan="2">
-                        {{$d->jumlah_mapel}} Mata Pelajaran
+                    {{ $d->jumlah_mapel }} Mata Pelajaran
                     </td>
                     <td colspan="4">
-                        {{$d->jumlah_sesi}} Pertemuan Satu Minggu
+                    {{ $d->jumlah_sesi }} Pertemuan Satu Minggu
                     </td>
-                    @endforeach
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="4">Total</th>
-                    <td colspan="4"> @php $no = 1; @endphp
-                        @foreach($invoice as $d)
-                        {{ $d->harga }}
+                    <td colspan="4"> 
+                    {{ $d->harga }}
                         @endforeach</td>
                 </tr>
                 

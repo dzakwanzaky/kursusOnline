@@ -10,6 +10,7 @@
 |
 */
 
+Auth::routes(['verify' => true]);
 
 Route::get('/wizardsbm', function () {
     return view('base/aksessoal');
@@ -51,9 +52,7 @@ Route::get('/kontak', function () {
 Route::get('/paketProgram', function () {
     return view('base/paket_program_page');
 });
-Route::get('/login', function () {
-    return view('base/login_page');
-});
+
 Route::get('/dataSiswa', function () {
     return view('base/dataSiswa');
 });
@@ -122,9 +121,10 @@ Route::get('/landing', 'BaseController@index');
 Route::get('/murid', function () {
     return view('murid/murid');
 });
-Route::get('/invoice', function () {
-    return view('murid/invoice');
+Route::get('/verify', function () {
+    return view('auth/verify');
 });
+
 Route::get('/invoicenya', function () {
     return view('murid/invoicenya');
 });
@@ -260,7 +260,7 @@ Route::middleware(['siswa'])->group(function () {
     Route::get('kehadiranLes/{id}','AbsenController@kehadiranLes')->name('kehadiranLes');
 });
 
-Route::resource('dataTutor','TutorController');
+Route::resource('dataTutor','TutorController')->middleware('verified');
 Route::resource('dataSiswa','SiswaController');
 Route::resource('paketProgram','InvoiceController');
 Route::resource('program','ProgramController');
@@ -280,14 +280,15 @@ Route::get('/getKabupaten/{id}', 'SiswaController@getKabupaten')->name('getKabup
 Route::get('/getKecamatan/{id}', 'SiswaController@getKecamatan')->name('getKecamatan');
 Route::post('/upload', 'InvoiceController@proses_upload')->name('upload');
 Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
-Route::get('/verify','VerifyController@getVerify')->name('getverify');
-Route::post('/verify','VerifyController@postVerify')->name('verify');
+// Route::get('/verify','VerifyController@getVerify')->name('getverify');
+// Route::post('/verify','VerifyController@postVerify')->name('verify');
 Route::get('profileAdmin','Auth\RegisterController@data');
 Route::get('/paketProgram', 'ProgramController@paket');
 Route::get('/manajemenProgram', 'ProgramController@manajemenProgram')->name('manajemenProgram');
 Route::get('/tambahProgram','ProgramController@tambah')->name('tambahProgram');
 Route::get('/probel-dinamis','ProgramController@program')->name('probel-dinamis');
 Route::get('/invoiceDetail','ProgramController@detail');
+Route::get('/invoicePDF/{murid_id}','ProgramController@pdf')->name('invoicePDF');
 
 
 Route::get('change-password', 'ChangePasswordController@index');

@@ -90,6 +90,10 @@
          $(document).ready( function () {
            $('#siswa').DataTable();
            });
+
+           $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
   </script>
 
   @endsection

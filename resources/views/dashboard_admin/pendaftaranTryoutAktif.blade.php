@@ -24,11 +24,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body table-responsive-m" style="overflow-x:auto;">
-                            <div class="alert alert-info" style="font-size:14px">
-                                <strong>INFO!</strong> Jika jadwal sudah sesuai dan tutor memenuhi syarat, klik tombol
-                                <strong>MENUNGGU</strong>
-                                pada tabel status dan status akan berubah menjadi <strong>AKTIF</strong>.
-                            </div>
+                     
                             <table class="table table-bordered table-striped table-responsive-md" id="datakaryawan">
                                 <thead class="thead-dark">
                                     <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
@@ -44,7 +40,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                    <tr>
+                                   
                                         @php $no = 1; @endphp
                                         @foreach($data as $d)
                                         <td>{{ $no++ }}</td>
@@ -58,11 +54,11 @@
                                                 style="text-align:center">BELUM UPLOAD</button>
                                             @else
                                             <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
-                                                <img width="100px" src="{{ url('/data_file/'.$d->file) }}">
+                                                {{ $d->file }}
                                             </a>
                                             @endif
                                         <td class="d-flex">
-                                        <button class="btn btn-sm btn-primary" value="{{ $d->status }}">
+                                        <button class="btn btn-sm btn-success" value="{{ $d->status }}">
                                         {{ $d->status }} 
                                         </button>
                                         </td>

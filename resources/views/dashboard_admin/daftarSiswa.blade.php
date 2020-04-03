@@ -45,18 +45,17 @@
                                         <td>{{ $d->user->name }}</td>
                                         <td>{{ $d->jenis_kelamin }}</td>
                                         <td>{{ $d->kota }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
-                                            <td>   
-                                                <button
-                                                    class=" btn btn-sm btn-primary" style="text-align:center">
-                                                    {{ $d->status }}</button>
-                                            </td>
+                                        <td>
+                                            <button class=" btn btn-sm btn-success" style="text-align:center">
+                                                {{ $d->status }}</button>
+                                        </td>
                                         <td>
                                             @if($d->files->file==null)
                                             <button name="status" class=" btn btn-sm btn-danger"
                                                 style="text-align:center">BELUM UPLOAD</button>
                                             @else
                                             <a href="{{ url('/data_file/'.$d->files->file) }}" target="_blank">
-                                                <img width="100px" src="{{ url('/data_file/'.$d->files->file) }}">
+                                                {{ $d->files->file }}
                                             </a>
                                             @endif
                                         </td>
@@ -66,19 +65,16 @@
                                                 <input style="display:none" value="TIDAK AKTIF" id="status"
                                                     name="status"></input>
                                                 <a class="btn btn-sm btn-info mr-2" data-toggle="tooltip"
-                                                    data-placement="top" title="Detail Profil" style="color:white"
+                                                    data-placement="top" title="Detail Siswa" style="color:white"
                                                     href="{{route('profileSiswaAdmin', $d->id)}}"> <i
                                                         class="fas fa-info-circle"></i></a>
-                                                <a class="btn btn-sm btn-warning mr-2" data-toggle="tooltip"
-                                                    data-placement="top" title="Jadwal Siswa" type="submit"
-                                                    style="color:white" href="{{route('jadwalSiswa', $d->id)}}"><i
-                                                        class="fas fa-calendar-alt"></i></a>
+
                                                 <button type="submit" class="btn btn-sm btn-danger mr-2"
-                                                    data-toggle="tooltip" data-placement="top" title="Hapus"
-                                                    style="text-align:center"><i class="far fa-trash-alt"></i></button>
-                                                </form>
+                                                    data-toggle="tooltip" data-placement="top" title="Nonaktifkan Siswa"
+                                                    style="text-align:center" onclick="return confirm('Anda yakin mau menonaktifkan siswa?')"><i class="far fa-trash-alt"></i></button>
+                                            </form>
                                         </td>
-                    
+
                                     </tr>
                                     @endforeach
 

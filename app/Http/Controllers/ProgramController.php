@@ -49,14 +49,13 @@ class ProgramController extends Controller
     }
 
     //untuk invoice
-    public function pdf()
+    public function pdf($id)
     {
-        $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->get();
-        $alamat = ModelSiswa::where('id', '=', Auth::user()->id)->get();
-        $invoice = ModelInvoice::where('id_murid', '=', Auth::user()->id)->get();
-        $pdf = PDF::loadView('murid/invoicenya', ['data'=>$data, 'alamat'=>$alamat, 'invoice'=>$invoice])->setPaper('A4');
+        $data = ModelInvoice::where('id_murid', $id)->get();
+        $pdf = PDF::loadView('murid/invoicenya', ['data'=>$data])->setPaper('A4');
         return $pdf->stream('invoice.pdf');
     }
+
 
     public function program(){
         $data = ModelProgram::all();

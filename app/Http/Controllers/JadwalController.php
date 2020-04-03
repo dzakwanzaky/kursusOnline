@@ -69,13 +69,13 @@ class JadwalController extends Controller
 
     public function jadwalTutor()
     {
-        $data = ModelJadwal::where('tutor_id', '=', Auth::user()->id)->where('status', 'AKTIF')->orWhere('status', 'DIPILIH TUTOR')->get();
+        $data = ModelJadwal::where('tutor_id', '=', Auth::user()->id)->where('status', 'AKTIF')->get();
         return view('tutor.jadwal', compact('data'));
     }
 
     public function detailJadwalTutor($id)
     {
-        $data = ModelJadwal::where('id', $id)->get();
+        $data = ModelSiswa::where('id', $id)->get();
         return view('tutor.detailJadwal', compact('data'));
     }
 
@@ -181,7 +181,11 @@ class JadwalController extends Controller
         if(Auth::user()->role == 'tutor'){
         return redirect('tutor')->withMessage('Berhasil Konfirmasi');
         } else {
-            return redirect('list_pendaftaranTutor')->withMessage('Berhasil Konfirmasi');
+            if ($data->status == 'AKTIF'){
+                return redirect('list_pendaftaranTutor')->withMessage('Berhasil Konfirmasi');
+            } else {
+                return redirect('jadwalTidakAktif')->withMessage('Berhasil Konfirmasi');
+            }
         }
     }
 

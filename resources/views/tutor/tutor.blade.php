@@ -35,6 +35,8 @@
                                     <th rowspan="2">Nama</th>
                                     <th rowspan="2">Jenis Kelamin</th>
                                     <th rowspan="2">Alamat</th>
+                                    <th rowspan="2">Program</th>
+                                    <th rowspan="2">Kelas</th>
                                     <th rowspan="2">Mata Pelajaran</th>
                                     <th colspan="2">Sesi</th>
                                     <th rowspan="2">Aksi</th>
@@ -59,20 +61,22 @@
                                     <td>
                                         {{ $d->siswa->provinsi }},
                                         {{ $d->siswa->kabupaten }},
-                                        {{ $d->siswa->kecamatan }}
+                                        {{ $d->siswa->kecamatan }},
+                                        {{ $d->siswa->alamat_detail }}
+
                                     </td>
+                                    <td>
+                                        {{ $d->invoice->program }}
+                                    </td>
+                                    <td>
+                                        {{ $d->invoice->kelas }}
+                                    </td>
+                                 
                                     <td>{{ $d->mata_pelajaran }}</td>
                                     <td>{{ $d->hari1 }} {{ $d->waktu_hari1 }}</td>
                                     <td>{{ $d->hari2 }} {{ $d->waktu_hari2 }}</td>
 
-
                                     <td class="d-flex">
-
-                                        <!-- button detail -->
-                                        <a class="btn btn-sm btn-warning mr-2" data-toggle="tooltip"
-                                            data-placement="top" title="Detail Jadwal" style="color:white"
-                                            href="{{route('detailPendaftaran', $d->id)}}"><i
-                                                class="fas fa-calendar-alt"></i></a>
 
                                         <form action="{{ route('pendaftaranSiswa.update', $d->id) }}" method="post"
                                             enctype="multipart/form-data" id="formStatus" name="formStatus">
@@ -86,7 +90,7 @@
                                             <!-- button update -->
                                             <button id="status" name="btnSubmit"
                                                 data-toggle="tooltip" data-placement="top" title="Ajukan" type="submit"
-                                                class=" btn btn-sm btn-success mr-2 accept"> <i
+                                                class=" btn btn-sm btn-success mr-2 accept" onclick="return confirm('Anda yakin ingin mengajukan jadwal?')"> <i
                                                     class="fas fa-check"></i>
                                             </button>
 
