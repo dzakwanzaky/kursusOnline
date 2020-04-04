@@ -16,6 +16,18 @@ Route::get('/wizardsbm', function () {
     return view('base/aksessoal');
 });
 
+Route::get('/ping', function () {
+    return view('base/ting');
+});
+
+Route::get('/paket', function () {
+    return view('base/paket');
+});
+
+Route::get('/testing', function () {
+    return view('testing');
+});
+
 Route::get('/card', function () {
     return view('base/card');
 });
@@ -206,9 +218,8 @@ Route::get('/daftarTryout', function () {
 Route::get('/tambahTryout', function () {
     return view('dashboard_admin/tambahTryout');
 });
-Route::get('/tambahProgram', function () {
-    return view('dashboard_admin/tambahProgram');
-});
+
+
 
 Auth::routes();
 
@@ -268,6 +279,8 @@ Route::resource('pendaftaranSiswa','JadwalController');
 Route::resource('tryout','TryoutController');
 Route::resource('absen','AbsenController');
 Route::resource('formulir','FormulirController');
+Route::resource('paket','PaketController');
+
 
 
 
@@ -283,7 +296,9 @@ Route::get('/invoicenya_pdf', 'ProgramController@pdf');
 Route::get('profileAdmin','Auth\RegisterController@data');
 Route::get('/paketProgram', 'ProgramController@paket');
 Route::get('/manajemenProgram', 'ProgramController@manajemenProgram')->name('manajemenProgram');
+Route::get('/manajemenPaket', 'PaketController@manajemenPaket')->name('manajemenPaket');
 Route::get('/tambahProgram','ProgramController@tambah')->name('tambahProgram');
+Route::get('/tambahPaket','PaketController@tambah')->name('tambahPaket');
 Route::get('/probel-dinamis','ProgramController@program')->name('probel-dinamis');
 Route::get('/invoiceDetail','ProgramController@detail');
 Route::get('/invoicePDF/{murid_id}','ProgramController@pdf')->name('invoicePDF');

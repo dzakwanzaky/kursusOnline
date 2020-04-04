@@ -34,6 +34,7 @@
                         <th>Nama Tryout</th>
                         <th>Jumlah Soal</th>
                         <th>Kategori</th>
+                        <th>Mata Pelajaran</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -46,6 +47,7 @@
                         <td>{{ $d->nama }}</td>
                         <td>{{ $d->jumlah_soal }}</td>
                         <td>{{ $d->kategori }}</td>
+                        <td>{{ $d->mata_pelajaran }}</td>
                         <td class="text-center">
                             <form action="{{ route('tryout.destroy', $d->id) }}" method="post" class="destroy">
                             <a type="button" class="btn btn-info mr-2" href="{{route('daftarSoal', $d->id)}}"><i class="far fa-eye"></i></a>

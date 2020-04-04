@@ -91,6 +91,15 @@
             </a>
           
           </li>
+          <li class="nav-item">
+            <a href="/manajemenPaket" class="nav-link nav-link {{ Request::segment(1) === 'manajemenPaket' ? 'nav-link active' : null }}">
+            <i class="nav-icon fas fa-box-open"></i>
+              <p>
+                Manajemen Paket
+              </p>
+            </a>
+          
+          </li>
         
 
 

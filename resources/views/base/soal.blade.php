@@ -7,8 +7,8 @@
 <style type="text/css">
     .awake {
         background-color: #f8f8ff;
-        height: 120%;
-        width: 100%;
+                width: 100%;
+        display: inline-block;
 
     }
 
@@ -2412,8 +2412,15 @@
                     <br><br>
                     <h2>Soal Bahasa Indonesia SD</h2>
                     <p class="lead"><b>Soal no {{$d->nomor_soal}}</b><br>
-                    {{$d->soal}}</p>
-               
+                    {!! $d->soal !!}</p>
+
+                    @if($d->file==null)
+                    <a></a>
+                    @else
+                    <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
+                          <img width="150px" src="{{ url('/data_file/'.$d->file) }}">
+                    </a> 
+                    @endif
                 </div>
             </div>
         </div>
@@ -2572,7 +2579,7 @@
                 <div class="satu">
                     <p>
                         <font color="#696969"><b>Pembahasan</b></font><br>
-                        <font color="#696969"> {{$d->pembahasan}}</font>
+                        <font color="#696969"> {!! $d->pembahasan !!}</font>
                     </p>
                 </div>
             </article>

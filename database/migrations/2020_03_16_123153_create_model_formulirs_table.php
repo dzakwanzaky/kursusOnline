@@ -18,6 +18,7 @@ class CreateModelFormulirsTable extends Migration
             $table->string('namalengkap');
             $table->string('notelp');
             $table->string('asalsekolah')->nullable();
+            $table->string('kategori')->nullable();
             $table->string('email');
             $table->string('file');
             $table->string('status');
