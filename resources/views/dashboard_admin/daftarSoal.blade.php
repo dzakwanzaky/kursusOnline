@@ -71,7 +71,7 @@
                           <a type="button" class="btn btn-sm btn-primary mr-2" href="{{route('soal.edit',$d->id)}}">Edit</a>
                           {{ csrf_field() }}
                           {{ method_field('DELETE') }}   
-                          <button type="submit" class="btn btn-sm btn-danger mr-2" style="color:white">Hapus</button>
+                          <button type="submit" class="btn btn-sm btn-danger mr-2" style="color:white" onclick="return confirm('Anda yakin akan menghapus soal?')">Hapus</button>
                           </form>
                         </td>
                     </tr>

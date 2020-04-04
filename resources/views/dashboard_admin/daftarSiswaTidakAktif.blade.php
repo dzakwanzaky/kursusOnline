@@ -41,7 +41,7 @@
                                         @php $no = 1; @endphp
                                         @foreach($data as $d)
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $d->nama_siswa }}</td>
+                                        <td>{{ $d->user->name }}</td>
                                         <td>{{ $d->jenis_kelamin }}</td>
                                         <td>{{ $d->kota }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
 
@@ -54,12 +54,12 @@
                                                 name="kota" value="{{ $d->kota }}">
                                             <input style="display:none" type="text" class="form-control" id="kecamatan"
                                                 name="kecamatan" value="{{ $d->kecamatan }}">
-                                            <button class=" btn btn-sm btn-primary" style="text-align:center">
+                                            <button class=" btn btn-sm btn-secondary" style="text-align:center">
                                                 {{ $d->status }}</button>
                                         </td>
-                                        <td>
+                                        <td style="text-align:center">
                                             <a class="btn btn-sm btn-info mr-2" data-toggle="tooltip"
-                                                data-placement="top" title="Detail Profil" style="color:white"
+                                                data-placement="top" title="Detail Siswa" style="color:white"
                                                 href="{{route('profileSiswaAdmin', $d->id)}}"> <i
                                                     class="fas fa-info-circle"></i></a>
                                         </td>

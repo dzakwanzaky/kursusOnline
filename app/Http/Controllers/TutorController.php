@@ -10,6 +10,7 @@ use App\ModelSiswa;
 use App\ModelKab;
 use App\ModelKecamatan;
 use App\Provinsi;
+use App\ModelJadwal;
 
 
 class TutorController extends Controller
@@ -17,7 +18,7 @@ class TutorController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth', 'verified']);
     }
     
     public function daftarTutor(){
@@ -27,7 +28,8 @@ class TutorController extends Controller
 
     public function profileTutorAdmin($id){
         $data = ModelTutor::with('tutor')->where('id', $id)->get();
-        return view('dashboard_admin.profileTutor', compact('data'));
+        $jadwal = ModelJadwal::where('tutor_id', $id)->get();
+        return view('dashboard_admin.profileTutor', compact('data', 'jadwal'));
     }
 
     public function statusTutor(Request $request, $id){

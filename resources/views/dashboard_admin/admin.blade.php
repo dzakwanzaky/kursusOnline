@@ -30,12 +30,13 @@
                                     <div class="inner">
                                         <h3>{{ DB::table('users')->where('role','!=','admin')->count()}}</h3>
 
-                                        <p>Pendaftaran Les</p>
+                                        <p>Pendaftaran Jadwal</p>
                                     </div>
                                     <div class="icon">
-                                        <i class="fas fa-folder"></i>
+                                    <i class="far fa-calendar"></i>
                                     </div>
-                                    <a href="#" class="small-box-footer">More info <i
+                                    <a href="#" class="small-box-footer">More info
+                                    <i
                                             class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
@@ -44,7 +45,7 @@
                                 <div class="small-box bg-yellow">
                                     <div class="inner">
                                         <h3>{{ DB::table('model_siswas')->where('status','ACTIVE')->count()}}</h3>
-                                        <p>Murid Aktif</p>
+                                        <p>Siswa Aktif</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-user-graduate"></i>
@@ -64,7 +65,7 @@
                                     <div class="icon">
                                         <i class="fas fa-chalkboard-teacher"></i>
                                     </div>
-                                    <a href="/manajemenTutor" class="small-box-footer">More info <i
+                                    <a href="/daftarTutor" class="small-box-footer">More info <i
                                             class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
@@ -97,10 +98,28 @@
                                     <a href="/daftarSiswa" class="small-box-footer">More info <i
                                             class="fa fa-arrow-circle-right"></i></a>
                                 </div>
+
+                            </div>
+                            <div class="col-lg-3 col-xs-6">
+                                <!-- small box -->
+                                <div class="small-box" style="background-color:#E5FA18">
+                                    <div class="inner">
+                                        <h3>{{ DB::table('model_formulirs')->where('file','!=','null')->count()}}</h3>
+
+                                        <p>Pendaftaran Tryout</p>
+                                    </div>
+                                    <div class="icon">
+                                    <i class="fas fa-folder"></i>
+                                    </div>
+                                    <a href="/tryoutAktif" class="small-box-footer">More info <i
+                                            class="fa fa-arrow-circle-right"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
 
 
                 <!-- /.col-md-6 -->

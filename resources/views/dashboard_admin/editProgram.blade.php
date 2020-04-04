@@ -52,33 +52,13 @@
 						<input type="text" class="form-control" id="program" name="program" value="{{ $d->program }}" >
 					</div>
 
-					<div class="form-group">
-						<label for="">Fasilitas :</label>
-						<input type="text" class="form-control" id="fasilitas" name="fasilitas" value="{{ $d->fasilitas }}" >
-					</div>
-
-					<div class="form-group">
-						<label for="">Durasi :</label>
-						<input type="text" class="form-control" id="durasi" name="durasi" value="{{ $d->durasi }}" >
-					</div>
-
-                    <div class="form-group">
-						<label for="">Jumlah Pertemuan :</label>
-						<input type="text" class="form-control" id="jumlah_pertemuan" name="jumlah_pertemuan" value="{{ $d->jumlah_pertemuan }}" >
-					</div>
-
-                    <div class="form-group">
-						<label for="">Harga :</label>
-						<input type="text" class="form-control" id="harga" name="harga" value="{{ $d->harga}}" >
-					</div>
-
                     <div class="form-group">
 						<label for="">Keterangan :</label>
 						<input type="text" class="form-control" id="keterangan" name="keterangan" value="{{ $d->keterangan}}" >
 					</div>
 
                     <div class="form-group">
-                            <button type="submit" class="btn btn-md btn-success">Simpan</button>
+                            <button type="submit" class="btn btn-md btn-success" onclick="return confirm('Anda yakin ingin merubah data?')">Simpan</button>
                             <a href="/manajemenProgram" class="btn btn-md btn-danger">Batal</a>
                     </div>
               </div>

@@ -94,7 +94,7 @@
 
 </div>
 
-      <button type="submit" class="btn btn-primary d-block" style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">
+      <button type="submit" class="btn btn-primary d-block" style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;" onclick="return confirm('Anda yakin ingin merubah data?')">
                             Save
       </button>
       </form>

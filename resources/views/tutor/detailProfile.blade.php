@@ -37,30 +37,69 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-              <!-- @foreach($data as $d) -->
-       
-            <div class="form-group">
-                          <div class="form-group">
-                              <label for="">Foto :</label>
-                              <a href="" target="_blank">
-                                <img width="300px" src="">
-                              </a>                   
-            </div>
+              @php $no = 1; @endphp
+        @foreach($data as $d)
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <i class="fas fa-user mr-2"></i>Foto Profile
 
-            <div class="form-group">
-                  <label for="">Nama Lengkap :</label>
-                  <input type="text" class="form-control" id="name" name="nama" value="{{ $d->nama_siswa }}" disabled >
-            </div>
+                                <hr class="photo">
+                                <div class="d-flex justify-content-center" style="overflow-x:auto;">
+                                    @if($d->file==null)
+                                    <img class="navbar-brand-full" src="{{('/tema/images/user.png')}}" width="300px"
+                                        alt="upload foto" style="display:block; margin-left:auto; margin-right:auto;">
+                                    @else
+                                    <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
+                                        <img width="250px" src="{{ url('/data_file/'.$d->file) }}"
+                                            style="display:block; margin-left:auto; margin-right:auto;">
+                                    </a>
+                                    @endif
+                                </div>
+                                <hr class="photo">
+                                <h4 class="font-weight-normal" style="text-align:center">{{ $d->user->name }}
+                                </h4>
+                                <h6 class="font-weight-normal" style="text-align:center">{{ $d->user->email }}
+                                    </h4>
+                                    <h6 class="font-weight-normal" style="text-align:center">
+                                        {{ $d->user->phone }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <table class="w-100 table-responsive-md">
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                Alamat
+                                                <input type="text" class="form-control"
+                                                    value="{{ $d->provinsi }}, {{ $d->kabupaten }}, {{ $d->kecamatan }}, {{ $d->alamat_detail }}"
+                                                    style="margin-right:190px;background:white;border:none" disabled>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Jenis Kelamin
+                                                <input type="text" class="form-control" value="{{ $d->jenis_kelamin }}"
+                                                    style="margin-right:190px;background:white;border:none" disabled>
+                                            </th>
+                                        </tr>
 
-           <div class="form-group">
-                  <label for="">Alamat :</label>
-                  <input type="text" class="form-control" id="email" name="email" value="" disabled>
-            </div>
-<!-- @endforeach -->
-                </div>
-              </div>
-            </div>           
-          </div>
+
+                                    </tbody>
+                                </table>
+                                <div class="form-group">
+                                </div>
+
+                            </div>
+                            <!-- /.col-md-6 -->
+
+                        </div>
           <!-- /.col-md-6 -->
           
         </div>

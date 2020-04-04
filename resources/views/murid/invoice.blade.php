@@ -40,17 +40,17 @@
                 <tbody>
                     <tr>
                     @php $no = 1; @endphp
-                    @foreach($data as $d)
                         <td>{{ $no++ }}. </td>
                         <td># 
                         @foreach($invoice as $i)
                         {{ $i->invoice }}
-                        @endforeach
+                  
                         </td>
                         <td>{{ Auth::user()->name }}</td>
-                        <td>{{ $d->kelas }} SD</td>
-                        <td>{{ $d->program }}</td>
+                        <td>{{ $i->kelas }} SD</td>
+                        <td>{{ $i->program }}</td>
                         <td>
+                        @endforeach
                         @foreach($alamat as $a)
                         {{ $a->kecamatan }}, {{ $a->kabupaten }}, {{ $a->provinsi }}
                         @endforeach
@@ -71,7 +71,7 @@
                       @else
                       <p>Terupload</p>
                       @endif
-                    @endforeach
+                 
                         </td>
                         <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">

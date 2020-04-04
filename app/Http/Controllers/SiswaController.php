@@ -12,6 +12,7 @@ use App\ModelKecamatan;
 use Image;
 use App\Provinsi;
 use DB;
+use App\ModelJadwal;
 
 class SiswaController extends Controller
 {
@@ -19,22 +20,22 @@ class SiswaController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['verified', 'auth']);
     }
     
     public function daftarSiswa(){
-        $data = ModelSiswa::with('files')->where('status', 'AKTIF')->get();
+        $data = ModelSiswa::where('status', 'AKTIF')->get();
         return view('dashboard_admin.daftarSiswa', compact('data'));
     }
 
      
     public function daftarSiswaBelumAktif(){
-        $data = ModelSiswa::with('files')->where('status', 'BELUM DIBAYAR')->get();
+        $data = ModelSiswa::where('status', 'BELUM DIBAYAR')->get();
         return view('dashboard_admin.daftarSiswaBelumAktif', compact('data'));
     }
 
     public function daftarSiswaTidakAktif(){
-        $data = ModelSiswa::with('files')->where('status', 'TIDAK AKTIF')->get();
+        $data = ModelSiswa::where('status', 'TIDAK AKTIF')->get();
         return view('dashboard_admin.daftarSiswaTidakAktif', compact('data'));
     }
 
@@ -65,8 +66,9 @@ class SiswaController extends Controller
 
     
     public function profileSiswaAdmin($id){
-        $data = ModelSiswa::with('user')->where('id', $id)->get();
-        return view('dashboard_admin.profileSiswa', compact('data'));
+        $data = ModelSiswa::where('id', $id)->get();
+        $jadwal = ModelJadwal::where('murid_id', $id)->get();
+        return view('dashboard_admin.profileSiswa', compact('data', 'jadwal'));
     }
 
     public function store(Request $request)

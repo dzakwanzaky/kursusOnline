@@ -52,7 +52,7 @@
                             <a type="button" class="btn btn-primary mr-2" href="{{route('tryout.edit',$d->id)}}"><i class="far fa-edit"></i></a>
                               {{ csrf_field() }}
                               {{ method_field('DELETE') }}       
-                            <button type="submit" class="btn btn-md btn-danger" style="color:white"><i class="far fa-trash-alt"></i></button>
+                            <button type="submit" class="btn btn-md btn-danger" style="color:white" onclick="return confirm('Anda yakin akan menghapus tryout?')"><i class="far fa-trash-alt"></i></button>
                             </form>
                         </td>
                     </tr>

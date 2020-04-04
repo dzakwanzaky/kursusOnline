@@ -25,9 +25,11 @@
                     <div class="card">
                         <div class="card-body table-responsive-m" style="overflow-x:auto;">
                             <div class="alert alert-info" style="font-size:14px">
-                                <strong>INFO!</strong> Jika jadwal sudah sesuai dan tutor memenuhi syarat, klik tombol
-                                <strong>MENUNGGU</strong>
-                                pada tabel status dan status akan berubah menjadi <strong>AKTIF</strong>.
+                                <strong>INFO!</strong> Jika pembayaran sudah valid, klik tombol
+                               <button  class="btn btn-sm btn-success">
+                               <i class="fas fa-check"></i>
+                               </button> 
+                                untuk mengonfirmasi pembayaran.
                             </div>
                             <table class="table table-bordered table-striped table-responsive-md" id="datakaryawan">
                                 <thead class="thead-dark">
@@ -58,26 +60,26 @@
                                                 style="text-align:center">BELUM UPLOAD</button>
                                             @else
                                             <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
-                                                <img width="100px" src="{{ url('/data_file/'.$d->file) }}">
+                                                {{ $d->file }}
                                             </a>
                                             @endif
 
                                         <td>
-                                        <button class="btn btn-sm btn-primary" value="{{ $d->status }}">
-                                        {{ $d->status }} 
-                                        </button>
-                                       
+                                            <button class="btn btn-sm btn-warning" value="{{ $d->status }}" style="color:white">
+                                                {{ $d->status }}
+                                            </button>
+
                                         </td>
                                         <td class="d-flex">
-                                        <form action="{{ route('formulir.update', $d->id) }}" method="post"
+                                            <form action="{{ route('formulir.update', $d->id) }}" method="post"
                                                 enctype="multipart/form-data">
                                                 {{ csrf_field() }}
                                                 {{ method_field('PUT') }}
-                                        <button value="AKTIF" id="status" name="status"
+                                                <button value="AKTIF" id="status" name="status"
                                                     class="btn btn-sm btn-success" data-toggle="tooltip"
                                                     data-placement="top" title="Konfirmasi" type="submit"
-                                                    style="text-align:center"><i class="fas fa-check"></i>
-                                        </form>
+                                                    style="text-align:center" onclick="return confirm('Anda yakin ingin mengonfirmasi pembayaran?')"><i class="fas fa-check"></i>
+                                            </form>
                                         </td>
                                         </form>
                                     </tr>

@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                <div class="card-body table-responsive-sm" style="overflow-x:auto;">
+                    <div class="card-body table-responsive-sm" style="overflow-x:auto;">
                         <table class="table table-bordered table-striped table-responsive-sm" id="jadwal">
                             <thead class="thead-dark">
                                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
@@ -35,14 +35,15 @@
                                     <th rowspan="2">Nama</th>
                                     <th rowspan="2">Jenis Kelamin</th>
                                     <th rowspan="2">Alamat</th>
+                                    <th rowspan="2">Program</th>
+                                    <th rowspan="2">Kelas</th>
                                     <th rowspan="2">Mata Pelajaran</th>
-                                    <th colspan="3">Sesi</th>
+                                    <th colspan="2">Sesi</th>
                                     <th rowspan="2">Aksi</th>
                                 </tr>
                                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                                     <th>1</th>
-                                    <th>2</th>
-                                    <th style="border-right:1px solid">3</th>
+                                    <th style="border-right:1px solid">2</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,41 +53,50 @@
 
                                     <td>{{ $no++ }}</td>
                                     <td>
-                                        {{ $d->nama_murid }}
+                                        {{ $d->jadwal->name }}
                                     </td>
                                     <td>
-                                        {{ $d->datas->jenis_kelamin }}
+                                        {{ $d->siswa->jenis_kelamin }}
                                     </td>
                                     <td>
-                                        {{ $d->datas->provinsi }},
-                                        {{ $d->datas->kabupaten }},
-                                        {{ $d->datas->kecamatan }}
+                                        {{ $d->siswa->provinsi }},
+                                        {{ $d->siswa->kabupaten }},
+                                        {{ $d->siswa->kecamatan }},
+                                        {{ $d->siswa->alamat_detail }}
+
                                     </td>
+                                    <td>
+                                        {{ $d->invoice->program }}
+                                    </td>
+                                    <td>
+                                        {{ $d->invoice->kelas }}
+                                    </td>
+                                 
                                     <td>{{ $d->mata_pelajaran }}</td>
                                     <td>{{ $d->hari1 }} {{ $d->waktu_hari1 }}</td>
                                     <td>{{ $d->hari2 }} {{ $d->waktu_hari2 }}</td>
-                                    <td>{{ $d->hari3 }} {{ $d->waktu_hari3 }}</td>
-                                    <form action="{{ route('pendaftaranSiswa.update', $d->id) }}" method="post"
-                                        enctype="multipart/form-data" id="formStatus" name="formStatus">
-                                        {{ csrf_field() }}
-                                        {{ method_field('PUT') }}
 
-                                        <input style="display:none" type="text" class="form-control" id="tutor_id"
-                                            name="tutor_id" value="{{ Auth::user()->id }}">
-                                        <input style="display:none" type="text" class="form-control" id="nama_tutor"
-                                            name="nama_tutor" value="{{ Auth::user()->name }}">
+                                    <td class="d-flex">
 
-                                        <td class="d-flex">
-                                                <a class="btn btn-sm btn-warning mr-2" data-toggle="tooltip"
-                                                    data-placement="top" title="Detail Jadwal"
-                                                    style="color:white" href="{{route('detailJadwal', $d->id)}}"><i
-                                                        class="fas fa-calendar-alt"></i></a>
-                                                <button value="DIPILIH TUTOR" id="status" name="btnSubmit"
+                                        <form action="{{ route('pendaftaranSiswa.update', $d->id) }}" method="post"
+                                            enctype="multipart/form-data" id="formStatus" name="formStatus">
+                                            {{ csrf_field() }}
+                                            {{ method_field('PUT') }}
+                                            <input style="display:none" type="text" class="form-control" id="tutor_id"
+                                                name="tutor_id" value="{{ Auth::user()->id }}">
+
+                                                <input style="display:none" type="text" class="form-control" id="status"
+                                                name="status" value="DIPILIH TUTOR">
+                                            <!-- button update -->
+                                            <button id="status" name="btnSubmit"
                                                 data-toggle="tooltip" data-placement="top" title="Ajukan" type="submit"
-                                                class=" btn btn-sm btn-success mr-2 accept"> <i
-                                                    class="fas fa-check"></i></button>
-                                        </td>
-                                    </form>
+                                                class=" btn btn-sm btn-success mr-2 accept" onclick="return confirm('Anda yakin ingin mengajukan jadwal?')"> <i
+                                                    class="fas fa-check"></i>
+                                            </button>
+
+                                        </form>
+
+                                    </td>
                                 </tr>
                                 @endforeach
 
@@ -103,7 +113,7 @@
 <!-- /.content -->
 
 @endsection
-<!-- @section('sweet')
+@section('sweet')
 <script>
     $(document).ready(function () {
         $('#jadwal').DataTable();
@@ -112,8 +122,12 @@
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     })
-    </script>
-    <script>
+</script>
+
+
+
+@endsection
+<!-- <script>
            $('.accept').submit(function(e){
             e.preventDefault();
           swal({
@@ -147,7 +161,4 @@
           'success'
         )
       }
-    </script>
-
-
-@endsection -->
+    </script> -->

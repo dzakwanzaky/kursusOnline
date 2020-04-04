@@ -28,14 +28,7 @@
               </p>
             </a>
           </li> 
-          <li class="nav-item">
-            <a href="/daftarTryout" class="nav-link {{ Request::segment(1) === 'daftarTryout' ? 'nav-link active' : null }}">
-            <i class="fas fa-book-reader nav-icon"></i>
-              <p>
-                Manajemen Tryout
-              </p>
-            </a>
-          </li>
+         
 
           <li class="nav-item">
             <a href="/daftarSiswa" class="nav-link {{ Request::segment(1) === 'daftarSiswa' ? 'nav-link active' : null }} nav-link {{ Request::segment(1) === 'daftarSiswaBelumAktif' ? 'nav-link active' : null }}
@@ -61,7 +54,7 @@
           <li class="nav-item">
             <a href="/list_pendaftaranSiswa" class="nav-link nav-link {{ Request::segment(1) === 'list_pendaftaranSiswa' ? 'nav-link active' : null }}
                 {{ Request::segment(1) === 'list_pendaftaranTutor' ? 'nav-link active' : null }} {{ Request::segment(1) === 'jadwalAktif' ? 'nav-link active' : null }} {{ Request::segment(1) === 'jadwalTidakAktif' ? 'nav-link active' : null }}" >
-              <i class="nav-icon fas fa-folder"></i>
+              <i class="nav-icon far fa-calendar"></i>
               <p>
                 Manajemen Jadwal
                
@@ -81,16 +74,24 @@
             </a>
           
           </li>
-
+          <li class="nav-item">
+            <a href="/daftarTryout" class="nav-link {{ Request::segment(1) === 'daftarTryout' ? 'nav-link active' : null }}">
+            <i class="fas fa-book-reader nav-icon"></i>
+              <p>
+                Manajemen Tryout
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="/manajemenProgram" class="nav-link nav-link {{ Request::segment(1) === 'manajemenProgram' ? 'nav-link active' : null }}">
-              <i class="nav-icon fas fa-folder"></i>
+            <i class="nav-icon far fa-clipboard"></i>
               <p>
                 Manajemen Program
               </p>
             </a>
           
           </li>
+        
 
 
         </ul>

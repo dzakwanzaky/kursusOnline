@@ -16,12 +16,3 @@ class BaseController extends Controller
 
   }
 
-  //     dd(ModelJadwal::where('user_id','=', $user_id)->get());
-    //         if(ModelJadwal::where('user_id','=', Auth::user()->id)->get() != null){
-    //         //code return true if u have paket
-    //         return redirect('murid');
-    //     }
-
-    //     else{
-    //         return redirect('paketProgram');  
-    //          }

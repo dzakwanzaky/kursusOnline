@@ -257,6 +257,7 @@ opacity: 80%;
   font-weight: lighter;
 }
 .butn {
+<<<<<<< HEAD
   margin-top:40px;
 
    padding-top: 13px;
@@ -525,6 +526,20 @@ opacity: 80%;
    font-size: 18px;
    margin-bottom: 70px;
 }
+=======
+  margin-top: 40px;
+
+   padding-top: 13px;
+   padding-bottom: 13px;
+   padding-left: 25px;
+   padding-right: 25px;
+   background: #92CD16;
+   color: white;
+   margin-left: 10px;
+   display: table;
+   border-radius: 20px;
+   font-size: 16px;
+>>>>>>> 45a6e675da4c0fe78249e3b85d77b2810083f9c2
 }
 .tabs .content section {
   display: none;

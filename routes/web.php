@@ -10,53 +10,12 @@
 |
 */
 
+Auth::routes(['verify' => true]);
 
 Route::get('/wizardsbm', function () {
     return view('base/aksessoal');
 });
 
-Route::get('/ping', function () {
-    return view('base/ting');
-});
-
-Route::get('/paket', function () {
-    return view('base/paket');
-});
-
-Route::get('/testing', function () {
-    return view('testing');
-});
-
-Route::get('/soalbindosbm','SoalbindosbmController@index');
-Route::get('/soalbingsbm','SoalbingsbmController@index');
-Route::get('/soaltpasbm','SoaltpasbmController@index');
-Route::get('/soalmtksainsbm','SoalmtksainsbmController@index');
-Route::get('/soalkimiasbm','SoalkimiasbmController@index');
-Route::get('/soalfisikasbm','SoalfisikasbmController@index');
-Route::get('/soalbiologisbm','SoalbiologisbmController@index');
-Route::get('/soalmtksoshumsbm','SoalmtksoshumsbmController@index');
-Route::get('/soalekonomisbm','SoalekonomisbmController@index');
-Route::get('/soalsosiologisbm','SoalsosiologisbmController@index');
-
-Route::get('/soalbindosd','SoalbindosdController@index');
-Route::get('/soalmtksd','SoalmtksdController@index');
-Route::get('/soalipasd','SoalipasdController@index');
-
-Route::get('/soalbindosmp','SoalbindosmpController@index');
-Route::get('/soalmtksmp','SoalmtksmpController@index');
-Route::get('/soalipasmp','SoalipasmpController@index');
-Route::get('/soalbingsmp','SoalbingsmpController@index');
-
-Route::get('/soalbindosma','SoalbindosmaController@index');
-Route::get('/soalmtkipasma','SoalmtkipasmaController@index');
-Route::get('/soalmtkipssma','SoalmtkipssmaController@index');
-Route::get('/soalbiologisma','SoalbiologismaController@index');
-Route::get('/soalkimiasma','SoalkimiasmaController@index');
-Route::get('/soalfisikasma','SoalfisikasmaController@index');
-Route::get('/soalbingsma','SoalbingsmaController@index');
-Route::get('/soalsosiologisma','SoalsosiologismaController@index');
-Route::get('/soalgeografisma','SoalgeografismaController@index');
-Route::get('/soalekonomisma','SoalekonomismaController@index');
 Route::get('/card', function () {
     return view('base/card');
 });
@@ -76,6 +35,10 @@ Route::get('/probel', function () {
     return view('probel');
 });
 
+Route::get('/probel-dinamis', function () {
+    return view('probel-dinamis');
+});
+
 use Nexmo\Laravel\Facade\Nexmo;
 Route::get('/tes','Controller@tes');
 
@@ -88,9 +51,6 @@ Route::get('/kontak', function () {
 });
 Route::get('/paketProgram', function () {
     return view('base/paket_program_page');
-});
-Route::get('/login', function () {
-    return view('base/login_page');
 });
 Route::get('/dataSiswa', function () {
     return view('base/dataSiswa');
@@ -160,9 +120,10 @@ Route::get('/landing', 'BaseController@index');
 Route::get('/murid', function () {
     return view('murid/murid');
 });
-Route::get('/invoice', function () {
-    return view('murid/invoice');
+Route::get('/verify', function () {
+    return view('auth/verify');
 });
+
 Route::get('/invoicenya', function () {
     return view('murid/invoicenya');
 });
@@ -283,7 +244,7 @@ Route::middleware(['tutor'])->group(function () {
     Route::get('tutor','JadwalController@tutor')->name('tutor');
     Route::get('jadwal','JadwalController@jadwalTutor');
     Route::get('profile','TutorController@profileTutor');
-    Route::get('detailPendaftaran/{id}','JadwalController@jadwalSiswaTutor')->name('detailJadwal');
+    Route::get('detailPendaftaran/{id}','JadwalController@jadwalSiswaTutor')->name('detailPendaftaran');
     Route::get('detailJadwal/{id}','JadwalController@detailJadwalTutor')->name('detailJadwal');
 
 });
@@ -292,13 +253,12 @@ Route::middleware(['siswa'])->group(function () {
     Route::get('/murid','JadwalController@index');
     Route::get('/invoicenya','ProgramController@index');
     Route::get('/invoice','ProgramController@data');
-    Route::get('/invoiceDetail','ProgramController@detail');
     Route::get('profileMurid','SiswaController@profileSiswa');
     Route::get('presensi/{id}','AbsenController@indexPresensi')->name('presensi');
     Route::get('kehadiranLes/{id}','AbsenController@kehadiranLes')->name('kehadiranLes');
 });
 
-Route::resource('dataTutor','TutorController');
+Route::resource('dataTutor','TutorController')->middleware('verified');
 Route::resource('dataSiswa','SiswaController');
 Route::resource('paketProgram','InvoiceController');
 Route::resource('program','ProgramController');
@@ -318,20 +278,24 @@ Route::get('/getKabupaten/{id}', 'SiswaController@getKabupaten')->name('getKabup
 Route::get('/getKecamatan/{id}', 'SiswaController@getKecamatan')->name('getKecamatan');
 Route::post('/upload', 'InvoiceController@proses_upload')->name('upload');
 Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
-Route::get('/verify','VerifyController@getVerify')->name('getverify');
-Route::post('/verify','VerifyController@postVerify')->name('verify');
+// Route::get('/verify','VerifyController@getVerify')->name('getverify');
+// Route::post('/verify','VerifyController@postVerify')->name('verify');
 Route::get('profileAdmin','Auth\RegisterController@data');
-Route::get('/', 'ProgramController@program'); 
-Route::get('/landing', 'ProgramController@program');
 Route::get('/paketProgram', 'ProgramController@paket');
 Route::get('/manajemenProgram', 'ProgramController@manajemenProgram')->name('manajemenProgram');
 Route::get('/tambahProgram','ProgramController@tambah')->name('tambahProgram');
+Route::get('/probel-dinamis','ProgramController@program')->name('probel-dinamis');
+Route::get('/invoiceDetail','ProgramController@detail');
+Route::get('/invoicePDF/{murid_id}','ProgramController@pdf')->name('invoicePDF');
+
 
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
 Route::get('informasiTutor','TutorController@informasiTutor');
 
 Route::get('sd','TryoutController@tryoutSD')->name('sd');
+Route::get('smp','TryoutController@tryoutSMP')->name('smp');
+Route::get('sma','TryoutController@tryoutSMA')->name('sma');
 Route::get('soalTO/{id}','TryoutController@soal')->name('soalTO');
 Route::get('endhalaman','FormulirController@index')->name('endhalaman');
 

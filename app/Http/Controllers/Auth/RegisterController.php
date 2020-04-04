@@ -79,7 +79,13 @@ class RegisterController extends Controller
                 $user->active= 0;
         if($user){
             $user->save();
-            return redirect('verify');
+            $user->sendEmailVerificationNotification();
+            return redirect('verify?email='.$user->email);
+        //     if ($user ['role'] == 'tutor'){
+        //         return redirect('dataSiswa')->withMessage('Berhasil Mendaftar');
+        //         } else {
+        //             return redirect('dataTutor')->withMessage('Berhasil Mendaftar');
+        //         }
         }
     }
 

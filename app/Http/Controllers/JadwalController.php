@@ -7,6 +7,8 @@ use App\ModelJadwal;
 use Auth;
 use App\ModelSiswa;
 use App\ModelTutor;
+use App\ModelInvoice;
+
 
 class JadwalController extends Controller
 {
@@ -31,8 +33,13 @@ class JadwalController extends Controller
     public function tutor()
     {
         $data = ModelTutor::where('id', '=', Auth::user()->id)->first();
-        $jadwal = ModelJadwal::whereIn('program',
-        [$data->program])->where('status', 'MENUNGGU')->get();
+        $jadwal = ModelJadwal::with('invoice')
+        ->whereHas('invoice', function($q) use ($data)
+        {$q-> whereIn('program', [$data->program]);}
+        )
+        ->whereIn('mata_pelajaran', [$data->mata_pelajaran1, $data->mata_pelajaran2, $data->mata_pelajaran3, $data->mata_pelajaran4, 
+        $data->mata_pelajaran5, $data->mata_pelajaran6, $data->mata_pelajaran7, $data->mata_pelajaran8, $data->mata_pelajaran9])
+        ->where('status', 'MENUNGGU')->get();
         return view('tutor.tutor', compact('jadwal'));
     }
 
@@ -62,13 +69,13 @@ class JadwalController extends Controller
 
     public function jadwalTutor()
     {
-        $data = ModelJadwal::with('datas', 'jadwal')->where('tutor_id', '=', Auth::user()->id)->where('status', 'AKTIF')->orWhere('status', 'DIPILIH TUTOR')->get();
+        $data = ModelJadwal::where('tutor_id', '=', Auth::user()->id)->where('status', 'AKTIF')->get();
         return view('tutor.jadwal', compact('data'));
     }
 
     public function detailJadwalTutor($id)
     {
-        $data = ModelJadwal::with('datas', 'jadwal')->where('id', $id)->get();
+        $data = ModelSiswa::where('id', $id)->get();
         return view('tutor.detailJadwal', compact('data'));
     }
 
@@ -78,18 +85,19 @@ class JadwalController extends Controller
         return view('dashboard_admin.jadwalTutor', compact('data'));
     }
 
+    public function jadwalSiswaTutor($id)
+    {
+        $data = ModelJadwal::where('id', $id)->get();
+        return view('tutor.detailPendaftaran', compact('data'));
+    }
+
     public function jadwalSiswaAdmin($id)
     {
         $data = ModelJadwal::where('murid_id', $id)->get();
         return view('dashboard_admin.jadwalSiswa', compact('data'));
     }
 
-    
-    public function jadwalSiswaTutor($id)
-    {
-        $data = ModelJadwal::where('murid_id', $id)->get();
-        return view('tutor.detailJadwal', compact('data'));
-    }
+  
 
     /**
      * Show the form for creating a new resource.
@@ -109,22 +117,28 @@ class JadwalController extends Controller
      */
     public function store(Request $request)
     {
+        $invoice = new ModelInvoice();
+        $invoice->invoice = $request->invoice;
+        $invoice->id_murid = $request->id_murid;
+        $invoice->program = $request->program;
+        $invoice->kelas = $request->kelas;
+        $invoice->jumlah_sesi = $request->jumlah_sesi;
+        $invoice->jumlah_mapel = $request->jumlah_mapel;
+        $invoice->harga = $request->harga;
+        $invoice->save();
+
+        foreach ($request->mata_pelajaran as $key => $value){
         $data = new ModelJadwal();
-        $data->murid_id = $request->murid_id;
-        $data->nama_murid = $request->nama_murid;
-        $data->program = $request->program;
-        $data->status = $request->status;
-        $data->bulan = $request->bulan;
-        $data->sesi = $request->sesi;
-        $data->kelas = $request->kelas;
-        $data->mata_pelajaran = $request->mata_pelajaran;
-        $data->hari1 = $request->hari1;
-        $data->hari2 = $request->hari2;
-        $data->hari3 = $request->hari3;
-        $data->waktu_hari1 = $request->waktu_hari1;
-        $data->waktu_hari2 = $request->waktu_hari2;
-        $data->waktu_hari3 = $request->waktu_hari3;
+        $data->invoice_id = $invoice->id;
+        $data->murid_id = $request->murid_id[$key];
+        $data->mata_pelajaran = $value;
+        $data->hari1 = $request->hari1[$key];
+        $data->hari2 = $request->hari2[$key];
+        $data->waktu_hari1 = $request->waktu_hari1[$key];
+        $data->waktu_hari2 = $request->waktu_hari2[$key];
+        $data->status = $request->status[$key];
         $data->save();
+        }
         return redirect('dataSiswa')->withMessage('Kamu Berhasil Daftar Les');
     }
 
@@ -162,13 +176,16 @@ class JadwalController extends Controller
      
         $data = ModelJadwal::where('id',$id)->first();
         $data->tutor_id = $request->tutor_id;
-        $data->nama_tutor = $request->nama_tutor;
         $data->status = $request->status;
         $data->save();
         if(Auth::user()->role == 'tutor'){
         return redirect('tutor')->withMessage('Berhasil Konfirmasi');
         } else {
-            return redirect('list_pendaftaranTutor')->withMessage('Berhasil Konfirmasi');
+            if ($data->status == 'AKTIF'){
+                return redirect('list_pendaftaranTutor')->withMessage('Berhasil Konfirmasi');
+            } else {
+                return redirect('jadwalTidakAktif')->withMessage('Berhasil Konfirmasi');
+            }
         }
     }
 

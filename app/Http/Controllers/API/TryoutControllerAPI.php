@@ -3,80 +3,111 @@
 namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
-use App\ModelSiswa;
-use Auth;
-use App\User;
-use App\ModelInvoice;
-use App\ModelKab;
-use App\ModelKecamatan;
-use Image;
-use App\Provinsi;
+use App\ModelTryout;
+use App\ModelSoal;
 use DB;
 
-class SiswaControllerAPI extends Controller
+class TryoutControllerAPI extends Controller
 {
 
     public function index(){
-        $data = ModelSiswa::all();
+        $data = ModelTryout::all();
         return response()->json($data);
     }
 
-    public function store(Request $request)
-    {
-        $data = new ModelSiswa();
-        $data->id = $request->id;
-        $data->nama_siswa = $request->nama_siswa;
-        $data->jenis_kelamin = $request->jenis_kelamin;
-        
-        $file = $request->file('file');
-        $nama_file = time()."_".$file->getClientOriginalName();  
-        $tujuan_upload = 'data_file';
-        $file->move($tujuan_upload,$nama_file);
-        $data->file = $nama_file;      
-          
-        $data->provinsi = $request->provinsi;
-        $data->kabupaten = $request->kabupaten;
-        $data->kecamatan = $request->kecamatan;
-        $data->alamat_detail = $request->alamat_detail;
-        $data->status = $request->status;
-        if($data->save()){
-            $res['message'] = "Success!";
-            $res['value'] = "$data";
-            return response($res);
-        }    
+    public function tambah(){
+        return view('dashboard_admin.tambahTryout');
     }
 
-    public function show($id)
-    {
-        $data = ModelSiswa::where('id','=',$id)->get();
+    public function lihatSoal($id){
+        $data = ModelSoal::where('id_to', $id)->get();
+        $datas = ModelTryout::where('id', $id)->get();
         return response()->json($data);
     }
 
-    public function update(Request $request, $id)
-    {
-        $data = ModelSiswa::where('id',$id)->first();
-        $data->nama_siswa = $request->nama_siswa;
-        $data->provinsi = $request->provinsi;
-        $data->kecamatan = $request->kecamatan;
-        $data->kabupaten = $request->kabupaten;
-        $data->status = $request->status;
-        if($request->file){
-            $file = $request->file('file');
-            $nama_file = time()."_".$file->getClientOriginalName();  
-            $tujuan_upload = 'data_file';
-            $file->move($tujuan_upload,$nama_file);
-            $data->file = $nama_file;  
-        }
-        if($data->save()){
-            $res['message'] = "Success!";
-            $res['value'] = "$data";
-            return response($res);
-        }
+    public function tryoutSD(){
+        $bind = ModelTryout::where('kategori', 'SD')->where('mata_pelajaran', 'Bahasa Indonesia')->get();
+        $ipa = ModelTryout::where('kategori', 'SD')->where('mata_pelajaran', 'IPA')->get();
+        $mat = ModelTryout::where('kategori', 'SD')->where('mata_pelajaran', 'Matematika')->get();
+        $bing = ModelTryout::where('kategori', 'SD')->where('mata_pelajaran', 'Bahasa Inggris')->get();
+        return response()->json(array(
+            'bind' => $bind,
+            'ipa' => $ipa,
+            'mat' => $mat,
+            'bing' => $bing,
+        ));
     }
 
-    public function profileSiswa(){
-        $data = ModelSiswa::where('id', '=', Auth::user()->id)->get();
-        $user = User::where('id', '=', Auth::user()->id)->get();
-        return response()->json($data);
+    public function tryoutSMP(){
+        $bind = ModelTryout::where('kategori', 'SMP')->where('mata_pelajaran', 'Bahasa Indonesia')->get();
+        $ipa = ModelTryout::where('kategori', 'SMP')->where('mata_pelajaran', 'IPA')->get();
+        $mat = ModelTryout::where('kategori', 'SMP')->where('mata_pelajaran', 'Matematika')->get();
+        $bing = ModelTryout::where('kategori', 'SMP')->where('mata_pelajaran', 'Bahasa Inggris')->get();
+        return response()->json(array(
+            'bind' => $bind,
+            'ipa' => $ipa,
+            'mat' => $mat,
+            'bing' => $bing,   
+        ));
     }
+
+    public function tryoutSMA(){
+        $bind = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Bahasa Indonesia')->get();
+        $mat = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Matematika')->get();
+        $fis = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Fisika')->get();
+        $kim = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Kimia')->get();
+        $bio = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Biolgi')->get();
+        $eko = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Ekonomi')->get();
+        $sosio = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Sosiologi')->get();
+        $geo = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Geografi')->get();
+        $sej = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Sejarah')->get();
+        $bing = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Bahasa Inggris')->get();
+        return response()->json(array(
+            'bind' => $bind,
+            'mat' => $mat,
+            'fis' => $fis,
+            'kim' => $kim,
+            'bio' => $bio,
+            'eko' => $eko,
+            'sosio' => $sosio,
+            'geo' => $geo,
+            'sej' => $sej,
+            'bing' => $bing,   
+        )); 
+    }
+
+    public function tryoutSBMPTN(){
+        $bind = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Bahasa Indonesia')->get();
+        $mat = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Matematika')->get();
+        $fis = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Fisika')->get();
+        $kim = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Kimia')->get();
+        $bio = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Biolgi')->get();
+        $eko = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Ekonomi')->get();
+        $sosio = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Sosiologi')->get();
+        $geo = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Geografi')->get();
+        $sej = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Sejarah')->get();
+        $bing = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Bahasa Inggris')->get();
+        return response()->json(array(
+            'bind' => $bind,
+            'mat' => $mat,
+            'fis' => $fis,
+            'kim' => $kim,
+            'bio' => $bio,
+            'eko' => $eko,
+            'sosio' => $sosio,
+            'geo' => $geo,
+            'sej' => $sej,
+            'bing' => $bing,   
+        )); 
+    
+    }
+
+    public function soal($id){
+        $data = ModelSoal::where('id_to', $id)->SimplePaginate(1);
+        $many_data = ModelSoal::where('id_to', $id)->count();
+        return view('base/soal',['data' => $data,'max_number'=>$many_data]);
+        //paginantion api
+    }
+
+
 }

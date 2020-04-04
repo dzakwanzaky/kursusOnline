@@ -22,6 +22,7 @@ class ModelSiswa extends Model
 
     public function files()
     {
-    	return $this->hasOne('App\ModelInvoice', 'murid_id');
+    	return $this->hasOne('App\ModelInvoice', 'id_murid');
     }
+
 }

@@ -15,21 +15,6 @@ class SoalController extends Controller
         return view('dashboard_admin.tambahSoal', compact('id'));
     }
 
-    public function soal()
-    {
-    	        // mengambil data dari table 
-		$data = DB::table('soalbindosbm')->SimplePaginate(1);
- 		$many_data = DB::table('soalbindosbm')->count('*');
-                // mengirim data pegawai ke view index
-                dd($many_data);
-		return view('base/soalbindosbm',['soalbindosbm' => $soalbindosbm,'max_number'=>$many_data]);
- 
-	}
-    
-    public function show($id)
-    {
-           
-    }
 
     public function store(Request $request)
     {
@@ -37,11 +22,11 @@ class SoalController extends Controller
             $data = new ModelSoal();
             $data->id_to = $request->id_to;
             $data->nomor_soal = $value;
-            if($request->file){
+            if($request->file[$key]){
                 $file = $request->file('file');
-                $nama_file = time()."_".$file->getClientOriginalName();  
+                $nama_file = time()."_".$file[$key]->getClientOriginalName();  
                 $tujuan_upload = 'data_file';
-                $file->move($tujuan_upload,$nama_file);
+                $file[$key]->move($tujuan_upload,$nama_file);
                 $data->file = $nama_file;  
             }
             $data->soal = $request->soal[$key];

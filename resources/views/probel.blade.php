@@ -5,8 +5,8 @@
 		
 <style type="text/css">
     p1{
-      line-height: 1.8em;
-      font-size: 13px;
+      line-height: 1.4em;
+      font-size: 18px;
       font-family: sans-serif;
       color: #787878;
       font-weight: normal;
@@ -25,11 +25,11 @@
     .typing h4 {
     	 margin-left: 120px;
     	 margin-right: 20px;
-         line-height: 2em;
+         line-height: 3em;
     }
     .typing p1{
     	color: #787878;
-    	font-size: 15px;
+    	font-size: 20px;
     	font-weight: lighter;
     	font-style: normal;
     	margin-top: 10px;

@@ -50,7 +50,7 @@
                                         Anda bisa menambahkan soal
                                         <br>dengan melalui unggah berkas.
                                         <br>Unduh format berkas di sini.
-                                        <br>
+                                        <br> <a href="{{('/file/template-soal.xlsx')}}" class="btn btn-sm btn-success" style="color:white;" ><span class="fas fa-download mr-2"></span>Unduh</a> 
                                     </a>
                                     <br>
                                     <br>
@@ -101,7 +101,7 @@
 
         <div class="text-center">
             <button id="button-sub" name="button-sub" type="submit" class="btn btn-primary"
-                style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto">
+                style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto" onclick="return confirm('Anda yakin data sudah benar?')">
                 Save
             </button>
         </div>

@@ -29,12 +29,17 @@
 
     .typing h4 {
         margin-left: 110px;
+<<<<<<< HEAD
         margin-right: 10px;
         font-size: 38px;
         color: #158ADF;
         font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+=======
+        font-size: 30px;
+        margin-right: 10px;
+>>>>>>> 45a6e675da4c0fe78249e3b85d77b2810083f9c2
     }
 
     .typing p1 {
@@ -45,6 +50,7 @@
         margin-top: 10px;
         margin-right: 70px;
     }
+<<<<<<< HEAD
     .section h3i {
             margin-top: 20px;
             color: #000;
@@ -62,6 +68,9 @@ h3q {
             margin-left: 15%;
             line-height: 3em;
         }
+=======
+
+>>>>>>> 45a6e675da4c0fe78249e3b85d77b2810083f9c2
     @media screen and (width: 360px) {
         .typing h4 {
             margin-left: 40px;
@@ -196,6 +205,7 @@ h3q {
             margin-top: 10px;
             margin-right: 70px;
         }
+<<<<<<< HEAD
         .kolom1 h3i {
             margin-top: 20px;
             color: #000;
@@ -204,6 +214,8 @@ h3q {
             margin-left: 5.5%;
             line-height: 3em;
         }
+=======
+>>>>>>> 45a6e675da4c0fe78249e3b85d77b2810083f9c2
     }
 
     @media screen and (width: 768px) {
@@ -222,6 +234,7 @@ h3q {
             margin-right: 70px;
         }
     }
+<<<<<<< HEAD
     @media screen and (width: 731px) {
         .typing h4 {
             margin-left: 40px;
@@ -286,6 +299,9 @@ h3q {
             margin-right: 70px;
         }
     }
+=======
+
+>>>>>>> 45a6e675da4c0fe78249e3b85d77b2810083f9c2
     @media screen and (width: 568px) {
         .typing h4 {
             margin-left: 40px;
@@ -326,7 +342,10 @@ h3q {
     }
 
     footer {
+<<<<<<< HEAD
         margin-top: 10%;
+=======
+>>>>>>> 45a6e675da4c0fe78249e3b85d77b2810083f9c2
         text-align: center;
         background-color: #92CD16;
         color: #fff;
@@ -465,6 +484,7 @@ h3q {
 </style>
 
 <style type="text/css">
+<<<<<<< HEAD
     @media screen and (height: 768px) {
         .section h3 {
         margin-top: 80px;
@@ -473,6 +493,15 @@ h3q {
         font-weight: 500;
         font-size: 25px;
         padding-left: 0px;
+=======
+    @media screen and (width: 1024px) {
+        .section h3 {
+            margin-top: 30px;
+            color: #565656;
+            font-weight: 500;
+            font-size: 23px;
+            padding-left: 0px;
+>>>>>>> 45a6e675da4c0fe78249e3b85d77b2810083f9c2
         }
 
         p {
@@ -539,6 +568,7 @@ h3q {
     }
 
     .section h3 {
+<<<<<<< HEAD
         margin-top: 80px;
         margin-left: 4em;
         color: #565656;
@@ -653,11 +683,16 @@ h3q {
         .section h3 {
         margin-top: 80px;
         margin-left: 2.5em;
+=======
+        margin-top: 20px;
+        margin-left: 10px;
+>>>>>>> 45a6e675da4c0fe78249e3b85d77b2810083f9c2
         color: #565656;
         font-weight: 500;
         font-size: 25px;
         padding-left: 0px;
     }
+<<<<<<< HEAD
     .section p {
         margin-top: 0px;
         margin-left: 4em;
@@ -862,10 +897,17 @@ h3q {
         margin-left: 10px;
         margin-top: 0px;
          margin-left: 6em;
+=======
+
+    p {
+        margin-left: 10px;
+        margin-top: 0px;
+>>>>>>> 45a6e675da4c0fe78249e3b85d77b2810083f9c2
         color: #898484;
         font-weight: lighter;
         font-size: 16px;
     }
+<<<<<<< HEAD
      p3 {
         margin-left: 15%;
         margin-top: 0px;
@@ -891,6 +933,9 @@ pi{
         font-weight: lighter;
         font-size: 16px;
 }
+=======
+
+>>>>>>> 45a6e675da4c0fe78249e3b85d77b2810083f9c2
     @media screen and (width: 414px) {
         p {
             margin-left: 10px;
@@ -949,6 +994,7 @@ pi{
         font-size: 16px;
         line-height: 2.0em;
     }
+<<<<<<< HEAD
 
  .form_login {
   /*membuat lebar form penuh*/
@@ -1383,6 +1429,8 @@ float: left;
         }
 }
 
+=======
+>>>>>>> 45a6e675da4c0fe78249e3b85d77b2810083f9c2
 </style>
 <!-- start banner Area -->
 
@@ -1406,11 +1454,19 @@ float: left;
         <div class="typing">
             <h4>
                 <b>
+<<<<<<< HEAD
                     <font color="#000000">Akses soal dan <br>pembahasan</font>
                 </b>
                 <br>
                 <p1><br>
                     Ayo akses soal dan pembahasan secara lengkap dari mata pelajaran yang telah kamu coba dari Inofa Bimbel</p1><br>
+=======
+                    <font color="#000000">Pilih Opsi Akses</font>
+                </b>
+                <br>
+                <p1><br>
+                    Pilih salah satu opsi agar Anda dapat melanjutkan akses soal dan pembahasan</p1><br>
+>>>>>>> 45a6e675da4c0fe78249e3b85d77b2810083f9c2
                 <br>
             </h4>
 
@@ -1420,6 +1476,7 @@ float: left;
     <div class="awake">
 
 
+<<<<<<< HEAD
 
                     <div class="jq-tab-content active" data-tab="1">
                         <div class="section">
@@ -1457,10 +1514,67 @@ float: left;
 
                                  <pi>Asal Sekolah</pi>
                                 <div class="form_login">
+=======
+        <section class="course-details-area pt-12">
+
+            <div class="col-lg-8 left-contents">
+
+                <div class="jq-tab-wrapper" id="horizontalTab">
+                    <div class="jq-tab-menu">
+                        <div class="jq-tab-title active" data-tab="1">
+                            <font face="Poppins">Bayar</font>
+                            </font>
+                        </div>
+                        <div class="jq-tab-title" data-tab="2">
+                            <font face="Poppins">Promosi Instagram</font>
+                            </font>
+                        </div>
+                        <div class="jq-tab-title" data-tab="3">
+                            <font face="Poppins">Promosi Facebook</font>
+                            </font>
+                        </div>
+
+                    </div>
+
+
+                    <div class="jq-tab-content active" data-tab="1">
+                        <div class="section">
+                            <h3>Hanya perlu bayar Rp 5.000 </h3>
+
+                            <p>Agar bisa akses soal dan pembahasan secara lengkap <br><br>
+                                Transfer ke nomor rekening berikut :<br>
+                                Bank BRI dengan nomor rekening 1092738895 a.n Inofa Bimbel<br>
+                                Bank BNI dengan nomor rekening 2234565789 a.n Inofa Bimbel <br>
+                                Bank Mandiri dengan nomor rekening 0090876678 a.n Inofa Bimbel</p>
+                            <br>
+
+
+                            <!--  accept="image/*"> -->
+                            <div class="section">
+                <form method="POST" action="{{ route('formulir.store')}}" enctype="multipart/form-data">                 
+                 {{ csrf_field() }}
+
+                                <h3>Isi Formulir Di Bawah ini!</h3>
+
+                                <p>Nama Lengkap</p>
+                                <div class="form-group">
+                                    <input type="text" name="namalengkap" class="form-control"
+                                        required>
+                                </div>
+
+                                <p>Nomor Telepon</p>
+                                <div class="form-group">
+                                    <input type="text" name="notelp" class="form-control" placeholder="No telp" required>
+                                </div>
+
+                                 <p>Asal Sekolah</p>
+                                <div class="form-group">
+>>>>>>> 45a6e675da4c0fe78249e3b85d77b2810083f9c2
                                     <input type="text" name="asalsekolah" class="form-control"
                                         required>
                                 </div>
                               
+<<<<<<< HEAD
                                <pi>Email</pi>
                                <div class="form_login">
                                     <input type="text" name="email" class="form-control" required>
@@ -1639,6 +1753,176 @@ float: left;
 
                         </div>
                      
+=======
+                               <p>Email</p>
+                                <div class="form-group">
+                                    <input type="text" name="email" class="form-control" required>
+                                </div>
+
+                                <p> Bukti Pembayaran</p>
+                                <div class="form-group">
+                                    <input id="file"  type="file" class="form-control" name="file"
+                                       required>
+                                </div>
+                                <input type="text" style="display:none" value="BELUM AKTIF" name="status" class="form-control">
+
+                                <div class="section">
+                                    <button type="submit" class="butn">Kirim</button>
+                                </div>
+
+                            </form>
+
+                            </div>
+                            <div class="jq-tab-content" data-tab="2">
+                                <div class="setion">
+                                    <br>
+                                    <p>Silakan unggah bukti berupa screenshot foto sesuai instruksi yang tersedia</p>
+                                    <br>
+
+                                    <p2>Unggah bukti mengikuti ig (@inofabimbel)</p2><br>
+                                </div>
+                                <input type="file" id="real-file2" hidden="hidden" accept="image/*">
+                                <button type="button" id="custom-button2">Pilih foto</button>
+                                <span id="custom-text2">Tidak ada file yang dipilih</span><br>
+
+                                <script type="text/javascript">
+                                    const realFileBtn2 = document.getElementById("real-file2");
+                                    const customBtn2 = document.getElementById("custom-button2");
+                                    const customTxt2 = document.getElementById("custom-text2");
+
+                                    customBtn2.addEventListener("click", function () {
+                                        realFileBtn2.click();
+                                    });
+
+                                    realFileBtn2.addEventListener("change", function () {
+                                        if (realFileBtn2.value) {
+                                            customTxt2.innerHTML = realFileBtn2.value.match(
+                                                /[\/\\]([\w\d\s\.\-\(\)]+)$/
+                                            )[1];
+                                        } else {
+                                            customTxt2.innerHTML = "Tidak ada file yang dipilih";
+                                        }
+                                    });
+                                </script><br>
+                                <p2>Unggah bukti ig story</p2><br>
+                                <input type="file" id="real-file3" hidden="hidden" accept="image/*">
+                                <button type="button" id="custom-button3">Pilih foto</button>
+                                <span id="custom-text3">Tidak ada file yang dipilih</span><br>
+
+                                <script type="text/javascript">
+                                    const realFileBtn3 = document.getElementById("real-file3");
+                                    const customBtn3 = document.getElementById("custom-button3");
+                                    const customTxt3 = document.getElementById("custom-text3");
+
+                                    customBtn3.addEventListener("click", function () {
+                                        realFileBtn3.click();
+                                    });
+
+                                    realFileBtn3.addEventListener("change", function () {
+                                        if (realFileBtn3.value) {
+                                            customTxt3.innerHTML = realFileBtn3.value.match(
+                                                /[\/\\]([\w\d\s\.\-\(\)]+)$/
+                                            )[1];
+                                        } else {
+                                            customTxt3.innerHTML = "Tidak ada file yang dipilih";
+                                        }
+                                    });
+                                </script><br>
+                                <p2>Unggah bukti menandai 5 teman</p2><br>
+                                <input type="file" id="real-file4" hidden="hidden" accept="image/*">
+                                <button type="button" id="custom-button4">Pilih foto</button>
+                                <span id="custom-text4">Tidak ada file yang dipilih</span><br>
+
+                                <script type="text/javascript">
+                                    const realFileBtn4 = document.getElementById("real-file4");
+                                    const customBtn4 = document.getElementById("custom-button4");
+                                    const customTxt4 = document.getElementById("custom-text4");
+
+                                    customBtn4.addEventListener("click", function () {
+                                        realFileBtn4.click();
+                                    });
+
+                                    realFileBtn4.addEventListener("change", function () {
+                                        if (realFileBtn4.value) {
+                                            customTxt4.innerHTML = realFileBtn4.value.match(
+                                                /[\/\\]([\w\d\s\.\-\(\)]+)$/
+                                            )[1];
+                                        } else {
+                                            customTxt4.innerHTML = "Tidak ada file yang dipilih";
+                                        }
+                                    });
+                                </script>
+                                <a href="/endhalaman">
+                                    <div class="butn">
+                                        Kirim
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="jq-tab-content" data-tab="3">
+                                <br>
+                                <p>Silakan unggah bukti berupa screenshot foto sesuai instruksi yang tersedia</p><br>
+                                <p2>Unggah bukti mengikuti fb (@inofabimbel)</p2><br>
+                                <input type="file" id="real-file5" hidden="hidden" accept="image/*">
+                                <button type="button" id="custom-button5">Pilih foto</button>
+                                <span id="custom-text5">Tidak ada file yang dipilih</span><br>
+
+                                <script type="text/javascript">
+                                    const realFileBtn5 = document.getElementById("real-file5");
+                                    const customBtn5 = document.getElementById("custom-button5");
+                                    const customTxt5 = document.getElementById("custom-text5");
+
+                                    customBtn5.addEventListener("click", function () {
+                                        realFileBtn5.click();
+                                    });
+
+                                    realFileBtn5.addEventListener("change", function () {
+                                        if (realFileBtn5.value) {
+                                            customTxt5.innerHTML = realFileBtn5.value.match(
+                                                /[\/\\]([\w\d\s\.\-\(\)]+)$/
+                                            )[1];
+                                        } else {
+                                            customTxt5.innerHTML = "Tidak ada file yang dipilih";
+                                        }
+                                    });
+                                </script><br>
+                                <p2>Unggah bukti story fb</p2><br>
+                                <input type="file" id="real-file6" hidden="hidden" accept="image/*">
+                                <button type="button" id="custom-button6">Pilih foto</button>
+                                <span id="custom-text6">Tidak ada file yang dipilih</span><br>
+
+                                <script type="text/javascript">
+                                    const realFileBtn6 = document.getElementById("real-file6");
+                                    const customBtn6 = document.getElementById("custom-button6");
+                                    const customTxt6 = document.getElementById("custom-text6");
+
+                                    customBtn6.addEventListener("click", function () {
+                                        realFileBtn6.click();
+                                    });
+
+                                    realFileBtn6.addEventListener("change", function () {
+                                        if (realFileBtn6.value) {
+                                            customTxt6.innerHTML = realFileBtn6.value.match(
+                                                /[\/\\]([\w\d\s\.\-\(\)]+)$/
+                                            )[1];
+                                        } else {
+                                            customTxt6.innerHTML = "Tidak ada file yang dipilih";
+                                        }
+                                    });
+                                </script>
+                                <a href="/endhalaman">
+                                    <div class="butn">
+                                        Kirim
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+>>>>>>> 45a6e675da4c0fe78249e3b85d77b2810083f9c2
         </section>
 
         <footer>
