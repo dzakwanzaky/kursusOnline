@@ -7,16 +7,10 @@
 .search-course-area{
 	background:url(../img/s-bg.jpg) center;
 	background-size:cover; 
-	height: 27%;
+	height: 38%;
 }
 
-@media (width: 640px){
-.search-course-area{
-	background:url(../img/s-bg.jpg) center;
-	background-size:cover; 
-	height: 4%;
-}
-}
+
 
 @media (height: 1024px){
 .search-course-area{
@@ -30,7 +24,7 @@
 .search-course-area{
 	background:url(../img/s-bg.jpg) center;
 	background-size:cover; 
-	height: 40%;
+	height: 48%;
 }
 }
 
@@ -38,56 +32,56 @@
 .search-course-area{
 	background:url(../img/s-bg.jpg) center;
 	background-size:cover; 
-	height: 33%;
+	height: 45%;
 }
 }
 @media (height: 823px){
 .search-course-area{
 	background:url(../img/s-bg.jpg) center;
 	background-size:cover; 
-	height: 29.5%;
+	height: 35%;
 }
 }
 @media (width: 320px){
 .search-course-area{
 	background:url(../img/s-bg.jpg) center;
 	background-size:cover; 
-	height: 45%;
+	height: 59%;
 }
 }
 @media (width: 375px){
 .search-course-area{
 	background:url(../img/s-bg.jpg) center;
 	background-size:cover; 
-	height: 36%;
+	height: 45%;
 }
 }
 @media (height: 736px){
 .search-course-area{
 	background:url(../img/s-bg.jpg) center;
 	background-size:cover; 
-	height: 26.7%;
+	height: 39%;
 }
 }
 @media (height: 812px){
 .search-course-area{
 	background:url(../img/s-bg.jpg) center;
 	background-size:cover; 
-	height: 29.5%;
+	height: 37%;
 }
 }
 @media (width: 768px){
 .search-course-area{
 	background:url(../img/s-bg.jpg) center;
 	background-size:cover; 
-	height: 17.5%;
+	height: 24%;
 }
 }
 @media (width: 1024px){
 .search-course-area{
 	background:url(../img/s-bg.jpg) center;
 	background-size:cover; 
-	height: 13%;
+	height: 17%;
 }
 }
 
@@ -103,14 +97,14 @@
 .search-course-area{
 	background:url(../img/s-bg.jpg) center;
 	background-size:cover; 
-	height: 46.9%;
+	height: 56%;
 }
 }
 @media (width: 731px){
 .search-course-area{
 	background:url(../img/s-bg.jpg) center;
 	background-size:cover; 
-	height: 56%;
+	height: 52%;
 }
 }
 @media (width: 823px){

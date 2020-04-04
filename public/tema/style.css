@@ -134,7 +134,7 @@ h1 {
 }
 
 h2 {
-    font-size: 22px; 
+    font-size: 25px; 
     color : #565656;
     font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -212,24 +212,204 @@ a,
     font-size: 19px;
     line-height: 30px;
     color: #767676;
-    margin: 0;
+    margin-left: 0;
     padding: 0;
+    width: 57em;
     font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+.leadi {
+    font-size: 19px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 @media screen and (width: 1024px) {
   .lead {
     font-size: 18px;
     line-height: 30px;
     color: #767676;
-    margin-left: 50%;
-    margin: 0;
+    margin-left: 0;
     padding: 0;
+    width: 50em;
     font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 }
-
+@media screen and (width: 768px) {
+  .lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+    width: 38em;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+}
+@media screen and (width: 375px) {
+  .lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+    width: 19em;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+}
+@media screen and (width: 812px) {
+  .lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+    width: 39em;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+}
+@media screen and (width: 414px) {
+  .lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+    width: 20em;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+}
+@media screen and (width: 411px) {
+  .lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+    width: 20em;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+}
+@media screen and (width: 736px) {
+  .lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+    width: 29em;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+}
+@media screen and (width: 731px) {
+  .lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+    width: 28em;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+}
+@media screen and (width: 667px) {
+  .lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+    width: 30em;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+}
+@media screen and (width: 320px) {
+  .lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+    width: 16em;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+}
+@media screen and (width: 360px) {
+  .lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+    width: 18em;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+}
+@media screen and (width: 640px) {
+  .lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+    width: 28em;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+}
+@media screen and (width: 568px) {
+  .lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+    width: 30em;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+}
+@media screen and (height: 823px) {
+  .lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+    width: 21em;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+}
+@media screen and (width: 823px) {
+  .lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin-left: 0;
+    padding: 0;
+    width: 39em;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+}
 blockquote {
     margin: 20px 0 20px;
     padding: 30px;
@@ -2466,10 +2646,238 @@ body.app_version .dev-list .widget-title small{
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    width: 70%;
+    width: 80%;
     margin:auto;
     margin-bottom: 10px;
     height: 84px;
+}
+@media screen and (width: 768px) {
+    .button4{
+    box-shadow: 0 2px 4px 0 rgba(95,95,95,0.24);
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 115%;
+    margin-bottom: 10px;
+    height: 84px;
+}
+}
+@media screen and (width: 375px) {
+    .button4{
+    box-shadow: 0 2px 4px 0 rgba(95,95,95,0.24);
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 117%;
+    margin-bottom: 10px;
+    margin-bottom: 4px;
+    height: 84px;
+}
+}
+@media screen and (width: 414px) {
+    .button4{
+    box-shadow: 0 2px 4px 0 rgba(95,95,95,0.24);
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 115%;
+    margin-bottom: 10px;
+    margin-bottom: 4px;
+    height: 84px;
+}
+}
+@media screen and (width: 320px) {
+    .button4{
+    box-shadow: 0 2px 4px 0 rgba(95,95,95,0.24);
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 117%;
+    margin-bottom: 10px;
+    margin-bottom: 4px;
+    height: 84px;
+}
+}
+@media screen and (width: 360px) {
+    .button4{
+    box-shadow: 0 2px 4px 0 rgba(95,95,95,0.24);
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 115%;
+    margin-bottom: 10px;
+    margin-bottom: 4px;
+    height: 84px;
+}
+}
+@media screen and (width: 736px) {
+    .button4{
+    box-shadow: 0 2px 4px 0 rgba(95,95,95,0.24);
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 120%;
+    margin-bottom: 10px;
+    height: 84px;
+}
+}
+@media screen and (width: 640px) {
+    .button4{
+    box-shadow: 0 2px 4px 0 rgba(95,95,95,0.24);
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 110%;
+    margin-bottom: 10px;
+    height: 84px;
+}
+}
+@media screen and (width: 667px) {
+    .button4{
+    box-shadow: 0 2px 4px 0 rgba(95,95,95,0.24);
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+    width: 131%;
+    margin-bottom: 10px;
+    height: 84px;
+}
+}
+@media screen and (width: 568px) {
+    .button4{
+    box-shadow: 0 2px 4px 0 rgba(95,95,95,0.24);
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+    width: 110%;
+    margin-bottom: 10px;
+    height: 84px;
+}
+}
+@media screen and (width: 411px) {
+    .button4{
+    box-shadow: 0 2px 4px 0 rgba(95,95,95,0.24);
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+    width: 115%;
+    margin-bottom: 10px;
+    height: 84px;
+}
+}
+@media screen and (width: 812px) {
+    .button4{
+    box-shadow: 0 2px 4px 0 rgba(95,95,95,0.24);
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 110%;
+    margin-bottom: 10px;
+    height: 84px;
+}
+}
+@media screen and (width: 731px) {
+    .button4{
+    box-shadow: 0 2px 4px 0 rgba(95,95,95,0.24);
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 110%;
+    margin-bottom: 10px;
+    height: 84px;
+}
+}
+@media screen and (width: 823px) {
+    .button4{
+    box-shadow: 0 2px 4px 0 rgba(95,95,95,0.24);
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 112%;
+    margin-bottom: 10px;
+    height: 84px;
+}
+}
+@media screen and (width: 1024px) {
+    .button4{
+    box-shadow: 0 2px 4px 0 rgba(95,95,95,0.24);
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border-radius: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 84px;
+}
 }
 
 .register-page__btn {

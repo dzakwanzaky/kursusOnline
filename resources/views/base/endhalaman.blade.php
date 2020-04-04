@@ -88,7 +88,7 @@
 
 @media screen and (width:736px) {
 .butn {
-   margin-top: 100px;
+   margin-top: 60px;
    margin-left: 250px;
    padding-top: 12px;
    padding-bottom: 12px;
@@ -126,7 +126,7 @@
 }
 @media screen and (width:640px) {
 .butn {
-   margin-top: 20px;
+   margin-top: 30px;
    margin-left: 215px;
    padding-top: 10px;
    padding-bottom: 10px;
@@ -164,7 +164,7 @@
 }
 @media screen and (width:411px) {
 .butn {
-   margin-top: 150px;
+   margin-top: 120px;
    margin-left: 97px;
    padding-top: 10px;
    padding-bottom: 10px;
@@ -184,7 +184,7 @@
 @media screen and (width:360px) {
 
 .butn {
-   margin-top: 130px;
+   margin-top: 70px;
    margin-left: 85px;
    padding-top: 11px;
    padding-bottom: 11px;
@@ -204,7 +204,7 @@
 }
 @media screen and (width:320px) {
 .butn {
-   margin-top: 80px;
+   margin-top: 65px;
    margin-left: 70px;
    padding-top: 11px;
    padding-bottom: 11px;
@@ -224,7 +224,7 @@
 @media screen and (width:375px) {
 
 .butn {
-   margin-top: 130px;
+   margin-top: 70px;
    margin-left: 85px;
    padding-top: 11px;
    padding-bottom: 11px;
@@ -265,7 +265,7 @@
 }
 @media screen and (width:823px) {
 .butn {
-   margin-top: 110px;
+   margin-top: 80px;
    margin-left: 300px;
    padding-top: 10px;
    padding-bottom: 10px;

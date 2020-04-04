@@ -7,8 +7,8 @@
     <style type="text/css">
         .awake {
             background-color: #fafafa;
-            height: 120%;
-            width: 103%;
+            height: 150%;
+            width: 100%;
 
         }
 
@@ -1148,7 +1148,7 @@
                                     <a href="{{route('soalTO', $d->id)}}" type="button" class="btn btn-link"
                                      >
                                         <h2>{{$d->nama}}<br>
-                                            <p>{{$d->jumlah_soal}}<br>
+                                            <p>{{$d->jumlah_soal}} soal pilihan ganda<br>
                                             </p>
                                         </h2>
                                     </a>
@@ -1347,13 +1347,15 @@
             </div>
 
         </section>
-        <br>
+
         </b>
         </h4>
+
 </div>
 </body>
+
 </div>
-</section>
+
 </div>
 
 @include('base/futerb')

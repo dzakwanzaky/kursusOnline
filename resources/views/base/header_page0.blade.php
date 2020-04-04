@@ -16,7 +16,7 @@
                     <ul class="navbar-nav">
                         <li><a class="nav-link" href="/"><li style="font-weight:500">Beranda</a></li>
                         <li style="font-weight:500"><a class="nav-link" href="/probel">Program</a></li>
-                        <li style="font-weight:500"><a class="nav-link" href="/ttg"><font weight="500">Tentang Kami</a></font></li>
+                        <li style="font-weight:500"><a class="nav-link" href="/paket"><font weight="500">Paket</a></font></li>
                         <li><div class="btn-login"><a href="/login">Masuk</a></div></li>
                         <li><div class="btn-register"><a href="/registerPilih">Daftar</a></div></li>
                     </ul>

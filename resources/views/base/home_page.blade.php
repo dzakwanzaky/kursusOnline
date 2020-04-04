@@ -112,7 +112,7 @@
               <h4 class="subheading">Program</h4>
               <h2 class="heading"><a href="portfolio.html">Banyak program yang kami tawarkan untuk Anda</a></h2>
               <p>Program kami sangat beraneka ragam. Hal ini kami lakukan untuk semakin memperluas jangkauan pelayanan kami kepada semua pengguna Bimbel Inofa. Kami mengedepankan kepuasan Anda.</p>
-              <p><a href="/probel-dinamis" class="btn btn-primary px-4">Lihat Program</a></p>
+              <p><a href="/probel" class="btn btn-primary px-4">Lihat Program</a></p>
             </div>
           </div>
           <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">

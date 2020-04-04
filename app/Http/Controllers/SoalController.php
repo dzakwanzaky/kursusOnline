@@ -16,7 +16,6 @@ class SoalController extends Controller
     }
 
 
-
     public function store(Request $request)
     {
         foreach ($request->nomor_soal as $key => $value){

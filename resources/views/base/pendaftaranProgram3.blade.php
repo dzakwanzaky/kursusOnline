@@ -4,7 +4,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +27,6 @@
 
                     <br>
                     <div class="panel-body">
-
 
                         <label for="kelas">Kelas
                             <select id="kelas" name="kelas" class="form-control" style="float:left">

@@ -52,7 +52,6 @@ Route::get('/kontak', function () {
 Route::get('/paketProgram', function () {
     return view('base/paket_program_page');
 });
-
 Route::get('/dataSiswa', function () {
     return view('base/dataSiswa');
 });
@@ -210,7 +209,6 @@ Route::get('/tambahTryout', function () {
 Route::get('/tambahProgram', function () {
     return view('dashboard_admin/tambahProgram');
 });
-
 
 Auth::routes();
 

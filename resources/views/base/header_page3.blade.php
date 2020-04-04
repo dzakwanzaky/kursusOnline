@@ -17,7 +17,7 @@
                     <ul class="navbar-nav"><br>
                         <li><a class="nav-link" href="/">Beranda</a></li>
                         <li><a class="nav-link" href="/probel">Program</a></li>
-                        <li><a class="nav-link" href="/ttg">Tentang Kami</a></li>
+                        <li><a class="nav-link" href="/ttg">Paket</a></li>
                         <li><div class="btn-login"><a href="/login">Masuk</a></div></li>
                         <li><div class="btn-register"><a href="/registerPilih">Daftar</a></div></li>
                     </ul>

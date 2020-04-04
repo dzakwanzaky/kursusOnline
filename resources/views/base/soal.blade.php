@@ -1,5 +1,5 @@
-@include('base/header_pageyes')
-@extends('base/script_pagey')
+    @include('base/header_page0')
+@extends('base/script_yesa')
 
 <link href="{{asset('/button')}}/gas.css" rel="stylesheet" type="text/css">
 <link href="{{asset('/button')}}/butnn.css" rel="stylesheet" type="text/css">
@@ -8,6 +8,7 @@
     .awake {
         background-color: #f8f8ff;
         height: 120%;
+        width: 100%;
 
     }
 
@@ -21,14 +22,14 @@
     @media screen and (width: 640px) {
         .awake {
             background-color: #f8f8ff;
-            height: 190%;
+            height: 200%;
         }
     }
 
     @media screen and (width: 731px) {
         .awake {
             background-color: #f8f8ff;
-            height: 170%;
+            height: 190%;
         }
     }
 
@@ -42,7 +43,7 @@
     @media screen and (width: 568px) {
         .awake {
             background-color: #f8f8ff;
-            height: 220%;
+            height: 240%;
         }
     }
 
@@ -64,6 +65,12 @@
         .awake {
             background-color: #f8f8ff;
             height: 200%;
+        }
+    }
+     @media screen and (width: 411px) {
+        .awake {
+            background-color: #f8f8ff;
+            height: 120%;
         }
     }
 </style>
@@ -121,6 +128,7 @@
         margin-top: 2px;
         line-height: 1.4em;
         font-size: 14px;
+        margin-right: 18px;
         font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     }
 
@@ -267,14 +275,14 @@
             margin-top: 20px;
             margin-bottom: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 17px;
+            font-size: 14px;
             line-height: 1.3em;
         }
 
         .satu {
             margin-top: 2px;
             line-height: 1.3em;
-            font-size: 17px;
+            font-size: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
@@ -422,14 +430,14 @@
 
             margin-bottom: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 17px;
+            font-size: 15px;
             line-height: 1.3em;
         }
 
         .satu {
             margin-top: 2px;
             line-height: 1.3em;
-            font-size: 17px;
+            font-size: 15px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
@@ -578,14 +586,14 @@
 
             margin-bottom: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 17px;
+            font-size: 14px;
             line-height: 1.3em;
         }
 
         .satu {
             margin-top: 2px;
             line-height: 1.3em;
-            font-size: 17px;
+            font-size: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
@@ -733,14 +741,14 @@
 
             margin-bottom: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 18px;
+            font-size: 15px;
             line-height: 1.3em;
         }
 
         .satu {
             margin-top: 2px;
             line-height: 1.3em;
-            font-size: 18px;
+            font-size: 15px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
@@ -888,14 +896,14 @@
 
             margin-bottom: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.3em;
         }
 
         .satu {
             margin-top: 2px;
             line-height: 1.3em;
-            font-size: 18px;
+            font-size: 16px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
@@ -1043,14 +1051,14 @@
 
             margin-bottom: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 18px;
+            font-size: 15px;
             line-height: 1.3em;
         }
 
         .satu {
             margin-top: 2px;
             line-height: 1.3em;
-            font-size: 18px;
+            font-size: 15px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
@@ -1198,14 +1206,14 @@
 
             margin-bottom: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 18px;
+            font-size: 14px;
             line-height: 1.3em;
         }
 
         .satu {
             margin-top: 2px;
             line-height: 1.3em;
-            font-size: 18px;
+            font-size: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
@@ -1353,14 +1361,14 @@
 
             margin-bottom: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 18px;
+            font-size: 14px;
             line-height: 1.3em;
         }
 
         .satu {
             margin-top: 2px;
             line-height: 1.3em;
-            font-size: 18px;
+            font-size: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
@@ -1508,14 +1516,14 @@
 
             margin-bottom: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 18px;
+            font-size: 15px;
             line-height: 1.3em;
         }
 
         .satu {
             margin-top: 2px;
             line-height: 1.3em;
-            font-size: 18px;
+            font-size: 15px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
@@ -1663,14 +1671,14 @@
 
             margin-bottom: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 18px;
+            font-size: 15px;
             line-height: 1.3em;
         }
 
         .satu {
             margin-top: 2px;
             line-height: 1.3em;
-            font-size: 18px;
+            font-size: 15px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
@@ -1818,14 +1826,14 @@
 
             margin-bottom: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 18px;
+            font-size: 13px;
             line-height: 1.3em;
         }
 
         .satu {
             margin-top: 2px;
             line-height: 1.3em;
-            font-size: 18px;
+            font-size: 13px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
@@ -1973,14 +1981,14 @@
 
             margin-bottom: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 18px;
+            font-size: 15px;
             line-height: 1.3em;
         }
 
         .satu {
             margin-top: 2px;
             line-height: 1.3em;
-            font-size: 18px;
+            font-size: 15px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
@@ -2126,16 +2134,16 @@
 
         .gr {
 
-            margin-bottom: 14px;
+            margin-bottom: 15px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.3em;
         }
 
         .satu {
             margin-top: 2px;
             line-height: 1.3em;
-            font-size: 18px;
+            font-size: 15px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
@@ -2283,14 +2291,14 @@
 
             margin-bottom: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 18px;
+            font-size: 15px;
             line-height: 1.3em;
         }
 
         .satu {
             margin-top: 2px;
             line-height: 1.3em;
-            font-size: 18px;
+            font-size: 15px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
@@ -2401,12 +2409,11 @@
             <div class="col-md-6 col-sm-12">
                 <div class="big-tagline">
                     @foreach($data as $d)
-                    <h2>Soal Bahasa Indonesia TKPA</h2>
+                    <br><br>
+                    <h2>Soal Bahasa Indonesia SD</h2>
                     <p class="lead"><b>Soal no {{$d->nomor_soal}}</b><br>
-
-
-                        <p class="lead">{!! $d->soal !!}</p>
-                    </p>
+                    {{$d->soal}}</p>
+               
                 </div>
             </div>
         </div>
@@ -2427,6 +2434,7 @@
                 -moz-user-select: none;
                 -ms-user-select: none;
                 user-select: none;
+                margin-top: 0px;
             }
 
             p {
@@ -2524,7 +2532,7 @@
                 onclick="pop()">Selanjutnya</button>
             <div id="box">
 
-                <p class="lead">Pilih opsi untuk melanjutkan akses</p>
+                <p class="leadi">Pilih opsi untuk melanjutkan akses</p>
 
                 <a onclick="pop()" class="tal">
                     <font color="#ffffff">Batal</font>
@@ -2564,7 +2572,7 @@
                 <div class="satu">
                     <p>
                         <font color="#696969"><b>Pembahasan</b></font><br>
-                        <font color="#696969"> {{$d->jawaban}}</font>
+                        <font color="#696969"> {{$d->pembahasan}}</font>
                     </p>
                 </div>
             </article>
