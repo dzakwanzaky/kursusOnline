@@ -29,7 +29,7 @@
             <a href="/tutor" class="nav-link {{ Request::segment(1) === 'tutor' ? 'nav-link active' : null }}">
             <i class="fas fa-user-graduate nav-icon"></i>
               <p>
-                Pendaftaran Les Siswa
+                Pendaftaran Jadwal
               </p>
             </a>
           </li>

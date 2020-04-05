@@ -46,8 +46,8 @@
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $d->program}}</td>
-                                        <td>{{ $d->jumlah_mapel}}</td>
-                                        <td>{{ $d->jumlah_pertemuan}}</td>
+                                        <td>{{ $d->jumlah_mapel}} Mata Pelajaran</td>
+                                        <td>{{ $d->jumlah_pertemuan}} Pertemuan</td>
                                         <td>{{ $d->harga}}</td>
 
                                         <td class="d-flex">

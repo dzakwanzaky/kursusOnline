@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 id="div1" name="div1" class="m-0 text-dark">Daftar Tryout</h1>
+            <h1 id="div1" name="div1" class="m-0 text-dark">Manajemen Tryout</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             

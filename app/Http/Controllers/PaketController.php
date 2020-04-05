@@ -14,7 +14,8 @@ class PaketController extends Controller
      */
     public function index()
     {
-        //
+        $data = ModelPaket::all();
+        return view('base/paket', compact('data'));
     }
 
     /**
@@ -24,7 +25,7 @@ class PaketController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     public function manajemenPaket(){

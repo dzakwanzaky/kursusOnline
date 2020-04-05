@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-12">
-                <h1 class="m-0 text-dark">Manajemen Murid</h1><br>
+                <h1 class="m-0 text-dark">Pendaftaran Jadwal Siswa</h1><br>
                 <div class="alert alert-info" style="font-size:14px">
                     <strong>INFO!</strong> Berikut data pengajuan dari murid yang mendaftar les.
                     Di kolom Status, silahkan klik tombol <button class="btn btn-sm btn-success"> <i
