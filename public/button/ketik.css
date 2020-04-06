@@ -1,0 +1,11 @@
+
+.typing > * {
+	overflow: hidden;
+	white-space: nowrap;
+	animation: typingAnim 3s steps(27);
+	padding-left: 50px;
+}
+.keyframes typingAnim {
+	from {width: 0}
+	to {width: 100%}
+}

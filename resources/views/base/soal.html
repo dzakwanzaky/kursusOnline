@@ -1,0 +1,151 @@
+<link href="{{asset('/button')}}/style.css" rel="stylesheet" type="text/css">
+<link href="{{asset('/button')}}/butnn.css" rel="stylesheet" type="text/css">
+
+<link href="{{asset('/button')}}/gas.css" rel="stylesheet" type="text/css">
+
+<body>
+<div class="continput">
+	<h2>Soal Tes Kemampuan Potensi Akademik</h2>
+</div>
+
+<div class="input">
+	<h4 class="judul">Soal</h4>
+	@foreach($soaltkpa as $p)
+	<h4>{{$p->no}}.&nbsp;&nbsp;&nbsp;{{$p->soal}}</h4>
+	<ul>
+		<li class="pilihan">
+			<input type="radio" name="1">
+			<label>{{$p->jawaban_a}}</label>
+			<div class="bullet">
+				<div class="line zero"></div>
+				<div class="line one"></div>
+				<div class="line two"></div>
+				<div class="line three"></div>
+				<div class="line four"></div>
+				<div class="line five"></div>
+				<div class="line six"></div>
+				<div class="line seven"></div>
+			</div>
+		</li>
+		<li class="pilihan">
+			<input type="radio" name="1">
+			<label>{{$p->jawaban_b}}</label>
+			<div class="bullet">
+				<div class="line zero"></div>
+				<div class="line one"></div>
+				<div class="line two"></div>
+				<div class="line three"></div>
+				<div class="line four"></div>
+				<div class="line five"></div>
+				<div class="line six"></div>
+				<div class="line seven"></div>
+			</div>
+		</li>
+		<li class="pilihan">
+			<input type="radio" name="1">
+			<label>{{$p->jawaban_c}}</label>
+			<div class="bullet">
+				<div class="line zero"></div>
+				<div class="line one"></div>
+				<div class="line two"></div>
+				<div class="line three"></div>
+				<div class="line four"></div>
+				<div class="line five"></div>
+				<div class="line six"></div>
+				<div class="line seven"></div>
+			</div>
+		</li>
+		<li class="pilihan">
+			<input type="radio" name="1">
+			<label>{{$p->jawaban_d}}</label>
+			<div class="bullet">
+				<div class="line zero"></div>
+				<div class="line one"></div>
+				<div class="line two"></div>
+				<div class="line three"></div>
+				<div class="line four"></div>
+				<div class="line five"></div>
+				<div class="line six"></div>
+				<div class="line seven"></div>
+			</div>
+		</li>
+		<li class="pilihan">
+			<input type="radio" name="1">
+			<label>{{$p->jawaban_e}}</label>
+			<div class="bullet">
+				<div class="line zero"></div>
+				<div class="line one"></div>
+				<div class="line two"></div>
+				<div class="line three"></div>
+				<div class="line four"></div>
+				<div class="line five"></div>
+				<div class="line six"></div>
+				<div class="line seven"></div>
+			</div>
+		</li>
+	</ul>
+</div>
+<br>
+<br>
+<br>
+<br>
+<form action="/soaltkpa" method="get">
+@if (request()->get('page')==0 ) 
+<button class="buton" name="page" type="submit" value="{{request()->get('page')+2}}">Selanjutnya</button>
+@elseif (request()->get('page')==$max_number) 
+<button class="butone" name="page" type="submit" value="{{request()->get('page')-1}}">Sebelumnya</button>
+<button class="but" name="page" type="button" value="{{request()->get('page')+1}}" id="blur" onclick="pop()">Selanjutnya</button>
+<div id="box">
+	<span class=""></span>
+	<p>Pilih opsi untuk melanjutkan akses</p>
+<a onclick="pop()" class="close">Batal</a>
+
+<a href="/wizardsbm" class="ok">Ok</a>
+</div>
+
+@else
+<button class="butonn" name="page" type="submit" value="{{request()->get('page')-1}}">Sebelumnya</button>
+<button class="but" name="page" type="submit" value="{{request()->get('page')+1}}">Selanjutnya</button>
+@endif
+</form>
+<!-- {{ $soaltkpa->render() }} -->
+<br>
+<br>
+<button class="btn first"><a href="#popup" style="text-decoration:none"><font color="#92CD16">Cek Jawaban</font></a></button>
+<br>
+<br>
+<br>
+<br>
+
+   <div id="popup">
+    	<div class="window">
+        	<a href="#" class="close-button" title="Close">X</a>
+            <p>Jawaban yang benar : <b><font color="#92CD16">{{$p->jawaban_benar}}</b></font></p>
+            <p><b>Pembahasan</b><br>
+               {{$p->pembahasan}}
+        </div>
+    </div>
+
+    @endforeach
+    @include('base/futerbawah')
+</p>
+</b>
+</p>
+</div>
+</div>
+<script>
+var c = 0;
+function pop(){
+	if(c == 0){
+		document.getElementById("box").style.display ="block";
+		c = 1;
+	}else{
+
+		document.getElementById("box").style.display ="none";
+		c = 0;
+	}
+}
+</script>
+
+</div>
+</body>
