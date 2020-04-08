@@ -20,9 +20,9 @@ Route::get('/ping', function () {
     return view('base/ting');
 });
 
-Route::get('/paket', function () {
-    return view('base/paket');
-});
+Route::get('/pakt', 'PaketController@index');
+
+
 
 Route::get('/testing', function () {
     return view('testing');
@@ -60,9 +60,6 @@ Route::get('/', function () {
 });
 Route::get('/kontak', function () {
     return view('base/kontak_page');
-});
-Route::get('/paketProgram', function () {
-    return view('base/paket_program_page');
 });
 Route::get('/dataSiswa', function () {
     return view('base/dataSiswa');
@@ -294,7 +291,6 @@ Route::get('/invoicenya_pdf', 'ProgramController@pdf');
 // Route::get('/verify','VerifyController@getVerify')->name('getverify');
 // Route::post('/verify','VerifyController@postVerify')->name('verify');
 Route::get('profileAdmin','Auth\RegisterController@data');
-Route::get('/paketProgram', 'ProgramController@paket');
 Route::get('/manajemenProgram', 'ProgramController@manajemenProgram')->name('manajemenProgram');
 Route::get('/manajemenPaket', 'PaketController@manajemenPaket')->name('manajemenPaket');
 Route::get('/tambahProgram','ProgramController@tambah')->name('tambahProgram');

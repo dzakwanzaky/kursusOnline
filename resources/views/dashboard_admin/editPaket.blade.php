@@ -48,6 +48,12 @@
                                     {{ method_field('PUT') }}
                                     <div class="form-group">
 
+                                    <div class="form-group">
+                                            <label for="">Nama Paket :</label>
+                                            <input type="text" class="form-control" id="nama_paket" name="nama_paket"
+                                                value="{{ $d->nama_paket }}">
+                                        </div>
+                                        
                                         <div class="form-group">
                                             <label for="">Program :</label>
                                             <input type="text" class="form-control" id="program" name="program"

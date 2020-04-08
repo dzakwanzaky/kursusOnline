@@ -15,6 +15,7 @@ class CreateModelPaketsTable extends Migration
     {
         Schema::create('model_pakets', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nama_paket');
             $table->string('program');
             $table->string('jumlah_mapel');
             $table->string('jumlah_pertemuan');

@@ -33,6 +33,7 @@
                                 <thead class="thead-dark">
                                     <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                                         <th>No.</th>
+                                        <th>Nama Paket</th>
                                         <th>Program</th>
                                         <th>Jumlah Mata Pelajaran </th>
                                         <th>Jumlah Pertemuan</th>
@@ -45,6 +46,7 @@
                                     @foreach($data as $d)
                                     <tr>
                                         <td>{{ $no++ }}</td>
+                                        <td>{{ $d->nama_paket}}</td>
                                         <td>{{ $d->program}}</td>
                                         <td>{{ $d->jumlah_mapel}} Mata Pelajaran</td>
                                         <td>{{ $d->jumlah_pertemuan}} Pertemuan</td>

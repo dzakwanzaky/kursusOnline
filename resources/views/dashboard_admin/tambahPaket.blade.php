@@ -36,6 +36,12 @@
                                     <form method="POST" action="{{ route('paket.store')}}"
                                         enctype="multipart/form-data">
                                         {{ csrf_field() }}
+                                        
+                                        <div class="form-group">
+                                            <label for="">Nama Paket :</label>
+                                            <input type="text" class="form-control" id="nama_paket"
+                                                name="nama_paket">
+                                        </div>
 
                                         <div class="form-group">
                                             <label for="">Program :</label>

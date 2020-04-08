@@ -14,8 +14,15 @@ class PaketController extends Controller
      */
     public function index()
     {
-        $data = ModelPaket::all();
-        return view('base/paket', compact('data'));
+        $datas = ModelPaket::where('program', 'SD')->get();
+        $dats = ModelPaket::where('program', 'SMP')->get();
+        $das = ModelPaket::where('program', 'SMA')->get();
+        $sbm = ModelPaket::where('program', 'SBMPTN')->get();
+        $stan = ModelPaket::where('program', 'STAN')->get();
+        $utul = ModelPaket::where('program', 'UTUL UGM')->get();
+        $cpns = ModelPaket::where('program', 'CPNS')->get();
+        $komp = ModelPaket::where('program', 'KOMPUTER')->get();
+        return view('base/paket', compact(['datas','dats','das','sbm','stan','utul','cpns','komp']));
     }
 
     /**
@@ -47,6 +54,7 @@ class PaketController extends Controller
     public function store(Request $request)
     {
         $data = new ModelPaket();
+        $data->nama_paket = $request->nama_paket;
         $data->program = $request->program;
         $data->jumlah_mapel = $request->jumlah_mapel;
         $data->jumlah_pertemuan = $request->jumlah_pertemuan;
@@ -88,6 +96,7 @@ class PaketController extends Controller
     public function update(Request $request, $id)
     {
         $data = ModelPaket::where('id',$id)->first();
+        $data->nama_paket = $request->nama_paket;
         $data->program = $request->program;
         $data->jumlah_mapel = $request->jumlah_mapel;
         $data->jumlah_pertemuan = $request->jumlah_pertemuan;

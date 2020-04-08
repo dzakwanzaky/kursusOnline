@@ -9,7 +9,10 @@ use App\Image_uploaded;
 
 class InvoiceController extends Controller
 {
-   
+    public function index()
+    {
+        return view('base/paket_program_page');
+    }
     
     public function proses_upload(Request $request){
         if($data = ModelInvoice::where('id_murid', '=', Auth::user()->id)->first()){
