@@ -11,6 +11,9 @@ use App\ModelKab;
 use App\ModelKecamatan;
 use App\Provinsi;
 use App\ModelJadwal;
+use App\ModelKelas;
+use App\ModelMapel;
+use App\ModelProgram;
 
 
 class TutorController extends Controller
@@ -28,8 +31,9 @@ class TutorController extends Controller
 
     public function profileTutorAdmin($id){
         $data = ModelTutor::with('tutor')->where('id', $id)->get();
+        $matpel = ModelTutor::with('tutor')->where('id', $id)->pluck('mapel_id');
         $jadwal = ModelJadwal::where('tutor_id', $id)->get();
-        return view('dashboard_admin.profileTutor', compact('data', 'jadwal'));
+        return view('dashboard_admin.profileTutor', compact('data', 'jadwal', 'matpel'));
     }
 
     public function statusTutor(Request $request, $id){
@@ -52,7 +56,15 @@ class TutorController extends Controller
     public function index(){
         $data = ModelTutor::all();
         $provinsi = Provinsi::all()->pluck("provinsi", "id");
-        return view('base.dataTutor', compact('data', 'provinsi'));
+        $sd = ModelMapel::where('id_program', '1')->get();
+        $smp = ModelMapel::where('id_program', '2')->get();
+        $sma = ModelMapel::where('id_program', '3')->get();
+        $sbm = ModelMapel::where('id_program', '4')->get();
+        $ksd = ModelKelas::where('id_program', '1')->get();
+        $ksmp = ModelKelas::where('id_program', '2')->get();
+        $ksma = ModelKelas::where('id_program', '3')->get();
+        $program = ModelProgram::all();
+        return view('base.dataTutor', compact('data', 'provinsi', 'sd', 'smp', 'sma', 'sbm', 'program', 'ksd', 'ksmp', 'ksma'));
     }
 
     public function getKabupaten($id){
@@ -73,7 +85,7 @@ class TutorController extends Controller
 
     public function informasiTutor(){
         $data = ModelTutor::where('id', '=', Auth::user()->id)->get();
-        return view('base.informasiTutor', compact('data',));
+        return view('base.informasiTutor', compact('data'));
     }
 
     public function store(Request $request)
@@ -85,22 +97,19 @@ class TutorController extends Controller
         $data->kabupaten = $request->kabupaten;
         $data->kecamatan = $request->kecamatan;
         $data->pendidikan = $request->pendidikan;
-        $data->program = $request->program;
-        $data->kelas1 = $request->kelas1;
-        $data->kelas2 = $request->kelas2;
-        $data->kelas3 = $request->kelas3;
-        $data->kelas4 = $request->kelas4;
-        $data->kelas5 = $request->kelas5;
-        $data->kelas6 = $request->kelas6;
-        $data->mata_pelajaran1 = $request->mata_pelajaran1;
-        $data->mata_pelajaran2 = $request->mata_pelajaran2;
-        $data->mata_pelajaran3 = $request->mata_pelajaran3;
-        $data->mata_pelajaran4 = $request->mata_pelajaran4;
-        $data->mata_pelajaran5 = $request->mata_pelajaran5;
-        $data->mata_pelajaran6 = $request->mata_pelajaran6;
-        $data->mata_pelajaran7 = $request->mata_pelajaran7;
-        $data->mata_pelajaran8 = $request->mata_pelajaran8;
-        $data->mata_pelajaran9 = $request->mata_pelajaran9;
+        $data->program_id = $request->program_id;
+
+        $array = array();
+        foreach($request->kelas_id as $kelas_id){
+            array_push($array, $kelas_id);
+        }
+        $data->kelas_id = json_encode($array);
+        
+        $array = array();
+        foreach($request->mapel_id as $mapel_id){
+            array_push($array, $mapel_id);
+        }
+        $data->mapel_id = json_encode($array);
 
         $file = $request->file('file');
         $nama_file = time()."_".$file->getClientOriginalName();  

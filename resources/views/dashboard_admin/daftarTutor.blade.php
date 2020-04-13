@@ -41,7 +41,7 @@
                                         @php $no = 1; @endphp
                                         @foreach($data as $d)
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $d->nama_tutor }}</td>
+                                        <td>{{ $d->tutor->name }}</td>
                                         <td>{{ $d->jenis_kelamin }}</td>
                                         <td>{{ $d->kota }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
                                         <td>
@@ -90,7 +90,9 @@
 @section('sweet')
 <script>
     $(document).ready(function () {
-        $('#datakaryawan').DataTable();
+        $('#datakaryawan').DataTable({
+            "autoWidth": false
+        });
     });
 
     $(function () {

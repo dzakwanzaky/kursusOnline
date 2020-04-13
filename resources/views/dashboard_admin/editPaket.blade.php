@@ -61,6 +61,14 @@
                                         </div>
 
                                         <div class="form-group">
+                                            <label for="">Kategori :</label>
+                                            <select class="form-control" id="kategori" name="kategori"  value="{{ $d->kategori }}">
+                                                <option value="ONLINE">ONLINE</option>
+                                                <option value="OFFLINE">OFFLINE</option>
+                                            </select>    
+                                        </div>
+
+                                        <div class="form-group">
                                             <label for="">Jumlah Mata Pelajaran :</label>
                                             <input type="text" class="form-control" id="jumlah_mapel"
                                                 name="jumlah_mapel" value="{{ $d->jumlah_mapel}}">

@@ -35,6 +35,7 @@
                                         <th>No.</th>
                                         <th>Nama Paket</th>
                                         <th>Program</th>
+                                        <th>Kategori</th>
                                         <th>Jumlah Mata Pelajaran </th>
                                         <th>Jumlah Pertemuan</th>
                                         <th>Harga</th>
@@ -48,6 +49,7 @@
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $d->nama_paket}}</td>
                                         <td>{{ $d->program}}</td>
+                                        <td>{{ $d->kategori}}</td>
                                         <td>{{ $d->jumlah_mapel}} Mata Pelajaran</td>
                                         <td>{{ $d->jumlah_pertemuan}} Pertemuan</td>
                                         <td>{{ $d->harga}}</td>
@@ -89,11 +91,13 @@
 @section('sweet')
 <script>
     $(document).ready(function () {
-        $('#program').DataTable();
-    });
+        $('#program').DataTable({
+            "autoWidth": false
+          });
+        });
 
     $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    });
+          $('[data-toggle="tooltip"]').tooltip()
+    })
 </script>
 @endsection

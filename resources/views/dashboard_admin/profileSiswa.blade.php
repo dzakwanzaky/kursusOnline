@@ -14,7 +14,7 @@
                                 <div class="container-fluid">
                                     <div class="row mb-2">
                                         <div class="col-sm-6">
-                                            <p style="font-size:24px">Detail Siswa</p>
+                                            <h1>Detail Siswa</h1>
                                         </div>
 
                                     </div>
@@ -113,8 +113,8 @@
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $d->jadwal->name }}</td>
-                                            <td>{{ $d->invoice->kelas }}</td>
-                                            <td>{{ $d->mata_pelajaran }}</td>
+                                            <td>{{ $d->invoice->kelas->kelas }}</td>
+                                            <td>{{ $d->mapel->mapel }}</td>
                                             <td>{{ $d->hari1 }} {{ $d->waktu_hari1 }}</td>
                                             <td id="hari2td">{{ $d->hari2 }} {{ $d->waktu_hari2 }}</td>
                                             <td>
@@ -151,7 +151,9 @@
 @section('sweet')
 <script>
     $(document).ready(function () {
-        $('#jadwal').DataTable();
+        $('#jadwal').DataTable({
+            "autoWidth": false
+        });
     });
 
     $(function () {

@@ -110,7 +110,7 @@
                     <td colspan="2">
                         @php $no = 1; @endphp
                         @foreach($invoice as $d)
-                        {{ $d->program }}
+                        {{ $d->program->program }}
                     </td>
                     <td colspan="2">
                         {{$d->jumlah_mapel}} Mata Pelajaran
@@ -128,12 +128,12 @@
                         <?php
                     $sesi = $d["jumlah_sesi"];
                     $mapel =  $d["jumlah_mapel"];
-                    $program = $d["program"];
+                    $program = $d["program_id"];
                     $p1 = 20000;
                     $p2 = 30000;
                     $p3 = 40000;
                     $var = 0;
-                    if ($program == 'SD'){
+                    if ($program == '1'){
                         if ($mapel == '1' && $sesi == '1' ){
                             $var = "Rp. 300.000";
                         } else if ($mapel == '2' && $sesi == '1'){
@@ -149,7 +149,7 @@
                         } else {
                             $var = 0;
                         }
-                    } else  if ($program == 'SMP'){
+                    } else  if ($program == '2'){
                         if ($mapel == '1' && $sesi == '1' ){
                             $var = "belum tau";
                         } else if ($mapel == '2' && $sesi == '1'){
@@ -169,7 +169,7 @@
                         } else {
                             $var = 0;
                         }
-                    } else  if ($program == 'SMA'){
+                    } else  if ($program == '3'){
                         if ($mapel == '1' && $sesi == '1' ){
                             $var = "belum tau";
                         } else if ($mapel == '2' && $sesi == '1'){

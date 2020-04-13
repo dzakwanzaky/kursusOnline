@@ -6,7 +6,7 @@
         <div class="row mb-2">
             <div class="col-sm-12">
                 <h1 class="m-0 text-dark">Pendaftaran Jadwal Siswa</h1><br>
-                <div class="alert alert-info" style="font-size:14px">
+                <div class="alert alert-light" style="font-size:14px;background-color:white;color:black">
                     <strong>INFO!</strong> Berikut data pengajuan dari murid yang mendaftar les.
                     Di kolom Status, silahkan klik tombol <button class="btn btn-sm btn-success"> <i
                             class="fas fa-check"></i> </button> , jika jadwal mengajar Anda sesuai dengan
@@ -36,14 +36,15 @@
                                     <th rowspan="2">Jenis Kelamin</th>
                                     <th rowspan="2">Alamat</th>
                                     <th rowspan="2">Program</th>
+                                    <th rowspan="2">Kategori</th>
                                     <th rowspan="2">Kelas</th>
                                     <th rowspan="2">Mata Pelajaran</th>
-                                    <th colspan="2">Sesi</th>
+                                    <th colspan="2" style="border-bottom:1px solid;border-bottom-color:#dee2e6">Sesi</th>
                                     <th rowspan="2">Aksi</th>
                                 </tr>
                                 <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                                     <th>1</th>
-                                    <th style="border-right:1px solid">2</th>
+                                    <th>2</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,6 +68,9 @@
                                     </td>
                                     <td>
                                         {{ $d->invoice->program }}
+                                    </td>
+                                    <td>
+                                        {{ $d->invoice->kategori }}
                                     </td>
                                     <td>
                                         {{ $d->invoice->kelas }}
@@ -116,7 +120,9 @@
 @section('sweet')
 <script>
     $(document).ready(function () {
-        $('#jadwal').DataTable();
+        $('#jadwal').DataTable({
+            "autoWidth": false
+        });
     });
 
     $(function () {

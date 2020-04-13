@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateModelMatpelsTable extends Migration
+class CreateModelKelasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateModelMatpelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('model_matpels', function (Blueprint $table) {
+        Schema::create('model_kelas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama');
+            $table->string('id_program');
+            $table->string('kelas');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateModelMatpelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('model_matpels');
+        Schema::dropIfExists('model_kelas');
     }
 }

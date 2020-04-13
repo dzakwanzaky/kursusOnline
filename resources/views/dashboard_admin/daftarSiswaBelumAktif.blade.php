@@ -22,15 +22,17 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-body table-responsive-m" style="overflow-x:auto;">
-                        <div class="alert alert-info" style="font-size:14px">
+                <div class="alert alert-light" style="background-color:white;font-size:14px">
                                 <strong>INFO!</strong> Jika pembayaran sudah valid, klik tombol
                                <button  class="btn btn-sm btn-success">
                                <i class="fas fa-check"></i>
                                </button> 
                                 untuk mengonfirmasi pembayaran.
                             </div>
+                    <div class="card">
+                        
+                        <div class="card-body table-responsive-m" style="overflow-x:auto;">
+                     
                             <table class="table table-bordered table-striped table-responsive-md" id="siswa">
                                 <thead class="thead-dark">
                                     <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
@@ -122,7 +124,9 @@
 @section('sweet')
 <script>
     $(document).ready(function () {
-        $('#siswa').DataTable();
+        $('#siswa').DataTable({
+            "autoWidth": false
+        });
     });
 
     $(function () {

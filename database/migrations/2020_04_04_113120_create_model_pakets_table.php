@@ -17,6 +17,7 @@ class CreateModelPaketsTable extends Migration
             $table->bigIncrements('id');
             $table->string('nama_paket');
             $table->string('program');
+            $table->string('kategori');
             $table->string('jumlah_mapel');
             $table->string('jumlah_pertemuan');
             $table->string('harga');

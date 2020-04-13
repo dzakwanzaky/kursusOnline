@@ -79,37 +79,9 @@ Route::get('/registerPilih', function () {
     return view('base/pilihan_page');
 });
 
-//pendaftaran Siswa berdasarkan paket yang dipilih
-Route::get('pendaftaranProgram3', function () {
-    return view('base/pendaftaranProgram3');
-});
 
-Route::get('/pendaftaranProgram1', function () {
-    return view('base/pendaftaranProgram1');
-});
-Route::get('/pendaftaranProgram2', function () {
-    return view('base/pendaftaranProgram2');
-});
-Route::get('/pendaftaranProgram3', function () {
-    return view('base/pendaftaranProgram3');
-});
-Route::get('/pendaftaranProgram4', function () {
-    return view('base/pendaftaranProgram4');
-});
-Route::get('/pendaftaranProgram5', function () {
-    return view('base/pendaftaranProgram5');
-});
-Route::get('/pendaftaranProgram6', function () {
-    return view('base/pendaftaranProgram6');
-});
-Route::get('/pendaftaranProgram7', function () {
-    return view('base/pendaftaranProgram7');
-});
-Route::get('/pendaftaranProgram8', function () {
-    return view('base/pendaftaranProgram8');
-});
-Route::get('/pendaftaranProgram9', function () {
-    return view('base/pendaftaranProgram9');
+Route::get('/paketProgramOnline', function () {
+    return view('base/paket_programOnline_page');
 });
 
 
@@ -121,8 +93,6 @@ $router->get('/nexmo', function () use ($router) {
     app(Nexmo\Client::class);
 });
 
-//Kalau menggunakan Controller
-// Route::get('/murid', 'SiswaController@index');
 Route::get('/landing', 'BaseController@index');
 
 //Halaman dashboard Murid
@@ -246,6 +216,10 @@ Route::middleware(['admin'])->group(function () {
     Route::get('tryoutAktif','FormulirController@formulirAktif')->name('tryoutAktif');
     Route::get('tryoutBelumAktif','FormulirController@formulirBelumAktif')->name('tryoutAktif');
     Route::post('importExcel','SoalController@importExcel')->name('importExcel');
+    Route::get('jadwalMenungguOnline','JadwalController@jadwalMenungguOnline');
+    Route::get('jadwalDiajukanOnline','JadwalController@jadwalDiajukanOnline');
+    Route::get('jadwalAktifOnline','JadwalController@jadwalAktifOnline');
+    Route::get('jadwalTidakAktifOnline','JadwalController@jadwalTidakAktifOnline');
 });
 
 Route::middleware(['tutor'])->group(function () {
@@ -259,7 +233,7 @@ Route::middleware(['tutor'])->group(function () {
 
 Route::middleware(['siswa'])->group(function () {
     Route::get('/murid','JadwalController@index');
-    Route::get('/invoicenya','ProgramController@index');
+    Route::get('/invoicenya/{id}','ProgramController@index');
     Route::get('/invoice','ProgramController@data');
     Route::get('profileMurid','SiswaController@profileSiswa');
     Route::get('presensi/{id}','AbsenController@indexPresensi')->name('presensi');
@@ -298,6 +272,15 @@ Route::get('/tambahPaket','PaketController@tambah')->name('tambahPaket');
 Route::get('/probel-dinamis','ProgramController@program')->name('probel-dinamis');
 Route::get('/invoiceDetail','ProgramController@detail');
 Route::get('/invoicePDF/{murid_id}','ProgramController@pdf')->name('invoicePDF');
+
+//base
+Route::get('/pendaftaranProgram1','JadwalController@program1');
+Route::get('/pendaftaranProgram2','JadwalController@program2');
+Route::get('/pendaftaranProgram3','JadwalController@program3');
+Route::get('/pendaftaranProgramOnline1','JadwalController@programOnline1');
+Route::get('/pendaftaranProgramOnline2','JadwalController@programOnline2');
+Route::get('/pendaftaranProgramOnline3','JadwalController@programOnline3');
+
 
 
 Route::get('change-password', 'ChangePasswordController@index');

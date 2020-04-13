@@ -82,7 +82,9 @@
 @section('sweet')
 <script>
     $(document).ready(function () {
-        $('#program').DataTable();
+        $('#program').DataTable({
+            "autoWidth": false
+        });
     });
 
     $(function () {

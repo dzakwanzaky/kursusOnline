@@ -107,7 +107,7 @@
                 <tr>
                     <td colspan="2">
                        
-                        {{ $d->program }}
+                        {{ $d->program->program }}
                     </td>
                     <td colspan="2">
                     {{ $d->jumlah_mapel }} Mata Pelajaran

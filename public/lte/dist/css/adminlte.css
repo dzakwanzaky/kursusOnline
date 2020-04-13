@@ -1662,8 +1662,8 @@ pre code {
 }
 
 .table .thead-dark th {
-  color: #ffffff;
-  background-color: #158ADF;
+  color: #000000;
+  background-color: #ffffff;
   border-color: #ffffff;
 }
 
@@ -4398,7 +4398,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
-  color: #ffffff;
+  color: #080707;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -10201,7 +10201,6 @@ body,
 
 [class*="sidebar-dark"] .brand-link {
   color: rgba(255, 255, 255, 0.8);
-  border-bottom: 1px solid #4b545c;
 }
 
 [class*="sidebar-light"] .brand-link {
@@ -10388,7 +10387,7 @@ body,
 }
 
 .sidebar-dark-primary {
-  background-color: #343a40;
+  background-color: #ffffff;
 }
 
 .sidebar-dark-primary .user-panel a:hover {
@@ -10420,13 +10419,15 @@ body,
 
 .sidebar-dark-primary .nav-sidebar > .nav-item.menu-open > .nav-link,
 .sidebar-dark-primary .nav-sidebar > .nav-item:hover > .nav-link {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
+  color: #4b2323;
+  background-color: rgba(139, 87, 87, 0.1);
 }
 
 .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active {
   color: #ffffff;
-  background-color: #007bff;
+  background-color: #21D4FD;
+  background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+  
 }
 
 .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-treeview {
@@ -10439,7 +10440,7 @@ body,
 }
 
 .sidebar-dark-primary .sidebar a {
-  color: #C2C7D0;
+  color: #0000009c;
 }
 
 .sidebar-dark-primary .sidebar a:hover {
@@ -10451,13 +10452,15 @@ body,
 }
 
 .sidebar-dark-primary .nav-treeview > .nav-item > .nav-link:hover {
-  color: #ffffff;
+  color: #f2ebeb;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
 .sidebar-dark-primary .nav-treeview > .nav-item > .nav-link.active, .sidebar-dark-primary .nav-treeview > .nav-item > .nav-link.active:hover {
-  color: #343a40;
-  background-color: rgba(255, 255, 255, 0.9);
+  color : #ffffff;
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  
 }
 
 .sidebar-light-primary {

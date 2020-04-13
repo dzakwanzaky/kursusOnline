@@ -23,5 +23,13 @@ class ModelInvoice extends Model
     public function siswa(){
         return $this->belongsTo('App\ModelSiswa', 'id_murid');
     }
+
+    public function program(){
+        return $this->belongsTo('App\ModelProgram', 'program_id');
+    }
+
+    public function kelas(){
+        return $this->belongsTo('App\ModelKelas', 'kelas_id');
+    }
    
 }

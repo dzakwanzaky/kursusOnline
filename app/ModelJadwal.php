@@ -28,6 +28,9 @@ class ModelJadwal extends Model
     public function siswa(){
         return $this->belongsTo('App\ModelSiswa', 'murid_id');
     }
+    public function mapel(){
+        return $this->belongsTo('App\ModelMapel', 'mapel_id');
+    }
 
 
   

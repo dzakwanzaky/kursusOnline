@@ -22,16 +22,17 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-body table-responsive-m" style="overflow-x:auto;">
-                            <table class="table table-bordered table-striped table-responsive-md" id="jadwal">
-                            <div class="alert alert-info" style="font-size:14px">
+                <div class="alert alert-light" style="background-color:white;font-size:14px;color:black">
                                 <strong>INFO!</strong> Jika jadwal sudah valid, klik tombol
                                <button  class="btn btn-sm btn-success">
                                <i class="fas fa-check"></i>
                                </button> 
                                 untuk mengonfirmasi pengajuan jadwal.
                             </div>
+                    <div class="card">
+                        <div class="card-body table-responsive-m" style="overflow-x:auto;">
+                            <table class="table table-bordered table-striped table-responsive-md" id="jadwal">
+                         
                                 <thead class="thead-dark">
                                     <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                                         <th rowspan="2">No.</th>
@@ -40,13 +41,13 @@
                                         <th rowspan="2">Program</th>
                                         <th rowspan="2"> Kelas</th>
                                         <th rowspan="2">Mata Pelajaran</th>
-                                        <th colspan="2">Sesi</th>
+                                        <th colspan="2" style="border-bottom:1px solid;border-bottom-color:#dee2e6">Sesi</th>
                                         <th rowspan="2">Status</th>
                                         <th rowspan="2">Aksi</th>
                                     </tr>
                                     <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                                         <th>1</th>
-                                        <th style="border-right:1px solid">2</th>
+                                        <th>2</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -130,7 +131,9 @@
 @section('sweet')
 <script>
     $(document).ready(function () {
-        $('#jadwal').DataTable();
+        $('#jadwal').DataTable({
+            "autoWidth": false
+        });
     });
 
     $(function () {

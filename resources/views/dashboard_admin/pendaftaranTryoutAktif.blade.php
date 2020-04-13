@@ -88,7 +88,9 @@
 @section('sweet')
 <script>
     $(document).ready(function () {
-        $('#datakaryawan').DataTable();
+        $('#datakaryawan').DataTable({
+            "autoWidth": false
+        });
     });
 
     $(function () {

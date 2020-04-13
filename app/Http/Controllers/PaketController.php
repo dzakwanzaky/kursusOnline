@@ -56,6 +56,7 @@ class PaketController extends Controller
         $data = new ModelPaket();
         $data->nama_paket = $request->nama_paket;
         $data->program = $request->program;
+        $data->kategori = $request->kategori;
         $data->jumlah_mapel = $request->jumlah_mapel;
         $data->jumlah_pertemuan = $request->jumlah_pertemuan;
         $data->harga = $request->harga;
@@ -98,6 +99,7 @@ class PaketController extends Controller
         $data = ModelPaket::where('id',$id)->first();
         $data->nama_paket = $request->nama_paket;
         $data->program = $request->program;
+        $data->kategori = $request->kategori;
         $data->jumlah_mapel = $request->jumlah_mapel;
         $data->jumlah_pertemuan = $request->jumlah_pertemuan;
         $data->harga = $request->harga;

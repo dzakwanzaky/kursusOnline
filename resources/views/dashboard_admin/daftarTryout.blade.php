@@ -33,7 +33,7 @@
                         <th>No.</th>
                         <th>Nama Tryout</th>
                         <th>Jumlah Soal</th>
-                        <th>Kategori</th>
+                        <th>Program</th>
                         <th>Mata Pelajaran</th>
                         <th>Aksi</th>
                     </tr>
@@ -46,15 +46,15 @@
                         <td>{{ $no++ }}</td>
                         <td>{{ $d->nama }}</td>
                         <td>{{ $d->jumlah_soal }}</td>
-                        <td>{{ $d->kategori }}</td>
-                        <td>{{ $d->mata_pelajaran }}</td>
+                        <td>{{ $d->program->program }}</td>
+                        <td>{{ $d->mapel->mapel }}</td>
                         <td class="text-center">
                             <form action="{{ route('tryout.destroy', $d->id) }}" method="post" class="destroy">
-                            <a type="button" class="btn btn-info mr-2" href="{{route('daftarSoal', $d->id)}}"><i class="far fa-eye"></i></a>
-                            <a type="button" class="btn btn-primary mr-2" href="{{route('tryout.edit',$d->id)}}"><i class="far fa-edit"></i></a>
+                            <a type="button" class="btn-sm btn-info mr-2"  data-toggle="tooltip" data-placement="top" title="Lihat Soal" href="{{route('daftarSoal', $d->id)}}"><i class="far fa-eye"></i></a>
+                            <a type="button" class="btn-sm btn-primary mr-2" data-toggle="tooltip" data-placement="top" title="Edit Tryout" href="{{route('tryout.edit',$d->id)}}"><i class="far fa-edit"></i></a>
                               {{ csrf_field() }}
                               {{ method_field('DELETE') }}       
-                            <button type="submit" class="btn btn-md btn-danger" style="color:white" onclick="return confirm('Anda yakin akan menghapus tryout?')"><i class="far fa-trash-alt"></i></button>
+                            <button type="submit" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="Hapus Tryout" style="color:white" onclick="return confirm('Anda yakin akan menghapus tryout?')"><i class="far fa-trash-alt"></i></button>
                             </form>
                         </td>
                     </tr>
@@ -82,7 +82,13 @@
   @section('sweet')
   <script>
          $(document).ready( function () {
-           $('#siswa').DataTable();
-           });
+           $('#siswa').DataTable({
+            "autoWidth": false
+          });
+        });
+
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+        })
       </script>
   @endsection

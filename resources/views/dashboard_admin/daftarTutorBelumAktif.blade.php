@@ -22,15 +22,16 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-body table-responsive-m" style="overflow-x:auto;">
-                        <div class="alert alert-info" style="font-size:14px">
+                <div class="alert alert-light" style="background-color:white;font-size:14px;color:black">
                                 <strong>INFO!</strong> Klik tombol
                                <button  class="btn btn-sm btn-success">
                                <i class="fas fa-check"></i>
                                </button> 
                                 untuk mengonfirmasi tutor.
                             </div>
+                    <div class="card">
+                        <div class="card-body table-responsive-m" style="overflow-x:auto;">
+                    
                           
                             <table class="table table-bordered table-striped table-responsive-md" id="datakaryawan">
                                 <thead class="thead-dark">
@@ -49,8 +50,8 @@
                                         @php $no = 1; @endphp
                                         @foreach($data as $d)
                                         <td>{{ $no++ }}</td>
+                                        <td>{{ $d->tutor->name }}</td>
                                         <td>{{ $d->jenis_kelamin }}</td>
-                                        <td>{{ $d->nama_tutor }}</td>
                                         <td>{{ $d->kabupaten }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
                                         <td>
                                             <button class="btn btn-sm btn-warning" style="color:white" >
@@ -113,7 +114,9 @@
 @section('sweet')
 <script>
     $(document).ready(function () {
-        $('#datakaryawan').DataTable();
+        $('#datakaryawan').DataTable({
+            "autoWidth": false
+        });
     });
 
     $(function () {

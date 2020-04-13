@@ -16,9 +16,10 @@ class CreateModelInvoice extends Migration
         Schema::create('model_invoice', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('invoice');
-            $table->string('murid_id');
-            $table->string('program');
-            $table->string('kelas')->nullable();
+            $table->string('id_murid');
+            $table->string('program_id');
+            $table->string('kategori');
+            $table->string('kelas_id')->nullable();
             $table->string('jumlah_sesi');
             $table->string('jumlah_mapel');
             $table->string('harga')->nullable();            

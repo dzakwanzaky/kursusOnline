@@ -47,8 +47,8 @@
                   
                         </td>
                         <td>{{ Auth::user()->name }}</td>
-                        <td>{{ $i->kelas }} SD</td>
-                        <td>{{ $i->program }}</td>
+                        <td>{{ $i->kelas->kelas }} SD</td>
+                        <td>{{ $i->program->program }}</td>
                         <td>
                         @endforeach
                         @foreach($alamat as $a)
@@ -99,7 +99,7 @@
                       </div>
                     </div>
                         <td>
-                          <a href="invoicenya_pdf" target="_blank" class=" btn btn-sm btn-success" style="color:white;">
+                          <a  href="{{route('invoicePDF', $i->id_murid)}}" target="_blank" class=" btn btn-sm btn-success" style="color:white;">
                             <span class="fa fa-download"></span>
                           </a>
                         </td>

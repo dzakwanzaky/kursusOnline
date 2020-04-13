@@ -30,14 +30,11 @@
 
 
                         <label for="kelas">Kelas
-                            <select id="kelas" name="kelas" class="form-control" style="float:left">
+                            <select id="kelas" name="kelas" class="form-control" style="float:left" required>
                                 <option value=" ">Kelas</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
+                                @foreach($ksd as $d)
+                                        <option value="{{ $d->id }}">{{ $d->kelas }}</option>
+                                @endforeach
 
                             </select>
                         </label>
@@ -54,8 +51,11 @@
                         <input type="number" class="form-control" id="invoice" name="invoice" style="display:none"
                             value="<?php echo (rand(190000000,199999999)) ?>">
                             
-                        <input type="text" class="form-control" id="program" name="program" style="display:none"
-                            value="SD">
+                        <input type="text" class="form-control" id="program" name="program_id" style="display:none"
+                            value="1">
+
+                            <input type="text" class="form-control" id="kategori" name="kategori" style="display:none"
+                            value="OFFLINE">
 
                             <input id="murid_id" style="display:none" type="text" class="form-control" name="id_murid"
                             required autofocus value="{{ Auth::user()->id }}" style="text-transform: capitalize">
@@ -110,13 +110,12 @@
 
                         <div>
                             <label for="mata_pelajaran" style="width:100%">Mata Pelajaran
-                                <select id="mata_pelajaran" name="mata_pelajaran[]" class="form-control"
+                                <select id="mata_pelajaran" name="mapel_id[]" class="form-control"
                                     style="width:100%">
                                     <option value=" ">Mata Pelajaran</option>
-                                    <option value="Matematika">Matematika</option>
-                                    <option value="IPA">IPA</option>
-                                    <option value="IPS">IPS</option>
-                                    <option value="Bahasa Inggris">Bahasa Inggris</option>
+                                    @foreach($sd as $d)
+                                        <option value="{{ $d->id }}">{{ $d->mapel }}</option>
+                                    @endforeach
                                 </select>
                             </label>
                         </div>
@@ -187,13 +186,12 @@
                             value="MENUNGGU">
                         <div>
                             <label for="mata_pelajaran" style="width:100%">Mata Pelajaran
-                                <select id="mata_pelajaran" name="mata_pelajaran[]" class="form-control"
+                                <select id="mata_pelajaran" name="mapel_id[]" class="form-control"
                                     style="width:100%">
                                     <option value=" ">Mata Pelajaran</option>
-                                    <option value="Matematika">Matematika</option>
-                                    <option value="IPA">IPA</option>
-                                    <option value="IPS">IPS</option>
-                                    <option value="Bahasa Inggris">Bahasa Inggris</option>
+                                    @foreach($sd as $d)
+                                        <option value="{{ $d->id }}">{{ $d->mapel }}</option>
+                                    @endforeach
                                 </select>
                             </label>
                         </div>
@@ -265,13 +263,12 @@
                         </div>
                         <div>
                             <label for="mata_pelajaran" style="width:100%">Mata Pelajaran
-                                <select id="mata_pelajaran" name="mata_pelajaran[]" class="form-control"
+                                <select id="mata_pelajaran" name="mapel_id[]" class="form-control"
                                     style="width:100%">
                                     <option value=" ">Mata Pelajaran</option>
-                                    <option value="Matematika">Matematika</option>
-                                    <option value="IPA">IPA</option>
-                                    <option value="IPS">IPS</option>
-                                    <option value="Bahasa Inggris">Bahasa Inggris</option>
+                                    @foreach($sd as $d)
+                                        <option value="{{ $d->id }}">{{ $d->mapel }}</option>
+                                    @endforeach
                                 </select>
                             </label>
                         </div>
@@ -371,13 +368,13 @@
                         $('#div2').show().find('input, textarea, select').prop('disabled', false);
                         $('#div3').hide().find('input, textarea, select').prop('disabled', true);
                     } else if ($(this).val() == "3") {
-                        $('#sesi1').hide();
-                        $('#sesi2').hide();
-                        $('#sesi3').show();
+                        $('#sesi1').hide().find('input, textarea, select').prop('disabled', true);
+                        $('#sesi2').hide().find('input, textarea, select').prop('disabled', true);
+                        $('#sesi3').show().find('input, textarea, select').prop('disabled', false);
 
-                        $('#div1').show();
-                        $('#div2').show();
-                        $('#div3').show();
+                        $('#div1').show().find('input, textarea, select').prop('disabled', false);
+                        $('#div2').show().find('input, textarea, select').prop('disabled', false);
+                        $('#div3').show().find('input, textarea, select').prop('disabled', false);
                     }
                 });
                 $("#sesi1-select").change(function () {

@@ -65,8 +65,10 @@
   @section('sweet')
   <script>
          $(document).ready( function () {
-           $('#jadwal').DataTable();
-           });
+           $('#jadwal').DataTable({
+            "autoWidth": false
+        });
+    });
   </script>
   <script>
       $(document).ready(function() {

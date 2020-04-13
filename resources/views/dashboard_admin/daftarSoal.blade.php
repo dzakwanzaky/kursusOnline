@@ -36,16 +36,16 @@
                         <th rowspan="2">No</th>
                         <th rowspan="2">Soal</th>
                         <th rowspan="2">Gambar</th>
-                        <th colspan="5">Option</th>
+                        <th colspan="5" style="border-bottom:1px solid;border-bottom-color:#f4f4f5">Option</th>
                         <th rowspan="2">Jawaban</th>
                         <th rowspan="2">Aksi</th>
                 </tr>
-                <tr  class="table-secondary" style="text-align:center; text-transform: uppercase">
+                <tr  class="table-secondary" style="text-align:center; text-transform: uppercase;">
                         <th>A</th>
                         <th>B</th>
                         <th>C</th>
                         <th>D</th>
-                        <th style="border-right:1px solid">E</th>
+                        <th>E</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -101,7 +101,7 @@
   <script>
          $(document).ready( function () {
            $('#siswa').DataTable({
-            responsive: true
+            "autoWidth": false
            });
            });
       </script>

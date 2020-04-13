@@ -15,10 +15,10 @@ class CreateModelTryoutsTable extends Migration
     {
         Schema::create('model_tryouts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('mapel_id');
+            $table->string('program_id');
             $table->string('nama');
             $table->string('jumlah_soal');
-            $table->string('kategori');
-            $table->string('mata_pelajaran');
             $table->timestamps();
         });
     }

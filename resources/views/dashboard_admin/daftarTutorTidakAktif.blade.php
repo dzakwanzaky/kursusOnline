@@ -42,7 +42,7 @@
                                         @foreach($data as $d)
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $d->jenis_kelamin }}</td>
-                                        <td>{{ $d->nama_tutor }}</td>
+                                        <td>{{ $d->tutor->name }}</td>
                                         <td>{{ $d->kabupaten }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
                                         <td>
                                             <button id="status" name="status" class="btn btn-sm btn-secondary"
@@ -80,7 +80,9 @@
 @section('sweet')
 <script>
     $(document).ready(function () {
-        $('#tutor').DataTable();
+        $('#tutor').DataTable({
+            "autoWidth": false
+        });
     });
 
     $(function () {

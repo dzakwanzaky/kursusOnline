@@ -14,7 +14,7 @@ class CreateModelSiswasTable extends Migration
     public function up()
     {
         Schema::create('model_siswas', function (Blueprint $table) {
-            $table->string('id');
+            $table->string('id')->primary();
             $table->string('file');
             $table->string('jenis_kelamin');
             $table->string('provinsi');

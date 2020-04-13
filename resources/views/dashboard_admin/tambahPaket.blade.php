@@ -51,7 +51,17 @@
                                                 @foreach($data as $d)
                                                 <option value="{{ $d->program }}">{{ $d->program }}</option>
                                                 @endforeach
-                                            </select> </div>
+                                            </select> 
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Pilih Kategori :</label>
+                                            <select class="form-control" id="kategori" name="kategori">
+                                                <option value="">Kategori</option>
+                                                <option value="ONLINE">Online</option>
+                                                <option value="OFFLINE">Offline</option>
+                                            </select>    
+                                        </div>
 
                                         <div class="form-group">
                                             <label for="">Jumlah Mata Pelajaran :</label>

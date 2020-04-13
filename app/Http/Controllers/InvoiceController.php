@@ -13,6 +13,11 @@ class InvoiceController extends Controller
     {
         return view('base/paket_program_page');
     }
+
+    public function programOnline()
+    {
+        return view('base/paket_programOnline_page');
+    }
     
     public function proses_upload(Request $request){
         if($data = ModelInvoice::where('id_murid', '=', Auth::user()->id)->first()){
@@ -25,5 +30,16 @@ class InvoiceController extends Controller
         return redirect('/invoice');
         }
     }
+
+    public function update(Request $request, $id)
+    {
+        $data = ModelInvoice::where('id',$id)->first();
+        $data->harga = $request->harga;
+        $data->save();
+        return redirect('/murid')->withMessage('Berhasil Merubah Data');
+    }
+    
+
+
 
 }

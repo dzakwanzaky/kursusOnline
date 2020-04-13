@@ -14,7 +14,7 @@
                                 <div class="container-fluid">
                                     <div class="row mb-2">
                                         <div class="col-sm-6">
-                                            <p style="font-size:24px">Profile Tutor</p>
+                                            <h1 class="m-0 text-dark">Profile Tutor</h1>
                                         </div>
                                         <div class="col-sm-6">
                                             <ol class="breadcrumb float-md-right" style="font-size:14px">
@@ -89,26 +89,39 @@
                                             </th>
                                         </tr>
                                         <tr>
+                                           
+                                          
                                             <th>
                                                 Pendidikan
                                                 <input type="text" class="form-control" value="{{ $d->pendidikan }}"
                                                     style="margin-right:190px;background:white;border:none" disabled>
                                             </th>
                                         </tr>
+                                        @endforeach
+                                       
                                         <tr>
                                             <th>
-                                                Preferensi Mata Pelajaran
-                                                <input type="text" class="form-control"
-                                                    value="{{ $d->mata_pelajaran1 }} {{ $d->mata_pelajaran2 }} {{ $d->mata_pelajaran3 }} {{ $d->mata_pelajaran4 }} {{ $d->mata_pelajaran5 }} {{ $d->mata_pelajaran6 }} {{ $d->mata_pelajaran7 }} {{ $d->mata_pelajaran8 }} {{ $d->mata_pelajaran9 }}"
+                                            Preferensi Mata Pelajaran
+                                          <br>
+                                            @foreach (json_decode ($d->mapel->mapel) as $mapel)     
+                                            <input type="text" class="form-control"
+                                                    value="{{ $mapel }}"
                                                     style="margin-right:190px;background:white;border:none" disabled>
+                                            @endforeach
+                                          
                                             </th>
                                         </tr>
+                                   
                                         <tr>
                                             <th>
                                                 Preferensi Kelas
-                                                <input type="text" class="form-control"
-                                                    value="{{ $d->kelas1 }} {{ $d->kelas2 }} {{ $d->kelas3 }} {{ $d->kelas4 }}{{ $d->kelas5 }} {{ $d->kelas6 }} {{ $d->program }}"
-                                                    style="margin-right:190px;background:white;border:none" disabled>
+                                                <br>
+                                                @foreach (json_decode ($d->kelas_id) as $kelas)
+                                                &nbsp;&nbsp;
+                                                <input type="text" 
+                                                    value="{{ $kelas }} {{ $d->program->program }} "
+                                                    style="width:7%;background:white;border:none" disabled>
+                                                    @endforeach
                                             </th>
                                         </tr>
                                     </tbody>
@@ -118,8 +131,7 @@
                             </div>
                             <!-- /.col-md-6 -->
                         </div>
-                
-                    @endforeach
+
                         <div class="card">
                             <div class="card-body">
                                 <h4>Jadwal Tutor</h4>
@@ -143,30 +155,30 @@
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $d->jadwal->name }}</td>
                                             <td>{{ $d->invoice->kelas }}</td>
-                                            <td>{{ $d->mata_pelajaran }}</td>
+                                            <td>{{ $d->mapel->mapel }}</td>
                                             <td>{{ $d->hari1 }} {{ $d->waktu_hari1 }}</td>
                                             <td id="hari2td">{{ $d->hari2 }} {{ $d->waktu_hari2 }}</td>
                                             <td>
-                                            @if($d->status== 'MENUNGGU')
+                                                @if($d->status== 'MENUNGGU')
                                                 <a class=" btn btn-sm btn-primary" style="color:white;">
                                                     <span>{{ $d->status }}</span>
                                                 </a>
-                                            @elseif($d->status== 'DIPILIH TUTOR')
+                                                @elseif($d->status== 'DIPILIH TUTOR')
                                                 <a class=" btn btn-sm btn-warning" style="color:white;">
                                                     <span>{{ $d->status }}</span>
                                                 </a>
                                                 @elseif($d->status== 'AKTIF')
                                                 <a class=" btn btn-sm btn-success" style="color:white;">
                                                     <span>{{ $d->status }}</span>
-                                                @else
-                                                <a class=" btn btn-sm btn-secondary" style="color:white;">
-                                                    <span>{{ $d->status }}</span>
-                                                </a>
-                                            @endif
+                                                    @else
+                                                    <a class=" btn btn-sm btn-secondary" style="color:white;">
+                                                        <span>{{ $d->status }}</span>
+                                                    </a>
+                                                    @endif
                                             </td>
                                             <td>
-                                                <a type="button" style="color:white" class="btn btn-sm btn-warning" data-toggle="tooltip"
-                                                data-placement="top" title="Lihat Kehadiran"
+                                                <a type="button" style="color:white" class="btn btn-sm btn-warning"
+                                                    data-toggle="tooltip" data-placement="top" title="Lihat Kehadiran"
                                                     href="{{route('kehadiranTutor', $d->id)}}">
                                                     <i class="fas fa-chart-bar"></i>
                                                 </a>
@@ -192,7 +204,9 @@
 @section('sweet')
 <script>
     $(document).ready(function () {
-        $('#jadwal').DataTable();
+        $('#jadwal').DataTable({
+            "autoWidth": false
+           });
     });
 
     $(function () {

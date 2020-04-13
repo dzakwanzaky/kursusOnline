@@ -97,7 +97,9 @@
 @section('sweet')
 <script>
     $(document).ready(function () {
-        $('#siswa').DataTable();
+        $('#siswa').DataTable({
+            "autoWidth": false
+        });
     });
 
     $(function () {
