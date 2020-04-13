@@ -18,10 +18,9 @@ class CreateModelJadwalsTable extends Migration
             $table->string('invoice_id');
             $table->string('murid_id');
             $table->string('tutor_id')->nullable();
-            $table->string('kelas')->nullable();
             $table->string('mapel_id')->nullable();
             $table->string('hari1');
-            $table->string('waktu_hari1')->nullable();;
+            $table->string('waktu_hari1');
             $table->string('hari2')->nullable();
             $table->string('waktu_hari2')->nullable();;
             $table->string('status')->nullable();

@@ -18,6 +18,7 @@
         "laravel/ui": "^1.1",
         "maatwebsite/excel": "^3.1",
         "nexmo/laravel": "^2.1",
+        "staudenmeir/eloquent-json-relations": "1.3",
         "yajra/laravel-datatables-oracle": "^9.7"
     },
     "require-dev": {

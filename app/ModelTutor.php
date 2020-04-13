@@ -4,9 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class ModelTutor extends Model
 {
+    use \Staudenmeir\EloquentJsonRelations\HasJsonRelationships;
+
+
     protected $table = "model_tutors";
+
 
     protected $fillable = [
         'id', 'nama', 'no_telepon', 'jenis_kelamin', 'mata_pelajaran', 'provinsi', 'kota', 'kecamatan',
@@ -20,7 +25,7 @@ class ModelTutor extends Model
 
     public function mapel()
     {
-    	return $this->belongsTo('App\ModelMapel', 'mapel_id')->toJSON();
+    	return $this->belongsTo('App\ModelMapel', 'mapel_id');
     }
 
     public function program()

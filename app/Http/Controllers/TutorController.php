@@ -30,10 +30,18 @@ class TutorController extends Controller
     }
 
     public function profileTutorAdmin($id){
-        $data = ModelTutor::with('tutor')->where('id', $id)->get();
-        $matpel = ModelTutor::with('tutor')->where('id', $id)->pluck('mapel_id');
+
+        $tutor = ModelTutor::with('tutor',)->where('id', $id)->first();
+        $array = json_decode ($tutor->mapel_id);
+
+        $kls = ModelTutor::with('tutor',)->where('id', $id)->first();
+        $arrays = json_decode ($tutor->kelas_id);
+
+        $data = ModelTutor::with('tutor',)->where('id', $id)->get();
+        $matpel = ModelMapel::whereIn('id', $array)->get();
         $jadwal = ModelJadwal::where('tutor_id', $id)->get();
-        return view('dashboard_admin.profileTutor', compact('data', 'jadwal', 'matpel'));
+        $kelas = ModelKelas::whereIn('id', $array)->get();
+        return view('dashboard_admin.profileTutor', compact('data', 'jadwal', 'matpel', 'kelas'));
     }
 
     public function statusTutor(Request $request, $id){

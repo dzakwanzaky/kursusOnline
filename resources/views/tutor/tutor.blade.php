@@ -67,16 +67,16 @@
 
                                     </td>
                                     <td>
-                                        {{ $d->invoice->program }}
+                                        {{ $d->invoice->program->program }}
                                     </td>
                                     <td>
                                         {{ $d->invoice->kategori }}
                                     </td>
                                     <td>
-                                        {{ $d->invoice->kelas }}
+                                        {{ $d->invoice->kelas->kelas }}
                                     </td>
                                  
-                                    <td>{{ $d->mata_pelajaran }}</td>
+                                    <td>{{ $d->mapel->mapel }}</td>
                                     <td>{{ $d->hari1 }} {{ $d->waktu_hari1 }}</td>
                                     <td>{{ $d->hari2 }} {{ $d->waktu_hari2 }}</td>
 

@@ -20,7 +20,6 @@ class ModelJadwal extends Model
         return $this->belongsTo('App\User', 'tutor_id');
     }
 
-
     public function invoice(){
         return $this->belongsTo('App\ModelInvoice', 'invoice_id');
     }
@@ -28,6 +27,7 @@ class ModelJadwal extends Model
     public function siswa(){
         return $this->belongsTo('App\ModelSiswa', 'murid_id');
     }
+    
     public function mapel(){
         return $this->belongsTo('App\ModelMapel', 'mapel_id');
     }

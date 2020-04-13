@@ -38,9 +38,9 @@ class JadwalController extends Controller
         $array = json_decode ($data->mapel_id);
         $jadwal = ModelJadwal::with('invoice')
         ->whereHas('invoice', function($q) use ($data)
-        {$q-> whereIn('program', [$data->program_id]);}
+        {$q-> whereIn('program_id', [$data->program_id]);}
         )
-        ->whereIn('mata_pelajaran', $array)
+        ->whereIn('mapel_id', $array)
         ->where('status', 'MENUNGGU')->get();
         return view('tutor.tutor', compact('jadwal'));
     }

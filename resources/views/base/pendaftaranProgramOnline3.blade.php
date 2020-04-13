@@ -30,8 +30,8 @@
 
 
                         <label for="kelas">Kelas
-                            <select id="kelas" name="kelas" class="form-control" style="float:left" required>
-                                <option value=" ">Kelas</option>
+                            <select id="kelas" name="kelas_id" class="form-control" style="float:left" required>
+                                <option value="">Kelas</option>
                                 @foreach($ksma as $d)
                                         <option value="{{ $d->id }}">{{ $d->kelas }}</option>
                                 @endforeach

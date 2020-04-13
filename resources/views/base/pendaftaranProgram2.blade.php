@@ -30,7 +30,7 @@
 
 
                         <label for="kelas">Kelas
-                            <select id="kelas" name="kelas" class="form-control" style="float:left" required>
+                            <select id="kelas" name="kelas_id" class="form-control" style="float:left" required>
                                 <option value=" ">Kelas</option>
                                 @foreach($ksmp as $d)
                                         <option value="{{ $d->id }}">{{ $d->kelas }}</option>

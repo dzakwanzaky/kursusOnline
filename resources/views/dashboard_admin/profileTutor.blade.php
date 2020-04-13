@@ -103,9 +103,9 @@
                                             <th>
                                             Preferensi Mata Pelajaran
                                           <br>
-                                            @foreach (json_decode ($d->mapel->mapel) as $mapel)     
+                                            @foreach ($matpel as $d)     
                                             <input type="text" class="form-control"
-                                                    value="{{ $mapel }}"
+                                                    value="{{ $d->mapel }}"
                                                     style="margin-right:190px;background:white;border:none" disabled>
                                             @endforeach
                                           
@@ -116,12 +116,12 @@
                                             <th>
                                                 Preferensi Kelas
                                                 <br>
-                                                @foreach (json_decode ($d->kelas_id) as $kelas)
+                                                @foreach ($kelas as $d)
                                                 &nbsp;&nbsp;
                                                 <input type="text" 
-                                                    value="{{ $kelas }} {{ $d->program->program }} "
+                                                    value="{{ $d->kelas }}"
                                                     style="width:7%;background:white;border:none" disabled>
-                                                    @endforeach
+                                                @endforeach
                                             </th>
                                         </tr>
                                     </tbody>
