@@ -142,7 +142,15 @@
                     </a>
 
                 </li>
-
+        <li class="nav-item">
+            <a href="/testimoni" class="nav-link nav-link {{ Request::segment(1) === 'testimoni' ? 'nav-link active' : null }}">
+            <i class="nav-icon fas fa-box-open"></i>
+              <p>
+                Testimoni
+              </p>
+            </a>
+          
+          </li>
 
 
 

@@ -293,6 +293,14 @@ Route::get('sma','TryoutController@tryoutSMA')->name('sma');
 Route::get('soalTO/{id}','TryoutController@soal')->name('soalTO');
 Route::get('endhalaman','FormulirController@index')->name('endhalaman');
 
+Route::get('/testimoni', 'TestimoniController@testimoni')->name('testimoni');
+Route::get('/', 'TestimoniController@home');
+Route::get('/testimoni/add','TestimoniController@add');
+Route::post('/testimoni/create','TestimoniController@create');
+Route::get('/testimoni/{id}/edit', 'TestimoniController@edit')->name('testimoni.edit');
+Route::post('/testimoni/{id}/update', 'TestimoniController@update')->name('testimoni.update');
+Route::get('/testimoni/{id}/delete', 'TestimoniController@delete')->name('testimoni.delete');
+
 
 
 

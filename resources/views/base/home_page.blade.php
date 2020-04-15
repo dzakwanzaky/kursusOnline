@@ -155,82 +155,38 @@
         <div class="row ftco-animate">
           <div class="col-md-12">
             <div class="carousel-testimony owl-carousel ftco-owl">
+
+
+
+@foreach($testi as $u)
               <div class="item text-center">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-4">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text">
-                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name" style="color:#4a4a4a">Dennis Green</p>
-                    <span class="position">Marketing Manager</span>
+                    <p class="mb-5">{{$u->isi}}</p>
+                    <p class="name" style="color:#4a4a4a">{{$u->nama_lengkap}}</p>
+                    <span class="position">{{$u->program}}</span>
                   </div>
                 </div>
               </div>
-              <div class="item text-center">
-                <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_2.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name" style="color:#4a4a4a">Dennis Green</p>
-                    <span class="position">Interface Designer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item text-center">
-                <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_3.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name" style="color:#4a4a4a">Dennis Green</p>
-                    <span class="position">UI Designer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item text-center">
-                <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name" style="color:#4a4a4a">Dennis Green</p>
-                    <span class="position">Web Developer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item text-center">
-                <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                  </div>
-                  <div class="text">
-                    <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name" style="color:#4a4a4a">Dennis Green</p>
-                    <span class="position" >System Analytics</span>
-                  </div>
-                </div>
-              </div>
+
+@endforeach             
+             
+       
+
             </div>
           </div>
         </div>
       </div>
     </section>
     
+
+
+
 
    <section class="ftco-section ftco-bg-dark">
      <div class="row mt-5 d-flex justify-content-center">
