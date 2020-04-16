@@ -1,8 +1,11 @@
-.priching {
-	padding-top: 90px;
-	padding-right: 210px;
-	padding-left: 210px;
+bod {
 	background: #f5f5f5;
+}
+.priching {
+	padding-top: 40px;
+	padding-right: 150px;
+	padding-left: 150px;
+	
 
 }
 
@@ -350,7 +353,8 @@ line-height: 38px;
 	background: #fff;
 	margin-bottom: 20px;
 	border-radius: 25px;
-	box-shadow: 0 0 40px rgba(0,0,0,0.5);
+	width: 300px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 	overflow: hidden;
 
 
@@ -361,8 +365,9 @@ line-height: 38px;
 	text-align: center;
 	background: #fff;
 	border-radius: 25px;
-	box-shadow: 0 0 40px rgba(0,0,0,0.5);
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 	overflow: hidden;
+	width: 280px;
 	margin-bottom: 20px;
 
 
@@ -373,8 +378,9 @@ line-height: 38px;
 	text-align: center;
 	background: #fff;
 	border-radius: 25px;
-	box-shadow: 0 0 40px rgba(0,0,0,0.5);
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 	overflow: hidden;
+	width: 250px;
 	margin-bottom: 20px;
 
 
@@ -385,20 +391,127 @@ line-height: 38px;
 	text-align: center;
 	background: #fff;
 	border-radius: 25px;
-	box-shadow: 0 0 40px rgba(0,0,0,0.5);
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 	overflow: hidden;
+	width: 350px;
 	margin-bottom: 20px;
 
 
 }
  }
+
+ @media screen and (width: 1024px) {
+ .price-table {
+	text-align: center;
+	background: #fff;
+	margin-bottom: 20px;
+	border-radius: 25px;
+	width: 230px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	overflow: hidden;
+
+
+}
+}
+ @media screen and (width: 768px) {
+ .price-table {
+	text-align: center;
+	background: #fff;
+	margin-bottom: 20px;
+	border-radius: 25px;
+	width: 200px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	overflow: hidden;
+
+
+}
+}
+ @media screen and (width: 736px) {
+ .price-table {
+	text-align: center;
+	background: #fff;
+	margin-bottom: 20px;
+	border-radius: 25px;
+	width: 155px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	overflow: hidden;
+
+
+}
+}
+ @media screen and (width: 731px) {
+ .price-table {
+	text-align: center;
+	background: #fff;
+	margin-bottom: 20px;
+	border-radius: 25px;
+	width: 155px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	overflow: hidden;
+
+
+}
+}
+ @media screen and (width: 667px) {
+ .price-table {
+	text-align: center;
+	background: #fff;
+	margin-bottom: 20px;
+	border-radius: 25px;
+	width: 140px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	overflow: hidden;
+
+
+}
+}
+ @media screen and (width: 640px) {
+ .price-table {
+	text-align: center;
+	background: #fff;
+	margin-bottom: 20px;
+	border-radius: 25px;
+	width: 150px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	overflow: hidden;
+
+
+}
+}
+ @media screen and (width: 812px) {
+ .price-table {
+	text-align: center;
+	background: #fff;
+	margin-bottom: 20px;
+	border-radius: 25px;
+	width: 200px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	overflow: hidden;
+
+
+}
+}
+ @media screen and (width: 823px) {
+ .price-table {
+	text-align: center;
+	background: #fff;
+	margin-bottom: 20px;
+	border-radius: 25px;
+	width: 200px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	overflow: hidden;
+
+
+}
+}
  @media screen and (width: 320px) {
 .price-table {
 	text-align: center;
 	background: #fff;
 	border-radius: 25px;
-	box-shadow: 0 0 40px rgba(0,0,0,0.5);
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 	overflow: hidden;
+	width: 200px;
 	margin-bottom: 20px;
 
 
@@ -411,7 +524,7 @@ line-height: 38px;
 	text-align: center;
 	background: #fff;
 	border-radius: 25px;
-	box-shadow: 0 0 40px rgba(0,0,0,0.5);
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 	overflow: hidden;
 	margin-bottom: 35px;
 
@@ -423,8 +536,9 @@ line-height: 38px;
 	text-align: center;
 	background: #fff;
 	border-radius: 25px;
-	box-shadow: 0 0 40px rgba(0,0,0,0.5);
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 	overflow: hidden;
+	width: 270px;
 	margin-bottom: 25px;
 
 
@@ -432,42 +546,6 @@ line-height: 38px;
  }
 
 
-
-.col-sm-4:nth-child(2) .price-table {
-	transform: scale(1.1);
-}
- @media screen and (width: 375px) {
-.col-sm-4:nth-child(2) .price-table {
-	transform: scale(1);
-}
- }
- @media screen and (width: 360px) {
-.col-sm-4:nth-child(2) .price-table {
-	transform: scale(1);
-}
- }
- @media screen and (width: 320px) {
-.col-sm-4:nth-child(2) .price-table {
-	transform: scale(1);
-}
- }
-
-  @media screen and (width: 414px) {
-.col-sm-4:nth-child(2) .price-table {
-	transform: scale(1);
-}
- }
-  @media screen and (width: 411px) {
-.col-sm-4:nth-child(2) .price-table {
-	transform: scale(1);
-}
- }
-
-  @media screen and (width: 568px) {
-.col-sm-4:nth-child(2) .price-table {
-	transform: scale(1);
-}
- }
 .price-table .price-head {
 	padding: 12px;
 	padding-bottom: 38px;

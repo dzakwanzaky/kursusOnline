@@ -1,4 +1,4 @@
-<link href="{{asset('/button')}}/tombol.css" rel="stylesheet" type="text/css">
+<link href="<?php echo e(asset('/button')); ?>/tombol.css" rel="stylesheet" type="text/css">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -6,9 +6,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="{{asset('/view')}}/css/style.css">
-    @include('base/header_page0')
-@extends('base/script_here')
+    <link rel="stylesheet" href="<?php echo e(asset('/view')); ?>/css/style.css">
+    <?php echo $__env->make('base/header_page0', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
 
  
     <!-- END nav -->
@@ -23,21 +23,21 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-12">
                     <div class="row mb-4">
-                    @if(Auth::guest())
+                    <?php if(Auth::guest()): ?>
                         <div class="col-md-7">
                             <h3>Gabung bersama kami dan</h3>
                             <h3>raih suksesmu!</h3>
                             <p class="lead"></p>
                             <a data-scroll href="/registerPilih" class="btn btn-light btn-radius btn-brd" style="font-weight:bold"> GABUNG SEKARANG! </a>
                         </div>
-                    @else
+                    <?php else: ?>
                     <div class="col-md-7">
                             <h3>Gabung bersama kami dan</h3>
                             <h3>raih suksesmu!</h3>
                             <p class="lead"></p>
                             <a data-scroll href="/" class="btn btn-light btn-radius btn-brd" style="font-weight:bold">INOFA COURSE</a>
                         </div>
-                    @endif    
+                    <?php endif; ?>    
                     </div>
                 </div>
             </div><!-- end row -->
@@ -187,32 +187,34 @@
 <br> 
     </section>
 
-   @include('base/footer_page')
+   <?php echo $__env->make('base/footer_page', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
   <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 
 
 
 
-  <script src="{{asset('/view')}}/js/jquery.min.js"></script>
-  <script src="{{asset('/view')}}/js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="{{asset('/view')}}/js/popper.min.js"></script>
-  <script src="{{asset('/view')}}/js/bootstrap.min.js"></script>
-  <script src="{{asset('/view')}}/js/jquery.easing.1.3.js"></script>
-  <script src="{{asset('/view')}}/js/jquery.waypoints.min.js"></script>
-  <script src="{{asset('/view')}}/js/jquery.stellar.min.js"></script>
-  <script src="{{asset('/view')}}/js/owl.carousel.min.js"></script>
-  <script src="{{asset('/view')}}/js/jquery.magnific-popup.min.js"></script>
-  <script src="{{asset('/view')}}/js/aos.js"></script>
-  <script src="{{asset('/view')}}/js/jquery.animateNumber.min.js"></script>
-  <script src="{{asset('/view')}}/js/bootstrap-datepicker.js"></script>
-  <script src="{{asset('/view')}}/js/jquery.timepicker.min.js"></script>
-  <script src="{{asset('/view')}}/js/particles.min.js"></script>
-  <script src="{{asset('/view')}}/js/particle.js"></script>
-  <script src="{{asset('/view')}}/js/scrollax.min.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/jquery.min.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/popper.min.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/bootstrap.min.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/jquery.easing.1.3.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/jquery.waypoints.min.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/jquery.stellar.min.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/owl.carousel.min.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/jquery.magnific-popup.min.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/aos.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/jquery.animateNumber.min.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/bootstrap-datepicker.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/jquery.timepicker.min.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/particles.min.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/particle.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/scrollax.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="{{asset('/view')}}/js/google-map.js"></script>
-  <script src="{{asset('/view')}}/js/main.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/google-map.js"></script>
+  <script src="<?php echo e(asset('/view')); ?>/js/main.js"></script>
     
   </body>
 </html>
+
+<?php echo $__env->make('base/script_here', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\now\kursusOnline2\resources\views/base/home_page.blade.php ENDPATH**/ ?>

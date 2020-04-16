@@ -22,7 +22,7 @@ Route::get('/ping', function () {
 
 Route::get('/pakt', 'PaketController@index');
 
-
+Route::get('paket/kategori/{id}', 'PaketController@kategori');
 
 Route::get('/testing', function () {
     return view('testing');
