@@ -11,18 +11,6 @@
    </head>
    <bod>
        <br>
-       <!-- 
-<div class="select">
-   <select name="format" id="format">
-      <option selected disabled>Pilih paket</option>
-      <option value="pdf">PDF</option>
-      <option value="txt">txt</option>
-      <option value="epub">ePub</option>
-      <option value="fb2">fb2</option>
-      <option value="mobi">mobi</option>
-   </select>
-</div>
- -->
        @foreach($data as $d)
 
        <section class="priching">
@@ -30,8 +18,8 @@
            <section class="heading">Paket Bimbingan Belajar {{$d->program}}</section>
            <div class="container">
                <div class="row">
+               <div class="owl-carousel owl-theme">
 			   @foreach(($d->paket) as $d)
-                   <div class="owl-carousel owl-theme">
 				   <div class="col-sm-4">
                     <div class="price-table">
                         <div class="price-head">
@@ -49,8 +37,7 @@
 
                             </ul>
                         </div>
-                        <div class="price-bottom">
-                        </div>
+                     
                     </div>
                 </div>
 
@@ -62,10 +49,10 @@
                </div>
            </div>
        </section>
+ 
 
 
        @endforeach
-
 
 
        </div>

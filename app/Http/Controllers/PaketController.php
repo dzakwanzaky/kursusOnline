@@ -14,7 +14,7 @@ class PaketController extends Controller
      */
     public function index()
     {
-        $data = ModelProgram::all();
+        $data = ModelProgram::whereHas('paket')->get();
         return view('base/paket', compact('data'));
     }
 
