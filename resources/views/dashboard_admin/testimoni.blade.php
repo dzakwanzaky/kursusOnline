@@ -25,7 +25,7 @@
                     <div class="card">
                         <div class="card-body table-responsive-m" style="overflow-x:auto;">
 
-  
+
                             <form action="{{ url('testimoni/add') }}"> <button class=" btn btn-md btn-success"
                                     style="float:right">Tambah Testimoni</button></form>
 
@@ -35,34 +35,37 @@
                                         <th>No.</th>
                                         <th>Nama</th>
                                         <th>Isi</th>
-                                        <th>Program</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @php $no = 1; @endphp
                                     @foreach($testi as $d)
-                                    <tr>
+                                    <tr style="text-align:center">
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $d->nama_lengkap}}</td>
-                                        <td>{{ $d->isi}}</td>
-                                        <td>{{ $d->program}}</td>
-                                       
+                                        <td>{{ $d->user->name }}</td>
+                                        <td>{{ $d->isi }}</td>
 
-                                        <td class="d-flex">
-                                    <a href="{{route('testimoni.edit',$d->id)}}" class="btn btn-sm btn-primary mr-2"
-                                        data-toggle="tooltip"
-                                                data-placement="top" title="Edit Paket"><i class="far fa-edit"></i></a>
+                                        <td class="d-flex" style="text-align:center">
+                                            <a class="btn btn-sm btn-info mr-2" data-toggle="tooltip"
+                                                data-placement="top" title="Profil Siswa" style="color:white"
+                                                href="{{route('profileSiswaAdmin', $d->murid_id)}}">
+                                                <i class="fas fa-user-graduate"></i>
+                                            </a>
+                                            <a href="{{route('testimoni.edit',$d->id)}}"
+                                                class="btn btn-sm btn-primary mr-2" data-toggle="tooltip"
+                                                data-placement="top" title="Edit Testimoni"><i
+                                                    class="far fa-edit"></i></a>
 
                                             <form action="{{route('testimoni.delete',$d->id)}}" data-toggle="tooltip"
-                                                data-placement="top" title="Hapus Paket"
-                                                class="destroy" onclick="return confirm('Anda yakin ingin menghapus data?')"> 
+                                                data-placement="top" title="Hapus Testimoni" class="destroy"
+                                                onclick="return confirm('Anda yakin ingin menghapus data?')">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
                                                 <button type="submit" class="btn btn-sm btn-danger mr-2"
                                                     style="color:white"><i class="far fa-trash-alt"></i></button>
                                             </form>
-                                          
+
                                         </td>
 
                                     </tr>

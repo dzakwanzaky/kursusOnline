@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModelTutor extends Model
 {
-    use \Staudenmeir\EloquentJsonRelations\HasJsonRelationships;
-
 
     protected $table = "model_tutors";
 

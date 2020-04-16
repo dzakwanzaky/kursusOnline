@@ -44,7 +44,7 @@
                                 <!-- small box -->
                                 <div class="small-box bg-yellow">
                                     <div class="inner">
-                                        <h3>{{ DB::table('model_siswas')->where('status','ACTIVE')->count()}}</h3>
+                                        <h3>{{ DB::table('model_siswas')->where('status','AKTIF')->count()}}</h3>
                                         <p>Siswa Aktif</p>
                                     </div>
                                     <div class="icon">
