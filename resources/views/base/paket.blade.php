@@ -1,20 +1,38 @@
-@include('base/header_page0')
-@extends('base/script_h')
+   @include('base/header_page0')
+   @extends('base/script_h')
 
-<head>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('/button')}}/paket.css">
-</head>
+   <head>
+       <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+       <link rel="stylesheet" href="{{asset('/button')}}/paket.css">
+       <link rel="stylesheet" href="{{asset('/button')}}/dropdown.css">
+       <link rel="stylesheet" href="{{asset('/button')}}/owl.carousel.css">
+       <link rel="stylesheet" href="{{asset('/button')}}/owl.theme.default.min.css">
 
-<body>
-    @foreach($data as $d)
-    <section class="priching">
-        <section class="heading">Paket Bimbingan Belajar {{$d->program}}</section>
-        <div class="container">
-            <div class="row">
-                @foreach(($d->paket) as $d)
+   </head>
+   <bod>
+       <br>
+       <!-- 
+<div class="select">
+   <select name="format" id="format">
+      <option selected disabled>Pilih paket</option>
+      <option value="pdf">PDF</option>
+      <option value="txt">txt</option>
+      <option value="epub">ePub</option>
+      <option value="fb2">fb2</option>
+      <option value="mobi">mobi</option>
+   </select>
+</div>
+ -->
+       @foreach($data as $d)
 
-                <div class="col-sm-4">
+       <section class="priching">
+
+           <section class="heading">Paket Bimbingan Belajar {{$d->program}}</section>
+           <div class="container">
+               <div class="row">
+			   @foreach(($d->paket) as $d)
+                   <div class="owl-carousel owl-theme">
+				   <div class="col-sm-4">
                     <div class="price-table">
                         <div class="price-head">
                             <p>Paket</p>
@@ -37,17 +55,42 @@
                 </div>
 
                 @endforeach
-            </div>
-        </div>
-    </section>
 
 
 
+                   </div>
+               </div>
+           </div>
+       </section>
 
 
-	@endforeach
+       @endforeach
 
-    </div>
-    </div>
-    </section>
 
+
+       </div>
+       </div>
+       </section>
+
+       <script src="{{asset('/button')}}/jquery.min.js" type="text/javascript"></script>
+       <script src="{{asset('/button')}}/owl.carousel.js" type="text/javascript"></script>
+       <script type="text/javascript">
+           $('.owl-carousel').owlCarousel({
+               loop: true,
+               margin: 10,
+               nav: false,
+               responsive: {
+                   0: {
+                       items: 1
+                   },
+                   600: {
+                       items: 3
+                   },
+                   1000: {
+                       items: 3
+                   }
+               }
+           })
+       </script>
+
+   </bod>
