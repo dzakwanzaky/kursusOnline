@@ -11,4 +11,9 @@ class ModelProgram extends Model
     protected $fillable = [
         'id', 'program', 'harga', 'jumlah_pertemuan',
     ];
+
+    public function paket()
+    {
+    	return $this->hasMany('App\ModelPaket', 'program_id');
+    }
 }

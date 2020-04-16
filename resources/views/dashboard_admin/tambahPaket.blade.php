@@ -45,11 +45,11 @@
 
                                         <div class="form-group">
                                             <label for="">Program :</label>
-                                            <select class="form-control" id="program" name="program">
+                                            <select class="form-control" id="program_id" name="program_id">
                                                 <option value="">Program</option>
 
                                                 @foreach($data as $d)
-                                                <option value="{{ $d->program }}">{{ $d->program }}</option>
+                                                <option value="{{ $d->id }}">{{ $d->program }}</option>
                                                 @endforeach
                                             </select> 
                                         </div>

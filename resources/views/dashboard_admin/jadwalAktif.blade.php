@@ -64,12 +64,12 @@
                                             <a class="btn btn-sm btn-info mr-2" data-toggle="tooltip"
                                                 data-placement="top" title="Profil Siswa" style="color:white"
                                                 href="{{route('profileSiswaAdmin', $d->murid_id)}}">
-                                                <i class="fas fa-chalkboard-teacher"></i>
+                                                <i class="fas fa-user-graduate"></i>
                                             </a>
                                             <a class="btn btn-sm btn-info mr-2" data-toggle="tooltip"
                                                 data-placement="top" title="Profil Tutor" style="color:white"
                                                 href="{{route('profileTutorAdmin', $d->tutor_id)}}">
-                                                <i class="fas fa-user-graduate"></i>
+                                                <i class="fas fa-chalkboard-teacher"></i>
                                                 </i></a>
                                             <form action="{{ route('pendaftaranSiswa.update', $d->id) }}" method="post"
                                                 enctype="multipart/form-data">

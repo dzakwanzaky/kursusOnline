@@ -13,7 +13,7 @@
                                 <div class="container-fluid">
                                     <div class="row mb-2">
                                         <div class="col-sm-6">
-                                            <p style="font-size:24px">Tambah Testimoni Siswa</p>
+                                            <h1 >Tambah Testimoni Siswa</h1>
                                         </div>
 
                                     </div>
@@ -38,21 +38,22 @@
                                         {{ csrf_field() }}
                                         
                                         <div class="form-group">
-                                            <label for="">Nama Siswa :</label>
-                                            <input type="text" class="form-control" id="nama_lengkap"
-                                                name="nama_lengkap">
+                                            <label for="">Siswa :</label>
+                                            <select id="murid_id" name="murid_id" class="form-control" required>
+                                            <option value="">Pilih ID dan Nama Siswa</option>
+                                        @foreach($siswa as $d)
+                                                <option value="{{ $d->id }}">{{ $d->id }} - {{ $d->name }}</option>
+                                        @endforeach
+                                        </select>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="">Isi :</label>
-                                            <input type="text" class="form-control" id="isi"
+                                            <label for="">Isi Testimoni:</label>
+                                            <textarea type="text" class="form-control" id="isi"
                                                 name="isi">
+                                            </textarea>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="">Program :</label>
-                                            <input type="text" class="form-control" id="program"
-                                                name="program">
-                                        </div>
+                                      
 
                                         
                                         <button type="submit" class="btn btn-primary d-block"

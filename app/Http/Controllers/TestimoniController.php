@@ -4,38 +4,41 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ModelTestimoni;
+use App\User;
 class TestimoniController extends Controller
 {
 
     public function testimoni()
     {
-    	$testi = \DB::table('model_testimonis')->get();
-    	 return view('dasboard_admin.testimoni', compact('testi'));
+        $testi = ModelTestimoni::all();
+    	 return view('dashboard_admin.testimoni', compact('testi'));
     }
     public function home()
     {
-        $testi = \DB::table('model_testimonis')->get();
+        $testi = ModelTestimoni::all();
          return view('base.home_page', compact('testi'));
     }
+
     public function add(){
-    	 $add = ModelTestimoni::all();
-    	 return view('dasboard_admin.tambahTestimoni', compact('add'));
+         $siswa = User::where('role', 'siswa')->get();
+    	 return view('dashboard_admin.tambahTestimoni', compact('siswa'));
     }
 
     public function create(Request $request)
     {
     	$tambah = ModelTestimoni::create([
-    		'nama_lengkap' =>$request->nama_lengkap,
+    		'murid_id' =>$request->murid_id,
     		'isi' =>$request->isi,
-            'program' =>$request->program,
     	]);
 
     	return redirect()->route('testimoni')->with('sukses', 'Data berhasil di submit');
     }
+
     public function edit($id)
     {
         $data = ModelTestimoni::where('id','=',$id)->get();
-        return view('dasboard_admin.editTestimoni', compact('data'));
+        $siswa = User::where('role', 'siswa')->get();
+        return view('dashboard_admin.editTestimoni', compact('data', 'siswa'));
     }
 
     public function update(Request $request,$id)
@@ -43,9 +46,9 @@ class TestimoniController extends Controller
 
         $data=ModelTestimoni::find($id);
         $data->update($request->all());
-
-       return redirect()->route('testimoni')->with('sukses','Data Berhasil Diupdate');
+        return redirect()->route('testimoni')->with('sukses','Data Berhasil Diupdate');
     }
+
     public function delete($id)
     {
         $data = ModelTestimoni::where('id',$id)->first();

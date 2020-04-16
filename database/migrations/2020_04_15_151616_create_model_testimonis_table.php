@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateModelPaketsTable extends Migration
+class CreateModelTestimonisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateModelPaketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('model_pakets', function (Blueprint $table) {
+        Schema::create('model_testimonis', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_paket');
-            $table->string('program_id');
-            $table->string('kategori');
-            $table->string('jumlah_mapel');
-            $table->string('jumlah_pertemuan');
-            $table->string('harga');
+            $table->string('murid_id');
+            $table->string('isi');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateModelPaketsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('model_pakets');
+        Schema::dropIfExists('model_testimonis');
     }
 }
