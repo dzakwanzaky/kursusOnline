@@ -13,10 +13,11 @@ class TestimoniController extends Controller
         $testi = ModelTestimoni::all();
     	 return view('dashboard_admin.testimoni', compact('testi'));
     }
+
     public function home()
     {
-        $testi = ModelTestimoni::all();
-         return view('base.home_page', compact('testi'));
+        $data = ModelTestimoni::with('siswa', 'user')->get();
+        return view('base.home_page', compact('data'));
     }
 
     public function add(){

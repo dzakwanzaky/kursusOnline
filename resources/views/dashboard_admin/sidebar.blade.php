@@ -124,7 +124,10 @@
                 </li>
                 <li class="nav-item">
                     <a href="/manajemenProgram"
-                        class="nav-link nav-link {{ Request::segment(1) === 'manajemenProgram' ? 'nav-link active' : null }}">
+                        class="nav-link nav-link {{ Request::segment(1) === 'manajemenProgram' ? 'nav-link active' : null }}
+                        {{ Request::segment(1) === 'tambahProgram' ? 'nav-link active' : null }}
+                        {{ Request::segment(1) === 'editProgram' ? 'nav-link active' : null }}
+                        ">
                         <i class="nav-icon far fa-clipboard"></i>
                         <p>
                             Manajemen Program
@@ -134,7 +137,11 @@
                 </li>
                 <li class="nav-item">
                     <a href="/manajemenPaket"
-                        class="nav-link nav-link {{ Request::segment(1) === 'manajemenPaket' ? 'nav-link active' : null }}">
+                        class="nav-link nav-link {{ Request::segment(1) === 'manajemenPaket' ? 'nav-link active' : null }}
+                        {{ Request::segment(1) === 'tambahPaket' ? 'nav-link active' : null }}
+                        {{ Request::segment(1) === 'editPaket' ? 'nav-link active' : null }}
+
+                        ">
                         <i class="nav-icon fas fa-box-open"></i>
                         <p>
                             Manajemen Paket

@@ -55,9 +55,7 @@ use Nexmo\Laravel\Facade\Nexmo;
 Route::get('/tes','Controller@tes');
 
 
-Route::get('/', function () {
-    return view('base/home_page');
-});
+
 Route::get('/kontak', function () {
     return view('base/kontak_page');
 });
@@ -93,7 +91,6 @@ $router->get('/nexmo', function () use ($router) {
     app(Nexmo\Client::class);
 });
 
-Route::get('/landing', 'BaseController@index');
 
 //Halaman dashboard Murid
 Route::get('/murid', function () {
@@ -294,7 +291,7 @@ Route::get('soalTO/{id}','TryoutController@soal')->name('soalTO');
 Route::get('endhalaman','FormulirController@index')->name('endhalaman');
 
 Route::get('/testimoni', 'TestimoniController@testimoni')->name('testimoni');
-Route::get('/', 'TestimoniController@home');
+Route::get('/landing', 'TestimoniController@home');
 Route::get('/testimoni/add','TestimoniController@add');
 Route::post('/testimoni/create','TestimoniController@create');
 Route::get('/testimoni/{id}/edit', 'TestimoniController@edit')->name('testimoni.edit');
