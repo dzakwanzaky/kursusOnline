@@ -9,6 +9,11 @@ use App\User;
 use App\ModelSiswa;
 use App\ModelKab;
 use App\ModelKecamatan;
+use App\Provinsi;
+use App\ModelJadwal;
+use App\ModelKelas;
+use App\ModelMapel;
+use App\ModelProgram;
 
 class TutorControllerAPI extends Controller
 {
@@ -17,44 +22,48 @@ class TutorControllerAPI extends Controller
         $this->middleware('auth');
     }
 
-    
-    public function index(){
-        $data = ModelTutor::all();
-        return response()->json($data);
-    }
-
-    public function profileTutor(){
+    //menampilkan profile tutor
+    public function dataTutor(){
         $data = ModelTutor::where('id', '=', Auth::user()->id)->get();
         $user = User::where('id', '=', Auth::user()->id)->get();
-        return response()->json($data);
+        return response()->json(array(
+            'data' => $data,
+            'user' => $user,
+            
+        ));
     }
 
+    //menyimpan data tutor saat registrasi
     public function store(Request $request)
     {
-        $data = new ModelTutor();
         $data->id = $request->id;
-        $data->nama_tutor = $request->nama_tutor;
         $data->jenis_kelamin = $request->jenis_kelamin;
-        $data->kota = $request->kota;
+        $data->provinsi = $request->provinsi;
+        $data->kabupaten = $request->kabupaten;
         $data->kecamatan = $request->kecamatan;
         $data->pendidikan = $request->pendidikan;
-        $data->kelas1 = $request->kelas1;
-        $data->kelas2 = $request->kelas2;
-        $data->kelas3 = $request->kelas3;
-        $data->kelas4 = $request->kelas4;
-        $data->kelas5 = $request->kelas5;
-        $data->kelas6 = $request->kelas6;
-        $data->mata_pelajaran1 = $request->mata_pelajaran1;
-        $data->mata_pelajaran2 = $request->mata_pelajaran2;
-        $data->mata_pelajaran3 = $request->mata_pelajaran3;
-        $data->mata_pelajaran4 = $request->mata_pelajaran4;
+        $data->program_id = $request->program_id;
 
+        $array = array();
+        foreach($request->kelas_id as $kelas_id){
+            array_push($array, $kelas_id);
+        }
+        $data->kelas_id = json_encode($array);
+        
+        $array = array();
+        foreach($request->mapel_id as $mapel_id){
+            array_push($array, $mapel_id);
+        }
+        $data->mapel_id = json_encode($array);
 
         $file = $request->file('file');
         $nama_file = time()."_".$file->getClientOriginalName();  
         $tujuan_upload = 'data_file';
         $file->move($tujuan_upload,$nama_file);
         $data->file = $nama_file;
+
+        $data->status = $request->status;
+        $data->save();
 
         $data->status = $request->status;
         if($data->save()){
@@ -73,13 +82,7 @@ class TutorControllerAPI extends Controller
     public function update(Request $request, $id)
     {
         $data = ModelTutor::where('id',$id)->first();
-        $data->nama_tutor = $request->nama_tutor;
-        $data->pendidikan = $request->pendidikan;
-        $data->mata_pelajaran1 = $request->mata_pelajaran1;
-        $data->mata_pelajaran2 = $request->mata_pelajaran2;
-        $data->mata_pelajaran3 = $request->mata_pelajaran3;
-        $data->mata_pelajaran4 = $request->mata_pelajaran4;
-        $data->provinsi = $request->kota;
+        $data->kabupaten = $request->kabupaten;
         $data->kecamatan = $request->kecamatan;
         $data->provinsi = $request->provinsi;
         $data->status = $request->status;
@@ -97,9 +100,31 @@ class TutorControllerAPI extends Controller
         }    
     }
 
-    public function show($id)
-     {
-     $data = ModelTutor::where('id','=',$id)->get();
-     return response()->json($data);
+    //$provinsi untuk get data provinsi
+    //$sd sampai $sma menampilkan data mata pelajaran untuk dipilih tutor
+    //$ksd sampai $ksma menampilkan data kelas untuk dipilh tutor
+    public function index(){
+        $provinsi = Provinsi::all()->pluck("provinsi", "id");
+        $sd = ModelMapel::where('id_program', '1')->get();
+        $smp = ModelMapel::where('id_program', '2')->get();
+        $sma = ModelMapel::where('id_program', '3')->get();
+        $sbm = ModelMapel::where('id_program', '4')->get();
+        $ksd = ModelKelas::where('id_program', '1')->get();
+        $ksmp = ModelKelas::where('id_program', '2')->get();
+        $ksma = ModelKelas::where('id_program', '3')->get();
+        $program = ModelProgram::all();
+        return response()->json(array(
+            'sd' => $sd,
+            'smp' => $smp,
+            'sma' => $sma,
+            'sbm' => $sbm,
+            'ksd' => $ksd,
+            'ksmp' => $ksmp,
+            'ksma' => $ksma,
+            'program' => $program,
+            'provinsi' => $provinsi,
+        ));
     }
+
+
 }

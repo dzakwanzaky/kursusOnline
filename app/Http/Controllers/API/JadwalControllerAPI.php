@@ -32,12 +32,12 @@ class JadwalControllerAPI extends Controller
     public function tutor()
     {
         $data = ModelTutor::where('id', '=', Auth::user()->id)->first();
+        $array = json_decode ($data->mapel_id);
         $jadwal = ModelJadwal::with('invoice')
         ->whereHas('invoice', function($q) use ($data)
-        {$q-> whereIn('program', [$data->program]);}
+        {$q-> whereIn('program_id', [$data->program_id]);}
         )
-        ->whereIn('mata_pelajaran', [$data->mata_pelajaran1, $data->mata_pelajaran2, $data->mata_pelajaran3, $data->mata_pelajaran4, 
-        $data->mata_pelajaran5, $data->mata_pelajaran6, $data->mata_pelajaran7, $data->mata_pelajaran8, $data->mata_pelajaran9])
+        ->whereIn('mapel_id', $array)
         ->where('status', 'MENUNGGU')->get();
         return response()->json($jadwal);
     }

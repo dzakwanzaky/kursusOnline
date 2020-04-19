@@ -292,6 +292,7 @@ Route::get('endhalaman','FormulirController@index')->name('endhalaman');
 
 Route::get('/testimoni', 'TestimoniController@testimoni')->name('testimoni');
 Route::get('/landing', 'TestimoniController@home');
+Route::get('/', 'TestimoniController@home');
 Route::get('/testimoni/add','TestimoniController@add');
 Route::post('/testimoni/create','TestimoniController@create');
 Route::get('/testimoni/{id}/edit', 'TestimoniController@edit')->name('testimoni.edit');

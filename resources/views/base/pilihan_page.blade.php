@@ -12,7 +12,7 @@
               <div class="form-group row"  style="display:block; margin-left:auto; margin-right:auto; text-align:center;">
                 <div>
                   <a href="/registerSiswa" class="link link--btn register-page__btn">
-                    <button type="submit" class="button">Murid</button>
+                    <button type="submit" class="button">Siswa</button>
                   </a>
                   <div>
                   <span style="text-align:center;color: #4a4a4a">Atau</span></div>

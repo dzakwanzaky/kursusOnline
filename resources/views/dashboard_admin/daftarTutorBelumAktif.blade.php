@@ -80,10 +80,7 @@
                                                     data-toggle="tooltip" data-placement="top" title="Detail Tutor"
                                                     style="color:white" href="{{route('profileTutorAdmin', $d->id)}}">
                                                     <i class="fas fa-info-circle"></i></a>
-                                                <a class="btn btn-sm btn-warning mr-2" type="submit" style="color:white"
-                                                    data-toggle="tooltip" data-placement="top" title="Jadwal Tutor"
-                                                    href="{{route('jadwalTutor', $d->id)}}"><i
-                                                        class="fas fa-calendar-alt"></i></a>
+                                              
                                                 <button value="AKTIF" id="status" name="status"
                                                     class="btn btn-sm btn-success" data-toggle="tooltip"
                                                     data-placement="top" title="Setujui" type="submit"

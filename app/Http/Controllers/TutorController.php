@@ -62,7 +62,6 @@ class TutorController extends Controller
     }
 
     public function index(){
-        $data = ModelTutor::all();
         $provinsi = Provinsi::all()->pluck("provinsi", "id");
         $sd = ModelMapel::where('id_program', '1')->get();
         $smp = ModelMapel::where('id_program', '2')->get();
@@ -72,7 +71,7 @@ class TutorController extends Controller
         $ksmp = ModelKelas::where('id_program', '2')->get();
         $ksma = ModelKelas::where('id_program', '3')->get();
         $program = ModelProgram::all();
-        return view('base.dataTutor', compact('data', 'provinsi', 'sd', 'smp', 'sma', 'sbm', 'program', 'ksd', 'ksmp', 'ksma'));
+        return view('base.dataTutor', compact('provinsi', 'sd', 'smp', 'sma', 'sbm', 'program', 'ksd', 'ksmp', 'ksma'));
     }
 
     public function getKabupaten($id){

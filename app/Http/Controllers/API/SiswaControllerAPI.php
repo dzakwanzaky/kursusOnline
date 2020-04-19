@@ -16,10 +16,6 @@ use DB;
 class SiswaControllerAPI extends Controller
 {
 
-    public function index(){
-        $data = ModelSiswa::all();
-        return response()->json($data);
-    }
 
     public function store(Request $request)
     {
@@ -46,11 +42,16 @@ class SiswaControllerAPI extends Controller
         }    
     }
 
-    public function show($id)
+    public function siswa()
     {
-        $data = ModelSiswa::where('id','=',$id)->get();
-        return response()->json($data);
+        $data = ModelSiswa::where('id','=', Auth::user()->id)->get();
+        $user = User::where('id', '=', Auth::user()->id)->get();
+        return response()->json(array(
+            'data' => $data,
+            'user' => $user,  
+        ));
     }
+
 
     public function update(Request $request, $id)
     {

@@ -33,47 +33,40 @@ class TryoutController extends Controller
     }
 
     public function tryoutSD(){
-        $bind = ModelTryout::where('kategori', 'SD')->where('mata_pelajaran', 'Bahasa Indonesia')->get();
-        $ipa = ModelTryout::where('kategori', 'SD')->where('mata_pelajaran', 'IPA')->get();
-        $mat = ModelTryout::where('kategori', 'SD')->where('mata_pelajaran', 'Matematika')->get();
-        $bing = ModelTryout::where('kategori', 'SD')->where('mata_pelajaran', 'Bahasa Inggris')->get();
-        return view('base.sd', compact('bind', 'ipa', 'mat', 'bing'));   
+        $bind = ModelTryout::where('program_id', '1')->where('mapel_id', '3')->get();
+        $ipa = ModelTryout::where('program_id', '1')->where('mapel_id', '2')->get();
+        $mat = ModelTryout::where('program_id', '1')->where('mapel_id', '1')->get();
+        return view('base.sd', compact('bind', 'ipa', 'mat',));   
     }
 
     public function tryoutSMP(){
-        $bind = ModelTryout::where('kategori', 'SMP')->where('mata_pelajaran', 'Bahasa Indonesia')->get();
-        $ipa = ModelTryout::where('kategori', 'SMP')->where('mata_pelajaran', 'IPA')->get();
-        $mat = ModelTryout::where('kategori', 'SMP')->where('mata_pelajaran', 'Matematika')->get();
-        $bing = ModelTryout::where('kategori', 'SMP')->where('mata_pelajaran', 'Bahasa Inggris')->get();
-        return view('base.smp', compact('bind', 'ipa', 'mat', 'bing'));   
+        $mat = ModelTryout::where('program_id', '2')->where('mapel_id', '4')->get();
+        $ipa = ModelTryout::where('program_id', '2')->where('mapel_id', '5')->get();
+        $ips = ModelTryout::where('program_id', '2')->where('mapel_id', '6')->get();
+        $bind = ModelTryout::where('program_id', '2')->where('mapel_id', '7')->get();
+        $bing = ModelTryout::where('program_id', '2')->where('mapel_id', '8')->get();
+        return view('base.smp', compact('bind', 'ipa', 'mat', 'bing', 'ips'));   
     }
 
     public function tryoutSMA(){
-        $bind = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Bahasa Indonesia')->get();
-        $mat = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Matematika')->get();
-        $fis = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Fisika')->get();
-        $kim = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Kimia')->get();
-        $bio = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Biolgi')->get();
-        $eko = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Ekonomi')->get();
-        $sosio = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Sosiologi')->get();
-        $geo = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Geografi')->get();
-        $sej = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Sejarah')->get();
-        $bing = ModelTryout::where('kategori', 'SMA')->where('mata_pelajaran', 'Bahasa Inggris')->get();
+        $mat = ModelTryout::where('program_id', '3')->where('mapel_id', '9')->get();
+        $fis = ModelTryout::where('program_id', '3')->where('mapel_id', '10')->get();
+        $kim = ModelTryout::where('program_id', '3')->where('mapel_id', '11')->get();
+        $bio = ModelTryout::where('program_id', '3')->where('mapel_id', '12')->get();
+        $eko = ModelTryout::where('program_id', '3')->where('mapel_id', '13')->get();
+        $sosio = ModelTryout::where('program_id', '3')->where('mapel_id', '14')->get();
+        $geo = ModelTryout::where('program_id', '3')->where('mapel_id', '15')->get();
+        $sej = ModelTryout::where('program_id', '3')->where('mapel_id', '16')->get();
+        $bing = ModelTryout::where('program_id', '3')->where('mapel_id', '17')->get();
+        $bind = ModelTryout::where('program_id', '3')->where('mapel_id', '18')->get();
         return view('base.sma', compact('bind','mat', 'fis', 'kim', 'bio', 'eko', 'sosio', 'geo', 'sej', 'bing'));   
     }
 
     public function tryoutSBMPTN(){
-        $bind = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Bahasa Indonesia')->get();
-        $mat = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Matematika')->get();
-        $fis = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Fisika')->get();
-        $kim = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Kimia')->get();
-        $bio = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Biolgi')->get();
-        $bio = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Ekonomi')->get();
-        $bio = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Sosiologi')->get();
-        $bio = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Geografi')->get();
-        $bio = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Sejarah')->get();
-        $bing = ModelTryout::where('kategori', 'SBMPTN')->where('mata_pelajaran', 'Bahasa Inggris')->get();
-        return view('base.sbmptn', compact('bind', 'ipa', 'mat', 'bing'));   
+        $soshum = ModelTryout::where('program_id', '4')->where('mapel_id', '19')->get();
+        $saintek = ModelTryout::where('program_id', '4')->where('mapel_id', '20')->get();
+        $tka = ModelTryout::where('program_id', '4')->where('mapel_id', '21')->get();
+        return view('base.sbmptn', compact('soshum', 'saintek', 'tka'));   
     }
 
     public function soal($id){

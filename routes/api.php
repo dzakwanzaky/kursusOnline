@@ -22,29 +22,32 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('register','API\AuthControllerAPI@store');
 Route::post('login','API\AuthControllerAPI@login');
 
-
+//TryoutController
+Route::get('TryoutSD','API\TryoutControllerAPI@tryoutSD');
+Route::get('TryoutSMP','API\TryoutControllerAPI@tryoutSMP');
+Route::get('TryoutSMA','API\TryoutControllerAPI@tryoutSMA');
+Route::get('TryoutSBMPTN','API\TryoutControllerAPI@tryoutSBMPTN');
+Route::get('soal/{id}','API\TryoutControllerAPI@soal');
 
 Route::middleware('auth:api')->group(function(){
 
     //Siswa Controller
-    Route::get('dataSiswa','API\SiswaControllerAPI@index');
     Route::post('dataSiswa','API\SiswaControllerAPI@store');
-    Route::get('dataSiswa/{id}','API\SiswaControllerAPI@show');
+    Route::get('dataSiswa','API\SiswaControllerAPI@siswa');
     Route::put('dataSiswa/{id}','API\SiswaControllerAPI@update');
-    Route::get('profilSiswa','API\SiswaControllerAPI@profileSiswa');
 
     //TutorController
-    Route::get('dataTutor','API\TutorControllerAPI@index');
+    Route::get('dataTutor','API\TutorControllerAPI@dataTutor');
     Route::post('dataTutor','API\TutorControllerAPI@store');
-    Route::get('dataTutor/{id}','API\TutorControllerAPI@show');
     Route::put('dataTutor/{id}','API\TutorControllerAPI@update');
-    Route::get('profilTutor','API\TutorControllerAPI@profileTutor');
 
-    //TryoutController
-    Route::get('TryoutSD','API\TryoutControllerAPI@tryoutSD');
-    Route::get('TryoutSMP','API\TryoutControllerAPI@tryoutSMP');
-    Route::get('TryoutSMA','API\TryoutControllerAPI@tryoutSMA');
-    Route::get('TryoutSBMPTN','API\TryoutControllerAPI@tryoutSBMPTN');
+    //Get Data Kabupaten & Kecamatan
+    Route::get('/getKabupaten/{id}', 'API\SiswaController@getKabupaten')->name('getKabupaten');
+    Route::get('/getKecamatan/{id}', 'API\SiswaController@getKecamatan')->name('getKecamatan');
+
+
+
+
 
     //JadwalController
         //tutor
@@ -65,6 +68,9 @@ Route::middleware('auth:api')->group(function(){
         
     //ProgramController
     Route::get('program','API\ProgramControllerAPI@index');
+
+     //ProgramController
+     Route::get('kehadiran','API\AbsensiControllerAPI@show');
 
     //ChangePasswordController
     Route::post('changePassword','API\ChangePasswordControllerAPI@store');
