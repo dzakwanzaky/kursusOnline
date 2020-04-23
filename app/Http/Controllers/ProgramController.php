@@ -5,6 +5,7 @@ use App\ModelJadwal;
 use App\ModelSiswa;
 use App\ModelInvoice;
 use App\ModelProgram;
+use App\ModelMapel;
 use Auth;
 use PDF;
 
@@ -83,6 +84,13 @@ class ProgramController extends Controller
         $data->program = $request->program;
         $data->keterangan = $request->keterangan;
         $data->save();
+
+        foreach ($request->mapel as $key => $value){
+        $paket = new ModelMapel();
+        $paket->id_program = $data->id;
+        $paket->mapel = $request->mapel[$key];
+        $paket->save();
+        }
         return redirect('manajemenProgram')->withMessage('Berhasil Merubah Data');
         
     }
@@ -102,6 +110,12 @@ class ProgramController extends Controller
         $data = ModelProgram::where('id',$id)->first();
         $data->delete();
         return redirect()->route('manajemenProgram')->with('destroy','Yakin ingin menghapus data?'); 
+    }
+
+    public function lihatMapel($id){
+        $data = ModelMapel::where('id_program', $id)->get();
+        $datas = ModelProgram::where('id', $id)->get();
+        return view('dashboard_admin.daftarMapel', compact('data', 'datas'));   
     }
 
    

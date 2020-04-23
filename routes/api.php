@@ -29,6 +29,11 @@ Route::get('TryoutSMA','API\TryoutControllerAPI@tryoutSMA');
 Route::get('TryoutSBMPTN','API\TryoutControllerAPI@tryoutSBMPTN');
 Route::get('soal/{id}','API\TryoutControllerAPI@soal');
 
+//MapelController
+Route::get('mapel','API\MapelControllerAPI@index');
+Route::get('mapel/{id_program}','API\MapelControllerAPI@lihatMapel');
+
+
 Route::middleware('auth:api')->group(function(){
 
     //Siswa Controller

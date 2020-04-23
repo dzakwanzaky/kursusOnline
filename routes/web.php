@@ -205,6 +205,8 @@ Route::middleware(['admin'])->group(function () {
     Route::get('daftarTutorTidakAktif','TutorController@daftarTutorTidakAktif');
     Route::get('tambahSoal/{id}','SoalController@index')->name('tambahSoal');
     Route::get('daftarSoal/{id_to}','TryoutController@lihatSoal')->name('daftarSoal');
+    Route::get('daftarMapel/{id_program}','ProgramController@lihatMapel')->name('daftarMapel');
+    Route::get('tambahMapel/{id}','MapelController@index')->name('tambahMapel');
     Route::get('status/{id}','SiswaController@status')->name('status');
     Route::get('statusTutor/{id}','TutorController@statusTutor')->name('statusTutor');
     Route::get('kehadiranTutor/{id}','AbsenController@kehadiranTutor')->name('kehadiranTutor');
@@ -248,6 +250,8 @@ Route::resource('tryout','TryoutController');
 Route::resource('absen','AbsenController');
 Route::resource('formulir','FormulirController');
 Route::resource('paket','PaketController');
+Route::resource('mapel','MapelController');
+
 
 
 
