@@ -61,7 +61,7 @@ class VerificationController extends Controller
 
         if($user->role=='siswa')
         {
-         return redirect('/paketProgram')->withMessage('Your account is active');
+         return redirect('/dataSiswa')->withMessage('Your account is active');
         } else {
         return redirect('/dataTutor');
         }}

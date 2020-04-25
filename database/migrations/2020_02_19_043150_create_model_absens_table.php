@@ -15,13 +15,15 @@ class CreateModelAbsensTable extends Migration
     {
         Schema::create('model_absens', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('id_jadwal');
+            $table->biginteger('id_jadwal')->unsigned();
             $table->string('tanggal')->nullable();
             $table->string('waktu_mulai')->nullable();
             $table->string('waktu_selesai')->nullable();
             $table->string('kehadiran')->nullable();
             $table->string('report')->nullable();
             $table->timestamps();
+            $table->foreign('id_jadwal')->unsigned()->references('id')->on('model_jadwals')->onDelete('cascade');
+
         });
     }
 

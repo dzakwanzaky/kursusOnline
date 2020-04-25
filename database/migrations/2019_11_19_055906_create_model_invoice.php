@@ -16,15 +16,19 @@ class CreateModelInvoice extends Migration
         Schema::create('model_invoice', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('invoice');
-            $table->string('id_murid');
-            $table->string('program_id');
-            $table->string('kategori');
-            $table->string('kelas_id')->nullable();
-            $table->string('jumlah_sesi');
-            $table->string('jumlah_mapel');
+            $table->biginteger('id_murid')->unsigned();
+            $table->biginteger('program_id')->unsigned();
+            $table->string('kategori', '15');
+            $table->biginteger('kelas_id')->nullable()->unsigned();
+            $table->integer('jumlah_sesi');
+            $table->integer('jumlah_mapel');
             $table->string('harga')->nullable();            
             $table->string('file')->nullable();
             $table->timestamps();
+            $table->foreign('id_murid')->unsigned()->references('id')->on('model_siswas')->onDelete('cascade');
+            $table->foreign('program_id')->unsigned()->references('id')->on('model_programs')->onDelete('cascade');
+            $table->foreign('kelas_id')->unsigned()->references('id')->on('model_kelas')->onDelete('cascade');
+
         });
     }
 

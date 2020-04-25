@@ -15,11 +15,14 @@ class CreateModelTryoutsTable extends Migration
     {
         Schema::create('model_tryouts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('mapel_id');
-            $table->string('program_id');
+            $table->biginteger('mapel_id')->unsigned();
+            $table->biginteger('program_id')->unsigned();
             $table->string('nama');
             $table->string('jumlah_soal');
             $table->timestamps();
+            $table->foreign('mapel_id')->unsigned()->references('id')->on('model_mapels')->onDelete('cascade');
+            $table->foreign('program_id')->unsigned()->references('id')->on('model_programs')->onDelete('cascade');
+
         });
     }
 

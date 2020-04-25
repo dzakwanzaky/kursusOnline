@@ -15,7 +15,7 @@ class CreateModelSoalsTable extends Migration
     {
         Schema::create('model_soals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('id_to');
+            $table->biginteger('id_to')->unsigned();
             $table->string('nomor_soal');
             $table->string('file')->nullable();
             $table->string('soal');
@@ -27,6 +27,8 @@ class CreateModelSoalsTable extends Migration
             $table->string('jawaban');
             $table->string('pembahasan');
             $table->timestamps();
+            $table->foreign('id_to')->unsigned()->references('id')->on('model_tryouts')->onDelete('cascade');
+
         });
     }
 

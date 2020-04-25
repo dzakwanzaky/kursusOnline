@@ -22,7 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('code')->nullable();
             $table->boolean('active')->default(0);
             $table->string('password');
-            $table->string('role');
+            $table->string('token')->nullable();
+            $table->enum('role', ['siswa', 'tutor', 'admin']);
             $table->rememberToken();
             $table->timestamps();
         });

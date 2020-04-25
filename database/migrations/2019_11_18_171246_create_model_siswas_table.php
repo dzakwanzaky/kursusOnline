@@ -14,15 +14,16 @@ class CreateModelSiswasTable extends Migration
     public function up()
     {
         Schema::create('model_siswas', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->biginteger('id')->primary()->unsigned();
             $table->string('file');
-            $table->string('jenis_kelamin');
-            $table->string('provinsi');
-            $table->string('kabupaten');
-            $table->string('kecamatan');
+            $table->enum('jenis_kelamin', ['Laki-Laki', 'Perempuan']);
+            $table->string('provinsi', '30');
+            $table->string('kabupaten', '30');
+            $table->string('kecamatan', '30');
             $table->string('alamat_detail');
-            $table->string('status');
+            $table->enum('status', ['BELUM DIBAYAR', 'AKTIF']);
             $table->timestamps();
+            $table->foreign('id')->primary()->unsigned()->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -235,7 +235,7 @@ class JadwalController extends Controller
         $data->status = $request->status[$key];
         $data->save();
         }
-        return redirect('dataSiswa')->withMessage('Kamu Berhasil Daftar Les');
+        return redirect('invoiceDetail')->withMessage('Kamu Berhasil Daftar Les');
     }
 
     /**

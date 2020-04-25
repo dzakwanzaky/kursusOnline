@@ -14,19 +14,22 @@ class CreateModelTutorsTable extends Migration
     public function up()
     {
         Schema::create('model_tutors', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->string('jenis_kelamin');
-            $table->string('provinsi');
-            $table->string('kabupaten');
-            $table->string('kecamatan');
-            $table->string('pendidikan');
-            $table->string('program_id');
+            $table->biginteger('id')->primary()->unsigned();
+            $table->enum('jenis_kelamin',['Laki-Laki', 'Perempuan']);
+            $table->string('provinsi', '30');
+            $table->string('kabupaten', '30');
+            $table->string('kecamatan', '30');
+            $table->string('pendidikan', '15');
+            $table->biginteger('program_id')->unsigned();
             $table->json('kelas_id')->nullable();
             $table->json('mapel_id')->nullable();
             $table->string('file');
             $table->string('foto')->nullable();
-            $table->string('status');
+            $table->enum('status', ['MENUNGGU', 'AKTIF']);
             $table->timestamps();
+            $table->foreign('id')->primary()->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('program_id')->references('id')->on('model_programs')->onDelete('cascade');
+
         });
     }
 

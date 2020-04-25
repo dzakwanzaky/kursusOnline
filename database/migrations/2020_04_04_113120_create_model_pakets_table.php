@@ -16,12 +16,13 @@ class CreateModelPaketsTable extends Migration
         Schema::create('model_pakets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama_paket');
-            $table->string('program_id');
+            $table->biginteger('program_id')->unsigned();
             $table->string('kategori');
             $table->string('jumlah_mapel');
             $table->string('jumlah_pertemuan');
             $table->string('harga');
             $table->timestamps();
+            $table->foreign('program_id')->unsigned()->references('id')->on('model_programs')->onDelete('cascade');
         });
     }
 

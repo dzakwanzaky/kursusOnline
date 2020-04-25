@@ -89,7 +89,7 @@ class SiswaController extends Controller
         $data->alamat_detail = $request->alamat_detail;
         $data->status = $request->status;
         $data->save();
-        return redirect('invoiceDetail')->withMessage('Kamu Berhasil Daftar Les');
+        return redirect('paketProgram')->withMessage('Kamu Berhasil Daftar Les');
     }
 
     public function edit($id)

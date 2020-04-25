@@ -15,7 +15,7 @@ class CreateModelProgramsTable extends Migration
     {
         Schema::create('model_programs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('program');
+            $table->string('program', '30');
             $table->string('keterangan');
             $table->timestamps();
         });

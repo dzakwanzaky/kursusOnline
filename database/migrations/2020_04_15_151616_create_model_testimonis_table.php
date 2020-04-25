@@ -15,9 +15,11 @@ class CreateModelTestimonisTable extends Migration
     {
         Schema::create('model_testimonis', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('murid_id');
+            $table->biginteger('murid_id')->unsigned();
             $table->string('isi');
             $table->timestamps();
+            $table->foreign('murid_id')->unsigned()->references('id')->on('model_siswas')->onDelete('cascade');
+
         });
     }
 

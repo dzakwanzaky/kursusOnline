@@ -15,9 +15,10 @@ class CreateModelKecamatansTable extends Migration
     {
         Schema::create('model_kecamatans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('kab_id');
+            $table->biginteger('kab_id')->unsigned();
             $table->string('kecamatan');
             $table->timestamps();
+            $table->foreign('kab_id')->unsigned()->references('id')->on('model_kabs')->onDelete('cascade');
         });
     }
 

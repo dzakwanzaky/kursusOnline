@@ -15,16 +15,19 @@ class CreateModelJadwalsTable extends Migration
     {
         Schema::create('model_jadwals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('invoice_id');
-            $table->string('murid_id');
-            $table->string('tutor_id')->nullable();
-            $table->string('mapel_id')->nullable();
-            $table->string('hari1');
-            $table->string('waktu_hari1');
-            $table->string('hari2')->nullable();
-            $table->string('waktu_hari2')->nullable();;
-            $table->string('status')->nullable();
+            $table->biginteger('invoice_id')->unsigned();
+            $table->biginteger('murid_id')->unsigned();
+            $table->biginteger('tutor_id')->nullable()->unsigned();
+            $table->biginteger('mapel_id')->nullable()->unsigned();
+            $table->string('hari1', '15');
+            $table->string('waktu_hari1', '15');
+            $table->string('hari2', '15')->nullable();
+            $table->string('waktu_hari2', '15')->nullable();;
+            $table->enum('status', ['MENUNGGU', 'DIPILIH TUTOR', 'AKTIF', 'TIDAK AKTIF'])->nullable();
             $table->timestamps();
+            $table->foreign('invoice_id')->references('id')->on('model_invoice')->onDelete('cascade');
+            $table->foreign('murid_id')->references('id')->on('model_siswas')->onDelete('cascade');
+            $table->foreign('mapel_id')->references('id')->on('model_mapels')->onDelete('cascade');
         });
     }
 

@@ -21,7 +21,7 @@ class CreateModelFormulirsTable extends Migration
             $table->string('kategori')->nullable();
             $table->string('email');
             $table->string('file');
-            $table->string('status');
+            $table->enum('status', ['AKTIF', 'BELUM AKTIF']);
             $table->timestamps();
         });
     }

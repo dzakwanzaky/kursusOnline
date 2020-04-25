@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateModelKelasTable extends Migration
+class CreateModelMapelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateModelKelasTable extends Migration
      */
     public function up()
     {
-        Schema::create('model_kelas', function (Blueprint $table) {
+        Schema::create('model_mapels', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('id_program');
-            $table->string('kelas');
+            $table->biginteger('id_program')->unsigned();
+            $table->string('mapel');
             $table->timestamps();
+            $table->foreign('id_program')->unsigned()->references('id')->on('model_programs')->onDelete('cascade');
+
         });
     }
 
@@ -28,6 +30,6 @@ class CreateModelKelasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('model_kelas');
+        Schema::dropIfExists('model_mapels');
     }
 }
