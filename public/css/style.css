@@ -260,9 +260,9 @@ h2 {
 body {
     font-size: 14px;
     line-height: 1.8;
-    color: #222;
+    color: #999;
     background: #e7f0fd;
-    font-weight: 600;
+    font-weight: normal;
     font-family: Roboto;
     margin: 0px;
 }
@@ -511,7 +511,8 @@ input[type=checkbox]:not(old):checked+label>span:before {
 .loginhere {
     text-align: center;
     color: #000000;
-    margin-top: 20px;
+    margin-top: 0px;
+    font-size: 15px;
 }
 
 .daftarsebagai {

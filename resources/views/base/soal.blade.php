@@ -6,7 +6,7 @@
 
 <style type="text/css">
     .awake {
-        background-color: #f8f8ff;
+        background-color: #f4f6f9;
                 width: 100%;
         display: inline-block;
 
@@ -2410,7 +2410,7 @@
                 <div class="big-tagline">
                     @foreach($data as $d)
                     <br><br>
-                    <h2>Soal Bahasa Indonesia SD</h2>
+                    <h2>Soal Latihan Tryout</h2>
                     <p class="lead"><b>Soal no {{$d->nomor_soal}}</b><br>
                     {!! $d->soal !!}</p>
 
@@ -2561,7 +2561,10 @@
         <button data-modal-trigger="trigger-demo" class="btni first">
             <pi>Cek Jawaban</pi>
         </button>
-
+<br>
+<br>
+<br>
+<br>
         <div data-modal="trigger-demo" class="modal">
             <article class="content-wrapper">
                 <button class="close"></button>
@@ -2628,9 +2631,9 @@
         });
     }
 </script>
-</div>
-</div>
-</div>
 
-@endforeach
+</div>
+</div>
+</div>
 @include('base/futerbawah')
+@endforeach

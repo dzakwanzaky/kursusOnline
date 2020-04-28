@@ -22,14 +22,14 @@
 
 						<!-- Left alignment -->
 							<br>
-							<div class="card text-center" style="height:400">
+							<div class="card text-center" style="height:360;">
 							<div class="card-body"><br>
-								 <img src="{{('/tema/images/inofa.png')}}" width="100" height="90"></img>
+								 <img src="{{$d->getAvatar()}}" width="100" height="90"></img>
 								<h5 class="card-title"><font size="3"><b><font color="#000000"><br>{{ $d->program}}</font></b></font></h5>
 								<p2 class="mb-3"><font face="calibri"><font color="#565656">{{ $d->keterangan}}</font></font></p2>
 									<br>
 									<br>
-								<a href="/sd" class="btn bg-primary-400">Selanjutnya <i class="icon-arrow-right14 ml-2"></i></a>
+								<a href="/program/{{$d->id}}/rinci" class="btn bg-primary-400">Selanjutnya <i class="icon-arrow-right14 ml-2"></i></a>
 							</div>
 						</div>
 						</div>
@@ -43,7 +43,6 @@
 		
 
 
-</div>
 </div>
 </div>
 

@@ -194,6 +194,7 @@
 	border-radius: 6px;
 	text-decoration: none;
 	color: #fff;
+	font-weight: 200;
 }
 .ok:hover {
 	opacity: 70%;

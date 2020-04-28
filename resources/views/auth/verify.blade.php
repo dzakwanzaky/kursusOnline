@@ -1,13 +1,16 @@
 @include('base/header_page')
-@extends('base/script_page')
+@extends('base/script_pageiniy')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
         <br>
         <br>
+        <br>
+        <br>
+        <br>
             <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+                <div class="card-header">{{ __('Verifikasi Email Anda') }}</div>
 
                 <div class="card-body">
                     @if (session('resent'))
@@ -16,12 +19,13 @@
                         </div>
                     @endif
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
+                    {{ __('Sebelum melanjutkan, silakan periksa email Anda untuk melakukan verifikasi. ') }}
+                    {{ __('Jika Anda tidak menerima email') }},
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('klik disini untuk mengirim ulang') }}</button>
                     </form>
+                    <br>
                 </div>
             </div>
         </div>

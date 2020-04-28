@@ -11,7 +11,7 @@
 <style type="text/css">
     @media screen and (width: 360px) {
         .img1 {
-            width: 1900;
+            width: 190;
             height: 60;
         }
 </style>
@@ -331,7 +331,7 @@
 
     .awake {
         background-color: #fff;
-        height: 100%;
+        height: 170%;
         margin-left: 0px;
     }
 
@@ -1005,7 +1005,23 @@
         width: 40%;
         float: left;
     }
+     .kolom2 h3q {
+            margin-top: 20px;
+            color: #000;
+            font-weight: 400;
 
+            font-size: 19px;
+            margin-left: 4em;
+            line-height: 3em;
+        }
+     .kolom1 h3i {
+            margin-top: 20px;
+            color: #000;
+            font-weight: 400;
+            font-size: 19px;
+            margin-left: 1.4em;
+            line-height: 3em;
+        }
     @media screen and (width: 375px) {
         .lebarkolom {
             width: 100%;
@@ -1417,6 +1433,17 @@
             line-height: 3em;
         }
     }
+    .hiya{
+        margin-top: 0;
+        font-size: 14px;
+        margin-left: 8px;
+        margin-bottom: 10px;
+    }
+    .supertext {
+        color: red;
+        font-size: 15px;
+        margin-top: 0px;
+    }
 </style>
 <!-- start banner Area -->
 
@@ -1428,7 +1455,7 @@
     <!-- End banner Area -->
 
     <!-- Start search-course Area -->
-    <section class="search-course-area relative" style="background:url('frontend/img/satu.png'); height: 240px">
+    <section class="search-course-area relative" style="background:url('frontend/img/satu1.jpg'); height: 300px;">
 
         <div class="container">
             <br>
@@ -1458,7 +1485,7 @@
 
         <div class="jq-tab-content active" data-tab="1">
             <div class="section">
-                <h3>Hanya perlu bayar Rp 15.000 </h3>
+                <h3>Hanya perlu bayar Rp 20.000 </h3>
 
                 <p>Agar bisa akses soal dan pembahasan secara lengkap <br><br>
                 </p>
@@ -1476,7 +1503,7 @@
                     <div class="lebarkolom">
                         <div class="baris">
                             <div class="kolom1">
-                                <h3i>Isi Formulir Di Bawah ini!</h3i>
+                                <h3i>Isi Formulir Di Bawah ini</h3i>
                                 <div class="col-md-11">
                                     <pi>Nama Lengkap</pi>
                                     <div class="form_login">
@@ -1488,35 +1515,20 @@
                                     <div class="form_login">
                                         <input type="text" name="notelp" class="form-control" required>
                                     </div>
-
+                                    <p class="hiya"><span class="supertext">*</span> Pastikan nomor telp benar dan aktif </p>
                                     <pi>Asal Sekolah</pi>
                                     <div class="form_login">
                                         <input type="text" name="asalsekolah" class="form-control">
                                     </div>
 
-                                    <pi>Kategori Soal</pi>
-                                    <div class="form_login">
-                                        <select id="kategori" name="kategori" class="form_control" style="padding:10px;background-color: #f8f8f8;border-radius:4px;color: #888;width:100%;height: 50px;border:1px solid #ddd;font-family: 'Roboto', sans-serif;
-                                            font-size: 16px;
-                                            font-weight: 300;
-                                            line-height: 50px;" required>
-                                            <option value="">-Pilih Kategori-</option>
-                                            <option value="SD">SD</option>
-                                            <option value="SMP">SMP</option>
-                                            <option value="SMA SAINTEK">SMA SAINTEK</option>
-                                            <option value="SMA SOSHUM">SMA SOSHUM</option>
-                                            <option value="SBMPTN SAINTEK">SBMPTN SAINTEK</option>
-                                            <option value="SBMPTN SOSHUM">SBMPTN SOSHUM</option>
-                                            <option value="CPNS">CPNS</option>
-                                            <option value="KOMPUTER">KOMPUTER</option>
-                                        </select>
-                                    </div>
+                                   
 
                                     <pi>Email</pi>
                                     <div class="form_login">
                                         <input type="text" name="email" class="form-control" required>
                                     </div>
-
+                                    <p class="hiya"><span class="supertext">*</span> Pastikan email yang dimasukan benar</p>
+               
                                     <pi> Bukti Pembayaran</pi>
                                     <br>
                                     <input type="file" id="real-file2" name="file" hidden="hidden" accept="image/*">
@@ -1546,6 +1558,8 @@
                                 <input type="text" style="display:none" value="BELUM AKTIF" name="status"
                                     class="form-control">
                                 <div class="section">
+                                    <br>
+                                    <br>
                                     <button type="submit" class="butn">Kirim</button>
                                 </div>
                             </div>
@@ -1597,7 +1611,7 @@
                                                     <br>Bank Transfer BNI
                                                 </a>
                                                 <div class="collapse" id="bni">
-                                                    <ol style="text-align:left;margin-left:10%;">
+                                                    <ol style="text-align:left;margin-left:10%; color: #4a4a4a">
                                                         <li>1. Masukkan kartu pilih <b>bahasa</b>, dan masukkan PIN
                                                             Anda.</li>
                                                         <li>2. Pada menu utama, pilih <b>Transaksi Lainnya.</b></li>
@@ -1625,7 +1639,7 @@
             </div> -->
                                             <li class="nav-item dropdown">
                                                 <p
-                                                    style="text-align:left;margin-left:10%; margin-bottom: 10px; font-size: 19px;">
+                                                    style="text-align:left;margin-left:10%; margin-bottom: 10px; font-size: 19px; ">
                                                     Dompet Digital</p>
                                                 <a class="nav-link button4" data-toggle="collapse" data-target="#indo"
                                                     style="text-align:left">
@@ -1634,7 +1648,7 @@
                                                     <br>Pembayaran Via OVO
                                                 </a>
                                                 <div class="collapse" id="indo">
-                                                    <ol style="text-align:left;margin-left:10%">
+                                                    <ol style="text-align:left;margin-left:10%; color: #4a4a4a">
                                                         <li>1. Buka aplikasi pembayaran OVO Anda.</b></li>
                                                         <li>2. Pilih menu <b>transfer.</b></li>
                                                         <li>3. Masukan nominal sesuai tagihan pada Inofa Bimbel.</li>
@@ -1657,7 +1671,7 @@
                                                     <br>Pembayaran Via DANA
                                                 </a>
                                                 <div class="collapse" id="bri">
-                                                    <ol style="text-align:left;margin-left:10%">
+                                                    <ol style="text-align:left;margin-left:10%; color: #4a4a4a">
                                                         <li>1. Masuk ke aplikasi DANA Anda, lalu pilih <b>menu kirim.
                                                         </li>
                                                         <li>2. Pilih kirim ke nomor telepon 089613954111 a.n Muhammad
@@ -1684,7 +1698,7 @@
                                                     <br>Pembayaran Via GO-PAY
                                                 </a>
                                                 <div class="collapse" id="go">
-                                                    <ol style="text-align:left;margin-left:10%">
+                                                    <ol style="text-align:left;margin-left:10%; color: #4a4a4a">
                                                         <li>1. Buka aplikasi Gojek pada hp Anda.</li>
                                                         <li>2. Pada menu utama silahkan <b>Tap Bayar.</b></li>
                                                         <li>3. Muncul tampilan menu Transfer.</li>
