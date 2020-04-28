@@ -48,7 +48,7 @@
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $d->nama_paket}}</td>
-                                        <td>{{ $d->program}}</td>
+                                        <td>{{ $d->paket->program}}</td>
                                         <td>{{ $d->kategori}}</td>
                                         <td>{{ $d->jumlah_mapel}} Mata Pelajaran</td>
                                         <td>{{ $d->jumlah_pertemuan}} Pertemuan</td>

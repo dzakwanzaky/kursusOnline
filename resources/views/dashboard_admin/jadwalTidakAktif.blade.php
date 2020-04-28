@@ -50,9 +50,9 @@
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $d->tutor->name }}</td>
                                         <td>{{ $d->jadwal->name }}</td>
-                                        <td>{{ $d->invoice->program }}</td>
-                                        <td>{{ $d->invoice->kelas }}</td>
-                                        <td>{{ $d->mata_pelajaran }}</td>
+                                        <td>{{ $d->invoice->program->program }}</td>
+                                        <td>{{ $d->invoice->kelas->kelas }}</td>
+                                        <td>{{ $d->mapel->mapel }}</td>
                                         <td>{{ $d->hari1 }}, PUKUL {{ $d->waktu_hari1 }}</td>
                                         <td>{{ $d->hari2 }}, PUKUL {{ $d->waktu_hari2 }}</td>
                                         <td>

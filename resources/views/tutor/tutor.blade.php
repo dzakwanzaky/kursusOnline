@@ -4,6 +4,14 @@
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
+        @if(Auth::user()->data->status == 'MENUNGGU')
+        <div class="col-sm-12">
+                <h1 class="m-0 text-dark">Informasi!</h1><br>
+                <div class="alert alert-light" style="font-size:14px;background-color:white;color:black">
+                    <strong>Perhatian!</strong> Pastikan kontak anda selalu aktif 
+                    untuk menerima informasi lengkap tentang seleksi!
+                </div>
+            @else
             <div class="col-sm-12">
                 <h1 class="m-0 text-dark">Pendaftaran Jadwal Siswa</h1><br>
                 <div class="alert alert-light" style="font-size:14px;background-color:white;color:black">
@@ -106,9 +114,13 @@
 
                             </tbody>
                         </table>
+                       
                     </div>
+                   
                 </div>
+                @endif
             </div>
+           
             <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->

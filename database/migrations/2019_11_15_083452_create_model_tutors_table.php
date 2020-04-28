@@ -16,9 +16,11 @@ class CreateModelTutorsTable extends Migration
         Schema::create('model_tutors', function (Blueprint $table) {
             $table->biginteger('id')->primary()->unsigned();
             $table->enum('jenis_kelamin',['Laki-Laki', 'Perempuan']);
+            $table->string('tanggal_lahir', '30');
             $table->string('provinsi', '30');
             $table->string('kabupaten', '30');
             $table->string('kecamatan', '30');
+            $table->string('alamat_detail');
             $table->string('pendidikan', '15');
             $table->biginteger('program_id')->unsigned();
             $table->json('kelas_id')->nullable();
@@ -29,7 +31,6 @@ class CreateModelTutorsTable extends Migration
             $table->timestamps();
             $table->foreign('id')->primary()->references('id')->on('users')->onDelete('cascade');
             $table->foreign('program_id')->references('id')->on('model_programs')->onDelete('cascade');
-
         });
     }
 

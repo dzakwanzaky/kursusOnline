@@ -77,7 +77,8 @@ class PaketController extends Controller
     public function edit($id)
     {
         $data = ModelPaket::where('id','=',$id)->get();
-        return view('dashboard_admin.editPaket', compact('data'));
+        $program = ModelProgram::all();
+        return view('dashboard_admin.editPaket', compact('data', 'program'));
     }
 
     /**

@@ -18,8 +18,8 @@ class CreateModelPaketsTable extends Migration
             $table->string('nama_paket');
             $table->biginteger('program_id')->unsigned();
             $table->string('kategori');
-            $table->string('jumlah_mapel');
-            $table->string('jumlah_pertemuan');
+            $table->integer('jumlah_mapel');
+            $table->integer('jumlah_pertemuan');
             $table->string('harga');
             $table->timestamps();
             $table->foreign('program_id')->unsigned()->references('id')->on('model_programs')->onDelete('cascade');

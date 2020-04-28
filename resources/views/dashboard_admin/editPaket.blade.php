@@ -13,12 +13,12 @@
                                 <div class="container-fluid">
                                     <div class="row mb-2">
                                         <div class="col-sm-6">
-                                            <p style="font-size:24px"> Edit Paket</p>
+                                            <h1> Edit Paket</h1>
                                         </div>
                                         <div class="col-sm-6">
                                             <ol class="breadcrumb float-md-right" style="font-size:14px">
                                                 <li class="breadcrumb-item">
-                                                    <a href="/admin">Admin</a>
+                                                    <a href="/manajemenPaket">Manajemen Paket</a>
                                                 </li>
                                                 <li class="breadcrumb-item active">
                                                     Edit Paket
@@ -56,13 +56,21 @@
                                         
                                         <div class="form-group">
                                             <label for="">Program :</label>
-                                            <input type="text" class="form-control" id="program" name="program"
-                                                value="{{ $d->program }}">
+                                            <select class="form-control" id="program_id" name="program_id">
+                                                <option value="{{ $d->program_id }}">{{ $d->paket->program }}</option>
+                                                @endforeach
+                                                @foreach($program as $d)
+                                                <option value="{{ $d->id }}">{{ $d->program }}</option>
+                                                @endforeach
+                                            </select>
+
                                         </div>
+                                        @foreach($data as $d)
 
                                         <div class="form-group">
                                             <label for="">Kategori :</label>
                                             <select class="form-control" id="kategori" name="kategori"  value="{{ $d->kategori }}">
+                                            <option value="{{ $d->kategori }}">{{ $d->kategori }}</option>
                                                 <option value="ONLINE">ONLINE</option>
                                                 <option value="OFFLINE">OFFLINE</option>
                                             </select>    
@@ -86,11 +94,20 @@
                                                 value="{{ $d->harga}}">
                                         </div>
 
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-md btn-success"
-                                                onclick="return confirm('Anda yakin ingin merubah data?')">Simpan</button>
-                                            <a href="/manajemenPaket" class="btn btn-md btn-danger">Batal</a>
+                                        <div class="d-flex">
+                                            <button type="submit" class="btn btn-primary d-block"
+                                                style="width: 180px; border-radius:50px;margin-left:35%;"
+                                                onclick="return confirm('Anda yakin data sudah benar?')">
+                                                Simpan
+                                            </button>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <a class="btn btn-danger d-block" href="javascript:history.back()"
+                                                style="width: 180px; border-radius:50px;"
+                                                onclick="return confirm('Anda yakin ingin membatalkan?')">
+                                                Batal
+                                            </a>
                                         </div>
+
                                     </div>
                             </div>
                             @endforeach

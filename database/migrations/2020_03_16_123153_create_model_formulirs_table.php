@@ -15,14 +15,16 @@ class CreateModelFormulirsTable extends Migration
     {
         Schema::create('model_formulirs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->biginteger('program_id')->nullable()->unsigned();
             $table->string('namalengkap');
             $table->string('notelp');
-            $table->string('asalsekolah')->nullable();
-            $table->string('kategori')->nullable();
+            $table->string('asalsekolah', '30')->nullable();
             $table->string('email');
             $table->string('file');
             $table->enum('status', ['AKTIF', 'BELUM AKTIF']);
             $table->timestamps();
+            $table->foreign('program_id')->unsigned()->references('id')->on('model_programs')->onDelete('cascade');
+
         });
     }
 

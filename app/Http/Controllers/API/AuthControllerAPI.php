@@ -114,10 +114,11 @@ class AuthControllerAPI extends Controller
             'password' => request('password')
         ])){
             $user = Auth::user();
+            $user->token = $user->createToken('API_Travel')->accessToken;
+            $user->save();
             return response()->json([
                 'status' => 'sukses',
                 'user' => $user,
-                'token' => $user->createToken('API_Travel')->accessToken     
             ]);
         }else {
             return response()->json(['error' =>'Unauthorized'], 401);   

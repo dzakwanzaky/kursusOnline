@@ -58,7 +58,8 @@ class VerificationController extends Controller
 
     if ($user->markEmailAsVerified())
         event(new Verified($user));
-
+        $user->active=1;
+        $user->save();
         if($user->role=='siswa')
         {
          return redirect('/dataSiswa')->withMessage('Your account is active');

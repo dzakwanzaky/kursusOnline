@@ -28,6 +28,11 @@ class AbsenController extends Controller
         return view('dashboard_admin.kehadiranTutor', compact('data'));   
     }
 
+    public function kehadiran($id){
+        $data = ModelAbsen::where('id_jadwal', $id)->get();
+        return view('tutor.kehadiran', compact('data'));   
+    }
+
     public function show($id)
     {
         $data = ModelAbsen::where('id_jadwal', $id)->get();

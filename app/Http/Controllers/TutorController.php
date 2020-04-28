@@ -100,9 +100,11 @@ class TutorController extends Controller
         $data = new ModelTutor();
         $data->id = $request->id;
         $data->jenis_kelamin = $request->jenis_kelamin;
+        $data->tanggal_lahir = $request->tanggal_lahir;
         $data->provinsi = $request->provinsi;
         $data->kabupaten = $request->kabupaten;
         $data->kecamatan = $request->kecamatan;
+        $data->alamat_detail = $request->alamat_detail;
         $data->pendidikan = $request->pendidikan;
         $data->program_id = $request->program_id;
 
@@ -118,11 +120,21 @@ class TutorController extends Controller
         }
         $data->mapel_id = json_encode($array);
 
+        if($request->file){
         $file = $request->file('file');
         $nama_file = time()."_".$file->getClientOriginalName();  
         $tujuan_upload = 'data_file';
         $file->move($tujuan_upload,$nama_file);
         $data->file = $nama_file;
+        }
+
+        if($request->foto){
+            $foto = $request->file('foto');
+            $nama_file = time()."_".$foto->getClientOriginalName();  
+            $tujuan_upload = 'data_file';
+            $foto->move($tujuan_upload,$nama_file);
+            $data->foto = $nama_file;  
+         }
 
         $data->status = $request->status;
         $data->save();
@@ -141,6 +153,8 @@ class TutorController extends Controller
         $data->kabupaten = $request->kabupaten;
         $data->kecamatan = $request->kecamatan;
         $data->provinsi = $request->provinsi;
+        $data->jenis_kelamin = $request->jenis_kelamin;
+        $data->tanggal_lahir = $request->tanggal_lahir;
         $data->status = $request->status;
         if($request->foto){
             $foto = $request->file('foto');

@@ -11,6 +11,16 @@
                     <h1 id="div1" name="div1" class="m-0 text-dark">Tambah Soal</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
+                    <ol class="breadcrumb float-md-right" style="font-size:14px">
+                        <li class="breadcrumb-item">
+                            <a href="javascript:history.back()">Daftar Soal</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            Tambah Soal
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-sm-6">
 
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -32,10 +42,10 @@
                             <div class="text-center">
                                 <div style="float:left;width:50%"><label for="" class="mr-4">TAMBAH MANUAL </label><br>
                                     <a>
-                                    <br>
+                                        <br>
                                         Anda bisa menambahkan soal secara manual
                                         <br> melalui form yang tersedia.
-                                       
+
                                         <br>
                                     </a>
                                     <br>
@@ -50,7 +60,8 @@
                                         Anda bisa menambahkan soal
                                         <br>dengan melalui unggah berkas.
                                         <br>Unduh format berkas di sini.
-                                        <br> <a href="{{('/file/template-soal.xlsx')}}" class="btn btn-sm btn-success" style="color:white;" ><span class="fas fa-download mr-2"></span>Unduh</a> 
+                                        <br> <a href="{{('/file/template-soal.xlsx')}}" class="btn btn-sm btn-success"
+                                            style="color:white;"><span class="fas fa-download mr-2"></span>Unduh</a>
                                     </a>
                                     <br>
                                     <br>
@@ -99,11 +110,17 @@
 
         </div>
 
-        <div class="text-center">
+        <div class="d-flex" style="margin-left:40%;">
             <button id="button-sub" name="button-sub" type="submit" class="btn btn-primary"
-                style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto" onclick="return confirm('Anda yakin data sudah benar?')">
-                Save
+                style="width: 180px; border-radius:50px;" onclick="return confirm('Anda yakin data sudah benar?')">
+                Simpan
             </button>
+            &nbsp;&nbsp;&nbsp;
+            <a class="btn btn-danger d-block" href="javascript:history.back()" style="width: 180px; border-radius:50px;"
+                onclick="return confirm('Anda yakin ingin membatalkan?')">
+                Batal
+            </a>
+
         </div>
 
         </form>

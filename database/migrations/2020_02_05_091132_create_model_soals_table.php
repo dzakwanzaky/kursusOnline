@@ -16,7 +16,7 @@ class CreateModelSoalsTable extends Migration
         Schema::create('model_soals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->biginteger('id_to')->unsigned();
-            $table->string('nomor_soal');
+            $table->integer('nomor_soal');
             $table->string('file')->nullable();
             $table->string('soal');
             $table->string('option_a');

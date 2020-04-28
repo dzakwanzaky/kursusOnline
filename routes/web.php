@@ -227,6 +227,7 @@ Route::middleware(['tutor'])->group(function () {
     Route::get('profile','TutorController@profileTutor');
     Route::get('detailPendaftaran/{id}','JadwalController@jadwalSiswaTutor')->name('detailPendaftaran');
     Route::get('detailJadwal/{id}','JadwalController@detailJadwalTutor')->name('detailJadwal');
+    Route::get('dataKehadiran/{id}','AbsenController@kehadiran')->name('dataKehadiran');
 
 });
 

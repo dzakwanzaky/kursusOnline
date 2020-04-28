@@ -48,11 +48,11 @@
                     <tr>   
                         <td>{{ $no++ }}</td>
                         <td>{{ $d->jadwal->name }}</td>
-                        <td>{{ $d->invoice->program }}</td>
-                        <td>{{ $d->invoice->kelas }}</td>
-                        <td>{{ $d->mata_pelajaran }}</td>
+                        <td>{{ $d->invoice->program->program }}</td>
+                        <td>{{ $d->invoice->kelas->kelas }}</td>
+                        <td>{{ $d->mapel->mapel }}</td>
                         <td>{{ $d->hari1 }} {{ $d->waktu_hari1 }}</td>
-                        <td id="hari2td">{{ $d->hari2 }} {{ $d->waktu_hari2 }}</td>
+                        <td>{{ $d->hari2 }} {{ $d->waktu_hari2 }}</td>
                         <td>
                             <a class=" btn btn-sm btn-primary" style="color:white;">
                             <span>{{ $d->status }}</span>

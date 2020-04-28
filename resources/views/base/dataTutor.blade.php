@@ -50,6 +50,15 @@
                                 </div>
 
 
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    <label class="control-label" for="tanggal">Tanggal Lahir</label>
+                                    <div class="form-title">
+                                        <input class="form-control" id="tanggal" name="tanggal_lahir" placeholder="MM/DD/YYY"
+                                            type="text" />
+                                    </div>
+                                </div>
+
+
 
                                 <div class="form-group">
                                     <label id="prov" for="prov">Provinsi</label>
@@ -205,6 +214,17 @@
 
                                     </div>
                                 </div>
+
+
+                                <div class="form-group{{ $errors->has('foto') ? ' has-error' : '' }}">
+                                    <label for="foto">Foto Diri</label>
+                                    <div class="form-title">
+                                        <input id="foto" type="file" class="form-control" name="foto" required>
+
+                                    </div>
+                                </div>
+
+
                                 <input id="status" type="text" name="status" class="form-control" value="MENUNGGU"
                                     style="display:none" required>
 
@@ -351,6 +371,21 @@
 
             });
         });
+
+        $(document).ready(function () {
+            var date_input = $('input[name="tanggal_lahir"]'); //our date input has the name "date"
+            var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() :
+                "body";
+            var options = {
+                format: 'dd MM yyyy',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+            };
+            date_input.datepicker(options);
+
+
+        })
 
     });
 </script>

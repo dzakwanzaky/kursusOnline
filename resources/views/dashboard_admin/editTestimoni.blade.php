@@ -13,15 +13,15 @@
                                 <div class="container-fluid">
                                     <div class="row mb-2">
                                         <div class="col-sm-6">
-                                            <p style="font-size:24px"> Edit Testimoni Siswa</p>
+                                            <h1> Edit Testimoni Siswa</h1>
                                         </div>
                                         <div class="col-sm-6">
                                             <ol class="breadcrumb float-md-right" style="font-size:14px">
                                                 <li class="breadcrumb-item">
-                                                    <a href="/admin">Admin</a>
+                                                    <a href="/testimoni">Testimoni</a>
                                                 </li>
                                                 <li class="breadcrumb-item active">
-                                                    Edit Testimoni Siswa
+                                                    Edit Testimoni
                                                 </li>
                                             </ol>
                                         </div>
@@ -49,6 +49,7 @@
                                         <label for="">Nama Siswa :</label>
                                         <select id="murid_id" name="murid_id" class="form-control"
                                             value="{{$d->murid_id}}" required>
+                                            <option value="{{ $d->murid_id }}">{{ $d->murid_id }} - {{ $d->user->name }}</option>
                                             @endforeach
 
                                             @foreach($siswa as $d)
@@ -65,11 +66,19 @@
                                     </div>
 
 
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-md btn-success"
-                                            onclick="return confirm('Anda yakin ingin merubah data?')">Update</button>
-                                        <a href="/manajemenProgram" class="btn btn-md btn-danger">Batal</a>
-                                    </div>
+                                    <div class="d-flex">
+                                            <button type="submit" class="btn btn-primary d-block"
+                                                style="width: 180px; border-radius:50px;margin-left:35%;"
+                                                onclick="return confirm('Anda yakin data sudah benar?')">
+                                                Simpan
+                                            </button>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <a class="btn btn-danger d-block" href="/testimoni"
+                                                style="width: 180px; border-radius:50px;"
+                                                onclick="return confirm('Anda yakin ingin membatalkan?')">
+                                                Batal
+                                            </a>
+                                        </div>
                             </div>
                         </div>
                         @endforeach

@@ -12,6 +12,16 @@
                     <h1 id="div1" name="div1" class="m-0 text-dark">Edit Mata Pelajaran</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
+                    <ol class="breadcrumb float-md-right" style="font-size:14px">
+                        <li class="breadcrumb-item">
+                            <a href="javascript:history.back()">Daftar Mata Pelajaran</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            Edit Mata Pelajaran
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-sm-6">
 
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -29,11 +39,13 @@
                         <div class="card-body">
                             <div class="panel-body">
                                 @foreach($data as $d)
+
                                 <form method="POST" action="{{ route('mapel.update',$d->id)}}"
                                     enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     {{ method_field('PUT') }}
-                                    <input style="display:none" id="id_to" name="id_program" value="{{$d->id_program}}"></input>
+                                    <input style="display:none" id="id_to" name="id_program"
+                                        value="{{$d->id_program}}"></input>
 
 
                                     <div class="card-body">
@@ -44,7 +56,19 @@
 
 
                                     </div>
-
+                                    <div class="d-flex">
+                                        <button type="submit" class="btn btn-primary d-block"
+                                            style="width: 180px; border-radius:50px;margin-left:35%;"
+                                            onclick="return confirm('Anda yakin data sudah benar?')">
+                                            Simpan
+                                        </button>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <a class="btn btn-danger d-block" href="javascript:history.back()"
+                                            style="width: 180px; border-radius:50px;"
+                                            onclick="return confirm('Anda yakin ingin membatalkan?')">
+                                            Batal
+                                        </a>
+                                    </div>
 
                             </div>
                         </div>
@@ -52,11 +76,7 @@
                 </div>
             </div>
             <br>
-            <button type="submit" class="btn btn-primary d-block"
-                style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;"
-                onclick="return confirm('Anda yakin ingin merubah data?')">
-                Simpan
-            </button>
+
             </form>
             @endforeach
         </div>

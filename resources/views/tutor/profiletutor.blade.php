@@ -10,7 +10,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <p style="font-size:24px">Profile Tutor</p>
+                                <h1>Profile Tutor</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-md-right" style="font-size:14px">
@@ -88,6 +88,13 @@
                                     <th>
                                         Jenis Kelamin
                                         <input type="text" class="form-control" value="{{ $d->jenis_kelamin }}"
+                                            style="margin-right:190px;background:white;border:none" disabled>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Tanggal Lahir
+                                        <input type="text" class="form-control" value="{{ $d->tanggal_lahir }}"
                                             style="margin-right:190px;background:white;border:none" disabled>
                                     </th>
                                 </tr>

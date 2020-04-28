@@ -16,7 +16,7 @@ class CreateModelMapelsTable extends Migration
         Schema::create('model_mapels', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->biginteger('id_program')->unsigned();
-            $table->string('mapel');
+            $table->string('mapel', '30');
             $table->timestamps();
             $table->foreign('id_program')->unsigned()->references('id')->on('model_programs')->onDelete('cascade');
 

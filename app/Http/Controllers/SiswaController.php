@@ -76,6 +76,7 @@ class SiswaController extends Controller
         $data = new ModelSiswa();
         $data->id = $request->id;
         $data->jenis_kelamin = $request->jenis_kelamin;
+        $data->tanggal_lahir = $request->tanggal_lahir;
         
         $file = $request->file('file');
         $nama_file = time()."_".$file->getClientOriginalName();  
@@ -104,6 +105,9 @@ class SiswaController extends Controller
         $data->provinsi = $request->provinsi;
         $data->kecamatan = $request->kecamatan;
         $data->kabupaten = $request->kabupaten;
+        $data->jenis_kelamin = $request->jenis_kelamin;
+        $data->tanggal_lahir = $request->tanggal_lahir;
+
         $data->status = $request->status;
         if($request->file){
             $file = $request->file('file');

@@ -17,6 +17,16 @@
                                             <div class="col-sm-6">
                                                 <h1>Tambah Program</h1>
                                             </div>
+                                            <div class="col-sm-6">
+                                                <ol class="breadcrumb float-md-right" style="font-size:14px">
+                                                    <li class="breadcrumb-item">
+                                                        <a href="/manajemenProgram">Manajemen Program</a>
+                                                    </li>
+                                                    <li class="breadcrumb-item active">
+                                                        Tambah Program
+                                                    </li>
+                                                </ol>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -105,13 +115,21 @@
             </div>
             <!-- /.content -->
 
-            <button type="submit" class="btn btn-primary d-block"
-                style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;"
-                onclick="return confirm('Anda yakin data sudah benar?')">
-                Simpan
-            </button>
+            <div class="d-flex">
+                <button type="submit" class="btn btn-primary d-block"
+                    style="width: 180px; border-radius:50px;margin-left:35%;"
+                    onclick="return confirm('Anda yakin data sudah benar?')">
+                    Simpan
+                </button>
+                &nbsp;&nbsp;&nbsp;
+                <a class="btn btn-danger d-block" href="/manajemenProgram" style="width: 180px; border-radius:50px;"
+                    onclick="return confirm('Anda yakin ingin membatalkan?')">
+                    Batal
+                </a>
+            </div>
     </form>
     <br>
+</div>
 </div>
 
 <!-- /.content-header -->
