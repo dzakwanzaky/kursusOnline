@@ -29,7 +29,7 @@ class FormulirController extends Controller
         $data->namalengkap = $request->namalengkap;
         $data->notelp = $request->notelp;
         $data->asalsekolah = $request->asalsekolah;
-        $data->kategori = $request->kategori;
+        $data->program_id = $request->program_id;
         $data->email = $request->email;
         $data->status = $request->status;
 

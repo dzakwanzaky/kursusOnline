@@ -19,7 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 //AuthController
-Route::post('register','API\AuthControllerAPI@store');
+Route::post('registerSiswa','API\AuthControllerAPI@storeSiswa');
+Route::post('registerTutor','API\AuthControllerAPI@storeTutor');
 Route::post('login','API\AuthControllerAPI@login');
 
 //TryoutController

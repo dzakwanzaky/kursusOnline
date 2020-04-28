@@ -33,8 +33,10 @@
                                 <thead class="thead-dark">
                                     <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
                                         <th>No.</th>
+                                        <th>Foto</th>
                                         <th>Nama Program</th>
                                         <th>Keterangan</th>
+                                        <th>Keterangan Rinci</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -43,8 +45,14 @@
                                     @foreach($data as $d)
                                     <tr>
                                         <td>{{ $no++ }}</td>
+                                        <td>
+                                        <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
+                                                <img width="50px" src="{{ url('/data_file/'.$d->file) }}">
+                                            </a>
+                                        </td>
                                         <td>{{ $d->program}}</td>
                                         <td>{{ $d->keterangan}}</td>
+                                        <td>{{ $d->keterangan_rinci}}</td>
                                         <td class="d-flex">
                                         <a type="button" class="btn-sm btn-info mr-2"  data-toggle="tooltip" data-placement="top" title="Lihat Mapel" href="{{route('daftarMapel', $d->id)}}"><i class="far fa-eye"></i></a>
                                         <a href="{{route('program.edit',$d->id)}}" class="btn btn-sm btn-primary mr-2"

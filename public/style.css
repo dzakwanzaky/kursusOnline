@@ -260,17 +260,17 @@ opacity: 80%;
 <<<<<<< HEAD
   margin-top:40px;
 
-   padding-top: 13px;
-   padding-bottom: 13px;
-   padding-left: 23px;
-   padding-right: 23px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
    background: #92CD16;
    color: white;
-   margin-left: 12em;
+   margin-left: 13em;
    display: table;
    border-radius: 20px;
    font-size: 18px;
-   margin-bottom: 70px;
+   margin-bottom: 10px;
 }
 @media screen and (width: 1024px) {
   .butn {

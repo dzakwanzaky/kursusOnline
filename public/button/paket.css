@@ -811,6 +811,7 @@ line-height: 38px;
 .supertext {
 	vertical-align: super; 
 	font-size: 15px;
+	margin-top: 0px;
 	font-weight: bold;
 	color: #fff;
 }

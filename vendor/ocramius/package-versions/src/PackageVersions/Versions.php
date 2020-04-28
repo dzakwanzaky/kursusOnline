@@ -13,6 +13,13 @@ namespace PackageVersions;
 final class Versions
 {
     public const ROOT_PACKAGE_NAME = 'laravel/laravel';
+    /**
+     * Array of all available composer packages.
+     * Dont read this array from your calling code, but use the \PackageVersions\Versions::getVersion() method instead.
+     *
+     * @var array<string, string>
+     * @internal
+     */
     public const VERSIONS          = array (
   'barryvdh/laravel-dompdf' => 'v0.8.6@d7108f78cf5254a2d8c224542967f133e5a6d4e8',
   'defuse/php-encryption' => 'v2.2.1@0f407c43b953d571421e0020ba92082ed5fb7620',
@@ -24,19 +31,19 @@ final class Versions
   'egulias/email-validator' => '2.1.17@ade6887fd9bd74177769645ab5c474824f8a418a',
   'fideloper/proxy' => '4.3.0@ec38ad69ee378a1eec04fb0e417a97cfaf7ed11a',
   'firebase/php-jwt' => 'v5.2.0@feb0e820b8436873675fd3aca04f3728eb2185cb',
-  'guzzlehttp/guzzle' => '6.5.2@43ece0e75098b7ecd8d13918293029e555a50f82',
+  'guzzlehttp/guzzle' => '6.5.3@aab4ebd862aa7d04f01a4b51849d657db56d882e',
   'guzzlehttp/promises' => 'v1.3.1@a59da6cf61d80060647ff4d3eb2c03a2bc694646',
   'guzzlehttp/psr7' => '1.6.1@239400de7a173fe9901b9ac7c06497751f00727a',
   'jakub-onderka/php-console-color' => 'v0.2@d5deaecff52a0d61ccb613bb3804088da0307191',
   'jakub-onderka/php-console-highlighter' => 'v0.4@9f7a229a69d52506914b4bc61bfdb199d90c5547',
   'laminas/laminas-diactoros' => '2.2.3@b596c7141f5093aefec94cb5e8745212299e290f',
   'laminas/laminas-zendframework-bridge' => '1.0.3@bfbbdb6c998d50dbf69d2187cb78a5f1fa36e1e9',
-  'laravel/framework' => 'v6.18.8@852c91c46adfbc2f5a0f6985cba3d7b7a769b773',
-  'laravel/passport' => 'v8.4.3@edb9ccb9993ca98c7347da2fae20e1b8b4895f31',
+  'laravel/framework' => 'v6.18.10@9177744ccdd8d5db970fdff2383fe89c2e94aabe',
+  'laravel/passport' => 'v8.4.4@dd4b1d96eb1fe556a6eb2c55c942360364aa02c1',
   'laravel/tinker' => 'v1.0.10@ad571aacbac1539c30d480908f9d0c9614eaf1a7',
   'laravel/ui' => 'v1.2.0@bb64fca681566ca94457d490a00f899516e75664',
   'lcobucci/jwt' => '3.3.1@a11ec5f4b4d75d1fcd04e133dede4c317aac9e18',
-  'league/commonmark' => '1.3.4@dd3261eb9a322e009fa5d96d19b9ae19708ce04b',
+  'league/commonmark' => '1.4.2@9e780d972185e4f737a03bade0fd34a9e67bbf31',
   'league/event' => '2.2.0@d2cc124cf9a3fab2bb4ff963307f60361ce4d119',
   'league/flysystem' => '1.0.67@5b1f36c75c4bdde981294c2a0ebdb437ee6f275e',
   'league/oauth2-server' => '8.0.0@e1dc4d708c56fcfa205be4bb1862b6d525b4baac',
@@ -50,7 +57,7 @@ final class Versions
   'nexmo/laravel' => '2.2.0@57b62d985ae59d2f15f970883ea445b7fda56652',
   'nikic/php-parser' => 'v4.4.0@bd43ec7152eaaab3bd8c6d0aa95ceeb1df8ee120',
   'nyholm/psr7' => '1.2.1@55ff6b76573f5b242554c9775792bd59fb52e11c',
-  'ocramius/package-versions' => '1.5.1@1d32342b8c1eb27353c8887c366147b4c2da673c',
+  'ocramius/package-versions' => '1.4.2@44af6f3a2e2e04f2af46bcb302ad9600cba41c7d',
   'opis/closure' => '3.5.1@93ebc5712cdad8d5f489b500c59d122df2e53969',
   'paragonie/random_compat' => 'v9.99.99@84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95',
   'phenx/php-font-lib' => '0.5.2@ca6ad461f032145fff5971b5985e5af9e7fa88d8',
@@ -99,7 +106,7 @@ final class Versions
   'symfony/var-dumper' => 'v4.4.7@5a0c2d93006131a36cf6f767d10e2ca8333b0d4a',
   'tijsverkoyen/css-to-inline-styles' => '2.2.2@dda2ee426acd6d801d5b7fd1001cde9b5f790e15',
   'vlucas/phpdotenv' => 'v3.6.3@1b3103013797f04521c6cae5560f604649484066',
-  'yajra/laravel-datatables-oracle' => 'v9.9.0@976e70a2f0b831725da335cd434a11ff73d3c854',
+  'yajra/laravel-datatables-oracle' => 'v9.10.0@b0b9e2c37b5a17ca35bb2c6d3927bf6176393229',
   'doctrine/instantiator' => '1.3.0@ae466f726242e637cebdd526a7d991b9433bacf1',
   'facade/flare-client-php' => '1.3.2@db1e03426e7f9472c9ecd1092aff00f56aa6c004',
   'facade/ignition' => '1.16.1@af05ac5ee8587395d7474ec0681c08776a2cb09d',
@@ -121,7 +128,7 @@ final class Versions
   'phpunit/php-text-template' => '1.2.1@31f8b717e51d9a2afca6c9f046f5d69fc27c8686',
   'phpunit/php-timer' => '2.1.2@1038454804406b0b5f5f520358e78c1c2f71501e',
   'phpunit/php-token-stream' => '3.1.1@995192df77f63a59e47f025390d2d1fdf8f425ff',
-  'phpunit/phpunit' => '8.5.3@67750516bc02f300e2742fed2f50177f8f37bedf',
+  'phpunit/phpunit' => '8.5.4@8474e22d7d642f665084ba5ec780626cbd1efd23',
   'scrivo/highlight.php' => 'v9.18.1.1@52fc21c99fd888e33aed4879e55a3646f8d40558',
   'sebastian/code-unit-reverse-lookup' => '1.0.1@4419fcdb5eabb9caa61a27c7a1db532a6b55dd18',
   'sebastian/comparator' => '3.0.2@5de4fc177adf9bce8df98d8d141a7559d7ccf6da',
@@ -136,8 +143,8 @@ final class Versions
   'sebastian/type' => '1.1.3@3aaaa15fa71d27650d62a948be022fe3b48541a3',
   'sebastian/version' => '2.0.1@99732be0ddb3361e16ad77b68ba41efc8e979019',
   'theseer/tokenizer' => '1.1.3@11336f6f84e16a720dae9d8e6ed5019efa85a0f9',
-  'webmozart/assert' => '1.7.0@aed98a490f9a8f78468232db345ab9cf606cf598',
-  'laravel/laravel' => 'dev-master@aa0d2cbbb80b92a0d989b3231314e26c63e6720c',
+  'webmozart/assert' => '1.8.0@ab2cb0b3b559010b75981b1bdce728da3ee90ad6',
+  'laravel/laravel' => 'dev-master@b3061ec2f4136f145c1481d4be853d7db64e12cb',
 );
 
     private function __construct()
@@ -146,6 +153,8 @@ final class Versions
 
     /**
      * @throws \OutOfBoundsException If a version cannot be located.
+     *
+     * @psalm-param key-of<self::VERSIONS> $packageName
      */
     public static function getVersion(string $packageName) : string
     {

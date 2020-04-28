@@ -1,7 +1,19 @@
 @include('base/header_page')
 @extends('base/script_page')
 @section('content')
+ <style type="text/css">
+    h2 {
+        margin-left: 5em;
 
+    }
+    labell {
+        font-size: 17px;
+
+    }
+    .daftar {
+        font-weight: bolder;
+    }
+</style>
     <div class="main">
     <div class="card">
               <div class="card-body">
@@ -11,7 +23,7 @@
                 <h2 class="form-title">Masuk Akun</h2>
                 <br>
 
-                <label for="email">Email</label>
+                <labell for="email">Email</labell>
                 <div class="form-textbox">
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Masukan email Anda">
 
@@ -22,7 +34,7 @@
                         @enderror
                 </div><br>
 
-                <label for="pass">Kata Sandi</label>
+                <labell for="pass">Kata Sandi</labell>
                 <div class="input-group">
                       <input id="password" type="password" name="password" class="form-control" data-toggle="password" placeholder="Masukan kata sandi Anda">
                       <div class="input-group-append">
@@ -78,7 +90,7 @@
             </form>
 
             <p class="loginhere">
-                Belum punya akun ?<a href="/registerPilih" class="signuphere-link"> Daftar Sekarang</a>
+                Belum punya akun ?<a href="/registerPilih" class="signuphere-link"> Daftar Sekarang</p></a>
             </p>
         </div>
     </div>

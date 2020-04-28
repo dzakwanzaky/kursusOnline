@@ -1,14 +1,14 @@
 <div class="awake">
     @include('base/header_page')
     @extends('base/script_yes')
-    @include('base/script2')
+    @include('base/script4')
     <link rel="stylesheet" type="text/css" href="{{asset('/strap')}}/css/bootstrap.css">
 
     <style type="text/css">
         .awake {
-            background-color: #fafafa;
-            height: 150%;
-            width: 100%;
+            background-color: #f4f6f9;
+            height: 140%;
+
 
         }
 
@@ -364,7 +364,10 @@
 
 
         .cards {
-            max-width: 58%;
+
+            width: 40%;
+            float: left;
+
         }
 
         .services {
@@ -397,13 +400,12 @@
             font-size: 17px;
         }
 
-        img.kiri {
+        img {
             float: left;
-            margin: 13px;
+            margin-top: 20px;
             margin-left: 25px;
-            width: 60px;
-            height: 70px;
-            padding-top: 20px;
+            height: 45px;
+            padding-top: 10px;
         }
 
         @media screen and (width: 360px) {
@@ -1086,276 +1088,113 @@
                 padding-top: 20px;
             }
         }
+
+        .judul {
+
+            text-align: left;
+        }
+
+        .navi ul {
+            margin-left: 3.5em;
+            margin-top: 3em;
+            padding-bottom: 0;
+        }
+
+        .navi ul a {
+            text-decoration: none;
+            margin-left: 3em;
+            font-weight: bolder;
+            color: #565656;
+        }
+
+        .nav ul a:hover {
+            color: #92CD16;
+        }
+
+        .secsion {
+            padding-left: 70px;
+        }
     </style>
 
 
-    <section class="search-course-area relative" style="background:url('frontend/img/satu.png')">
-
+    <section class="search-course-area relative" style="background:url('frontend/img/satu.png'); height: 295px">
+        <div class="overlay overlay-bg"></div>
         <div class="container">
-
-            <body bgcolor="#ffffff">
-
-                <br>
-                <br>
-                <br>
-                <br>
-
+            <br>
+            <br>
+            <br>
         </div>
 
         <div class="typing">
             <h4>
                 <b>
-                    <font color="#000">Program SD
+                    <font color="#000">Program {{$rinci->program}}
                 </b>
                 <br>
                 <p><br>
-                    Program untuk calon siswa Sekolah Dasar untuk menghadapi ujian nasional</p>
+                    {{$rinci->keterangan_rinci}}</p>
                 </font>
             </h4>
 
         </div>
+
+
         <section class="course-details-area pt-12">
 
-            <div class="col-lg-8 left-contents">
+            <div class="col-lg-10 left-contents">
 
-                <div class="jq-tab-wrapper" id="horizontalTab">
-                    <div class="jq-tab-menu">
-                        <div class="jq-tab-title active" data-tab="1">
-                            <font face="Poppins">Bahasa Indonesia</font>
-                            </font>
-                        </div>
-                        <div class="jq-tab-title" data-tab="2">
-                            <font face="Poppins">Matematika</font>
-                            </font>
-                        </div>
-                        <div class="jq-tab-title" data-tab="3">
-                            <font face="Poppins">IPA </font>
-                            </font>
-                        </div>
+                <div class="navi">
+                    <ul>
+                         @foreach($data as $k)
+                        <a href="{{route('soalFilter', [$k->id_program, $k->id])}}">{{$k->mapel}}</a>
+                        @endforeach
+                        <ul>
+                </div>
 
-                    </div>
 
-                    @php $no = 1; @endphp
-                    @foreach($bind as $d)
-                    <div class="jq-tab-content active" data-tab="1">
 
+                @foreach($dat as $ki)
+                <div class="jq-tab-content active">
+
+                    <div class="secsion">
                         <div class="cards">
+
                             <div class="services">
+
                                 <div class="content">
+
                                     <div class="img">
-                                        <img class="kiri" src="{{asset('/images')}}/about.jpg" />
+                                        <a href="{{route('soalTO', $ki->id)}}" type="button" class="btn btn-link">
+                                            <img src="{{asset('/images')}}/inofa.png" />
                                     </div>
-                                    <a href="{{route('soalTO', $d->id)}}" type="button" class="btn btn-link"
-                                     >
-                                        <h2>{{$d->nama}}<br>
-                                            <p>{{$d->jumlah_soal}} soal pilihan ganda<br>
-                                            </p>
-                                        </h2>
+
+                                    <h2 class="judul">{{$ki->nama}}<br>
+                                        <p>{{$ki->jumlah_soal}} soal pilihan ganda<br>
+                                        </p>
+                                    </h2>
                                     </a>
                                 </div>
 
                             </div>
+
                         </div>
                     </div>
-                
                     @endforeach
-               
-   
-         
-                    <div class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div class="modal-title">
-                                        <h>Isi Form</h>
-                                        <br>
-                                        <pi>Isi form untuk melanjutkan proses</pi>
-                                    </div>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>                             
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <input type="text" name="namalengkap" class="form-control"
-                                            placeholder="Nama lengkap">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="notelp" class="form-control" placeholder="No telp">
-                                    </div>
 
 
-                                    <div class="form-group">
-                                        <input type="text" name="asalsekolah" class="form-control"
-                                            placeholder="Asal sekolah">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="email" class="form-control" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="submit" class="tombol_login">Kirim</button>
-                                </div>
-                            
-                              
-                            </div>
-                        </div>
-                    </div>
-                  
-                    <script type="text/javascript" src="{{asset('/strap')}}/js/jquery-3.2.1.min.js"></script>
-
-                    <script type="text/javascript" src="{{asset('/frontend')}}/js/bootstrap.js"></script>
-
-                  
 
 
-                    @php $no = 1; @endphp
-                    @foreach($mat as $d)
-                    <div class="jq-tab-content active" data-tab="2">
 
-                        <div class="cards">
-                            <div class="services">
-                                <div class="content">
-                                    <div class="img">
-                                        <img class="kiri" src="{{asset('/images')}}/about.jpg" />
-                                    </div>
-                                    <a href="{{route('soalTO', $d->id)}}" type="button" class="btn btn-link"
-                                     >
-                                        <h2>{{$d->nama}}<br>
-                                            <p>{{$d->jumlah_soal}}<br>
-                                            </p>
-                                        </h2>
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                
-                    @endforeach
-                    <div class="modal fade" role="dialog" id="loginModal">
-                  
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div class="modal-title">
-                                        <h>Isi Form</h>
-                                        <br>
-                                        <pi>Isi form untuk melanjutkan proses</pi>
-                                    </div>
-
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <input type="text" name="namalengkap" class="form-control"
-                                            placeholder="Nama lengkap">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="notelp" class="form-control" placeholder="No telp">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="asalsekolah" class="form-control"
-                                            placeholder="Asal sekolah">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="email" class="form-control" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="submit" class="tombol_login">Kirim</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-                    <script type="text/javascript" src="{{asset('/strap')}}/js/jquery-3.2.1.min.js"></script>
-
-                    <script type="text/javascript" src="{{asset('/frontend')}}/js/bootstrap.js"></script>
-
-
-                    @php $no = 1; @endphp
-                    @foreach($mat as $d)
-                    <div class="jq-tab-content active" data-tab="3">
-
-                        <div class="cards">
-                            <div class="services">
-                                <div class="content">
-                                    <div class="img">
-                                        <img class="kiri" src="{{asset('/images')}}/about.jpg" />
-                                    </div>
-                                    <a href="{{route('soalTO', $d->id)}}" type="button" class="btn btn-link"
-                                     >
-                                        <h2>{{$d->nama}}<br>
-                                            <p>{{$d->jumlah_soal}}<br>
-                                            </p>
-                                        </h2>
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                
-                    @endforeach
-                        <div class="modal fade" role="dialog" id="loginModal">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <div class="modal-title">
-                                            <h>Isi Form</h>
-                                            <br>
-                                            <pi>Isi form untuk melanjutkan proses</pi>
-                                        </div>
-
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                            <input type="text" name="namalengkap" class="form-control"
-                                                placeholder="Nama lengkap">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <input type="text" name="notelp" class="form-control" placeholder="No telp">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" name="asalsekolah" class="form-control"
-                                                placeholder="Asal sekolah">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" name="email" class="form-control" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="tombol_login">Kirim</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <script type="text/javascript" src="{{asset('/strap')}}/js/jquery-3.2.1.min.js"></script>
-
-                        <script type="text/javascript" src="{{asset('/frontend')}}/js/bootstrap.js"></script>
-
-                    </div>
                 </div>
             </div>
-
-        </section>
-
-        </b>
-        </h4>
-
-</div>
-</body>
-
 </div>
 
+</section>
+
+</b>
+</h4>
+</div>
+</section>
 </div>
 
 @include('base/futerb')

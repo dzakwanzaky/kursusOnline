@@ -60,6 +60,41 @@
                                                 value="{{ $d->keterangan}}">
                                         </div>
 
+                                        <div class="form-group">
+                                            <label for="">Keterangan :</label>
+                                            <input type="text" class="form-control" id="keterangan" name="keterangan"
+                                                value="{{ $d->keterangan}}">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Keterangan Rinci :</label>
+                                            <input type="text" class="form-control" id="keterangan_rinci"
+                                                name="keterangan_rinci" value="{{ $d->keterangan_rinci}}">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Gambar :</label>
+                                            @if($d->file==null)
+                                            <img id="gambar" class="navbar-brand-full"
+                                                src="{{('/tema/images/user.png')}}" width="300px" alt="upload foto"
+                                                style="display:block; margin-left:auto; margin-right:auto;">
+                                            @else
+                                            <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
+                                                <img id="gambar" width="250px" src="{{ url('/data_file/'.$d->file) }}"
+                                                    style="display:block; margin-left:auto; margin-right:auto;">
+                                            </a>
+                                            @endif
+                                            <br>
+                                        <div>
+                                            <label for="change_pic">Ganti Gambar</label>
+                                            <br>
+                                            <strong style=>Info!</strong> Maximum Size Upload : 2MB
+                                            <input id="foto" class="form-control" name="file" type="file">
+                                        </div>
+
+                                        </div>
+                                    
+
                                         <div class="d-flex">
                                             <button type="submit" class="btn btn-primary d-block"
                                                 style="width: 180px; border-radius:50px;margin-left:35%;"
@@ -81,6 +116,7 @@
                         </div>
                         <!-- /.col-md-6 -->
 
+
                     </div>
                     <!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -90,4 +126,26 @@
     </div>
 </div>
 <!-- /.content-header -->
+@endsection
+@section('sweet')
+<script>
+    //buat profile
+    $(function () {
+        $("#foto").change(function () {
+            readURL(this);
+        });
+    });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#gambar').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+   
+</script>
 @endsection

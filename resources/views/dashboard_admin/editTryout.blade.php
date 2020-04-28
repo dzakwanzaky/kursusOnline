@@ -56,20 +56,66 @@
                                         </label>
                                     </div>
 
-                                    <div class="card-body">
-                                        <label for="">Kategori :</label>
-                                        <select id="kategori" name="kategori" class="form-control">
-                                            <option value="{{ $d->kategori }}">{{ $d->kategori }}</option>
-                                            <option value="Senin">SD</option>
-                                            <option value="Selasa">SMP</option>
-                                            <option value="Rabu">SMA</option>
-                                            <option value="Kamis">SBMPTN</option>
-                                            <option value="Jum'at">STAN</option>
-                                            <option value="Sabtu">UTUL UGM</option>
-                                            <option value="Minggu">CPNS</option>
-                                            <option value="Minggu">KOMPUTER</option>
+                                    <div>
+                                        <label for="">Program :</label>
+                                        <select id="program" name="program_id" class="form-control" required>
+                                            <option value="{{ $d->id }}">{{ $d->program->program }}</option>
+                                            @endforeach
+                                            @foreach($program as $d)
+                                            <option value="{{ $d->id }}">{{ $d->program }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
+                                    @foreach($data as $d)
+                                    <div id="mapel-sd">
+                                        <label for="">Mata Pelajaran :</label>
+                                        <select id="mata_pelajaran" name="mapel_id" class="form-control" required>
+                                        <option value="{{ $d->id }}">{{ $d->mapel->mapel }}</option>
+                                        @endforeach
+                                            @foreach($sd as $d)
+                                            <option value="{{ $d->id }}">{{ $d->mapel }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    @foreach($data as $d)
+                                    <div id="mapel-smp">
+                                        <label for="">Mata Pelajaran :</label>
+                                        <select id="mata_pelajaran" name="mapel_id" class="form-control" required>
+                                        <option value="{{ $d->id }}">{{ $d->mapel->mapel }}</option>
+                                        @endforeach
+                                            @foreach($smp as $d)
+                                            <option value="{{ $d->id }}">{{ $d->mapel }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    @foreach($data as $d)
+                                    <div id="mapel-sma">
+                                        <label for="">Mata Pelajaran :</label>
+                                        <select id="mata_pelajaran" name="mapel_id" class="form-control" required>
+                                        <option value="{{ $d->id }}">{{ $d->mapel->mapel }}</option>
+                                            @endforeach
+                                            @foreach($sma as $d)
+                                            <option value="{{ $d->id }}">{{ $d->mapel }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    @foreach($data as $d)
+                                    <div id="mapel-sbm">
+                                        <label for="">Mata Pelajaran :</label>
+                                        <select id="mata_pelajaran" name="mapel_id" class="form-control" required>
+                                        <option value="{{ $d->id }}">{{ $d->mapel->mapel }}</option>
+                                        @endforeach
+                                            @foreach($sbm as $d)
+                                            <option value="{{ $d->id }}">{{ $d->mapel }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <br>
+
                                     <div class="d-flex">
                                         <button type="submit" class="btn btn-primary d-block"
                                             style="width: 180px; border-radius:50px;margin-left:35%;"
@@ -92,20 +138,51 @@
             <br>
 
             </form>
-            @endforeach
+           
         </div>
     </div>
 </div>
 <!-- /.content -->
-</div>
+
 <!-- /.content-wrapper -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 @endsection
 @section('sweet')
 <script>
-
-
-
-</script>
-@endsection
+    $('#mapel-sd').hide();
+    $('#mapel-smp').hide();
+    $('#mapel-sma').hide();
+    $('#mapel-sbm').hide();
+    $(document).ready(function () {
+        $("#program").change(function () {
+            if ($(this).val() == "1") {
+                $('#mapel-sd').show().find('input, textarea, select').prop('disabled', false);
+                $('#mapel-smp').hide().find('input, textarea, select').prop('disabled', true);
+                $('#mapel-sma').hide().find('input, textarea, select').prop('disabled', true);
+                $('#mapel-sbm').hide().find('input, textarea, select').prop('disabled', true);
+            } else if ($(this).val() == "2") {
+                $('#mapel-sd').hide();
+                $('#mapel-smp').show().find('input, textarea, select').prop('disabled', false);
+                $('#mapel-sma').hide().find('input, textarea, select').prop('disabled', true);
+                $('#mapel-sbm').hide().find('input, textarea, select').prop('disabled', true);
+            } else if ($(this).val() == "3") {
+                $('#mapel-sd').hide().find('input, textarea, select').prop('disabled', true);
+                $('#mapel-smp').hide().find('input, textarea, select').prop('disabled', true);
+                $('#mapel-sma').show().find('input, textarea, select').prop('disabled', false);
+                $('#mapel-sbm').hide().find('input, textarea, select').prop('disabled', true);
+            } else if ($(this).val() == "4") {
+                $('#mapel-sd').hide().find('input, textarea, select').prop('disabled', true);
+                $('#mapel-smp').hide().find('input, textarea, select').prop('disabled', true);
+                $('#mapel-sma').hide().find('input, textarea, select').prop('disabled', true);
+                $('#mapel-sbm').show().find('input, textarea, select').prop('disabled', false);
+            } else {
+                $('#mapel-sd').hide().find('input, textarea, select').prop('disabled', true);
+                $('#mapel-smp').hide().find('input, textarea, select').prop('disabled', true);
+                $('#mapel-sma').hide().find('input, textarea, select').prop('disabled', true);
+                $('#mapel-sbm').hide().find('input, textarea, select').prop('disabled', true);
+            }
+        });
+    });
+    </script>
+    @endsection

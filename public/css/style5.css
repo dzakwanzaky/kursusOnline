@@ -260,7 +260,8 @@ h2 {
 body {
     font-size: 14px;
     line-height: 1.8;
-    color: #222;
+    color: #898484
+    font-weight:lighter;
     background: #fff;
     font-weight: 600;
     font-family: Roboto;

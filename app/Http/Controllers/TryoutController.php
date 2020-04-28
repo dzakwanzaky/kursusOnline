@@ -36,7 +36,7 @@ class TryoutController extends Controller
         $bind = ModelTryout::where('program_id', '1')->where('mapel_id', '3')->get();
         $ipa = ModelTryout::where('program_id', '1')->where('mapel_id', '2')->get();
         $mat = ModelTryout::where('program_id', '1')->where('mapel_id', '1')->get();
-        return view('base.sd', compact('bind', 'ipa', 'mat',));   
+        return view('base.sd', compact('bind', 'ipa', 'mat'));   
     }
 
     public function tryoutSMP(){
@@ -75,6 +75,10 @@ class TryoutController extends Controller
 		return view('base/soal',['data' => $data,'max_number'=>$many_data]);
     }
 
+    public function akses($program_id){
+        return view('base.aksessoal', compact('program_id'));
+    }
+
 
     public function store(Request $request)
     {
@@ -90,7 +94,12 @@ class TryoutController extends Controller
     public function edit($id)
     {
         $data = ModelTryout::where('id','=',$id)->get();
-        return view('dashboard_admin.editTryout', compact('data'));
+        $sd = ModelMapel::where('id_program', '1')->get();
+        $smp = ModelMapel::where('id_program', '2')->get();
+        $sma = ModelMapel::where('id_program', '3')->get();
+        $sbm = ModelMapel::where('id_program', '4')->get();
+        $program = ModelProgram::all();
+        return view('dashboard_admin.editTryout', compact('data', 'sd', 'smp', 'sma', 'sbm', 'program'));
     }
 
     public function update(Request $request, $id)

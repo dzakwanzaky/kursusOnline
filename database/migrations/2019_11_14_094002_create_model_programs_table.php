@@ -17,6 +17,8 @@ class CreateModelProgramsTable extends Migration
             $table->bigIncrements('id');
             $table->string('program', '30');
             $table->string('keterangan');
+            $table->string('keterangan_rinci')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }

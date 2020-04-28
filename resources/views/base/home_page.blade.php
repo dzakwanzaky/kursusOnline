@@ -206,7 +206,7 @@
                         <div class="testimony-wrap p-4 pb-5">
                             <div class="user-img mb-4">
                                 <img class="user-img mb-4" src="{{ url('/data_file/'.$d->siswa->file) }}"
-                                    style="display:block; margin-left:auto; margin-right:auto;">
+                                    style="display:block; margin-left:auto; margin-right:auto; width: 83px; height: 77px;">
                                 <span class="quote d-flex align-items-center justify-content-center">
                                     <i class="icon-quote-left"></i>
                                 </span>

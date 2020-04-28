@@ -70,7 +70,27 @@ class AuthControllerAPI extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    public function store(Request $request)
+    //siswa
+    public function storeSiswa(Request $request)
+    {
+                $user = new User;
+                $user->name = $request->input('name');
+                $user->email = $request->input('email');
+                $user->password = Hash::make($request->input('password'));
+                $user->phone= $request->input('phone');
+                $user->role = $request->input('role');
+                $user->active= 0;
+        if($user){
+            if($user->save()){
+                $res['message'] = "Success!";
+                $res['value'] = "$user";
+                return response($res);
+            }
+        }
+    }
+
+    //tutor
+    public function storeTutor(Request $request)
     {
                 $user = new User;
                 $user->name = $request->input('name');

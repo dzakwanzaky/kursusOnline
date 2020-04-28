@@ -12,15 +12,17 @@
 
 Auth::routes(['verify' => true]);
 
-Route::get('/wizardsbm', function () {
-    return view('base/aksessoal');
-});
+
+Route::get('/wizardsbm/{program_id}', 'TryoutController@akses')->name('wizardsbm');
+
 
 Route::get('/ping', function () {
     return view('base/ting');
 });
 
 Route::get('/pakt', 'PaketController@index');
+Route::get('/program/{id}/rinci', 'ProgramController@rinci');
+Route::get('/program/{id_program}/rinci/{id}', 'ProgramController@tryout')->name('soalFilter');
 
 Route::get('paket/kategori/{id}', 'PaketController@kategori');
 

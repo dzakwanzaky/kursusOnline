@@ -5,6 +5,7 @@ use App\ModelJadwal;
 use App\ModelSiswa;
 use App\ModelInvoice;
 use App\ModelProgram;
+use App\ModelTryout;
 use App\ModelMapel;
 use Auth;
 use PDF;
@@ -83,7 +84,16 @@ class ProgramController extends Controller
         $data = new ModelProgram();
         $data->program = $request->program;
         $data->keterangan = $request->keterangan;
+        $data->keterangan_rinci = $request->keterangan_rinci;
+        if($request->file){
+            $file = $request->file('file');
+            $nama_file = time()."_".$file->getClientOriginalName();  
+            $tujuan_upload = 'data_file';
+            $file->move($tujuan_upload,$nama_file);
+            $data->file = $nama_file;  
+        }
         $data->save();
+
 
         foreach ($request->mapel as $key => $value){
         $paket = new ModelMapel();
@@ -101,7 +111,18 @@ class ProgramController extends Controller
         $data = ModelProgram::where('id',$id)->first();
         $data->program = $request->program;
         $data->keterangan = $request->keterangan;
+        $data->keterangan_rinci = $request->keterangan_rinci;
+
+        if($request->file){
+            $file = $request->file('file');
+            $nama_file = time()."_".$file->getClientOriginalName();  
+            $tujuan_upload = 'data_file';
+            $file->move($tujuan_upload,$nama_file);
+            $data->file = $nama_file;  
+        }
         $data->save();
+
+
         return redirect('manajemenProgram')->withMessage('Berhasil Merubah Data');
     }
 
@@ -118,5 +139,17 @@ class ProgramController extends Controller
         return view('dashboard_admin.daftarMapel', compact('data', 'datas'));   
     }
 
+   public function rinci($id)
+   {
+    $rinci = \App\ModelProgram::find($id);
+    $data = \DB::table('model_mapels')->where('id_program', $id)->get();
+     $dat = \DB::table('model_tryouts')->where('program_id',$id)->get();
+    return view('base.sd', compact('rinci','data','dat'));
+   }
    
+   public function tryout($id_program, $id)
+   {
+    $data = ModelTryout::where('program_id', $id_program)->where('mapel_id', $id)->get();
+    return view('base.soalFilter', compact('data'));
+   }
 }

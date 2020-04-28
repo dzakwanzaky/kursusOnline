@@ -49,7 +49,10 @@
                </div>
            </div>
        </section>
- 
+<br>
+<br>
+<br>
+<br>
 
 
        @endforeach
@@ -58,7 +61,7 @@
        </div>
        </div>
        </section>
-
+@include('base/futerbawah')
        <script src="{{asset('/button')}}/jquery.min.js" type="text/javascript"></script>
        <script src="{{asset('/button')}}/owl.carousel.js" type="text/javascript"></script>
        <script type="text/javascript">
@@ -66,6 +69,7 @@
                loop: true,
                margin: 10,
                nav: false,
+               autoplay:0.3,
                responsive: {
                    0: {
                        items: 1

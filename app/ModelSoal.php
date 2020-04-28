@@ -10,4 +10,8 @@ class ModelSoal extends Model
         'id_to', 'nomor_soal', 'file', 'soal', 'option_a', 'option_b', 'option_c', 
         'option_d', 'option_e', 'jawaban', 'pembahasan',
     ];
+
+    public function tryout(){
+        return $this->belongsTo('App\ModelTryout', 'id_to');
+    }
 }
