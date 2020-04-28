@@ -56,6 +56,14 @@
 						<label for="">Keterangan :</label>
 						<input type="text" class="form-control" id="keterangan" name="keterangan" value="{{ $d->keterangan}}" >
 					</div>
+          <div class="form-group">
+            <label for="">Keterangan Rinci :</label>
+            <input type="text" class="form-control" id="keterangan_rinci" name="keterangan_rinci" value="{{ $d->keterangan_rinci}}" >
+          </div>
+          <div class="form-group">
+            <label for="">Gambar :</label>
+            <input type="file" class="form-control" id="avatar" name="avatar" value="{{ $d->avatar}}" >
+          </div>
 
                     <div class="form-group">
                             <button type="submit" class="btn btn-md btn-success" onclick="return confirm('Anda yakin ingin merubah data?')">Simpan</button>

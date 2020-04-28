@@ -4,7 +4,7 @@
 
 	<style type="text/css">
 	.awake {
-	background-color: #fafafa;
+	background-color: #f4f6f9;
 	height: 120%;
 
 }
@@ -656,7 +656,7 @@ p{
 
 <div class="awake">
 
-            	<section class="search-course-area relative" style="background:url('frontend/img/satu.png')">
+            	<section class="search-course-area relative" style="background:url('frontend/img/satuu.jpg')">
 			
 				<div class="container">
 					<body bgcolor="#ffffff">

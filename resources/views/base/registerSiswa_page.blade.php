@@ -1,7 +1,17 @@
 @include('base/header_page')
 @extends('base/script_page')
 @section('content')
+  <style type="text/css">
+    h2 {
+        margin-left: 3em;
 
+    }
+    labell {
+        font-size: 17px;
+
+    }
+  
+</style>
     <div class="main">
             <div class="card">
               <div class="card-body">
@@ -9,9 +19,9 @@
                     {{ csrf_field() }}
 
                     <h2 class="form-title">Daftar Akun Murid</h2>
-
+                    
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                        <label for="name">Nama Lengkap</label>
+                        <labell for="name">Nama Lengkap</labell>
 
                         <div class="form-title">
                             <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Masukan nama Anda" required autofocus>
@@ -25,7 +35,7 @@
                     </div>
 
                     <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                        <label for="phone">No Telepon</label>
+                        <labell for="phone">No Telepon</labell>
 
                         <div class="form-title">
                             <input id="phone" type="phone" class="form-control" name="phone"  placeholder="Masukan no telp Anda" required>
@@ -39,7 +49,7 @@
                     </div>
 
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <label for="email">Email</label>
+                        <labell for="email">Email</labell>
 
                         <div class="form-title">
                             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"  placeholder="Masukan email Anda" required>
@@ -53,7 +63,7 @@
                     </div>
 
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                      <label for="password">Kata Sandi</label>
+                      <labell for="password">Kata Sandi</labell>
                       <div class="input-group">
                       <input id="password" type="password" name="password" class="form-control" data-toggle="password" placeholder="Masukan kata sandi Anda" required>
                       <div class="input-group-append">
@@ -71,7 +81,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="password-confirm">Konfirmasi Kata Sandi</label>
+                        <labell for="password-confirm">Konfirmasi Kata Sandi</labell>
                     
                       <div class="input-group">
                       <input id="password_confirmation" type="password" name="password_confirmation" class="form-control" data-toggle="password" placeholder="Masukan ulang kata sandi Anda" required>

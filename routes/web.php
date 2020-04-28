@@ -21,6 +21,8 @@ Route::get('/ping', function () {
 });
 
 Route::get('/pakt', 'PaketController@index');
+Route::get('/program/{id}/rinci', 'ProgramController@rinci');
+Route::get('/programtryout/{mapel}', 'ProgramController@tryout')->name('probel.tryout');
 
 Route::get('paket/kategori/{id}', 'PaketController@kategori');
 

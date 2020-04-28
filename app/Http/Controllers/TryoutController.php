@@ -36,7 +36,7 @@ class TryoutController extends Controller
         $bind = ModelTryout::where('program_id', '1')->where('mapel_id', '3')->get();
         $ipa = ModelTryout::where('program_id', '1')->where('mapel_id', '2')->get();
         $mat = ModelTryout::where('program_id', '1')->where('mapel_id', '1')->get();
-        return view('base.sd', compact('bind', 'ipa', 'mat',));   
+        return view('base.sd', compact('bind', 'ipa', 'mat'));   
     }
 
     public function tryoutSMP(){

@@ -51,6 +51,18 @@
 
                                             </textarea>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="">Keterangan Rinci :</label>
+                                            <textarea type="text" class="form-control" id="keterangan_rinci" name="keterangan_rinci"
+                                                required>
+
+
+                                            </textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Gambar :</label>
+                                            <input type="file" class="form-control" id="avatar" name="avatar">
+                                        </div>
 
                                     </div>
                                 </div>
