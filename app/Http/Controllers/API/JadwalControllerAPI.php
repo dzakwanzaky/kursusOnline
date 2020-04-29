@@ -77,8 +77,9 @@ class JadwalControllerAPI extends Controller
         $invoice = new ModelInvoice();
         $invoice->invoice = $request->invoice;
         $invoice->id_murid = $request->id_murid;
-        $invoice->program = $request->program;
-        $invoice->kelas = $request->kelas;
+        $invoice->program_id = $request->program_id;
+        $invoice->kategori = $request->kategori;
+        $invoice->kelas_id = $request->kelas_id;
         $invoice->jumlah_sesi = $request->jumlah_sesi;
         $invoice->jumlah_mapel = $request->jumlah_mapel;
         $invoice->harga = $request->harga;
@@ -87,7 +88,7 @@ class JadwalControllerAPI extends Controller
                 $data = new ModelJadwal();
                 $data->invoice_id = $invoice->id;
                 $data->murid_id = $request->murid_id[$key];
-                $data->mata_pelajaran = $value;
+                $data->mapel_id = $value;
                 $data->hari1 = $request->hari1[$key];
                 $data->hari2 = $request->hari2[$key];
                 $data->waktu_hari1 = $request->waktu_hari1[$key];

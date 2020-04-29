@@ -23,6 +23,7 @@ class SiswaControllerAPI extends Controller
         $data->id = $request->id;
         $data->nama_siswa = $request->nama_siswa;
         $data->jenis_kelamin = $request->jenis_kelamin;
+        $data->tanggal_lahir = $request->tanggal_lahir;
         
         $file = $request->file('file');
         $nama_file = time()."_".$file->getClientOriginalName();  
@@ -57,6 +58,8 @@ class SiswaControllerAPI extends Controller
     {
         $data = ModelSiswa::where('id',$id)->first();
         $data->nama_siswa = $request->nama_siswa;
+        $data->jenis_kelamin = $request->jenis_kelamin;
+        $data->tanggal_lahir = $request->tanggal_lahir;
         $data->provinsi = $request->provinsi;
         $data->kecamatan = $request->kecamatan;
         $data->kabupaten = $request->kabupaten;

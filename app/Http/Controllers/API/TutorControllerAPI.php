@@ -38,6 +38,7 @@ class TutorControllerAPI extends Controller
     {
         $data->id = $request->id;
         $data->jenis_kelamin = $request->jenis_kelamin;
+        $data->tanggal_lahir = $request->tanggal_lahir;
         $data->provinsi = $request->provinsi;
         $data->kabupaten = $request->kabupaten;
         $data->kecamatan = $request->kecamatan;
@@ -85,6 +86,8 @@ class TutorControllerAPI extends Controller
         $data->kabupaten = $request->kabupaten;
         $data->kecamatan = $request->kecamatan;
         $data->provinsi = $request->provinsi;
+        $data->jenis_kelamin = $request->jenis_kelamin;
+        $data->tanggal_lahir = $request->tanggal_lahir;
         $data->status = $request->status;
         if($request->foto){
             $foto = $request->file('foto');
