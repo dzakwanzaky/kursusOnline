@@ -12,6 +12,11 @@
 </html>
 @extends('murid/base')
 @section('content')
+<style type="text/css">
+    .rounded img {
+        border-radius: 52em;
+    }
+</style>
 <!-- Content Wrapper. Contains page content -->
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -46,25 +51,26 @@
                 <div class="col-4">
                     <div class="card">
                         <div class="card-body">
-                            <i class="fas fa-user mr-2"></i>Foto Profile
+                            <i class="fas fa-user mr-2"></i>Foto Profil
 
                             <hr class="photo">
                             <div class="d-flex justify-content-center" style="overflow-x:auto;">
                                 @if($d->file==null)
-                                <img id="gambar" class="navbar-brand-full" src="{{('/tema/images/user.png')}}"
-                                    width="300px" alt="upload foto"
-                                    style="display:block; margin-left:auto; margin-right:auto;">
+                                <div class="rounded" >
+                            <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="180px" height="180px">
+                        </div>
                                 @else
                                 <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
-                                    <img id="gambar" width="250px" src="{{ url('/data_file/'.$d->file) }}"
-                                        style="display:block; margin-left:auto; margin-right:auto;">
-                                </a>
+                                <div class="rounded">
+                                <img width="180px" height="180px" src="{{ url('/data_file/'.$d->file) }}">
+                            </a>
+                        </div>
                                 @endif
 
                             </div>
                             <br>
                             <div style="text-align:center">
-                                <label for="change_pic">Ganti Foto Profile</label>
+                                <label for="change_pic">Ganti Foto Profil</label>
 
                                 <br>
                                 <strong style=>Info!</strong> Maximum Size Upload : 2MB
@@ -80,41 +86,30 @@
                                 <tbody>
                                     <tr>
                                         <th>
-                                            Provinsi
+                                            Nama Lengkap
                                             <input name="provinsi" type="text" class="form-control"
-                                                value="{{ $d->provinsi }}" style="margin-right:190px;">
+                                                value="" style="margin-right:190px;">
                                         </th>
                                     </tr>
                                     <tr>
                                         <th>
-                                            Kabupaten
+                                            No Telepon
                                             <input name="kabupaten" type="text" class="form-control"
-                                                value="{{ $d->kabupaten }}" style="margin-right:190px;">
+                                                value="" style="margin-right:190px;">
                                         </th>
                                     </tr>
                                     <tr>
                                         <th>
-                                            Kecamatan
+                                            Email
                                             <input name="kecamatan" type="text" class="form-control"
                                                 value="{{ $d->kecamatan }}" style="margin-right:190px;">
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th>
-                                            Jenis Kelamin
-                                            <select id="jenis_kelamin" name="jenis_kelamin" class="form-control">
-                                                <option value="{{ $d->jenis_kelamin }}">{{ $d->jenis_kelamin }}</option>
-                                                <option value="Laki-Laki">Laki-Laki</option>
-                                                <option value="Perempuan">Perempuan</option>
-                                            </select>
-                                        </th>
+                                        
                                     </tr>
                                     <tr>
-                                        <th>
-                                            Tanggal Lahir
-                                            <input class="form-control" id="tanggal" name="tanggal_lahir"
-                                                placeholder="MM/DD/YYY" type="text" value="{{ $d->tanggal_lahir }}">
-                                        </th>
+                                       
                                     </tr>
                                     <input type=" text" class="form-control" id="status" name="status"
                                         value=" {{ $d->status }}" style="display:none">
