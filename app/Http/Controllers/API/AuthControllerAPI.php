@@ -101,6 +101,7 @@ class AuthControllerAPI extends Controller
                 $user->active= 0;
         if($user){
             if($user->save()){
+                $user->sendEmailVerificationNotification();
                 $res['message'] = "Success!";
                 $res['value'] = "$user";
                 return response($res);

@@ -13,7 +13,7 @@
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-user"></i>
+        <img src="{{url('/data_file/'.DB::table('model_tutors')->where('id', '=', Auth::user()->id)->value('foto'))}}" class="img-circle" alt="User Image" style="width:35px;height:35px;">&nbsp;&nbsp;
           <span>Halo, {{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -23,7 +23,7 @@
             <i class="fas fa-user"></i> Profil 
           </a>
           <a href="/changePasswordTutor" class="dropdown-item">
-            <i class="fas fa-edit"></i> Ganti Password
+            <i class="fas fa-edit"></i> Ubah Password
           </a>
           <a href="{{ url('/landing') }}" class="nav-link btn-login; dropdown-item"
                             onclick="event.preventDefault();
