@@ -57,11 +57,25 @@
                                             <button class="btn btn-sm btn-warning" style="color:white" >
                                                 {{ $d->status }}</button>
                                         </td>
-                                        <form action="{{ route('konfirmasiTutor', $d->id) }}" 
+                                        <td class="d-flex">
+                                            <form action="{{ route('dataTutor.update', $d->id) }}" method="post"
                                                 enctype="multipart/form-data">
                                                 {{ csrf_field() }}
                                                 {{ method_field('PUT') }}
-                                        <td class="d-flex">
+                                                <input style="display:none" type="text" class="form-control"
+                                                    id="nama_tutor" name="nama_tutor" value="{{ $d->nama_tutor }}">
+                                                <input style="display:none" type="text" class="form-control"
+                                                    id="pendidikan" name="pendidikan" value="{{ $d->pendidikan }}">
+                                                <input style="display:none" type="text" class="form-control"
+                                                    id="mata_pelajaran" name="mata_pelajaran"
+                                                    value="{{ $d->mata_pelajaran }}">
+                                                <input style="display:none" type="text" class="form-control" id="kabupaten"
+                                                    name="kabupaten" value="{{ $d->kabupaten }}">
+                                                <input style="display:none" type="text" class="form-control"
+                                                    id="kecamatan" name="kecamatan" value="{{ $d->kecamatan }}">
+                                                <input style="display:none" type="text" class="form-control"
+                                                    id="provinsi" name="provinsi" value="{{ $d->provinsi }}">
+
                                                 <a id="status" name="status" class="btn btn-sm btn-info mr-2"
                                                     data-toggle="tooltip" data-placement="top" title="Detail Tutor"
                                                     style="color:white" href="{{route('profileTutorAdmin', $d->id)}}">

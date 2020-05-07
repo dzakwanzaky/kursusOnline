@@ -18,7 +18,7 @@ class CreateModelInvoice extends Migration
             $table->string('invoice');
             $table->biginteger('id_murid')->unsigned();
             $table->biginteger('program_id')->unsigned();
-            $table->enum('kategori', ['OFFLINE', 'ONLINE'])->nullable();
+            $table->string('kategori', '15');
             $table->biginteger('kelas_id')->nullable()->unsigned();
             $table->integer('jumlah_sesi');
             $table->integer('jumlah_mapel');

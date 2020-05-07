@@ -14,7 +14,7 @@
                                 <div class="container-fluid">
                                     <div class="row mb-2">
                                         <div class="col-sm-6">
-                                            <h1 class="m-0 text-dark">Detail Tutor</h1>
+                                            <h1 class="m-0 text-dark">Profile Tutor</h1>
                                         </div>
                                         <div class="col-sm-6">
                                             <ol class="breadcrumb float-md-right" style="font-size:14px">
@@ -154,7 +154,7 @@
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $d->jadwal->name }}</td>
-                                            <td>{{ $d->invoice->kelas->kelas }}</td>
+                                            <td>{{ $d->invoice->kelas }}</td>
                                             <td>{{ $d->mapel->mapel }}</td>
                                             <td>{{ $d->hari1 }} {{ $d->waktu_hari1 }}</td>
                                             <td id="hari2td">{{ $d->hari2 }} {{ $d->waktu_hari2 }}</td>

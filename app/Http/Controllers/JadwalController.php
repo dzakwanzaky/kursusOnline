@@ -275,12 +275,12 @@ class JadwalController extends Controller
         $data->status = $request->status;
         $data->save();
         if(Auth::user()->role == 'tutor'){
-              return redirect('tutor')->with('success', 'Berhasil Mengajukan Jadwal');
+        return redirect('tutor')->withMessage('Berhasil Konfirmasi');
         } else {
             if ($data->status == 'AKTIF'){
-                return redirect('list_pendaftaranTutor')->with('success', 'Berhasil Konfirmasi');
+                return redirect('list_pendaftaranTutor')->withMessage('Berhasil Konfirmasi');
             } else {
-                return redirect('jadwalTidakAktif')->with('success', 'Berhasil Menonaktifkan');
+                return redirect('jadwalTidakAktif')->withMessage('Berhasil Konfirmasi');
             }
         }
     }

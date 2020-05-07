@@ -210,9 +210,7 @@ Route::middleware(['admin'])->group(function () {
     Route::get('daftarMapel/{id_program}','ProgramController@lihatMapel')->name('daftarMapel');
     Route::get('tambahMapel/{id}','MapelController@index')->name('tambahMapel');
     Route::get('status/{id}','SiswaController@status')->name('status');
-    Route::get('konfirmasi/{id}','SiswaController@konfirmasi')->name('konfirmasi');
     Route::get('statusTutor/{id}','TutorController@statusTutor')->name('statusTutor');
-    Route::get('konfirmasiTutor/{id}','TutorController@konfirmasiTutor')->name('konfirmasiTutor');
     Route::get('kehadiranTutor/{id}','AbsenController@kehadiranTutor')->name('kehadiranTutor');
     Route::get('profileTutorAdmin/{id}','TutorController@profileTutorAdmin')->name('profileTutorAdmin');
     Route::get('profileSiswaAdmin/{id}','SiswaController@profileSiswaAdmin')->name('profileSiswaAdmin');

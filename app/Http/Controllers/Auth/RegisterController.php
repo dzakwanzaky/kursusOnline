@@ -106,6 +106,11 @@ class RegisterController extends Controller
             $user->save();
             $user->sendEmailVerificationNotification();
             return redirect('verify?email='.$user->email);
+        //     if ($user ['role'] == 'tutor'){
+        //         return redirect('dataSiswa')->withMessage('Berhasil Mendaftar');
+        //         } else {
+        //             return redirect('dataTutor')->withMessage('Berhasil Mendaftar');
+        //         }
         }
     }
 

@@ -64,6 +64,7 @@
                             <h6 class="font-weight-normal" style="text-align:center" value="{{ $u->phone }}">
                                 {{ $u->phone }}</h6>
                                 <br>
+                                <a href="{{route('register.edit',$u->id)}}" class="btn-edit-info"  style="display:block; margin-left:auto; margin-right:auto;">Pengaturan Akun</a> 			
 
                             @endforeach
                             @foreach($data as $d)
@@ -79,7 +80,7 @@
                                     <th>
                                         Alamat
                                         <input type="text" class="form-control"
-                                            value="{{ $d->provinsi }} {{ $d->kabupaten }} {{ $d->kecamatan }} {{ $d->alamat_detail }}"
+                                            value="{{ $d->provinsi }} {{ $d->kabupaten }} {{ $d->kecamatan }}"
                                             style="margin-right:190px;background:white;border:none" disabled>
                                     </th>
                                 </tr>

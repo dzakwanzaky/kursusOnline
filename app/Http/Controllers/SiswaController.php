@@ -30,7 +30,7 @@ class SiswaController extends Controller
 
      
     public function daftarSiswaBelumAktif(){
-        $data = ModelSiswa::where('status', 'BELUM AKTIF')->get();
+        $data = ModelSiswa::where('status', 'BELUM DIBAYAR')->get();
         return view('dashboard_admin.daftarSiswaBelumAktif', compact('data'));
     }
 
@@ -122,15 +122,8 @@ class SiswaController extends Controller
             $data = ModelSiswa::where('id', $id)->first();
             $data->status = $request->status;
             $data->save();
-            return redirect('daftarSiswaTidakAktif')->with('success', 'Berhasil Menonaktifkan Siswa');
+            return redirect('daftarSiswaTidakAktif');
     }
-
-    public function konfirmasi(Request $request, $id){
-        $data = ModelSiswa::where('id', $id)->first();
-        $data->status = $request->status;
-        $data->save();
-        return redirect('daftarSiswa')->with('success', 'Berhasil Mengaktifkan Siswa');
-}
 
     public function dashboard()
     {

@@ -48,15 +48,7 @@ class TutorController extends Controller
         $data = ModelTutor::where('id', $id)->first();
         $data->status = $request->status;
         $data->save();
-        return redirect('daftarTutorTidakAktif')->with('success', 'Berhasil Menonaktifkan Tutor');
-    }
-
-    
-    public function konfirmasiTutor(Request $request, $id){
-        $data = ModelTutor::where('id', $id)->first();
-        $data->status = $request->status;
-        $data->save();
-        return redirect('daftarTutor')->with('success', 'Berhasil Menonaktifkan Tutor');
+        return redirect('daftarTutorTidakAktif');
     }
 
     public function daftarTutorBelumAktif(){
@@ -152,23 +144,15 @@ class TutorController extends Controller
     public function edit($id)
     {
         $data = ModelTutor::where('id','=',$id)->get();
-        $user = User::where('id','=',$id)->get();
-        $provinsi = Provinsi::all()->pluck("provinsi", "id");
-        return view('tutor.editprofile', compact('data', 'provinsi', 'user'));
+        return view('tutor.editprofile', compact('data'));
     }
 
     public function update(Request $request, $id)
     {
-        $user = User::where('id',$id)->first();
-        $user->name = $request->name;
-        $user->phone = $request->phone;
-        $user->save();
-        
         $data = ModelTutor::where('id',$id)->first();
         $data->kabupaten = $request->kabupaten;
         $data->kecamatan = $request->kecamatan;
         $data->provinsi = $request->provinsi;
-        $data->alamat_detail = $request->alamat_detail;
         $data->jenis_kelamin = $request->jenis_kelamin;
         $data->tanggal_lahir = $request->tanggal_lahir;
         $data->status = $request->status;
@@ -180,18 +164,10 @@ class TutorController extends Controller
             $data->foto = $nama_file;  
          }
         $data->save();
-        if ($request->email) {
-            $user->email = $request->email;
-            $user->email_verified_at=NULL;
-            $user->active=0;
-            $user->save();
-            $user->sendEmailVerificationNotification();
-            return redirect('verify?email='.$user->email);
-        }
-        else if(Auth::user()->role == 'tutor'){
-            return redirect('profile')->with('success', 'Berhasil Konfirmasi');
+        if(Auth::user()->role == 'tutor'){
+            return redirect('profile')->withMessage('Berhasil Konfirmasi');
             } else {
-                return redirect('daftarTutor')->with('success', 'Berhasil Konfirmasi');
+                return redirect('daftarTutor')->withMessage('Berhasil Konfirmasi');
             }
     }
 

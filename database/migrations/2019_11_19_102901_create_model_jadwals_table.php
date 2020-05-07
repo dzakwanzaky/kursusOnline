@@ -27,7 +27,6 @@ class CreateModelJadwalsTable extends Migration
             $table->timestamps();
             $table->foreign('invoice_id')->references('id')->on('model_invoice')->onDelete('cascade');
             $table->foreign('murid_id')->references('id')->on('model_siswas')->onDelete('cascade');
-            $table->foreign('tutor_id')->references('id')->on('model_tutors')->onDelete('cascade');
             $table->foreign('mapel_id')->references('id')->on('model_mapels')->onDelete('cascade');
         });
     }

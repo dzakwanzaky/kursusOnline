@@ -23,7 +23,7 @@
           <div class="col-lg-12">
             <div class="card">
             <div class="card-body table-responsive-m"  style="overflow-x:auto;" >             
-              <table class="table table-responsive-lg table-bordered" id="jadwal">
+              <table class="table table-responsive-lg table-bordered small" id="jadwal">
                 <thead class="thead-dark"> 
                    <tr>
                         <th>Pertemuan Ke</th>
@@ -38,10 +38,12 @@
                         <tr>
                            <td>{{ $no++ }}</td>
                            <td>{{ $d->tanggal }}</td>
-                           <td>{{ $d->kehadiran }}</td>
                            <td>{{ $d->report }}</td>
-
-                               
+                          <td>
+                          <button>
+                          sebuah aksi
+                          </button>
+                          </td>       
                         </tr>  
                         @endforeach
        
@@ -54,7 +56,7 @@
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
-    
+    </div>
     <!-- /.content -->
   @endsection
   @section('sweet')

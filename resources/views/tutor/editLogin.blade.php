@@ -10,7 +10,7 @@
                 <div class="container-fluid">
                 <div class="row mb-2">
 					  <div class="col-sm-6">
-						  <h1>Pengaturan Akun</h1>
+						  <p style="font-size:24px">Profile Tutor</p>
 					  </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-md-right" style="font-size:14px">
@@ -56,19 +56,10 @@
 						<input type="text" class="form-control" id="email" name="email" value="{{$d->email}}">
 					</div>
 
-          <div class="d-flex">
-                                    <button type="submit" class="btn btn-primary d-block"
-                                        style="width: 180px; border-radius:50px;margin-left:35%;"
-                                        onclick="return confirm('Anda yakin data sudah benar?')">
-                                        Simpan
-                                    </button>
-                                    &nbsp;&nbsp;&nbsp;
-                                    <a class="btn btn-danger d-block" href="javascript:history.back()"
-                                        style="width: 180px; border-radius:50px;"
-                                        onclick="return confirm('Anda yakin ingin membatalkan?')">
-                                        Batal
-                                    </a>
-                                </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-md btn-success">Simpan</button>
+            <a href="/profile" class="btn btn-md btn-danger">Batal</a>
+          </div>
 				</form>
               </div>
             </div>

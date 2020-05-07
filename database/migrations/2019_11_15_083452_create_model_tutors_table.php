@@ -27,7 +27,7 @@ class CreateModelTutorsTable extends Migration
             $table->json('mapel_id')->nullable();
             $table->string('file');
             $table->string('foto')->nullable();
-            $table->enum('status', ['MENUNGGU', 'AKTIF', 'TIDAK AKTIF']);
+            $table->enum('status', ['MENUNGGU', 'AKTIF']);
             $table->timestamps();
             $table->foreign('id')->primary()->references('id')->on('users')->onDelete('cascade');
             $table->foreign('program_id')->references('id')->on('model_programs')->onDelete('cascade');

@@ -22,17 +22,17 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="alert alert-light" style="background-color:white;font-size:14px">
-                        <strong>INFO!</strong> Jika pembayaran sudah valid, klik tombol
-                        <button class="btn btn-sm btn-success">
-                            <i class="fas fa-check"></i>
-                        </button>
-                        untuk mengonfirmasi pembayaran.
-                    </div>
+                <div class="alert alert-light" style="background-color:white;font-size:14px">
+                                <strong>INFO!</strong> Jika pembayaran sudah valid, klik tombol
+                               <button  class="btn btn-sm btn-success">
+                               <i class="fas fa-check"></i>
+                               </button> 
+                                untuk mengonfirmasi pembayaran.
+                            </div>
                     <div class="card">
-
+                        
                         <div class="card-body table-responsive-m" style="overflow-x:auto;">
-
+                     
                             <table class="table table-bordered table-striped table-responsive-md" id="siswa">
                                 <thead class="thead-dark">
                                     <tr class="table-secondary" style="text-align:center; text-transform: uppercase">
@@ -56,8 +56,7 @@
                                         <td>{{ $d->kabupaten }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
                                         <td>
 
-                                            <button class=" btn btn-sm btn-warning"
-                                                style="text-align:center;color:white">
+                                            <button class=" btn btn-sm btn-warning" style="text-align:center;color:white">
                                                 {{ $d->status }}</button>
                                         </td>
 
@@ -71,16 +70,24 @@
                                             </a>
                                             @else
                                             <a href="{{ url('/data_file/'.$d->files->file) }}" target="_blank">
-                                                {{ $d->files->file }}
+                                               {{ $d->files->file }}
                                             </a>
                                             @endif
                                         </td>
 
-                                        <form action="{{ route('konfirmasi', $d->id) }}" enctype="multipart/form-data">
+                                        <form action="{{ route('dataSiswa.update', $d->id) }}" method="post"
+                                            enctype="multipart/form-data">
                                             {{ csrf_field() }}
                                             {{ method_field('PUT') }}
                                             <td class="d-flex">
-
+                                                <input style="display:none" type="text" class="form-control"
+                                                    id="nama_siswa" name="nama_siswa" value="{{ $d->nama_siswa }}">
+                                                <input style="display:none" type="text" class="form-control"
+                                                    id="provinsi" name="provinsi" value="{{ $d->provinsi }}">
+                                                <input style="display:none" type="text" class="form-control"
+                                                    id="kabupaten" name="kabupaten" value="{{ $d->kabupaten }}">
+                                                <input style="display:none" type="text" class="form-control"
+                                                    id="kecamatan" name="kecamatan" value="{{ $d->kecamatan }}">
                                                 <a href="{{route('invoicePDF', $d->user->id)}}" target="_blank"
                                                     class=" btn btn-sm btn-success mr-2" style="color:white;"
                                                     data-toggle="tooltip" data-placement="top" title="Download Invoice">
@@ -89,11 +96,9 @@
                                                     data-placement="top" title="Detail Siswa" style="color:white"
                                                     href="{{route('profileSiswaAdmin', $d->id)}}"> <i
                                                         class="fas fa-info-circle"></i></a>
-                                               
                                                 <button value="AKTIF" id="status" data-toggle="tooltip"
                                                     data-placement="top" title="Konfirmasi" name="status" type="submit"
-                                                    class=" btn btn-sm btn-success" style="text-align:center"
-                                                    onclick="return confirm('Anda yakin ingin mengkonfirmasi pembayaran ini?')">
+                                                    class=" btn btn-sm btn-success" style="text-align:center" onclick="return confirm('Anda yakin ingin mengkonfirmasi pembayaran ini?')">
                                                     <i class="fas fa-check"></i></button>
                                             </td>
                                     </tr>
@@ -127,18 +132,5 @@
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     })
-</script>
-<script>
-    var isiPesan = '{{Session::get('
-    success ') }}';
-    var exist = '{{Session::has('
-    success ') }}';
-    if (exist) {
-        swal(
-            'Sukses!',
-            isiPesan,
-            'success'
-        )
-    }
 </script>
 @endsection
