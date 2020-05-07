@@ -19,11 +19,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-<<<<<<< HEAD
-        'name', 'email', 'password', 'role', 'phone','file'
-=======
         'name', 'email', 'password', 'role', 'phone'
->>>>>>> parent of 95aa891e... Merge branch 'master' of https://github.com/dzakwanzaky/kursusOnline
     ];
 
     /**

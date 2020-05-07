@@ -45,11 +45,9 @@ class SiswaControllerAPI extends Controller
 
     public function siswa()
     {
-        $data = ModelSiswa::where('id','=', Auth::user()->id)->get();
-        $user = User::where('id', '=', Auth::user()->id)->get();
+        $data = ModelSiswa::with('user')->where('id','=', Auth::user()->id)->get();
         return response()->json(array(
-            'data' => $data,
-            'user' => $user,  
+            'data' => [$data] 
         ));
     }
 

@@ -119,7 +119,7 @@
                                         <input type="file" class="form-control" id="file" name="file">
                                     </div>
                                     <input id="status" type="text" name="status" class="form-control"
-                                        value="BELUM DIBAYAR" style="display:none" required>
+                                        value="BELUM AKTIF" style="display:none" required>
 
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary d-block"
