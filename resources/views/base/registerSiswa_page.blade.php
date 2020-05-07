@@ -1,4 +1,4 @@
-@include('base/header_page')
+@include('base/header_pageo')
 @extends('base/script_page')
 @section('content')
   <style type="text/css">
@@ -10,6 +10,12 @@
         font-size: 17px;
 
     }
+    .help-block {
+    color: red;
+}
+.has-error {
+     color: red;
+}
   
 </style>
     <div class="main">
@@ -20,74 +26,86 @@
 
                     <h2 class="form-title">Daftar Akun Murid</h2>
                     
-                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                    
                         <labell for="name">Nama Lengkap</labell>
-
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                         <div class="form-title">
-                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Masukan nama Anda" required autofocus>
+                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Masukan nama Anda" autofocus>
 
                             @if ($errors->has('name'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('name') }}</strong>
+                               {{ $errors->first('name') }}
                                 </span>
                             @endif
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                        <labell for="phone">No Telepon</labell>
 
+
+                    
+                        <labell for="phone">No Telepon</labell>
+                        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                         <div class="form-title">
-                            <input id="phone" type="phone" class="form-control" name="phone"  placeholder="Masukan no telp Anda" required>
+                            <input id="phone" type="phone" class="form-control" name="phone"  placeholder="Masukan no telp Anda" value="{{ old('phone') }}">
 
                             @if ($errors->has('phone'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('phone') }}</strong>
+                               {{ $errors->first('phone') }}
                                 </span>
                             @endif
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    
                         <labell for="email">Email</labell>
-
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                         <div class="form-title">
-                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"  placeholder="Masukan email Anda" required>
+                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"  placeholder="Masukan email Anda" value="{{ old('email') }}">
 
                             @if ($errors->has('email'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('email') }}</strong>
+                               {{ $errors->first('email') }}
                                 </span>
                             @endif
                         </div>
                     </div>
 
-                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                   
                       <labell for="password">Kata Sandi</labell>
+                       <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                       <div class="input-group">
-                      <input id="password" type="password" name="password" class="form-control" data-toggle="password" placeholder="Masukan kata sandi Anda" required>
+                      <input id="password" type="password" name="password" class="form-control" data-toggle="password" placeholder="Masukan kata sandi Anda" value="{{ old('password') }}">
+
+                            
                       <div class="input-group-append">
                       <span class="input-group-text"><i class="fa fa-eye"></i></span>
                       </div>
 
 
 
-                            @if ($errors->has('password'))
+                        </div>
+                        @if ($errors->has('password'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('password') }}</strong>
+                                {{ $errors->first('password') }}
                                 </span>
                             @endif
-                        </div>
                     </div>
 
                     <div class="form-group">
                         <labell for="password-confirm">Konfirmasi Kata Sandi</labell>
-                    
+                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                       <div class="input-group">
-                      <input id="password_confirmation" type="password" name="password_confirmation" class="form-control" data-toggle="password" placeholder="Masukan ulang kata sandi Anda" required>
+                      <input id="password_confirmation" type="password" name="password_confirmation" class="form-control" data-toggle="password" placeholder="Masukan ulang kata sandi Anda">
+                      
                       <div class="input-group-append">
                       <span class="input-group-text"><i class="fa fa-eye"></i></span>
                       </div>
+                  </div>
+                      @if ($errors->has('password_confirmation'))
+                                <span class="help-block">
+                                {{ $errors->first('password_confirmation') }}
+                                </span>
+                            @endif
                   </div>
 
                     <div class="col-md-6">

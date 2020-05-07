@@ -19,8 +19,18 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role', 'phone'
+        'name', 'email', 'password', 'role', 'phone','avatar'
     ];
+
+    public function getAvatar()
+    {
+        if(!$this->avatar){
+            return asset('images/default.png');
+
+        }
+        return asset('images/'.$this->avatar);
+    
+    }
 
     /**
      * The attributes that should be hidden for arrays.
