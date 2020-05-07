@@ -22,7 +22,7 @@ class CreateModelSiswasTable extends Migration
             $table->string('kabupaten', '30');
             $table->string('kecamatan', '30');
             $table->string('alamat_detail');
-            $table->enum('status', ['BELUM AKTIF', 'AKTIF', 'TIDAK AKTIF']);
+            $table->enum('status', ['BELUM DIBAYAR', 'AKTIF']);
             $table->timestamps();
             $table->foreign('id')->primary()->unsigned()->references('id')->on('users')->onDelete('cascade');
         });
