@@ -13,9 +13,9 @@
         <div class="info">
         <a class="d-block" style="margin: 0 0 0 0px;">
      
-        <img src="{{url('/data_file/'.DB::table('model_siswas')->where('id', '=', Auth::user()->id)->value('file'))}}" class="img-circle elevation-2" alt="User Image" style="width:30px;height:30px;border: 1.5px solid">
+        <img src="{{auth()->user()->getAvatar()}}" class="img-circle elevation-2" alt="User Image" style="width:30px;height:30px;border: .5px solid">
 
-          Murid</a>
+          &nbsp;&nbsp;Murid</a>
         </div>
     
       </div>

@@ -1,5 +1,5 @@
 <div class="awake">
-    @include('base/header_page')
+    @include('base/header_pagee')
     @extends('base/script_yes')
     @include('base/script4')
     <link rel="stylesheet" type="text/css" href="{{asset('/strap')}}/css/bootstrap.css">
@@ -1128,25 +1128,28 @@
         <div class="typing">
             <h4>
                 <b>
-                    <font color="#000">Program 
+                    <font color="#000">Program {{$rinci->program}}
                 </b>
                 <br>
                 <p><br>
-                   ket</p>
+                    {{$rinci->keterangan_rinci}}</p>
                 </font>
             </h4>
 
         </div>
-<br>
-<br>
-<br>
 
 
         <section class="course-details-area pt-12">
 
             <div class="col-lg-10 left-contents">
 
-               
+               <div class="navi">
+                    <ul>
+                         @foreach($datay as $k)
+                        <a href="{{route('soalFilter', [$k->id_program, $k->id])}}">{{$k->mapel}}</a>
+                        @endforeach
+                        <ul>
+                </div>
 
                 @foreach($data as $ki)
                 <div class="jq-tab-content active">

@@ -500,22 +500,22 @@ a img.aligncenter {
 
 
 .navbar-expand-lg .navbar-nav .nav-link{
-	padding: 8px 10px;
+	padding: 9px 17px;
 	font-size: 16px;
 }
 
-/* .navbar-expand-lg .navbar-nav .nav-link:hover{
-	background: #acf514;
-	color: #ffffff;
-    border-radius: 2px;
-    padding: 8px 18px;
-} */
+.navbar-expand-lg .navbar-nav .nav-link:hover{
+
+    color: #92CD16;
+    opacity: 60%;
+
+}
 
 .navbar-expand-lg .navbar-nav .nav-link.active{
 	background: #92CD16;
-	color: #ffffff;
-	font-weight: 600;
-	border-radius: 2px;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 75px;
 }
 
 

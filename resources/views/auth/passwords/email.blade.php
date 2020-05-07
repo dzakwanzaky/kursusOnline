@@ -1,4 +1,4 @@
-@include('base/header_page')
+@include('base/header_pagek')
 @extends('base/script_pageiniy')
 
 @section('content')

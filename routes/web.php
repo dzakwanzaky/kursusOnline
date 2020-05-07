@@ -21,7 +21,7 @@ Route::get('/ping', function () {
 });
 
 Route::get('/pakt', 'PaketController@index');
-Route::get('/program/{id}/rinci', 'ProgramController@rinci');
+Route::get('/program/{id}/rinci', 'ProgramController@rinci')->name('program');
 Route::get('/program/{id_program}/rinci/{id}', 'ProgramController@tryout')->name('soalFilter');
 
 Route::get('paket/kategori/{id}', 'PaketController@kategori');
@@ -185,7 +185,7 @@ Route::get('/tambahTryout', function () {
     return view('dashboard_admin/tambahTryout');
 });
 
-
+    Route::post('/dataSiswa/{id}/apdet', 'SiswaController@apdet')->name('update');
 
 Auth::routes();
 
@@ -237,6 +237,13 @@ Route::middleware(['tutor'])->group(function () {
 
 Route::middleware(['siswa'])->group(function () {
     Route::get('/murid','JadwalController@index');
+
+
+    Route::get('/profilMurid','ProfilMuridController@index');
+    Route::get('/profilMurid/{id}/edit', 'ProfilMuridController@edit');
+    Route::post('/profilMurid/{id}/update', 'ProfilMuridController@update');
+    
+
     Route::get('/invoicenya/{id}','ProgramController@index');
     Route::get('/invoice','ProgramController@data');
     Route::get('profileMurid','SiswaController@profileSiswa');

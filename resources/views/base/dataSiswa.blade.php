@@ -5,6 +5,12 @@
 <html lang="en">
 
 <head>
+    <style type="text/css">
+ 
+    .form {
+         margin-left: 4em;
+    }
+</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -28,7 +34,7 @@
                             <form method="POST" action="{{ route('dataSiswa.store')}}" enctype="multipart/form-data">
                                 {{ csrf_field() }}
 
-                                <h2 class="form-title">Profile Siswa</h2>
+                               <h2 class="form">Alamat Rinci Murid</h2>
 
                                 <input id="id" value="{{ Auth::user()->id }}" type="text" class="form-control" name="id"
                                     required autofocus style="display:none">
@@ -36,29 +42,7 @@
                                 <input id="nama_siswa" value="{{ Auth::user()->name }}" type="text" class="form-control"
                                     name="nama_siswa" required autofocus style="display:none">
 
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <label for="email">Jenis Kelamin</label>
-
-                                    <div class="form-title">
-
-                                        <select id="jenis_kelamin" name="jenis_kelamin" class="form-control">
-                                            <option value="Laki-Laki">Laki-Laki</option>
-                                            <option value="Perempuan">Perempuan</option>
-                                        </select>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <label for="tanggal_lahir">Tanggal Lahir</label>
-
-                                    <div class="form-title">
-
-                                        <input class="form-control" id="tanggal" name="tanggal_lahir"
-                                            placeholder="MM/DD/YYY" type="text">
-
-                                    </div>
-                                </div>
+ 
 
                                 <div class="form-group">
                                     <label id="prov" for="prov">Provinsi</label>
@@ -105,26 +89,20 @@
                                         <textarea id="alamat_detail" type="text" class="form-control"
                                             name="alamat_detail" rows="3"
                                             placeholder="Petunjuk arah atau alamat detail untuk menuju alamat rumah"
-                                            required></textarea>
+                                            ></textarea>
                                     </div>
                                 </div>
 
                                 <br>
                                 <div class="panel-body">
-                                    <div class="alert alert-danger">
-                                        <strong>Info!</strong> Maximum Size Upload : 2MB
-                                    </div>
-                                    Foto Diri
-                                    <div class="form-group">
-                                        <input type="file" class="form-control" id="file" name="file">
-                                    </div>
+                                    
                                     <input id="status" type="text" name="status" class="form-control"
                                         value="BELUM DIBAYAR" style="display:none" required>
 
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary d-block"
                                             style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">
-                                            Save
+                                            Simpan
                                         </button>
                                     </div>
                             </form>
