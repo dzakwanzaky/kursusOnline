@@ -30,7 +30,7 @@ class SiswaController extends Controller
 
      
     public function daftarSiswaBelumAktif(){
-        $data = ModelSiswa::where('status', 'BELUM DIBAYAR')->get();
+        $data = ModelSiswa::where('status', 'BELUM AKTIF')->get();
         return view('dashboard_admin.daftarSiswaBelumAktif', compact('data'));
     }
 
