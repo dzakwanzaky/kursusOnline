@@ -180,7 +180,7 @@ class PageSetup
      * Print scaling. Valid values range from 10 to 400
      * This setting is overridden when fitToWidth and/or fitToHeight are in use
      *
-     * @var null|int
+     * @var int?
      */
     private $scale = 100;
 
@@ -196,7 +196,7 @@ class PageSetup
      * Fit To Height
      * Number of vertical pages to fit on.
      *
-     * @var null|int
+     * @var int?
      */
     private $fitToHeight = 1;
 
@@ -204,7 +204,7 @@ class PageSetup
      * Fit To Width
      * Number of horizontal pages to fit on.
      *
-     * @var null|int
+     * @var int?
      */
     private $fitToWidth = 1;
 
@@ -308,7 +308,7 @@ class PageSetup
     /**
      * Get Scale.
      *
-     * @return null|int
+     * @return int?
      */
     public function getScale()
     {
@@ -370,7 +370,7 @@ class PageSetup
     /**
      * Get Fit To Height.
      *
-     * @return null|int
+     * @return int?
      */
     public function getFitToHeight()
     {
@@ -398,7 +398,7 @@ class PageSetup
     /**
      * Get Fit To Width.
      *
-     * @return null|int
+     * @return int?
      */
     public function getFitToWidth()
     {

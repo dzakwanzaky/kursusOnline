@@ -1,4 +1,4 @@
-@include('base/header_pageo')
+@include('base/header_page')
 @extends('base/script_pageiniy')
 @section('content')
 <div class="container">

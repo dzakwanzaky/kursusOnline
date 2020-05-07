@@ -646,7 +646,7 @@ class Functions
     public static function flattenSingleValue($value = '')
     {
         while (is_array($value)) {
-            $value = array_shift($value);
+            $value = array_pop($value);
         }
 
         return $value;

@@ -1,4 +1,4 @@
-		 @include('base/header_pageu')
+		 @include('base/header_page')
 		 @extends('base/script_pageyes')
 		 @include('base/script')
 
@@ -22,7 +22,6 @@
    display: table;
    border-radius: 20px;
    font-size: 17px;
-   font-weight: 600;
    float: center;
 }
 .butn:hover{

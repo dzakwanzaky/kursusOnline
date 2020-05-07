@@ -31,7 +31,7 @@
 
                         <label for="kelas">Kelas
                             <select id="kelas" name="kelas_id" class="form-control" style="float:left" required>
-                                <option value="0" disabled="true" selected="true">--Kelas--</option>
+                                <option value="">Kelas</option>
                                 @foreach($ksmp as $d)
                                         <option value="{{ $d->id }}">{{ $d->kelas }}</option>
                                 @endforeach
@@ -41,18 +41,10 @@
 
                         <label for="mata_pelajaran" style="float:right">Jumlah
                             <select id="jumlah_mapel" name="jumlah_mapel" class="form-control" style="float:right">
-                                <option value="0" disabled="true" selected="true">--Jumlah Mapel--</option>
+                                <option value=" ">Jumlah Mata Pelajaran</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
-                            </select>
-                        </label>
-                        <label for="kategori">Metode Pembelajaran
-                            <select id="kategori" name="kategori" class="form-control" style="float:left" required>
-                                <option value="0" disabled="true" selected="true">--Metode--</option>
-                                <option value="1">Online</option>
-                                <option value="2">Offline</option>
-
                             </select>
                         </label>
 

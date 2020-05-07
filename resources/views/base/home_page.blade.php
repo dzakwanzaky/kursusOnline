@@ -7,7 +7,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="{{asset('/view')}}/css/style.css">
-@include('base/header_page')
+@include('base/header_page0')
 @extends('base/script_here')
 
 
@@ -158,7 +158,7 @@
                                 Anda</a></h2>
                         <p>Soal latihan dan pembahasan yang kami berikan merupakan suatu bentuk pelayanan kami kepada
                             pengguna agar pengguna semakin mengerti dan paham akan pelayanan kami. </p>
-                        <p><a href="/probel-dinamis" class="btn btn-primary px-4">Lihat Soal</a></p>
+                        <p><a href="/probel" class="btn btn-primary px-4">Lihat Soal</a></p>
                     </div>
                 </div>
                 <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
@@ -171,7 +171,7 @@
                         <p>Bimbingan belajar kami sudah dipercayai oleh banyak pengguna dikarenakan selain lengkap,
                             bimbingan kami juga murah dalam biaya dan proses pendaftaran untuk mendapatkan layanan dari
                             kami juga sangat mudah.</p>
-                        <p><a href="/login" class="btn btn-primary px-4">Coba Masuk</a></p>
+                        <p><a href="/tentangkami" class="btn btn-primary px-4">Tentang Kami</a></p>
                     </div>
                 </div>
             </div>
@@ -205,13 +205,8 @@
                     <div class="item text-center">
                         <div class="testimony-wrap p-4 pb-5">
                             <div class="user-img mb-4">
-                                @if($d->user->avatar==null)
-                                <img class="user-img mb-4" src="{{('/tema/images/default.png')}}"
-                                    style="display:block; margin-left:auto; margin-right:auto; width: 80px; height: 77px;">
-                                @else
-                                <img class="user-img mb-4" src="{{ url('/images/'.$d->user->avatar) }}"
-                                    style="display:block; margin-left:auto; margin-right:auto; width: 80px; height: 77px;">
-                                @endif
+                                <img class="user-img mb-4" src="{{ url('/data_file/'.$d->siswa->file) }}"
+                                    style="display:block; margin-left:auto; margin-right:auto; width: 83px; height: 77px;">
                                 <span class="quote d-flex align-items-center justify-content-center">
                                     <i class="icon-quote-left"></i>
                                 </span>

@@ -1,10 +1,5 @@
 @extends('murid/base')
 @section('content')
-<style type="text/css">
-    .rounded img {
-        border-radius: 50em;
-    }
-</style>
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -13,7 +8,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Profil Siswa</h1>
+                                <h1>Profile Siswa</h1>
                             </div>
                            
                         </div>
@@ -34,34 +29,35 @@
             <div class="col-4">
                 <div class="card">
                     <div class="card-body">
-                        <i class="fas fa-user mr-2"></i>Foto Profil
+                        <i class="fas fa-user mr-2"></i>Foto Profile
 
                         <hr class="photo">
-                        <br>
                         <div class="d-flex justify-content-center" style="overflow-x:auto;">
-
                             @if($d->file==null)
-                            <div class="rounded" >
-                            <img class="navbar-brand-full" src="{{('/tema/images/default.png')}}" width="180px" height="180px">
-                        </div>
+                            <img class="navbar-brand-full" src="{{('/tema/images/user.png')}}" width="300px"
+                                alt="upload foto" style="display:block; margin-left:auto; margin-right:auto;">
                             @else
                             <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
-                                <div class="rounded">
-                                <img width="180px" height="180px" src="{{ url('/data_file/'.$d->file) }}">
+                                <img width="250px" src="{{ url('/data_file/'.$d->file) }}"
+                                    style="display:block; margin-left:auto; margin-right:auto;">
                             </a>
-                        </div>
                             @endif
                         </div>
                         @endforeach
                         @foreach($user as $u)
-                        
+                        <hr class="photo">
+                        <h4 class="font-weight-normal" style="text-align:center" >{{ $u->id }} - {{ $u->name }}
+                        </h4>
+                        <h6 class="font-weight-normal" style="text-align:center">{{ $u->email }}
+                            </h4>
+                            <h6 class="font-weight-normal" style="text-align:center" value="{{ $u->phone }}">
+                                {{ $u->phone }}</h6>
                             <br>
-                             <a href="{{route('dataSiswa.edit',$d->id)}}" class="btn-edit"
-                                style="display:block; margin-left:auto; margin-right:auto;">Edit Profil</a>
-                                <br>
+                            <a href="{{route('register.edit',$u->id)}}" class="btn-edit-info"
+                                style="display:block; margin-left:auto; margin-right:auto;">Pengaturan Akun</a>
 
                             @endforeach
-                            @foreach($user as $s)
+                            @foreach($data as $d)
                     </div>
                 </div>
             </div>
@@ -72,25 +68,23 @@
                             <tbody>
                                 <tr>
                                     <th>
-                                        <br>
-                                     
-                                        Nama Lengkap
+                                        Alamat
                                         <input type="text" class="form-control"
-                                            value="{{ $u->name }} "
+                                            value="{{ $d->provinsi }} {{ $d->kabupaten }} {{ $d->kecamatan }}"
                                             style="margin-right:190px;background:white;border:none" disabled>
                                     </th>
                                 </tr>
                                 <tr>
                                     <th>
-                                        Nomor Telepon
-                                        <input type="text" class="form-control" value="{{ $u->phone }}"
+                                        Jenis Kelamin
+                                        <input type="text" class="form-control" value="{{ $d->jenis_kelamin }}"
                                             style="margin-right:190px;background:white;border:none" disabled>
                                     </th>
                                 </tr>
                                 <tr>
                                     <th>
-                                        Email
-                                        <input type="text" class="form-control" value="{{ $u->email }}"
+                                        Tanggal Lahir
+                                        <input type="text" class="form-control" value="{{ $d->tanggal_lahir }}"
                                             style="margin-right:190px;background:white;border:none" disabled>
                                     </th>
                                 </tr>
@@ -99,7 +93,8 @@
                         <div class="form-group">
                         </div>
                         <td>
-                           
+                            <a href="{{route('dataSiswa.edit',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit
+                                Profil</a>
                         </td>
 
                     </div>

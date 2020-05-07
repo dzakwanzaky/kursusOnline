@@ -22,8 +22,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- Clockpicker and minified CSS -->
-        <link rel="stylesheet" href="{{asset('/assets/css/toastr.min.css')}}">
-
     <link rel="stylesheet" href="{{ asset('/lte/plugins/clockpicker-gh-pages/dist/bootstrap-clockpicker.min.css') }}">
     
 
@@ -94,12 +92,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 <script src="https://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.js"></script>
 <link href="https://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet"/>
-<script src="{{asset('/assets/js/toastr.min.js')}}"></script>
-<script>
-    @if(Session::has('success'))
-    toastr.success("{{ Session::get('success') }}")
-    @endif
-</script>
+
 
 @yield('sweet')
 </body>

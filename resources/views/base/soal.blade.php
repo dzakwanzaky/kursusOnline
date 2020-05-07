@@ -1,4 +1,4 @@
-    @include('base/header_pageu')
+    @include('base/header_page0')
 @extends('base/script_yesa')
 
 <link href="{{asset('/button')}}/gas.css" rel="stylesheet" type="text/css">
@@ -2410,7 +2410,7 @@
                 <div class="big-tagline">
                     @foreach($data as $d)
                     <br><br>
-                    <h2>Soal Latihan {{$d->tryout->nama}}</h2>
+                    <h2>Soal Latihan Tryout</h2>
                     <p class="lead"><b>Soal no {{$d->nomor_soal}}</b><br>
                     {!! $d->soal !!}</p>
 

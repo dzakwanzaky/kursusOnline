@@ -41,7 +41,7 @@
 
                         <label for="mata_pelajaran" style="float:right">Jumlah
                             <select id="jumlah_mapel" name="jumlah_mapel" class="form-control" style="float:right">
-                                <option value="0" disabled="true" selected="true">Jumlah Mata Pelajaran</option>
+                                <option value=" ">Jumlah Mata Pelajaran</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -65,7 +65,7 @@
                     <div id="sesi1">
                         <label style="width:100%"> Jumlah Pertemuan
                             <select id="sesi1-select" name="jumlah_sesi" class="form-control" style="width:100%">
-                                <option value="0" disabled="true" selected="true">Pilih Sesi</option>
+                                <option value="">Pilih Sesi</option>
                                 <option value="1">1 Kali Satu Minggu</option>
                                 <option value="2">2 Kali Satu Minggu</option>
                             </select>
@@ -77,7 +77,7 @@
                     <div id="sesi2">
                         <label style="width:100%"> Jumlah Pertemuan
                             <select id="sesi2-select" name="jumlah_sesi" class="form-control" style="width:100%">
-                                <option value="0" disabled="true" selected="true">Pilih Sesi</option>
+                                <option value="">Pilih Sesi</option>
                                 <option value="1">1 Kali Satu Minggu</option>
                                 <option value="2">2 Kali Satu Minggu</option>
                             </select>
@@ -88,7 +88,7 @@
                     <div id="sesi3">
                         <label style="width:100%"> Jumlah Pertemuan
                             <select id="sesi3-select" name="jumlah_sesi" class="form-control" style="width:100%">
-                                <option value="0" disabled="true" selected="true">Pilih Sesi</option>
+                                <option value="">Pilih Sesi</option>
                                 <option value="1">1 Kali Satu Minggu</option>
                                 <option value="2">2 Kali Satu Minggu</option>
                             </select>
@@ -123,7 +123,7 @@
                         <div id="waktu1">
                             <label for="hari1">Sesi 1
                                 <select id="hari1" name="hari1[]" class="form-control" style="float:left">
-                                    <option value="0" disabled="true" selected="true">Pilih Hari</option>
+                                    <option value="">Pilih Hari</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
                                     <option value="Rabu">Rabu</option>
@@ -136,7 +136,7 @@
 
                             <label for="waktu_hari1" style="float:right">Waktu Sesi 1
                                 <select id="waktu_hari1" name="waktu_hari1[]" class="form-control" style="float:right">
-                                    <option value="0" disabled="true" selected="true">Pilih Waktu</option>
+                                    <option value="">Pilih Waktu</option>
                                     <option value="15.00">15.00 WIB</option>
                                     <option value="16.00">16.00 WIB</option>
                                     <option value="17.00">17.00 WIB</option>
@@ -149,7 +149,7 @@
                         <div id="waktu2">
                             <label for="hari1">Sesi 2
                                 <select id="hari2" name="hari2[]" class="form-control" style="float:left">
-                                    <option value="0" disabled="true" selected="true">Pilih Hari</option>
+                                    <option value="">Pilih Hari</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
                                     <option value="Rabu">Rabu</option>
@@ -162,7 +162,7 @@
 
                             <label for="waktu_hari2" style="float:right">Waktu Sesi 2
                                 <select id="waktu_hari" name="waktu_hari2[]" class="form-control" style="float:right">
-                                    <option value="0" disabled="true" selected="true">Pilih Waktu</option>
+                                    <option value="">Pilih Waktu</option>
                                     <option value="15.00">15.00 WIB</option>
                                     <option value="16.00">16.00 WIB</option>
                                     <option value="17.00">17.00 WIB</option>
@@ -199,7 +199,7 @@
                         <div id="waktu3">
                             <label for="hari1">Sesi 1
                                 <select id="hari1" name="hari1[]" class="form-control" style="float:left">
-                                    <option value="0" disabled="true" selected="true">Pilih Hari</option>
+                                    <option value="">Pilih Hari</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
                                     <option value="Rabu">Rabu</option>
@@ -212,7 +212,7 @@
 
                             <label for="waktu_hari1" style="float:right">Waktu Sesi 1
                                 <select id="waktu_hari1" name="waktu_hari1[]" class="form-control" style="float:right">
-                                    <option value="0" disabled="true" selected="true">Pilih Waktu</option>
+                                    <option value="">Pilih Waktu</option>
                                     <option value="15.00">15.00 WIB</option>
                                     <option value="16.00">16.00 WIB</option>
                                     <option value="17.00">17.00 WIB</option>
@@ -225,7 +225,7 @@
                         <div id="waktu4">
                             <label for="hari2">Sesi 2
                                 <select id="hari2" name="hari2[]" class="form-control" style="float:left">
-                                    <option value="0" disabled="true" selected="true">Pilih Hari</option>
+                                    <option value="">Pilih Hari</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
                                     <option value="Rabu">Rabu</option>
@@ -238,7 +238,7 @@
 
                             <label for="waktu_hari2" style="float:right">Waktu Sesi 2
                                 <select id="waktu_hari2" name="waktu_hari2[]" class="form-control" style="float:right">
-                                    <option value="0" disabled="true" selected="true">Pilih Waktu</option>
+                                    <option value="">Pilih Waktu</option>
                                     <option value="15.00">15.00 WIB</option>
                                     <option value="16.00">16.00 WIB</option>
                                     <option value="17.00">17.00 WIB</option>
@@ -276,7 +276,7 @@
                         <div id="waktu5">
                             <label for="hari1">Sesi 1
                                 <select id="hari1" name="hari1[]" class="form-control" style="float:left">
-                                    <option value="0" disabled="true" selected="true">Pilih Hari</option>
+                                    <option value="">Pilih Hari</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
                                     <option value="Rabu">Rabu</option>
@@ -289,7 +289,7 @@
 
                             <label for="waktu_hari1" style="float:right">Waktu Sesi 1
                                 <select id="waktu_hari1" name="waktu_hari1[]" class="form-control" style="float:right">
-                                    <option value="0" disabled="true" selected="true">Pilih Waktu</option>
+                                    <option value="">Pilih Waktu</option>
                                     <option value="15.00">15.00 WIB</option>
                                     <option value="16.00">16.00 WIB</option>
                                     <option value="17.00">17.00 WIB</option>
@@ -302,7 +302,7 @@
                         <div id="waktu6">
                             <label for="hari1">Sesi 2
                                 <select id="hari2" name="hari2[]" class="form-control" style="float:left">
-                                    <option value="0" disabled="true" selected="true">Pilih Hari</option>
+                                    <option value="">Pilih Hari</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
                                     <option value="Rabu">Rabu</option>
@@ -315,7 +315,7 @@
 
                             <label for="waktu_hari2" style="float:right">Waktu Sesi 2
                                 <select id="waktu_hari2" name="waktu_hari2[]" class="form-control" style="float:right">
-                                    <option value="0" disabled="true" selected="true">Pilih Waktu</option>
+                                    <option value="">Pilih Waktu</option>
                                     <option value="15.00">15.00 WIB</option>
                                     <option value="16.00">16.00 WIB</option>
                                     <option value="17.00">17.00 WIB</option>

@@ -10,7 +10,7 @@
                 <div class="container-fluid">
                 <div class="row mb-2">
 					  <div class="col-sm-6">
-						  <p style="font-size:24px">Ubah Kata Sandi</p>
+						  <p style="font-size:24px">Ubah Password</p>
 					  </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right" style="font-size:14px">
@@ -18,7 +18,7 @@
                                     <a href="/murid">Murid</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Ubah Kata Sandi
+                                    Ubah Password
                                 </li>
                             </ol>
                         </div>			
@@ -44,10 +44,9 @@
                          @foreach ($errors->all() as $error)
                             <p class="text-danger">{{ $error }}</p>
                          @endforeach 
-  <br>
-  <br>
+  
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Masukan Kata Sandi Lama</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">Current Password</label>
   
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="current_password" autocomplete="current-password">
@@ -55,7 +54,7 @@
                         </div>
   
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Masukan Kata Sandi Baru</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">New Password</label>
   
                             <div class="col-md-6">
                                 <input id="new_password" type="password" class="form-control" name="new_password" autocomplete="current-password">
@@ -63,7 +62,7 @@
                         </div>
   
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Konfirmasi Kata Sandi Baru</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">New Confirm Password</label>
     
                             <div class="col-md-6">
                                 <input id="new_confirm_password" type="password" class="form-control" name="new_confirm_password" autocomplete="current-password">
@@ -72,14 +71,13 @@
    
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                               <button type="submit" class="btn btn-primary" style="margin-left: 12em;" onclick="return confirm('Anda yakin ingin merubah kata sandi Anda?')">
-                                    Ubah Kata Sandi
+                                <button type="submit" class="btn btn-primary">
+                                    Update Password
                                 </button>
-                              
                             </div>
                         </div>
                     </form>
-              <br>
+            
           </div>
           <!-- /.col-md-6 -->
           

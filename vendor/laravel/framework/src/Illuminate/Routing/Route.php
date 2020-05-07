@@ -73,7 +73,7 @@ class Route
     /**
      * The array of matched parameters.
      *
-     * @var array|null
+     * @var array
      */
     public $parameters;
 

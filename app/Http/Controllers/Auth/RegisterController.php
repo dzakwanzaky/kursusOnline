@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use App\Http\Requests\FormRequestStore;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -71,30 +70,6 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'name' => 'required|min:3|string',
-            'phone' => 'required|min:11|numeric',
-            'password' => 'required|min:7',
-            'email' => 'required|min:11|email|unique:users',
-            'password_confirmation' =>'same:password|required'
-       ],
-       [
-            'name.required' => 'Nama lengkap tidak boleh kosong',
-            'name.min' => 'Nama lengkap tidak boleh kurang dari 3 karakter',
-            'name.string' => 'Nama lengkap harus berupa huruf',
-            'phone.min' => 'No telp tidak boleh kurang dari 11 angka',
-            'phone.required' =>  'No telp tidak boleh kosong',
-            'phone.numeric' => 'No telp harus berisi angka',
-            'email.required' => 'Email tidak boleh kosong',
-            'email.min' => 'Email tidak boleh kurang dari 11 karakter',
-            'email.email' => 'Email tidak valid',
-            'email.unique' => 'Email sudah ada, silakan login',
-            'password.min' => 'Password tidak boleh kurang dari 7 masukan',
-            'password.required' => 'Password tidak boleh kosong',
-            'password_confirmation.same' => 'Konfirmasi password tidak sama',
-            'password_confirmation.required' => 'Konfirmasi password tidak boleh kosong'
-       ]);
-
                 $user = new User;
                 $user->name = $request->input('name');
                 $user->email = $request->input('email');

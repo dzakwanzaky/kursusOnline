@@ -179,7 +179,7 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
                 continue;
             }
 
-            $message = '_'.$log['message'];
+            $message = $log['message'];
             $exception = $log['context']['exception'];
 
             if ($exception instanceof SilencedErrorContext) {

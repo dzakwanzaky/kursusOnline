@@ -149,9 +149,7 @@ class ProgramController extends Controller
    
    public function tryout($id_program, $id)
    {
-    $rinci =ModelProgram::find($id_program);
-    $datay = \DB::table('model_mapels')->where('id_program', $id_program)->get();
     $data = ModelTryout::where('program_id', $id_program)->where('mapel_id', $id)->get();
-    return view('base.soalFilter', compact('data','rinci','datay'));
+    return view('base.soalFilter', compact('data'));
    }
 }

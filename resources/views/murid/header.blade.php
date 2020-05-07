@@ -17,19 +17,18 @@
           <span>Halo, {{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-         <br>
-          
-          <a href="/profilMurid" class="dropdown-item">
-            <i class="fas fa-user"></i> &nbsp;Profil 
+          <span class="dropdown-header">{{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
+          <div class="dropdown-divider"></div>
+          <a href="/profileMurid" class="dropdown-item">
+            <i class="fas fa-user"></i> Profile 
           </a>
-          
           <a href="/changePasswordMurid" class="dropdown-item">
-            <i class="fas fa-edit"></i> &nbsp;Ubah Kata Sandi 
+            <i class="fas fa-edit"></i> Ubah Password 
           </a>
           <a href="{{ url('/landing') }}" class="nav-link btn-login; dropdown-item"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-          <i class="fas fa-sign-out-alt"></i> &nbsp;Keluar 
+          <i class="fas fa-sign-out-alt"></i>Logout 
           </a>
           <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                       {{ csrf_field() }}

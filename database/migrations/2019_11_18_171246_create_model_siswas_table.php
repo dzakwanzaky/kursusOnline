@@ -15,6 +15,9 @@ class CreateModelSiswasTable extends Migration
     {
         Schema::create('model_siswas', function (Blueprint $table) {
             $table->biginteger('id')->primary()->unsigned();
+            $table->string('file');
+            $table->enum('jenis_kelamin', ['Laki-Laki', 'Perempuan']);
+            $table->string('tanggal_lahir', '30');
             $table->string('provinsi', '30');
             $table->string('kabupaten', '30');
             $table->string('kecamatan', '30');

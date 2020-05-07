@@ -16,9 +16,9 @@ class CreateModelFormulirsTable extends Migration
         Schema::create('model_formulirs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->biginteger('program_id')->nullable()->unsigned();
-            $table->string('nama_lengkap');
-            $table->string('no_telp');
-            $table->string('asal_sekolah', '30')->nullable();
+            $table->string('namalengkap');
+            $table->string('notelp');
+            $table->string('asalsekolah', '30')->nullable();
             $table->string('email');
             $table->string('file');
             $table->enum('status', ['AKTIF', 'BELUM AKTIF']);

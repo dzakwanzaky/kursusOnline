@@ -15,7 +15,6 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\ConsoleEvents;
 use Symfony\Component\Console\Event\ConsoleEvent;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
-use Symfony\Component\Debug\ErrorHandler as LegacyErrorHandler;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Symfony\Component\ErrorHandler\ErrorHandler;
 use Symfony\Component\EventDispatcher\Event;
@@ -80,7 +79,7 @@ class DebugHandlersListener implements EventSubscriberInterface
         restore_exception_handler();
 
         if ($this->logger || null !== $this->throwAt) {
-            if ($handler instanceof ErrorHandler || $handler instanceof LegacyErrorHandler) {
+            if ($handler instanceof ErrorHandler) {
                 if ($this->logger) {
                     $handler->setDefaultLogger($this->logger, $this->levels);
                     if (\is_array($this->levels)) {
@@ -139,7 +138,7 @@ class DebugHandlersListener implements EventSubscriberInterface
             }
         }
         if ($this->exceptionHandler) {
-            if ($handler instanceof ErrorHandler || $handler instanceof LegacyErrorHandler) {
+            if ($handler instanceof ErrorHandler) {
                 $handler->setExceptionHandler($this->exceptionHandler);
             }
             $this->exceptionHandler = null;
