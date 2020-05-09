@@ -37,6 +37,8 @@ Route::get('mapel/{id_program}','API\MapelControllerAPI@lihatMapel');
 //Get Data Kabupaten & Kecamatan
 Route::get('/getKabupaten/{id}', 'API\SiswaControllerAPI@getKabupaten')->name('getKabupaten');
 Route::get('/getKecamatan/{id}', 'API\SiswaControllerAPI@getKecamatan')->name('getKecamatan');
+Route::get('/getProvinsi', 'API\SiswaControllerAPI@getProvinsi')->name('getProvinsi');
+
 
 
 Route::middleware('auth:api')->group(function(){
