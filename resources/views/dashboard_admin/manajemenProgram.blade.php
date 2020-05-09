@@ -25,7 +25,7 @@
                     <div class="card">
                         <div class="card-body table-responsive-m" style="overflow-x:auto;">
 
-       
+
                             <form action="{{route('tambahProgram')}}"> <button class=" btn btn-md btn-success"
                                     style="float:right">Tambah Program</button></form>
 
@@ -46,27 +46,37 @@
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>
-                                        <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
+                                            @if($d->file==null)
+                                            <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}"
+                                                width="50px" alt="upload foto"
+                                                style="display:block; margin-left:auto; margin-right:auto;">
+                                            @else
+                                            <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
                                                 <img width="50px" src="{{ url('/data_file/'.$d->file) }}">
                                             </a>
+                                            @endif
                                         </td>
                                         <td>{{ $d->program}}</td>
                                         <td>{{ $d->keterangan}}</td>
                                         <td>{{ $d->keterangan_rinci}}</td>
                                         <td class="d-flex">
-                                        <a type="button" class="btn-sm btn-info mr-2"  data-toggle="tooltip" data-placement="top" title="Lihat Mapel" href="{{route('daftarMapel', $d->id)}}"><i class="far fa-eye"></i></a>
-                                        <a href="{{route('program.edit',$d->id)}}" class="btn btn-sm btn-primary mr-2"
-                                        data-toggle="tooltip"
-                                                data-placement="top" title="Edit Program"><i class="far fa-edit"></i></a>
-                                            <form action="{{ route('program.destroy', $d->id) }}" method="post" data-toggle="tooltip"
-                                                data-placement="top" title="Hapus Program"
-                                                class="destroy" onclick="return confirm('Anda yakin ingin menghapus data?')"> 
+                                            <a type="button" class="btn-sm btn-info mr-2" data-toggle="tooltip"
+                                                data-placement="top" title="Lihat Mapel"
+                                                href="{{route('daftarMapel', $d->id)}}"><i class="far fa-eye"></i></a>
+                                            <a href="{{route('program.edit',$d->id)}}"
+                                                class="btn btn-sm btn-primary mr-2" data-toggle="tooltip"
+                                                data-placement="top" title="Edit Program"><i
+                                                    class="far fa-edit"></i></a>
+                                            <form action="{{ route('program.destroy', $d->id) }}" method="post"
+                                                data-toggle="tooltip" data-placement="top" title="Hapus Program"
+                                                class="destroy"
+                                                onclick="return confirm('Anda yakin ingin menghapus data?')">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
                                                 <button type="submit" class="btn btn-sm btn-danger mr-2"
                                                     style="color:white"><i class="far fa-trash-alt"></i></button>
                                             </form>
-                                          
+
                                         </td>
 
                                     </tr>

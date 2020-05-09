@@ -13,7 +13,7 @@
                 <div class="container-fluid">
                 <div class="row mb-2">
 					        <div class="col-sm-6">
-						        <p style="font-size:24px">Ubah Password</p>
+						        <h1>Ubah Password</h1>
 					  </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-md-right" style="font-size:14px">
@@ -21,7 +21,7 @@
                                     <a href="/profileAdmin">Profile Admin</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Edit Password
+                                    Ubah Password
                                 </li>
                             </ol>
                         </div>			
@@ -47,44 +47,47 @@
                     </a> -->
       
                     <form method="POST" action="{{ route('change.password') }}">
-                        @csrf 
-   
-                         @foreach ($errors->all() as $error)
-                            <p class="text-danger">{{ $error }}</p>
-                         @endforeach 
-                        </br>        
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Current Password</label>
-  
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="current_password" autocomplete="current-password">
-                            </div>
-                        </div>
-  
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">New Password</label>
-  
-                            <div class="col-md-6">
-                                <input id="new_password" type="password" class="form-control" name="new_password" autocomplete="current-password">
-                            </div>
-                        </div>
-  
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">New Confirm Password</label>
-    
-                            <div class="col-md-6">
-                                <input id="new_confirm_password" type="password" class="form-control" name="new_confirm_password" autocomplete="current-password">
-                            </div>
-                        </div>
-   
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Update Password
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                                @csrf
+
+                                @foreach ($errors->all() as $error)
+                                <p class="text-danger">{{ $error }}</p>
+                                @endforeach
+
+                                <div class="form-group">
+                                    <label for="password">Password Lama</label>
+
+                                    <input id="password" type="password" class="form-control" name="current_password"
+                                        autocomplete="current-password">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Password Baru</label>
+
+                                    <input id="new_password" type="password" class="form-control" name="new_password"
+                                        autocomplete="current-password">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Masukkan Ulang Password Baru</label>
+
+                                    <input id="new_confirm_password" type="password" class="form-control"
+                                        name="new_confirm_password" autocomplete="current-password">
+                                </div>
+
+                                <div class="d-flex">
+                                    <button type="submit" class="btn btn-primary d-block"
+                                        style="width: 180px; border-radius:50px;margin-left:35%;"
+                                        onclick="return confirm('Anda yakin data sudah benar?')">
+                                        Simpan
+                                    </button>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <a class="btn btn-danger d-block" href="javascript:history.back()"
+                                        style="width: 180px; border-radius:50px;"
+                                        onclick="return confirm('Anda yakin ingin membatalkan?')">
+                                        Batal
+                                    </a>
+                                </div>
+                            </form>
                 </div>
                 </div>
           </div>

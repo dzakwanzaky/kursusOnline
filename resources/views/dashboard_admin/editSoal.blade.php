@@ -95,15 +95,15 @@
 
                                     <br>
                                     <br>
-                                    <div>
-                                        <b>Jawaban Benar dan Pembahasan :</b>
-                                    </div>
-                                    <textarea id="jawaban" name="jawaban"
-                                        value="{{$d->jawaban}}">{{$d->jawaban}}</textarea>
-                                        <br>
-                                        
+                                    <div><b>Jawaban Benar<b></div><input type="text" class="form-control"
+                                        name="jawaban" value="{{$d->jawaban}}" required></input>
+                                    <br>
+                                    <div><b>Pembahasan :</b></div><textarea id="testt"
+                                        name="pembahasan" value="{{$d->pembahasan}}">{{$d->pembahasan}}</textarea>
+                                    <br>
+
                                     <div class="d-flex">
-                                        
+
                                         <button type="submit" class="btn btn-primary d-block"
                                             style="width: 180px; border-radius:50px;margin-left:35%;"
                                             onclick="return confirm('Anda yakin data sudah benar?')">

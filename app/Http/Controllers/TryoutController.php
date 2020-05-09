@@ -110,7 +110,7 @@ class TryoutController extends Controller
         $data->nama = $request->nama;
         $data->jumlah_soal = $request->jumlah_soal;
         $data->save();
-        return redirect('daftarTryout')->withMessage('Berhasil Konfirmasi');    
+        return redirect('daftarTryout')->with('success', 'Berhasil Konfirmasi');    
     }
 
     public function destroy($id)

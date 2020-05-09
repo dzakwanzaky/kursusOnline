@@ -66,6 +66,8 @@
                                             @endforeach
                                         </select>
                                     </div>
+
+                                  <br>
                                     @foreach($data as $d)
                                     <div id="mapel-sd">
                                         <label for="">Mata Pelajaran :</label>
@@ -154,6 +156,19 @@
     $('#mapel-smp').hide();
     $('#mapel-sma').hide();
     $('#mapel-sbm').hide();
+    if($('#program').val() == "1"){
+        $('#mapel-sd').show();
+    }
+    else if($('#program').val() == "2"){
+        $('#mapel-smp').show();
+    }
+    else if($('#program').val() == "3"){
+        $('#mapel-sma').show();
+    }
+    else if($('#program').val() == "4"){
+        $('#mapel-sbm').show();
+    }
+
     $(document).ready(function () {
         $("#program").change(function () {
             if ($(this).val() == "1") {

@@ -48,7 +48,7 @@ class FormulirController extends Controller
         $data = ModelFormulir::where('id',$id)->first();
         $data->status = $request->status;
         $data->save();
-        return redirect('tryoutAktif')->withMessage('Berhasil Konfirmasi');    
+        return redirect('tryoutAktif')->with('success', 'Berhasil Konfirmasi');    
     }
 
 }

@@ -51,6 +51,18 @@ class SiswaControllerAPI extends Controller
         ));
     }
 
+    public function getKabupaten($id){
+       
+        $kabupaten = ModelKab::where('provinsi_id', '=', $id)->pluck("kabupaten_kota", "id");
+        return response()->json($kabupaten);
+    }
+
+    public function getKecamatan($id){
+       
+        $kecamatan = ModelKecamatan::where('kab_id', '=', $id)->pluck("kecamatan", "id");
+        return response()->json($kecamatan);
+    }
+
 
     public function update(Request $request, $id)
     {

@@ -34,6 +34,10 @@ Route::get('soal/{id}','API\TryoutControllerAPI@soal');
 Route::get('mapel','API\MapelControllerAPI@index');
 Route::get('mapel/{id_program}','API\MapelControllerAPI@lihatMapel');
 
+//Get Data Kabupaten & Kecamatan
+Route::get('/getKabupaten/{id}', 'API\SiswaControllerAPI@getKabupaten')->name('getKabupaten');
+Route::get('/getKecamatan/{id}', 'API\SiswaControllerAPI@getKecamatan')->name('getKecamatan');
+
 
 Route::middleware('auth:api')->group(function(){
 
@@ -46,14 +50,6 @@ Route::middleware('auth:api')->group(function(){
     Route::get('dataTutor','API\TutorControllerAPI@dataTutor');
     Route::post('dataTutor','API\TutorControllerAPI@store');
     Route::put('dataTutor/{id}','API\TutorControllerAPI@update');
-
-    //Get Data Kabupaten & Kecamatan
-    Route::get('/getKabupaten/{id}', 'API\SiswaController@getKabupaten')->name('getKabupaten');
-    Route::get('/getKecamatan/{id}', 'API\SiswaController@getKecamatan')->name('getKecamatan');
-
-
-
-
 
     //JadwalController
         //tutor

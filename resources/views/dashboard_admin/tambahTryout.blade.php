@@ -108,6 +108,7 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    <br>
                                     <div class="d-flex">
                                         <button type="submit" class="btn btn-primary d-block"
                                             style="width: 180px; border-radius:50px;margin-left:35%;"
