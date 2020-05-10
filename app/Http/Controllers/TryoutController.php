@@ -117,7 +117,7 @@ class TryoutController extends Controller
     {
         $data = ModelTryout::where('id',$id)->first();
         $data->delete();
-        return redirect()->route('daftarTryout')->with('destroy','Yakin ingin menghapus data?'); 
+        return redirect()->route('daftarTryout')->with('success','Data Berhasil Dihapus!'); 
     }
 
 

@@ -61,12 +61,6 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="">Keterangan :</label>
-                                            <input type="text" class="form-control" id="keterangan" name="keterangan"
-                                                value="{{ $d->keterangan}}">
-                                        </div>
-
-                                        <div class="form-group">
                                             <label for="">Keterangan Rinci :</label>
                                             <input type="text" class="form-control" id="keterangan_rinci"
                                                 name="keterangan_rinci" value="{{ $d->keterangan_rinci}}">
@@ -76,7 +70,7 @@
                                             <label for="">Gambar :</label>
                                             @if($d->file==null)
                                             <img id="gambar" class="navbar-brand-full"
-                                                src="{{('/tema/images/user.png')}}" width="300px" alt="upload foto"
+                                                src="{{('/tema/images/inofa.png')}}" width="300px" alt="upload foto"
                                                 style="display:block; margin-left:auto; margin-right:auto;">
                                             @else
                                             <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">

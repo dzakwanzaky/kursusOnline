@@ -21,7 +21,6 @@ class SiswaControllerAPI extends Controller
     {
         $data = new ModelSiswa();
         $data->id = $request->id;
-        $data->nama_siswa = $request->nama_siswa;
         $data->jenis_kelamin = $request->jenis_kelamin;
         $data->tanggal_lahir = $request->tanggal_lahir;
         
@@ -37,7 +36,7 @@ class SiswaControllerAPI extends Controller
         $data->alamat_detail = $request->alamat_detail;
         $data->status = $request->status;
         if($data->save()){
-            $res['message'] = "Success!";
+            $res['message'] = "sukses";
             $res['value'] = "$data";
             return response($res);
         }    
@@ -52,19 +51,19 @@ class SiswaControllerAPI extends Controller
     }
 
     public function getProvinsi(){
-        $provinsi = Provinsi::all()->pluck("provinsi", "id");
+        $provinsi = Provinsi::all();
         return response()->json($provinsi);
     }
 
     public function getKabupaten($id){
        
-        $kabupaten = ModelKab::where('provinsi_id', '=', $id)->pluck("kabupaten_kota", "id");
+        $kabupaten = ModelKab::where('provinsi_id', '=', $id)->get();
         return response()->json($kabupaten);
     }
 
     public function getKecamatan($id){
        
-        $kecamatan = ModelKecamatan::where('kab_id', '=', $id)->pluck("kecamatan", "id");
+        $kecamatan = ModelKecamatan::where('kab_id', '=', $id)->get();
         return response()->json($kecamatan);
     }
 

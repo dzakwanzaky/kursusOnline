@@ -34,6 +34,10 @@ Route::get('soal/{id}','API\TryoutControllerAPI@soal');
 Route::get('mapel','API\MapelControllerAPI@index');
 Route::get('mapel/{id_program}','API\MapelControllerAPI@lihatMapel');
 
+//TestimoniController
+Route::get('testimoni','API\TestimoniControllerAPI@index');
+
+
 //Get Data Kabupaten & Kecamatan
 Route::get('/getKabupaten/{id}', 'API\SiswaControllerAPI@getKabupaten')->name('getKabupaten');
 Route::get('/getKecamatan/{id}', 'API\SiswaControllerAPI@getKecamatan')->name('getKecamatan');
@@ -73,11 +77,15 @@ Route::middleware('auth:api')->group(function(){
     //ProgramController
     Route::get('program','API\ProgramControllerAPI@index');
 
-     //ProgramController
-     Route::get('kehadiran','API\AbsensiControllerAPI@show');
+     //AbsenController
+     Route::get('kehadiran/{id}','API\AbsenControllerAPI@show');
+     Route::post('kehadiran','API\AbsenControllerAPI@store');
 
     //ChangePasswordController
     Route::post('changePassword','API\ChangePasswordControllerAPI@store');
+
+ 
+
 
 });
 

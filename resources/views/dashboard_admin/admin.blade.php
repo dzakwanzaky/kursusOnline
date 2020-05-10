@@ -35,7 +35,7 @@
                                     <div class="icon">
                                     <i class="far fa-calendar"></i>
                                     </div>
-                                    <a href="#" class="small-box-footer">More info
+                                    <a href="/list_pendaftaranSiswa" class="small-box-footer">More info
                                     <i
                                             class="fa fa-arrow-circle-right"></i></a>
                                 </div>
@@ -51,7 +51,7 @@
                                     <div class="icon">
                                     <i class="far fa-calendar"></i>
                                     </div>
-                                    <a href="/daftarTryout" class="small-box-footer">More info <i
+                                    <a href="/jadwalMenungguOnline" class="small-box-footer">More info <i
                                             class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
@@ -59,14 +59,14 @@
                                 <!-- small box -->
                                 <div class="small-box bg-yellow">
                                     <div class="inner">
-                                        <h3>{{ DB::table('model_siswas')->where('status','BELUM DIBAYAR')->count()}}</h3>
+                                        <h3>{{ DB::table('model_siswas')->where('status','BELUM AKTIF')->count()}}</h3>
                                         <p>Pendaftaran <br>
                                          Siswa</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-user-graduate"></i>
                                     </div>
-                                    <a href="/daftarSiswa" class="small-box-footer">More info <i
+                                    <a href="/daftarSiswaBelumAktif" class="small-box-footer">More info <i
                                             class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
@@ -74,14 +74,14 @@
                                 <!-- small box -->
                                 <div class="small-box bg-green">
                                     <div class="inner">
-                                        <h3>{{ DB::table('model_tutors')->where('status','ACTIVE')->count()}}</h3>
+                                        <h3>{{ DB::table('model_tutors')->where('status','BELUM AKTIF')->count()}}</h3>
 
                                         <p>Pendaftaran <br> Tutor</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-chalkboard-teacher"></i>
                                     </div>
-                                    <a href="/daftarTutor" class="small-box-footer">More info <i
+                                    <a href="/daftarTutorBelumAktif" class="small-box-footer">More info <i
                                             class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                                     <div class="icon">
                                     <i class="fas fa-folder"></i>
                                     </div>
-                                    <a href="/tryoutAktif" class="small-box-footer">More info <i
+                                    <a href="/tryoutBelumAktif" class="small-box-footer">More info <i
                                             class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>

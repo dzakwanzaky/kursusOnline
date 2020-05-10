@@ -86,7 +86,7 @@ class SoalController extends Controller
     {
         $data = ModelSoal::where('id',$id)->first();
         $data->delete();
-        return redirect()->route('daftarSoal', $data->id_to)->with('destroy','Yakin ingin menghapus data?'); 
+        return redirect()->route('daftarSoal', $data->id_to)->with('success','Data Berhasil Dihapus!'); 
     }
 
 

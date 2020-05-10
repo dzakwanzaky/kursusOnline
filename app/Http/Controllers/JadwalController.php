@@ -270,22 +270,22 @@ class JadwalController extends Controller
     public function update(Request $request, $id)
     {
      
-        $data = ModelJadwal::where('id',$id)->first();
+        $data = ModelJadwal::with('invoice')->where('id',$id)->first();
         $data->tutor_id = $request->tutor_id;
         $data->status = $request->status;
         $data->save();
         if(Auth::user()->role == 'tutor'){
               return redirect('tutor')->with('success', 'Berhasil Mengajukan Jadwal');
         } else {
-            if ($data->kategori == 'OFFLINE'){
+            if ($data->invoice->kategori == 'OFFLINE'){
                 if ($data->status == 'AKTIF'){
-                    return redirect('list_pendaftaranTutor')->with('success', 'Berhasil Konfirmasi');
+                    return redirect('jadwalAktif')->with('success', 'Berhasil Konfirmasi');
                 } else {
                     return redirect('jadwalTidakAktif')->with('success', 'Berhasil Menonaktifkan');
                 }
-            }else {
+            } else {
                 if ($data->status == 'AKTIF'){
-                    return redirect('list_pendaftaranTutorOnline')->with('success', 'Berhasil Konfirmasi');
+                    return redirect('jadwalAktifOnline')->with('success', 'Berhasil Konfirmasi');
                 } else {
                     return redirect('jadwalTidakAktifOnline')->with('success', 'Berhasil Menonaktifkan');
                 }

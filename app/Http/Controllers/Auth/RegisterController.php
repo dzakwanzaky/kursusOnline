@@ -90,6 +90,12 @@ class RegisterController extends Controller
         return view('tutor.editLogin', compact('data'));
     }
 
+    public function editAdmin($id)
+    {
+        $data = User::where('id','=',$id)->get();
+        return view('dashboard_admin.edit', compact('data'));
+    }
+
     public function update(Request $request, $id)
     {
         $data = User::where('id',$id)->first();
@@ -97,11 +103,11 @@ class RegisterController extends Controller
         $data->phone = $request->phone;
         $data->save();
         if ($data ['role'] == 'tutor'){
-        return redirect('profile')->withMessage('Berhasil Merubah Data');
+        return redirect('profile')->withMessage('success', 'Berhasil Merubah Data');
         } else if ($data ['role'] == 'siswa') {
-            return redirect('profileMurid')->withMessage('Berhasil Merubah Data');
+            return redirect('profileMurid')->withMessage('success', 'Berhasil Merubah Data');
         } else {
-            return redirect('profileAdmin')->withMessage('Berhasil Merubah Data');
+            return redirect('profileAdmin')->withMessage('success', 'Berhasil Merubah Data');
         }
     }
 
@@ -111,14 +117,10 @@ class RegisterController extends Controller
         return view('murid.editLogin', compact('data'));
     }
 
-    public function editAdmin($id)
-    {
-        $data = User::where('id','=',$id)->get();
-        return view('dashboard_admin.edit', compact('data'));
-    }
+  
 
-        public function data(){
-            $data = User::where('id', '=', Auth::user()->id)->get();
-            return view('dashboard_admin.profileAdmin', compact('data'));
-        }
+    public function data(){
+        $data = User::where('id', '=', Auth::user()->id)->get();
+        return view('dashboard_admin.profileAdmin', compact('data'));
+    }
 }
