@@ -212,6 +212,19 @@ class JadwalController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'kelas_id' => 'required',
+            'jumlah_mapel' =>'required',
+         
+            
+            
+       ],
+       [
+            'kelas_id.required' => 'Kelas tidak boleh kosong',
+            'jumlah_mapel.required' => 'Paket tidak boleh kosong',
+            
+       ]);
+
         $invoice = new ModelInvoice();
         $invoice->invoice = $request->invoice;
         $invoice->id_murid = $request->id_murid;

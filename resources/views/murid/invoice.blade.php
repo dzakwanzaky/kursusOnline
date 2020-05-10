@@ -1,5 +1,6 @@
 @extends('murid/base')
 @section('content')
+<link rel="stylesheet" href="{{asset('/assets')}}/bootstrap/css/bootstrap.min.css">
 <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -75,7 +76,7 @@
                         </td>
                         <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
-                        <form method="post" action="/upload" enctype="multipart/form-data">
+                        <form method="post" action="/unggah" enctype="multipart/form-data">
                           <div class="modal-content">
                             <div class="modal-header">
                               <h5 class="modal-title" id="exampleModalLabel">Upload Bukti</h5>
@@ -98,11 +99,14 @@
                         </form>
                       </div>
                     </div>
+
+
                         <td>
                           <a  href="{{route('invoicePDF', $i->id_murid)}}" target="_blank" class=" btn btn-sm btn-success" style="color:white;">
                             <span class="fa fa-download"></span>
                           </a>
                         </td>
+
                         @endforeach
                     </tr>
                 </tbody>
@@ -122,4 +126,5 @@
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
+      <script src="{{asset('/assets')}}/js/bootstrap.min.js"></script>
   @endsection

@@ -73,6 +73,27 @@ class SiswaController extends Controller
 
     public function store(Request $request)
     {
+         $this->validate($request,[
+            'jenis_kelamin' => 'required',
+            'tanggal_lahir' => 'required',
+            'provinsi' => 'required',
+            'kabupaten' => 'required',
+            'kecamatan' => 'required',
+            'alamat_detail' => 'min:10',
+            'file' => 'image'
+            
+       ],
+
+       [
+            'jenis_kelamin.required' => 'Jenis kelamin tidak boleh kosong',
+            'tanggal_lahir.required' => 'Tanggal lahir tidak boleh kosong',
+            'provinsi.required' => 'Provinsi tidak boleh kosong',
+            'kabupaten.required' => 'kabupaten tidak boleh kosong',
+            'kecamatan.required' => 'kecamatan tidak boleh kosong',
+            'alamat_detail.min' => 'Alamat detail minimal 10 karakter',
+            'file' => 'Foto profil harus jpg/png'
+       ]);
+
         $data = new ModelSiswa();
         $data->id = $request->id;
         $data->jenis_kelamin = $request->jenis_kelamin;

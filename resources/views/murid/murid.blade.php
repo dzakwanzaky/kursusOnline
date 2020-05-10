@@ -1,4 +1,4 @@
-@extends('murid/base')
+@extends('murid/basee')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
 <!-- Content Header (Page header) -->

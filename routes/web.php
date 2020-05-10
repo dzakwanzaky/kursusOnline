@@ -278,6 +278,7 @@ Route::get('/editAdmin/{id}', 'Auth\RegisterController@editAdmin')->name('editAd
 Route::get('/getKabupaten/{id}', 'SiswaController@getKabupaten')->name('getKabupaten');
 Route::get('/getKecamatan/{id}', 'SiswaController@getKecamatan')->name('getKecamatan');
 Route::post('/upload', 'InvoiceController@proses_upload')->name('upload');
+Route::post('/unggah', 'InvoiceController@proses_unggah')->name('unggah');
 Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
 // Route::get('/verify','VerifyController@getVerify')->name('getverify');
 // Route::post('/verify','VerifyController@postVerify')->name('verify');

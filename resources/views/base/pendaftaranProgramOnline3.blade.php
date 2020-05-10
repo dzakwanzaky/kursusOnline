@@ -1,7 +1,14 @@
 @include('base/header_page')
 @extends('base/script_page')
 @section('content')
-
+<style>
+        .help-block {
+    color: red;
+}
+.has-error {
+     color: red;
+}
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,16 +37,24 @@
 
 
                         <label for="kelas">Kelas
+                            <div class="form-group{{ $errors->has('jumlah_mapel') ? ' has-error' : '' }}">
                             <select id="kelas" name="kelas_id" class="form-control" style="float:left" required>
-                                <option value="0" disabled="true" selected="true">--Kelas--</option>
+                                <option value="0" disabled="true" selected="true">-- Pilih Kelas --</option>
                                 @foreach($ksma as $d)
                                         <option value="{{ $d->id }}">{{ $d->kelas }}</option>
                                 @endforeach
 
                             </select>
+                             </div>
+                              @if ($errors->has('kelas_id'))
+                                <span class="help-block">
+                               {{ $errors->first('kelas_id') }}
+                                </span>
+                            @endif
                         </label>
 
-                        <label for="mata_pelajaran" style="float:right">Jumlah
+                        <label for="mata_pelajaran" style="float:right">Paket
+                            <div class="form-group{{ $errors->has('jumlah_mapel') ? ' has-error' : '' }}">
                             <select id="jumlah_mapel" name="jumlah_mapel" class="form-control" style="float:right">
                                <option value="0" disabled="true" selected="true">--Pilih Paket--</option>
                                 <option value="Regular SMA 1 Online">Regular SMA 1 Online</option>
@@ -50,6 +65,12 @@
                                 <option value="Pro SMA 2 Online">Pro SMA 2 Online</option>
                             </select>
                         </label>
+                         </div>
+                        @if ($errors->has('jumlah_mapel'))
+                                <span class="help-block">
+                               {{ $errors->first('jumlah_mapel') }}
+                                </span>
+                            @endif
 
                          
 
@@ -118,8 +139,8 @@
                         <div>
                             <label for="mata_pelajaran" style="width:100%">Mata Pelajaran
                                 <select id="mata_pelajaran" name="mapel_id[]" class="form-control"
-                                    style="width:100%">
-                                    <option value=" ">Mata Pelajaran</option>
+                                    style="width:100%" required>
+                                    <option value="">Mata Pelajaran</option>
                                     @foreach($sma as $d)
                                         <option value="{{ $d->id }}">{{ $d->mapel }}</option>
                                     @endforeach
@@ -129,7 +150,7 @@
 
                         <div id="waktu1">
                             <label for="hari1">Sesi 1
-                                <select id="hari1" name="hari1[]" class="form-control" style="float:left">
+                                <select id="hari1" name="hari1[]" class="form-control" style="float:left" required>
                                     <option value="">Pilih Hari</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
@@ -142,7 +163,7 @@
                             </label>
 
                             <label for="waktu_hari1" style="float:right">Waktu Sesi 1
-                                <select id="waktu_hari1" name="waktu_hari1[]" class="form-control" style="float:right">
+                                <select id="waktu_hari1" name="waktu_hari1[]" class="form-control" style="float:right" required>
                                     <option value="">Pilih Waktu</option>
                                     <option value="15.00">15.00 WIB</option>
                                     <option value="16.00">16.00 WIB</option>
@@ -186,7 +207,7 @@
                             required autofocus value="{{ Auth::user()->id }}" style="text-transform: capitalize">
 
                         <div class="alert alert-primary">
-                            Masukkan dan pilih sesuai kebutuhan Anda
+                            Pilih Mata Pelajaran Ke Dua
                         </div>
 
                         <input type="text" class="form-control" id="status" name="status[]" style="display:none"
@@ -266,7 +287,7 @@
                             value="MENUNGGU">
 
                         <div class="alert alert-primary">
-                            Masukkan dan pilih sesuai kebutuhan Anda
+                            Pilih Mata Pelajaran Ke Tiga
                         </div>
                         <div>
                             <label for="mata_pelajaran" style="width:100%">Mata Pelajaran
@@ -346,7 +367,7 @@
                             value="MENUNGGU">
 
                         <div class="alert alert-primary">
-                            Masukkan dan pilih sesuai kebutuhan Anda
+                            Pilih Mata Pelajaran Ke Empat
                         </div>
                         <div>
                             <label for="mata_pelajaran" style="width:100%">Mata Pelajaran

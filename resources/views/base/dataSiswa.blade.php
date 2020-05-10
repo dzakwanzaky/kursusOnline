@@ -6,8 +6,15 @@
  <style type="text/css">
  
     .form {
-         margin-left: 4.5em;
+         margin-left: 3em;
     }
+
+    .help-block {
+    color: red;
+}
+.has-error {
+     color: red;
+}
 </style>
 <head>
     <meta charset="UTF-8">
@@ -33,7 +40,7 @@
                             <form method="POST" action="{{ route('dataSiswa.store')}}" enctype="multipart/form-data">
                                 {{ csrf_field() }}
 
-                                <h2 class="form">Profil Siswa</h2>
+                                <h2 class="form">Lengkapi Profil Siswa</h2>
 
                                 <input id="id" value="{{ Auth::user()->id }}" type="text" class="form-control" name="id"
                                     required autofocus style="display:none">
@@ -41,64 +48,92 @@
                                 <input id="nama_siswa" value="{{ Auth::user()->name }}" type="text" class="form-control"
                                     name="nama_siswa" required autofocus style="display:none">
 
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <label for="email">Jenis Kelamin</label>
 
+                                <label for="email">Jenis Kelamin</label>
+                                <div class="form-group{{ $errors->has('jenis_kelamin') ? ' has-error' : '' }}">
                                     <div class="form-title">
 
                                         <select id="jenis_kelamin" name="jenis_kelamin" class="form-control">
-                                            <option value="Laki-Laki">Laki-Laki</option>
-                                            <option value="Perempuan">Perempuan</option>
+                                            <option value="0" disabled="true" selected="true">Jenis Kelamin</option>
+                                            <option value="Laki-Laki"{{(old('jenis_kelamin') == 'Laki-Laki ') ? ' selected' : ''}}>Laki-Laki</option>
+                                             <option value="Perempuan"{{(old('jenis_kelamin') == 'Perempuan') ? ' selected' : ''}}>Perempuan</option>
                                         </select>
 
                                     </div>
+                                    @if ($errors->has('jenis_kelamin'))
+                                <span class="help-block">
+                               {{ $errors->first('jenis_kelamin') }}
+                                </span>
+                            @endif
                                 </div>
 
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                
                                     <label for="tanggal_lahir">Tanggal Lahir</label>
-
+                                <div class="form-group{{ $errors->has('tanggal_lahir') ? ' has-error' : '' }}">
                                     <div class="form-title">
-
                                         <input class="form-control" id="tanggal" name="tanggal_lahir"
-                                            placeholder="MM/DD/YYY" type="text">
+                                            placeholder="MM/DD/YYY" type="text" value="{{old('tanggal_lahir')}}">
 
                                     </div>
+                                        @if ($errors->has('tanggal_lahir'))
+                                <span class="help-block">
+                               {{ $errors->first('tanggal_lahir') }}
+                                </span>
+                            @endif
                                 </div>
 
-                                <div class="form-group">
+
                                     <label id="prov" for="prov">Provinsi</label>
+                                    <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
 
-                                    <select class="form-control" id="provinsi-select" name="provinsi-select">
+                                    <select class="form-control" id="provinsi-select" name="provinsi-select" required >
                                         <option value="">Provinsi</option>
-
                                         @foreach($provinsi as $key => $value)
                                         <option value="{{ $key }}">{{ $value }}</option>
                                         @endforeach
                                     </select>
-                                </div>
+                                           @if ($errors->has('provinsi'))
+                                <span class="help-block">
+                               {{ $errors->first('provinsi') }}
+                                </span>
+                            @endif
 
+                                </div>
+                         
                                 <div name="provinsi" id="provinsi"></div>
 
 
-                                <div class="form-group">
+                                
                                     <div class="input-group-prepend">
                                         <label for="kabkot">Kota/Kabupaten</label>
                                     </div>
-                                    <select class="form-control" id="kabupaten-select" name="kabupaten-select">
+                                    <div class="form-group{{ $errors->has('kabupaten') ? ' has-error' : '' }}">
+                                <select class="form-control" id="kabupaten-select" name="kabupaten-select" required >
                                         <option>Kota/Kabupaten</option>
                                     </select>
+                                    @if ($errors->has('kabupaten'))
+                                <span class="help-block">
+                               {{ $errors->first('kabupaten') }}
+                                </span>
+                            @endif
                                 </div>
 
                                 <div name="kabupaten" id="kabupaten"></div>
 
 
-                                <div class="form-group">
+                                
                                     <div class="input-group-prepend">
                                         <label>Kecamatan</label>
                                     </div>
-                                    <select class="form-control" id="kecamatan-select" name="kecamatan-select">
+                                    <div class="form-group{{ $errors->has('kecamatan') ? ' has-error' : '' }}">
+                                <select class="form-control" id="kecamatan-select" name="kecamatan-select" required >
                                         <option>Kecamatan</option>
                                     </select>
+                                    @if ($errors->has('kecamatan'))
+                                <span class="help-block">
+                               {{ $errors->first('kecamatan') }}
+                                </span>
+                            @endif
                                 </div>
 
                                 <div name="kecamatan" id="kecamatan"></div>
@@ -106,30 +141,43 @@
 
                                 <div class="form-group">
                                     <label for="alamat_detail">Alamat Detail</label>
+                                    <div class="form-group{{ $errors->has('alamat_detail') ? ' has-error' : '' }}">
                                     <div class="form-title">
                                         <textarea id="alamat_detail" type="text" class="form-control"
                                             name="alamat_detail" rows="3"
-                                            placeholder="Petunjuk arah atau alamat detail untuk menuju alamat rumah"
-                                            required></textarea>
+                                            placeholder="Petunjuk arah atau alamat detail untuk menuju alamat rumah">{{old('alamat_detail')}}</textarea>
                                     </div>
+                                    @if ($errors->has('alamat_detail'))
+                                <span class="help-block">
+                               {{ $errors->first('alamat_detail') }}
+                                </span>
+                            @endif
                                 </div>
+
 
                                 <br>
                                 <div class="panel-body">
                                     <div class="alert alert-danger">
-                                        <strong>Info!</strong> Maximum Size Upload : 2MB
+                                        <strong>Info!</strong> Ukuran foto maksimal : 2MB
                                     </div>
                                     Foto Diri
                                     <div class="form-group">
-                                        <input type="file" class="form-control" id="file" name="file">
+                                        <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
+                                        <input type="file" class="form-control" id="file" name="file" required>
+                                                 @if ($errors->has('file'))
+                                <span class="help-block">
+                               {{ $errors->first('file') }}
+                                </span>
+                            @endif
                                     </div>
+
                                     <input id="status" type="text" name="status" class="form-control"
                                         value="BELUM AKTIF" style="display:none" required>
 
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary d-block"
                                             style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">
-                                            Save
+                                            Simpan
                                         </button>
                                     </div>
                             </form>

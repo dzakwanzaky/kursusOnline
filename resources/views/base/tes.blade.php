@@ -1514,7 +1514,7 @@ label {
     width: 120px;
     background-color: #03a9f4;
     position: absolute;
-    margin-left: 8.5em;
+    margin-left: 9em;
     padding: 10px;
     border-radius: 10px;
     padding-top: 8px;
@@ -1593,7 +1593,7 @@ label:hover {
     </div>
     <br>
 
-    <input type="file" name="file" id="inpFile" accept="image/*">
+    <input type="file" name="file" id="inpFile" accept="image/*" required>
     <label for="inpFile"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;
         Pilih foto
     </label>
