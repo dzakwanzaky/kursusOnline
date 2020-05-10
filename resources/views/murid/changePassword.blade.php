@@ -9,20 +9,20 @@
             <div class="box box-primary">
                 <div class="container-fluid">
                 <div class="row mb-2">
-					  <div class="col-sm-6">
-						  <p style="font-size:24px">Ubah Password</p>
-					  </div>
+                      <div class="col-sm-6">
+                          <p style="font-size:24px">Ubah Kata Sandi</p>
+                      </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
                                     <a href="/murid">Murid</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Ubah Password
+                                    Ubah Kata Sandi
                                 </li>
                             </ol>
-                        </div>			
-			  	    </div>			
+                        </div>          
+                    </div>          
                 </div>
             </div>
         </div>
@@ -44,9 +44,10 @@
                          @foreach ($errors->all() as $error)
                             <p class="text-danger">{{ $error }}</p>
                          @endforeach 
-  
+  <br>
+  <br>
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Current Password</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">Masukan Kata Sandi Lama</label>
   
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="current_password" autocomplete="current-password">
@@ -54,7 +55,7 @@
                         </div>
   
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">New Password</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">Masukan Kata Sandi Baru</label>
   
                             <div class="col-md-6">
                                 <input id="new_password" type="password" class="form-control" name="new_password" autocomplete="current-password">
@@ -62,7 +63,7 @@
                         </div>
   
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">New Confirm Password</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">Konfirmasi Kata Sandi Baru</label>
     
                             <div class="col-md-6">
                                 <input id="new_confirm_password" type="password" class="form-control" name="new_confirm_password" autocomplete="current-password">
@@ -71,13 +72,14 @@
    
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Update Password
+                               <button type="submit" class="btn btn-primary" style="margin-left: 12em;" onclick="return confirm('Anda yakin ingin merubah kata sandi Anda?')">
+                                    Ubah Kata Sandi
                                 </button>
+                              
                             </div>
                         </div>
                     </form>
-            
+              <br>
           </div>
           <!-- /.col-md-6 -->
           
@@ -88,26 +90,26 @@
     </div>
     <!-- /.content -->
     <script>
-		//buat profile
-		$(function () {
-			$("#file").change(function () {
-				readURL(this);
-			});
-    	});
+        //buat profile
+        $(function () {
+            $("#file").change(function () {
+                readURL(this);
+            });
+        });
 
 
-    	function readURL(input) {
-			if (input.files && input.files[0]) {
-				var reader = new FileReader();
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
 
-				reader.onload = function (e) {
-					//alert(e.target.result);
-					$('#profile-picture').attr('src', e.target.result);
-				}
+                reader.onload = function (e) {
+                    //alert(e.target.result);
+                    $('#profile-picture').attr('src', e.target.result);
+                }
 
-				reader.readAsDataURL(input.files[0]);
-			}
-    	}
-	</script>
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
  
   @endsection

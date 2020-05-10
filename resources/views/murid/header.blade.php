@@ -25,7 +25,7 @@
           <a href="/changePasswordMurid" class="dropdown-item">
             <i class="fas fa-edit"></i> Ubah Password 
           </a>
-          <a href="{{ url('/landing') }}" class="nav-link btn-login; dropdown-item"
+          <a href="{{ url('/') }}" class="nav-link btn-login; dropdown-item"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
           <i class="fas fa-sign-out-alt"></i>Logout 

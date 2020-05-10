@@ -1,11 +1,11 @@
-		 @include('base/header_page')
-		 @extends('base/script_pageyes')
-		 @include('base/script')
+     @include('base/header_pageu')
+     @extends('base/script_pageyes')
+     @include('base/script')
 
-	<style type="text/css">
-	.awake {
-	background-color: #f4f6f9;
-	height: 120%;
+  <style type="text/css">
+  .awake {
+  background-color: #f4f6f9;
+  height: 120%;
 
 }
 
@@ -22,10 +22,11 @@
    display: table;
    border-radius: 20px;
    font-size: 17px;
+   font-weight: 600;
    float: center;
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 @media screen and (width:1366px) {
 .butn {
@@ -43,7 +44,7 @@
    float: center;
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 }
 @media screen and (width:1024px) {
@@ -62,7 +63,7 @@
    float: center;
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 }
 
@@ -82,7 +83,7 @@
    float: center;
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 }
 
@@ -102,7 +103,7 @@
    float: center;
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 }
 @media screen and (width:667px) {
@@ -121,7 +122,7 @@
    float: center;
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 }
 @media screen and (width:640px) {
@@ -139,7 +140,7 @@
    font-size: 14px;
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 }
 
@@ -159,7 +160,7 @@
    float: center;
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 }
 @media screen and (width:411px) {
@@ -178,7 +179,7 @@
    float: center;
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 }
 @media screen and (width:360px) {
@@ -198,7 +199,7 @@
 
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 
 }
@@ -218,7 +219,7 @@
 
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 }
 @media screen and (width:375px) {
@@ -238,7 +239,7 @@
 
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 
 }
@@ -259,7 +260,7 @@
 
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 
 }
@@ -278,7 +279,7 @@
    font-size: 14px;
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 }
 @media screen and (width:812px) {
@@ -296,7 +297,7 @@
    font-size: 14px;
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 }
 @media screen and (width:731px) {
@@ -314,7 +315,7 @@
    font-size: 14px;
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 }
 @media screen and (width:414px) {
@@ -333,7 +334,7 @@
    float: center;
 }
 .butn:hover{
-	opacity: 80%;
+  opacity: 80%;
 }
 }
 }
@@ -346,38 +347,38 @@
 
 @media screen and (width:640px) {
 .awake {
-	background-color: #fafafa;
-	height: 180%;
+  background-color: #fafafa;
+  height: 180%;
 
 }
 }
 
 @media screen and (width:731px) {
 .awake {
-	background-color: #fafafa;
-	height: 130%;
+  background-color: #fafafa;
+  height: 130%;
 
 }
 }
 @media screen and (width:568px) {
 .awake {
-	background-color: #fafafa;
-	height: 180%;
+  background-color: #fafafa;
+  height: 180%;
 
 }
 }
 @media screen and (width:667px) {
 .awake {
-	background-color: #fafafa;
-	height: 160%;
+  background-color: #fafafa;
+  height: 160%;
 
 }
 }
 
 @media screen and (width:812px) {
 .awake {
-	background-color: #fafafa;
-	height: 140%;
+  background-color: #fafafa;
+  height: 140%;
 
 }
 }
@@ -390,23 +391,23 @@ p{
       margin-right: 80px;
     }
     .typing h4 {
-    	 margin-left: 120px;
-    	 margin-right: 20px;
+       margin-left: 120px;
+       margin-right: 20px;
     }
     .typing p1{
-    	color: #787878;
-    	font-size: 17px;
-    	font-weight: lighter;
-    	font-style: normal;
-    	margin-top: 10px;
-    	margin-right: 10px;
+      color: #787878;
+      font-size: 17px;
+      font-weight: lighter;
+      font-style: normal;
+      margin-top: 10px;
+      margin-right: 10px;
     }
 
 @media screen and (width: 360px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 30px;
-    	 
+       margin-left: 40px;
+       font-size: 30px;
+       
     }
     p{
       line-height: 1.4em;
@@ -420,9 +421,9 @@ p{
 }
 @media screen and (width: 812px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 30px;
-    	 
+       margin-left: 40px;
+       font-size: 30px;
+       
     }
     p{
       line-height: 1.4em;
@@ -436,9 +437,9 @@ p{
 }
 @media screen and (width: 667px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 30px;
-    	 
+       margin-left: 40px;
+       font-size: 30px;
+       
     }
     p{
       line-height: 1.4em;
@@ -452,9 +453,9 @@ p{
 }
 @media screen and (width: 568px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 30px;
-    	 
+       margin-left: 40px;
+       font-size: 30px;
+       
     }
     p{
       line-height: 1.4em;
@@ -469,9 +470,9 @@ p{
 
 @media screen and (width: 736px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 30px;
-    	 
+       margin-left: 40px;
+       font-size: 30px;
+       
     }
     p{
       line-height: 1.4em;
@@ -486,9 +487,9 @@ p{
 
 @media screen and (width: 731px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 30px;
-    	 
+       margin-left: 40px;
+       font-size: 30px;
+       
     }
     p{
       line-height: 1.4em;
@@ -503,9 +504,9 @@ p{
 
 @media screen and (width: 823px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 30px;
-    	 
+       margin-left: 40px;
+       font-size: 30px;
+       
     }
     p{
       line-height: 1.4em;
@@ -520,9 +521,9 @@ p{
 
 @media screen and (width: 411px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 30px;
-    	 
+       margin-left: 40px;
+       font-size: 30px;
+       
     }
     p{
       line-height: 1.4em;
@@ -538,9 +539,9 @@ p{
 
 @media screen and (width: 320px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 30px;
-    	 
+       margin-left: 40px;
+       font-size: 30px;
+       
     }
     p{
       line-height: 1.4em;
@@ -555,9 +556,9 @@ p{
 
 @media screen and (width: 375px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 30px;
-    	 
+       margin-left: 40px;
+       font-size: 30px;
+       
     }
     p{
       line-height: 1.4em;
@@ -571,9 +572,9 @@ p{
 }
 @media screen and (width: 414px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 30px;
-    	 
+       margin-left: 40px;
+       font-size: 30px;
+       
     }
     p{
       line-height: 1.4em;
@@ -587,9 +588,9 @@ p{
 }
 @media screen and (width: 640px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 30px;
-    	 
+       margin-left: 40px;
+       font-size: 30px;
+       
     }
     p{
       line-height: 1.4em;
@@ -603,9 +604,9 @@ p{
 }
 @media screen and (width: 375px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 30px;
-    	 
+       margin-left: 40px;
+       font-size: 30px;
+       
     }
     p{
       line-height: 1.4em;
@@ -620,9 +621,9 @@ p{
 
 @media screen and (width: 768px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 30px;
-    	 
+       margin-left: 40px;
+       font-size: 30px;
+       
     }
     p{
       line-height: 1.4em;
@@ -636,9 +637,9 @@ p{
 }
 @media screen and (width: 1024px) {
     .typing h4 {
-    	 margin-left: 40px;
-    	 font-size: 32px;
-    	 
+       margin-left: 40px;
+       font-size: 32px;
+       
     }
     p{
       line-height: 1.4em;
@@ -656,38 +657,38 @@ p{
 
 <div class="awake">
 
-            	<section class="search-course-area relative" style="background:url('frontend/img/satuu.jpg')">
-			
-				<div class="container">
-					<body bgcolor="#ffffff">
-					
-					<br>
-					<br>
-					<br>
-					<br>
+              <section class="search-course-area relative" style="background:url('frontend/img/satuu.jpg')">
+      
+        <div class="container">
+          <body bgcolor="#ffffff">
+          
+          <br>
+          <br>
+          <br>
+          <br>
 
-					</div>
-					
-						<div class="typing">
-							<h4>
-								<b><font color="#000">Terimakasih</b>
-								<br>
-								<p><br>
-								Tunggu kami untuk verifikasi berkas unggahan Anda maksimal 1 x 24 jam. Jika berkas Anda lolos verifikasi, 
-								maka soal dan pembahasan akan kami kirim ke alamat email Anda.</p>
-							</font>
-							</h4>
+          </div>
+          
+            <div class="typing">
+              <h4>
+                <b><font color="#000">Terimakasih</b>
+                <br>
+                <p><br>
+                Tunggu kami untuk verifikasi berkas unggahan Anda maksimal 1 x 24 jam. Jika berkas Anda lolos verifikasi, 
+                maka soal dan pembahasan akan kami kirim ke alamat email Anda.</p>
+              </font>
+              </h4>
 
-						</div>
+            </div>
 
-							
-									<a href="/login">
-										<div class="butn">
-   										Daftar Bimbel Sekarang
-										</div>
-										</a>		
+              
+                  <a href="/login">
+                    <div class="butn">
+                      Daftar Bimbel Sekarang
+                    </div>
+                    </a>    
 
-							
+              
                 
 </div>
 </div>

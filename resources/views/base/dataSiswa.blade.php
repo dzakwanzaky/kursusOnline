@@ -3,7 +3,12 @@
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
-
+ <style type="text/css">
+ 
+    .form {
+         margin-left: 4.5em;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +33,7 @@
                             <form method="POST" action="{{ route('dataSiswa.store')}}" enctype="multipart/form-data">
                                 {{ csrf_field() }}
 
-                                <h2 class="form-title">Profile Siswa</h2>
+                                <h2 class="form">Profil Siswa</h2>
 
                                 <input id="id" value="{{ Auth::user()->id }}" type="text" class="form-control" name="id"
                                     required autofocus style="display:none">

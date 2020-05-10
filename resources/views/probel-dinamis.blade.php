@@ -1,6 +1,6 @@
 
 		 @include('base/script')
-		 @include('base/header_page')
+		 @include('base/header_p')
 		 @extends('base/script_page')
 		
 <style type="text/css">

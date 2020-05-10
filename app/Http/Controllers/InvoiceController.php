@@ -36,7 +36,7 @@ class InvoiceController extends Controller
         $data = ModelInvoice::where('id',$id)->first();
         $data->harga = $request->harga;
         $data->save();
-        return redirect('/murid')->withMessage('Berhasil Merubah Data');
+        return view('base/tes', compact('data'));
     }
     
 

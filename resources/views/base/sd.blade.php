@@ -1,5 +1,5 @@
 <div class="awake">
-    @include('base/header_page')
+    @include('base/header_pagee')
     @extends('base/script_yes')
     @include('base/script4')
     <link rel="stylesheet" type="text/css" href="{{asset('/strap')}}/css/bootstrap.css">
@@ -1107,13 +1107,14 @@
             color: #565656;
         }
 
-        .nav ul a:hover {
+         ul a:hover {
             color: #92CD16;
         }
 
         .secsion {
             padding-left: 70px;
         }
+
     </style>
 
 
@@ -1148,11 +1149,11 @@
                          @foreach($data as $k)
                         <a href="{{route('soalFilter', [$k->id_program, $k->id])}}">{{$k->mapel}}</a>
                         @endforeach
-                        <ul>
+                        </ul>
                 </div>
 
 
-
+<br>
                 @foreach($dat as $ki)
                 <div class="jq-tab-content active">
 

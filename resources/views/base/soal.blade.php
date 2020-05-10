@@ -1,4 +1,4 @@
-    @include('base/header_page0')
+        @include('base/header_pageu')
 @extends('base/script_yesa')
 
 <link href="{{asset('/button')}}/gas.css" rel="stylesheet" type="text/css">

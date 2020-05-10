@@ -34,7 +34,7 @@
                         <th>Lokasi</th>
                         <th>Status</th>
                         <th>Bukti Pembayaran</th>
-                        <th>Unduh</th>
+                        <th>Tagihan</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,7 +47,7 @@
                   
                         </td>
                         <td>{{ Auth::user()->name }}</td>
-                        <td>{{ $i->kelas->kelas }} SD</td>
+                        <td>{{ $i->kelas->kelas }} {{ $i->program->program }} </td>
                         <td>{{ $i->program->program }}</td>
                         <td>
                         @endforeach
