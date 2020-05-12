@@ -69,31 +69,40 @@ class SiswaControllerAPI extends Controller
 
     public function update(Request $request, $id)
     {
-        $data = ModelSiswa::where('id',$id)->first();
-        $data->nama_siswa = $request->nama_siswa;
-        $data->jenis_kelamin = $request->jenis_kelamin;
-        $data->tanggal_lahir = $request->tanggal_lahir;
-        $data->provinsi = $request->provinsi;
-        $data->kecamatan = $request->kecamatan;
-        $data->kabupaten = $request->kabupaten;
-        $data->status = $request->status;
-        if($request->file){
-            $file = $request->file('file');
-            $nama_file = time()."_".$file->getClientOriginalName();  
-            $tujuan_upload = 'data_file';
-            $file->move($tujuan_upload,$nama_file);
-            $data->file = $nama_file;  
-        }
-        if($data->save()){
-            $res['message'] = "Success!";
-            $res['value'] = "$data";
-            return response($res);
-        }
-    }
+        $user = User::where('id',$id)->first();
+        $user->name = $request->name;
+        $user->phone = $request->phone;
+        $user->email = $request->email;
 
-    public function profileSiswa(){
-        $data = ModelSiswa::where('id', '=', Auth::user()->id)->get();
-        $user = User::where('id', '=', Auth::user()->id)->get();
-        return response()->json($data);
+        if($user->save()){
+            $data = ModelSiswa::where('id',$id)->first();
+            $data->jenis_kelamin = $request->jenis_kelamin;
+            $data->tanggal_lahir = $request->tanggal_lahir;
+            $data->provinsi = $request->provinsi;
+            $data->kecamatan = $request->kecamatan;
+            $data->kabupaten = $request->kabupaten;
+            $data->alamat_detail = $request->alamat_detail;
+            $data->status = $request->status;
+            if($request->file){
+                $file = $request->file('file');
+                $nama_file = time()."_".$file->getClientOriginalName();  
+                $tujuan_upload = 'data_file';
+                $file->move($tujuan_upload,$nama_file);
+                $data->file = $nama_file;  
+            }
+            if($data->save()){
+                if ($user->wasChanged('email') && $user->email) {
+                    $user->email_verified_at=NULL;
+                    $user->active=0;
+                    if($user->save()){
+                        $user->sendEmailVerificationNotification();
+                        $res['message'] = "sukses";
+                        $res['value'] = "$data";
+                        return response($res);
+                    }    
+                }
+            }    
+        }
+       
     }
 }

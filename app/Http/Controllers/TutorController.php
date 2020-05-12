@@ -162,6 +162,7 @@ class TutorController extends Controller
         $user = User::where('id',$id)->first();
         $user->name = $request->name;
         $user->phone = $request->phone;
+        $user->email = $request->email;
         $user->save();
         
         $data = ModelTutor::where('id',$id)->first();
@@ -180,8 +181,7 @@ class TutorController extends Controller
             $data->foto = $nama_file;  
          }
         $data->save();
-        if ($request->email) {
-            $user->email = $request->email;
+        if ($user->wasChanged('email') && $user->email) {
             $user->email_verified_at=NULL;
             $user->active=0;
             $user->save();
@@ -189,9 +189,9 @@ class TutorController extends Controller
             return redirect('verify?email='.$user->email);
         }
         else if(Auth::user()->role == 'tutor'){
-            return redirect('profile')->with('success', 'Berhasil Konfirmasi');
+            return redirect('profile')->with('success', 'Berhasil Merubah Data');
             } else {
-                return redirect('daftarTutor')->with('success', 'Berhasil Konfirmasi');
+                return redirect('daftarTutor')->with('success', 'Berhasil Merubah Data');
             }
     }
 

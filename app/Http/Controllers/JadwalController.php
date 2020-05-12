@@ -10,6 +10,10 @@ use App\ModelTutor;
 use App\ModelInvoice;
 use App\ModelMapel;
 use App\ModelKelas;
+use SweetAlert;
+use App\Providers\SweetAlertServiceProvider;
+
+
 
 
 class JadwalController extends Controller

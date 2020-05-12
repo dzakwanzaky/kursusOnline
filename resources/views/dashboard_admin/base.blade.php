@@ -40,6 +40,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- Main Sidebar Container -->
 @include('dashboard_admin/sidebar')
+@include('sweetalert::alert')
+
  
   <!-- Content Wrapper. Contains page content -->
   @yield('content') 

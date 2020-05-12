@@ -54,7 +54,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'phone' => ['required', 'min:10', 'max:13'],
+            'phone' => ['required', 'min:10', 'max:13', 'unique:users'],
         
         ]);
 
@@ -70,6 +70,23 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name'       => 'required|string|max:255',
+            'email'      => 'required|unique:users',
+            'password'   => 'required|string|min:6|confirmed',
+            'phone'      => 'required|min:10|max:13|unique:users',
+        ],
+        [
+            'name.required'     => 'Nama harus diisi',
+            'email.unique'      => 'Email telah terdaftar',
+            'email.required'    => 'Email harus diisi',
+            'phone.required'    => 'Nomor Telepon harus diisi',
+            'phone.unique'      => 'Nomor Telepon telah terdaftar',
+            'password.required' => 'Password harus diisi',
+            'password.min'      => 'Password minimal 6 karakter',
+
+        ]
+        );
                 $user = new User;
                 $user->name = $request->input('name');
                 $user->email = $request->input('email');

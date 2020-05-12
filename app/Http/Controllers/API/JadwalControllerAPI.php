@@ -21,12 +21,9 @@ class JadwalControllerAPI extends Controller
     
     public function index()
     {
-        $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->get();
-        $datas = ModelSiswa::where('id', '=', Auth::user()->id)->get();
-        return response()->json(array(
-            'data' => $data,
-            'datas' => $datas, 
-        ));    
+        $data = ModelJadwal::with('siswa')->where('murid_id', '=', Auth::user()->id)->get();
+        return response()->json($data);
+    
     }
 
     public function tutor()
@@ -45,7 +42,8 @@ class JadwalControllerAPI extends Controller
   
     public function jadwalTutor()
     {
-        $data = ModelJadwal::with('datas', 'jadwal')->where('tutor_id', '=', Auth::user()->id)->where('status', 'AKTIF')->orWhere('status', 'DIPILIH TUTOR')->get();
+        $data = ModelJadwal::with('datas', 'jadwal')->where('tutor_id', '=', Auth::user()->id)->where('status', 'AKTIF')
+        ->orWhere('status', 'DIPILIH TUTOR')->get();
         return response()->json($data);
     }
 

@@ -37,6 +37,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Main Sidebar Container -->
         @include('tutor/sidebar')
+        @include('sweetalert::alert')
+
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -76,10 +78,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="{{ asset('/lte/dist/js/adminlte.min.js') }}"></script>
         <script src="{{ asset('/lte/plugins/datatables/jquery.dataTables.js') }}"></script>
         <script src="{{ asset('/lte/plugins/datatables/dataTables.bootstrap4.js') }}"></script>
-        <!-- SweetAlert -->
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
         @yield('sweet')
 
 </body>

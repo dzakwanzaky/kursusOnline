@@ -103,7 +103,7 @@
                                                 <!-- button update -->
                                                 <button id="status" name="btnSubmit" data-toggle="tooltip"
                                                     data-placement="top" title="Ajukan" type="submit"
-                                                    class=" btn btn-sm btn-success mr-2 accept"> <i
+                                                    class=" btn btn-sm btn-success mr-2 accept" onclick="return confirm('Anda yakin ingin mengajukan jadwal?')"> <i
                                                         class="fas fa-check"></i>
                                                 </button>
 
@@ -132,6 +132,7 @@
     @endsection
     @section('sweet')
     <script>
+    
         $(document).ready(function () {
             $('#jadwal').DataTable({
                 "autoWidth": false
@@ -142,41 +143,8 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
 
-        $('.accept').submit(function (e) {
-            e.preventDefault();
-            swal({
-                title: 'Apakah anda yakin untuk mengajukan jadwal?',
-                text: "Data akan diajukan secara permanen!",
-                icon: "warning",
-                buttons: {
-                    cancel: "Batalkan!",
-                    confirm: "Lanjutkan!",
-                },
-            }).then((result) => {
-                if (result.value) {
-                    swal(
-
-                    )
-                    this.submit();
-                } else {
-                    swal("Dibatalkan", "Data masih belum diajukan", "error");
-                }
-            })
-        });
     </script>
-    <script>
-        var isiPesan = '{{Session::get('
-        success ') }}';
-        var exist = '{{Session::has('
-        success ') }}';
-        if (exist) {
-            swal(
-                'Sukses!',
-                isiPesan,
-                'success'
-            )
-        }
-    </script>
+ 
 
 
     @endsection

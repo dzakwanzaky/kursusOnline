@@ -24,13 +24,9 @@ class TutorControllerAPI extends Controller
 
     //menampilkan profile tutor
     public function dataTutor(){
-        $data = ModelTutor::where('id', '=', Auth::user()->id)->get();
-        $user = User::where('id', '=', Auth::user()->id)->get();
-        return response()->json(array(
-            'data' => $data,
-            'user' => $user,
-            
-        ));
+        $data = ModelTutor::with('tutor')->where('id', '=', Auth::user()->id)->get();
+        return response()->json($data);
+
     }
 
     //menyimpan data tutor saat registrasi
@@ -83,17 +79,12 @@ class TutorControllerAPI extends Controller
         }    
     }
 
-    public function edit($id)
-    {
-        $data = ModelTutor::where('id','=',$id)->get();
-        return view('tutor.editprofile', compact('data'));
-    }
-
     public function update(Request $request, $id)
     {
         $user = User::where('id',$id)->first();
         $user->name = $request->name;
         $user->phone = $request->phone;
+        $user->email = $request->email;
         
         if($user->save()){
             $data = ModelTutor::where('id',$id)->first();
@@ -111,8 +102,7 @@ class TutorControllerAPI extends Controller
                 $data->foto = $nama_file;  
              }
              if($data->save()){
-                if ($request->email) {
-                    $user->email = $request->email;
+                if ($user->wasChanged('email') && $user->email) {
                     $user->email_verified_at=NULL;
                     $user->active=0;
                     if($user->save()){
@@ -124,8 +114,6 @@ class TutorControllerAPI extends Controller
                 }
             }    
         }
-      
-       
     }
 
     //$provinsi untuk get data provinsi
