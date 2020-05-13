@@ -1,5 +1,6 @@
 @extends('murid/base')
 @section('content')
+<link rel="stylesheet" href="{{asset('/assets')}}/bootstrap/css/bootstrap.min.css">
 <!-- Content Wrapper. Contains page content -->
 <!-- Content Header (Page header) -->
 <div class="content-header">

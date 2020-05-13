@@ -1,4 +1,4 @@
-   @include('base/header_page0')
+   @include('base/header_pageeu')
    @extends('base/script_h')
 
    <head>

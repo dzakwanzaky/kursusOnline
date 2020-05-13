@@ -416,8 +416,8 @@ blockquote {
 }
 
 ul, li, ol{
-	list-style: none;
-	margin: 0px;
+    list-style: none;
+    margin: 0px;
     padding: 10px;
     font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -556,8 +556,8 @@ a img.aligncenter {
 -------------------------------------------------------------------*/
 
 .top-bar{
-	background: #ffffff;	
-	padding: 4px 0px;
+    background: #ffffff;    
+    padding: 4px 0px;
 }
 
 .header-nav .navbar-toggler span {
@@ -565,13 +565,13 @@ a img.aligncenter {
 }
 
 .header-nav .navbar-bran {
-	color: #111111;
-	font-weight: 800;
-	position: relative;
-	font-size: 23px;
+    color: #111111;
+    font-weight: 800;
+    position: relative;
+    font-size: 23px;
 }
 .header-nav .navbar-brand span {
-	 width: 6px;
+     width: 6px;
     height: 6px;
     border-radius: 50%;
     position: absolute;
@@ -584,12 +584,12 @@ a img.aligncenter {
     width: 100%;
     height: 40px;
     display: block;
-	padding: 5px 20px;
-	font-size: 16px;
-	border: 1px solid #ffffff;
-	color: #ffffff;
-	background-color: #158ADF;
-	line-height: 25px;
+    padding: 5px 20px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background-color: #158ADF;
+    line-height: 25px;
     font-weight: 500;
     border-radius: 50px;
     font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -599,90 +599,90 @@ a img.aligncenter {
     width: 50%;
     height: 40px;
     display: block;
-	padding: 5px 20px;
-	font-size: 16px;
-	border: 1px solid #ffffff;
-	color: #ffffff;
-	background-color: #158ADF;
-	line-height: 25px;
+    padding: 5px 20px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background-color: #158ADF;
+    line-height: 25px;
     font-weight: 500;
     border-radius: 50px;
     font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .btn-register a{
-	display: inline-block;
+    display: inline-block;
     padding: 8px 20px;
     margin-left: 5px;
-	font-size: 16px;
-	color: #ffffff;
-	background-color: #92CD16;
-	line-height: 28px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #92CD16;
+    line-height: 28px;
     font-weight: 500;
     border-radius: 75px;
     text-align: center;
 }
 .btn-login a{
-	display: inline-block;
+    display: inline-block;
     padding: 8px 20px;
     margin-left: 5px;
-	font-size: 16px;
-	border: 1px solid #92CD16;
-	color: #92CD16;
-	background-color:#ffffff ;
-	line-height: 25px;
+    font-size: 16px;
+    border: 1px solid #92CD16;
+    color: #92CD16;
+    background-color:#ffffff ;
+    line-height: 25px;
     font-weight: 500;
     border-radius: 75px;
     text-align: center;
 }
 .right-btn a:hover{
-	background-color: #C62828;
-	color: #ffffff;
-	border: 1px solid #C62828;
+    background-color: #C62828;
+    color: #ffffff;
+    border: 1px solid #C62828;
 }
 
 /*Navbar Toogle*/
 .navbar-toggler {
-	border: none;
-	padding: 10px 6px;
-	outline: none !important;
+    border: none;
+    padding: 10px 6px;
+    outline: none !important;
 }
 .navbar-toggler span {
-	display: block;
-	width: 22px;
-	height: 2px;
-	border-radius: 1px;
-	background: #fff;
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background: #fff;
 }
 .navbar-toggler span + span {
-	margin-top: 4px;
-	width: 18px;
-	margin-left: 4px;
+    margin-top: 4px;
+    width: 18px;
+    margin-left: 4px;
 }
 .navbar-toggler span + span + span {
-	width: 10px;
-	margin-left: 11px;
+    width: 10px;
+    margin-left: 11px;
 }
 /**/
 
 
 .navbar-expand-lg .navbar-nav .nav-link{
-	padding: 8px 10px;
-	font-size: 16px;
+    padding: 9px 17px;
+    font-size: 16px;
 }
 
-/* .navbar-expand-lg .navbar-nav .nav-link:hover{
-	background: #acf514;
-	color: #ffffff;
-    border-radius: 2px;
-    padding: 8px 18px;
-} */
+.navbar-expand-lg .navbar-nav .nav-link:hover{
+
+    color: #92CD16;
+    opacity: 60%;
+
+}
 
 .navbar-expand-lg .navbar-nav .nav-link.active{
-	background: #92CD16;
-	color: #ffffff;
-	font-weight: 600;
-	border-radius: 2px;
+    background: #92CD16;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 75px;
 }
 
 
@@ -741,7 +741,7 @@ a img.aligncenter {
 
 .header_style_01 .navbar-brand {
     padding: 2px 15px 0 15px;
-	height: auto;
+    height: auto;
 }
 
 .header_style_01 .navbar-default .navbar-nav > li > a {
@@ -779,62 +779,62 @@ a img.aligncenter {
 
 li.social-links {
     margin: 0 8px;
-	display: inline-block;
-	font-size: 20px;
+    display: inline-block;
+    font-size: 20px;
 }
 
 li.social-links a {
     padding: 0px 0 !important;
-	color: #ffffff;
-	display: inline-block;
+    color: #ffffff;
+    display: inline-block;
 }
 
 li.social-links a:hover {
-	color: #C62828;
+    color: #C62828;
 }
 
 .header_style_01.fixed-menu{
-	position: fixed;
-	visibility: hidden;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	padding: 0px 0px;
-	background: #ffffff;
-	z-index: 0;
-	transition: all 500ms ease;
-	-moz-transition: all 500ms ease;
-	-webkit-transition: all 500ms ease;
-	-ms-transition: all 500ms ease;
-	-o-transition: all 500ms ease;
-	z-index: 999;
-	opacity: 1;
-	visibility: visible;
-	-ms-animation-name: fadeInDown;
-	-moz-animation-name: fadeInDown;
-	-op-animation-name: fadeInDown;
-	-webkit-animation-name: fadeInDown;
-	animation-name: fadeInDown;
-	-ms-animation-duration: 500ms;
-	-moz-animation-duration: 500ms;
-	-op-animation-duration: 500ms;
-	-webkit-animation-duration: 500ms;
-	animation-duration: 500ms;
-	-ms-animation-timing-function: linear;
-	-moz-animation-timing-function: linear;
-	-op-animation-timing-function: linear;
-	-webkit-animation-timing-function: linear;
-	animation-timing-function: linear;
-	-ms-animation-iteration-count: 1;
-	-moz-animation-iteration-count: 1;
-	-op-animation-iteration-count: 1;
-	-webkit-animation-iteration-count: 1;
-	animation-iteration-count: 1;
+    position: fixed;
+    visibility: hidden;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    padding: 0px 0px;
+    background: #ffffff;
+    z-index: 0;
+    transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    z-index: 999;
+    opacity: 1;
+    visibility: visible;
+    -ms-animation-name: fadeInDown;
+    -moz-animation-name: fadeInDown;
+    -op-animation-name: fadeInDown;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -ms-animation-duration: 500ms;
+    -moz-animation-duration: 500ms;
+    -op-animation-duration: 500ms;
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+    -ms-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -op-animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -ms-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -op-animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
 }
 
 .header_style_01.fixed-menu{
-	padding: 15px 0px;
-	box-shadow: 0 0 8px 0 rgba(0,0,0,.12);
+    padding: 15px 0px;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,.12);
 }
 
 .navbar-nav li {
@@ -850,7 +850,7 @@ li.social-links a:hover {
 }
 
 body.app_version .header_style_01.fixed-menu{
-	top: 0px;
+    top: 0px;
 }
 
 
@@ -1204,14 +1204,14 @@ body.app_version .header_style_01.fixed-menu{
 
 
 .testimonial:hover .testi-meta{
-	background: #C62828;
+    background: #C62828;
 }
 
 .testimonial:hover h4{
-	color: #ffffff;
+    color: #ffffff;
 }
 .testimonial:hover small{
-	color: #ffffff;
+    color: #ffffff;
 }
 
 
@@ -1717,7 +1717,7 @@ hr.invis1 {
 }
 
 body.app_version .customwidget li i{
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .customwidget li {
@@ -1779,7 +1779,7 @@ body.app_version .customwidget li i{
     display: table;
     border-radius: 6px;
     font-size: 26px;
-	color: #ffffff;
+    color: #ffffff;
     background-color: #AD1457;
     margin: 0 auto 22px;
     position: relative;
@@ -1862,10 +1862,10 @@ body.app_version .customwidget li i{
 
 
  .show > .btn-light.dropdown-toggle{
-	 background-color: transparent;
+     background-color: transparent;
  }
  .bootstrap-select .dropdown-toggle .filter-option{
-	 line-height: 30px;
+     line-height: 30px;
  }
 
 .bs-searchbox,
@@ -1952,9 +1952,9 @@ select.mobile-device {
     resize: none;
     box-shadow: none !important;
     width: 100%;
-	border: none;
-	border-radius: 0px;
-	border-bottom: 1px solid #ffffff;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid #ffffff;
 }
 
 .contact_form textarea {
@@ -1980,24 +1980,24 @@ select.mobile-device {
 }
 
 body.app_version .bootstrap-select .btn-light:hover{
-	background: none;
+    background: none;
 }
 
 .dropdown-toggle::after{
-	display: none;
+    display: none;
 }
 
 #support .section-title h3{
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .info-box{
-	display: inline-block;
+    display: inline-block;
 }
 
 .info-box i{
-	font-size: 30px;
-	color: #ffffff;
+    font-size: 30px;
+    color: #ffffff;
 }
 
 .tooltip-inner {
@@ -2077,7 +2077,7 @@ body.app_version .bootstrap-select .btn-light:hover{
 
 .footer-links a {
     color: #999;
-	display: block;
+    display: block;
 }
 
 .footer-links a:hover,
@@ -2153,11 +2153,11 @@ body.app_version .bootstrap-select .btn-light:hover{
 }
 
 .footer-distributed .footer-company-name a{
-	color: #158ADF;
+    color: #158ADF;
 }
 
 .footer-distributed .footer-company-name a:hover{
-	color: #92CD16;
+    color: #92CD16;
 }
 
 
@@ -2392,7 +2392,7 @@ body.app_version .bootstrap-select .btn-light:hover{
 
 
 body.app_version .dev-list .widget-title small{
-	font-size: 14px;
+    font-size: 14px;
 }
 
 

@@ -2,16 +2,36 @@
 <html>
 
 <head>
-    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
-        rel="stylesheet" type="text/css" />
-    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
-    <meta charset=utf-8 />
+<link rel="stylesheet" href="{{asset('/assets')}}/bootstrap/css/bootstrap.min.css">
+    
 </head>
 
 </html>
-@extends('murid/base')
+<style type="text/css">
+    .rounded img {
+        border-radius: 50em;
+        border: .1px solid #9f9f9f;
+    }
+    hr.photo2 {
+        width: 230px;
+
+    }
+    
+</style>
+@extends('murid/basee')
 @section('content')
+
+@if(session('success'))
+<div class="alert alert-info" role="alert">
+  {{ session('success') }}
+</div>
+@endif
+
+@if(session('warning'))
+<div class="alert alert-warning" role="alert">
+  {{ session('warning') }}
+</div>
+@endif
 <!-- Content Wrapper. Contains page content -->
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -49,26 +69,29 @@
                             <i class="fas fa-user mr-2"></i>Foto Profile
 
                             <hr class="photo">
-                            <div class="d-flex justify-content-center" style="overflow-x:auto;">
+                             <div class="rounded" >
                                 @if($d->file==null)
                                 <img id="gambar" class="navbar-brand-full" src="{{('/tema/images/user.png')}}"
                                     width="300px" alt="upload foto"
-                                    style="display:block; margin-left:auto; margin-right:auto;">
+                                    width="180px" height="170px"
+                                style="display:block; margin-left:auto; margin-right:auto;">
                                 @else
-                                <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
-                                    <img id="gambar" width="250px" src="{{ url('/data_file/'.$d->file) }}"
-                                        style="display:block; margin-left:auto; margin-right:auto;">
+                            <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
+                                    <img id="gambar" width="180px" height="170px" src="{{ url('/data_file/'.$d->file) }}"
+                                       style="display:block; margin-left:auto; margin-right:auto;">
                                 </a>
                                 @endif
 
                             </div>
                             <br>
+
+                                          
                             <div style="text-align:center">
-                                <label for="change_pic">Ganti Foto Profile</label>
+                                <label for="change_pic">Ganti Foto Profil</label>
 
                                 <br>
-                                <strong style=>Info!</strong> Maximum Size Upload : 2MB
-                                <input id="foto" class="form-control" name="foto" type="file">
+                                <strong style=>Info!</strong> Maksimum ukuran foto : 2MB
+                                <input id="foto" class="form-control" name="file" type="file">
                             </div>
                         </div>
                     </div>
@@ -102,11 +125,11 @@
                                     <tr>
                                         <th>
                                             Jenis Kelamin
-                                            <select id="jenis_kelamin" name="jenis_kelamin" class="form-control">
-                                                <option value="{{ $d->jenis_kelamin }}">{{ $d->jenis_kelamin }}</option>
-                                                <option value="Laki-Laki">Laki-Laki</option>
-                                                <option value="Perempuan">Perempuan</option>
-                                            </select>
+                                            <select name="jenis_kelamin" class="form-control" id="exampleFormControlSelect1">
+                               <option value="0" disabled="true" selected="true">--Jenis Kelamin--</option>
+                                <option value="Laki-Laki" @if($d->jenis_kelamin=="Laki-Laki") selected @endif >Laki-Laki</option>
+                                <option value="Perempuan" @if($d->jenis_kelamin=="Perempuan") selected @endif >Perempuan</option>
+                            </select>
                                         </th>
                                     </tr>
                                     <tr>
@@ -177,4 +200,8 @@
 
     })
 </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+      <script src="{{asset('/assets')}}/js/bootstrap.min.js"></script>
+
+
 @endsection

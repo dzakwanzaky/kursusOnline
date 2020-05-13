@@ -1,5 +1,5 @@
 <div class="awake">
-    @include('base/header_page')
+    @include('base/header_pu')
     @extends('base/script_yes')
     @include('base/script4')
     <link rel="stylesheet" type="text/css" href="{{asset('/strap')}}/css/bootstrap.css">
@@ -1107,16 +1107,19 @@
             color: #565656;
         }
 
-        .nav ul a:hover {
+         ul a:hover {
             color: #92CD16;
         }
 
         .secsion {
             padding-left: 70px;
         }
+        .gong {
+            padding: 3px;
+        }
     </style>
-
-
+<div class="gong">
+</div>
     <section class="search-course-area relative" style="background:url('frontend/img/satu.png'); height: 295px">
         <div class="overlay overlay-bg"></div>
         <div class="container">
@@ -1148,11 +1151,11 @@
                          @foreach($data as $k)
                         <a href="{{route('soalFilter', [$k->id_program, $k->id])}}">{{$k->mapel}}</a>
                         @endforeach
-                        <ul>
+                        </ul>
                 </div>
 
 
-
+<br>
                 @foreach($dat as $ki)
                 <div class="jq-tab-content active">
 

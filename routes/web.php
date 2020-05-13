@@ -15,11 +15,16 @@ Auth::routes(['verify' => true]);
 
 Route::get('/wizardsbm/{program_id}', 'TryoutController@akses')->name('wizardsbm');
 
+Route::get('/tesi', function () {
+    return view('base/tes');
+});
 
 Route::get('/ping', function () {
     return view('base/ting');
 });
-
+Route::get('/pilihMetode', function () {
+    return view('base/metode');
+});
 Route::get('/pakt', 'PaketController@index');
 Route::get('/program/{id}/rinci', 'ProgramController@rinci');
 Route::get('/program/{id_program}/rinci/{id}', 'ProgramController@tryout')->name('soalFilter');
@@ -81,9 +86,17 @@ Route::get('/registerPilih', function () {
 
 
 Route::get('/paketProgramOnline', function () {
-    return view('base/paket_programOnline_page');
+    return view('base/paket_program_page');
 });
 
+Route::get('/paketProgramOffline', function () {
+    return view('base/paket_program_offline');
+});
+
+
+Route::get('/paketProgram2', function () {
+    return view('base/paket_programOnline_page');
+});
 
 Route::get('/pendaftaranTutor', function () {
     return view('base/pendaftaranTutor_page');
@@ -267,6 +280,7 @@ Route::get('/editAdmin/{id}', 'Auth\RegisterController@editAdmin')->name('editAd
 Route::get('/getKabupaten/{id}', 'SiswaController@getKabupaten')->name('getKabupaten');
 Route::get('/getKecamatan/{id}', 'SiswaController@getKecamatan')->name('getKecamatan');
 Route::post('/upload', 'InvoiceController@proses_upload')->name('upload');
+Route::post('/unggah', 'InvoiceController@proses_unggah')->name('unggah');
 Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
 // Route::get('/verify','VerifyController@getVerify')->name('getverify');
 // Route::post('/verify','VerifyController@postVerify')->name('verify');

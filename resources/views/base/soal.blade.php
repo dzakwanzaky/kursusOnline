@@ -1,4 +1,4 @@
-    @include('base/header_page0')
+@include('base/header_pagee')
 @extends('base/script_yesa')
 
 <link href="{{asset('/button')}}/gas.css" rel="stylesheet" type="text/css">
@@ -2399,6 +2399,9 @@
             background-color: #e74c3c;
         }
     }
+    h.lead {
+        font-size: 16px;
+    }
 </style>
 
 
@@ -2410,9 +2413,9 @@
                 <div class="big-tagline">
                     @foreach($data as $d)
                     <br><br>
-                    <h2>Soal Latihan Tryout</h2>
-                    <p class="lead"><b>Soal no {{$d->nomor_soal}}</b><br>
-                    {!! $d->soal !!}</p>
+                    <h2>Soal Latihan {{$d->tryout->nama}}</h2>
+                    <div class="lead"><b>Soal no {{$d->nomor_soal}}</b><br>
+                    <h class="lead">{!! $d->soal !!}</h></div>
 
                     @if($d->file==null)
                     <a></a>
@@ -2445,6 +2448,13 @@
             }
 
             p {
+                font-size: 1.3em;
+                margin-left: 0px;
+                color: #838383;
+                font-weight: 300;
+                font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            }
+            pu {
                 font-size: 1.32em;
                 margin-left: 30px;
                 color: #838383;
@@ -2504,27 +2514,27 @@
         </style>
 
         <label class="containerr">
-            <p>A.&nbsp;{{$d->option_a}}</p>
+            <pu>A.&nbsp;{{$d->option_a}}</pu>
             <input type="radio" name="radio">
             <span class="checkmark"></span>
         </label>
         <label class="containerr">
-            <p>B.&nbsp;{{$d->option_b}}</p>
+            <pu>B.&nbsp;{{$d->option_b}}</pu>
             <input type="radio" name="radio">
             <span class="checkmark"></span>
         </label>
         <label class="containerr">
-            <p>C.&nbsp;{{$d->option_c}}</p>
+            <pu>C.&nbsp;{{$d->option_c}}</pu>
             <input type="radio" name="radio">
             <span class="checkmark"></span>
         </label>
         <label class="containerr">
-            <p>D.&nbsp;{{$d->option_d}}</p>
+            <pu>D.&nbsp;{{$d->option_d}}</pu>
             <input type="radio" name="radio">
             <span class="checkmark"></span>
         </label>
         <label class="containerr">
-            <p>E.&nbsp;{{$d->option_e}}</p>
+            <pu>E.&nbsp;{{$d->option_e}}</pu>
             <input type="radio" name="radio">
             <span class="checkmark"></span>
         </label>

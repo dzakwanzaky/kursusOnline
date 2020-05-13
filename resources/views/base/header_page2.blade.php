@@ -2,8 +2,8 @@
     <header class="top-bar">
         <nav class="navbar header-nav navbar-expand-lg">
             <div class="container">
-            <a class="navbar-brand" href="/landing">
-                <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="140" height="30" alt="imam Logo" href="/landing">
+            <a class="navbar-brand" href="/">
+                <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="140" height="30" alt="imam Logo" href="/">
             </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarApp" aria-controls="navbarApp" aria-expanded="false" aria-label="Toggle navigation">
 					<span></span>

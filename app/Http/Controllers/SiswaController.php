@@ -12,6 +12,7 @@ use App\ModelKecamatan;
 use Image;
 use App\Provinsi;
 use DB;
+use Session;
 use App\ModelJadwal;
 
 class SiswaController extends Controller
@@ -73,6 +74,27 @@ class SiswaController extends Controller
 
     public function store(Request $request)
     {
+         $this->validate($request,[
+            'jenis_kelamin' => 'required',
+            'tanggal_lahir' => 'required',
+            'provinsi' => 'required',
+            'kabupaten' => 'required',
+            'kecamatan' => 'required',
+            'alamat_detail' => 'min:10',
+            'file' => 'image'
+            
+       ],
+
+       [
+            'jenis_kelamin.required' => 'Jenis kelamin tidak boleh kosong',
+            'tanggal_lahir.required' => 'Tanggal lahir tidak boleh kosong',
+            'provinsi.required' => 'Provinsi tidak boleh kosong',
+            'kabupaten.required' => 'kabupaten tidak boleh kosong',
+            'kecamatan.required' => 'kecamatan tidak boleh kosong',
+            'alamat_detail.min' => 'Alamat detail minimal 10 karakter',
+            'file' => 'Foto profil harus jpg/png'
+       ]);
+
         $data = new ModelSiswa();
         $data->id = $request->id;
         $data->jenis_kelamin = $request->jenis_kelamin;
@@ -90,7 +112,7 @@ class SiswaController extends Controller
         $data->alamat_detail = $request->alamat_detail;
         $data->status = $request->status;
         $data->save();
-        return redirect('paketProgram')->withMessage('Kamu Berhasil Daftar Les');
+        return redirect('/pilihMetode')->withMessage('Kamu Berhasil Daftar Les');
     }
 
     public function edit($id)
@@ -109,16 +131,14 @@ class SiswaController extends Controller
         $data->tanggal_lahir = $request->tanggal_lahir;
 
         $data->status = $request->status;
-        if($request->file){
-            $file = $request->file('file');
-            $nama_file = time()."_".$file->getClientOriginalName();  
-            $tujuan_upload = 'data_file';
-            $file->move($tujuan_upload,$nama_file);
-            $data->file = $nama_file;  
+        if($request->hasFile('file')){
+            $request->file('file')->move('data_file/',$request->file('file')->getClientOriginalName());
+            $data->file = $request->file('file')->getClientOriginalName();
+            
         }
         $data->save();
-        if(Auth::user()->role == 'siswa'){
-            return redirect('profileMurid')->withMessage('Berhasil Konfirmasi');
+         if(Auth::user()->role == 'siswa'){
+            return redirect('profileMurid')->with('success', 'Data berhasil di ubah');
             } else {
                 return redirect('daftarSiswa')->withMessage('Berhasil Konfirmasi');
             }

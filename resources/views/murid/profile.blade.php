@@ -1,5 +1,26 @@
-@extends('murid/base')
+@extends('murid/basee')
 @section('content')
+@if(session('success'))
+<div class="alert alert-info" role="alert">
+  {{ session('success') }}
+</div>
+@endif
+
+@if(session('warning'))
+<div class="alert alert-warning" role="alert">
+  {{ session('warning') }}
+</div>
+@endif
+<style type="text/css">
+    .rounded img {
+        border-radius: 50em;
+        border: .1px solid #9f9f9f;
+    }
+    hr.photo2 {
+        width: 230px;
+
+    }
+</style>
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -8,7 +29,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Profile Siswa</h1>
+                                <h1>Profil Murid</h1>
                             </div>
                            
                         </div>
@@ -29,31 +50,33 @@
             <div class="col-4">
                 <div class="card">
                     <div class="card-body">
-                        <i class="fas fa-user mr-2"></i>Foto Profile
+                        <i class="fas fa-user mr-2"></i>Foto Profil
 
                         <hr class="photo">
-                        <div class="d-flex justify-content-center" style="overflow-x:auto;">
+                         <div class="rounded" >
+                       
                             @if($d->file==null)
-                            <img class="navbar-brand-full" src="{{('/tema/images/user.png')}}" width="300px"
-                                alt="upload foto" style="display:block; margin-left:auto; margin-right:auto;">
+                            <img class="navbar-brand-full" src="{{('/tema/images/user.png')}}"
+                                alt="upload foto" width="180px" height="170px"
+                                style="display:block; margin-left:auto; margin-right:auto;">
                             @else
                             <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
-                                <img width="250px" src="{{ url('/data_file/'.$d->file) }}"
+                                <img width="180px" height="170px" src="{{ url('/data_file/'.$d->file) }}"
                                     style="display:block; margin-left:auto; margin-right:auto;">
                             </a>
                             @endif
                         </div>
                         @endforeach
                         @foreach($user as $u)
-                        <hr class="photo">
-                        <h4 class="font-weight-normal" style="text-align:center" >{{ $u->id }} - {{ $u->name }}
+                        <hr class="photo2">
+                        <h4 class="font-weight-normal" style="text-align:center" >{{ $u->name }}
                         </h4>
                         <h6 class="font-weight-normal" style="text-align:center">{{ $u->email }}
                             </h4>
                             <h6 class="font-weight-normal" style="text-align:center" value="{{ $u->phone }}">
                                 {{ $u->phone }}</h6>
                             <br>
-                            <a href="{{route('register.edit',$u->id)}}" class="btn-edit-info"
+                            <a href="{{route('editMurid',$u->id)}}" class="btn-edit-info"
                                 style="display:block; margin-left:auto; margin-right:auto;">Pengaturan Akun</a>
 
                             @endforeach
@@ -68,6 +91,7 @@
                             <tbody>
                                 <tr>
                                     <th>
+                                        <br>
                                         Alamat
                                         <input type="text" class="form-control"
                                             value="{{ $d->provinsi }} {{ $d->kabupaten }} {{ $d->kecamatan }}"

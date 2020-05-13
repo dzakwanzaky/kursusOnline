@@ -57,13 +57,16 @@
         p {
             margin: 0px;
         }
+        .form {
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
     <div class="containerr">
         <table>
-            <h2 class="form-title">Invoice</h2>
+            <h2 class="form">Detail Pemesanan</h2>
 
             <thead>
                 <tr>
@@ -103,8 +106,8 @@
             <tbody>
                 <tr>
                     <th colspan="2">Program</th>
-                    <th colspan="2">Jumlah Mata Pelajaran</th>
-                    <th colspan="2">Jumlah Sesi</th>
+                    <th colspan="2">Paket</th>
+                    
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -113,11 +116,9 @@
                         {{ $d->program->program }}
                     </td>
                     <td colspan="2">
-                        {{$d->jumlah_mapel}} Mata Pelajaran
+                        {{$d->jumlah_mapel}}
                     </td>
-                    <td colspan="2">
-                        {{$d->jumlah_sesi}} Pertemuan Satu Minggu
-                    </td>
+                    
                     @endforeach
                 </tr>
             </tbody>
@@ -134,58 +135,90 @@
                     $p3 = 40000;
                     $var = 0;
                     if ($program == '1'){
-                        if ($mapel == '1' && $sesi == '1' ){
+                        if ($mapel == 'Regular SD 1 Online' && $sesi == '1' ){
                             $var = "Rp. 300.000";
-                        } else if ($mapel == '2' && $sesi == '1'){
+                        } else if ($mapel == 'Premium SD 1 Online' && $sesi == '1'){
                             $var = "Rp. 560.000";
-                        } else if ($mapel == '3' && $sesi == '1'){
+                        } else if ($mapel == 'Pro SD 1 Online' && $sesi == '1'){
                             $var = "Rp. 780.000";
-                        } else if ($mapel == '1' && $sesi == '2' ){
+                        } else if ($mapel == 'Regular SD 2 Online' && $sesi == '2' ){
                                 $var = "Rp. 576.000";
-                        } else if ($mapel == '2' && $sesi == '2'){
+                        } else if ($mapel == 'Premium SD 2 Online' && $sesi == '2'){
                                 $var = "Rp. 1.104.000";
-                        } else if ($mapel == '3' && $sesi == '2'){
+                        } else if ($mapel == 'Pro SD 2 Online' && $sesi == '2'){
+                                $var = "Rp. 1.536.000";
+                        } else if ($mapel == 'Regular SD 1 Offline' && $sesi == '1' ){
+                                $var = "Rp. 300.000";
+                        } else if ($mapel == 'Premium SD 1 Offline' && $sesi == '1'){
+                                $var = "Rp. 560.000";
+                        } else if ($mapel == 'Pro SD 1 Offline' && $sesi == '1'){
+                                $var = "Rp. 780.000";
+                        } else if ($mapel == 'Regular SD 2 Offline' && $sesi == '2' ){
+                                $var = "Rp. 576.000";
+                        } else if ($mapel == 'Premium SD 2 Offline' && $sesi == '2'){
+                                $var = "Rp. 1.104.000";
+                        } else if ($mapel == 'Pro SD 2 Offline' && $sesi == '2'){
                                 $var = "Rp. 1.536.000";
                         } else {
                             $var = 0;
                         }
+
+                       
+
                     } else  if ($program == '2'){
-                        if ($mapel == '1' && $sesi == '1' ){
-                            $var = "belum tau";
-                        } else if ($mapel == '2' && $sesi == '1'){
+                        if ($mapel == 'Regular SMP 1 Online' && $sesi == '1' ){
                             $var = "Rp. 640.000";
-                        } else if ($mapel == '3' && $sesi == '1'){
+                        } else if ($mapel == 'Premium SMP 1 Online' && $sesi == '1'){
                             $var = "Rp. 900.000";
-                        } else if ($mapel == '4' && $sesi == '1'){
+                        } else if ($mapel == 'Pro SMP 1 Online' && $sesi == '1'){
                             $var = "Rp. 1.120.000";
-                        } else if ($mapel == '1' && $sesi == '2' ){
-                                $var = "belum tau";
-                        } else if ($mapel == '2' && $sesi == '2'){
-                                $var = "Rp. 1.200.000";
-                        } else if ($mapel == '3' && $sesi == '2'){
+                        } else if ($mapel == 'Regular SMP 2 Online' && $sesi == '2'){
+                            $var = "Rp. 1.200.000";
+                        } else if ($mapel == 'Premium SMP 2 Online' && $sesi == '2' ){
                                 $var = "Rp. 1.728.000";
-                        } else if ($mapel == '4' && $sesi == '2'){
+                        } else if ($mapel == 'Pro SMP 2 Online' && $sesi == '2'){
+                                $var = "Rp. 2.208.000";
+                        } else if ($mapel == 'Regular SMP 1 Offline' && $sesi == '1' ){
+                                $var = "Rp. 640.000";
+                        } else if ($mapel == 'Premium SMP 1 Offline' && $sesi == '1'){
+                                $var = "Rp. 900.000";
+                        } else if ($mapel == 'Pro SMP 1 Offline' && $sesi == '1'){
+                                $var = "Rp. 1.120.000";
+                        } else if ($mapel == 'Regular SMP 2 Offline' && $sesi == '2'){
+                                $var = "Rp. 1.200.000";
+                        } else if ($mapel == 'Premium SMP 2 Offline' && $sesi == '2' ){
+                                $var = "Rp. 1.728.000";
+                        } else if ($mapel == 'Pro SMP 2 Offline' && $sesi == '2'){
                                 $var = "Rp. 2.208.000";
                         } else {
                             $var = 0;
                         }
                     } else  if ($program == '3'){
-                        if ($mapel == '1' && $sesi == '1' ){
-                            $var = "belum tau";
-                        } else if ($mapel == '2' && $sesi == '1'){
+                        if ($mapel == 'Regular SMA 1 Online' && $sesi == '1' ){
                             $var = "Rp. 640.000";
-                        } else if ($mapel == '3' && $sesi == '1'){
+                        } else if ($mapel == 'Premium SMA 1 Online' && $sesi == '1'){
                             $var = "Rp. 900.000";
-                        } else if ($mapel == '4' && $sesi == '1'){
+                        } else if ($mapel == 'Pro SMA 1 Online' && $sesi == '1'){
                             $var = "Rp. 1.120.000";
-                        } else if ($mapel == '1' && $sesi == '2' ){
-                                $var = "belum tau";
-                        } else if ($mapel == '2' && $sesi == '2'){
-                                $var = "Rp. 1.200.000";
-                        } else if ($mapel == '3' && $sesi == '2'){
+                        } else if ($mapel == 'Regular SMA 2 Online' && $sesi == '2'){
+                            $var = "Rp. 1.200.000";
+                        } else if ($mapel == 'Premium SMA 2 Online' && $sesi == '2' ){
                                 $var = "Rp. 1.728.000";
-                        } else if ($mapel == '4' && $sesi == '2'){
+                        } else if ($mapel == 'Pro SMA 2 Online' && $sesi == '2'){
                                 $var = "Rp. 2.208.000";
+                        } else if ($mapel == 'Regular SMA 1 Offline' && $sesi == '1' ){
+                            $var = "Rp. 640.000";
+                        } else if ($mapel == 'Premium SMA 1 Offline' && $sesi == '1'){
+                            $var = "Rp. 900.000";
+                        } else if ($mapel == 'Pro SMA 1 Offline' && $sesi == '1'){
+                            $var = "Rp. 1.120.000";
+                        } else if ($mapel == 'Regular SMA 2 Offline' && $sesi == '2'){
+                            $var = "Rp. 1.200.000";
+                        } else if ($mapel == 'Premium SMA 2 Offline' && $sesi == '2' ){
+                                $var = "Rp. 1.728.000";
+                        } else if ($mapel == 'Pro SMA 2 Offline' && $sesi == '2'){
+                                $var = "Rp. 2.208.000";
+                        
                         } else {
                             $var = 0;
                         }
@@ -203,12 +236,16 @@
         </table>
         @foreach($invoice as $i)
         <form action="{{ route('paketProgram.update', $i->id) }}" method="post" enctype="multipart/form-data">
+
+        
             {{ csrf_field() }}
             {{ method_field('PUT') }}
             <input id="harga" value="<?php echo $var?>" type="text" class="form-control" name="harga" required autofocus
                 style="display:none">
+                <br>
             <button type="submit" class="btn btn-sm btn-primary" style="float:right">
                 OK</button>
+            
             @endforeach
         </form>
     </div>

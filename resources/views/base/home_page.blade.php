@@ -7,7 +7,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="{{asset('/view')}}/css/style.css">
-@include('base/header_page0')
+@include('base/header_pageos')
 @extends('base/script_here')
 
 

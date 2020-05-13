@@ -101,7 +101,7 @@
             <tbody>
                 <tr>
                     <th colspan="2">Program</th>
-                    <th colspan="2">Jumlah Mata Pelajaran</th>
+                    <th colspan="2">Paket</th>
                     <th colspan="4">Jumlah Sesi</th>
                 </tr>
                 <tr>

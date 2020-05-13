@@ -1,4 +1,4 @@
-@include('base/header_page')
+@include('base/header_pagei')
 @extends('base/script_page5')
 
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="{{asset('/ya')}}/assets/css/style.css">
 
 
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="/style.css">
 <style type="text/css">
     @media screen and (width: 360px) {
         .img1 {
@@ -883,20 +883,18 @@
     }
 
     p {
-        margin-left: 10px;
         margin-top: 0px;
-        margin-left: 6em;
+        margin-left: 5.5em;
         color: #898484;
         font-weight: lighter;
-        font-size: 16px;
+        font-size: 18px;
     }
 
     p3 {
         margin-left: 15%;
         margin-top: 0px;
         color: #898484;
-        font-weight: lighter;
-        font-size: 16px;
+        font-size: 17px;
     }
 
     @media screen and (width: 1024px) {
@@ -912,10 +910,10 @@
     pi {
 
         margin-top: 0px;
-        margin-left: 1em;
+        margin-left: 10px;
         color: #898484;
-        font-weight: lighter;
-        font-size: 16px;
+      
+        font-size: 17px;
     }
 
     @media screen and (width: 414px) {
@@ -1018,7 +1016,7 @@
             margin-top: 20px;
             color: #000;
             font-weight: 400;
-            font-size: 19px;
+            font-size: 20px;
             margin-left: 1.4em;
             line-height: 3em;
         }
@@ -1435,23 +1433,26 @@
     }
     .hiya{
         margin-top: 0;
-        font-size: 14px;
+        font-size: 15px;
         margin-left: 8px;
         margin-bottom: 10px;
     }
     .supertext {
         color: red;
-        font-size: 15px;
+        font-size: 17px;
         margin-top: 0px;
     }
+.help-block {
+    color: red;
+}
+.has-error {
+     color: red;
+}
 </style>
 <!-- start banner Area -->
 
 <body>
-    <section class="banner-area relative" id="home">
-        <div class="overlay overlay-bg"></div>
 
-    </section>
     <!-- End banner Area -->
 
     <!-- Start search-course Area -->
@@ -1506,26 +1507,38 @@
                                 <h3i>Isi Formulir Di Bawah ini</h3i>
                                 <div class="col-md-11">
                                     <pi>Nama Lengkap</pi>
-                                    <div class="form_login">
-                                        <input type="text" name="namalengkap" class="form-control" required>
+                                    <div class="form_login{{$errors->has('nama_lengkap') ? ' has-error' : ''}}">
+                                        <input type="text" name="nama_lengkap" class="form-control" value="{{old('nama_lengkap')}}">
+                                        @if($errors->has('nama_lengkap'))
+                                            <span class="help-block">{{$errors->first('nama_lengkap')}}</span>
+                                        @endif
                                     </div>
 
 
                                     <pi>Nomor Telepon</pi>
-                                    <div class="form_login">
-                                        <input type="text" name="notelp" class="form-control" required>
+                                    <div class="form_login{{$errors->has('no_telp') ? ' has-error' : ''}}">
+                                        <input type="text" name="no_telp" class="form-control" value="{{old('no_telp')}}">
+                                        @if($errors->has('no_telp'))
+                                            <span class="help-block">{{$errors->first('no_telp')}}</span>
+                                        @endif
                                     </div>
                                     <p class="hiya"><span class="supertext">*</span> Pastikan nomor telp benar dan aktif </p>
                                     <pi>Asal Sekolah</pi>
-                                    <div class="form_login">
-                                        <input type="text" name="asalsekolah" class="form-control">
+                                    <div class="form_login{{$errors->has('asal_sekolah') ? ' has-error' : ''}}">
+                                        <input type="text" name="asal_sekolah" class="form-control" value="{{old('asal_sekolah')}}">
+                                        @if($errors->has('asal_sekolah'))
+                                            <span class="help-block">{{$errors->first('asal_sekolah')}}</span>
+                                        @endif
                                     </div>
 
                                    
 
                                     <pi>Email</pi>
-                                    <div class="form_login">
-                                        <input type="text" name="email" class="form-control" required>
+                                    <div class="form_login{{$errors->has('email') ? ' has-error' : ''}}">
+                                        <input type="text" name="email" class="form-control" value="{{old('email')}}">
+                                        @if($errors->has('email'))
+                                            <span class="help-block">{{$errors->first('email')}}</span>
+                                        @endif
                                     </div>
                                     <p class="hiya"><span class="supertext">*</span> Pastikan email yang dimasukan benar</p>
 
@@ -1534,8 +1547,8 @@
                                     <pi> Bukti Pembayaran</pi>
                                     <br>
                                     <input type="file" id="real-file2" name="file" hidden="hidden" accept="image/*">
-                                    <button type="button" id="custom-button2">Pilih foto</button>
-                                    <span id="custom-text2">Tidak ada file yang dipilih</span><br>
+                                    <button type="button" id="custom-button2" >Pilih foto</button>
+                                    <span id="custom-text2" >Tidak ada file yang dipilih</span><br>
 
                                     <script type="text/javascript">
                                         const realFileBtn2 = document.getElementById("real-file2");
@@ -1570,7 +1583,7 @@
 
                             <div class="kolom2">
                                 <h3q>Cara Pembayaran</h3q><br>
-                                <p3> Cara bayar di Inofa Bimbel</p3>
+                                <p3> Panduan pembayaran bayar di Bimbel Inofa</p3>
                                 <div id="bayar" class="section lb">
                                     <div class="container">
                                         <div class="section-title text-center">
