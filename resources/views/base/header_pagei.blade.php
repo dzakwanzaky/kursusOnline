@@ -1,9 +1,60 @@
 <!-- NAVBAR -->
+<style type="text/css">
+.nav-link {
+    font-weight: 500;
+}
+
+.btndown {
+    background-color: #fff;
+    color: #92CD16;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    cursor:pointer;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.wrapdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width:140px;
+    z-index: 100;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.wrapdown a {
+    color: #000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.wrapdown a:hover {
+    background-color: #f1f1f1;
+}
+.dropdown:hover .wrapdown {
+display: block;
+}
+.dropdown:hover .btndown {
+    background-color: #fff;
+}
+.left{
+    float:left;
+}
+.right{
+    float: right;
+}
+.wrapleft {
+    left: 0;
+}
+.wrapright {
+    right: 0;
+}
+</style>
     <header class="top-bar">
         <nav class="navbar header-nav navbar-expand-lg">
             <div class="container">
-            <a class="navbar-brand" href="/landing">
-                <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="100" height="40" alt="Logo Inofa" href="/landing">
+            <a class="navbar-brand" href="/">
+                <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="100" height="40" alt="Logo Inofa" href="/">
             </a>
          
                 @if (Auth::guest())
@@ -41,13 +92,17 @@
                         
                     </ul>
                 </div>
-                    <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                            <span><b>Halo, {{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</b></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-header" style="text-transform: uppercase;text-align:center">{{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
-                        <div class="dropdown-divider"></div>
+                    <div class="dropdown">
+    
+
+
+                    <button class="btndown">
+                            <span style="text-decoration: none"><b>Halo, {{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</b></span>
+                    </button>
+
+
+
+                       <div class="wrapdown">
 
                         @if(Auth::user()->role == 'siswa')
                             <a href="/murid" class="dropdown-item">Dashboard</a>
@@ -59,8 +114,8 @@
                    
                         @endif
 
-                        <br>
-                        <a href="/landing" class="dropdown-item"
+                
+                        <a href="/" class="dropdown-item"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                             Logout

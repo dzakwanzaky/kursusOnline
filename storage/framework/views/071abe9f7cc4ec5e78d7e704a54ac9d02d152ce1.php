@@ -1,4 +1,4 @@
-        <?php echo $__env->make('base/header_pageu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('base/header_pagee', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
 <link href="<?php echo e(asset('/button')); ?>/gas.css" rel="stylesheet" type="text/css">
@@ -2399,6 +2399,9 @@
             background-color: #e74c3c;
         }
     }
+    h.lead {
+        font-size: 16px;
+    }
 </style>
 
 
@@ -2410,9 +2413,9 @@
                 <div class="big-tagline">
                     <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <br><br>
-                    <h2>Soal Latihan Tryout</h2>
-                    <p class="lead"><b>Soal no <?php echo e($d->nomor_soal); ?></b><br>
-                    <?php echo $d->soal; ?></p>
+                    <h2>Soal Latihan <?php echo e($d->tryout->nama); ?></h2>
+                    <div class="lead"><b>Soal no <?php echo e($d->nomor_soal); ?></b><br>
+                    <h class="lead"><?php echo $d->soal; ?></h></div>
 
                     <?php if($d->file==null): ?>
                     <a></a>
@@ -2445,6 +2448,13 @@
             }
 
             p {
+                font-size: 1.3em;
+                margin-left: 0px;
+                color: #838383;
+                font-weight: 300;
+                font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            }
+            pu {
                 font-size: 1.32em;
                 margin-left: 30px;
                 color: #838383;
@@ -2504,27 +2514,27 @@
         </style>
 
         <label class="containerr">
-            <p>A.&nbsp;<?php echo e($d->option_a); ?></p>
+            <pu>A.&nbsp;<?php echo e($d->option_a); ?></pu>
             <input type="radio" name="radio">
             <span class="checkmark"></span>
         </label>
         <label class="containerr">
-            <p>B.&nbsp;<?php echo e($d->option_b); ?></p>
+            <pu>B.&nbsp;<?php echo e($d->option_b); ?></pu>
             <input type="radio" name="radio">
             <span class="checkmark"></span>
         </label>
         <label class="containerr">
-            <p>C.&nbsp;<?php echo e($d->option_c); ?></p>
+            <pu>C.&nbsp;<?php echo e($d->option_c); ?></pu>
             <input type="radio" name="radio">
             <span class="checkmark"></span>
         </label>
         <label class="containerr">
-            <p>D.&nbsp;<?php echo e($d->option_d); ?></p>
+            <pu>D.&nbsp;<?php echo e($d->option_d); ?></pu>
             <input type="radio" name="radio">
             <span class="checkmark"></span>
         </label>
         <label class="containerr">
-            <p>E.&nbsp;<?php echo e($d->option_e); ?></p>
+            <pu>E.&nbsp;<?php echo e($d->option_e); ?></pu>
             <input type="radio" name="radio">
             <span class="checkmark"></span>
         </label>

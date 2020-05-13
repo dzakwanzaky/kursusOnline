@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "sweetalert": "^2.1.2",
+        "sweetalert2": "^9.10.13",
         "tinymce": "^5.1.6",
         "wysihtml": "^0.6.0-beta1"
     }

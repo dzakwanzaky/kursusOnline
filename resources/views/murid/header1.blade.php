@@ -1,14 +1,4 @@
  <!-- Navbar -->
- <style>
-   .wrapdown {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width:140px;
-    z-index: 100;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
- </style>
  <nav class="main-header navbar navbar-expand navbar-white navbar-light border-bottom">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -26,19 +16,22 @@
           <i class="far fa-user"></i>
           <span>Halo, {{DB::table('users')->where('id','=', Auth::user()->id)->value('name')}}</span>
         </a>
-        <div class="dropdown-menu dropdown-menu-lg wrapdown">
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           
          
           <a href="/profileMurid" class="dropdown-item">
-            <i class="fas fa-user"></i> Profile 
+            <i class="fas fa-user"></i>&nbsp;&nbsp;Profil 
           </a>
           <a href="/changePasswordMurid" class="dropdown-item">
-            <i class="fas fa-edit"></i> Ubah Password 
+            <i class="fas fa-edit"></i> Ubah Kata Sandi 
+          </a>
+          <a href="/pilihMetode" class="dropdown-item">
+            <i class="fas fa fa-cart-plus"></i> Beli Kelas Baru 
           </a>
           <a href="{{ url('/') }}" class="nav-link btn-login; dropdown-item"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-          <i class="fas fa-sign-out-alt"></i> Logout 
+          &nbsp;<i class="fas fa-sign-out-alt"></i> Keluar 
           </a>
           <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                       {{ csrf_field() }}

@@ -2,8 +2,8 @@
     <header class="top-bar">
         <nav class="navbar header-nav navbar-expand-lg">
             <div class="container">
-            <a class="navbar-bran" href="/landing">
-                <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="100" height="30" alt="Logo Inofa" href="/landing">
+            <a class="navbar-bran" href="/">
+                <img class="navbar-brand-full" src="{{('/tema/images/inofa.png')}}" width="100" height="30" alt="Logo Inofa" href="/">
             </a>
                 @if (Auth::guest())
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarApp" aria-controls="navbarApp" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +40,7 @@
                         @endif
 
                         <br>
-                        <a href="/landing" class="dropdown-item"
+                        <a href="/" class="dropdown-item"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                             Logout

@@ -1,4 +1,4 @@
-     <?php echo $__env->make('base/header_pageu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+     <?php echo $__env->make('base/header_pagee', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
      
      <?php echo $__env->make('base/script', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
@@ -653,7 +653,12 @@ p{
 }
 
 
-</style>
+        .gong {
+            padding: 3px;
+        }
+    </style>
+<div class="gong">
+</div>
 
 <div class="awake">
 

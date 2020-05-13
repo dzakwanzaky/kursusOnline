@@ -1,5 +1,5 @@
 <div class="awake">
-    @include('base/header_pagee')
+    @include('base/header_pu')
     @extends('base/script_yes')
     @include('base/script4')
     <link rel="stylesheet" type="text/css" href="{{asset('/strap')}}/css/bootstrap.css">
@@ -1114,10 +1114,12 @@
         .secsion {
             padding-left: 70px;
         }
-
+        .gong {
+            padding: 3px;
+        }
     </style>
-
-
+<div class="gong">
+</div>
     <section class="search-course-area relative" style="background:url('frontend/img/satu.png'); height: 295px">
         <div class="overlay overlay-bg"></div>
         <div class="container">

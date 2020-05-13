@@ -12,6 +12,7 @@ use App\ModelKecamatan;
 use Image;
 use App\Provinsi;
 use DB;
+use Session;
 use App\ModelJadwal;
 
 class SiswaController extends Controller
@@ -130,16 +131,14 @@ class SiswaController extends Controller
         $data->tanggal_lahir = $request->tanggal_lahir;
 
         $data->status = $request->status;
-        if($request->file){
-            $file = $request->file('file');
-            $nama_file = time()."_".$file->getClientOriginalName();  
-            $tujuan_upload = 'data_file';
-            $file->move($tujuan_upload,$nama_file);
-            $data->file = $nama_file;  
+        if($request->hasFile('file')){
+            $request->file('file')->move('data_file/',$request->file('file')->getClientOriginalName());
+            $data->file = $request->file('file')->getClientOriginalName();
+            
         }
         $data->save();
-        if(Auth::user()->role == 'siswa'){
-            return redirect('profileMurid')->withMessage('Berhasil Konfirmasi');
+         if(Auth::user()->role == 'siswa'){
+            return redirect('profileMurid')->with('success', 'Data berhasil di ubah');
             } else {
                 return redirect('daftarSiswa')->withMessage('Berhasil Konfirmasi');
             }

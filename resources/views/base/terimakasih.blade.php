@@ -653,10 +653,12 @@ p{
 
     
 }
-
-
-</style>
-
+ .gong {
+            padding: 3px;
+        }
+    </style>
+<div class="gong">
+</div>
 <div class="awake">
 
               <section class="search-course-area relative" style="background:url('frontend/img/satuu.jpg')">

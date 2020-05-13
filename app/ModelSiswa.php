@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ModelSiswa extends Model
 {
     protected $fillable = [
-        'id', 'nama_siswa', 'no_telepon', 'jenis_kelamin', 'mata_pelajaran', 'provinsi', 'kota', 'kecamatan',
+        'id', 'file', 'jenis_kelamin', 'tanggal_lahir', 'provinsi', 'kabupaten', 'kecamatan','alamat_detail','status'
     ];
 
     public function siswa()

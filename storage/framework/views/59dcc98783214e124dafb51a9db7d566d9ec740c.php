@@ -1584,7 +1584,7 @@
 
                             <div class="kolom2">
                                 <h3q>Cara Pembayaran</h3q><br>
-                                <p3> Panduan cara bayar di Bimbel Inofa</p3>
+                                <p3> Panduan pembayaran bayar di Bimbel Inofa</p3>
                                 <div id="bayar" class="section lb">
                                     <div class="container">
                                         <div class="section-title text-center">

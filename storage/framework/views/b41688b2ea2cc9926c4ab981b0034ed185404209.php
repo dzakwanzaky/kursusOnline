@@ -56,7 +56,7 @@
 
                                         <select id="jenis_kelamin" name="jenis_kelamin" class="form-control">
                                             <option value="0" disabled="true" selected="true">Jenis Kelamin</option>
-                                            <option value="Laki-Laki"<?php echo e((old('jenis_kelamin') == 'Laki-Laki') ? ' selected' : ''); ?>>Laki-Laki</option>
+                                            <option value="Laki-Laki"<?php echo e((old('jenis_kelamin') == 'Laki-Laki ') ? ' selected' : ''); ?>>Laki-Laki</option>
                                              <option value="Perempuan"<?php echo e((old('jenis_kelamin') == 'Perempuan') ? ' selected' : ''); ?>>Perempuan</option>
                                         </select>
 

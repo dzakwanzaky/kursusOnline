@@ -1,5 +1,59 @@
 @extends('murid/base')
 @section('content')
+   <link rel="stylesheet" href="{{asset('/assets/css/toastr.min.css')}}">
+
+<style>
+  
+.image-preview {
+    width: 250px;
+    min-height: 170px;
+    border: 2px dashed #afeeee;
+    margin-top: 15px;
+    margin-left: 6.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #cccccc;
+}
+.image-preview__image{
+    display: none;
+    width: 100%;
+}
+.image-preview__default-text {
+    color:#87ceeb;
+
+}
+#inpFile {
+    margin-left: 10em;
+
+}
+
+input[type="file"]{
+    display: none;
+}
+label {
+    color: white;
+    height: 35px;
+    width: 105px;
+    background-color: #03a9f4;
+    position: absolute;
+    margin-left: 8.5em;
+    padding: 10px;
+    border-radius: 10px;
+    padding-top: 8px;
+    padding-left: 20px;
+    font-weight: lighter;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label:hover {
+    opacity: 80%;
+}
+
+</style>
 <link rel="stylesheet" href="{{asset('/assets')}}/bootstrap/css/bootstrap.min.css">
 <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
@@ -79,21 +133,62 @@
                         <form method="post" action="/unggah" enctype="multipart/form-data">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Upload Bukti</h5>
+                              <h5 class="modal-title" id="exampleModalLabel">Unggah Bukti Pembayaran</h5>
                             </div>
                             <div class="modal-body">
                         
                               {{ csrf_field() }}
-                        
-                              <label>Pilih file</label>
-                              <div class="form-group">
-                                <input type="file" name="file" required="required">
-                              </div>
-                        
-                            </div>
+                        <br>
+                              
+
+    <div class="image-preview" id="imagePreview">
+    <img src="" alt="Image Preview" class="image-preview__image">
+        <span class="image-preview__default-text">
+        +</span>
+    </div>
+    <br>
+
+    <input type="file" name="file" id="inpFile" accept="image/*" required>
+    <label for="inpFile"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;
+        Pilih foto
+    </label>
+ 
+
+<script>
+    const inpFile = document.getElementById("inpFile");
+    const previewContainer = document.getElementById("imagePreview");
+    const previewImage = previewContainer.querySelector(".image-preview__image");
+    const previewDefaultText = previewContainer.querySelector(".image-preview__default-text");
+
+    inpFile.addEventListener("change", function(){
+
+        const file = this.files[0];
+
+        if (file){
+            const reader = new FileReader();
+
+            previewDefaultText.style.display = "none";
+            previewImage.style.display = "block";
+
+            reader.addEventListener("load", function(){
+    
+                previewImage.setAttribute("src", this.result);
+            });
+
+            reader.readAsDataURL(file);
+        }else {
+            previewDefaultText.style.display = null;
+            previewImage.style.display = null;
+            previewImage.setAttribute("src", "");
+        }
+    });
+</script>
+</div>
+<br>
+
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              <button type="submit" class="btn btn-primary">Upload</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                              <button type="submit" class="btn btn-primary">Unggah</button>
                             </div>
                           </div>
                         </form>
@@ -127,4 +222,10 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
       <script src="{{asset('/assets')}}/js/bootstrap.min.js"></script>
+      <script src="{{asset('/assets/js/toastr.min.js')}}"></script>
+<script>
+    @if(Session::has('success'))
+    toastr.success("{{ Session::get('success') }}")
+    @endif
+</script>
   @endsection

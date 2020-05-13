@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ModelInvoice;
 use Auth;
+use Session;
 use App\Image_uploaded;
 
 class InvoiceController extends Controller
@@ -40,6 +41,7 @@ class InvoiceController extends Controller
         $file->move($tujuan_upload,$nama_file);
         $data->file = $nama_file;
         $data->save();
+        Session::flash('success', 'Bukti pembayaran berhasil di unggah');
         return redirect('/invoice');
         }
     }

@@ -1,4 +1,4 @@
-   <?php echo $__env->make('base/header-pa', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+   <?php echo $__env->make('base/header_pageeu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
    
 
    <head>

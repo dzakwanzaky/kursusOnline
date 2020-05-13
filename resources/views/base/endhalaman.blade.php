@@ -1,4 +1,4 @@
-     @include('base/header_pageu')
+     @include('base/header_pagee')
      @extends('base/script_pageyes')
      @include('base/script')
 
@@ -653,7 +653,12 @@ p{
 }
 
 
-</style>
+        .gong {
+            padding: 3px;
+        }
+    </style>
+<div class="gong">
+</div>
 
 <div class="awake">
 

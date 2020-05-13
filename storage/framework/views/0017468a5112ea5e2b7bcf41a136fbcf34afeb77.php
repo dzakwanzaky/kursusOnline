@@ -15,7 +15,7 @@
      
         <img src="<?php echo e(url('/data_file/'.DB::table('model_siswas')->where('id', '=', Auth::user()->id)->value('file'))); ?>" class="img-circle elevation-2" alt="User Image" style="width:30px;height:30px;border: 1.5px solid">
 
-          Murid</a>
+          &nbsp;&nbsp;Murid</a>
         </div>
     
       </div>

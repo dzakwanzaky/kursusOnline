@@ -1,5 +1,5 @@
 <div class="awake">
-    <?php echo $__env->make('base/header_pagee', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('base/header_pu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     
     <?php echo $__env->make('base/script4', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('/strap')); ?>/css/bootstrap.css">
@@ -1114,10 +1114,12 @@
         .secsion {
             padding-left: 70px;
         }
-
+        .gong {
+            padding: 3px;
+        }
     </style>
-
-
+<div class="gong">
+</div>
     <section class="search-course-area relative" style="background:url('frontend/img/satu.png'); height: 295px">
         <div class="overlay overlay-bg"></div>
         <div class="container">

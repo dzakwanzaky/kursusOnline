@@ -2,8 +2,8 @@
     <header class="top-bar">
         <nav class="navbar header-nav navbar-expand-lg">
             <div class="container">
-            <a class="navbar-brand" href="/landing">
-                <img class="navbar-brand-full" src="<?php echo e(('/tema/images/inofa.png')); ?>" width="100" height="40" alt="Logo Inofa" href="/landing">
+            <a class="navbar-brand" href="/">
+                <img class="navbar-brand-full" src="<?php echo e(('/tema/images/inofa.png')); ?>" width="100" height="40" alt="Logo Inofa" href="/">
             </a>
          
                 <?php if(Auth::guest()): ?>
@@ -49,7 +49,7 @@
                         <?php endif; ?>
 
                         <br>
-                        <a href="/landing" class="dropdown-item"
+                        <a href="/" class="dropdown-item"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                             Logout

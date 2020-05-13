@@ -1,4 +1,5 @@
 <?php $__env->startSection('content'); ?>
+<link rel="stylesheet" href="<?php echo e(asset('/assets')); ?>/bootstrap/css/bootstrap.min.css">
 <!-- Content Wrapper. Contains page content -->
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -82,4 +83,4 @@
 
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('murid/basee', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ASUS\Pictures\bismilah\bismilah\resources\views/murid/murid.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('murid/base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ASUS\Pictures\bismilah\bismilah\resources\views/murid/murid.blade.php ENDPATH**/ ?>

@@ -1,5 +1,22 @@
-@extends('murid/base')
+@extends('murid/baseey')
 @section('content')
+<style>
+  .card {
+    width: 69%;
+    margin-left: 210px;
+
+}
+  .help-block {
+    color: red;
+    font-size: 15px;
+    margin-left: 17em;
+}
+.has-error {
+     color: red;
+}
+</style>
+<link rel="stylesheet" href="{{asset('/assets')}}/bootstrap/css/bootstrap.min.css">
+
 <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -10,7 +27,7 @@
                 <div class="container-fluid">
                 <div class="row mb-2">
                       <div class="col-sm-6">
-                          <p style="font-size:24px">Ubah Kata Sandi</p>
+                         
                       </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right" style="font-size:14px">
@@ -41,40 +58,52 @@
               <form method="POST" action="{{ route('change.password') }}">
                         @csrf 
    
-                         @foreach ($errors->all() as $error)
-                            <p class="text-danger">{{ $error }}</p>
-                         @endforeach 
+                        
+                          <p><center style="font-size:24px">Ubah Kata Sandi</center></p>
   <br>
   <br>
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Masukan Kata Sandi Lama</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">Kata Sandi Lama</label>
   
-                            <div class="col-md-6">
+                            <div class="col-md-6{{$errors->has('current_password') ? ' has-error' : ''}}">
                                 <input id="password" type="password" class="form-control" name="current_password" autocomplete="current-password">
                             </div>
+                            @if($errors->has('current_password'))
+                                            <span class="help-block">{{$errors->first('current_password')}}</span>
+                                        @endif
                         </div>
   
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Masukan Kata Sandi Baru</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">Kata Sandi Baru</label>
   
-                            <div class="col-md-6">
+                            <div class="col-md-6{{$errors->has('new_password') ? ' has-error' : ''}}">
                                 <input id="new_password" type="password" class="form-control" name="new_password" autocomplete="current-password">
                             </div>
+                            @if($errors->has('new_password'))
+                                            <span class="help-block">{{$errors->first('new_password')}}</span>
+                                        @endif
                         </div>
   
-                        <div class="form-group row">
+                       
+
+                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">Konfirmasi Kata Sandi Baru</label>
-    
-                            <div class="col-md-6">
+  
+                            <div class="col-md-6{{$errors->has('new_confirm_password') ? ' has-error' : ''}}">
                                 <input id="new_confirm_password" type="password" class="form-control" name="new_confirm_password" autocomplete="current-password">
                             </div>
+                            @if($errors->has('new_confirm_password'))
+                                            <span class="help-block">{{$errors->first('new_confirm_password')}}</span>
+                                        @endif
                         </div>
+  
+
    
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                               <button type="submit" class="btn btn-primary" style="margin-left: 12em;" onclick="return confirm('Anda yakin ingin merubah kata sandi Anda?')">
+                               <center></center><button type="submit" class="btn btn-primary" onclick="return confirm('Anda yakin ingin merubah kata sandi Anda?')">
                                     Ubah Kata Sandi
-                                </button>
+                                </button></center>
                               
                             </div>
                         </div>
@@ -111,5 +140,6 @@
             }
         }
     </script>
- 
+   
+<script src="{{asset('/assets')}}/js/bootstrap.min.js"></script>
   @endsection

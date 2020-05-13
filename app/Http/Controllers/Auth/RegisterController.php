@@ -11,6 +11,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use App\SendOTP;
 use Auth;
+use Session;
 
 class RegisterController extends Controller
 {  
@@ -120,14 +121,34 @@ class RegisterController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'name' => 'required|min:3|string',
+            'phone' => 'required|min:11|numeric',
+            'email' => 'required|min:11|email',
+           
+       ],
+       [
+            'name.required' => 'Nama lengkap tidak boleh kosong',
+            'name.min' => 'Nama lengkap tidak boleh kurang dari 3 karakter',
+            'name.string' => 'Nama lengkap harus berupa huruf',
+            'phone.min' => 'No telp tidak boleh kurang dari 11 angka',
+            'phone.required' =>  'No telp tidak boleh kosong',
+            'phone.numeric' => 'No telp harus berisi angka',
+            'email.required' => 'Email tidak boleh kosong',
+            'email.min' => 'Email tidak boleh kurang dari 11 karakter',
+            'email.email' => 'Email tidak valid',
+            
+       ]);
         $data = User::where('id',$id)->first();
+        $data->name = $request->name;
         $data->email = $request->email;
         $data->phone = $request->phone;
         $data->save();
+
         if ($data ['role'] == 'tutor'){
         return redirect('profile')->withMessage('Berhasil Merubah Data');
         } else if ($data ['role'] == 'siswa') {
-            return redirect('profileMurid')->withMessage('Berhasil Merubah Data');
+            return redirect('profileMurid')->with('success', 'Data berhasil di ubah');
         } else {
             return redirect('profileAdmin')->withMessage('Berhasil Merubah Data');
         }
