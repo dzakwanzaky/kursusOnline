@@ -46,7 +46,7 @@
                                         <td>{{ $d->user->name }}</td>
                                         <td>{{ $d->isi }}</td>
 
-                                        <td class="d-flex" style="text-align:center">
+                                        <td class="d-flex justify-content-center" style="display:block;margin:auto">
                                             <a class="btn btn-sm btn-info mr-2" data-toggle="tooltip"
                                                 data-placement="top" title="Profil Siswa" style="color:white"
                                                 href="{{route('profileSiswaAdmin', $d->murid_id)}}">
@@ -96,5 +96,39 @@
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     });
+    $('.accept').submit(function (e) {
+        e.preventDefault();
+        swal({
+            title: 'Apakah anda yakin untuk mengajukan jadwal?',
+            text: "Data akan diajukan secara permanen!",
+            icon: "warning",
+            buttons: {
+                cancel: "Batalkan!",
+                confirm: "Lanjutkan!",
+            },
+        }).then((result) => {
+            if (result.value) {
+                swal(
+
+                )
+                this.submit();
+            } else {
+                swal("Dibatalkan", "Data masih belum diajukan", "error");
+            }
+        })
+    });
+</script>
+<script>
+    var isiPesan = '{{Session::get('
+    success ') }}';
+    var exist = '{{Session::has('
+    success ') }}';
+    if (exist) {
+        swal(
+            'Sukses!',
+            isiPesan,
+            'success'
+        )
+    }
 </script>
 @endsection

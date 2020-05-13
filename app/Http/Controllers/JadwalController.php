@@ -10,6 +10,10 @@ use App\ModelTutor;
 use App\ModelInvoice;
 use App\ModelMapel;
 use App\ModelKelas;
+use SweetAlert;
+use App\Providers\SweetAlertServiceProvider;
+
+
 
 
 class JadwalController extends Controller
@@ -283,18 +287,27 @@ class JadwalController extends Controller
     public function update(Request $request, $id)
     {
      
-        $data = ModelJadwal::where('id',$id)->first();
+        $data = ModelJadwal::with('invoice')->where('id',$id)->first();
         $data->tutor_id = $request->tutor_id;
         $data->status = $request->status;
         $data->save();
         if(Auth::user()->role == 'tutor'){
-        return redirect('tutor')->withMessage('Berhasil Konfirmasi');
+              return redirect('tutor')->with('success', 'Berhasil Mengajukan Jadwal');
         } else {
-            if ($data->status == 'AKTIF'){
-                return redirect('list_pendaftaranTutor')->withMessage('Berhasil Konfirmasi');
+            if ($data->invoice->kategori == 'OFFLINE'){
+                if ($data->status == 'AKTIF'){
+                    return redirect('jadwalAktif')->with('success', 'Berhasil Konfirmasi');
+                } else {
+                    return redirect('jadwalTidakAktif')->with('success', 'Berhasil Menonaktifkan');
+                }
             } else {
-                return redirect('jadwalTidakAktif')->withMessage('Berhasil Konfirmasi');
+                if ($data->status == 'AKTIF'){
+                    return redirect('jadwalAktifOnline')->with('success', 'Berhasil Konfirmasi');
+                } else {
+                    return redirect('jadwalTidakAktifOnline')->with('success', 'Berhasil Menonaktifkan');
+                }
             }
+           
         }
     }
 

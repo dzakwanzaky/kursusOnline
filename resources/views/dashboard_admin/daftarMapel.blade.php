@@ -55,7 +55,7 @@
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $d->mapel }}</td>
-                                        <td class="d-flex">
+                                        <td class="d-flex justify-content-center">
                                             <a type="button" class="btn btn-sm btn-primary mr-2"
                                                 href="{{route('mapel.edit',$d->id)}}">Edit</a>
 

@@ -24,6 +24,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
   
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -37,6 +40,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- Main Sidebar Container -->
 @include('dashboard_admin/sidebar')
+@include('sweetalert::alert')
+
  
   <!-- Content Wrapper. Contains page content -->
   @yield('content') 
@@ -69,6 +74,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- DataTables -->
 <script src="{{ asset('/lte/plugins/datatables/jquery.dataTables.js') }}"></script>
 <script src="{{ asset('/lte/plugins/datatables/dataTables.bootstrap4.js') }}"></script>
+<!-- SweetAlert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 @yield('sweet')
 @stack('script')

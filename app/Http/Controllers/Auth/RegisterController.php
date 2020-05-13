@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'phone' => ['required', 'min:10', 'max:13'],
+            'phone' => ['required', 'min:10', 'max:13', 'unique:users'],
         
         ]);
 
@@ -105,11 +105,6 @@ class RegisterController extends Controller
             $user->save();
             $user->sendEmailVerificationNotification();
             return redirect('verify?email='.$user->email);
-        //     if ($user ['role'] == 'tutor'){
-        //         return redirect('dataSiswa')->withMessage('Berhasil Mendaftar');
-        //         } else {
-        //             return redirect('dataTutor')->withMessage('Berhasil Mendaftar');
-        //         }
         }
     }
 
@@ -117,6 +112,12 @@ class RegisterController extends Controller
     {
         $data = User::where('id','=',$id)->get();
         return view('tutor.editLogin', compact('data'));
+    }
+
+    public function editAdmin($id)
+    {
+        $data = User::where('id','=',$id)->get();
+        return view('dashboard_admin.edit', compact('data'));
     }
 
     public function update(Request $request, $id)
@@ -146,11 +147,11 @@ class RegisterController extends Controller
         $data->save();
 
         if ($data ['role'] == 'tutor'){
-        return redirect('profile')->withMessage('Berhasil Merubah Data');
+        return redirect('profile')->withMessage('success', 'Berhasil Merubah Data');
         } else if ($data ['role'] == 'siswa') {
-            return redirect('profileMurid')->with('success', 'Data berhasil di ubah');
+            return redirect('profileMurid')->withMessage('success', 'Berhasil Merubah Data');
         } else {
-            return redirect('profileAdmin')->withMessage('Berhasil Merubah Data');
+            return redirect('profileAdmin')->withMessage('success', 'Berhasil Merubah Data');
         }
     }
 
@@ -160,14 +161,10 @@ class RegisterController extends Controller
         return view('murid.editLogin', compact('data'));
     }
 
-    public function editAdmin($id)
-    {
-        $data = User::where('id','=',$id)->get();
-        return view('dashboard_admin.edit', compact('data'));
-    }
+  
 
-        public function data(){
-            $data = User::where('id', '=', Auth::user()->id)->get();
-            return view('dashboard_admin.profileAdmin', compact('data'));
-        }
+    public function data(){
+        $data = User::where('id', '=', Auth::user()->id)->get();
+        return view('dashboard_admin.profileAdmin', compact('data'));
+    }
 }

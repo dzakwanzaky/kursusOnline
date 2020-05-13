@@ -54,7 +54,7 @@ class PaketController extends Controller
         $data->jumlah_pertemuan = $request->jumlah_pertemuan;
         $data->harga = $request->harga;
         $data->save();
-        return redirect('manajemenPaket')->withMessage('Berhasil Merubah Data');
+        return redirect('manajemenPaket')->with('success', 'Berhasil Merubah Data');
     }
 
     /**
@@ -98,7 +98,7 @@ class PaketController extends Controller
         $data->jumlah_pertemuan = $request->jumlah_pertemuan;
         $data->harga = $request->harga;
         $data->save();
-        return redirect('manajemenPaket')->withMessage('Berhasil Merubah Data');
+        return redirect('manajemenPaket')->withMessage('success', 'Berhasil Merubah Data');
     }
 
     /**

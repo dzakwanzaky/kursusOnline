@@ -59,9 +59,10 @@
                                             </a>
                                             @endif
                                         </td>
-                                        <td class="d-flex">
-                                            <form action="{{route('status', $d->id)}}" enctype="multipart/form-data">
+                                        <form action="{{route('status', $d->id)}}" enctype="multipart/form-data">
                                                 {{ csrf_field() }}
+                                        <td class="d-flex">
+                                         
                                                 <input style="display:none" value="TIDAK AKTIF" id="status"
                                                     name="status"></input>
                                                 <a class="btn btn-sm btn-info mr-2" data-toggle="tooltip"
@@ -106,4 +107,17 @@
         $('[data-toggle="tooltip"]').tooltip()
     })
 </script>
+<script>
+        var isiPesan = '{{Session::get('
+        success ') }}';
+        var exist = '{{Session::has('
+        success ') }}';
+        if (exist) {
+            swal(
+                'Sukses!',
+                isiPesan,
+                'success'
+            )
+        }
+    </script>
 @endsection

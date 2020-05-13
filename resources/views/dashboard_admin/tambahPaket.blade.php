@@ -56,7 +56,7 @@
                                         <div class="form-group">
                                             <label for="">Program :</label>
                                             <select class="form-control" id="program_id" name="program_id" required>
-                                                <option value="">Program</option>
+                                                <option value="">Pilih Program Paket</option>
 
                                                 @foreach($data as $d)
                                                 <option value="{{ $d->id }}">{{ $d->program }}</option>
@@ -65,11 +65,11 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="">Pilih Kategori :</label>
+                                            <label for="">Kategori :</label>
                                             <select class="form-control" id="kategori" name="kategori" required>
-                                                <option value="">Kategori</option>
-                                                <option value="ONLINE">Online</option>
-                                                <option value="OFFLINE">Offline</option>
+                                                <option value="">Pilih Kategori Paket</option>
+                                                <option value="ONLINE">ONLINE</option>
+                                                <option value="OFFLINE">OFFLINE</option>
                                             </select>
                                         </div>
 
