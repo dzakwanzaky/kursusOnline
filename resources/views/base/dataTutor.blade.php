@@ -119,12 +119,32 @@
                                         </select>
                                     </div>
                                 </div>
+
+                                <div class="form-group" name="jumlah">
+                                    <label for="progran">Jumlah Program</label>
+
+                                    <div class="form-title">
+
+                                        <select id="jumlah" name="jumlah" class="form-control" required>
+                                            <option value="">Pilih Jumlah Program Yang Ingin Diajar</option>
+                                            <option value="1">1 Program</option>
+                                            <option value="2">2 Program</option>
+                                            <option value="3">3 Program</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <div id="jumlah-1">
+                                <div class="alert alert-primary">
+                                 Masukkan detail untuk Pilihan Program 1!
+                                </div>
                                 <div class="form-group" name="program">
                                     <label for="progran">Program Yang Ingin Diajar</label>
 
                                     <div class="form-title">
 
-                                        <select id="program" name="program_id" class="form-control" required>
+                                        <select id="program" name="program_id[]" class="form-control" required>
                                             <option value="">Pilih Program</option>
                                             @foreach($program as $d)
                                             <option value="{{ $d->id }}">{{ $d->program }}</option>
@@ -206,6 +226,195 @@
                                     </div>
                                 </div>
 
+                                </div>
+
+                                <div id="jumlah-2">
+                                <div class="alert alert-primary">
+                                 Masukkan detail untuk Pilihan Program 2!
+                                </div>
+                                <div class="form-group" name="program-2>
+                                    <label for="progran">Program Yang Ingin Diajar</label>
+
+                                    <div class="form-title">
+
+                                        <select id="program-2" name="program_id[]" class="form-control" required>
+                                            <option value="">Pilih Program</option>
+                                            @foreach($program as $d)
+                                            <option value="{{ $d->id }}">{{ $d->program }}</option>
+                                            @endforeach
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="kelasSD-2" required>
+                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                    <div class="form-round">
+                                        @foreach($ksd as $d)
+                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
+                                        {{ $d->kelas }} SD<br>
+                                        @endforeach
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="kelasSMP-2" name="kelasSMP-2" required>
+                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                    <div class="form-round">
+                                        @foreach($ksmp as $d)
+                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
+                                        {{ $d->kelas }} SMP<br>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="kelasSMA-2" name="kelasSMA-2" required>
+                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                    <div class="form-round">
+                                        @foreach($ksma as $d)
+                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
+                                        {{ $d->kelas }} SMA<br>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="matpelSD-2" name="matpelSD-2" required>
+                                    <label for="mata_pelajaran">Mata Pelajaran</label>
+                                    <div class="form-round">
+                                        @foreach($sd as $d)
+                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                        @endforeach
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="matpelSMP-2" name="matpelSMP-2" required>
+                                    <label for="mata_pelajaran">Mata Pelajaran</label>
+                                    <div class="form-round">
+                                        @foreach($smp as $d)
+                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="matpelSMA-2" name="matpelSMA-2" required>
+                                    <label for="mata_pelajaran">Mata Pelajaran</label>
+                                    <div class="form-round">
+                                        @foreach($sma as $d)
+                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="sbm-2" name="sbm-2" required>
+                                    <label for="mata_pelajaran">Jenis Ujian</label>
+                                    <div class="form-round">
+                                        @foreach($sbm as $d)
+                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                </div>
+
+                                <div id="jumlah-3">
+                                <div class="alert alert-primary">
+                                 Masukkan detail untuk Pilihan Program 3!
+                                </div>
+                                <div class="form-group" name="program-3">
+                                    <label for="progran">Program Yang Ingin Diajar</label>
+
+                                    <div class="form-title">
+
+                                        <select id="program-3" name="program_id[]" class="form-control" required>
+                                            <option value="">Pilih Program</option>
+                                            @foreach($program as $d)
+                                            <option value="{{ $d->id }}">{{ $d->program }}</option>
+                                            @endforeach
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="kelasSD-3" required>
+                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                    <div class="form-round">
+                                        @foreach($ksd as $d)
+                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
+                                        {{ $d->kelas }} SD<br>
+                                        @endforeach
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="kelasSMP-3" name="kelasSMP-3" required>
+                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                    <div class="form-round">
+                                        @foreach($ksmp as $d)
+                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
+                                        {{ $d->kelas }} SMP<br>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="kelasSMA-3" name="kelasSMA-3" required>
+                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                    <div class="form-round">
+                                        @foreach($ksma as $d)
+                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
+                                        {{ $d->kelas }} SMA<br>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="matpelSD-3" name="matpelSD-3" required>
+                                    <label for="mata_pelajaran">Mata Pelajaran</label>
+                                    <div class="form-round">
+                                        @foreach($sd as $d)
+                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                        @endforeach
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="matpelSMP-3" name="matpelSMP-3" required>
+                                    <label for="mata_pelajaran">Mata Pelajaran</label>
+                                    <div class="form-round">
+                                        @foreach($smp as $d)
+                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="matpelSMA-3" name="matpelSMA-3" required>
+                                    <label for="mata_pelajaran">Mata Pelajaran</label>
+                                    <div class="form-round">
+                                        @foreach($sma as $d)
+                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="sbm-3" name="sbm-3" required>
+                                    <label for="mata_pelajaran">Jenis Ujian</label>
+                                    <div class="form-round">
+                                        @foreach($sbm as $d)
+                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                </div>
+
+                               
                                 <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                                     <label for="file">Curriculum Vitae (.pdf / .docx)</label>
                                     <div class="form-title">
@@ -317,6 +526,9 @@
                     kecamatan_name + "'>");
 
         });
+        $('#jumlah-1').hide();
+        $('#jumlah-2').hide();
+        $('#jumlah-3').hide();
         $('#kelasSMP').hide();
         $('#kelasSMA').hide();
         $('#kelasSD').hide();
@@ -324,7 +536,41 @@
         $('#matpelSMP').hide();
         $('#matpelSMA').hide();
         $('#sbm').hide();
+        $('#kelasSMP-2').hide();
+        $('#kelasSMA-2').hide();
+        $('#kelasSD-2').hide();
+        $('#matpelSD-2').hide();
+        $('#matpelSMP-2').hide();
+        $('#matpelSMA-2').hide();
+        $('#sbm-2').hide();
+        $('#kelasSMP-3').hide();
+        $('#kelasSMA-3').hide();
+        $('#kelasSD-3').hide();
+        $('#matpelSD-3').hide();
+        $('#matpelSMP-3').hide();
+        $('#matpelSMA-3').hide();
+        $('#sbm-3').hide();
         $(document).ready(function () {
+            $("#jumlah").change(function () {
+                if ($(this).val() == "1") {
+                    $('#jumlah-1').show();
+                    $('#jumlah-2').hide();
+                    $('#jumlah-3').hide();
+                }   else if ($(this).val() == "2"){
+                    $('#jumlah-1').show();
+                    $('#jumlah-2').show();
+                    $('#jumlah-3').hide();
+                }  else if ($(this).val() == "3"){
+                    $('#jumlah-1').show();
+                    $('#jumlah-2').show();
+                    $('#jumlah-3').show();
+                } else {
+                    $('#jumlah-1').hide();
+                    $('#jumlah-2').hide();
+                    $('#jumlah-3').hide();
+                }
+            });
+
             $("#program").change(function () {
                 if ($(this).val() == "1") {
                     $('#kelasSD').show();
@@ -367,6 +613,96 @@
                     $('#matpelSMP').hide();
                     $('#matpelSMA').hide();
                     $('#sbm').hide();
+                }
+
+            });
+            $("#program-2").change(function () {
+                if ($(this).val() == "1") {
+                    $('#kelasSD-2').show();
+                    $('#kelasSMP-2').hide();
+                    $('#kelasSMA-2').hide();
+                    $('#matpelSD-2').show();
+                    $('#matpelSMP-2').hide();
+                    $('#matpelSMA-2').hide();
+                    $('#sbm-2').hide();
+                } else if ($(this).val() == "2") {
+                    $('#kelasSMP-2').show();
+                    $('#kelasSD-2').hide();
+                    $('#kelasSMA-2').hide();
+                    $('#matpelSMP-2').show();
+                    $('#matpelSD-2').hide();
+                    $('#matpelSMA-2').hide();
+                    $('#sbm-2').hide();
+                } else if ($(this).val() == "3") {
+                    $('#kelasSMA-2').show();
+                    $('#kelasSD-2').hide();
+                    $('#kelasSMP-2').hide();
+                    $('#matpelSMA-2').show();
+                    $('#matpelSD-2').hide();
+                    $('#matpelSMP-2').hide()
+                    $('#sbm-2').hide();
+                } else if ($(this).val() == "4") {
+                    $('#kelasSMA-2').hide();
+                    $('#kelasSD-2').hide();
+                    $('#kelasSMP-2').hide();
+                    $('#matpelSMA-2').hide();
+                    $('#matpelSD-2').hide();
+                    $('#matpelSMP-2').hide()
+                    $('#sbm-2').show();
+                } else {
+                    $('#matpel-2').hide();
+                    $('#kelasSD-2').hide();
+                    $('#kelasSMP-2').hide();
+                    $('#kelasSMA-2').hide();
+                    $('#matpelSD-2').hide();
+                    $('#matpelSMP-2').hide();
+                    $('#matpelSMA-2').hide();
+                    $('#sbm-2').hide();
+                }
+
+            });
+            $("#program-3").change(function () {
+                if ($(this).val() == "1") {
+                    $('#kelasSD-3').show();
+                    $('#kelasSMP-3').hide();
+                    $('#kelasSMA-3').hide();
+                    $('#matpelSD-3').show();
+                    $('#matpelSMP-3').hide();
+                    $('#matpelSMA-3').hide();
+                    $('#sbm-3').hide();
+                } else if ($(this).val() == "2") {
+                    $('#kelasSMP-3').show();
+                    $('#kelasSD-3').hide();
+                    $('#kelasSMA-3').hide();
+                    $('#matpelSMP-3').show();
+                    $('#matpelSD-3').hide();
+                    $('#matpelSMA-3').hide();
+                    $('#sbm-3').hide();
+                } else if ($(this).val() == "3") {
+                    $('#kelasSMA-3').show();
+                    $('#kelasSD-3').hide();
+                    $('#kelasSMP-3').hide();
+                    $('#matpelSMA-3').show();
+                    $('#matpelSD-3').hide();
+                    $('#matpelSMP-3').hide()
+                    $('#sbm-3').hide();
+                } else if ($(this).val() == "4") {
+                    $('#kelasSMA-3').hide();
+                    $('#kelasSD-3').hide();
+                    $('#kelasSMP-3').hide();
+                    $('#matpelSMA-3').hide();
+                    $('#matpelSD-3').hide();
+                    $('#matpelSMP-3').hide()
+                    $('#sbm-3').show();
+                } else {
+                    $('#matpel-3').hide();
+                    $('#kelasSD-3').hide();
+                    $('#kelasSMP-3').hide();
+                    $('#kelasSMA-3').hide();
+                    $('#matpelSD-3').hide();
+                    $('#matpelSMP-3').hide();
+                    $('#matpelSMA-3').hide();
+                    $('#sbm-3').hide();
                 }
 
             });

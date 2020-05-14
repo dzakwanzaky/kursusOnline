@@ -33,6 +33,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- HEADER -->
 @include('dashboard_admin/header')
 @include('dashboard_admin/navbarTutor')
+@include('sweetalert::alert')
+
 
 
 <!-- Main Sidebar Container -->

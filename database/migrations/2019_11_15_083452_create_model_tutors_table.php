@@ -22,7 +22,7 @@ class CreateModelTutorsTable extends Migration
             $table->string('kecamatan', '30');
             $table->string('alamat_detail');
             $table->string('pendidikan', '15');
-            $table->biginteger('program_id')->unsigned();
+            $table->json('program_id')->nullable();
             $table->json('kelas_id')->nullable();
             $table->json('mapel_id')->nullable();
             $table->string('file');
@@ -30,7 +30,6 @@ class CreateModelTutorsTable extends Migration
             $table->enum('status', ['MENUNGGU', 'AKTIF', 'TIDAK AKTIF']);
             $table->timestamps();
             $table->foreign('id')->primary()->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('program_id')->references('id')->on('model_programs')->onDelete('cascade');
         });
     }
 

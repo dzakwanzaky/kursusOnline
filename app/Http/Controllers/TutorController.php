@@ -37,11 +37,15 @@ class TutorController extends Controller
         $kls = ModelTutor::with('tutor',)->where('id', $id)->first();
         $arrays = json_decode ($tutor->kelas_id);
 
+        $prg = ModelTutor::with('tutor')->where('id', $id)->first();
+        $arrayss= json_decode ($tutor->program_id);
+
         $data = ModelTutor::with('tutor',)->where('id', $id)->get();
         $matpel = ModelMapel::whereIn('id', $array)->get();
         $jadwal = ModelJadwal::where('tutor_id', $id)->get();
-        $kelas = ModelKelas::whereIn('id', $array)->get();
-        return view('dashboard_admin.profileTutor', compact('data', 'jadwal', 'matpel', 'kelas'));
+        $kelas = ModelKelas::whereIn('id', $arrays)->get();
+        $program = ModelProgram::whereIn('id', $arrayss)->get();
+        return view('dashboard_admin.profileTutor', compact('data', 'jadwal', 'matpel', 'kelas', 'program'));
     }
 
     public function statusTutor(Request $request, $id){
@@ -114,7 +118,12 @@ class TutorController extends Controller
         $data->kecamatan = $request->kecamatan;
         $data->alamat_detail = $request->alamat_detail;
         $data->pendidikan = $request->pendidikan;
-        $data->program_id = $request->program_id;
+
+        $array = array();
+        foreach($request->program_id as $program_id){
+            array_push($array, $program_id);
+        }
+        $data->program_id = json_encode($array);
 
         $array = array();
         foreach($request->kelas_id as $kelas_id){

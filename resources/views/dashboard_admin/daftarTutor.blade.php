@@ -50,8 +50,6 @@
                                                 {{ $d->status }}</button>
                                         </td>
                                         <td class="text-center d-flex">
-                                            @endforeach
-                                            @foreach($data as $d)
                                             <form action="{{route('statusTutor', $d->id)}}"
                                                 enctype="multipart/form-data">
                                                 {{ csrf_field() }}
@@ -65,6 +63,7 @@
                                                 <button type="submit" class="btn btn-sm btn-danger"
                                                     data-toggle="tooltip" data-placement="top" title="Nonaktifkan Tutor"
                                                     style="text-align:center" onclick="return confirm('Anda yakin mau menonaktifkan tutor?')"><i class="far fa-trash-alt"></i></button>
+
                                         </td>
                                         </form>
                                     </tr>

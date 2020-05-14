@@ -9896,7 +9896,7 @@ body,
 }
 
 :not(.layout-fixed) .main-sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   height: inherit;
   min-height: 100%;

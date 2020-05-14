@@ -111,7 +111,19 @@
                                           
                                             </th>
                                         </tr>
-                                   
+                                        <tr>
+                                            <th>
+                                                Preferensi Program
+                                                <br>
+                                                @foreach ($program as $d)
+                                                &nbsp;&nbsp;
+                                                <input type="text" 
+                                                    value="{{ $d->program }}"
+                                                    style="width:7%;background:white;border:none" disabled>
+                                                @endforeach
+                                            </th>
+                                        </tr>
+
                                         <tr>
                                             <th>
                                                 Preferensi Kelas
