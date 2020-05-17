@@ -51,13 +51,6 @@ class SoalController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'nomor_soal' => 'required|numeric',
-       ],
-       [
-            'nomor_soal.numeric' => 'Nomor soal harus berupa angka',
-       ]);
-
         $data = ModelSoal::where('id',$id)->first();
         $data->id_to = $request->id_to;
         $data->nomor_soal = $request->nomor_soal;
