@@ -13,18 +13,11 @@ namespace PackageVersions;
 final class Versions
 {
     public const ROOT_PACKAGE_NAME = 'laravel/laravel';
-    /**
-     * Array of all available composer packages.
-     * Dont read this array from your calling code, but use the \PackageVersions\Versions::getVersion() method instead.
-     *
-     * @var array<string, string>
-     * @internal
-     */
     public const VERSIONS          = array (
   'barryvdh/laravel-dompdf' => 'v0.8.6@d7108f78cf5254a2d8c224542967f133e5a6d4e8',
   'defuse/php-encryption' => 'v2.2.1@0f407c43b953d571421e0020ba92082ed5fb7620',
   'dnoegel/php-xdg-base-dir' => 'v0.1.1@8f8a6e48c5ecb0f991c2fdcf5f154a47d85f9ffd',
-  'doctrine/inflector' => '1.4.0@ab5de36233a1995f9c776c741b803eb8207aebef',
+  'doctrine/inflector' => '2.0.1@18b995743e7ec8b15fd6efc594f0fa3de4bfe6d7',
   'doctrine/lexer' => '1.2.0@5242d66dbeb21a30dd8a3e66bf7a73b66e05e1f6',
   'dompdf/dompdf' => 'v0.8.5@6782abfc090b132134cd6cea0ec6d76f0fce2c56',
   'dragonmantank/cron-expression' => 'v2.3.0@72b6fbf76adb3cf5bc0db68559b33d41219aba27',
@@ -34,30 +27,31 @@ final class Versions
   'guzzlehttp/guzzle' => '6.5.3@aab4ebd862aa7d04f01a4b51849d657db56d882e',
   'guzzlehttp/promises' => 'v1.3.1@a59da6cf61d80060647ff4d3eb2c03a2bc694646',
   'guzzlehttp/psr7' => '1.6.1@239400de7a173fe9901b9ac7c06497751f00727a',
+  'intervention/image' => '2.5.1@abbf18d5ab8367f96b3205ca3c89fb2fa598c69e',
   'jakub-onderka/php-console-color' => 'v0.2@d5deaecff52a0d61ccb613bb3804088da0307191',
   'jakub-onderka/php-console-highlighter' => 'v0.4@9f7a229a69d52506914b4bc61bfdb199d90c5547',
   'laminas/laminas-diactoros' => '2.3.0@5ab185dba63ec655a2380c97711b09adc7061f89',
   'laminas/laminas-zendframework-bridge' => '1.0.3@bfbbdb6c998d50dbf69d2187cb78a5f1fa36e1e9',
-  'laravel/framework' => 'v6.18.13@39519d03237a81380e2126d667e898e2922db444',
+  'laravel/framework' => 'v6.18.14@503d1511d6792b0b8d0a4bfed47f7c2f29634e1c',
   'laravel/passport' => 'v8.5.0@6affa6ed600c5f8909385fbae7cf6f8af3db2d39',
   'laravel/tinker' => 'v1.0.10@ad571aacbac1539c30d480908f9d0c9614eaf1a7',
   'laravel/ui' => 'v1.2.0@bb64fca681566ca94457d490a00f899516e75664',
   'lcobucci/jwt' => '3.3.1@a11ec5f4b4d75d1fcd04e133dede4c317aac9e18',
   'league/commonmark' => '1.4.3@412639f7cfbc0b31ad2455b2fe965095f66ae505',
   'league/event' => '2.2.0@d2cc124cf9a3fab2bb4ff963307f60361ce4d119',
-  'league/flysystem' => '1.0.67@5b1f36c75c4bdde981294c2a0ebdb437ee6f275e',
+  'league/flysystem' => '1.0.68@3e4198372276ec99ac3409a21d7c9d1ced9026e4',
   'league/oauth2-server' => '8.1.0@b53d324f774eb782250f7d8973811a33a75ecdef',
   'maatwebsite/excel' => '3.1.19@96527a9ebc2e79e9a5fa7eaef7e23c9e9bcc587c',
   'markbaker/complex' => '1.4.8@8eaa40cceec7bf0518187530b2e63871be661b72',
   'markbaker/matrix' => '1.2.0@5348c5a67e3b75cd209d70103f916a93b1f1ed21',
   'monolog/monolog' => '2.0.2@c861fcba2ca29404dc9e617eedd9eff4616986b8',
-  'nesbot/carbon' => '2.33.0@4d93cb95a80d9ffbff4018fe58ae3b7dd7f4b99b',
+  'nesbot/carbon' => '2.34.0@52ea68aebbad8a3b27b5d24e4c66ebe1933f8399',
   'nexmo/client' => '2.0.0@664082abac14f6ab9ceec9abaf2e00aeb7c17333',
   'nexmo/client-core' => '2.1.0@ef7e8a0715c93c5ddc7915e8a29f29331798bb52',
   'nexmo/laravel' => '2.2.0@57b62d985ae59d2f15f970883ea445b7fda56652',
   'nikic/php-parser' => 'v4.4.0@bd43ec7152eaaab3bd8c6d0aa95ceeb1df8ee120',
   'nyholm/psr7' => '1.2.1@55ff6b76573f5b242554c9775792bd59fb52e11c',
-  'ocramius/package-versions' => '1.5.1@1d32342b8c1eb27353c8887c366147b4c2da673c',
+  'ocramius/package-versions' => '1.4.2@44af6f3a2e2e04f2af46bcb302ad9600cba41c7d',
   'opis/closure' => '3.5.1@93ebc5712cdad8d5f489b500c59d122df2e53969',
   'paragonie/random_compat' => 'v9.99.99@84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95',
   'phenx/php-font-lib' => '0.5.2@ca6ad461f032145fff5971b5985e5af9e7fa88d8',
@@ -92,12 +86,12 @@ final class Versions
   'symfony/http-foundation' => 'v4.4.8@ec5bd254c223786f5fa2bb49a1e705c1b8e7cee2',
   'symfony/http-kernel' => 'v4.4.8@1799a6c01f0db5851f399151abdb5d6393fec277',
   'symfony/mime' => 'v5.0.8@5d6c81c39225a750f3f43bee15f03093fb9aaa0b',
-  'symfony/polyfill-ctype' => 'v1.16.0@1aab00e39cebaef4d8652497f46c15c1b7e45294',
-  'symfony/polyfill-iconv' => 'v1.16.0@d51debc1391a609c514f6f072dd59a61b461502a',
-  'symfony/polyfill-intl-idn' => 'v1.16.0@ab0af41deab94ec8dceb3d1fb408bdd038eba4dc',
-  'symfony/polyfill-mbstring' => 'v1.16.0@a54881ec0ab3b2005c406aed0023c062879031e7',
-  'symfony/polyfill-php72' => 'v1.16.0@42fda6d7380e5c940d7f68341ccae89d5ab9963b',
-  'symfony/polyfill-php73' => 'v1.16.0@7e95fe59d12169fcf4041487e4bf34fca37ee0ed',
+  'symfony/polyfill-ctype' => 'v1.17.0@e94c8b1bbe2bc77507a1056cdb06451c75b427f9',
+  'symfony/polyfill-iconv' => 'v1.17.0@c4de7601eefbf25f9d47190abe07f79fe0a27424',
+  'symfony/polyfill-intl-idn' => 'v1.17.0@3bff59ea7047e925be6b7f2059d60af31bb46d6a',
+  'symfony/polyfill-mbstring' => 'v1.17.0@fa79b11539418b02fc5e1897267673ba2c19419c',
+  'symfony/polyfill-php72' => 'v1.17.0@f048e612a3905f34931127360bdd2def19a5e582',
+  'symfony/polyfill-php73' => 'v1.17.0@a760d8964ff79ab9bf057613a5808284ec852ccc',
   'symfony/process' => 'v4.4.8@4b6a9a4013baa65d409153cbb5a895bf093dc7f4',
   'symfony/psr-http-message-bridge' => 'v2.0.0@ce709cd9c90872c08c2427b45739d5f3c781ab4f',
   'symfony/routing' => 'v4.4.8@67b4e1f99c050cbc310b8f3d0dbdc4b0212c052c',
@@ -106,6 +100,7 @@ final class Versions
   'symfony/translation-contracts' => 'v2.0.1@8cc682ac458d75557203b2f2f14b0b92e1c744ed',
   'symfony/var-dumper' => 'v4.4.8@c587e04ce5d1aa62d534a038f574d9a709e814cf',
   'tijsverkoyen/css-to-inline-styles' => '2.2.2@dda2ee426acd6d801d5b7fd1001cde9b5f790e15',
+  'unisharp/laravel-filemanager' => 'v2.1.0@a2c390b1414fa35457fc5c6d01068dcf6dac7cd2',
   'uxweb/sweet-alert' => 'v2.0.3@5ad72efabaa8e864443247daeafeae69a0913f7a',
   'vlucas/phpdotenv' => 'v3.6.4@10d3f853fdf1f3a6b3c7ea0c4620d2f699713db5',
   'yajra/laravel-datatables-oracle' => 'v9.10.0@b0b9e2c37b5a17ca35bb2c6d3927bf6176393229',
@@ -146,7 +141,7 @@ final class Versions
   'sebastian/version' => '2.0.1@99732be0ddb3361e16ad77b68ba41efc8e979019',
   'theseer/tokenizer' => '1.1.3@11336f6f84e16a720dae9d8e6ed5019efa85a0f9',
   'webmozart/assert' => '1.8.0@ab2cb0b3b559010b75981b1bdce728da3ee90ad6',
-  'laravel/laravel' => 'dev-master@88750e25f9b217fe60af54f6dcf0567b3ddbed11',
+  'laravel/laravel' => 'dev-update@b41473959136f6db8250be2f75b92a1e6adeaedd',
 );
 
     private function __construct()
@@ -155,8 +150,6 @@ final class Versions
 
     /**
      * @throws \OutOfBoundsException If a version cannot be located.
-     *
-     * @psalm-param key-of<self::VERSIONS> $packageName
      */
     public static function getVersion(string $packageName) : string
     {

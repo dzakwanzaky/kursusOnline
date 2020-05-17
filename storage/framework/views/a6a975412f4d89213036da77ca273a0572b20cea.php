@@ -27,44 +27,15 @@
                                 <!-- small box -->
                                 <div class="small-box bg-red">
                                     <div class="inner">
-                                        <h3><?php echo e(DB::table('users')->where('role','!=','admin')->count()); ?></h3>
+                                        <h3><?php echo e(DB::table('model_invoice')->where('kategori','=','OFFLINE')->count()); ?></h3>
 
-                                        <p>Pendaftaran Jadwal</p>
+                                        <p>Pendaftaran Jadwal <br> Offline</p>
                                     </div>
                                     <div class="icon">
                                     <i class="far fa-calendar"></i>
                                     </div>
-                                    <a href="#" class="small-box-footer">More info
+                                    <a href="/list_pendaftaranSiswa" class="small-box-footer">More info
                                     <i
-                                            class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-xs-6">
-                                <!-- small box -->
-                                <div class="small-box bg-yellow">
-                                    <div class="inner">
-                                        <h3><?php echo e(DB::table('model_siswas')->where('status','AKTIF')->count()); ?></h3>
-                                        <p>Siswa Aktif</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fas fa-user-graduate"></i>
-                                    </div>
-                                    <a href="/daftarSiswa" class="small-box-footer">More info <i
-                                            class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-xs-6">
-                                <!-- small box -->
-                                <div class="small-box bg-green">
-                                    <div class="inner">
-                                        <h3><?php echo e(DB::table('model_tutors')->where('status','ACTIVE')->count()); ?></h3>
-
-                                        <p>Tutor Aktif</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="fas fa-chalkboard-teacher"></i>
-                                    </div>
-                                    <a href="/daftarTutor" class="small-box-footer">More info <i
                                             class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
@@ -72,45 +43,61 @@
                                 <!-- small box -->
                                 <div class="small-box bg-orange">
                                     <div class="inner">
-                                        <h3><?php echo e(DB::table('model_tryouts')->count()); ?></h3>
+                                        <h3><?php echo e(DB::table('model_invoice')->where('kategori','=','ONLINE')->count()); ?></h3>
 
-                                        <p>Tryout</p>
+                                        <p>Pendaftaran Jadwal <br> Online</p>
                                     </div>
                                     <div class="icon">
-                                        <i class="fas fa-book-reader"></i>
+                                    <i class="far fa-calendar"></i>
                                     </div>
-                                    <a href="/daftarTryout" class="small-box-footer">More info <i
+                                    <a href="/jadwalMenungguOnline" class="small-box-footer">More info <i
                                             class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-xs-6">
                                 <!-- small box -->
-                                <div class="small-box bg-blue">
+                                <div class="small-box bg-yellow">
                                     <div class="inner">
-                                        <h3><?php echo e(DB::table('model_invoice')->where('file','!=','null')->count()); ?></h3>
-
-                                        <p>Invoice</p>
+                                        <h3><?php echo e(DB::table('model_siswas')->where('status','BELUM AKTIF')->count()); ?></h3>
+                                        <p>Pendaftaran <br>
+                                         Siswa</p>
                                     </div>
                                     <div class="icon">
-                                        <i class="ion ion-ios-cart"></i>
+                                        <i class="fas fa-user-graduate"></i>
                                     </div>
-                                    <a href="/daftarSiswa" class="small-box-footer">More info <i
+                                    <a href="/daftarSiswaBelumAktif" class="small-box-footer">More info <i
                                             class="fa fa-arrow-circle-right"></i></a>
                                 </div>
-
                             </div>
+                            <div class="col-lg-3 col-xs-6">
+                                <!-- small box -->
+                                <div class="small-box bg-green">
+                                    <div class="inner">
+                                        <h3><?php echo e(DB::table('model_tutors')->where('status','BELUM AKTIF')->count()); ?></h3>
+
+                                        <p>Pendaftaran <br> Tutor</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fas fa-chalkboard-teacher"></i>
+                                    </div>
+                                    <a href="/daftarTutorBelumAktif" class="small-box-footer">More info <i
+                                            class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                          
+                          
                             <div class="col-lg-3 col-xs-6">
                                 <!-- small box -->
                                 <div class="small-box" style="background-color:#E5FA18">
                                     <div class="inner">
-                                        <h3><?php echo e(DB::table('model_formulirs')->where('file','!=','null')->count()); ?></h3>
+                                        <h3><?php echo e(DB::table('model_formulirs')->where('status','!=','BELUM AKTIF')->count()); ?></h3>
 
-                                        <p>Pendaftaran Tryout</p>
+                                        <p>Pendaftaran <br> Tryout</p>
                                     </div>
                                     <div class="icon">
                                     <i class="fas fa-folder"></i>
                                     </div>
-                                    <a href="/tryoutAktif" class="small-box-footer">More info <i
+                                    <a href="/tryoutBelumAktif" class="small-box-footer">More info <i
                                             class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>

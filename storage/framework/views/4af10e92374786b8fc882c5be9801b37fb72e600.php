@@ -1111,10 +1111,15 @@
             color: #92CD16;
         }
 
+       
+         ul a:hover {
+            color: #92CD16;
+        }
+
         .secsion {
             padding-left: 70px;
         }
-         .gong {
+        .gong {
             padding: 3px;
         }
     </style>

@@ -15,6 +15,25 @@
 .has-error {
      color: red;
 }
+#custom-button {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: white;
+    background-color: #2b91ff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor:pointer;
+}
+#custom-button:hover {
+    opacity: 80%;
+}
+#custom-text {
+    margin-left: 10px;
+    font-family: sans-serif;
+    color: #aaa;
+}
 </style>
 <head>
     <meta charset="UTF-8">
@@ -27,6 +46,9 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="set('/ya')}}/assets/css/style.css">
+
+  
 </head>
 
 <div class="main">
@@ -74,7 +96,7 @@
                                 <div class="form-group<?php echo e($errors->has('tanggal_lahir') ? ' has-error' : ''); ?>">
                                     <div class="form-title">
                                         <input class="form-control" id="tanggal" name="tanggal_lahir"
-                                            placeholder="MM/DD/YYY" type="text" value="<?php echo e(old('tanggal_lahir')); ?>">
+                                            placeholder="Tanggal lahir" type="text" value="<?php echo e(old('tanggal_lahir')); ?>">
 
                                     </div>
                                         <?php if($errors->has('tanggal_lahir')): ?>
@@ -169,19 +191,18 @@
                                     </div>
                                     Foto Diri
                                     <div class="form-group">
-                                        <div class="form-group<?php echo e($errors->has('file') ? ' has-error' : ''); ?>">
-                                        <input type="file" class="form-control" id="file" name="file" required>
-                                                 <?php if($errors->has('file')): ?>
-                                <span class="help-block">
-                               <?php echo e($errors->first('file')); ?>
+                                        
 
-                                </span>
-                            <?php endif; ?>
+                                        <input type="file" id="real-file" hidden="hidden" name="file" accept="image/*" required/>
+                                        <button type="button" id="custom-button">&nbsp;Foto&nbsp;Anda</button>
+                                        <span id="custom-text">Tidak ada foto yang dipilih</span>
+
+        
                                     </div>
 
                                     <input id="status" type="text" name="status" class="form-control"
                                         value="BELUM AKTIF" style="display:none" required>
-
+                                    <br>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary d-block"
                                             style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">
@@ -290,6 +311,26 @@
         })
     });
 </script>
+<script>
+    const realFileBtn = document.getElementById("real-file");
+const customBtn = document.getElementById("custom-button");
+const customTxt = document.getElementById("custom-text");
+
+customBtn.addEventListener("click", function() {
+  realFileBtn.click();
+});
+
+realFileBtn.addEventListener("change", function() {
+  if (realFileBtn.value) {
+    customTxt.innerHTML = realFileBtn.value.match(
+      /[\/\\]([\w\d\s\.\-\(\)]+)$/
+    )[1];
+  } else {
+    customTxt.innerHTML = "Tidak ada foto yang dipilih";
+  }
+});
+</script>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('base/script_page', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ASUS\Pictures\bismilah\bismilah\resources\views/base/dataSiswa.blade.php ENDPATH**/ ?>

@@ -51,10 +51,14 @@
                                         <button class="btn btn-sm btn-primary">{{$d->status}}</button>
                                     </td>
                                     <td>
+                                       @if($d->status == 'AKTIF')
                                         <a type="button" class="btn btn-sm btn-primary"
                                             href="{{route('absen.show', $d->id)}}">
                                             Lihat Kehadiran
                                         </a>
+                                      @else
+
+                                      @endif
                                     </td>
                                 </tr>
                                 @endforeach

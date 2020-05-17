@@ -214,7 +214,7 @@
                             <div class="text">
                                 <p class="mb-5"><?php echo e($d->isi); ?></p>
                                 <p class="name" style="color:#4a4a4a"><?php echo e($d->user->name); ?></p>
-                                <span class="position"><?php echo e($d->siswa->files->program->program); ?></span>
+                                <span class="position">Program bimbel <?php echo e($d->siswa->files->program->program); ?> Inofa</span>
                             </div>
                         </div>
                     </div>

@@ -214,7 +214,7 @@
                             <div class="text">
                                 <p class="mb-5">{{$d->isi}}</p>
                                 <p class="name" style="color:#4a4a4a">{{$d->user->name}}</p>
-                                <span class="position">{{$d->siswa->files->program->program}}</span>
+                                <span class="position">Program bimbel {{$d->siswa->files->program->program}} Inofa</span>
                             </div>
                         </div>
                     </div>

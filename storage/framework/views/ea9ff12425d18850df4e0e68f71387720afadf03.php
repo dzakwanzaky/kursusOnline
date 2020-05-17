@@ -49,6 +49,7 @@
                                         <th colspan="5" style="border-bottom:1px solid;border-bottom-color:#f4f4f5">
                                             Option</th>
                                         <th rowspan="2">Jawaban</th>
+                                        <th rowspan="2">Pembahasan</th>
                                         <th rowspan="2">Aksi</th>
                                     </tr>
                                     <tr class="table-secondary" style="text-align:center; text-transform: uppercase;">
@@ -77,18 +78,20 @@
                                         <td><?php echo e($d->option_d); ?></td>
                                         <td><?php echo e($d->option_e); ?></td>
                                         <td><?php echo $d->jawaban; ?></td>
-                                        <td class="d-flex">
-                                            <form action="<?php echo e(route('soal.destroy', $d->id)); ?>" method="post"
+                                        <td><?php echo $d->pembahasan; ?></td>
+                                        <form action="<?php echo e(route('soal.destroy', $d->id)); ?>" method="post"
                                                 class="destroy">
-                                                <a type="button" class="btn btn-sm btn-primary mr-2"
-                                                    href="<?php echo e(route('soal.edit',$d->id)); ?>">Edit</a>
+                                        <td class="d-flex">
+                                           
+                                                <a type="button" class="btn btn-sm btn-primary mr-2" data-toggle="tooltip" data-placement="top" title="Edit Soal"
+                                                    href="<?php echo e(route('soal.edit',$d->id)); ?>"><i class="far fa-edit"></i></a>
                                                 <?php echo e(csrf_field()); ?>
 
                                                 <?php echo e(method_field('DELETE')); ?>
 
                                                 <button type="submit" class="btn btn-sm btn-danger mr-2"
-                                                    style="color:white"
-                                                    onclick="return confirm('Anda yakin akan menghapus soal?')">Hapus</button>
+                                                    style="color:white" data-toggle="tooltip" data-placement="top" title="Hapus Soal"
+                                                    onclick="return confirm('Anda yakin akan menghapus soal?')"><i class="far fa-trash-alt"></i></button>
                                             </form>
                                         </td>
                                     </tr>
@@ -118,6 +121,10 @@
         $('#siswa').DataTable({
             "autoWidth": false
         });
+
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+        })
     });
 </script>
 <?php $__env->stopPush(); ?>

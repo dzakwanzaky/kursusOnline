@@ -59,10 +59,11 @@
                                             </a>
                                             <?php endif; ?>
                                         </td>
-                                        <td class="d-flex">
-                                            <form action="<?php echo e(route('status', $d->id)); ?>" enctype="multipart/form-data">
+                                        <form action="<?php echo e(route('status', $d->id)); ?>" enctype="multipart/form-data">
                                                 <?php echo e(csrf_field()); ?>
 
+                                        <td class="d-flex">
+                                         
                                                 <input style="display:none" value="TIDAK AKTIF" id="status"
                                                     name="status"></input>
                                                 <a class="btn btn-sm btn-info mr-2" data-toggle="tooltip"
@@ -107,6 +108,19 @@
         $('[data-toggle="tooltip"]').tooltip()
     })
 </script>
+<script>
+        var isiPesan = '<?php echo e(Session::get('
+        success ')); ?>';
+        var exist = '<?php echo e(Session::has('
+        success ')); ?>';
+        if (exist) {
+            swal(
+                'Sukses!',
+                isiPesan,
+                'success'
+            )
+        }
+    </script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('dashboard_admin/baseMurid', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ASUS\Pictures\bismilah\bismilah\resources\views/dashboard_admin/daftarSiswa.blade.php ENDPATH**/ ?>

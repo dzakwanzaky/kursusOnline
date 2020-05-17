@@ -31,10 +31,10 @@ class TutorController extends Controller
 
     public function profileTutorAdmin($id){
 
-        $tutor = ModelTutor::with('tutor',)->where('id', $id)->first();
+        $tutor = ModelTutor::with('tutor')->where('id', $id)->first();
         $array = json_decode ($tutor->mapel_id);
 
-        $kls = ModelTutor::with('tutor',)->where('id', $id)->first();
+        $kls = ModelTutor::with('tutor')->where('id', $id)->first();
         $arrays = json_decode ($tutor->kelas_id);
 
         $prg = ModelTutor::with('tutor')->where('id', $id)->first();

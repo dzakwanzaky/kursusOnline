@@ -40,9 +40,7 @@
  <!-- ALL JS FILES -->
  <body class="app_version" data-spy="scroll" data-target="#navbarApp" data-offset="98">
 
-    <div id="preloader">
-        <img class="preloader" src="tema/images/ajax-loader.gif" alt="">
-    </div>
+    
     
     @yield('content')    
     <script src="/tema/js/all.js"></script>

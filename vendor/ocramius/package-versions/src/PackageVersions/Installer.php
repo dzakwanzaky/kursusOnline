@@ -48,13 +48,6 @@ namespace PackageVersions;
 %s
 {
     public const ROOT_PACKAGE_NAME = '%s';
-    /**
-     * Array of all available composer packages.
-     * Dont read this array from your calling code, but use the \PackageVersions\Versions::getVersion() method instead.
-     *
-     * @var array<string, string>
-     * @internal
-     */
     public const VERSIONS          = %s;
 
     private function __construct()
@@ -63,8 +56,6 @@ namespace PackageVersions;
 
     /**
      * @throws \OutOfBoundsException If a version cannot be located.
-     *
-     * @psalm-param key-of<self::VERSIONS> $packageName
      */
     public static function getVersion(string $packageName) : string
     {
@@ -93,7 +84,10 @@ PHP;
      */
     public static function getSubscribedEvents() : array
     {
-        return [ScriptEvents::POST_AUTOLOAD_DUMP => 'dumpVersionsClass'];
+        return [
+            ScriptEvents::POST_INSTALL_CMD => 'dumpVersionsClass',
+            ScriptEvents::POST_UPDATE_CMD  => 'dumpVersionsClass',
+        ];
     }
 
     /**
@@ -143,7 +137,7 @@ PHP;
             return;
         }
 
-        $io->write('<info>ocramius/package-versions:</info> Generating version class...');
+        $io->write('<info>ocramius/package-versions:</info>  Generating version class...');
 
         $installPathTmp = $installPath . '_' . uniqid('tmp', true);
         file_put_contents($installPathTmp, $versionClassSource);
@@ -179,9 +173,7 @@ PHP;
     }
 
     /**
-     * @return Generator&string[]
-     *
-     * @psalm-return Generator<string, string>
+     * @return Generator|string[]
      */
     private static function getVersions(Locker $locker, RootPackageInterface $rootPackage) : Generator
     {

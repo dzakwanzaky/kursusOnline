@@ -118,7 +118,8 @@ class SiswaController extends Controller
     public function edit($id)
     {
         $data = ModelSiswa::where('id','=',$id)->get();
-        return view('murid.editprofile', compact('data'));
+        $provinsi = Provinsi::all()->pluck("provinsi", "id");
+        return view('murid.editprofile', compact('data','provinsi'));
     }
 
     public function update(Request $request, $id)

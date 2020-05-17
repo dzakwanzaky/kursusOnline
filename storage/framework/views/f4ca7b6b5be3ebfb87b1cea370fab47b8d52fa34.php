@@ -50,10 +50,14 @@
                                         <button class="btn btn-sm btn-primary"><?php echo e($d->status); ?></button>
                                     </td>
                                     <td>
+                                       <?php if($d->status == 'AKTIF'): ?>
                                         <a type="button" class="btn btn-sm btn-primary"
                                             href="<?php echo e(route('absen.show', $d->id)); ?>">
                                             Lihat Kehadiran
                                         </a>
+                                      <?php else: ?>
+
+                                      <?php endif; ?>
                                     </td>
                                 </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

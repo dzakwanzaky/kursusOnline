@@ -164,7 +164,8 @@ class ProgramController extends Controller
    {
     $rinci = \App\ModelProgram::find($id);
     $data = \DB::table('model_mapels')->where('id_program', $id)->get();
-     $dat = \DB::table('model_tryouts')->where('program_id',$id)->get();
+     $dat = \DB::table('model_tryouts')->where('program_id',$id)->where('mapel_id', $id)->get();
+      // $dat = \DB::table('model_tryouts')->where('program_id',$id)->get();
     return view('base.sd', compact('rinci','data','dat'));
    }
    

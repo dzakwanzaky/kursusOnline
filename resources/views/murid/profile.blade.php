@@ -77,7 +77,7 @@
                                 {{ $u->phone }}</h6>
                             <br>
                             <a href="{{route('editMurid',$u->id)}}" class="btn-edit-info"
-                                style="display:block; margin-left:auto; margin-right:auto;">Pengaturan Akun</a>
+                                style="display:block; margin-left:auto; text-decoration:none;margin-right:auto;">Pengaturan Akun</a>
 
                             @endforeach
                             @foreach($data as $d)
@@ -117,7 +117,7 @@
                         <div class="form-group">
                         </div>
                         <td>
-                            <a href="{{route('dataSiswa.edit',$d->id)}}" class="btn-edit" style="margin-left:auto;">Edit
+                            <a href="{{route('dataSiswa.edit',$d->id)}}" class="btn-edit" style="margin-left:auto;text-decoration:none;">Edit
                                 Profil</a>
                         </td>
 
