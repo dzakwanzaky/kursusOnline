@@ -112,7 +112,7 @@ class SiswaController extends Controller
         $data->alamat_detail = $request->alamat_detail;
         $data->status = $request->status;
         $data->save();
-        return redirect('/pilihMetode')->withMessage('Kamu Berhasil Daftar Les');
+        return redirect('/pilihMetode')->with('success', 'Kamu Berhasil Daftar Les');
     }
 
     public function edit($id)
@@ -155,7 +155,7 @@ class SiswaController extends Controller
         $data = ModelSiswa::where('id', $id)->first();
         $data->status = $request->status;
         $data->save();
-        return redirect('daftarSiswa')->with('success', 'Berhasil Mengaktifkan Siswa');
+        return redirect('daftarSiswa')->with('success', 'Berhasil Mengonfirmasi Siswa');
 }
 
     public function dashboard()

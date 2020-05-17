@@ -55,7 +55,7 @@ class ProgramController extends Controller
     {
         $data = ModelInvoice::where('id_murid', $id)->get();
         $pdf = PDF::loadView('murid/invoicenya', ['data'=>$data])->setPaper('A4');
-        return $pdf->stream('invoice.pdf');
+        return $pdf->download('invoice.pdf');
     }
 
 
@@ -77,6 +77,17 @@ class ProgramController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'program' => 'required|min:5|string',
+            'keterangan' => 'required|min:5|string',
+       ],
+       [
+            'program.required' => 'Nama program tidak boleh kosong',
+            'program.min' => 'Nama program minimal 5 karakter',
+            'keterangan.required' => 'Keterangan tidak boleh kosong',
+            'keterangan.min' => 'Keterangan minimal 5 karakter',
+         
+       ]);
      
         $data = ModelProgram::where('id',$id)->first();
         $data->program = $request->program;
@@ -100,6 +111,19 @@ class ProgramController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'program' => 'required|min:5|string',
+            'keterangan' => 'required|min:5|string',
+            'keterangan_rinci' => 'min:5|string',
+       ],
+       [
+            'program.required' => 'Nama program tidak boleh kosong',
+            'program.min' => 'Nama program minimal 5 karakter',
+            'keterangan.required' => 'Keterangan tidak boleh kosong',
+            'keterangan.min' => 'Keterangan minimal 5 karakter',
+            'keterangan_rinci.min' => 'Keterangan rinci minimal 5 karakter',   
+         
+       ]);
         $data = new ModelProgram();
         $data->program = $request->program;
         $data->keterangan = $request->keterangan;

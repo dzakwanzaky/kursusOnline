@@ -45,7 +45,9 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="form-group">
-
+                                    @foreach ($errors->all() as $error)
+                                    <p class="text-danger">{{ $error }}</p>
+                                    @endforeach
 
                                         <div class="form-group">
                                             <label for="">Nama Program :</label>

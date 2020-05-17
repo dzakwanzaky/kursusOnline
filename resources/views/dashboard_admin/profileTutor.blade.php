@@ -16,16 +16,7 @@
                                         <div class="col-sm-6">
                                             <h1 class="m-0 text-dark">Detail Tutor</h1>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <ol class="breadcrumb float-md-right" style="font-size:14px">
-                                                <li class="breadcrumb-item">
-                                                    <a href="/tutor">Tutor</a>
-                                                </li>
-                                                <li class="breadcrumb-item active">
-                                                    Profile Tutor
-                                                </li>
-                                            </ol>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>

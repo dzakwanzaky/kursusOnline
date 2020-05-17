@@ -46,6 +46,20 @@ class PaketController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'nama_paket' => 'required|min:5|string',
+            'jumlah_mapel' => 'required|numeric',
+            'jumlah_pertemuan' => 'required|numeric',
+       ],
+       [
+            'nama_paket.required' => 'Nama paket tidak boleh kosong',
+            'nama_paket.min' => 'Nama paket minimal 5 karakter',
+            'jumlah_mapel.required' => 'Jumlah mata pelajaran tidak boleh kosong',
+            'jumlah_mapel.numeric' => 'Jumlah mata pelajaran harus berupa angka',
+            'jumlah_pertemuan.required' => 'Jumlah pertemuan tidak boleh kosong',
+            'jumlah_pertemuan.numeric' => 'Jumlah pertemuan harus berupa angka',
+         
+       ]);
         $data = new ModelPaket();
         $data->nama_paket = $request->nama_paket;
         $data->program_id = $request->program_id;
@@ -90,6 +104,20 @@ class PaketController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'nama_paket' => 'required|min:5|string',
+            'jumlah_mapel' => 'required|numeric',
+            'jumlah_pertemuan' => 'required|numeric',
+       ],
+       [
+            'nama_paket.required' => 'Nama paket tidak boleh kosong',
+            'nama_paket.min' => 'Nama paket minimal 5 karakter',
+            'jumlah_mapel.required' => 'Jumlah mata pelajaran tidak boleh kosong',
+            'jumlah_mapel.numeric' => 'Jumlah mata pelajaran harus berupa angka',
+            'jumlah_pertemuan.required' => 'Jumlah pertemuan tidak boleh kosong',
+            'jumlah_pertemuan.numeric' => 'Jumlah pertemuan harus berupa angka',
+         
+       ]);
         $data = ModelPaket::where('id',$id)->first();
         $data->nama_paket = $request->nama_paket;
         $data->program_id = $request->program_id;

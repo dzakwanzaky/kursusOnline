@@ -40,9 +40,10 @@ class JadwalController extends Controller
     {
         $data = ModelTutor::where('id', '=', Auth::user()->id)->first();
         $array = json_decode ($data->mapel_id);
+        $program = json_decode ($data->program_id);
         $jadwal = ModelJadwal::with('invoice')
         ->whereHas('invoice', function($q) use ($data)
-        {$q-> whereIn('program_id', [$data->program_id]);}
+        {$q-> whereIn('program_id', [json_decode ($data->program_id)]);}
         )
         ->whereIn('mapel_id', $array)
         ->where('status', 'MENUNGGU')->get();
@@ -297,14 +298,18 @@ class JadwalController extends Controller
             if ($data->invoice->kategori == 'OFFLINE'){
                 if ($data->status == 'AKTIF'){
                     return redirect('jadwalAktif')->with('success', 'Berhasil Konfirmasi');
-                } else {
+                } else if ($data->status == 'TIDAK AKTIF'){
                     return redirect('jadwalTidakAktif')->with('success', 'Berhasil Menonaktifkan');
+                } else {
+                    return redirect('list_pendaftaranSiswa')->with('success', 'Berhasil Menolak Pengajuan Jadwal');
                 }
             } else {
                 if ($data->status == 'AKTIF'){
                     return redirect('jadwalAktifOnline')->with('success', 'Berhasil Konfirmasi');
-                } else {
+                } else if($data->status == 'TIDAK AKTIF'){
                     return redirect('jadwalTidakAktifOnline')->with('success', 'Berhasil Menonaktifkan');
+                } else {
+                    return redirect('jadwalMenungguOnline')->with('success', 'Berhasil Menolak Pengajuan Jadwal');
                 }
             }
            

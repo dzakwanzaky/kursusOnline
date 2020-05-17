@@ -47,6 +47,10 @@
                                         enctype="multipart/form-data">
                                         {{ csrf_field() }}
 
+                                        @foreach ($errors->all() as $error)
+                                        <p class="text-danger">{{ $error }}</p>
+                                        @endforeach
+
                                         <div class="form-group">
                                             <label for="">Nama Paket :</label>
                                             <input type="text" class="form-control" id="nama_paket" name="nama_paket"

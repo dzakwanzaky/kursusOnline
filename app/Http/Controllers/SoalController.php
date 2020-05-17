@@ -18,6 +18,7 @@ class SoalController extends Controller
 
     public function store(Request $request)
     {
+   
         foreach ($request->nomor_soal as $key => $value){
             $data = new ModelSoal();
             $data->id_to = $request->id_to;
@@ -39,7 +40,7 @@ class SoalController extends Controller
             $data->pembahasan = $request->pembahasan[$key];
             $data->save();
         }  
-        return redirect()->route('daftarSoal', $data->id_to);
+        return redirect()->route('daftarSoal', $data->id_to)->with('success', 'Berhasil Menambah Data!');
     }
 
     public function edit($id)
@@ -50,6 +51,13 @@ class SoalController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'nomor_soal' => 'required|numeric',
+       ],
+       [
+            'nomor_soal.numeric' => 'Nomor soal harus berupa angka',
+       ]);
+
         $data = ModelSoal::where('id',$id)->first();
         $data->id_to = $request->id_to;
         $data->nomor_soal = $request->nomor_soal;

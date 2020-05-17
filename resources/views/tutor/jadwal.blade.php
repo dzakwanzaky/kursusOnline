@@ -102,7 +102,6 @@
 @endsection
 @section('sweet')
 <script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     $(document).ready(function () {
         $('#jadwal').DataTable();

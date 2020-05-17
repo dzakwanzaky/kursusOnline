@@ -106,6 +106,9 @@
             </div>
             <form method="POST" action="{{ route('soal.store')}}" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                @foreach ($errors->all() as $error)
+                                    <p class="text-danger">{{ $error }}</p>
+                                    @endforeach
                 <div id="body" class="content"></div>
 
         </div>

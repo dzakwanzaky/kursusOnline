@@ -39,6 +39,10 @@
                             <div class="panel-body">
                                 <form method="POST" action="{{ route('tryout.store')}}" enctype="multipart/form-data">
                                     {{ csrf_field() }}
+                                    
+                                    @foreach ($errors->all() as $error)
+                                    <p class="text-danger">{{ $error }}</p>
+                                    @endforeach
 
                                     <div class="card-body">
                                         <div class="text-center{{ $errors->has('nama') ? ' has-error' : '' }}"
@@ -46,14 +50,8 @@
                                             <label>Nama Tryout</label>
                                             <input type="text" class="form-control-half" id="nama" name="nama"
                                                 style="float:left" required>
-
-                                            @if ($errors->has('nama'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('nama') }}</strong>
-                                            </span>
-                                            @endif
-
                                         </div>
+
                                         <div style="float:right">
                                             <label>Jumlah Soal</label>
                                             <input type="text" class="form-control-half" id="jumlah_soal"

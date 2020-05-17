@@ -43,12 +43,12 @@ class ChangePasswordController extends Controller
             'new_confirm_password' => 'same:new_password|required',
         ],
         [
-            'current_password.required' => 'Kata sandi lama tidak boleh kosong',
-            'current_password.new' => 'Kata sandi lama tidak cocok',
-            'new_password.required' => 'Kata sandi baru tidak boleh kosong',
-            'new_password.min' => 'Kata sandi baru tidak boleh kurang dari 5 karakter',
-            'new_confirm_password.required' => 'Konfirmasi kata sandi tidak boleh kosong',
-            'new_confirm_password.same' =>'Konfirmasi kata sandi tidak sama'
+            'current_password.required' => 'Password lama tidak boleh kosong',
+            'current_password.new' => 'Password lama tidak cocok',
+            'new_password.required' => 'Password baru tidak boleh kosong',
+            'new_password.min' => 'Password baru tidak boleh kurang dari 7 karakter',
+            'new_confirm_password.required' => 'Konfirmasi password tidak boleh kosong',
+            'new_confirm_password.same' =>'Konfirmasi password tidak sama'
 
 
 
@@ -57,13 +57,13 @@ class ChangePasswordController extends Controller
    
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
         if (auth()->user()->role == 'tutor'){
-            return redirect('profile')->withMessage('Berhasil Merubah Data');
+            return redirect('profile')->with('success', 'Password Berhasil Diubah');
             
             } else if (auth()->user()->role == 'siswa') {
                 Session::flash('success', 'Kata Sandi Berhasil di Ubah');
                 return redirect('/invoice');
             } else {
-                return redirect('profileAdmin')->withMessage('Berhasil Merubah Data');
+                return redirect('profileAdmin')->with('success', 'Password Berhasil Diubah');
             }
     }
 }

@@ -47,23 +47,28 @@
                                     {{ csrf_field() }}
                                     {{ method_field('PUT') }}
                                     <div class="form-group">
+                                    @foreach ($errors->all() as $error)
+                                    <p class="text-danger">{{ $error }}</p>
+                                    @endforeach
 
                                         <div class="form-group">
                                             <label for="">Nama Program :</label>
                                             <input type="text" class="form-control" id="program" name="program"
-                                                value="{{ $d->program }}">
+                                                value="{{ $d->program }}" required>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="">Keterangan :</label>
-                                            <input type="text" class="form-control" id="keterangan" name="keterangan"
-                                                value="{{ $d->keterangan}}">
+                                            <textarea type="text" class="form-control" id="keterangan" name="keterangan"
+                                                value="{{ $d->keterangan}}" required>{{ $d->keterangan}}
+                                                </textarea>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="">Keterangan Rinci :</label>
-                                            <input type="text" class="form-control" id="keterangan_rinci"
-                                                name="keterangan_rinci" value="{{ $d->keterangan_rinci}}">
+                                            <textarea type="text" class="form-control" id="keterangan_rinci"
+                                                name="keterangan_rinci" value="{{ $d->keterangan_rinci}}">{{ $d->keterangan_rinci}}
+                                                </textarea>
                                         </div>
 
                                         <div class="form-group">

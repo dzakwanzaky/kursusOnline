@@ -47,16 +47,18 @@
                                     {{ csrf_field() }}
                                     {{ method_field('PUT') }}
                                     <div class="form-group">
-
+                                    @foreach ($errors->all() as $error)
+                                    <p class="text-danger">{{ $error }}</p>
+                                    @endforeach
                                     <div class="form-group">
                                             <label for="">Nama Paket :</label>
                                             <input type="text" class="form-control" id="nama_paket" name="nama_paket"
-                                                value="{{ $d->nama_paket }}">
+                                                value="{{ $d->nama_paket }}" required>
                                         </div>
                                         
                                         <div class="form-group">
                                             <label for="">Program :</label>
-                                            <select class="form-control" id="program_id" name="program_id">
+                                            <select class="form-control" id="program_id" name="program_id" required>
                                                 <option value="{{ $d->program_id }}">{{ $d->paket->program }}</option>
                                                 @endforeach
                                                 @foreach($program as $d)
@@ -69,7 +71,7 @@
 
                                         <div class="form-group">
                                             <label for="">Kategori :</label>
-                                            <select class="form-control" id="kategori" name="kategori"  value="{{ $d->kategori }}">
+                                            <select class="form-control" id="kategori" name="kategori"  value="{{ $d->kategori }}" required>
                                             <option value="{{ $d->kategori }}">{{ $d->kategori }}</option>
                                                 <option value="ONLINE">ONLINE</option>
                                                 <option value="OFFLINE">OFFLINE</option>
@@ -79,19 +81,19 @@
                                         <div class="form-group">
                                             <label for="">Jumlah Mata Pelajaran :</label>
                                             <input type="text" class="form-control" id="jumlah_mapel"
-                                                name="jumlah_mapel" value="{{ $d->jumlah_mapel}}">
+                                                name="jumlah_mapel" value="{{ $d->jumlah_mapel}}" required>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="">Jumlah Pertemuan :</label>
                                             <input type="text" class="form-control" id="jumlah_pertemuan"
-                                                name="jumlah_pertemuan" value="{{ $d->jumlah_pertemuan}}">
+                                                name="jumlah_pertemuan" value="{{ $d->jumlah_pertemuan}}" required>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="">Harga :</label>
                                             <input type="text" class="form-control" id="harga" name="harga"
-                                                value="{{ $d->harga}}">
+                                                value="{{ $d->harga}}" required>
                                         </div>
 
                                         <div class="d-flex">

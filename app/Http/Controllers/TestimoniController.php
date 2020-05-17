@@ -27,12 +27,19 @@ class TestimoniController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate($request,[
+            'isi' => 'required|min:20|string',
+       ],
+       [
+            'isi.required' => 'Isi testimoni tidak boleh kosong',
+            'isi.min' => 'Isi testimoni minimal 20 karakter',
+       ]);
     	$tambah = ModelTestimoni::create([
     		'murid_id' =>$request->murid_id,
     		'isi' =>$request->isi,
     	]);
 
-    	return redirect()->route('testimoni')->with('success', 'Data Berhasil Ditambahkan');
+    	return redirect()->route('testimoni')->with('success', 'Berhasil Menambah Data!');
     }
 
     public function edit($id)
@@ -44,10 +51,16 @@ class TestimoniController extends Controller
 
     public function update(Request $request,$id)
     {
-
+        $this->validate($request,[
+            'isi' => 'required|min:20|string',
+       ],
+       [
+            'isi.required' => 'Isi testimoni tidak boleh kosong',
+            'isi.min' => 'Isi testimoni minimal 20 karakter',
+       ]);
         $data=ModelTestimoni::find($id);
         $data->update($request->all());
-        return redirect()->route('testimoni')->with('success','Data Berhasil Diupdate');
+        return redirect()->route('testimoni')->with('success','Berhasil Mengubah Data!');
     }
 
     public function delete($id)

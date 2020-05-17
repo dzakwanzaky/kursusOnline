@@ -57,21 +57,21 @@
                                     <label for="password">Password Lama</label>
 
                                     <input id="password" type="password" class="form-control" name="current_password"
-                                        autocomplete="current-password">
+                                        autocomplete="current-password" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="password">Password Baru</label>
 
                                     <input id="new_password" type="password" class="form-control" name="new_password"
-                                        autocomplete="current-password">
+                                        autocomplete="current-password" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="password">Masukkan Ulang Password Baru</label>
 
                                     <input id="new_confirm_password" type="password" class="form-control"
-                                        name="new_confirm_password" autocomplete="current-password">
+                                        name="new_confirm_password" autocomplete="current-password" required>
                                 </div>
 
                                 <div class="d-flex">

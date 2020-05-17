@@ -44,14 +44,14 @@
                                         <td>{{ $d->kehadiran }} </td>
                                         <td style="text-align:center">
                                             
-                                                <form action="{{ route('tryout.destroy', $d->id) }}" method="post"
+                                                <form action="{{ route('absen.destroy', $d->id) }}" method="post"
                                                     class="destroy">
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
                                                     <button type="submit" class="btn btn-sm btn-danger"
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Hapus Kehadiran" style="color:white"
-                                                        onclick="return confirm('Anda yakin akan menghapus tryout?')"><i
+                                                        onclick="return confirm('Anda yakin akan menghapus data kehadiran?')"><i
                                                             class="far fa-trash-alt"></i></button>
                                                 </form>
                                             

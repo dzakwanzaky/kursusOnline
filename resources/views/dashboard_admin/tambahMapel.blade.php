@@ -44,6 +44,9 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="form-group">
+                                @foreach ($errors->all() as $error)
+                                    <p class="text-danger">{{ $error }}</p>
+                                    @endforeach
                                     <form method="POST" action="{{ route('mapel.store')}}"
                                         enctype="multipart/form-data">
                                         {{ csrf_field() }}

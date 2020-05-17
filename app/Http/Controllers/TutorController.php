@@ -60,7 +60,7 @@ class TutorController extends Controller
         $data = ModelTutor::where('id', $id)->first();
         $data->status = $request->status;
         $data->save();
-        return redirect('daftarTutor')->with('success', 'Berhasil Menonaktifkan Tutor');
+        return redirect('daftarTutor')->with('success', 'Berhasil Mengonfirmasi Tutor');
     }
 
     public function daftarTutorBelumAktif(){
@@ -168,6 +168,19 @@ class TutorController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'name' => 'required|min:3|string',
+            'phone' => 'required|min:11|numeric',
+            'email' => 'required|min:11|email',
+       ],
+       [
+            'name.min' => 'Nama lengkap tidak boleh kurang dari 3 karakter',
+            'name.string' => 'Nama lengkap harus berupa huruf',
+            'phone.min' => 'No telp tidak boleh kurang dari 11 angka',
+            'phone.numeric' => 'No telp harus berisi angka',
+            'email.min' => 'Email tidak boleh kurang dari 11 karakter',
+            'email.email' => 'Email tidak valid',
+       ]);
         $user = User::where('id',$id)->first();
         $user->name = $request->name;
         $user->phone = $request->phone;

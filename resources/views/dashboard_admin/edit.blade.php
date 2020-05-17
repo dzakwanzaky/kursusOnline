@@ -52,22 +52,25 @@
                                         enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                         {{ method_field('PUT') }}
+                                        @foreach ($errors->all() as $error)
+                                    <p class="text-danger">{{ $error }}</p>
+                                    @endforeach
                                         <div class="form-group">
                                             <label for="">Nama Lengkap :</label>
                                             <input type="text" class="form-control" id="name" name="name"
-                                                value="{{$d->name}}">
+                                                value="{{$d->name}}" required>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="">No Telepon :</label>
                                             <input type="text" class="form-control" id="phone" name="phone"
-                                                value="{{$d->phone}}">
+                                                value="{{$d->phone}}" required>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="">Email :</label>
                                             <input type="text" class="form-control" id="email" name="email"
-                                                value="{{$d->email}}">
+                                                value="{{$d->email}}" required>
                                         </div>
                                         <div class="d-flex">
                                         <button type="submit" class="btn btn-primary d-block"

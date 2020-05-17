@@ -93,7 +93,7 @@
                                                 <button value="AKTIF" id="status" data-toggle="tooltip"
                                                     data-placement="top" title="Konfirmasi" name="status" type="submit"
                                                     class=" btn btn-sm btn-success" style="text-align:center"
-                                                    onclick="return confirm('Anda yakin ingin mengkonfirmasi pembayaran ini?')">
+                                                    onclick="return confirm('Anda yakin ingin mengkonfirmasi pendaftaran ini?')">
                                                     <i class="fas fa-check"></i></button>
                                             </td>
                                     </tr>

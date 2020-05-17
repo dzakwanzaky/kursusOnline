@@ -43,16 +43,20 @@
                                     {{ csrf_field() }}
                                     {{ method_field('PUT') }}
 
+                                    @foreach ($errors->all() as $error)
+                                    <p class="text-danger">{{ $error }}</p>
+                                    @endforeach
+
 
                                     <div class="card-body">
                                         <label style="float:left">Nama Tryout
                                             <input type="text" class="form-control-half" id="nama" name="nama"
-                                                style="float:left" value="{{ $d->nama }}">
+                                                style="float:left" value="{{ $d->nama }}" required>
                                         </label>
 
                                         <label style="float:right">Jumlah Soal
                                             <input type="text" class="form-control-half" id="jumlah_soal"
-                                                name="jumlah_soal" style="float:right" value="{{ $d->jumlah_soal }}">
+                                                name="jumlah_soal" style="float:right" value="{{ $d->jumlah_soal }}" required>
                                         </label>
                                     </div>
 

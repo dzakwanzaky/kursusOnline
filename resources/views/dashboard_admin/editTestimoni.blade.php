@@ -44,6 +44,9 @@
                                 @foreach($data as $d)
                                 <form action="{{ route('testimoni.update', $d->id) }}" method="post"
                                     enctype="multipart/form-data">
+                                    @foreach ($errors->all() as $error)
+                                    <p class="text-danger">{{ $error }}</p>
+                                    @endforeach
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label for="">Nama Siswa :</label>
@@ -62,7 +65,7 @@
                                     <div class="form-group">
                                         <label for="">Isi :</label>
                                         <textarea type="text" class="form-control" id="isi" name="isi"
-                                            value="{{ $d->isi}}">{{ $d->isi}}</textarea>
+                                            value="{{ $d->isi}}" required>{{ $d->isi}}</textarea>
                                     </div>
 
 

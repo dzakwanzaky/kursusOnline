@@ -38,6 +38,9 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="panel-body">
+                            @foreach ($errors->all() as $error)
+                                    <p class="text-danger">{{ $error }}</p>
+                                    @endforeach
                                 @foreach($data as $d)
 
                                 <form method="POST" action="{{ route('mapel.update',$d->id)}}"
@@ -51,7 +54,7 @@
                                     <div class="card-body">
                                         <label>Mata Pelajaran</label>
                                         <input type="text" class="form-control" id="mapel" name="mapel"
-                                            value="{{ $d->mapel }}">
+                                            value="{{ $d->mapel }}" required>
 
 
 

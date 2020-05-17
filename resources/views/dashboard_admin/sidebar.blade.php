@@ -135,8 +135,11 @@
                         {{ Request::segment(1) === 'tambahProgram' ? 'nav-link active' : null }}
                         {{ Request::segment(1) === 'editProgram' ? 'nav-link active' : null }}
                         {{ Request::segment(1) === 'daftarMapel' ? 'nav-link active' : null }}
+                        {{ Request::segment(1) === 'tambahMapel' ? 'nav-link active' : null }}
                         {{ Request::segment(1) === 'editMapel' ? 'nav-link active' : null }}
                         {{ Request::segment(1) === 'mapel' ? 'nav-link active' : null }}
+                        {{ Request::segment(1) === 'program' ? 'nav-link active' : null }}
+
 
                         ">
                         <i class="nav-icon far fa-clipboard"></i>

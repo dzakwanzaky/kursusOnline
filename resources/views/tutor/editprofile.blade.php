@@ -75,32 +75,51 @@
                         <div class="card-body">
                             <table class="w-100 table-responsive-md">
                                 <tbody>
-                                @endforeach
-                                @foreach($user as $d)
-                                <div class="form-group">
+                                    @endforeach
+                                    @foreach($user as $d)
+                                    <div class="form-group">
                                         <label for="">Nama :</label>
                                         <input type="text" class="form-control" id="name" name="name"
-                                            value="{{$d->name}}">
+                                            value="{{$d->name}}" required>
                                     </div>
+                                    @if ($errors->has('name'))
+                                    <span class="help-block" style="color:red">
+                                        {{ $errors->first('name') }}
+                                    </span>
+                                    @endif
+                            
 
                                     <div class="form-group">
                                         <label for="">No Telepon :</label>
                                         <input type="text" class="form-control" id="phone" name="phone"
-                                            value="{{$d->phone}}">
+                                            value="{{$d->phone}}" required>
                                     </div>
+
+                                    @if ($errors->has('phone'))
+                                    <span class="help-block" style="color:red">
+                                        {{ $errors->first('phone') }}
+                                    </span>
+                                    @endif
 
                                     <div class="form-group">
                                         <label for="">Email :</label>
                                         <input type="text" class="form-control" id="email" name="email"
-                                            value="{{$d->email}}">
+                                            value="{{$d->email}}" required>
                                     </div>
-                                @endforeach
-                                @foreach($data as $d)
+                                    @if ($errors->has('email'))
+                                    <span class="help-block" style="color:red">
+                                        {{ $errors->first('email') }}
+                                    </span>
+                                    @endif
+
+                                    @endforeach
+                                    @foreach($data as $d)
 
                                     <div class="form-group">
                                         <label id="prov" for="prov">Provinsi</label>
 
-                                        <select class="form-control" id="provinsi-select" name="provinsi-select">
+                                        <select class="form-control" id="provinsi-select" name="provinsi-select"
+                                            required>
                                             <option value="{{ $d->provinsi }}">{{ $d->provinsi }}</option>
 
                                             @foreach($provinsi as $key => $value)
@@ -110,21 +129,23 @@
                                         </select>
                                     </div>
 
-                                    <div name="provinsi" id="provinsi" value="{{$d->provinsi}}" style="display:none">
-                                    <input type="text" name="provinsi" value="{{$d->provinsi}}">
+                                    <div name="provinsi" id="provinsi" value="{{$d->provinsi}}" style="display:none"
+                                        required>
+                                        <input type="text" name="provinsi" value="{{$d->provinsi}}">
                                     </div>
 
                                     <div class="form-group">
                                         <div class="input-group-prepend">
                                             <label for="kabkot">Kota/Kabupaten</label>
                                         </div>
-                                        <select class="form-control" id="kabupaten-select" name="kabupaten-select" >
+                                        <select class="form-control" id="kabupaten-select" name="kabupaten-select"
+                                            required>
                                             <option value="{{ $d->kabupaten }}">{{ $d->kabupaten }}</option>
                                         </select>
                                     </div>
 
                                     <div name="kabupaten" id="kabupaten" value="{{$d->kabupaten}}" style="display:none">
-                                    <input type="text" name="kabupaten" value="{{$d->kabupaten}}">
+                                        <input type="text" name="kabupaten" value="{{$d->kabupaten}}">
                                     </div>
 
 
@@ -132,26 +153,27 @@
                                         <div class="input-group-prepend">
                                             <label>Kecamatan</label>
                                         </div>
-                                        <select class="form-control" id="kecamatan-select" name="kecamatan-select">
+                                        <select class="form-control" id="kecamatan-select" name="kecamatan-select"
+                                            required>
                                             <option value="{{ $d->kecamatan }}">{{ $d->kecamatan }}</option>
                                         </select>
                                     </div>
 
                                     <div name="kecamatan" id="kecamatan" value="{{$d->kecamatan}}" style="display:none">
-                                    <input type="text" name="kecamatan" value="{{$d->kecamatan}}">
+                                        <input type="text" name="kecamatan" value="{{$d->kecamatan}}">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="">Alamat Detail :</label>
                                         <input type="text" class="form-control" id="alamat_detail" name="alamat_detail"
-                                            value="{{$d->alamat_detail}}">
+                                            value="{{$d->alamat_detail}}" required>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="input-group-prepend">
                                             <label>Jenis Kelamin</label>
                                         </div>
-                                        <select id="jenis_kelamin" name="jenis_kelamin" class="form-control">
+                                        <select id="jenis_kelamin" name="jenis_kelamin" class="form-control" required>
                                             <option value="{{ $d->jenis_kelamin }}">{{ $d->jenis_kelamin }}</option>
                                             <option value="Laki-Laki">Laki-Laki</option>
                                             <option value="Perempuan">Perempuan</option>
@@ -164,7 +186,8 @@
                                             </label>
                                         </div>
                                         <input class="form-control" id="tanggal" name="tanggal_lahir"
-                                            placeholder="MM/DD/YYY" type="text" value="{{ $d->tanggal_lahir }}">
+                                            placeholder="MM/DD/YYY" type="text" value="{{ $d->tanggal_lahir }}"
+                                            required>
                                     </div>
 
                                     <input type=" text" class="form-control" id="status" name="status"

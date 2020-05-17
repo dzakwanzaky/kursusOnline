@@ -38,6 +38,9 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
+                                @foreach ($errors->all() as $error)
+                                <p class="text-danger">{{ $error }}</p>
+                                @endforeach
 
 
                                 <input style="display:none" id="id_to" name="id_to" value="{{$d->id_to}}"></input>
@@ -46,7 +49,7 @@
                                         <b>Nomor Soal :</b>
                                     </div>
                                     <input type="text" class="form-control" id="nomor_soal" name="nomor_soal"
-                                        style="width:12%" value="{{$d->id_to}}">
+                                        style="width:12%" value="{{$d->id_to}}" required>
                                     <br>
                                     <div>
                                         <b> Gambar : </b>
@@ -62,7 +65,8 @@
                                     <div>
                                         <b>Isi Soal :</b>
                                     </div>
-                                    <textarea id="soal" name="soal" value="{{$d->soal}}">{{$d->soal}}</textarea>
+                                    <textarea id="soal" name="soal" value="{{$d->soal}}"
+                                        required>{{$d->soal}}</textarea>
                                     <br>
                                     <div>
                                         <b>Pilihan Jawaban :</b>
@@ -95,11 +99,11 @@
 
                                     <br>
                                     <br>
-                                    <div><b>Jawaban Benar<b></div><input type="text" class="form-control"
-                                        name="jawaban" value="{{$d->jawaban}}" required></input>
+                                    <div><b>Jawaban Benar<b></div><input type="text" class="form-control" name="jawaban"
+                                        value="{{$d->jawaban}}" required></input>
                                     <br>
-                                    <div><b>Pembahasan :</b></div><textarea id="testt"
-                                        name="pembahasan" value="{{$d->pembahasan}}">{{$d->pembahasan}}</textarea>
+                                    <div><b>Pembahasan :</b></div><textarea id="testt" name="pembahasan"
+                                        value="{{$d->pembahasan}}">{{$d->pembahasan}}</textarea>
                                     <br>
 
                                     <div class="d-flex">

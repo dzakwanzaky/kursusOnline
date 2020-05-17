@@ -82,13 +82,21 @@ class TryoutController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'nama' => 'required|min:5',
+            'jumlah_soal' => 'required|numeric',
+       ],
+       [
+            'nama.min' => 'Nama tryout harus tidak kurang dari 5 karakter',
+            'jumlah_soal.numeric' => 'Jumlah soal harus berupa angka',
+       ]);
         $data = new ModelTryout();
         $data->mapel_id = $request->mapel_id;
         $data->program_id = $request->program_id;
         $data->nama = $request->nama;
         $data->jumlah_soal = $request->jumlah_soal;
         $data->save();
-        return redirect()->route('tambahSoal', $data->id);
+        return redirect()->route('tambahSoal', $data->id)->with('success', 'Berhasil Menambah Data!');;
     }
 
     public function edit($id)
@@ -104,13 +112,21 @@ class TryoutController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'nama' => 'required|min:5',
+            'jumlah_soal' => 'required|numeric',
+       ],
+       [
+            'nama.min' => 'Nama tryout harus tidak kurang dari 5 karakter',
+            'jumlah_soal.numeric' => 'Jumlah soal harus berupa angka',
+       ]);
         $data = ModelTryout::where('id',$id)->first();
         $data->mapel_id = $request->mapel_id;
         $data->program_id = $request->program_id;
         $data->nama = $request->nama;
         $data->jumlah_soal = $request->jumlah_soal;
         $data->save();
-        return redirect('daftarTryout')->with('success', 'Berhasil Konfirmasi');    
+        return redirect('daftarTryout')->with('success', 'Berhasil Mengubah Data!');    
     }
 
     public function destroy($id)

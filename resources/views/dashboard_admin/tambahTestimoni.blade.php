@@ -46,6 +46,9 @@
                                     <form method="POST" action="{{ url('testimoni/create') }}"
                                         enctype="multipart/form-data">
                                         {{ csrf_field() }}
+                                        @foreach ($errors->all() as $error)
+                                    <p class="text-danger">{{ $error }}</p>
+                                    @endforeach
 
                                         <div class="form-group">
                                             <label for="">Siswa :</label>
@@ -59,7 +62,7 @@
 
                                         <div class="form-group">
                                             <label for="">Isi Testimoni:</label>
-                                            <textarea type="text" class="form-control" id="isi" name="isi">
+                                            <textarea type="text" class="form-control" id="isi" name="isi" required>
                                             </textarea>
                                         </div>
 
