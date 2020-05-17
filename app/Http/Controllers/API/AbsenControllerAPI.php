@@ -15,12 +15,25 @@ class AbsenControllerAPI extends Controller
 
 
     public function show($id){
-        $data = ModelAbsen::where('id_jadwal', $id)->get();
-        $jadwal= ModelJadwal::where('id', $id)->get();
+        $data = ModelAbsen::with('jadwal')->where('id_jadwal', $id)->get();
         return response()->json(array(
             'data' => $data,
-            'jadwal' => $jadwal, 
         )); 
+    }
+
+    public function store(Request $request){
+        $data = new ModelAbsen();
+        $data->id_jadwal = $request->id_jadwal;
+        $data->tanggal = $request->tanggal;
+        $data->waktu_mulai = $request->waktu_mulai;
+        $data->waktu_selesai = $request->waktu_selesai;
+        $data->kehadiran = $request->kehadiran;
+        $data->report = $request->report;
+        if($data->save()){
+            $res['message'] = "sukses";
+            $res['value'] = "$data";
+            return response($res);
+        }    
     }
 
 

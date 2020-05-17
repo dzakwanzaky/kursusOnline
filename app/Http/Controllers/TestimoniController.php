@@ -32,7 +32,7 @@ class TestimoniController extends Controller
     		'isi' =>$request->isi,
     	]);
 
-    	return redirect()->route('testimoni')->with('sukses', 'Data berhasil di submit');
+    	return redirect()->route('testimoni')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     public function edit($id)
@@ -47,13 +47,13 @@ class TestimoniController extends Controller
 
         $data=ModelTestimoni::find($id);
         $data->update($request->all());
-        return redirect()->route('testimoni')->with('sukses','Data Berhasil Diupdate');
+        return redirect()->route('testimoni')->with('success','Data Berhasil Diupdate');
     }
 
     public function delete($id)
     {
         $data = ModelTestimoni::where('id',$id)->first();
         $data->delete();
-        return redirect()->route('testimoni')->with('destroy','Yakin ingin menghapus data?'); 
+        return redirect()->route('testimoni')->with('success','Data Berhasil Dihapus!'); 
     }
 }

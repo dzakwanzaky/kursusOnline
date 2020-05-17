@@ -71,56 +71,76 @@ class AuthControllerAPI extends Controller
      * @return \App\User
      */
     //siswa
-    public function storeSiswa(Request $request)
-    {
-                $user = new User;
-                $user->name = $request->input('name');
-                $user->email = $request->input('email');
-                $user->password = Hash::make($request->input('password'));
-                $user->phone= $request->input('phone');
-                $user->role = $request->input('role');
-                $user->active= 0;
+    public function storeSiswa(Request $request){
+        $this->validate($request, [
+            'name'       => 'required',
+            'email'      => 'required|unique:users',
+            'password'   => 'required',
+            'phone'      => 'required',
+        ],
+        [
+            'name.required'     => 'Nama harus diisi',
+            'email.required'    => 'Email harus diisi',
+            'phone.required'    => 'Nomor Handphone harus diisi',
+            'password.required' => 'Password harus diisi',
+
+        ]
+        );
+        $user = User::create([
+            'name'      => $request->name,
+            'email'     => $request->email,
+            'phone'     => $request->phone,
+            'active'    => 0,
+            'password'  => Hash::make($request->password),
+            'role'      => 'siswa',
+            
+        ]);
         if($user){
-            if($user->save()){
-                $res['message'] = "Success!";
-                $res['value'] = "$user";
-                return response($res);
-            }
+            $user->save();
+            $user->sendEmailVerificationNotification();
         }
+        return response()->json([
+            'status' => 'sukses',
+            'result' => $user
+        ]);
     }
 
     //tutor
     public function storeTutor(Request $request)
     {
-                $user = new User;
-                $user->name = $request->input('name');
-                $user->email = $request->input('email');
-                $user->password = Hash::make($request->input('password'));
-                $user->phone= $request->input('phone');
-                $user->role = $request->input('role');
-                $user->active= 0;
+        $this->validate($request, [
+            'name'       => 'required',
+            'email'      => 'required|unique:users',
+            'password'   => 'required',
+            'phone'      => 'required',
+        ],
+        [
+            'name.required'     => 'Nama harus diisi',
+            'email.required'    => 'Email harus diisi',
+            'phone.required'    => 'Nomor Handphone harus diisi',
+            'password.required' => 'Password harus diisi',
+
+        ]
+        );
+        $user = User::create([
+            'name'      => $request->name,
+            'email'     => $request->email,
+            'phone'     => $request->phone,
+            'active'    => 0,
+            'password'  => Hash::make($request->password),
+            'role'      => 'tutor',
+            
+        ]);
         if($user){
-            if($user->save()){
-                $res['message'] = "Success!";
-                $res['value'] = "$user";
-                return response($res);
-            }
+            $user->save();
+            $user->sendEmailVerificationNotification();
         }
+        return response()->json([
+            'status' => 'sukses',
+            'result' => $user
+        ]);
     }
 
-  
-    public function update(Request $request, $id)
-    {
-        $data = User::where('id',$id)->first();
-        $data->email = $request->email;
-        $data->phone = $request->phone;
-        if($data->save()){
-            $res['message'] = "Success!";
-            $res['value'] = "$data";
-            return response($res);
-        }
-
-    }
 
     public function data(){
             $data = User::where('id', '=', Auth::user()->id)->get();
@@ -144,4 +164,13 @@ class AuthControllerAPI extends Controller
             return response()->json(['error' =>'Unauthorized'], 401);   
         }
     }
+
+    public function logout(Request $request)
+    {
+        $request->user()->token()->revoke();
+        return response()->json([
+            'status' => 'sukses',
+        ]);
+    }
 }
+

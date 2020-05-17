@@ -75,6 +75,25 @@ class ProgramController extends Controller
         return view('dashboard_admin.editProgram', compact('data'));
     }
 
+    public function update(Request $request, $id)
+    {
+     
+        $data = ModelProgram::where('id',$id)->first();
+        $data->program = $request->program;
+        $data->keterangan = $request->keterangan;
+        $data->keterangan_rinci = $request->keterangan_rinci;
+
+        if($request->file){
+            $file = $request->file('file');
+            $nama_file = time()."_".$file->getClientOriginalName();  
+            $tujuan_upload = 'data_file';
+            $file->move($tujuan_upload,$nama_file);
+            $data->file = $nama_file;  
+        }
+        $data->save();
+        return redirect('manajemenProgram')->with('success', 'Berhasil Merubah Data');
+    }
+
     public function tambah(){
         return view('dashboard_admin.tambahProgram');
     }
@@ -93,8 +112,6 @@ class ProgramController extends Controller
             $data->file = $nama_file;  
         }
         $data->save();
-
-
         foreach ($request->mapel as $key => $value){
         $paket = new ModelMapel();
         $paket->id_program = $data->id;
@@ -102,29 +119,9 @@ class ProgramController extends Controller
         $paket->save();
         }
         return redirect('manajemenProgram')->withMessage('Berhasil Merubah Data');
-        
     }
 
-    public function update(Request $request, $id)
-    {
-     
-        $data = ModelProgram::where('id',$id)->first();
-        $data->program = $request->program;
-        $data->keterangan = $request->keterangan;
-        $data->keterangan_rinci = $request->keterangan_rinci;
 
-        if($request->file){
-            $file = $request->file('file');
-            $nama_file = time()."_".$file->getClientOriginalName();  
-            $tujuan_upload = 'data_file';
-            $file->move($tujuan_upload,$nama_file);
-            $data->file = $nama_file;  
-        }
-        $data->save();
-
-
-        return redirect('manajemenProgram')->withMessage('Berhasil Merubah Data');
-    }
 
     public function destroy($id)
     {
@@ -143,7 +140,8 @@ class ProgramController extends Controller
    {
     $rinci = \App\ModelProgram::find($id);
     $data = \DB::table('model_mapels')->where('id_program', $id)->get();
-     $dat = \DB::table('model_tryouts')->where('program_id',$id)->get();
+     $dat = \DB::table('model_tryouts')->where('program_id',$id)->where('mapel_id', $id)->get();
+      // $dat = \DB::table('model_tryouts')->where('program_id',$id)->get();
     return view('base.sd', compact('rinci','data','dat'));
    }
    

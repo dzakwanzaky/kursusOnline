@@ -69,7 +69,7 @@
                                         </td>
 
                                         <td class="d-flex">
-                                            <a class="btn btn-sm btn-info mr-1" data-toggle="tooltip"
+                                            <a class="btn btn-sm btn-info mr-2" data-toggle="tooltip"
                                                 data-placement="top" title="Profil Siswa" style="color:white"
                                                 href="{{route('profileSiswaAdmin', $d->murid_id)}}">
                                                 <i class="fas fa-chalkboard-teacher"></i>

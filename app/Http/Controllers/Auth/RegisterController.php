@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\SendOTP;
 use Auth;
 use Session;
@@ -55,7 +56,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'phone' => ['required', 'min:10', 'max:13'],
+            'phone' => ['required', 'min:10', 'max:13', 'unique:users'],
         
         ]);
 
@@ -71,6 +72,7 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request,[
             'name' => 'required|min:3|string',
             'phone' => 'required|min:11|numeric',
@@ -94,6 +96,25 @@ class RegisterController extends Controller
             'password_confirmation.same' => 'Konfirmasi password tidak sama',
             'password_confirmation.required' => 'Konfirmasi password tidak boleh kosong'
        ]);
+
+        $this->validate($request, [
+            'name'       => 'required|string|max:255',
+            'email'      => 'required|unique:users',
+            'password'   => 'required|string|min:6|confirmed',
+            'phone'      => 'required|min:10|max:13|unique:users',
+        ],
+        [
+            'name.required'     => 'Nama harus diisi',
+            'email.unique'      => 'Email telah terdaftar',
+            'email.required'    => 'Email harus diisi',
+            'phone.required'    => 'Nomor Telepon harus diisi',
+            'phone.unique'      => 'Nomor Telepon telah terdaftar',
+            'password.required' => 'Password harus diisi',
+            'password.min'      => 'Password minimal 6 karakter',
+
+        ]
+        );
+
                 $user = new User;
                 $user->name = $request->input('name');
                 $user->email = $request->input('email');
@@ -105,11 +126,6 @@ class RegisterController extends Controller
             $user->save();
             $user->sendEmailVerificationNotification();
             return redirect('verify?email='.$user->email);
-        //     if ($user ['role'] == 'tutor'){
-        //         return redirect('dataSiswa')->withMessage('Berhasil Mendaftar');
-        //         } else {
-        //             return redirect('dataTutor')->withMessage('Berhasil Mendaftar');
-        //         }
         }
     }
 
@@ -117,6 +133,12 @@ class RegisterController extends Controller
     {
         $data = User::where('id','=',$id)->get();
         return view('tutor.editLogin', compact('data'));
+    }
+
+    public function editAdmin($id)
+    {
+        $data = User::where('id','=',$id)->get();
+        return view('dashboard_admin.edit', compact('data'));
     }
 
     public function update(Request $request, $id)
@@ -146,11 +168,15 @@ class RegisterController extends Controller
         $data->save();
 
         if ($data ['role'] == 'tutor'){
-        return redirect('profile')->withMessage('Berhasil Merubah Data');
+        return redirect('profile')->withMessage('success', 'Berhasil Merubah Data');
         } else if ($data ['role'] == 'siswa') {
+
             return redirect('profileMurid')->with('success', 'Data berhasil di ubah');
+
+            return redirect('profileMurid')->withMessage('success', 'Berhasil Merubah Data');
+
         } else {
-            return redirect('profileAdmin')->withMessage('Berhasil Merubah Data');
+            return redirect('profileAdmin')->withMessage('success', 'Berhasil Merubah Data');
         }
     }
 
@@ -160,14 +186,10 @@ class RegisterController extends Controller
         return view('murid.editLogin', compact('data'));
     }
 
-    public function editAdmin($id)
-    {
-        $data = User::where('id','=',$id)->get();
-        return view('dashboard_admin.edit', compact('data'));
-    }
+  
 
-        public function data(){
-            $data = User::where('id', '=', Auth::user()->id)->get();
-            return view('dashboard_admin.profileAdmin', compact('data'));
-        }
+    public function data(){
+        $data = User::where('id', '=', Auth::user()->id)->get();
+        return view('dashboard_admin.profileAdmin', compact('data'));
+    }
 }

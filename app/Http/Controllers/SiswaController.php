@@ -118,7 +118,8 @@ class SiswaController extends Controller
     public function edit($id)
     {
         $data = ModelSiswa::where('id','=',$id)->get();
-        return view('murid.editprofile', compact('data'));
+        $provinsi = Provinsi::all()->pluck("provinsi", "id");
+        return view('murid.editprofile', compact('data','provinsi'));
     }
 
     public function update(Request $request, $id)
@@ -148,8 +149,15 @@ class SiswaController extends Controller
             $data = ModelSiswa::where('id', $id)->first();
             $data->status = $request->status;
             $data->save();
-            return redirect('daftarSiswaTidakAktif');
+            return redirect('daftarSiswaTidakAktif')->with('success', 'Berhasil Menonaktifkan Siswa');
     }
+
+    public function konfirmasi(Request $request, $id){
+        $data = ModelSiswa::where('id', $id)->first();
+        $data->status = $request->status;
+        $data->save();
+        return redirect('daftarSiswa')->with('success', 'Berhasil Mengaktifkan Siswa');
+}
 
     public function dashboard()
     {

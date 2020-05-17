@@ -24,24 +24,22 @@ class TutorControllerAPI extends Controller
 
     //menampilkan profile tutor
     public function dataTutor(){
-        $data = ModelTutor::where('id', '=', Auth::user()->id)->get();
-        $user = User::where('id', '=', Auth::user()->id)->get();
-        return response()->json(array(
-            'data' => $data,
-            'user' => $user,
-            
-        ));
+        $data = ModelTutor::with('tutor')->where('id', '=', Auth::user()->id)->get();
+        return response()->json($data);
+
     }
 
     //menyimpan data tutor saat registrasi
     public function store(Request $request)
     {
+        $data = new ModelTutor();
         $data->id = $request->id;
         $data->jenis_kelamin = $request->jenis_kelamin;
         $data->tanggal_lahir = $request->tanggal_lahir;
         $data->provinsi = $request->provinsi;
         $data->kabupaten = $request->kabupaten;
         $data->kecamatan = $request->kecamatan;
+        $data->alamat_detail = $request->alamat_detail;
         $data->pendidikan = $request->pendidikan;
         $data->program_id = $request->program_id;
 
@@ -57,50 +55,65 @@ class TutorControllerAPI extends Controller
         }
         $data->mapel_id = json_encode($array);
 
-        $file = $request->file('file');
-        $nama_file = time()."_".$file->getClientOriginalName();  
-        $tujuan_upload = 'data_file';
-        $file->move($tujuan_upload,$nama_file);
-        $data->file = $nama_file;
-
-        $data->status = $request->status;
-        $data->save();
+        if($request->file){
+            $file = $request->file('file');
+            $nama_file = time()."_".$file->getClientOriginalName();  
+            $tujuan_upload = 'data_file';
+            $file->move($tujuan_upload,$nama_file);
+            $data->file = $nama_file;
+            }
+    
+            if($request->foto){
+                $foto = $request->file('foto');
+                $nama_file = time()."_".$foto->getClientOriginalName();  
+                $tujuan_upload = 'data_file';
+                $foto->move($tujuan_upload,$nama_file);
+                $data->foto = $nama_file;  
+             }
 
         $data->status = $request->status;
         if($data->save()){
-            $res['message'] = "Success!";
+            $res['message'] = "sukses";
             $res['value'] = "$data";
             return response($res);
         }    
-    }
-
-    public function edit($id)
-    {
-        $data = ModelTutor::where('id','=',$id)->get();
-        return view('tutor.editprofile', compact('data'));
     }
 
     public function update(Request $request, $id)
     {
-        $data = ModelTutor::where('id',$id)->first();
-        $data->kabupaten = $request->kabupaten;
-        $data->kecamatan = $request->kecamatan;
-        $data->provinsi = $request->provinsi;
-        $data->jenis_kelamin = $request->jenis_kelamin;
-        $data->tanggal_lahir = $request->tanggal_lahir;
-        $data->status = $request->status;
-        if($request->foto){
-            $foto = $request->file('foto');
-            $nama_file = time()."_".$foto->getClientOriginalName();  
-            $tujuan_upload = 'data_file';
-            $foto->move($tujuan_upload,$nama_file);
-            $data->foto = $nama_file;  
-         }
-         if($data->save()){
-            $res['message'] = "Success!";
-            $res['value'] = "$data";
-            return response($res);
-        }    
+        $user = User::where('id',$id)->first();
+        $user->name = $request->name;
+        $user->phone = $request->phone;
+        $user->email = $request->email;
+        
+        if($user->save()){
+            $data = ModelTutor::where('id',$id)->first();
+            $data->kabupaten = $request->kabupaten;
+            $data->kecamatan = $request->kecamatan;
+            $data->provinsi = $request->provinsi;
+            $data->jenis_kelamin = $request->jenis_kelamin;
+            $data->tanggal_lahir = $request->tanggal_lahir;
+            $data->status = $request->status;
+            if($request->foto){
+                $foto = $request->file('foto');
+                $nama_file = time()."_".$foto->getClientOriginalName();  
+                $tujuan_upload = 'data_file';
+                $foto->move($tujuan_upload,$nama_file);
+                $data->foto = $nama_file;  
+             }
+             if($data->save()){
+                if ($user->wasChanged('email') && $user->email) {
+                    $user->email_verified_at=NULL;
+                    $user->active=0;
+                    if($user->save()){
+                        $user->sendEmailVerificationNotification();
+                        $res['message'] = "sukses";
+                        $res['value'] = "$data";
+                        return response($res);
+                    }    
+                }
+            }    
+        }
     }
 
     //$provinsi untuk get data provinsi

@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\VerifiesEmails;
 use Auth;
 use Illuminate\Http\Request;
 use App\User;
+use App\ModelSiswa;
+use App\ModelTutor;
 use Illuminate\Auth\Events\Verified; 
 
 
@@ -31,7 +33,7 @@ class VerificationController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/landing';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -60,10 +62,22 @@ class VerificationController extends Controller
         event(new Verified($user));
         $user->active=1;
         $user->save();
+        $siswa = ModelSiswa::where('id', '=', Auth::user()->id)->first();
+        $tutor = Modeltutor::where('id', '=', Auth::user()->id)->first();
         if($user->role=='siswa')
         {
-         return redirect('/dataSiswa')->withMessage('Your account is active');
+            if ($siswa != NULL){
+                return redirect('/siswa')->withMessage('Your account is active');
+            } else {
+                return redirect('/dataSiswa')->withMessage('Your account is active');
+
+            } 
         } else {
-        return redirect('/dataTutor');
-        }}
+            if ($tutor != NULL){
+                return redirect('/tutor')->withMessage('Your account is active');
+            } else {
+                return redirect('/dataTutor');
+            }   
+        }
+    }
 }

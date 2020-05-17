@@ -78,7 +78,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/list_pendaftaranSiswa"
+                            <a href="/jadwalAktif"
                                 class="nav-link 
                                 {{ Request::segment(1) === 'list_pendaftaranSiswa' ? 'nav-link active' : null }}
                                 {{ Request::segment(1) === 'list_pendaftaranTutor' ? 'nav-link active' : null }}
@@ -89,7 +89,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/jadwalMenungguOnline"
+                            <a href="/jadwalAktifOnline"
                                 class="nav-link 
                                 {{ Request::segment(1) === 'jadwalMenungguOnline' ? 'nav-link active' : null }} 
                                 {{ Request::segment(1) === 'jadwalAktifOnline' ? 'nav-link active' : null }} 

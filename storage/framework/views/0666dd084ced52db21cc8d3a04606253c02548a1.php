@@ -91,7 +91,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/list_pendaftaranSiswa"
+                            <a href="/jadwalAktif"
                                 class="nav-link 
                                 <?php echo e(Request::segment(1) === 'list_pendaftaranSiswa' ? 'nav-link active' : null); ?>
 
@@ -104,7 +104,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/jadwalMenungguOnline"
+                            <a href="/jadwalAktifOnline"
                                 class="nav-link 
                                 <?php echo e(Request::segment(1) === 'jadwalMenungguOnline' ? 'nav-link active' : null); ?> 
                                 <?php echo e(Request::segment(1) === 'jadwalAktifOnline' ? 'nav-link active' : null); ?> 

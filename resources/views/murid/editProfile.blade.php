@@ -3,7 +3,8 @@
 
 <head>
 <link rel="stylesheet" href="{{asset('/assets')}}/bootstrap/css/bootstrap.min.css">
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 
 </html>
@@ -16,6 +17,26 @@
         width: 230px;
 
     }
+    [type="file"] {
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
+
+[type="file"] + label {
+  background: #007bff;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 15px;
+  margin-top: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+
     
 </style>
 @extends('murid/basee')
@@ -91,7 +112,13 @@
 
                                 <br>
                                 <strong style=>Info!</strong> Maksimum ukuran foto : 2MB
-                                <input id="foto" class="form-control" name="file" type="file">
+                                <!-- <input id="foto" class="form-control" name="file" type="file"> --><br>
+                                <input type="file" id="file" name="file" accept="image/*" />
+                                <label for="file"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;
+                                Pilih foto Anda
+                                </label>
+
+
                             </div>
                         </div>
                     </div>
@@ -100,45 +127,78 @@
                     <div class="card">
                         <div class="card-body">
                             <table class="w-100 table-responsive-md">
-                                <tbody>
-                                    <tr>
-                                        <th>
-                                            Provinsi
-                                            <input name="provinsi" type="text" class="form-control"
-                                                value="{{ $d->provinsi }}" style="margin-right:190px;">
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>
-                                            Kabupaten
-                                            <input name="kabupaten" type="text" class="form-control"
-                                                value="{{ $d->kabupaten }}" style="margin-right:190px;">
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>
-                                            Kecamatan
-                                            <input name="kecamatan" type="text" class="form-control"
-                                                value="{{ $d->kecamatan }}" style="margin-right:190px;">
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>
-                                            Jenis Kelamin
-                                            <select name="jenis_kelamin" class="form-control" id="exampleFormControlSelect1">
-                               <option value="0" disabled="true" selected="true">--Jenis Kelamin--</option>
-                                <option value="Laki-Laki" @if($d->jenis_kelamin=="Laki-Laki") selected @endif >Laki-Laki</option>
-                                <option value="Perempuan" @if($d->jenis_kelamin=="Perempuan") selected @endif >Perempuan</option>
-                            </select>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>
-                                            Tanggal Lahir
+                          
+
+                                    <div class="form-group">
+                                        <label id="prov" for="prov">Provinsi</label>
+
+                                        <select class="form-control" id="provinsi-select" name="provinsi-select">
+                                            <option value="{{ $d->provinsi }}">{{ $d->provinsi }}</option>
+
+                                            @foreach($provinsi as $key => $value)
+                                            <option value="{{ $key }}">{{ $value }}</option>
+                                            @endforeach
+
+                                        </select>
+                                    </div>
+
+                                    <div name="provinsi" id="provinsi" value="{{$d->provinsi}}" style="display:none">
+                                    <input type="text" name="provinsi" value="{{$d->provinsi}}">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group-prepend">
+                                            <label for="kabkot">Kota/Kabupaten</label>
+                                        </div>
+                                        <select class="form-control" id="kabupaten-select" name="kabupaten-select" >
+                                            <option value="{{ $d->kabupaten }}">{{ $d->kabupaten }}</option>
+
+                                        </select>
+                                    </div>
+
+                                    <div name="kabupaten" id="kabupaten" value="{{$d->kabupaten}}" style="display:none">
+                                    <input type="text" name="kabupaten" value="{{$d->kabupaten}}">
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="input-group-prepend">
+                                            <label>Kecamatan</label>
+                                        </div>
+                                        <select class="form-control" id="kecamatan-select" name="kecamatan-select">
+                                            <option value="{{ $d->kecamatan }}">{{ $d->kecamatan }}</option>
+                                        </select>
+                                    </div>
+
+                                    <div name="kecamatan" id="kecamatan" value="{{$d->kecamatan}}" style="display:none">
+                                    <input type="text" name="kecamatan" value="{{$d->kecamatan}}">
+                                    </div>
+
+
+                                
+
+                                        <div class="form-group">
+                                        <div class="input-group-prepend">
+                                            <label>Jenis Kelamin</label>
+                                        </div>
+                                        <select id="jenis_kelamin" name="jenis_kelamin" class="form-control">
+                                        <option value="{{ $d->jenis_kelamin }}" selected="true" disabled="true">{{ $d->jenis_kelamin }}</option>
+                                        <option value="Laki-Laki" @if($d->jenis_kelamin=="Laki-Laki") selected @endif >Laki-Laki</option>
+                                        <option value="Perempuan" @if($d->jenis_kelamin=="Perempuan") selected @endif >Perempuan</option>
+                                            
+                                        </select>
+                                    </div>
+
+
+                                        <div class="form-group">
+                                        <div class="input-group-prepend">
+                                            <label for="kabkot">Tanggal Lahir</label>
+                                        </div>
                                             <input class="form-control" id="tanggal" name="tanggal_lahir"
                                                 placeholder="MM/DD/YYY" type="text" value="{{ $d->tanggal_lahir }}">
-                                        </th>
-                                    </tr>
+                                     </div>
+
+
                                     <input type=" text" class="form-control" id="status" name="status"
                                         value=" {{ $d->status }}" style="display:none">
                                 </tbody>
@@ -170,7 +230,7 @@
 <script>
     //buat profile
     $(function () {
-        $("#foto").change(function () {
+        $("#file").change(function () {
             readURL(this);
         });
     });
@@ -197,8 +257,74 @@
         };
         date_input.datepicker(options);
 
+ $('#provinsi-select').change(function () {
+            var provinsi_id = $(this).val();
+            var provinsi_name = $("select[name='provinsi-select'] option:selected").text(); //add this
+            if (provinsi_id) {
+                $.ajax({
+                    url: '/getKabupaten/' + provinsi_id,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#provinsi').empty(); //add this
+                        $('#provinsi')
+                            .append(
+                                "<input type='text' style='display:none' name='provinsi' id='provinsi' value='" +
+                                provinsi_name + "'>");
+                        console.log(data);
+                        $('#kabupaten-select').empty();
+                        $.each(data, function (key, value) {
+                            $('#kabupaten-select')
+                                .append('<option value="' + key + '">' + value +
+                                    '</option>');
+                        });
 
-    })
+                    }
+
+                });
+            } else {
+                $('#kabupaten-select').empty();
+            }
+        });
+        $('#kabupaten-select').change(function () {
+            var kabupaten_id = $(this).val();
+            var kabupaten_name = $("select[name='kabupaten-select'] option:selected").text(); //add this
+            if (kabupaten_id) {
+                $.ajax({
+                    url: '/getKecamatan/' + kabupaten_id,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#kabupaten').empty(); //add this
+                        $('#kabupaten')
+                            .append(
+                                "<input type='text' style='display:none' name='kabupaten' id='kabupaten' value='" +
+                                kabupaten_name + "'>");
+                        console.log(data);
+                        $('#kecamatan-select').empty();
+                        $.each(data, function (key, value) {
+                            $('#kecamatan-select')
+                                .append('<option value="' + key + '">' + value +
+                                    '</option>');
+                        });
+
+                    }
+
+                });
+            } else {
+                $('#kecamatan-select').empty();
+            }
+        });
+        $('#kecamatan-select').change(function () {
+            var kecamatan_name = $("select[name='kecamatan-select'] option:selected").text(); //add this
+            $('#kecamatan').empty(); //add this
+            $('#kecamatan')
+                .append(
+                    "<input type='text' style='display:none' name='kecamatan' id='kecamatan' value='" +
+                    kecamatan_name + "'>");
+
+        });
+    });
 </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
       <script src="{{asset('/assets')}}/js/bootstrap.min.js"></script>

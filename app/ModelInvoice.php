@@ -9,7 +9,7 @@ class ModelInvoice extends Model
     protected $table = "model_invoice";
 
     protected $fillable = [
-        'id', 'invoice', 'id_murid', 'program_id','kategori','kelas_id','jumlah_sesi','jum;ah_mapel','harga', 'file'
+        'id', 'invoice', 'id_murid', 'program_id','kategori','kelas_id','jumlah_sesi','jumlah_mapel','harga', 'file'
     ];
 
     public function user(){

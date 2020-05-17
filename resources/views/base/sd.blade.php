@@ -1098,6 +1098,7 @@
             margin-left: 3.5em;
             margin-top: 3em;
             padding-bottom: 0;
+            width: 100%;
         }
 
         .navi ul a {

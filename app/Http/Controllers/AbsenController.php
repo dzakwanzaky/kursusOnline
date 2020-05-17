@@ -56,6 +56,13 @@ class AbsenController extends Controller
         $data->kehadiran = $request->kehadiran;
         $data->report = $request->report;
         $data->save();
-        return redirect()->route('kehadiranLes', $data->id_jadwal);
+        return redirect()->route('kehadiranLes', $data->id_jadwal)->with('success','Data Berhasil Ditambahkan!');
     } 
+
+    public function destroy($id)
+    {
+        $data = ModelAbsen::where('id',$id)->first();
+        $data->delete();
+        return redirect()->route('kehadiranTutor', $data->id_jadwal)->with('success','Data Berhasil Dihapus!'); 
+    }
 }

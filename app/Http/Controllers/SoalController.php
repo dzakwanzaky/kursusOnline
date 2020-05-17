@@ -48,17 +48,6 @@ class SoalController extends Controller
         return view('dashboard_admin.editSoal', compact('data'));
     }
 
-    public function importExcel(Request $request)
-    {
-        $file = $request->file;
-        $nama_file = time()."_".$file->getClientOriginalName();  
-        $tujuan_upload = 'data_file';
-        $file->move($tujuan_upload, $nama_file);
-        Excel::import(new SoalImport($request->id_to), public_path('/data_file/'.$nama_file));
-        return redirect()->route('daftarTryout');
-
-    }
-
     public function update(Request $request, $id)
     {
         $data = ModelSoal::where('id',$id)->first();
@@ -78,15 +67,26 @@ class SoalController extends Controller
         $data->option_d = $request->option_d;
         $data->option_e = $request->option_e;
         $data->jawaban = $request->jawaban;
+        $data->pembahasan = $request->pembahasan;
         $data->save();
         return redirect()->route('daftarSoal', $data->id_to);
+    }
+
+    public function importExcel(Request $request)
+    {
+        $file = $request->file;
+        $nama_file = time()."_".$file->getClientOriginalName();  
+        $tujuan_upload = 'data_file';
+        $file->move($tujuan_upload, $nama_file);
+        Excel::import(new SoalImport($request->id_to), public_path('/data_file/'.$nama_file));
+        return redirect()->route('daftarTryout')->with('success', 'Berhasil Mengunggah Soal');
     }
 
     public function destroy($id)
     {
         $data = ModelSoal::where('id',$id)->first();
         $data->delete();
-        return redirect()->route('daftarSoal', $data->id_to)->with('destroy','Yakin ingin menghapus data?'); 
+        return redirect()->route('daftarSoal', $data->id_to)->with('success','Data Berhasil Dihapus!'); 
     }
 
 

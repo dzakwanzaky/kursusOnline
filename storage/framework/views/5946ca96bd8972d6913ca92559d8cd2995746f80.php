@@ -80,7 +80,7 @@
                                 <?php echo e($u->phone); ?></h6>
                             <br>
                             <a href="<?php echo e(route('editMurid',$u->id)); ?>" class="btn-edit-info"
-                                style="display:block; margin-left:auto; margin-right:auto;">Pengaturan Akun</a>
+                                style="display:block; margin-left:auto; text-decoration:none;margin-right:auto;">Pengaturan Akun</a>
 
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -120,7 +120,7 @@
                         <div class="form-group">
                         </div>
                         <td>
-                            <a href="<?php echo e(route('dataSiswa.edit',$d->id)); ?>" class="btn-edit" style="margin-left:auto;">Edit
+                            <a href="<?php echo e(route('dataSiswa.edit',$d->id)); ?>" class="btn-edit" style="margin-left:auto;text-decoration:none;">Edit
                                 Profil</a>
                         </td>
 

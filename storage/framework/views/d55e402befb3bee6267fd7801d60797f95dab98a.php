@@ -53,7 +53,7 @@ label:hover {
 }
 
 </style>
-<link rel="stylesheet" href="<?php echo e(asset('/assets')); ?>/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php echo e(asset('/card')); ?>/bootstrap/css/bootstrap.min.css">
 <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -125,14 +125,14 @@ label:hover {
                         <span class="fa fa-upload"></span>
                     </a>
                       <?php else: ?>
-                      <p>Terupload</p>
+                      <p>Berhasil mengunggah foto</p>
                       <?php endif; ?>
                  
                         </td>
                         <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
                         <form method="post" action="/unggah" enctype="multipart/form-data">
-                          <div class="modal-content">
+                          <div class="modal-content2">
                             <div class="modal-header">
                               <h5 class="modal-title" id="exampleModalLabel">Unggah Bukti Pembayaran</h5>
                             </div>

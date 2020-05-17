@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Auth;
 use Laravel\Passport\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -39,6 +41,8 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+  
 
     public function user(){
         return $this->hasOne('App\ModelJadwal', 'murid_id');

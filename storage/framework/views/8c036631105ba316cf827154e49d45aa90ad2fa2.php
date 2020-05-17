@@ -2,7 +2,7 @@
 <style>
   .card {
     width: 69%;
-    margin-left: 210px;
+    margin-left: 150px;
 
 }
   .help-block {
@@ -12,6 +12,14 @@
 }
 .has-error {
      color: red;
+}
+.modall-title {
+    margin-left: 8em;
+}
+.h6 {
+    text-align: center;
+    margin-top: 15px;
+    font-color: #6c757d;
 }
 </style>
 <link rel="stylesheet" href="<?php echo e(asset('/assets')); ?>/bootstrap/css/bootstrap.min.css">
@@ -100,9 +108,32 @@
    
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                               <center></center><button type="submit" class="btn btn-primary" onclick="return confirm('Anda yakin ingin merubah kata sandi Anda?')">
-                                    Ubah Kata Sandi
-                                </button></center>
+                              
+
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+                                Ubah Kata Sandi
+                                </button>
+
+                                <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content2">
+      <div class="modal-header">
+        <h5 class="modall-title" id="exampleModalLabel2">Konfirmasi Aksi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6 class="h6" style="color: #2c3034">Anda yakin <br>ingin merubah kata sandi akun Anda ?</h6>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+        <button type="submit" class="btn btn-primary">Yakin</button>
+      </div>
+    </div>
+  </div>
+</div>
                               
                             </div>
                         </div>
@@ -140,6 +171,6 @@
         }
     </script>
    
-<script src="<?php echo e(asset('/assets')); ?>/js/bootstrap.min.js"></script>
+<script src="<?php echo e(asset('/assets')); ?>/bootstrap/js/bootstrap.min.js"></script>
   <?php $__env->stopSection(); ?>
 <?php echo $__env->make('murid/baseey', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ASUS\Pictures\bismilah\bismilah\resources\views/murid/changePassword.blade.php ENDPATH**/ ?>
