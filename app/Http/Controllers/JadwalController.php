@@ -10,6 +10,7 @@ use App\ModelTutor;
 use App\ModelInvoice;
 use App\ModelMapel;
 use App\ModelKelas;
+use App\ModelPaket;
 use SweetAlert;
 use App\Providers\SweetAlertServiceProvider;
 
@@ -158,42 +159,48 @@ class JadwalController extends Controller
     {
         $sd = ModelMapel::where('id_program', '1')->get();
         $ksd = ModelKelas::where('id_program', '1')->get();
-        return view('base.pendaftaranProgram1', compact('sd', 'ksd'));
+        $paket = ModelPaket::where('program_id', '1')->where('kategori', 'OFFLINE')->get();
+        return view('base.pendaftaranProgram1', compact('sd', 'ksd', 'paket'));
     }
 
     public function programOnline1()
     {
         $sd = ModelMapel::where('id_program', '1')->get();
         $ksd = ModelKelas::where('id_program', '1')->get();
-        return view('base.pendaftaranProgramOnline1', compact('sd', 'ksd'));
+        $paket = ModelPaket::where('program_id', '1')->where('kategori', 'ONLINE')->get();
+        return view('base.pendaftaranProgramOnline1', compact('sd', 'ksd', 'paket'));
     }
 
     public function program2()
     {
         $smp = ModelMapel::where('id_program', '2')->get();
         $ksmp = ModelKelas::where('id_program', '2')->get();
-        return view('base.pendaftaranProgram2', compact('smp', 'ksmp'));
+        $paket = ModelPaket::where('program_id', '2')->where('kategori', 'OFFLINE')->get();
+        return view('base.pendaftaranProgram2', compact('smp', 'ksmp', 'paket'));
     }
 
     public function programOnline2()
     {
         $smp = ModelMapel::where('id_program', '2')->get();
         $ksmp = ModelKelas::where('id_program', '2')->get();
-        return view('base.pendaftaranProgramOnline2', compact('smp', 'ksmp'));
+        $paket = ModelPaket::where('program_id', '2')->where('kategori', 'ONLINE')->get();
+        return view('base.pendaftaranProgramOnline2', compact('smp', 'ksmp', 'paket'));
     }
 
     public function program3()
     {
         $sma = ModelMapel::where('id_program', '3')->get();
         $ksma = ModelKelas::where('id_program', '3')->get();
-        return view('base.pendaftaranProgram3', compact('sma', 'ksma'));
+        $paket = ModelPaket::where('program_id', '3')->where('kategori', 'OFFLINE')->get();
+        return view('base.pendaftaranProgram3', compact('sma', 'ksma', 'paket'));
     }
 
     public function programOnline3()
     {
         $sma = ModelMapel::where('id_program', '3')->get();
         $ksma = ModelKelas::where('id_program', '3')->get();
-        return view('base.pendaftaranProgramOnline3', compact('sma', 'ksma'));
+        $paket = ModelPaket::where('program_id', '3')->where('kategori', 'ONLINE')->get();
+        return view('base.pendaftaranProgramOnline3', compact('sma', 'ksma', 'paket'));
     }
 
   
@@ -218,14 +225,14 @@ class JadwalController extends Controller
     {
         $this->validate($request,[
             'kelas_id' => 'required',
-            'jumlah_mapel' =>'required',
+            'paket_id' =>'required',
          
             
             
        ],
        [
             'kelas_id.required' => 'Kelas tidak boleh kosong',
-            'jumlah_mapel.required' => 'Paket tidak boleh kosong',
+            'paket_id.required' => 'Paket tidak boleh kosong',
             
        ]);
 
@@ -235,8 +242,7 @@ class JadwalController extends Controller
         $invoice->program_id = $request->program_id;
         $invoice->kategori = $request->kategori;
         $invoice->kelas_id = $request->kelas_id;
-        $invoice->jumlah_sesi = $request->jumlah_sesi;
-        $invoice->jumlah_mapel = $request->jumlah_mapel;
+        $invoice->paket_id = $request->paket_id;
         $invoice->harga = $request->harga;
         $invoice->save();
 

@@ -46,14 +46,6 @@ class InvoiceController extends Controller
         }
     }
 
-    public function update(Request $request, $id)
-    {
-        $data = ModelInvoice::where('id',$id)->first();
-        $data->harga = $request->harga;
-        $data->save();
-        return view('base/tes', compact('data'));
-    }
-    
 
 
 

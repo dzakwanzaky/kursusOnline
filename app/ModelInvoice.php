@@ -31,5 +31,9 @@ class ModelInvoice extends Model
     public function kelas(){
         return $this->belongsTo('App\ModelKelas', 'kelas_id');
     }
+
+    public function paket(){
+        return $this->belongsTo('App\ModelPaket', 'paket_id');
+    }
    
 }

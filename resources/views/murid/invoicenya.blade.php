@@ -66,11 +66,11 @@
 
             <thead>
                 <tr>
-                    <th colspan="4"><strong>#</strong>
+                    <th colspan="2"><strong>#</strong>
                         @foreach($data as $d)
                         {{ $d->invoice }}
                         </th>
-                    <th colspan="4">
+                    <th colspan="3">
                         <?php 
                     echo date("d-m-Y")
                     ?>
@@ -78,7 +78,7 @@
                     </th>
                 </tr>
                 <tr>
-                    <td colspan="4">
+                    <td colspan="2">
                         <b>Bimbingan Belajar: </b>
                         <p>Inofa Course<br>
                             Jl Persatuan<br>
@@ -86,7 +86,7 @@
                             inofacourse.co.id
                         </p>
                     </td>
-                    <td colspan="4">
+                    <td colspan="3">
                         <b>Pelanggan: </b>
                         <p>{{ $d->user->name }}<br>
                         {{ $d->siswa->kabupaten }} {{ $d->siswa->kecamatan }} {{ $d->siswa->provinsi }}
@@ -101,27 +101,24 @@
             <tbody>
                 <tr>
                     <th colspan="2">Program</th>
-                    <th colspan="2">Paket</th>
-                    <th colspan="4">Jumlah Sesi</th>
+                    <th colspan="3">Paket</th>
                 </tr>
                 <tr>
                     <td colspan="2">
                        
                         {{ $d->program->program }}
                     </td>
-                    <td colspan="2">
-                    {{ $d->jumlah_mapel }} Mata Pelajaran
+                    <td colspan="3">
+                    {{ $d->paket->nama_paket }} 
                     </td>
-                    <td colspan="4">
-                    {{ $d->jumlah_sesi }} Pertemuan Satu Minggu
-                    </td>
+              
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
-                    <th colspan="4">Total</th>
-                    <td colspan="4"> 
-                    {{ $d->harga }}
+                    <th colspan="2">Total</th>
+                    <td colspan="3"> 
+                    {{ $d->paket->harga }}
                         @endforeach</td>
                 </tr>
                 

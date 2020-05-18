@@ -55,15 +55,13 @@
 
                         <label for="mata_pelajaran" style="float:right">Paket
                             <div class="form-group{{ $errors->has('jumlah_mapel') ? ' has-error' : '' }}">
-                            <select id="jumlah_mapel" name="jumlah_mapel" class="form-control" style="float:right">
-                               <option value="0" disabled="true" selected="true">--Pilih Paket--</option>
-                                <option value="Regular SMA 1 Online">Regular SMA 1 Online</option>
-                                <option value="Premium SMA 1 Online">Premium SMA 1 Online</option>
-                                <option value="Pro SMA 1 Online">Pro SMA 1 Online</option>
-                                <option value="Regular SMA 2 Online">Regular SMA 2 Online</option>
-                                <option value="Premium SMA 2 Online">Premium SMA 2 Online</option>
-                                <option value="Pro SMA 2 Online">Pro SMA 2 Online</option>
-                            </select>
+                                <select id="paket_id" name="paket_id" class="form-control" style="float:right"
+                                    required>
+                                    <option value="0" disabled="true" selected="true">-- Pilih Paket --</option>
+                                    @foreach($paket as $d)
+                                    <option value="{{ $d->id }}">{{ $d->nama_paket }}</option>
+                                    @endforeach
+                                </select>
                         </label>
                          </div>
                         @if ($errors->has('jumlah_mapel'))
@@ -460,8 +458,8 @@
             $('#div3').hide();
             $('#div4').hide();
             $(document).ready(function () {
-                $("#jumlah_mapel").change(function () {
-                    if ($(this).val() == "Regular SMA 1 Online") {
+                $("#paket_id").change(function () {
+                    if ($(this).val() == "31") {
                         $('#sesi1').show().find('input, textarea, select').prop('disabled', false);
                         $('#sesi2').hide().find('input, textarea, select').prop('disabled', true);
                         $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
@@ -470,11 +468,11 @@
                         $('#div2').show().find('input, textarea, select').prop('disabled', false);
                         $('#div3').hide().find('input, textarea, select').prop('disabled', true);
                          $('#div4').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#waktu1').show();
+                         $('#waktu1').show();
                         $('#waktu2').hide();
-                        $('#waktu3').hide();
+                        $('#waktu3').show();
                         $('#waktu4').hide();
-                    } else if ($(this).val() == "Premium SMA 1 Online") {
+                    } else if ($(this).val() == "32") {
                         $('#sesi1').show().find('input, textarea, select').prop('disabled', false);
                         $('#sesi2').hide().find('input, textarea, select').prop('disabled', true);
                         $('#sesi3').hide().find('input, textarea, select').prop('disabled', false);
@@ -485,12 +483,12 @@
                         $('#div4').hide().find('input, textarea, select').prop('disabled', true);
                         $('#waktu1').show();
                         $('#waktu2').hide();
-                        $('#waktu3').hide();
+                        $('#waktu3').show();
                         $('#waktu4').hide();
-                        $('#waktu5').hide();
+                        $('#waktu5').show();
                         $('#waktu6').hide();
                        
-                    } else if ($(this).val() == "Pro SMA 1 Online") {
+                    } else if ($(this).val() == "33") {
                         $('#sesi1').hide().find('input, textarea, select').prop('disabled', true);
                         $('#sesi2').hide().find('input, textarea, select').prop('disabled', false);
                         $('#sesi3').show().find('input, textarea, select').prop('disabled', false);
@@ -502,13 +500,13 @@
                         $('#div4').show().find('input, textarea, select').prop('disabled', false);
                         $('#waktu1').show();
                         $('#waktu2').hide();
-                        $('#waktu3').hide();
+                        $('#waktu3').show();
                         $('#waktu4').hide();
-                        $('#waktu5').hide();
+                        $('#waktu5').show();
                         $('#waktu6').hide();
-                         $('#waktu7').hide();
+                         $('#waktu7').show();
                         $('#waktu8').hide();
-                   } else if ($(this).val() == "Regular SMA 2 Online") {
+                   } else if ($(this).val() == "34") {
                         $('#sesi1').hide().find('input, textarea, select').prop('disabled', true);
                         $('#sesi2').show().find('input, textarea, select').prop('disabled', false);
                         $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
@@ -519,10 +517,14 @@
                         $('#div4').hide().find('input, textarea, select').prop('disabled', true);
                         $('#waktu1').show();
                         $('#waktu2').show();
-                        $('#waktu3').hide();
-                        $('#waktu4').hide();
+                        $('#waktu3').show();
+                        $('#waktu4').show();
+                        $('#waktu5').hide();
+                        $('#waktu6').hide();
+                        $('#waktu7').hide();
+                        $('#waktu8').hide();
                     
-                     } else if ($(this).val() == "Premium SMA 2 Online") {
+                     } else if ($(this).val() == "35") {
                          $('#sesi1').hide().find('input, textarea, select').prop('disabled', true);
                         $('#sesi2').show().find('input, textarea, select').prop('disabled', false);
                         $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
@@ -534,12 +536,14 @@
 
                         $('#waktu1').show();
                         $('#waktu2').show();
-                        $('#waktu3').hide();
-                        $('#waktu4').hide();
-                        $('#waktu5').hide();
-                        $('#waktu6').hide();
+                        $('#waktu3').show();
+                        $('#waktu4').show();
+                        $('#waktu5').show();
+                        $('#waktu6').show();
+                        $('#waktu7').hide();
+                        $('#waktu8').hide();
                     
-                      } else if ($(this).val() == "Pro SMA 2 Online") {
+                      } else if ($(this).val() == "36") {
                         $('#sesi1').hide().find('input, textarea, select').prop('disabled', true);
                         $('#sesi2').show().find('input, textarea, select').prop('disabled', false);
                         $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
@@ -550,12 +554,12 @@
                         $('#div4').show().find('input, textarea, select').prop('disabled', false);
                         $('#waktu1').show();
                         $('#waktu2').show();
-                        $('#waktu3').hide();
-                        $('#waktu4').hide();
-                        $('#waktu5').hide();
-                        $('#waktu6').hide();
-                        $('#waktu7').hide();
-                        $('#waktu8').hide();
+                        $('#waktu3').show();
+                        $('#waktu4').show();
+                        $('#waktu5').show();
+                        $('#waktu6').show();
+                        $('#waktu7').show();
+                        $('#waktu8').show();
                     }
 
                 });

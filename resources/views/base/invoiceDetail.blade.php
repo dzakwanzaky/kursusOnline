@@ -3,6 +3,7 @@
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,6 +58,7 @@
         p {
             margin: 0px;
         }
+
         .form {
             text-align: center;
         }
@@ -107,7 +109,7 @@
                 <tr>
                     <th colspan="2">Program</th>
                     <th colspan="2">Paket</th>
-                    
+
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -116,137 +118,30 @@
                         {{ $d->program->program }}
                     </td>
                     <td colspan="2">
-                        {{$d->jumlah_mapel}}
+                        {{$d->paket->nama_paket}}
                     </td>
-                    
-                    @endforeach
+
+
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
                     <th colspan="2">Total</th>
                     <td colspan="3">
-                        <?php
-                    $sesi = $d["jumlah_sesi"];
-                    $mapel =  $d["jumlah_mapel"];
-                    $program = $d["program_id"];
-                    $p1 = 20000;
-                    $p2 = 30000;
-                    $p3 = 40000;
-                    $var = 0;
-                    if ($program == '1'){
-                        if ($mapel == 'Regular SD 1 Online' && $sesi == '1' ){
-                            $var = "Rp. 300.000";
-                        } else if ($mapel == 'Premium SD 1 Online' && $sesi == '1'){
-                            $var = "Rp. 560.000";
-                        } else if ($mapel == 'Pro SD 1 Online' && $sesi == '1'){
-                            $var = "Rp. 780.000";
-                        } else if ($mapel == 'Regular SD 2 Online' && $sesi == '2' ){
-                                $var = "Rp. 576.000";
-                        } else if ($mapel == 'Premium SD 2 Online' && $sesi == '2'){
-                                $var = "Rp. 1.104.000";
-                        } else if ($mapel == 'Pro SD 2 Online' && $sesi == '2'){
-                                $var = "Rp. 1.536.000";
-                        } else if ($mapel == 'Regular SD 1 Offline' && $sesi == '1' ){
-                                $var = "Rp. 300.000";
-                        } else if ($mapel == 'Premium SD 1 Offline' && $sesi == '1'){
-                                $var = "Rp. 560.000";
-                        } else if ($mapel == 'Pro SD 1 Offline' && $sesi == '1'){
-                                $var = "Rp. 780.000";
-                        } else if ($mapel == 'Regular SD 2 Offline' && $sesi == '2' ){
-                                $var = "Rp. 576.000";
-                        } else if ($mapel == 'Premium SD 2 Offline' && $sesi == '2'){
-                                $var = "Rp. 1.104.000";
-                        } else if ($mapel == 'Pro SD 2 Offline' && $sesi == '2'){
-                                $var = "Rp. 1.536.000";
-                        } else {
-                            $var = 0;
-                        }
+                        {{$d->paket->harga}}
 
-                       
-
-                    } else  if ($program == '2'){
-                        if ($mapel == 'Regular SMP 1 Online' && $sesi == '1' ){
-                            $var = "Rp. 640.000";
-                        } else if ($mapel == 'Premium SMP 1 Online' && $sesi == '1'){
-                            $var = "Rp. 900.000";
-                        } else if ($mapel == 'Pro SMP 1 Online' && $sesi == '1'){
-                            $var = "Rp. 1.120.000";
-                        } else if ($mapel == 'Regular SMP 2 Online' && $sesi == '2'){
-                            $var = "Rp. 1.200.000";
-                        } else if ($mapel == 'Premium SMP 2 Online' && $sesi == '2' ){
-                                $var = "Rp. 1.728.000";
-                        } else if ($mapel == 'Pro SMP 2 Online' && $sesi == '2'){
-                                $var = "Rp. 2.208.000";
-                        } else if ($mapel == 'Regular SMP 1 Offline' && $sesi == '1' ){
-                                $var = "Rp. 640.000";
-                        } else if ($mapel == 'Premium SMP 1 Offline' && $sesi == '1'){
-                                $var = "Rp. 900.000";
-                        } else if ($mapel == 'Pro SMP 1 Offline' && $sesi == '1'){
-                                $var = "Rp. 1.120.000";
-                        } else if ($mapel == 'Regular SMP 2 Offline' && $sesi == '2'){
-                                $var = "Rp. 1.200.000";
-                        } else if ($mapel == 'Premium SMP 2 Offline' && $sesi == '2' ){
-                                $var = "Rp. 1.728.000";
-                        } else if ($mapel == 'Pro SMP 2 Offline' && $sesi == '2'){
-                                $var = "Rp. 2.208.000";
-                        } else {
-                            $var = 0;
-                        }
-                    } else  if ($program == '3'){
-                        if ($mapel == 'Regular SMA 1 Online' && $sesi == '1' ){
-                            $var = "Rp. 640.000";
-                        } else if ($mapel == 'Premium SMA 1 Online' && $sesi == '1'){
-                            $var = "Rp. 900.000";
-                        } else if ($mapel == 'Pro SMA 1 Online' && $sesi == '1'){
-                            $var = "Rp. 1.120.000";
-                        } else if ($mapel == 'Regular SMA 2 Online' && $sesi == '2'){
-                            $var = "Rp. 1.200.000";
-                        } else if ($mapel == 'Premium SMA 2 Online' && $sesi == '2' ){
-                                $var = "Rp. 1.728.000";
-                        } else if ($mapel == 'Pro SMA 2 Online' && $sesi == '2'){
-                                $var = "Rp. 2.208.000";
-                        } else if ($mapel == 'Regular SMA 1 Offline' && $sesi == '1' ){
-                            $var = "Rp. 640.000";
-                        } else if ($mapel == 'Premium SMA 1 Offline' && $sesi == '1'){
-                            $var = "Rp. 900.000";
-                        } else if ($mapel == 'Pro SMA 1 Offline' && $sesi == '1'){
-                            $var = "Rp. 1.120.000";
-                        } else if ($mapel == 'Regular SMA 2 Offline' && $sesi == '2'){
-                            $var = "Rp. 1.200.000";
-                        } else if ($mapel == 'Premium SMA 2 Offline' && $sesi == '2' ){
-                                $var = "Rp. 1.728.000";
-                        } else if ($mapel == 'Pro SMA 2 Offline' && $sesi == '2'){
-                                $var = "Rp. 2.208.000";
-                        
-                        } else {
-                            $var = 0;
-                        }
-                    } else {
-                        $var = 0;
-                    }
-                    echo $var;
-                    ?>
 
                     </td>
-
+                    @endforeach
                 </tr>
 
             </tfoot>
         </table>
-        @foreach($invoice as $i)
-        <form action="{{ route('paketProgram.update', $i->id) }}" method="post" enctype="multipart/form-data">
+<br>
+        <a type="button" class="btn btn-primary d-block" href="/murid" style="width: 180px; border-radius:50px;margin-left:35%;color:white">
+            Lanjutkan
+        </a>
 
-        
-            {{ csrf_field() }}
-            {{ method_field('PUT') }}
-            <input id="harga" value="<?php echo $var?>" type="text" class="form-control" name="harga" required autofocus
-                style="display:none">
-                <br>
-            <button type="submit" class="btn btn-sm btn-primary" style="float:right">
-                OK</button>
-            
-            @endforeach
         </form>
     </div>
 </body>
