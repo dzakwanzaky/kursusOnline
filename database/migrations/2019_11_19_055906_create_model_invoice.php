@@ -18,16 +18,16 @@ class CreateModelInvoice extends Migration
             $table->string('invoice');
             $table->biginteger('id_murid')->unsigned();
             $table->biginteger('program_id')->unsigned();
-            $table->enum('kategori', ['OFFLINE', 'ONLINE'])->nullable();
             $table->biginteger('kelas_id')->nullable()->unsigned();
-            $table->integer('jumlah_sesi');
-            $table->integer('jumlah_mapel');
-            $table->string('harga')->nullable();            
+            $table->biginteger('paket_id')->nullable()->unsigned();
+            $table->enum('kategori', ['OFFLINE', 'ONLINE'])->nullable();
             $table->string('file')->nullable();
             $table->timestamps();
             $table->foreign('id_murid')->unsigned()->references('id')->on('model_siswas')->onDelete('cascade');
             $table->foreign('program_id')->unsigned()->references('id')->on('model_programs')->onDelete('cascade');
             $table->foreign('kelas_id')->unsigned()->references('id')->on('model_kelas')->onDelete('cascade');
+            $table->foreign('paket_id')->unsigned()->references('id')->on('model_pakets')->onDelete('cascade');
+
 
         });
     }

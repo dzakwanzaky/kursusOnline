@@ -55,15 +55,13 @@
 
                         <label for="mata_pelajaran" style="float:right">Paket
                             <div class="form-group{{ $errors->has('jumlah_mapel') ? ' has-error' : '' }}">
-                            <select id="jumlah_mapel" name="jumlah_mapel" class="form-control" style="float:right">
-                               <option value="0" disabled="true" selected="true">-- Pilih Paket --</option>
-                                <option value="Regular SD 1 Online">Regular SD 1 Online</option>
-                                <option value="Premium SD 1 Online">Premium SD 1 Online</option>
-                                <option value="Pro SD 1 Online">Pro SD 1 Online</option>
-                                <option value="Regular SD 2 Online">Regular SD 2 Online</option>
-                                <option value="Premium SD 2 Online">Premium SD 2 Online</option>
-                                <option value="Pro SD 2 Online">Pro SD 2 Online</option>
-                            </select>
+                                <select id="paket_id" name="paket_id" class="form-control" style="float:right"
+                                    required>
+                                    <option value="0" disabled="true" selected="true">-- Pilih Paket --</option>
+                                    @foreach($paket as $d)
+                                    <option value="{{ $d->id }}">{{ $d->nama_paket }}</option>
+                                    @endforeach
+                                </select>
                         </label>
                          </div>
                         @if ($errors->has('jumlah_mapel'))
@@ -364,134 +362,134 @@
         @endsection
         @section('day')
         <script>
-            $('#div1').hide();
+        $('#div1').hide();
 
-            $('#sesi1').hide();
-            $('#sesi2').hide();
-            $('#sesi3').hide();
+        $('#sesi1').hide();
+        $('#sesi2').hide();
+        $('#sesi3').hide();
 
-            $('#div2').hide();
-            $('#div3').hide();
-            $(document).ready(function () {
-                $("#jumlah_mapel").change(function () {
-                    if ($(this).val() == "Regular SD 1 Online") {
-                        $('#sesi1').show().find('input, textarea, select').prop('disabled', false);
-                        $('#sesi2').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
+        $('#div2').hide();
+        $('#div3').hide();
+        $(document).ready(function () {
+            $("#paket_id").change(function () {
+                if ($(this).val() == "19") {
+                    $('#sesi1').show().find('input, textarea, select').prop('disabled', false);
+                    $('#sesi2').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
 
-                        $('#div1').show().prop('disabled', false);
-                        $('#div2').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#div3').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#waktu1').show();
-                        $('#waktu2').hide();
-                    } else if ($(this).val() == "Premium SD 1 Online") {
-                        $('#sesi1').show().find('input, textarea, select').prop('disabled', false);
-                        $('#sesi2').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#div1').show().prop('disabled', false);
+                    $('#div2').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#div3').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#waktu1').show();
+                    $('#waktu2').hide();
+                } else if ($(this).val() == "20") {
+                    $('#sesi1').show().find('input, textarea, select').prop('disabled', false);
+                    $('#sesi2').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
 
-                        $('#div1').show().find('input, textarea, select').prop('disabled', false);
-                        $('#div2').show().find('input, textarea, select').prop('disabled', false);
-                        $('#div3').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#waktu1').show();
-                        $('#waktu2').hide();
-                        $('#waktu3').hide();
-                        $('#waktu4').hide();
-                       
-                    } else if ($(this).val() == "Pro SD 1 Online") {
-                        $('#sesi1').show().find('input, textarea, select').prop('disabled', false);
-                        $('#sesi2').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#div1').show().find('input, textarea, select').prop('disabled', false);
+                    $('#div2').show().find('input, textarea, select').prop('disabled', false);
+                    $('#div3').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#waktu1').show();
+                    $('#waktu2').hide();
+                    $('#waktu3').show();
+                    $('#waktu4').hide();
 
-                        $('#div1').show().find('input, textarea, select').prop('disabled', false);
-                        $('#div2').show().find('input, textarea, select').prop('disabled', false);
-                        $('#div3').show().find('input, textarea, select').prop('disabled', false);
-                        $('#waktu1').show();
-                        $('#waktu2').hide();
-                        $('#waktu3').hide();
-                        $('#waktu4').hide();
-                        $('#waktu5').hide();
-                        $('#waktu6').hide();
-                   } else if ($(this).val() == "Regular SD 2 Online") {
-                        $('#sesi1').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#sesi2').show().find('input, textarea, select').prop('disabled', false);
-                        $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
+                } else if ($(this).val() == "21") {
+                    $('#sesi1').show().find('input, textarea, select').prop('disabled', false);
+                    $('#sesi2').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
 
-                        $('#div1').show().prop('disabled', false);
-                        $('#div2').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#div3').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#waktu1').show();
-                        $('#waktu2').show();
-                        $('#waktu6').hide();
-                    
-                     } else if ($(this).val() == "Premium SD 2 Online") {
-                         $('#sesi1').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#sesi2').show().find('input, textarea, select').prop('disabled', false);
-                        $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#div1').show().find('input, textarea, select').prop('disabled', false);
+                    $('#div2').show().find('input, textarea, select').prop('disabled', false);
+                    $('#div3').show().find('input, textarea, select').prop('disabled', false);
+                    $('#waktu1').show();
+                    $('#waktu2').hide();
+                    $('#waktu3').show();
+                    $('#waktu4').hide();
+                    $('#waktu5').show();
+                    $('#waktu6').hide();
+                } else if ($(this).val() == "22") {
+                    $('#sesi1').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#sesi2').show().find('input, textarea, select').prop('disabled', false);
+                    $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
 
-                        $('#div1').show().prop('disabled', false);
-                        $('#div2').show().find('input, textarea, select').prop('disabled', false);
-                       
-                        $('#div3').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#waktu1').show();
-                        $('#waktu2').show();
-                        $('#waktu3').hide();
-                        $('#waktu4').hide();
-                        $('#waktu5').hide();
-                        $('#waktu6').hide();
-                    
-                      } else if ($(this).val() == "Pro SD 2 Online") {
-                        $('#sesi1').hide().find('input, textarea, select').prop('disabled', true);
-                        $('#sesi2').show().find('input, textarea, select').prop('disabled', false);
-                        $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#div1').show().prop('disabled', false);
+                    $('#div2').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#div3').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#waktu1').show();
+                    $('#waktu2').show();
+                    $('#waktu6').hide();
 
-                        $('#div1').show().find('input, textarea, select').prop('disabled', false);
-                        $('#div2').show().find('input, textarea, select').prop('disabled', false);
-                        $('#div3').show().find('input, textarea, select').prop('disabled', false);
-                        $('#waktu1').show();
-                        $('#waktu2').show();
-                        $('#waktu3').hide();
-                        $('#waktu4').hide();
-                        $('#waktu5').hide();
-                        $('#waktu6').hide();
-                    }
+                } else if ($(this).val() == "23") {
+                    $('#sesi1').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#sesi2').show().find('input, textarea, select').prop('disabled', false);
+                    $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
 
-                });
-                $("#sesi1-select").change(function () {
-                    if ($(this).val() == "1") {
-                        $('#waktu1').show();
-                        $('#waktu2').hide();
-                    } else if ($(this).val() == "2") {
-                        $('#waktu1').show();
-                        $('#waktu2').show();
-                    }
-                });
-                $("#sesi2-select").change(function () {
-                    if ($(this).val() == "1") {
-                        $('#waktu3').show();
-                        $('#waktu4').hide();
-                        $('#waktu2').hide();
-                    } else if ($(this).val() == "2") {
-                        $('#waktu2').show();
-                        $('#waktu3').show();
-                        $('#waktu4').show();
-                    }
-                });
-                $("#sesi3-select").change(function () {
-                    if ($(this).val() == "1") {
-                        $('#waktu5').show();
-                        $('#waktu6').hide();
-                        $('#waktu4').hide();
-                        $('#waktu2').hide();
+                    $('#div1').show().prop('disabled', false);
+                    $('#div2').show().find('input, textarea, select').prop('disabled', false);
 
+                    $('#div3').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#waktu1').show();
+                    $('#waktu2').show();
+                    $('#waktu3').show();
+                    $('#waktu4').show();
+                    $('#waktu5').hide();
+                    $('#waktu6').hide();
 
-                    } else if ($(this).val() == "2") {
-                        $('#waktu5').show();
-                        $('#waktu6').show();
-                        $('#waktu4').show();
-                        $('#waktu2').show();
+                } else if ($(this).val() == "24") {
+                    $('#sesi1').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#sesi2').show().find('input, textarea, select').prop('disabled', false);
+                    $('#sesi3').hide().find('input, textarea, select').prop('disabled', true);
 
-                    }
-                });
+                    $('#div1').show().find('input, textarea, select').prop('disabled', false);
+                    $('#div2').show().find('input, textarea, select').prop('disabled', false);
+                    $('#div3').show().find('input, textarea, select').prop('disabled', false);
+                    $('#waktu1').show();
+                    $('#waktu2').show();
+                    $('#waktu3').show();
+                    $('#waktu4').show();
+                    $('#waktu5').show();
+                    $('#waktu6').show();
+                }
+
             });
-        </script>
+            $("#sesi1-select").change(function () {
+                if ($(this).val() == "1") {
+                    $('#waktu1').show();
+                    $('#waktu2').hide();
+                } else if ($(this).val() == "2") {
+                    $('#waktu1').show();
+                    $('#waktu2').show();
+                }
+            });
+            $("#sesi2-select").change(function () {
+                if ($(this).val() == "1") {
+                    $('#waktu3').show();
+                    $('#waktu4').hide();
+                    $('#waktu2').hide();
+                } else if ($(this).val() == "2") {
+                    $('#waktu2').show();
+                    $('#waktu3').show();
+                    $('#waktu4').show();
+                }
+            });
+            $("#sesi3-select").change(function () {
+                if ($(this).val() == "1") {
+                    $('#waktu5').show();
+                    $('#waktu6').hide();
+                    $('#waktu4').hide();
+                    $('#waktu2').hide();
+
+
+                } else if ($(this).val() == "2") {
+                    $('#waktu5').show();
+                    $('#waktu6').show();
+                    $('#waktu4').show();
+                    $('#waktu2').show();
+
+                }
+            });
+        });
+    </script>
         @endsection
