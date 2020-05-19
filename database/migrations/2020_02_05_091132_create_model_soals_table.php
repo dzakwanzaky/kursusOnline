@@ -24,7 +24,7 @@ class CreateModelSoalsTable extends Migration
             $table->string('option_c');
             $table->string('option_d');
             $table->string('option_e');
-            $table->string('jawaban');
+            $table->enum('jawaban',  ['A', 'B', 'C', 'D', 'E']);
             $table->string('pembahasan');
             $table->timestamps();
             $table->foreign('id_to')->unsigned()->references('id')->on('model_tryouts')->onDelete('cascade');

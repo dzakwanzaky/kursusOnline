@@ -14,6 +14,8 @@ use App\Provinsi;
 use DB;
 use Session;
 use App\ModelJadwal;
+use App\Mail\PaymentMail;
+use Illuminate\Support\Facades\Mail;
 
 class SiswaController extends Controller
 {
@@ -153,9 +155,10 @@ class SiswaController extends Controller
     }
 
     public function konfirmasi(Request $request, $id){
-        $data = ModelSiswa::where('id', $id)->first();
+        $data = ModelSiswa::with('user')->where('id', $id)->first();
         $data->status = $request->status;
         $data->save();
+        Mail::to($data->user->email)->send(new PaymentMail());
         return redirect('daftarSiswa')->with('success', 'Berhasil Mengonfirmasi Siswa');
 }
 

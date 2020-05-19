@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\ModelFormulir;
+use App\Mail\PaymentMail;
+use Illuminate\Support\Facades\Mail;
 
 
 use Illuminate\Http\Request;
@@ -67,6 +69,7 @@ class FormulirController extends Controller
         $data = ModelFormulir::where('id',$id)->first();
         $data->status = $request->status;
         $data->save();
+        Mail::to($data->email)->send(new PaymentMail());
         return redirect('tryoutAktif')->with('success', 'Berhasil Konfirmasi');    
     }
 

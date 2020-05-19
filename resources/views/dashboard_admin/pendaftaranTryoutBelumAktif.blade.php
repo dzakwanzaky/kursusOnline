@@ -52,9 +52,9 @@
                                         @php $no = 1; @endphp
                                         @foreach($data as $d)
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $d->namalengkap }}</td>
-                                        <td>{{ $d->notelp }}</td>
-                                        <td>{{ $d->asalsekolah }}</td>
+                                        <td>{{ $d->nama_lengkap }}</td>
+                                        <td>{{ $d->no_telp }}</td>
+                                        <td>{{ $d->asal_sekolah }}</td>
                                         <td>{{ $d->program->program }}</td>
                                         <td>{{ $d->email }}</td>
                                         <td>

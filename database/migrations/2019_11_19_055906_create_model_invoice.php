@@ -27,8 +27,6 @@ class CreateModelInvoice extends Migration
             $table->foreign('program_id')->unsigned()->references('id')->on('model_programs')->onDelete('cascade');
             $table->foreign('kelas_id')->unsigned()->references('id')->on('model_kelas')->onDelete('cascade');
             $table->foreign('paket_id')->unsigned()->references('id')->on('model_pakets')->onDelete('cascade');
-
-
         });
     }
 
