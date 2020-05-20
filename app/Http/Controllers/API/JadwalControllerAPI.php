@@ -22,35 +22,46 @@ class JadwalControllerAPI extends Controller
     public function index()
     {
         $data = ModelJadwal::with('siswa')->where('murid_id', '=', Auth::user()->id)->get();
-        return response()->json($data);
-    
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        ));     
     }
 
     public function tutor()
     {
-        $data = ModelTutor::where('id', '=', Auth::user()->id)->first();
-        $array = json_decode ($data->mapel_id);
-        $jadwal = ModelJadwal::with('invoice')
-        ->whereHas('invoice', function($q) use ($data)
-        {$q-> whereIn('program_id', [$data->program_id]);}
+        $tutor = ModelTutor::where('id', '=', Auth::user()->id)->first();
+        $array = json_decode ($tutor->mapel_id);
+        $program = json_decode ($tutor->program_id);
+        $data = ModelJadwal::with('invoice')
+        ->whereHas('invoice', function($q) use ($tutor)
+        {$q-> whereIn('program_id', [json_decode ($tutor->program_id)]);}
         )
         ->whereIn('mapel_id', $array)
         ->where('status', 'MENUNGGU')->get();
-        return response()->json($jadwal);
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        )); 
     }
 
   
     public function jadwalTutor()
     {
-        $data = ModelJadwal::with('datas', 'jadwal')->where('tutor_id', '=', Auth::user()->id)->where('status', 'AKTIF')
-        ->orWhere('status', 'DIPILIH TUTOR')->get();
-        return response()->json($data);
+        $data = ModelJadwal::where('tutor_id', '=', Auth::user()->id)->where('status', 'AKTIF')->get();
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        ));     
     }
 
-    public function detailJadwalTutor($id)
+    public function detailSiswa($id)
     {
-        $data = ModelJadwal::with('datas', 'jadwal')->where('id', $id)->get();
-        return response()->json($data);
+        $data = ModelSiswa::with('user')->where('id', $id)->get();
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        ));     
     }
 
 
@@ -94,8 +105,8 @@ class JadwalControllerAPI extends Controller
         $data->status = $request->status[$key];
         $data->save();
         } if($data->save()){
-            $res['message'] = "sukses";
-            $res['value'] = "$data";
+            $res['status'] = "sukses";
+            $res['result'] = "$data";
             return response($res);
                 }  
     }  

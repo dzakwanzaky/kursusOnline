@@ -11,7 +11,10 @@ class TestimoniControllerAPI extends Controller
     public function index()
     {
         $data = ModelTestimoni::with('siswa', 'user')->get();
-        return response()->json($data);
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        )); 
     }
 
    

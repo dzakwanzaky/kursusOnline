@@ -64,9 +64,9 @@ Route::middleware('auth:api')->group(function(){
 
     //JadwalController
         //tutor
-    Route::get('pendaftaranMurid','API\JadwalControllerAPI@tutor');   
+    Route::get('pendaftaranSiswa','API\JadwalControllerAPI@tutor');   
     Route::get('jadwalTutor','API\JadwalControllerAPI@jadwalTutor');   
-    Route::get('detailJadwalTutor/{id}','API\JadwalControllerAPI@detailJadwalTutor');   
+    Route::get('detailSiswa/{id}','API\JadwalControllerAPI@detailSiswa');   
     Route::put('jadwalSiswa/{id}','API\JadwalControllerAPI@update');   
         //siswa
     Route::get('jadwalSiswa','API\JadwalControllerAPI@index');

@@ -15,13 +15,17 @@ class ProgramControllerAPI extends Controller
   
     public function index(){
         $data = ModelProgram::all();
-        return response()->json($data);
-    }
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        ));     }
 
     public function program(){
         $data = ModelProgram::whereHas('paket')->get();
-        return response()->json($data);
-    }
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        ));     }
 
 
 }

@@ -38,8 +38,10 @@ class ChangePasswordControllerAPI extends Controller
             'new_confirm_password' => ['same:new_password'],
         ]);
    
-        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
-        return response()->json($request);
-
+        $data = User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        )); 
     }
 }

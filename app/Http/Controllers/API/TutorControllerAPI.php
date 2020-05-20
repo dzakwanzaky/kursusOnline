@@ -25,8 +25,10 @@ class TutorControllerAPI extends Controller
     //menampilkan profile tutor
     public function dataTutor(){
         $data = ModelTutor::with('tutor')->where('id', '=', Auth::user()->id)->get();
-        return response()->json($data);
-
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        )); 
     }
 
     //menyimpan data tutor saat registrasi
@@ -73,8 +75,8 @@ class TutorControllerAPI extends Controller
 
         $data->status = $request->status;
         if($data->save()){
-            $res['message'] = "sukses";
-            $res['value'] = "$data";
+            $res['status'] = "sukses";
+            $res['result'] = "$data";
             return response($res);
         }    
     }
@@ -107,8 +109,8 @@ class TutorControllerAPI extends Controller
                     $user->active=0;
                     if($user->save()){
                         $user->sendEmailVerificationNotification();
-                        $res['message'] = "sukses";
-                        $res['value'] = "$data";
+                        $res['status'] = "sukses";
+                        $res['result'] = "$data";
                         return response($res);
                     }    
                 }

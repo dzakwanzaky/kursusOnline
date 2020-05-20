@@ -17,7 +17,8 @@ class AbsenControllerAPI extends Controller
     public function show($id){
         $data = ModelAbsen::with('jadwal')->where('id_jadwal', $id)->get();
         return response()->json(array(
-            'data' => $data,
+            'status'    => 'sukses',
+            'result'    => $data
         )); 
     }
 
@@ -30,8 +31,8 @@ class AbsenControllerAPI extends Controller
         $data->kehadiran = $request->kehadiran;
         $data->report = $request->report;
         if($data->save()){
-            $res['message'] = "sukses";
-            $res['value'] = "$data";
+            $res['status'] = "sukses";
+            $res['result'] = $data;
             return response($res);
         }    
     }

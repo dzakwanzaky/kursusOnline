@@ -14,8 +14,10 @@ class InvoiceControllerAPI extends Controller
     public function index()
     {
         $data = ModelInvoice::where('id_murid','=', Auth::user()->id)->get();
-        return response()->json($data);
-    }
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        ));     }
 
     public function proses_upload(Request $request){
 
@@ -26,8 +28,8 @@ class InvoiceControllerAPI extends Controller
         $file->move($tujuan_upload,$nama_file);
         $data->file = $nama_file;
         if($data->save()){
-            $res['message'] = "sukses";
-            $res['value'] = "$data";
+            $res['status'] = "sukses";
+            $res['result'] = "$data";
             return response($res);
             } 
         }

@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('phone')->nullable();
             $table->boolean('active')->default(0);
             $table->string('password');
-            $table->string('token')->nullable();
+            $table->string('token', '512')->nullable();
             $table->enum('role', ['siswa', 'tutor', 'admin']);
             $table->rememberToken();
             $table->timestamps();

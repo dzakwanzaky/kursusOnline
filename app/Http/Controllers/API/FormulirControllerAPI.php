@@ -43,8 +43,8 @@ class FormulirControllerAPI extends Controller
         $file->move($tujuan_upload,$nama_file);
         $data->file = $nama_file;
         if($data->save()){
-            $res['message'] = "sukses";
-            $res['value'] = "$data";
+            $res['status'] = "sukses";
+            $res['result'] = "$data";
             return response($res);
         }
     }

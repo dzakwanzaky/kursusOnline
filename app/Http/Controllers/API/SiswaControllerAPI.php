@@ -36,8 +36,8 @@ class SiswaControllerAPI extends Controller
         $data->alamat_detail = $request->alamat_detail;
         $data->status = $request->status;
         if($data->save()){
-            $res['message'] = "sukses";
-            $res['value'] = "$data";
+            $res['status'] = "sukses";
+            $res['result'] = $data;
             return response($res);
         }    
     }
@@ -46,26 +46,33 @@ class SiswaControllerAPI extends Controller
     {
         $data = ModelSiswa::with('user')->where('id','=', Auth::user()->id)->get();
         return response()->json(array(
-            'data' => [$data] 
-        ));
+            'status'    => 'sukses',
+            'result'    => $data
+        )); 
     }
 
     public function getProvinsi(){
-        $provinsi = Provinsi::all();
-        return response()->json($provinsi);
-    }
+        $data = Provinsi::all();
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        ));     }
 
     public function getKabupaten($id){
        
-        $kabupaten = ModelKab::where('provinsi_id', '=', $id)->get();
-        return response()->json($kabupaten);
-    }
+        $data = ModelKab::where('provinsi_id', '=', $id)->get();
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        ));     }
 
     public function getKecamatan($id){
        
-        $kecamatan = ModelKecamatan::where('kab_id', '=', $id)->get();
-        return response()->json($kecamatan);
-    }
+        $data = ModelKecamatan::where('kab_id', '=', $id)->get();
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        ));     }
 
     public function update(Request $request, $id)
     {
@@ -96,8 +103,8 @@ class SiswaControllerAPI extends Controller
                     $user->active=0;
                     if($user->save()){
                         $user->sendEmailVerificationNotification();
-                        $res['message'] = "sukses";
-                        $res['value'] = "$data";
+                        $res['status'] = "sukses";
+                        $res['result'] = $data;
                         return response($res);
                     }    
                 }

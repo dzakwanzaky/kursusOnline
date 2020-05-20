@@ -16,14 +16,19 @@ class MapelControllerAPI extends Controller
     //melihat seluruh daftar mapel 
     public function index(){
         $data = ModelMapel::all();
-        return response()->json($data);
-    }
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        )); 
+        }
 
     //melihat daftar mapel berdasarkan program
     public function lihatMapel($id){
         $data = ModelMapel::where('id_program', $id)->get();
-        return response()->json($data);
-    }
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        ));     }
 
 
    

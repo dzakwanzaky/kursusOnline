@@ -144,8 +144,10 @@ class AuthControllerAPI extends Controller
 
     public function data(){
             $data = User::where('id', '=', Auth::user()->id)->get();
-            return response()->json($data);
-
+            return response()->json(array(
+                'status'    => 'sukses',
+                'result'    => $data
+            )); 
     }
 
     public function login(Request $request){
