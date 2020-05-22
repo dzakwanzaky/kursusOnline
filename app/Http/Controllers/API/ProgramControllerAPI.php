@@ -18,14 +18,16 @@ class ProgramControllerAPI extends Controller
         return response()->json(array(
             'status'    => 'sukses',
             'result'    => $data
-        ));     }
+        ));     
+    }
 
     public function program(){
         $data = ModelProgram::whereHas('paket')->get();
         return response()->json(array(
             'status'    => 'sukses',
             'result'    => $data
-        ));     }
+        ));     
+    }
 
 
 }

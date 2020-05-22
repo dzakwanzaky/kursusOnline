@@ -56,7 +56,8 @@ class SiswaControllerAPI extends Controller
         return response()->json(array(
             'status'    => 'sukses',
             'result'    => $data
-        ));     }
+        ));     
+    }
 
     public function getKabupaten($id){
        
@@ -64,15 +65,16 @@ class SiswaControllerAPI extends Controller
         return response()->json(array(
             'status'    => 'sukses',
             'result'    => $data
-        ));     }
+        ));     
+    }
 
     public function getKecamatan($id){
-       
         $data = ModelKecamatan::where('kab_id', '=', $id)->get();
         return response()->json(array(
             'status'    => 'sukses',
             'result'    => $data
-        ));     }
+        ));     
+    }
 
     public function update(Request $request, $id)
     {

@@ -28,7 +28,8 @@ class MapelControllerAPI extends Controller
         return response()->json(array(
             'status'    => 'sukses',
             'result'    => $data
-        ));     }
+        ));     
+    }
 
 
    

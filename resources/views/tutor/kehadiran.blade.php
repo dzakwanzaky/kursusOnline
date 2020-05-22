@@ -29,6 +29,7 @@
                         <th>Pertemuan Ke</th>
                         <th>Tanggal</th>
                         <th>Kehadiran</th>
+                        <th>Materi</th>
                         <th>Report</th>   
                     </tr>
                 </thead>
@@ -39,9 +40,8 @@
                            <td>{{ $no++ }}</td>
                            <td>{{ $d->tanggal }}</td>
                            <td>{{ $d->kehadiran }}</td>
+                           <td>{{ $d->materi }}</td>
                            <td>{{ $d->report }}</td>
-
-                               
                         </tr>  
                         @endforeach
        

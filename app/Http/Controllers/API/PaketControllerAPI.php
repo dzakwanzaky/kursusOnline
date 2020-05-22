@@ -29,13 +29,15 @@ class PaketControllerAPI extends Controller
         return response()->json(array(
             'status'    => 'sukses',
             'result'    => $data
-        ));     }
+        ));     
+    }
 
     public function paket($id){
         $data = ModelPaket::where('program_id', $id)->get();
         return response()->json(array(
             'status'    => 'sukses',
             'result'    => $data
-        ));     }
+        ));     
+    }
 }
     

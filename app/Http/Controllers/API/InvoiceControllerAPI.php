@@ -17,7 +17,8 @@ class InvoiceControllerAPI extends Controller
         return response()->json(array(
             'status'    => 'sukses',
             'result'    => $data
-        ));     }
+        ));     
+    }
 
     public function proses_upload(Request $request){
 

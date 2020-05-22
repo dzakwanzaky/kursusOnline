@@ -30,6 +30,7 @@
                                         <th>Pertemuan Ke</th>
                                         <th>Tanggal</th>
                                         <th>Kehadiran</th>
+                                        <th>Materi</th>
                                         <th>Report</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -40,8 +41,9 @@
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $d->tanggal }}</td>
-                                        <td>{{ $d->report }}</td>
                                         <td>{{ $d->kehadiran }} </td>
+                                        <td>{{ $d->materi }} </td>
+                                        <td>{{ $d->report }}</td>
                                         <td style="text-align:center">
                                             
                                                 <form action="{{ route('absen.destroy', $d->id) }}" method="post"
