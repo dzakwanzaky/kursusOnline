@@ -162,7 +162,15 @@
             <label>C<input type="text" class="form-control" id="option_c" name="option_c[]" required></label>
             <label>D<input type="text" class="form-control" id="option_d" name="option_d[]" required></label>
             <label>E<input type="text" class="form-control" id="option_e" name="option_e[]" required></label>
-            <br><br><div><b>Masukkan Jawaban Benar<b></div><input type="text" class="form-control" name="jawaban[]" required></input>
+            <br><br><div><b>Masukkan Jawaban Benar<b></div>  
+                                    <select id="jawaban" name="jawaban[]" class="form-control" required>
+                                            <option value="">Jawaban Benar</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                        </select>
             <br><div><b>Masukkan Pembahasan :</b></div><textarea id="testt" name="pembahasan[]"></textarea></div></div></div></div></div>`;
         $('#body').append(html);
         $('#button-sub').show();
