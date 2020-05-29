@@ -33,7 +33,7 @@
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                     <div class="form-title">
                         <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"
-                            placeholder="Masukan nama Anda" autofocus>
+                            placeholder="Masukan nama Anda" autofocus required>
 
                         @if ($errors->has('name'))
                         <span class="help-block">
@@ -50,7 +50,7 @@
                 <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                     <div class="form-title">
                         <input id="phone" type="phone" class="form-control" name="phone"
-                            placeholder="Masukan no telp Anda" value="{{ old('phone') }}">
+                            placeholder="Masukan no telp Anda" value="{{ old('phone') }}" required>
 
                         @if ($errors->has('phone'))
                         <span class="help-block">
@@ -65,7 +65,7 @@
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <div class="form-title">
                         <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"
-                            placeholder="Masukan email Anda" value="{{ old('email') }}">
+                            placeholder="Masukan email Anda" value="{{ old('email') }}" required>
 
                         @if ($errors->has('email'))
                         <span class="help-block">
@@ -80,7 +80,7 @@
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                     <div class="input-group">
                         <input id="password" type="password" name="password" class="form-control" data-toggle="password"
-                            placeholder="Masukan kata sandi Anda" value="{{ old('password') }}">
+                            placeholder="Masukan kata sandi Anda" value="{{ old('password') }}" required>
 
 
                         <div class="input-group-append">
@@ -102,7 +102,7 @@
                     <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                         <div class="input-group">
                             <input id="password_confirmation" type="password" name="password_confirmation"
-                                class="form-control" data-toggle="password" placeholder="Masukan ulang kata sandi Anda">
+                                class="form-control" data-toggle="password" placeholder="Masukan ulang kata sandi Anda" required>
 
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fa fa-eye"></i></span>
@@ -128,75 +128,11 @@
                     <br>
 
                     <div class="form-group">
-                        <button type="button" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-masuk"
+                        <button type="submit"  class="btn btn-masuk"
                             style="border-radius:50px; margin-left:auto; margin-right:auto;">
                             Daftar
                         </button>
                     </div>
-
-
-
-                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="col-12 modal-title text-center" id="exampleModalLongTitle"
-                                        style="font-size:30px">Syarat Dan Ketentuan Pendaftaran Tutor</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    Pendaftaran
-
-                                    Dalam proses registrasi menjadi Tutor, Anda diwajibkan untuk mengisi semua
-                                    kelengkapan
-                                    informasi pribadi Anda, termasuk data, profil singkat, pengalaman mengajar, serta
-                                    bukti
-                                    kualifikasi untuk mata pelajaran tertentu. Anda harus mencantumkan nama lengkap
-                                    (bukan
-                                    nama alias).
-                                    Seluruh informasi yang dimasukkan harus informasi yang benar dan akurat.
-                                    Nomor telepon yang dicantumkan adalah nomor yang aktif, sehingga Tutordoors.com
-                                    dapat
-                                    menghubungi sewaktu-waktu apabila diperlukan.
-                                    Tutordoors.com berhak untuk menolak aplikasi pendaftaran Anda sebagai Tutor dengan
-                                    alasan yang jelas, seperti profil tidak dilengkapi, tutor yang mendaftar tidak
-                                    sesuai
-                                    dengan kualifikasi yang diperlihatkan dengan hasil online test, dan alasan lainnya.
-                                    <br>
-                                    <b>Akun Tutor
-                                    </b>
-
-                                    Anda bertanggung jawab untuk menjaga kerahasiaan akun dan password dan membatasi
-                                    akses
-                                    ke komputer Anda.
-                                    Anda setuju bertanggung jawab atas semua yang terjadi perihal penggunaan akun
-                                    pribadi
-                                    dan password Anda.
-                                    Anda setuju untuk segera memberitahukan Tutordoors.com tentang setiap penyalahgunaan
-                                    akun atau pelanggaran keamanan lainnya yang berkaitan dengan akun Anda.
-                                    Tutordoors.com tidak akan bertanggung jawab atas kerugian atau kerusakan yang timbul
-                                    akibat kegagalan dalam memahami dan mematuhi syarat dan ketentuan ini.
-                                    Tutordoors.com berhak untuk menolak layanan atau menghentikan akun.
-                                    <br>
-                                    <b>Profil Tutor</b>
-
-                                    Anda setuju untuk mengisi semua informasi pribadi seakurat mungkin.
-                                    Anda, dan bukan Tutordoors.com, bertanggung jawab penuh atas semua materi yang Anda
-                                    gunakan di Tutordoors.com.
-                                    Online Test
-
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                    <button class="btn btn-primary" type="submit">Setuju</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
 
             </form>
             <p class="loginhere">
