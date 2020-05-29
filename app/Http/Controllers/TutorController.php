@@ -40,7 +40,7 @@ class TutorController extends Controller
         $prg = ModelTutor::with('tutor')->where('id', $id)->first();
         $arrayss= json_decode ($tutor->program_id);
 
-        $data = ModelTutor::with('tutor',)->where('id', $id)->get();
+        $data = ModelTutor::with('tutor')->where('id', $id)->get();
         $matpel = ModelMapel::whereIn('id', $array)->get();
         $jadwal = ModelJadwal::where('tutor_id', $id)->get();
         $kelas = ModelKelas::whereIn('id', $arrays)->get();
@@ -109,6 +109,24 @@ class TutorController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'jenis_kelamin' => 'required',
+            'tanggal_lahir' => 'required',
+            'provinsi' => 'required',
+            'kabupaten' => 'required',
+            'kecamatan' => 'required',
+            'alamat_detail' => 'min:10',            
+       ],
+
+       [
+            'jenis_kelamin.required' => 'Jenis kelamin tidak boleh kosong',
+            'tanggal_lahir.required' => 'Tanggal lahir tidak boleh kosong',
+            'provinsi.required' => 'Provinsi tidak boleh kosong',
+            'kabupaten.required' => 'kabupaten tidak boleh kosong',
+            'kecamatan.required' => 'kecamatan tidak boleh kosong',
+            'alamat_detail.min' => 'Alamat detail minimal 10 karakter',
+       ]);
+
         $data = new ModelTutor();
         $data->id = $request->id;
         $data->jenis_kelamin = $request->jenis_kelamin;

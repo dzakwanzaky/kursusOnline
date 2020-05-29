@@ -39,9 +39,10 @@
                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                     <label for="email">Jenis Kelamin</label>
 
-                                    <div class="form-title">
+                                    <div class="form-title" style="color:red">
 
-                                        <select id="jenis_kelamin" name="jenis_kelamin" class="form-control">
+                                        <select id="jenis_kelamin" name="jenis_kelamin" class="form-control" required>
+                                            <option value="">Jenis Kelamin</option>
                                             <option value="Laki-Laki">Laki-Laki</option>
                                             <option value="Perempuan">Perempuan</option>
                                         </select>
@@ -49,21 +50,31 @@
                                     </div>
                                 </div>
 
+                                @if ($errors->has('jenis_kelamin'))
+                                <span class="help-block" style="color:red">
+                                    {{ $errors->first('jenis_kelamin') }}
+                                </span>
+                                @endif
+
 
                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                     <label class="control-label" for="tanggal">Tanggal Lahir</label>
                                     <div class="form-title">
-                                        <input class="form-control" id="tanggal" name="tanggal_lahir" placeholder="MM/DD/YYY"
-                                            type="text" />
+                                        <input class="form-control" id="tanggal" name="tanggal_lahir"
+                                            placeholder="MM/DD/YYY" type="text" required>
                                     </div>
                                 </div>
 
-
+                                @if ($errors->has('tanggal_lahir'))
+                                <span class="help-block" style="color:red">
+                                    {{ $errors->first('tanggal_lahir') }}
+                                </span>
+                                @endif
 
                                 <div class="form-group">
                                     <label id="prov" for="prov">Provinsi</label>
 
-                                    <select class="form-control" id="provinsi-select" name="provinsi-select">
+                                    <select class="form-control" id="provinsi-select" name="provinsi-select" required>
                                         <option value="">Provinsi</option>
 
                                         @foreach($provinsi as $key => $value)
@@ -72,6 +83,13 @@
                                     </select>
                                 </div>
 
+                                @if ($errors->has('provinsi'))
+                                <span class="help-block" style="color:red">
+                                    {{ $errors->first('provinsi') }}
+                                </span>
+                                @endif
+
+
                                 <div name="provinsi" id="provinsi"></div>
 
 
@@ -79,10 +97,17 @@
                                     <div class="input-group-prepend">
                                         <label for="kabkot">Kota/Kabupaten</label>
                                     </div>
-                                    <select class="form-control" id="kabupaten-select" name="kabupaten-select">
+                                    <select class="form-control" id="kabupaten-select" name="kabupaten-select" required>
                                         <option>Kota/Kabupaten</option>
                                     </select>
                                 </div>
+
+                                @if ($errors->has('kabupaten'))
+                                <span class="help-block" style="color:red">
+                                    {{ $errors->first('kabupaten') }}
+                                </span>
+                                @endif
+
 
                                 <div name="kabupaten" id="kabupaten"></div>
 
@@ -91,10 +116,16 @@
                                     <div class="input-group-prepend">
                                         <label>Kecamatan</label>
                                     </div>
-                                    <select class="form-control" id="kecamatan-select" name="kecamatan-select">
+                                    <select class="form-control" id="kecamatan-select" name="kecamatan-select" required>
                                         <option>Kecamatan</option>
                                     </select>
                                 </div>
+
+                                @if ($errors->has('kecamatan'))
+                                <span class="help-block" style="color:red">
+                                    {{ $errors->first('kecamatan') }}
+                                </span>
+                                @endif
 
                                 <div name="kecamatan" id="kecamatan"></div>
 
@@ -107,6 +138,13 @@
                                             placeholder="Masukkan petunjuk arah atau alamat detail" required></textarea>
                                     </div>
                                 </div>
+
+                                @if ($errors->has('alamat_detail'))
+                                <span class="help-block" style="color:red">
+                                    {{ $errors->first('alamat_detail') }}
+                                </span>
+                                @endif
+
                                 <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
                                     <label for="pendidikan">Pendidikan Terakhir</label>
 
@@ -119,6 +157,13 @@
                                         </select>
                                     </div>
                                 </div>
+
+                                @if ($errors->has('pendidikan'))
+                                <span class="help-block" style="color:red">
+                                    {{ $errors->first('pendidikan') }}
+                                </span>
+                                @endif
+
 
                                 <div class="form-group" name="jumlah">
                                     <label for="progran">Jumlah Program</label>
@@ -136,286 +181,295 @@
                                 </div>
 
                                 <div id="jumlah-1">
-                                <div class="alert alert-primary">
-                                 Masukkan detail untuk Pilihan Program 1!
-                                </div>
-                                <div class="form-group" name="program">
-                                    <label for="progran">Program Yang Ingin Diajar</label>
+                                    <div class="alert alert-primary">
+                                        Masukkan detail untuk Pilihan Program 1!
+                                    </div>
+                                    <div class="form-group" name="program">
+                                        <label for="progran">Program Yang Ingin Diajar</label>
 
-                                    <div class="form-title">
+                                        <div class="form-title">
 
-                                        <select id="program" name="program_id[]" class="form-control" required>
-                                            <option value="">Pilih Program</option>
-                                            @foreach($program as $d)
-                                            <option value="{{ $d->id }}">{{ $d->program }}</option>
+                                            <select id="program" name="program_id[]" class="form-control" required>
+                                                <option value="">Pilih Program</option>
+                                                @foreach($program as $d)
+                                                <option value="{{ $d->id }}">{{ $d->program }}</option>
+                                                @endforeach
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="kelasSD" required>
+                                        <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                        <div class="form-round">
+                                            @foreach($ksd as $d)
+                                            <input id="kelas_id" type="checkbox" name="kelas_id[]"
+                                                value="{{ $d->id }}" />
+                                            {{ $d->kelas }} SD<br>
                                             @endforeach
-                                        </select>
 
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="kelasSD" required>
-                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
-                                    <div class="form-round">
-                                        @foreach($ksd as $d)
-                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
-                                        {{ $d->kelas }} SD<br>
-                                        @endforeach
-
+                                    <div class="form-group" id="kelasSMP" name="kelasSMP" required>
+                                        <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                        <div class="form-round">
+                                            @foreach($ksmp as $d)
+                                            <input id="kelas_id" type="checkbox" name="kelas_id[]"
+                                                value="{{ $d->id }}" />
+                                            {{ $d->kelas }} SMP<br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="kelasSMP" name="kelasSMP" required>
-                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
-                                    <div class="form-round">
-                                        @foreach($ksmp as $d)
-                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
-                                        {{ $d->kelas }} SMP<br>
-                                        @endforeach
+                                    <div class="form-group" id="kelasSMA" name="kelasSMA" required>
+                                        <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                        <div class="form-round">
+                                            @foreach($ksma as $d)
+                                            <input id="kelas_id" type="checkbox" name="kelas_id[]"
+                                                value="{{ $d->id }}" />
+                                            {{ $d->kelas }} SMA<br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="kelasSMA" name="kelasSMA" required>
-                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
-                                    <div class="form-round">
-                                        @foreach($ksma as $d)
-                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
-                                        {{ $d->kelas }} SMA<br>
-                                        @endforeach
+                                    <div class="form-group" id="matpelSD" name="matpelSD" required>
+                                        <label for="mata_pelajaran">Mata Pelajaran</label>
+                                        <div class="form-round">
+                                            @foreach($sd as $d)
+                                            <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                                value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                            @endforeach
+
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="matpelSD" name="matpelSD" required>
-                                    <label for="mata_pelajaran">Mata Pelajaran</label>
-                                    <div class="form-round">
-                                        @foreach($sd as $d)
-                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
-                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
-                                        @endforeach
-
+                                    <div class="form-group" id="matpelSMP" name="matpelSMP" required>
+                                        <label for="mata_pelajaran">Mata Pelajaran</label>
+                                        <div class="form-round">
+                                            @foreach($smp as $d)
+                                            <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                                value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="matpelSMP" name="matpelSMP" required>
-                                    <label for="mata_pelajaran">Mata Pelajaran</label>
-                                    <div class="form-round">
-                                        @foreach($smp as $d)
-                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
-                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
-                                        @endforeach
+                                    <div class="form-group" id="matpelSMA" name="matpelSMA" required>
+                                        <label for="mata_pelajaran">Mata Pelajaran</label>
+                                        <div class="form-round">
+                                            @foreach($sma as $d)
+                                            <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                                value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="matpelSMA" name="matpelSMA" required>
-                                    <label for="mata_pelajaran">Mata Pelajaran</label>
-                                    <div class="form-round">
-                                        @foreach($sma as $d)
-                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
-                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
-                                        @endforeach
+                                    <div class="form-group" id="sbm" name="sbm" required>
+                                        <label for="mata_pelajaran">Jenis Ujian</label>
+                                        <div class="form-round">
+                                            @foreach($sbm as $d)
+                                            <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                                value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group" id="sbm" name="sbm" required>
-                                    <label for="mata_pelajaran">Jenis Ujian</label>
-                                    <div class="form-round">
-                                        @foreach($sbm as $d)
-                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
-                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
-                                        @endforeach
-                                    </div>
-                                </div>
 
                                 </div>
 
                                 <div id="jumlah-2">
-                                <div class="alert alert-primary">
-                                 Masukkan detail untuk Pilihan Program 2!
-                                </div>
-                                <div class="form-group" name="program-2>
-                                    <label for="progran">Program Yang Ingin Diajar</label>
+                                    <div class="alert alert-primary">
+                                        Masukkan detail untuk Pilihan Program 2!
+                                    </div>
+                                    <div class="form-group" name="program-2>
+                                    <label for=" progran">Program Yang Ingin Diajar</label>
 
-                                    <div class="form-title">
+                                        <div class="form-title">
 
-                                        <select id="program-2" name="program_id[]" class="form-control" required>
-                                            <option value="">Pilih Program</option>
-                                            @foreach($program as $d)
-                                            <option value="{{ $d->id }}">{{ $d->program }}</option>
+                                            <select id="program-2" name="program_id[]" class="form-control" required>
+                                                <option value="">Pilih Program</option>
+                                                @foreach($program as $d)
+                                                <option value="{{ $d->id }}">{{ $d->program }}</option>
+                                                @endforeach
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="kelasSD-2" required>
+                                        <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                        <div class="form-round">
+                                            @foreach($ksd as $d)
+                                            <input id="kelas_id" type="checkbox" name="kelas_id[]"
+                                                value="{{ $d->id }}" />
+                                            {{ $d->kelas }} SD<br>
                                             @endforeach
-                                        </select>
 
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="kelasSD-2" required>
-                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
-                                    <div class="form-round">
-                                        @foreach($ksd as $d)
-                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
-                                        {{ $d->kelas }} SD<br>
-                                        @endforeach
-
+                                    <div class="form-group" id="kelasSMP-2" name="kelasSMP-2" required>
+                                        <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                        <div class="form-round">
+                                            @foreach($ksmp as $d)
+                                            <input id="kelas_id" type="checkbox" name="kelas_id[]"
+                                                value="{{ $d->id }}" />
+                                            {{ $d->kelas }} SMP<br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="kelasSMP-2" name="kelasSMP-2" required>
-                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
-                                    <div class="form-round">
-                                        @foreach($ksmp as $d)
-                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
-                                        {{ $d->kelas }} SMP<br>
-                                        @endforeach
+                                    <div class="form-group" id="kelasSMA-2" name="kelasSMA-2" required>
+                                        <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                        <div class="form-round">
+                                            @foreach($ksma as $d)
+                                            <input id="kelas_id" type="checkbox" name="kelas_id[]"
+                                                value="{{ $d->id }}" />
+                                            {{ $d->kelas }} SMA<br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="kelasSMA-2" name="kelasSMA-2" required>
-                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
-                                    <div class="form-round">
-                                        @foreach($ksma as $d)
-                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
-                                        {{ $d->kelas }} SMA<br>
-                                        @endforeach
+                                    <div class="form-group" id="matpelSD-2" name="matpelSD-2" required>
+                                        <label for="mata_pelajaran">Mata Pelajaran</label>
+                                        <div class="form-round">
+                                            @foreach($sd as $d)
+                                            <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                                value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                            @endforeach
+
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="matpelSD-2" name="matpelSD-2" required>
-                                    <label for="mata_pelajaran">Mata Pelajaran</label>
-                                    <div class="form-round">
-                                        @foreach($sd as $d)
-                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
-                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
-                                        @endforeach
-
+                                    <div class="form-group" id="matpelSMP-2" name="matpelSMP-2" required>
+                                        <label for="mata_pelajaran">Mata Pelajaran</label>
+                                        <div class="form-round">
+                                            @foreach($smp as $d)
+                                            <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                                value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="matpelSMP-2" name="matpelSMP-2" required>
-                                    <label for="mata_pelajaran">Mata Pelajaran</label>
-                                    <div class="form-round">
-                                        @foreach($smp as $d)
-                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
-                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
-                                        @endforeach
+                                    <div class="form-group" id="matpelSMA-2" name="matpelSMA-2" required>
+                                        <label for="mata_pelajaran">Mata Pelajaran</label>
+                                        <div class="form-round">
+                                            @foreach($sma as $d)
+                                            <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                                value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="matpelSMA-2" name="matpelSMA-2" required>
-                                    <label for="mata_pelajaran">Mata Pelajaran</label>
-                                    <div class="form-round">
-                                        @foreach($sma as $d)
-                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
-                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
-                                        @endforeach
+                                    <div class="form-group" id="sbm-2" name="sbm-2" required>
+                                        <label for="mata_pelajaran">Jenis Ujian</label>
+                                        <div class="form-round">
+                                            @foreach($sbm as $d)
+                                            <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                                value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group" id="sbm-2" name="sbm-2" required>
-                                    <label for="mata_pelajaran">Jenis Ujian</label>
-                                    <div class="form-round">
-                                        @foreach($sbm as $d)
-                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
-                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
-                                        @endforeach
-                                    </div>
-                                </div>
 
                                 </div>
 
                                 <div id="jumlah-3">
-                                <div class="alert alert-primary">
-                                 Masukkan detail untuk Pilihan Program 3!
-                                </div>
-                                <div class="form-group" name="program-3">
-                                    <label for="progran">Program Yang Ingin Diajar</label>
+                                    <div class="alert alert-primary">
+                                        Masukkan detail untuk Pilihan Program 3!
+                                    </div>
+                                    <div class="form-group" name="program-3">
+                                        <label for="progran">Program Yang Ingin Diajar</label>
 
-                                    <div class="form-title">
+                                        <div class="form-title">
 
-                                        <select id="program-3" name="program_id[]" class="form-control" required>
-                                            <option value="">Pilih Program</option>
-                                            @foreach($program as $d)
-                                            <option value="{{ $d->id }}">{{ $d->program }}</option>
+                                            <select id="program-3" name="program_id[]" class="form-control" required>
+                                                <option value="">Pilih Program</option>
+                                                @foreach($program as $d)
+                                                <option value="{{ $d->id }}">{{ $d->program }}</option>
+                                                @endforeach
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="kelasSD-3" required>
+                                        <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                        <div class="form-round">
+                                            @foreach($ksd as $d)
+                                            <input id="kelas_id" type="checkbox" name="kelas_id[]"
+                                                value="{{ $d->id }}" />
+                                            {{ $d->kelas }} SD<br>
                                             @endforeach
-                                        </select>
 
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="kelasSD-3" required>
-                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
-                                    <div class="form-round">
-                                        @foreach($ksd as $d)
-                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
-                                        {{ $d->kelas }} SD<br>
-                                        @endforeach
-
+                                    <div class="form-group" id="kelasSMP-3" name="kelasSMP-3" required>
+                                        <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                        <div class="form-round">
+                                            @foreach($ksmp as $d)
+                                            <input id="kelas_id" type="checkbox" name="kelas_id[]"
+                                                value="{{ $d->id }}" />
+                                            {{ $d->kelas }} SMP<br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="kelasSMP-3" name="kelasSMP-3" required>
-                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
-                                    <div class="form-round">
-                                        @foreach($ksmp as $d)
-                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
-                                        {{ $d->kelas }} SMP<br>
-                                        @endforeach
+                                    <div class="form-group" id="kelasSMA-3" name="kelasSMA-3" required>
+                                        <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
+                                        <div class="form-round">
+                                            @foreach($ksma as $d)
+                                            <input id="kelas_id" type="checkbox" name="kelas_id[]"
+                                                value="{{ $d->id }}" />
+                                            {{ $d->kelas }} SMA<br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="kelasSMA-3" name="kelasSMA-3" required>
-                                    <label for="kelas">Preferensi Jenjang Kelas Yang Akan Diajar</label>
-                                    <div class="form-round">
-                                        @foreach($ksma as $d)
-                                        <input id="kelas_id" type="checkbox" name="kelas_id[]" value="{{ $d->id }}" />
-                                        {{ $d->kelas }} SMA<br>
-                                        @endforeach
+                                    <div class="form-group" id="matpelSD-3" name="matpelSD-3" required>
+                                        <label for="mata_pelajaran">Mata Pelajaran</label>
+                                        <div class="form-round">
+                                            @foreach($sd as $d)
+                                            <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                                value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                            @endforeach
+
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="matpelSD-3" name="matpelSD-3" required>
-                                    <label for="mata_pelajaran">Mata Pelajaran</label>
-                                    <div class="form-round">
-                                        @foreach($sd as $d)
-                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
-                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
-                                        @endforeach
-
+                                    <div class="form-group" id="matpelSMP-3" name="matpelSMP-3" required>
+                                        <label for="mata_pelajaran">Mata Pelajaran</label>
+                                        <div class="form-round">
+                                            @foreach($smp as $d)
+                                            <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                                value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="matpelSMP-3" name="matpelSMP-3" required>
-                                    <label for="mata_pelajaran">Mata Pelajaran</label>
-                                    <div class="form-round">
-                                        @foreach($smp as $d)
-                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
-                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
-                                        @endforeach
+                                    <div class="form-group" id="matpelSMA-3" name="matpelSMA-3" required>
+                                        <label for="mata_pelajaran">Mata Pelajaran</label>
+                                        <div class="form-round">
+                                            @foreach($sma as $d)
+                                            <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                                value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group" id="matpelSMA-3" name="matpelSMA-3" required>
-                                    <label for="mata_pelajaran">Mata Pelajaran</label>
-                                    <div class="form-round">
-                                        @foreach($sma as $d)
-                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
-                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
-                                        @endforeach
+                                    <div class="form-group" id="sbm-3" name="sbm-3" required>
+                                        <label for="mata_pelajaran">Jenis Ujian</label>
+                                        <div class="form-round">
+                                            @foreach($sbm as $d)
+                                            <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
+                                                value="{{ $d->id }}" /> {{ $d->mapel }} <br>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group" id="sbm-3" name="sbm-3" required>
-                                    <label for="mata_pelajaran">Jenis Ujian</label>
-                                    <div class="form-round">
-                                        @foreach($sbm as $d)
-                                        <input id="mata_pelajaran" name="mapel_id[]" type="checkbox"
-                                            value="{{ $d->id }}" /> {{ $d->mapel }} <br>
-                                        @endforeach
-                                    </div>
-                                </div>
 
                                 </div>
 
-                               
-                                <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
+
+                                <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
                                     <label for="file">Curriculum Vitae (.pdf / .docx)</label>
                                     <div class="form-title">
                                         <input id="file" accept=".docx, .pdf" type="file" class="form-control"
@@ -424,15 +478,26 @@
                                     </div>
                                 </div>
 
+                                @if ($errors->has('file'))
+                                <span class="help-block" style="color:red">
+                                    {{ $errors->first('file') }}
+                                </span>
+                                @endif
 
                                 <div class="form-group{{ $errors->has('foto') ? ' has-error' : '' }}">
                                     <label for="foto">Foto Diri</label>
                                     <div class="form-title">
-                                        <input id="foto" type="file" class="form-control" name="foto" required>
+                                        <input id="foto" accept=".jpg, .png, .jpeg" type="file" class="form-control"
+                                            name="foto" required>
 
                                     </div>
                                 </div>
 
+                                @if ($errors->has('foto'))
+                                <span class="help-block" style="color:red">
+                                    {{ $errors->first('foto') }}
+                                </span>
+                                @endif
 
                                 <input id="status" type="text" name="status" class="form-control" value="MENUNGGU"
                                     style="display:none" required>
@@ -553,21 +618,33 @@
         $(document).ready(function () {
             $("#jumlah").change(function () {
                 if ($(this).val() == "1") {
-                    $('#jumlah-1').show().find('input, textarea, select').prop('disabled', false);
-                    $('#jumlah-2').hide().find('input, textarea, select').prop('disabled', true);
-                    $('#jumlah-3').hide().find('input, textarea, select').prop('disabled', true);
-                }   else if ($(this).val() == "2"){
-                    $('#jumlah-1').show().find('input, textarea, select').prop('disabled', false);
-                    $('#jumlah-2').show().find('input, textarea, select').prop('disabled', false);
-                    $('#jumlah-3').hide().find('input, textarea, select').prop('disabled', true);
-                }  else if ($(this).val() == "3"){
-                    $('#jumlah-1').show().find('input, textarea, select').prop('disabled', false);
-                    $('#jumlah-2').show().find('input, textarea, select').prop('disabled', false);
-                    $('#jumlah-3').show().find('input, textarea, select').prop('disabled', false);
+                    $('#jumlah-1').show().find('input, textarea, select').prop('disabled',
+                        false);
+                    $('#jumlah-2').hide().find('input, textarea, select').prop('disabled',
+                    true);
+                    $('#jumlah-3').hide().find('input, textarea, select').prop('disabled',
+                    true);
+                } else if ($(this).val() == "2") {
+                    $('#jumlah-1').show().find('input, textarea, select').prop('disabled',
+                        false);
+                    $('#jumlah-2').show().find('input, textarea, select').prop('disabled',
+                        false);
+                    $('#jumlah-3').hide().find('input, textarea, select').prop('disabled',
+                    true);
+                } else if ($(this).val() == "3") {
+                    $('#jumlah-1').show().find('input, textarea, select').prop('disabled',
+                        false);
+                    $('#jumlah-2').show().find('input, textarea, select').prop('disabled',
+                        false);
+                    $('#jumlah-3').show().find('input, textarea, select').prop('disabled',
+                        false);
                 } else {
-                    $('#jumlah-1').hide().find('input, textarea, select').prop('disabled', true);
-                    $('#jumlah-2').hide().find('input, textarea, select').prop('disabled', true);
-                    $('#jumlah-3').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#jumlah-1').hide().find('input, textarea, select').prop('disabled',
+                    true);
+                    $('#jumlah-2').hide().find('input, textarea, select').prop('disabled',
+                    true);
+                    $('#jumlah-3').hide().find('input, textarea, select').prop('disabled',
+                    true);
                 }
             });
 

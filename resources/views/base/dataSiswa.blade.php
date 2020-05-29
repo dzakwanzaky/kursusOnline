@@ -3,38 +3,42 @@
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
- <style type="text/css">
- 
+<style type="text/css">
     .form {
-         margin-left: 3em;
+        margin-left: 3em;
     }
 
     .help-block {
-    color: red;
-}
-.has-error {
-     color: red;
-}
-#custom-button {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    color: white;
-    background-color: #2b91ff;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    cursor:pointer;
-}
-#custom-button:hover {
-    opacity: 80%;
-}
-#custom-text {
-    margin-left: 10px;
-    font-family: sans-serif;
-    color: #aaa;
-}
+        color: red;
+    }
+
+    .has-error {
+        color: red;
+    }
+
+    #custom-button {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        color: white;
+        background-color: #2b91ff;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #custom-button:hover {
+        opacity: 80%;
+    }
+
+    #custom-text {
+        margin-left: 10px;
+        font-family: sans-serif;
+        color: #aaa;
+    }
 </style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,7 +52,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="set('/ya')}}/assets/css/style.css">
 
-  
+
 </head>
 
 <div class="main">
@@ -77,85 +81,89 @@
 
                                         <select id="jenis_kelamin" name="jenis_kelamin" class="form-control">
                                             <option value="0" disabled="true" selected="true">Jenis Kelamin</option>
-                                            <option value="Laki-Laki"{{(old('jenis_kelamin') == 'Laki-Laki ') ? ' selected' : ''}}>Laki-Laki</option>
-                                             <option value="Perempuan"{{(old('jenis_kelamin') == 'Perempuan') ? ' selected' : ''}}>Perempuan</option>
+                                            <option value="Laki-Laki"
+                                                {{(old('jenis_kelamin') == 'Laki-Laki ') ? ' selected' : ''}}>Laki-Laki
+                                            </option>
+                                            <option value="Perempuan"
+                                                {{(old('jenis_kelamin') == 'Perempuan') ? ' selected' : ''}}>Perempuan
+                                            </option>
                                         </select>
 
                                     </div>
                                     @if ($errors->has('jenis_kelamin'))
-                                <span class="help-block">
-                               {{ $errors->first('jenis_kelamin') }}
-                                </span>
-                            @endif
+                                    <span class="help-block">
+                                        {{ $errors->first('jenis_kelamin') }}
+                                    </span>
+                                    @endif
                                 </div>
 
-                                
-                                    <label for="tanggal_lahir">Tanggal Lahir</label>
+
+                                <label for="tanggal_lahir">Tanggal Lahir</label>
                                 <div class="form-group{{ $errors->has('tanggal_lahir') ? ' has-error' : '' }}">
                                     <div class="form-title">
                                         <input class="form-control" id="tanggal" name="tanggal_lahir"
                                             placeholder="Tanggal lahir" type="text" value="{{old('tanggal_lahir')}}">
 
                                     </div>
-                                        @if ($errors->has('tanggal_lahir'))
-                                <span class="help-block">
-                               {{ $errors->first('tanggal_lahir') }}
-                                </span>
-                            @endif
+                                    @if ($errors->has('tanggal_lahir'))
+                                    <span class="help-block">
+                                        {{ $errors->first('tanggal_lahir') }}
+                                    </span>
+                                    @endif
                                 </div>
 
 
-                                    <label id="prov" for="prov">Provinsi</label>
-                                    <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
+                                <label id="prov" for="prov">Provinsi</label>
+                                <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
 
-                                    <select class="form-control" id="provinsi-select" name="provinsi-select" required >
+                                    <select class="form-control" id="provinsi-select" name="provinsi-select" required>
                                         <option value="">Provinsi</option>
                                         @foreach($provinsi as $key => $value)
                                         <option value="{{ $key }}">{{ $value }}</option>
                                         @endforeach
                                     </select>
-                                           @if ($errors->has('provinsi'))
-                                <span class="help-block">
-                               {{ $errors->first('provinsi') }}
-                                </span>
-                            @endif
+                                    @if ($errors->has('provinsi'))
+                                    <span class="help-block">
+                                        {{ $errors->first('provinsi') }}
+                                    </span>
+                                    @endif
 
                                 </div>
-                         
+
                                 <div name="provinsi" id="provinsi"></div>
 
 
-                                
-                                    <div class="input-group-prepend">
-                                        <label for="kabkot">Kota/Kabupaten</label>
-                                    </div>
-                                    <div class="form-group{{ $errors->has('kabupaten') ? ' has-error' : '' }}">
-                                <select class="form-control" id="kabupaten-select" name="kabupaten-select" required >
+
+                                <div class="input-group-prepend">
+                                    <label for="kabkot">Kota/Kabupaten</label>
+                                </div>
+                                <div class="form-group{{ $errors->has('kabupaten') ? ' has-error' : '' }}">
+                                    <select class="form-control" id="kabupaten-select" name="kabupaten-select" required>
                                         <option>Kota/Kabupaten</option>
                                     </select>
                                     @if ($errors->has('kabupaten'))
-                                <span class="help-block">
-                               {{ $errors->first('kabupaten') }}
-                                </span>
-                            @endif
+                                    <span class="help-block">
+                                        {{ $errors->first('kabupaten') }}
+                                    </span>
+                                    @endif
                                 </div>
 
                                 <div name="kabupaten" id="kabupaten"></div>
 
 
-                                
-                                    <div class="input-group-prepend">
-                                        <label>Kecamatan</label>
-                                    </div>
-                                    <div class="form-group{{ $errors->has('kecamatan') ? ' has-error' : '' }}">
-                                <select class="form-control" id="kecamatan-select" name="kecamatan-select" required >
+
+                                <div class="input-group-prepend">
+                                    <label>Kecamatan</label>
+                                </div>
+                                <div class="form-group{{ $errors->has('kecamatan') ? ' has-error' : '' }}">
+                                    <select class="form-control" id="kecamatan-select" name="kecamatan-select" required>
                                         <option>Kecamatan</option>
                                     </select>
                                     @if ($errors->has('kecamatan'))
-                                <span class="help-block">
-                               {{ $errors->first('kecamatan') }}
-                                </span>
-                            @endif
+                                    <span class="help-block">
+                                        {{ $errors->first('kecamatan') }}
+                                    </span>
+                                    @endif
                                 </div>
 
                                 <div name="kecamatan" id="kecamatan"></div>
@@ -164,44 +172,45 @@
                                 <div class="form-group">
                                     <label for="alamat_detail">Alamat Detail</label>
                                     <div class="form-group{{ $errors->has('alamat_detail') ? ' has-error' : '' }}">
-                                    <div class="form-title">
-                                        <textarea id="alamat_detail" type="text" class="form-control"
-                                            name="alamat_detail" rows="3"
-                                            placeholder="Petunjuk arah atau alamat detail untuk menuju alamat rumah">{{old('alamat_detail')}}</textarea>
-                                    </div>
-                                    @if ($errors->has('alamat_detail'))
-                                <span class="help-block">
-                               {{ $errors->first('alamat_detail') }}
-                                </span>
-                            @endif
-                                </div>
-
-
-                                <br>
-                                <div class="panel-body">
-                                    <div class="alert alert-danger">
-                                        <strong>Info!</strong> Ukuran foto maksimal : 2MB
-                                    </div>
-                                    Foto Diri
-                                    <div class="form-group">
-                                        
-
-                                        <input type="file" id="real-file" hidden="hidden" name="file" accept="image/*" required/>
-                                        <button type="button" id="custom-button">&nbsp;Foto&nbsp;Anda</button>
-                                        <span id="custom-text">Tidak ada foto yang dipilih</span>
-
-        
+                                        <div class="form-title">
+                                            <textarea id="alamat_detail" type="text" class="form-control"
+                                                name="alamat_detail" rows="3"
+                                                placeholder="Petunjuk arah atau alamat detail untuk menuju alamat rumah">{{old('alamat_detail')}}</textarea>
+                                        </div>
+                                        @if ($errors->has('alamat_detail'))
+                                        <span class="help-block">
+                                            {{ $errors->first('alamat_detail') }}
+                                        </span>
+                                        @endif
                                     </div>
 
-                                    <input id="status" type="text" name="status" class="form-control"
-                                        value="BELUM AKTIF" style="display:none" required>
+
                                     <br>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary d-block"
-                                            style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">
-                                            Simpan
-                                        </button>
-                                    </div>
+                                    <div class="panel-body">
+                                        <div class="alert alert-danger">
+                                            <strong>Info!</strong> Ukuran foto maksimal : 2MB
+                                        </div>
+                                        Foto Diri
+                                        <div class="form-group">
+
+
+                                            <input type="file" id="real-file" hidden="hidden" name="file"
+                                                accept="image/*" required />
+                                            <button type="button" id="custom-button">&nbsp;Foto&nbsp;Anda</button>
+                                            <span id="custom-text">Tidak ada foto yang dipilih</span>
+
+
+                                        </div>
+
+                                        <input id="status" type="text" name="status" class="form-control"
+                                            value="BELUM AKTIF" style="display:none" required>
+                                        <br>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary d-block"
+                                                style="width: 180px; border-radius:50px; margin-left:auto; margin-right:auto;">
+                                                Simpan
+                                            </button>
+                                        </div>
                             </form>
 
                         </div>
@@ -306,22 +315,22 @@
 </script>
 <script>
     const realFileBtn = document.getElementById("real-file");
-const customBtn = document.getElementById("custom-button");
-const customTxt = document.getElementById("custom-text");
+    const customBtn = document.getElementById("custom-button");
+    const customTxt = document.getElementById("custom-text");
 
-customBtn.addEventListener("click", function() {
-  realFileBtn.click();
-});
+    customBtn.addEventListener("click", function () {
+        realFileBtn.click();
+    });
 
-realFileBtn.addEventListener("change", function() {
-  if (realFileBtn.value) {
-    customTxt.innerHTML = realFileBtn.value.match(
-      /[\/\\]([\w\d\s\.\-\(\)]+)$/
-    )[1];
-  } else {
-    customTxt.innerHTML = "Tidak ada foto yang dipilih";
-  }
-});
+    realFileBtn.addEventListener("change", function () {
+        if (realFileBtn.value) {
+            customTxt.innerHTML = realFileBtn.value.match(
+                /[\/\\]([\w\d\s\.\-\(\)]+)$/
+            )[1];
+        } else {
+            customTxt.innerHTML = "Tidak ada foto yang dipilih";
+        }
+    });
 </script>
 
 @endsection
