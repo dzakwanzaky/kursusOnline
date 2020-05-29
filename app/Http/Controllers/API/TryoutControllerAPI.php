@@ -46,5 +46,13 @@ class TryoutControllerAPI extends Controller
         )); 
     }
 
+    public function jawaban($id){
+        $data = ModelSoal::where('id', $id)->pluck("jawaban");
+        return response()->json(array(
+            'status'    => 'sukses',
+            'result'    => $data
+        )); 
+    }
+
 
 }

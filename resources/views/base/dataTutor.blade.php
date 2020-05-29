@@ -553,21 +553,21 @@
         $(document).ready(function () {
             $("#jumlah").change(function () {
                 if ($(this).val() == "1") {
-                    $('#jumlah-1').show();
-                    $('#jumlah-2').hide();
-                    $('#jumlah-3').hide();
+                    $('#jumlah-1').show().find('input, textarea, select').prop('disabled', false);
+                    $('#jumlah-2').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#jumlah-3').hide().find('input, textarea, select').prop('disabled', true);
                 }   else if ($(this).val() == "2"){
-                    $('#jumlah-1').show();
-                    $('#jumlah-2').show();
-                    $('#jumlah-3').hide();
+                    $('#jumlah-1').show().find('input, textarea, select').prop('disabled', false);
+                    $('#jumlah-2').show().find('input, textarea, select').prop('disabled', false);
+                    $('#jumlah-3').hide().find('input, textarea, select').prop('disabled', true);
                 }  else if ($(this).val() == "3"){
-                    $('#jumlah-1').show();
-                    $('#jumlah-2').show();
-                    $('#jumlah-3').show();
+                    $('#jumlah-1').show().find('input, textarea, select').prop('disabled', false);
+                    $('#jumlah-2').show().find('input, textarea, select').prop('disabled', false);
+                    $('#jumlah-3').show().find('input, textarea, select').prop('disabled', false);
                 } else {
-                    $('#jumlah-1').hide();
-                    $('#jumlah-2').hide();
-                    $('#jumlah-3').hide();
+                    $('#jumlah-1').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#jumlah-2').hide().find('input, textarea, select').prop('disabled', true);
+                    $('#jumlah-3').hide().find('input, textarea, select').prop('disabled', true);
                 }
             });
 

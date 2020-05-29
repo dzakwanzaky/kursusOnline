@@ -26,6 +26,8 @@ Route::post('login','API\AuthControllerAPI@login');
 //TryoutController
 Route::get('tryout/{id_program}/{id}','API\TryoutControllerAPI@tryout');
 Route::get('soal/{id}','API\TryoutControllerAPI@soal');
+Route::get('jawaban/{id}','API\TryoutControllerAPI@jawaban');
+
 
 //MapelController
 Route::get('mapel','API\MapelControllerAPI@index');
