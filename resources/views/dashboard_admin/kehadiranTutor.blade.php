@@ -29,6 +29,8 @@
                                     <tr>
                                         <th>Pertemuan Ke</th>
                                         <th>Tanggal</th>
+                                        <th>Waktu Mulai</th>
+                                        <th>Waktu Selesai</th>
                                         <th>Kehadiran</th>
                                         <th>Materi</th>
                                         <th>Report</th>
@@ -41,6 +43,8 @@
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $d->tanggal }}</td>
+                                        <td>{{ $d->waktu_mulai }}</td>
+                                        <td>{{ $d->waktu_selesai }}</td>
                                         <td>{{ $d->kehadiran }} </td>
                                         <td>{{ $d->materi }} </td>
                                         <td>{{ $d->report }}</td>

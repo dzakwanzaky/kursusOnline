@@ -40,11 +40,11 @@ class VerificationController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
-        // $user=User::where('code',$request->code)->first()
-        // Auth::login($user, true);
-        // $this->middleware('auth');
+        $user=User::where('email_verified_at', $request->email_verified_at)->latest()->first();
+        Auth::login($user, true);
+        $this->middleware('auth');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
     }

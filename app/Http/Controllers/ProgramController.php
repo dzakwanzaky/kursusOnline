@@ -35,10 +35,8 @@ class ProgramController extends Controller
     //untuk invoice
     public function data()
     {
-        $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->first();
-        $alamat = ModelSiswa::where('id', '=', Auth::user()->id)->get();
-        $invoice = ModelInvoice::where('id_murid', '=', Auth::user()->id)->get();
-        return view('murid/invoice', compact('data', 'alamat', 'invoice'));
+        $data = ModelInvoice::with('siswa')->get();
+        return view('murid/invoice', compact('data'));
     }
 
     //untuk invoice
