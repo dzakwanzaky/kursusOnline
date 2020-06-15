@@ -69,10 +69,14 @@
                                         <td>{{ $d->nomor_soal }}</td>
                                         <td>{!! $d->soal !!}</td>
                                         <td>
+                                        @if($d->file==NULL)
+                                       
+                                        @else
                                             <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
                                                 <img width="50px" src="{{ url('/data_file/'.$d->file) }}">
                                             </a>
                                         </td>
+                                        @endif
                                         <td>{{ $d->option_a }}</td>
                                         <td>{{ $d->option_b }}</td>
                                         <td>{{ $d->option_c }}</td>

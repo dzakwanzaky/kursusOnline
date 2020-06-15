@@ -18,12 +18,12 @@ class SoalController extends Controller
 
     public function store(Request $request)
     {
-   
+
         foreach ($request->nomor_soal as $key => $value){
             $data = new ModelSoal();
             $data->id_to = $request->id_to;
             $data->nomor_soal = $value;
-            if($request->file[$key]){
+            if(isset($request->file[$key])){
                 $file = $request->file('file');
                 $nama_file = time()."_".$file[$key]->getClientOriginalName();  
                 $tujuan_upload = 'data_file';
