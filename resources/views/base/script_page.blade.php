@@ -20,7 +20,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/tema/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="/tema/style.css">    
+    <link rel="stylesheet" href="/tema/style.css">  
+    <link rel="stylesheet" href="/tema/styleu.css">    
     <!-- ALL VERSION CSS -->
     <link rel="stylesheet" href="/tema/css/versions.css">
     <!-- Responsive CSS -->
@@ -40,9 +41,9 @@
  <!-- ALL JS FILES -->
  <body class="app_version" data-spy="scroll" data-target="#navbarApp" data-offset="98">
 
-    <div id="preloader">
+   <!--  <div id="preloader">
         <img class="preloader" src="tema/images/ajax-loader.gif" alt="">
-    </div>
+    </div> -->
     
     @yield('content')    
     <script src="/tema/js/all.js"></script>

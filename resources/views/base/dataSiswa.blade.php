@@ -5,9 +5,65 @@
 <html lang="en">
 <style type="text/css">
     .form {
-        margin-left: 3em;
+        margin-left: 4.5em;
+    
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 20px;
+
+    }
+    .help-block3 {
+        color: red;
+        font-size: 14px;
+        margin-left: 3px;
+     
+    }
+    label {
+        font-size: 17px;
     }
 
+        @media screen and (width: 375px) {
+        .form {
+        margin-left: 0em;
+        width: 13em;
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 20px;
+    }
+    }
+    @media screen and (width: 414px) {
+        .form {
+        margin-left: 0.5em;
+        width: 13em;
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 20px;
+    }
+    }
+    @media screen and (width: 411px) {
+        .form {
+        margin-left: 0.5em;
+        width: 12em;
+        font-size: 22px;
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 20px;
+    }
+    }
+    @media screen and (width: 320px) {
+        .form {
+        margin-left: -0.7em;
+        width: 12em;
+      
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 17px;
+    }
+    }
+ @media screen and (width: 360px) {
+        .form {
+        margin-left: -0.4em;
+        width: 12em;
+   
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 20px;
+    }
+    }
     .help-block {
         color: red;
     }
@@ -26,6 +82,11 @@
         border: 1px solid #fff;
         border-radius: 5px;
         cursor: pointer;
+    }
+     #custom-button:focus {
+ color: #ffffff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
+}
     }
 
     #custom-button:hover {
@@ -116,7 +177,7 @@
                                 <label id="prov" for="prov">Provinsi</label>
                                 <div class="form-group{{ $errors->has('provinsi') ? ' has-error' : '' }}">
 
-                                    <select class="form-control" id="provinsi-select" name="provinsi-select" required>
+                                    <select class="form-control" id="provinsi-select" name="provinsi-select">
                                         <option value="">Provinsi</option>
                                         @foreach($provinsi as $key => $value)
                                         <option value="{{ $key }}">{{ $value }}</option>
@@ -138,7 +199,7 @@
                                     <label for="kabkot">Kota/Kabupaten</label>
                                 </div>
                                 <div class="form-group{{ $errors->has('kabupaten') ? ' has-error' : '' }}">
-                                    <select class="form-control" id="kabupaten-select" name="kabupaten-select" required>
+                                    <select class="form-control" id="kabupaten-select" name="kabupaten-select" >
                                         <option>Kota/Kabupaten</option>
                                     </select>
                                     @if ($errors->has('kabupaten'))
@@ -156,7 +217,7 @@
                                     <label>Kecamatan</label>
                                 </div>
                                 <div class="form-group{{ $errors->has('kecamatan') ? ' has-error' : '' }}">
-                                    <select class="form-control" id="kecamatan-select" name="kecamatan-select" required>
+                                    <select class="form-control" id="kecamatan-select" name="kecamatan-select" >
                                         <option>Kecamatan</option>
                                     </select>
                                     @if ($errors->has('kecamatan'))
@@ -194,11 +255,13 @@
                                         <div class="form-group">
 
 
-                                            <input type="file" id="real-file" hidden="hidden" name="file"
-                                                accept="image/*" required />
+                                            <input type="file" id="real-file" hidden="hidden" name="file">
                                             <button type="button" id="custom-button">&nbsp;Foto&nbsp;Anda</button>
                                             <span id="custom-text">Tidak ada foto yang dipilih</span>
-
+                                            <br>
+                                            @if($errors->has('file'))
+                                            <span class="help-block3">{{$errors->first('file')}}</span>
+                                        @endif
 
                                         </div>
 

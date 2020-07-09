@@ -1,5 +1,6 @@
 @extends('murid/base')
 @section('content')
+   <link rel="stylesheet" href="{{asset('/assets/css/toastr.min.css')}}">
 <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -23,8 +24,9 @@
             <div class="card">
               <div class="card-body">
               <table class="table table-responsive-lg table-bordered small" id="jadwal">
-              @php $no = 1; @endphp
+              
                 @foreach($jadwal as $d)
+                @php $no = 1; @endphp
                 <form action="{{ route('absen.store') }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
               <button class="btn btn-sm btn-success" style="color:white;float:right" href="{{url('presensi')}}">+ Presensi</button>
@@ -37,7 +39,7 @@
                     <tr>
                         <th>Pertemuan Ke</th>
                         <th>Tanggal</th>
-                        <th>Report</th> 
+                        <th>Materi</th> 
                         <th>Kehadiran</th>  
                     </tr>
                 </thead>
@@ -47,7 +49,7 @@
                         <tr>
                            <td>{{ $no++ }}</td>
                            <td>{{ $d->tanggal }}</td>
-                           <td>{{ $d->report }}</td>
+                           <td>{{ $d->materi }}</td>
                           <td>{{ $d->kehadiran }} </td>       
                         </tr>  
                         @endforeach
@@ -70,4 +72,11 @@
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"></script>
+<script src="{{asset('/assets/js/toastr.min.js')}}"></script>
+<script>
+    @if(Session::has('success'))
+    toastr.success("{{ Session::get('success') }}")
+    @endif
+</script>
   @endsection
+  

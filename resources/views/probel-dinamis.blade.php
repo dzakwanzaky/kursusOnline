@@ -22,6 +22,39 @@
       font-weight: normal;
     
     }
+    @media screen and (width: 768px) {
+    p2 {
+
+      line-height: 1.3em;
+      font-size: 12px;
+      font-family: sans-serif;
+      color: #787878;
+      font-weight: normal;
+    
+    }
+    }
+    @media screen and (width: 812px) {
+    p2 {
+
+      line-height: 1.3em;
+      font-size: 14px;
+      font-family: sans-serif;
+      color: #787878;
+      font-weight: normal;
+    
+    }
+    }
+     @media screen and (width: 823px) {
+    p2 {
+
+      line-height: 1.3em;
+      font-size: 14px;
+      font-family: sans-serif;
+      color: #787878;
+      font-weight: normal;
+    
+    }
+    }
     .typing h4 {
     	 margin-left: 120px;
     	 margin-right: 20px;
@@ -290,11 +323,11 @@ p2{
 					
 						<div class="typing">
 							<h4>
-								<b><font color="#ffffff">Program<br>
+								<b><font color="#ffffff">Tryout<br>
 								Inofa Bimbel</font></b>
 								<br>
 								<p1>
-								Pilih program sesuai dengan kebutuhan Anda</p1>
+								Pilih program tryout sesuai dengan kebutuhan Anda</p1>
 							</h4>
 
 							

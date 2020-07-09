@@ -26,7 +26,13 @@
         margin-left: 2px;
 
     }
+   .help-block3 {
+        color: red;
+        font-size: 16px;
+        margin-left: 11px;
+    }
 
+ 
     .typing h4 {
         margin-left: 110px;
         font-size: 30px;
@@ -360,7 +366,20 @@
             margin-left: 0px;
         }
     }
-
+ @media screen and (width: 1024px) {
+        .awake {
+            background-color: #fff;
+            height: 90%;
+            margin-left: 0px;
+        }
+    }
+    @media screen and (width: 1366px) {
+        .awake {
+            background-color: #fff;
+            height: 90%;
+            margin-left: 0px;
+        }
+    }
     @media screen and (width: 414px) {
         .awake {
             background-color: #fff;
@@ -413,6 +432,13 @@
         .awake {
             background-color: #fff;
             height: 140%;
+            margin-left: 0px;
+        }
+    }
+     @media screen and (width: 768px) {
+        .awake {
+            background-color: #fff;
+            height: 80%;
             margin-left: 0px;
         }
     }
@@ -1009,7 +1035,7 @@
             font-weight: 400;
 
             font-size: 19px;
-            margin-left: 4em;
+            margin-left: 4.2em;
             line-height: 3em;
         }
      .kolom1 h3i {
@@ -1020,6 +1046,8 @@
             margin-left: 1.4em;
             line-height: 3em;
         }
+
+
     @media screen and (width: 375px) {
         .lebarkolom {
             width: 100%;
@@ -1037,24 +1065,24 @@
         }
 
         .kolom2 {
-            width: 50%;
+            width: 90%;
             float: left;
         }
 
         .kolom2 p3 {
-            margin-left: 6em;
+            margin-left: 6.3em;
             color: #898484;
             font-weight: lighter;
             font-size: 16px;
         }
 
         .kolom2 h3q {
-            margin-top: 20px;
+            margin-top: 35px;
             color: #000;
             font-weight: 400;
 
             font-size: 19px;
-            margin-left: 5.5em;
+            margin-left: 6em;
             line-height: 3em;
         }
     }
@@ -1076,7 +1104,7 @@
         }
 
         .kolom2 {
-            width: 50%;
+            width: 90%;
             float: left;
         }
 
@@ -1115,7 +1143,7 @@
         }
 
         .kolom2 {
-            width: 50%;
+            width: 90%;
             float: left;
         }
 
@@ -1154,7 +1182,7 @@
         }
 
         .kolom2 {
-            width: 50%;
+            width: 90%;
             float: left;
         }
 
@@ -1193,12 +1221,12 @@
         }
 
         .kolom2 {
-            width: 50%;
+            width: 93%;
             float: left;
         }
 
         .kolom2 p3 {
-            margin-left: 11.5em;
+            margin-left: 12em;
             color: #898484;
             font-weight: lighter;
             font-size: 16px;
@@ -1232,12 +1260,12 @@
         }
 
         .kolom2 {
-            width: 50%;
+            width: 92%;
             float: left;
         }
 
         .kolom2 p3 {
-            margin-left: 13em;
+            margin-left: 14em;
             color: #898484;
             font-weight: lighter;
             font-size: 16px;
@@ -1249,7 +1277,7 @@
             font-weight: 400;
 
             font-size: 20px;
-            margin-left: 11em;
+            margin-left: 11.5em;
             line-height: 1.3em;
         }
     }
@@ -1271,12 +1299,12 @@
         }
 
         .kolom2 {
-            width: 50%;
+            width: 93%;
             float: left;
         }
 
         .kolom2 p3 {
-            margin-left: 16em;
+            margin-left: 16.3em;
             color: #898484;
             font-weight: lighter;
             font-size: 16px;
@@ -1288,7 +1316,7 @@
             font-weight: 400;
 
             font-size: 20px;
-            margin-left: 13em;
+            margin-left: 13.3em;
             line-height: 1.3em;
         }
     }
@@ -1310,7 +1338,7 @@
         }
 
         .kolom2 {
-            width: 50%;
+            width: 90%;
             float: left;
         }
 
@@ -1334,7 +1362,7 @@
 
     @media screen and (width: 768px) {
         .kolom2 p3 {
-            margin-left: 3em;
+            margin-left: 2em;
             margin-top: 0px;
             color: #898484;
             font-weight: lighter;
@@ -1347,9 +1375,38 @@
             font-weight: 400;
 
             font-size: 19px;
-            margin-left: 2.5em;
+            margin-left: 1.6em;
             line-height: 3em;
         }
+    }
+
+    @media screen and (width: 736px) {
+        .kolom2 p3 {
+            margin-left: 2em;
+            margin-top: 0px;
+            color: #898484;
+            font-weight: lighter;
+            font-size: 16px;
+        }
+
+        .kolom2 h3q {
+            margin-top: 20px;
+            color: #000;
+            font-weight: 400;
+
+            font-size: 19px;
+            margin-left: 1.6em;
+            line-height: 3em;
+        }
+        p.hiya {
+ 
+        margin-top: 0;
+        font-size: 17px;
+        margin-left: 8px;
+        margin-bottom: 10px;
+
+}
+
     }
 
     @media screen and (width: 812px) {
@@ -1431,12 +1488,125 @@
             line-height: 3em;
         }
     }
-    .hiya{
+    p.hiya{
+        margin-top: 0;
+        font-size: 17px;
+        margin-left: 8px;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (width: 667px) {
+   
+        .kolom2 h3q {
+            margin-top: 20px;
+            color: #000;
+            font-weight: 400;
+
+            font-size: 19px;
+            margin-left: 0em;
+            line-height: 3em;
+        }
+    }
+
+
+
+    @media screen and (width: 1024px) {
+      .section p {
+    margin-top: 0px;
+    margin-left: 0;
+    color: #898484;
+    font-weight: lighter;
+    font-size: 16px;
+
+    }
+}
+@media screen and (width: 768px) {
+      .section p {
+    margin-top: 0px;
+    margin-left: 0;
+    color: #898484;
+    font-weight: lighter;
+    font-size: 16px;
+
+    }
+     
+}
+    @media screen and (width: 1024px) {
+      .sectionn p {
+    margin-top: 0px;
+    margin-left: 5em;
+    color: #898484;
+    font-weight: lighter;
+    font-size: 16px;
+
+    }
+    .section h3 {
+            margin-top: 80px;
+            margin-left: 3.2em;
+            color: #565656;
+            font-weight: 500;
+            font-size: 25px;
+            padding-left: 0px;
+        }
+}
+@media screen and (width: 768px) {
+      .sectionn p {
+    margin-top: 0px;
+    margin-left: 4.1em;
+    color: #898484;
+    font-weight: lighter;
+    font-size: 16px;
+
+    }
+    .section h3 {
+            margin-top: 80px;
+            margin-left: 2.7em;
+            color: #565656;
+            font-weight: 500;
+            font-size: 25px;
+            padding-left: 0px;
+        }
+}
+@media screen and (width: 812px) {
+      .sectionn p {
+    margin-top: 0px;
+    margin-left: 4.5em;
+    color: #898484;
+    font-weight: lighter;
+    font-size: 16px;
+
+    }
+    .section h3 {
+            margin-top: 80px;
+            margin-left: 2.8em;
+            color: #565656;
+            font-weight: 500;
+            font-size: 25px;
+            padding-left: 0px;
+        }
+p.hiya {
+ 
         margin-top: 0;
         font-size: 15px;
         margin-left: 8px;
         margin-bottom: 10px;
-    }
+
+}
+}
+@media screen and (width: 375px) {
+
+p.hiya {
+ 
+        margin-top: 0;
+        font-size: 15px;
+        margin-left: 8px;
+        margin-bottom: 10px;
+
+}
+}
+
+
+
     .supertext {
         color: red;
         font-size: 17px;
@@ -1448,10 +1618,25 @@
 .has-error {
      color: red;
 }
+.gong {
+            padding: 3px;
+            color: #f8f8ff;
+            background-color: #f8f8ff;
+        }
+
+@media screen and (width: 1024px) {
+.nav-item.dropdown p{
+    margin-left: auto;
+}
+}
+                                                
+                                                    
 </style>
 <!-- start banner Area -->
 
-<body>
+<div class="bodyy">
+    <div class="gong">
+</div>
 
     <!-- End banner Area -->
 
@@ -1480,6 +1665,7 @@
         </div>
     </section>
 
+</div>
     <div class="awake">
 
 
@@ -1487,10 +1673,10 @@
         <div class="jq-tab-content active" data-tab="1">
             <div class="section">
                 <h3>Hanya perlu bayar Rp 20.000 </h3>
-
+                <div class="sectionn">
                 <p>Agar bisa akses soal dan pembahasan secara lengkap <br><br>
                 </p>
-
+            </div>
                 <!-- Transfer ke nomor rekening berikut :<br>
                                 Bank BRI dengan nomor rekening 1092738895 a.n Inofa Bimbel<br>
                                 Bank BNI dengan nomor rekening 2234565789 a.n Inofa Bimbel <br>
@@ -1508,7 +1694,7 @@
                                 <div class="col-md-11">
                                     <pi>Nama Lengkap</pi>
                                     <div class="form_login{{$errors->has('nama_lengkap') ? ' has-error' : ''}}">
-                                        <input type="text" name="nama_lengkap" class="form-control" value="{{old('nama_lengkap')}}">
+                                        <input type="text" name="nama_lengkap" class="form-control" value="{{old('nama_lengkap')}}" placeholder="Masukan nama Anda">
                                         @if($errors->has('nama_lengkap'))
                                             <span class="help-block">{{$errors->first('nama_lengkap')}}</span>
                                         @endif
@@ -1517,7 +1703,7 @@
 
                                     <pi>Nomor Telepon</pi>
                                     <div class="form_login{{$errors->has('no_telp') ? ' has-error' : ''}}">
-                                        <input type="text" name="no_telp" class="form-control" value="{{old('no_telp')}}">
+                                        <input type="text" name="no_telp" class="form-control" value="{{old('no_telp')}}" placeholder="Masukan no telp Anda">
                                         @if($errors->has('no_telp'))
                                             <span class="help-block">{{$errors->first('no_telp')}}</span>
                                         @endif
@@ -1525,7 +1711,7 @@
                                     <p class="hiya"><span class="supertext">*</span> Pastikan nomor telp benar dan aktif </p>
                                     <pi>Asal Sekolah</pi>
                                     <div class="form_login{{$errors->has('asal_sekolah') ? ' has-error' : ''}}">
-                                        <input type="text" name="asal_sekolah" class="form-control" value="{{old('asal_sekolah')}}">
+                                        <input type="text" name="asal_sekolah" class="form-control" value="{{old('asal_sekolah')}}" placeholder="Masukan asal sekolah Anda">
                                         @if($errors->has('asal_sekolah'))
                                             <span class="help-block">{{$errors->first('asal_sekolah')}}</span>
                                         @endif
@@ -1535,21 +1721,23 @@
 
                                     <pi>Email</pi>
                                     <div class="form_login{{$errors->has('email') ? ' has-error' : ''}}">
-                                        <input type="text" name="email" class="form-control" value="{{old('email')}}">
+                                        <input type="text" name="email" class="form-control" value="{{old('email')}}" placeholder="Masukan email Anda">
                                         @if($errors->has('email'))
                                             <span class="help-block">{{$errors->first('email')}}</span>
                                         @endif
                                     </div>
                                     <p class="hiya"><span class="supertext">*</span> Pastikan email yang dimasukan benar</p>
 
-                                    <input type="text" name="program_id" class="form-control" value="{{$program_id}}" style="display:none" required>
+                                    <input type="text" name="tryout_id" class="form-control" value="{{$tryout_id}}" style="display:none" required>
 
                                     <pi> Bukti Pembayaran</pi>
                                     <br>
-                                    <input type="file" id="real-file2" name="file" hidden="hidden" accept="image/*">
+                                    <input type="file" id="real-file2" name="file" hidden="hidden">
                                     <button type="button" id="custom-button2" >Pilih foto</button>
                                     <span id="custom-text2" >Tidak ada file yang dipilih</span><br>
-
+                                        @if($errors->has('file'))
+                                            <span class="help-block3">{{$errors->first('file')}}</span>
+                                        @endif
                                     <script type="text/javascript">
                                         const realFileBtn2 = document.getElementById("real-file2");
                                         const customBtn2 = document.getElementById("custom-button2");
@@ -1579,11 +1767,11 @@
                                 </div>
                             </div>
 
-
+</div>
 
                             <div class="kolom2">
                                 <h3q>Cara Pembayaran</h3q><br>
-                                <p3> Panduan pembayaran bayar di Bimbel Inofa</p3>
+                                <p3> Panduan pembayaran les</p3>
                                 <div id="bayar" class="section lb">
                                     <div class="container">
                                         <div class="section-title text-center">
@@ -1769,4 +1957,3 @@
 
 
 
-</body>

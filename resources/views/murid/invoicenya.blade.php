@@ -16,7 +16,7 @@
         }
 
         .container {
-            margin: 0 auto;
+            margin-left: 15em;
             margin-top: 35px;
             padding: 40px;
             width: 750px;
@@ -27,14 +27,14 @@
         caption {
             font-size: 28px;
             margin-bottom: 15px;
-            margin-right: 120px;
+            margin-right: 40px;
         }
 
         table {
             border: 1px solid #333;
             border-collapse: collapse;
             margin: 0 auto;
-            margin-left: 20px;
+            margin-left: 100px;
             width: 600px;
         }
 
@@ -61,7 +61,7 @@
     <div class="containerr">
         <table>
         <caption>
-                Inofa Course
+                Rincian Tagihan Les
             </caption>
 
             <thead>

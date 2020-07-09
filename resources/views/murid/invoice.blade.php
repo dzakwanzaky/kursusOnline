@@ -9,13 +9,19 @@
     min-height: 170px;
     border: 2px dashed #afeeee;
     margin-top: 15px;
-    margin-left: 6.5em;
+    margin-left: 8em;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     color: #cccccc;
 }
+ .help-block3 {
+        color: red;
+        font-size: 14px;
+        margin-left: 7em;
+
+    }
 .image-preview__image{
     display: none;
     width: 100%;
@@ -48,11 +54,367 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 1em;
 }
 label:hover {
     opacity: 80%;
 }
+.modall-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    margin-left: 5.2em;
+}
+@media screen and (width: 375px) {
+.image-preview {
+    width: 250px;
+    min-height: 170px;
+    border: 2px dashed #afeeee;
+    margin-top: 15px;
+    margin-left: 3.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #cccccc;
+}
+ .help-block3 {
+        color: red;
+        font-size: 14px;
+        margin-left: 3em;
 
+    }
+.image-preview__image{
+    display: none;
+    width: 100%;
+}
+.image-preview__default-text {
+    color:#87ceeb;
+
+}
+#inpFile {
+    margin-left: 10em;
+
+}
+
+input[type="file"]{
+    display: none;
+}
+label {
+    color: white;
+    height: 35px;
+    width: 105px;
+    background-color: #03a9f4;
+    position: absolute;
+    margin-left: 4em;
+    padding: 10px;
+    border-radius: 10px;
+    padding-top: 8px;
+    padding-left: 20px;
+    font-weight: lighter;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label:hover {
+    opacity: 80%;
+}
+}
+@media screen and (width: 360px) {
+.image-preview {
+    width: 250px;
+    min-height: 170px;
+    border: 2px dashed #afeeee;
+    margin-top: 15px;
+    margin-left: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #cccccc;
+}
+ .help-block3 {
+        color: red;
+        font-size: 14px;
+        margin-left: 2em;
+
+    }
+.image-preview__image{
+    display: none;
+    width: 100%;
+}
+.image-preview__default-text {
+    color:#87ceeb;
+
+}
+#inpFile {
+    margin-left: 10em;
+
+}
+
+input[type="file"]{
+    display: none;
+}
+label {
+    color: white;
+    height: 35px;
+    width: 105px;
+    background-color: #03a9f4;
+    position: absolute;
+    margin-left: 2.6em;
+    padding: 10px;
+    border-radius: 10px;
+    padding-top: 8px;
+    padding-left: 20px;
+    font-weight: lighter;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label:hover {
+    opacity: 80%;
+}
+.modall-title {
+  margin-left: 1.7em;
+}
+}
+@media screen and (width: 414px) {
+.image-preview {
+    width: 250px;
+    min-height: 170px;
+    border: 2px dashed #afeeee;
+    margin-top: 15px;
+    margin-left: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #cccccc;
+}
+ .help-block3 {
+        color: red;
+        font-size: 14px;
+        margin-left: 3.5em;
+
+    }
+.image-preview__image{
+    display: none;
+    width: 100%;
+}
+.image-preview__default-text {
+    color:#87ceeb;
+
+}
+#inpFile {
+    margin-left: 10em;
+
+}
+
+input[type="file"]{
+    display: none;
+}
+label {
+    color: white;
+    height: 35px;
+    width: 105px;
+    background-color: #03a9f4;
+    position: absolute;
+    margin-left: 4em;
+    padding: 10px;
+    border-radius: 10px;
+    padding-top: 8px;
+    padding-left: 20px;
+    font-weight: lighter;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label:hover {
+    opacity: 80%;
+}
+.modall-title {
+  margin-left: 3em;
+}
+}
+@media screen and (width: 411px) {
+.image-preview {
+    width: 250px;
+    min-height: 170px;
+    border: 2px dashed #afeeee;
+    margin-top: 15px;
+    margin-left: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #cccccc;
+}
+ .help-block3 {
+        color: red;
+        font-size: 14px;
+        margin-left: 3.3em;
+
+    }
+.image-preview__image{
+    display: none;
+    width: 100%;
+}
+.image-preview__default-text {
+    color:#87ceeb;
+
+}
+#inpFile {
+    margin-left: 10em;
+
+}
+
+input[type="file"]{
+    display: none;
+}
+label {
+    color: white;
+    height: 35px;
+    width: 105px;
+    background-color: #03a9f4;
+    position: absolute;
+    margin-left: 4em;
+    padding: 10px;
+    border-radius: 10px;
+    padding-top: 8px;
+    padding-left: 20px;
+    font-weight: lighter;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label:hover {
+    opacity: 80%;
+}
+.modall-title {
+  margin-left: 3em;
+}
+}
+@media screen and (width: 320px) {
+.image-preview {
+    width: 250px;
+    min-height: 170px;
+    border: 2px dashed #afeeee;
+    margin-top: 15px;
+    margin-left: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #cccccc;
+}
+ .help-block3 {
+        color: red;
+        font-size: 13px;
+        margin-left: 1.2em;
+
+    }
+.image-preview__image{
+    display: none;
+    width: 100%;
+}
+.image-preview__default-text {
+    color:#87ceeb;
+
+}
+#inpFile {
+    margin-left: 10em;
+
+}
+
+input[type="file"]{
+    display: none;
+}
+label {
+    color: white;
+    height: 35px;
+    width: 105px;
+    background-color: #03a9f4;
+    position: absolute;
+    margin-left: 1em;
+    padding: 10px;
+    border-radius: 10px;
+    padding-top: 8px;
+    padding-left: 20px;
+    font-weight: lighter;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label:hover {
+    opacity: 80%;
+}
+.modall-title {
+  margin-left: 3em;
+}
+}
+@media screen and (width: 568px) {
+.image-preview {
+    width: 250px;
+    min-height: 170px;
+    border: 2px dashed #afeeee;
+    margin-top: 15px;
+    margin-left: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #cccccc;
+}
+ .help-block3 {
+        color: red;
+        font-size: 14px;
+        margin-left: 9em;
+
+    }
+.image-preview__image{
+    display: none;
+    width: 100%;
+}
+.image-preview__default-text {
+    color:#87ceeb;
+
+}
+#inpFile {
+    margin-left: 10em;
+
+}
+
+input[type="file"]{
+    display: none;
+}
+label {
+    color: white;
+    height: 35px;
+    width: 105px;
+    background-color: #03a9f4;
+    position: absolute;
+    margin-left: 11em;
+    padding: 10px;
+    border-radius: 10px;
+    padding-top: 8px;
+    padding-left: 20px;
+    font-weight: lighter;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label:hover {
+    opacity: 80%;
+}
+.modall-title {
+  margin-left: 6em;
+}
+}
 </style>
 <link rel="stylesheet" href="{{asset('/card')}}/bootstrap/css/bootstrap.min.css">
 <!-- Content Wrapper. Contains page content -->
@@ -61,7 +423,7 @@ label:hover {
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Invoice</h1>
+            <h1 class="m-0 text-dark">Pembelian</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             
@@ -82,58 +444,51 @@ label:hover {
                 <thead class="thead-dark">
                     <tr>
                         <th>No.</th>
-                        <th>No. Invoice</th>
+                        <th>No. Pembelian</th>
                         <th>Nama</th>
                         <th>Kelas</th>
-                        <th>Program</th>
+                        <th>Paket</th>
                         <th>Lokasi</th>
                         <th>Status</th>
                         <th>Bukti Pembayaran</th>
                         <th>Tagihan</th>
                     </tr>
                 </thead>
+                @php $no = 1; @endphp
+                @foreach($data as $d)
+
                 <tbody>
                     <tr>
-                    @php $no = 1; @endphp
+                    
+
                         <td>{{ $no++ }}. </td>
                         <td># 
-                        @foreach($invoice as $i)
-                        {{ $i->invoice }}
+                        {{ $d->invoice }}
                   
                         </td>
-                        <td>{{ Auth::user()->name }}</td>
-                        <td>{{ $i->kelas->kelas }} {{ $i->program->program }} </td>
-                        <td>{{ $i->program->program }}</td>
+                        <td>{{ $d->user->name }}</td>
+                        <td>{{ $d->kelas->kelas }} {{ $d->program->program }} </td>
+                        <td>{{ $d->paket->nama_paket }}</td>
                         <td>
-                        @endforeach
-                        @foreach($alamat as $a)
-                        {{ $a->kecamatan }}, {{ $a->kabupaten }}, {{ $a->provinsi }}
-                        @endforeach
+                  
+                        {{ $d->siswa->kecamatan }}, {{ $d->siswa->kabupaten }}, {{ $d->siswa->provinsi }}
                         </td>
                         <td>
-                        @foreach($alamat as $a)
                           <a class=" btn btn-sm btn-danger" style="color:white;">
-                            <span> {{ $a->status }}</span>
+                            <span> {{ $d->status }}</span>
                           </a>
-                        @endforeach
                         </td>
                         <td>
-                      @foreach($invoice as $i)
-                      @if($i->file==null)
+                      @if($d->file==null)
                         <a class="btn btn-sm btn-success" style="color:white;" target="_blank" data-toggle="modal" data-target="#importExcel">
                         <span class="fa fa-upload"></span>
                     </a>
-                      @else
-                      <p>Berhasil mengunggah foto</p>
-                      @endif
-                 
-                        </td>
-                        <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                     <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
-                        <form method="post" action="/unggah" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('unggah', $d->id) }}" enctype="multipart/form-data">
                           <div class="modal-content2">
                             <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Unggah Bukti Pembayaran</h5>
+                              <h5 class="modall-title" id="exampleModalLabel">Unggah Bukti Pembayaran</h5>
                             </div>
                             <div class="modal-body">
                         
@@ -146,14 +501,17 @@ label:hover {
         <span class="image-preview__default-text">
         +</span>
     </div>
-    <br>
 
-    <input type="file" name="file" id="inpFile" accept="image/*" required>
+    @if($errors->has('file'))
+     <span class="help-block3">{{$errors->first('file')}}</span>
+     @endif
+     <br>
+    <input type="file" name="file" id="inpFile">
     <label for="inpFile"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp;
         Pilih foto
     </label>
  
-
+<br>
 <script>
     const inpFile = document.getElementById("inpFile");
     const previewContainer = document.getElementById("imagePreview");
@@ -195,9 +553,16 @@ label:hover {
                       </div>
                     </div>
 
+                      @else
+                      <p>Berhasil unggah bukti</p>
+                      @endif
+                 
+                        </td>
+                       
+
 
                         <td>
-                          <a  href="{{route('invoicePDF', $i->id_murid)}}" target="_blank" class=" btn btn-sm btn-success" style="color:white;">
+                          <a  href="{{route('invoicePDF', $d->id)}}" target="_blank" class=" btn btn-sm btn-success" style="color:white;">
                             <span class="fa fa-download"></span>
                           </a>
                         </td>

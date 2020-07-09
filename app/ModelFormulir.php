@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModelFormulir extends Model
 {
-    public function program(){
-        return $this->belongsTo('App\ModelProgram', 'program_id');
+    public function tryout(){
+        return $this->belongsTo('App\ModelTryout', 'tryout_id');
     }
 }

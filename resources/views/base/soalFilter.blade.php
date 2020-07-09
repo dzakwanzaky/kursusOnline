@@ -3,10 +3,9 @@
     @extends('base/script_yes')
     @include('base/script4')
     <link rel="stylesheet" type="text/css" href="{{asset('/strap')}}/css/bootstrap.css">
-
-    <style type="text/css">
+<style type="text/css">
         .awake {
-            background-color: #f4f6f9;
+            background-color: #f8f8ff;
             height: 140%;
 
 
@@ -15,55 +14,55 @@
 
         @media screen and (width:640px) {
             .awake {
-                background-color: #fafafa;
-                height: 180%;
+                background-color: #f8f8ff;
+                height: 230%;
 
             }
         }
 
         @media screen and (width:731px) {
             .awake {
-                background-color: #fafafa;
-                height: 130%;
+                background-color: #f8f8ff;
+                height: 190%;
 
             }
         }
 
         @media screen and (width:568px) {
             .awake {
-                background-color: #fafafa;
-                height: 180%;
+                background-color: #f8f8ff;
+                height: 230%;
 
             }
         }
 
         @media screen and (width:667px) {
             .awake {
-                background-color: #fafafa;
-                height: 160%;
+                background-color: #f8f8ff;
+                height: 200%;
 
             }
         }
 
         @media screen and (width:812px) {
             .awake {
-                background-color: #fafafa;
-                height: 150%;
+                background-color: #f8f8ff;
+                height: 180%;
 
             }
         }
 
         @media screen and (width:823px) {
             .awake {
-                background-color: #fafafa;
-                height: 140%;
+                background-color: #f8f8ff;
+                height: 180%;
 
             }
         }
 
         @media screen and (width:736px) {
             .awake {
-                background-color: #fafafa;
+                background-color: #f8f8ff;
                 height: 140%;
 
             }
@@ -368,11 +367,14 @@
             width: 40%;
             float: left;
 
+
+
         }
 
         .services {
             display: flex;
             align-items: center;
+
         }
 
         .content {
@@ -384,6 +386,7 @@
             padding-bottom: 0px;
             border-radius: 15px;
             background-color: #fff;
+            box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
 
         }
 
@@ -400,18 +403,22 @@
             font-size: 17px;
         }
 
-        img {
+        .images img {
             float: left;
             margin-top: 20px;
             margin-left: 25px;
             height: 45px;
             padding-top: 10px;
         }
+}
+       
 
-        @media screen and (width: 360px) {
-
+         
+        @media screen and (width: 812px) {
             .cards {
-                max-width: 110%;
+                width: 45%;
+                margin-left: -4.5em;
+            margin-right: 4em;
             }
 
             .services {
@@ -423,18 +430,20 @@
                 display: flex;
                 flex-wrap: wrap;
                 flex: 1;
-                margin-left: 2px;
-                margin-right: 4px;
+                margin: 20px;
                 padding-top: 10px;
                 border-radius: 15px;
                 background-color: #fff;
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
+
 
             }
 
             .content h2 {
-                margin-left: 1px;
-                margin-top: 20px;
-                font-size: 0.9em;
+                margin-left: 0px;
+                margin-top: 25px;
+                font-size: 15px;
+                padding-right: 10px;
 
             }
 
@@ -443,19 +452,20 @@
                 font-size: 12px;
             }
 
-            img.kiri {
-                float: left;
-                margin: 10px;
-                margin-left: 8px;
-                width: 40px;
-                height: 50px;
-                padding-top: 20px;
-            }
+            .images img {
+            float: left;
+            margin-top: 20px;
+            margin-left: 16px;
+            height: 40px;
+            padding-top: 10px;
         }
+        }
+ @media screen and (width: 360px) {
 
-        @media screen and (width: 812px) {
             .cards {
-                max-width: 63%;
+                width: 120%;
+                margin-left: -4.3em;
+         
             }
 
             .services {
@@ -471,14 +481,15 @@
                 padding-top: 10px;
                 border-radius: 15px;
                 background-color: #fff;
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
 
 
             }
 
             .content h2 {
-                margin-left: 10px;
+                margin-left: 0px;
                 margin-top: 25px;
-                font-size: 18px;
+                font-size: 13px;
                 padding-right: 10px;
 
             }
@@ -488,20 +499,23 @@
                 font-size: 14px;
             }
 
-            img.kiri {
-                float: left;
-                margin: 13px;
-                margin-left: 20px;
-                width: 60px;
-                height: 70px;
-                padding-top: 20px;
-            }
-
+            .images img {
+            float: left;
+            margin-top: 20px;
+            margin-left: 16px;
+            height: 32px;
+            padding-top: 10px;
         }
+        }
+
+
+
 
         @media screen and (width: 823px) {
-            .cards {
-                max-width: 63%;
+           .cards {
+                width: 48%;
+                margin-left: -4.5em;
+            margin-right: 4em;
             }
 
             .services {
@@ -515,40 +529,42 @@
                 flex: 1;
                 margin: 20px;
                 padding-top: 10px;
+                padding-bottom: 0px;
                 border-radius: 15px;
                 background-color: #fff;
-
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
 
             }
 
             .content h2 {
-                margin-left: 10px;
+                margin-left: 0px;
                 margin-top: 25px;
-                font-size: 18px;
+                font-size: 15px;
                 padding-right: 10px;
 
             }
 
             .content p {
                 font-weight: lighter;
-                font-size: 14px;
+                font-size: 12px;
             }
 
-            img.kiri {
-                float: left;
-                margin: 13px;
-                margin-left: 20px;
-                width: 60px;
-                height: 70px;
-                padding-top: 20px;
-            }
-
+            .images img {
+            float: left;
+            margin-top: 20px;
+            margin-left: 16px;
+            height: 40px;
+            padding-top: 10px;
         }
+        }
+
 
         @media screen and (width: 411px) {
 
             .cards {
-                max-width: 110%;
+                width: 110%;
+                margin-left: -3.5em;
+          
             }
 
             .services {
@@ -560,40 +576,42 @@
                 display: flex;
                 flex-wrap: wrap;
                 flex: 1;
-                margin-left: 2px;
-                margin-right: 4px;
+                margin: 20px;
                 padding-top: 10px;
+                padding-bottom: 0px;
                 border-radius: 15px;
                 background-color: #fff;
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
 
             }
 
-            .content h2 {
-                margin-left: 6px;
-                margin-top: 20px;
-                font-size: 1em;
+             .content h2 {
+            margin-left: 15px;
+            margin-top: 25px;
+            font-size: 16px;
+            padding-right: 10px;
 
-            }
-
-            .content p {
-                font-weight: lighter;
-                font-size: 13px;
-            }
-
-            img.kiri {
-                float: left;
-                margin: 10px;
-                margin-left: 8px;
-                width: 40px;
-                height: 50px;
-                padding-top: 20px;
-            }
         }
 
+        .content p {
+            font-weight: lighter;
+            font-size: 15px;
+        }
+
+        .images img {
+            float: left;
+            margin-top: 20px;
+            margin-left: 15px;
+            height: 35px;
+            padding-top: 10px;
+        }
+}
         @media screen and (width: 320px) {
 
-            .cards {
-                max-width: 110%;
+             .cards {
+                width: 110%;
+                margin-left: -3.2em;
+            margin-right: 4em;
             }
 
             .services {
@@ -605,40 +623,42 @@
                 display: flex;
                 flex-wrap: wrap;
                 flex: 1;
-                margin-left: 1px;
+                margin-left: 5px;
                 margin-right: 4px;
                 padding-top: 10px;
                 border-radius: 15px;
                 background-color: #fff;
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
 
             }
 
             .content h2 {
-                margin-left: 5px;
-                margin-top: 20px;
-                font-size: 12px;
+                margin-left: 0px;
+                margin-top: 25px;
+                font-size: 14px;
+                padding-right: 10px;
 
             }
 
             .content p {
                 font-weight: lighter;
-                font-size: 11px;
+                font-size: 10px;
             }
 
-            img.kiri {
-                float: left;
-                margin: 10px;
-                margin-left: 5px;
-                width: 33px;
-                height: 46px;
-                padding-top: 20px;
-            }
+            .images img {
+            float: left;
+            margin-top: 20px;
+            margin-left: 16px;
+            height: 30px;
+            padding-top: 10px;
         }
-
+        }
         @media screen and (width: 375px) {
 
             .cards {
-                max-width: 110%;
+                width: 110%;
+                margin-left: -3.2em;
+            margin-right: 4em;
             }
 
             .services {
@@ -655,13 +675,15 @@
                 padding-top: 10px;
                 border-radius: 15px;
                 background-color: #fff;
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
 
             }
 
             .content h2 {
-                margin-left: 4px;
-                margin-top: 20px;
-                font-size: 0.9em;
+                margin-left: 0px;
+                margin-top: 25px;
+                font-size: 15px;
+                padding-right: 10px;
 
             }
 
@@ -670,14 +692,13 @@
                 font-size: 12px;
             }
 
-            img.kiri {
-                float: left;
-                margin: 10px;
-                margin-left: 8px;
-                width: 40px;
-                height: 50px;
-                padding-top: 20px;
-            }
+            .images img {
+            float: left;
+            margin-top: 20px;
+            margin-left: 16px;
+            height: 40px;
+            padding-top: 10px;
+        }
         }
 
         @media screen and (width: 1366px) {
@@ -700,7 +721,7 @@
                 padding-bottom: 0px;
                 border-radius: 15px;
                 background-color: #fff;
-
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
             }
 
             .content h2 {
@@ -731,51 +752,9 @@
         @media screen and (width: 414px) {
 
             .cards {
-                max-width: 92%;
-            }
-
-            .services {
-                display: flex;
-                align-items: center;
-            }
-
-            .content {
-                display: flex;
-                flex-wrap: wrap;
-                flex: 1;
-                margin-left: 2px;
-                margin-right: 4px;
-                padding-top: 10px;
-                border-radius: 15px;
-                background-color: #fff;
-
-            }
-
-            .content h2 {
-                margin-left: 6px;
-                margin-top: 20px;
-                font-size: 14px;
-
-            }
-
-            .content p {
-                font-weight: lighter;
-                font-size: 14px;
-            }
-
-            img.kiri {
-                float: left;
-                margin: 10px;
-                margin-left: 8px;
-                width: 40px;
-                height: 50px;
-                padding-top: 20px;
-            }
-        }
-
-        @media screen and (width: 768px) {
-            .cards {
-                max-width: 64%;
+                width: 110%;
+                margin-left: -3.5em;
+          
             }
 
             .services {
@@ -792,35 +771,85 @@
                 padding-bottom: 0px;
                 border-radius: 15px;
                 background-color: #fff;
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
+
+            }
+
+             .content h2 {
+            margin-left: 15px;
+            margin-top: 25px;
+            font-size: 16px;
+            padding-right: 10px;
+
+        }
+
+        .content p {
+            font-weight: lighter;
+            font-size: 15px;
+        }
+
+        .images img {
+            float: left;
+            margin-top: 20px;
+            margin-left: 15px;
+            height: 35px;
+            padding-top: 10px;
+        }
+}
+
+
+        @media screen and (width: 768px) {
+            .cards {
+                width: 48%;
+                margin-left: -4.5em;
+            margin-right: 4em;
+            }
+
+            .services {
+                display: flex;
+                align-items: center;
+            }
+
+            .content {
+                display: flex;
+                flex-wrap: wrap;
+                flex: 1;
+                margin: 20px;
+                padding-top: 10px;
+                padding-bottom: 0px;
+                border-radius: 15px;
+                background-color: #fff;
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
 
             }
 
             .content h2 {
-                margin-left: 10px;
+                margin-left: 0px;
                 margin-top: 25px;
-                font-size: 18px;
+                font-size: 15px;
                 padding-right: 10px;
 
             }
 
             .content p {
                 font-weight: lighter;
-                font-size: 14px;
+                font-size: 12px;
             }
 
-            img.kiri {
-                float: left;
-                margin: 13px;
-                margin-left: 20px;
-                width: 60px;
-                height: 70px;
-                padding-top: 20px;
-            }
+            .images img {
+            float: left;
+            margin-top: 20px;
+            margin-left: 16px;
+            height: 40px;
+            padding-top: 10px;
+        }
         }
 
         @media screen and (width: 1024px) {
             .cards {
                 max-width: 73%;
+                margin-left: -4em;
+            margin-right: 5.5em;
             }
 
             .services {
@@ -832,40 +861,42 @@
                 display: flex;
                 flex-wrap: wrap;
                 flex: 1;
-                margin: 20px;
+                margin: 10px;
                 padding-top: 10px;
                 padding-bottom: 0px;
                 border-radius: 15px;
                 background-color: #fff;
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
 
             }
 
             .content h2 {
-                margin-left: 10px;
+                margin-left: 0px;
                 margin-top: 25px;
-                font-size: 18px;
+                font-size: 15px;
                 padding-right: 10px;
 
             }
 
             .content p {
                 font-weight: lighter;
-                font-size: 15px;
+                font-size: 12px;
             }
 
-            img.kiri {
-                float: left;
-                margin: 13px;
-                margin-left: 20px;
-                width: 60px;
-                height: 70px;
-                padding-top: 20px;
-            }
+            .images img {
+            float: left;
+            margin-top: 20px;
+            margin-left: 16px;
+            height: 43px;
+            padding-top: 10px;
+        }
         }
 
         @media screen and (width: 640px) {
             .cards {
-                max-width: 73%;
+                width: 70%;
+                margin-left: -5em;
+            margin-right: 3.4em;
             }
 
             .services {
@@ -882,35 +913,38 @@
                 padding-bottom: 0px;
                 border-radius: 15px;
                 background-color: #fff;
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
 
             }
 
-            .content h2 {
-                margin-left: 10px;
-                margin-top: 25px;
-                font-size: 16px;
-                padding-right: 10px;
+             .content h2 {
+            margin-left: 15px;
+            margin-top: 25px;
+            font-size: 16px;
+            padding-right: 10px;
 
-            }
-
-            .content p {
-                font-weight: lighter;
-                font-size: 15px;
-            }
-
-            img.kiri {
-                float: left;
-                margin: 13px;
-                margin-left: 20px;
-                width: 60px;
-                height: 70px;
-                padding-top: 20px;
-            }
         }
+
+        .content p {
+            font-weight: lighter;
+            font-size: 15px;
+        }
+
+        .images img {
+            float: left;
+            margin-top: 20px;
+            margin-left: 15px;
+            height: 35px;
+            padding-top: 10px;
+        }
+}
+
 
         @media screen and (width: 731px) {
             .cards {
-                max-width: 69%;
+                width: 53%;
+                margin-left: -5em;
+            margin-right: 3.4em;
             }
 
             .services {
@@ -927,35 +961,39 @@
                 padding-bottom: 0px;
                 border-radius: 15px;
                 background-color: #fff;
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
 
             }
 
-            .content h2 {
-                margin-left: 10px;
-                margin-top: 25px;
-                font-size: 16px;
-                padding-right: 10px;
+             .content h2 {
+            margin-left: 15px;
+            margin-top: 25px;
+            font-size: 14px;
+            padding-right: 10px;
 
-            }
-
-            .content p {
-                font-weight: lighter;
-                font-size: 15px;
-            }
-
-            img.kiri {
-                float: left;
-                margin: 13px;
-                margin-left: 20px;
-                width: 60px;
-                height: 70px;
-                padding-top: 20px;
-            }
         }
 
+        .content p {
+            font-weight: lighter;
+            font-size: 13px;
+        }
+
+        .images img {
+            float: left;
+            margin-top: 20px;
+            margin-left: 15px;
+            height: 32px;
+            padding-top: 10px;
+        }
+}
+
+
+
         @media screen and (width: 568px) {
-            .cards {
-                max-width: 76%;
+             .cards {
+                width: 70%;
+                margin-left: -4.5em;
+            margin-right: 4em;
             }
 
             .services {
@@ -972,11 +1010,12 @@
                 padding-bottom: 0px;
                 border-radius: 15px;
                 background-color: #fff;
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
 
             }
 
             .content h2 {
-                margin-left: 10px;
+                margin-left: 0px;
                 margin-top: 25px;
                 font-size: 15px;
                 padding-right: 10px;
@@ -985,23 +1024,24 @@
 
             .content p {
                 font-weight: lighter;
-                font-size: 15px;
+                font-size: 12px;
             }
 
-            img.kiri {
-                float: left;
-                margin: 13px;
-                margin-left: 20px;
-                width: 50px;
-                height: 60px;
-                padding-top: 20px;
-            }
+            .images img {
+            float: left;
+            margin-top: 20px;
+            margin-left: 16px;
+            height: 40px;
+            padding-top: 10px;
+        }
         }
 
 
         @media screen and (width: 667px) {
             .cards {
-                max-width: 74%;
+                width: 60%;
+                margin-left: -5em;
+            margin-right: 3.4em;
             }
 
             .services {
@@ -1018,35 +1058,38 @@
                 padding-bottom: 0px;
                 border-radius: 15px;
                 background-color: #fff;
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
 
             }
 
-            .content h2 {
-                margin-left: 10px;
-                margin-top: 25px;
-                font-size: 16px;
-                padding-right: 10px;
+             .content h2 {
+            margin-left: 15px;
+            margin-top: 25px;
+            font-size: 16px;
+            padding-right: 10px;
 
-            }
-
-            .content p {
-                font-weight: lighter;
-                font-size: 15px;
-            }
-
-            img.kiri {
-                float: left;
-                margin: 13px;
-                margin-left: 20px;
-                width: 50px;
-                height: 60px;
-                padding-top: 20px;
-            }
         }
+
+        .content p {
+            font-weight: lighter;
+            font-size: 15px;
+        }
+
+        .images img {
+            float: left;
+            margin-top: 20px;
+            margin-left: 15px;
+            height: 35px;
+            padding-top: 10px;
+        }
+}
+
 
         @media screen and (width: 736px) {
             .cards {
-                max-width: 72%;
+                width: 53%;
+                margin-left: -5em;
+            margin-right: 3.4em;
             }
 
             .services {
@@ -1063,31 +1106,32 @@
                 padding-bottom: 0px;
                 border-radius: 15px;
                 background-color: #fff;
+                box-shadow: 3px 3px 2px rgba(0,0,0,0.2);
 
             }
 
-            .content h2 {
-                margin-left: 10px;
-                margin-top: 25px;
-                font-size: 17px;
-                padding-right: 10px;
+             .content h2 {
+            margin-left: 15px;
+            margin-top: 25px;
+            font-size: 16px;
+            padding-right: 10px;
 
-            }
-
-            .content p {
-                font-weight: lighter;
-                font-size: 15px;
-            }
-
-            img.kiri {
-                float: left;
-                margin: 13px;
-                margin-left: 20px;
-                width: 50px;
-                height: 60px;
-                padding-top: 20px;
-            }
         }
+
+        .content p {
+            font-weight: lighter;
+            font-size: 15px;
+        }
+
+        .images img {
+            float: left;
+            margin-top: 20px;
+            margin-left: 15px;
+            height: 35px;
+            padding-top: 10px;
+        }
+}
+
 
         .judul {
 
@@ -1098,6 +1142,125 @@
             margin-left: 3.5em;
             margin-top: 3em;
             padding-bottom: 0;
+            width: 100%;
+        }
+        @media screen and (width: 1024px) {
+            .navi ul {
+            margin-left: -2em;
+            margin-top: 3em;
+            padding-bottom: 0;
+            width: 100%;
+        } 
+        }
+         @media screen and (width: 768px) {
+            .navi ul {
+            margin-left: -2em;
+            margin-top: 3em;
+            padding-bottom: 0;
+            width: 100%;
+        } 
+        }
+         @media screen and (width: 823px) {
+            .navi ul {
+            margin-left: -2em;
+            margin-top: 3em;
+            padding-bottom: 0;
+            width: 100%;
+        } 
+        }
+         @media screen and (width: 736px) {
+            .navi ul {
+            margin-left: -2em;
+            margin-top: 3em;
+            padding-bottom: 0;
+            width: 100%;
+        } 
+        }
+          @media screen and (width: 731px) {
+            .navi ul {
+            margin-left: -2em;
+            margin-top: 3em;
+            padding-bottom: 0;
+            width: 100%;
+        } 
+        }
+        @media screen and (width: 667px) {
+            .navi ul {
+            margin-left: -2em;
+            margin-top: 2.7em;
+            padding-bottom: 0;
+            width: 100%;
+        } 
+        }
+        @media screen and (width: 640px) {
+            .navi ul {
+            margin-left: -2em;
+            margin-top: 2.7em;
+            padding-bottom: 0;
+            width: 100%;
+        } 
+        }
+          @media screen and (width: 568px) {
+            .navi ul {
+            margin-left: -2em;
+            margin-top: 2.7em;
+            padding-bottom: 0;
+            width: 100%;
+        } 
+        }
+          @media screen and (width: 375px) {
+            .navi ul {
+            margin-left: -3em;
+            margin-right: -2em;
+            margin-top: 1em;
+            padding-bottom: 0;
+            width: 115%;
+        } 
+        }
+        @media screen and (width: 360px) {
+            .navi ul {
+            margin-left: -2em;
+   
+            margin-top: 1em;
+            padding-bottom: 0;
+            width: 70%;
+        } 
+        }
+           @media screen and (width: 320px) {
+            .navi ul {
+            margin-left: -2em;
+            padding-right: 1em;
+            margin-top: 0em;
+            padding-bottom: 0;
+            font-size: 17px;
+            width: 115%;
+        } 
+        }
+        @media screen and (width: 414px) {
+            .navi ul {
+            margin-left: -2em;
+            margin-right: -2em;
+            margin-top: 1.6em;
+            padding-bottom: 0;
+            width: 110%;
+        } 
+        }
+         @media screen and (width: 411px) {
+            .navi ul {
+            margin-left: -2em;
+            margin-right: -2em;
+            margin-top: 1.6em;
+            padding-bottom: 0;
+            width: 110%;
+        } 
+        }
+           @media screen and (width: 812px) {
+            .navi ul {
+            margin-left: -2em;
+            margin-top: 3em;
+            padding-bottom: 0;
+            width: 100%;
+        } 
         }
 
         .navi ul a {
@@ -1107,11 +1270,6 @@
             color: #565656;
         }
 
-        .nav ul a:hover {
-            color: #92CD16;
-        }
-
-       
          ul a:hover {
             color: #92CD16;
         }
@@ -1169,7 +1327,7 @@
 
                                 <div class="content">
 
-                                    <div class="img">
+                                    <div class="images">
                                         <a href="{{route('soalTO', $ki->id)}}" type="button" class="btn btn-link">
                                             <img src="{{asset('/images')}}/inofa.png" />
                                     </div>

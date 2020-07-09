@@ -12,7 +12,7 @@
 			<li><a href="/login" class="masuk-btn">Masuk</a></li></font>
 			<li><a href="/paket" class="tentangkami">Paket</a></li></font>
 
-			<li><a href="/probel-dinamis" class="program">Program</a></li></font>
+			<li><a href="/probel-dinamis" class="program">Tryout</a></li></font>
 			<li><a href="/" class="beranda">Beranda</a></li>
 			</ul>
 

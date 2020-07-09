@@ -309,6 +309,94 @@ h1 {
     -ms-border-radius: 10px;
 }
 
+@media screen and (width: 375px) {
+  .container-content {
+    width: 350px;
+    background: #fff;
+    margin: 0 auto;
+    box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+} 
+}
+@media screen and (width: 360px) {
+  .container-content {
+    width: 340px;
+    background: #fff;
+    margin: 0 auto;
+    box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+} 
+}
+@media screen and (width: 414px) {
+  .container-content {
+    width: 360px;
+    background: #fff;
+    margin: 0 auto;
+    box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+} 
+}
+@media screen and (width: 411px) {
+  .container-content {
+    width: 360px;
+    background: #fff;
+    margin: 0 auto;
+    box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+} 
+}
+@media screen and (width: 320px) {
+  .container-content {
+    width: 300px;
+    background: #fff;
+    margin: 0 auto;
+    box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+} 
+}
+
+
+
 .sign-up-content {
     padding: 40px 60px 32px 60px;
     position: relative;

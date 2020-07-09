@@ -59,9 +59,9 @@
                                 <!-- small box -->
                                 <div class="small-box bg-yellow">
                                     <div class="inner">
-                                        <h3>{{ DB::table('model_siswas')->where('status','BELUM AKTIF')->count()}}</h3>
+                                        <h3>{{ DB::table('model_invoice')->where('status','BELUM AKTIF')->count()}}</h3>
                                         <p>Pendaftaran <br>
-                                         Siswa</p>
+                                         Les Siswa</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-user-graduate"></i>
@@ -91,7 +91,7 @@
                                 <!-- small box -->
                                 <div class="small-box" style="background-color:#E5FA18">
                                     <div class="inner">
-                                        <h3>{{ DB::table('model_formulirs')->where('status','!=','BELUM AKTIF')->count()}}</h3>
+                                        <h3>{{ DB::table('model_formulirs')->where('status','BELUM AKTIF')->count()}}</h3>
 
                                         <p>Pendaftaran <br> Tryout</p>
                                     </div>

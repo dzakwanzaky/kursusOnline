@@ -90,10 +90,10 @@ class RegisterController extends Controller
             'email.min' => 'Email tidak boleh kurang dari 11 karakter',
             'email.email' => 'Email tidak valid',
             'email.unique' => 'Email sudah ada, silakan login',
-            'password.min' => 'Password tidak boleh kurang dari 7 masukan',
-            'password.required' => 'Password tidak boleh kosong',
-            'password_confirmation.same' => 'Konfirmasi password tidak sama',
-            'password_confirmation.required' => 'Konfirmasi password tidak boleh kosong'
+            'password.min' => 'Kata sandi tidak boleh kurang dari 7 masukan',
+            'password.required' => 'Kata sandi tidak boleh kosong',
+            'password_confirmation.same' => 'Konfirmasi kata sandi tidak sama',
+            'password_confirmation.required' => 'Konfirmasi Kata sandi tidak boleh kosong'
        ]);
                 $user = new User;
                 $user->name = $request->input('name');
@@ -147,10 +147,14 @@ class RegisterController extends Controller
         $data->phone = $request->phone;
         $data->save();
 
-        if ($data ['role'] == 'tutor'){
+         if ($data ['role'] == 'tutor'){
         return redirect('profile')->withMessage('success', 'Berhasil Merubah Data');
         } else if ($data ['role'] == 'siswa') {
+
+            return redirect('profileMurid')->with('success', 'Data profil akun berhasil di ubah');
+
             return redirect('profileMurid')->withMessage('success', 'Berhasil Merubah Data');
+
         } else {
             return redirect('profileAdmin')->withMessage('success', 'Berhasil Merubah Data');
         }

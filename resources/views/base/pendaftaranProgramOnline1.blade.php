@@ -4,10 +4,94 @@
 <style>
         .help-block {
     color: red;
+    font-size: 13px;
 }
 .has-error {
      color: red;
 }
+@media screen and (width: 375px) {
+        h2.form-title {
+            font-size: 19px;
+        }
+        .form-group {
+            margin-left: 0em;
+        }
+        .form-control {
+            font-size: 12px;
+        }
+    }
+
+     @media screen and (width: 360px) {
+        h2.form-title {
+            font-size: 18px;
+             margin-left: 0.5em;
+        }
+        .form-group {
+            margin-left: 0em;
+        }
+        .form-control {
+            font-size: 10px;
+        }
+    }
+
+    @media screen and (width: 320px) {
+        h2.form-title {
+            font-size: 16px;
+       
+        }
+        .form-group {
+            margin-left: 0em;
+        }
+        .form-control {
+            font-size: 8px;
+        }
+        .alert.alert-primary {
+            font-size: 10px;
+        }
+        .help-block {
+    color: red;
+    font-size: 11px;
+}
+    }
+    @media screen and (width: 414px) {
+        h2.form-title {
+            font-size: 19px;
+            margin-left: 0.5em;
+        }
+        .form-group {
+            margin-left: 0em;
+        }
+        .form-control {
+            font-size: 12px;
+        }
+    }
+
+    @media screen and (width: 411px) {
+        h2.form-title {
+            font-size: 19px;
+            margin-left: 0.5em;
+        }
+        .form-group {
+            margin-left: 0em;
+        }
+        .form-control {
+            font-size: 12px;
+        }
+    }
+
+     @media screen and (width: 568px) {
+        h2.form-title {
+            font-size: 24px;
+            margin-left: 2em;
+        }
+        .form-group {
+            margin-left: 0em;
+        }
+        .form-control {
+            font-size: 15px;
+           
+        }
+    }
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +121,7 @@
 
 
                         <label for="kelas">Kelas
-                             <div class="form-group{{ $errors->has('jumlah_mapel') ? ' has-error' : '' }}">
+                             <div class="form-group{{ $errors->has('kelas_id') ? ' has-error' : '' }}">
                             <select id="kelas" name="kelas_id" class="form-control" style="float:left" required>
                                 <option value="0" disabled="true" selected="true">-- Pilih Kelas --</option>
                                 @foreach($ksd as $d)
@@ -54,7 +138,7 @@
                         </label>
 
                         <label for="mata_pelajaran" style="float:right">Paket
-                            <div class="form-group{{ $errors->has('jumlah_mapel') ? ' has-error' : '' }}">
+                            <div class="form-group{{ $errors->has('paket_id') ? ' has-error' : '' }}">
                                 <select id="paket_id" name="paket_id" class="form-control" style="float:right"
                                     required>
                                     <option value="0" disabled="true" selected="true">-- Pilih Paket --</option>
@@ -64,9 +148,9 @@
                                 </select>
                         </label>
                          </div>
-                        @if ($errors->has('jumlah_mapel'))
+                        @if ($errors->has('paket_id'))
                                 <span class="help-block">
-                               {{ $errors->first('jumlah_mapel') }}
+                               {{ $errors->first('paket_id') }}
                                 </span>
                             @endif
 
@@ -133,7 +217,7 @@
                             <label for="mata_pelajaran" style="width:100%">Mata Pelajaran
                                 <select id="mata_pelajaran" name="mapel_id[]" class="form-control"
                                     style="width:100%" required>
-                                    <option value="">Mata Pelajaran</option>
+                                    <option value="0" disabled="true" selected="true">Mata Pelajaran</option>
                                     @foreach($sd as $d)
                                         <option value="{{ $d->id }}">{{ $d->mapel }}</option>
                                     @endforeach
@@ -144,7 +228,7 @@
                         <div id="waktu1">
                             <label for="hari1">Sesi 1
                                 <select id="hari1" name="hari1[]" class="form-control" style="float:left" required>
-                                    <option value="">Pilih Hari</option>
+                                    <option value="0" disabled="true" selected="true">Pilih Hari</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
                                     <option value="Rabu">Rabu</option>
@@ -155,9 +239,9 @@
                                 </select>
                             </label>
 
-                            <label for="waktu_hari1" style="float:right">Waktu Sesi 1
+                            <label for="waktu_hari1" style="float:right">Waktu 1
                                 <select id="waktu_hari1" name="waktu_hari1[]" class="form-control" style="float:right" required>
-                                    <option value="">Pilih Waktu</option>
+                                    <option value="0" disabled="true" selected="true">Pilih Waktu</option>
                                     <option value="15.00">15.00 WIB</option>
                                     <option value="16.00">16.00 WIB</option>
                                     <option value="17.00">17.00 WIB</option>
@@ -170,7 +254,7 @@
                         <div id="waktu2">
                             <label for="hari1">Sesi 2
                                 <select id="hari2" name="hari2[]" class="form-control" style="float:left">
-                                    <option value="">Pilih Hari</option>
+                                    <option value="0" disabled="true" selected="true">Pilih Hari</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
                                     <option value="Rabu">Rabu</option>
@@ -181,9 +265,9 @@
                                 </select>
                             </label>
 
-                            <label for="waktu_hari2" style="float:right">Waktu Sesi 2
+                            <label for="waktu_hari2" style="float:right">Waktu 2
                                 <select id="waktu_hari" name="waktu_hari2[]" class="form-control" style="float:right">
-                                    <option value="">Pilih Waktu</option>
+                                    <option value="0" disabled="true" selected="true">Pilih Waktu</option>
                                     <option value="15.00">15.00 WIB</option>
                                     <option value="16.00">16.00 WIB</option>
                                     <option value="17.00">17.00 WIB</option>
@@ -209,7 +293,7 @@
                             <label for="mata_pelajaran" style="width:100%">Mata Pelajaran
                                 <select id="mata_pelajaran" name="mapel_id[]" class="form-control"
                                     style="width:100%">
-                                    <option value=" ">Mata Pelajaran</option>
+                                    <option value="0" disabled="true" selected="true">Mata Pelajaran</option>
                                     @foreach($sd as $d)
                                         <option value="{{ $d->id }}">{{ $d->mapel }}</option>
                                     @endforeach
@@ -220,7 +304,7 @@
                         <div id="waktu3">
                             <label for="hari1">Sesi 1
                                 <select id="hari1" name="hari1[]" class="form-control" style="float:left">
-                                    <option value="">Pilih Hari</option>
+                                    <option value="0" disabled="true" selected="true">Pilih Hari</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
                                     <option value="Rabu">Rabu</option>
@@ -231,9 +315,9 @@
                                 </select>
                             </label>
 
-                            <label for="waktu_hari1" style="float:right">Waktu Sesi 1
+                            <label for="waktu_hari1" style="float:right">Waktu 1
                                 <select id="waktu_hari1" name="waktu_hari1[]" class="form-control" style="float:right">
-                                    <option value="">Pilih Waktu</option>
+                                    <option value="0" disabled="true" selected="true">Pilih Waktu</option>
                                     <option value="15.00">15.00 WIB</option>
                                     <option value="16.00">16.00 WIB</option>
                                     <option value="17.00">17.00 WIB</option>
@@ -246,7 +330,7 @@
                         <div id="waktu4">
                             <label for="hari2">Sesi 2
                                 <select id="hari2" name="hari2[]" class="form-control" style="float:left">
-                                    <option value="">Pilih Hari</option>
+                                    <option value="0" disabled="true" selected="true">Pilih Hari</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
                                     <option value="Rabu">Rabu</option>
@@ -257,9 +341,9 @@
                                 </select>
                             </label>
 
-                            <label for="waktu_hari2" style="float:right">Waktu Sesi 2
+                            <label for="waktu_hari2" style="float:right">Waktu 2
                                 <select id="waktu_hari2" name="waktu_hari2[]" class="form-control" style="float:right">
-                                    <option value="">Pilih Waktu</option>
+                                    <option value="0" disabled="true" selected="true">Pilih Waktu</option>
                                     <option value="15.00">15.00 WIB</option>
                                     <option value="16.00">16.00 WIB</option>
                                     <option value="17.00">17.00 WIB</option>
@@ -286,7 +370,7 @@
                             <label for="mata_pelajaran" style="width:100%">Mata Pelajaran
                                 <select id="mata_pelajaran" name="mapel_id[]" class="form-control"
                                     style="width:100%">
-                                    <option value=" ">Mata Pelajaran</option>
+                                    <option value="0" disabled="true" selected="true">Mata Pelajaran</option>
                                     @foreach($sd as $d)
                                         <option value="{{ $d->id }}">{{ $d->mapel }}</option>
                                     @endforeach
@@ -297,7 +381,7 @@
                         <div id="waktu5">
                             <label for="hari1">Sesi 1
                                 <select id="hari1" name="hari1[]" class="form-control" style="float:left">
-                                    <option value="">Pilih Hari</option>
+                                    <option value="0" disabled="true" selected="true">Pilih Hari</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
                                     <option value="Rabu">Rabu</option>
@@ -308,9 +392,9 @@
                                 </select>
                             </label>
 
-                            <label for="waktu_hari1" style="float:right">Waktu Sesi 1
+                            <label for="waktu_hari1" style="float:right">Waktu 1
                                 <select id="waktu_hari1" name="waktu_hari1[]" class="form-control" style="float:right">
-                                    <option value="">Pilih Waktu</option>
+                                    <option value="0" disabled="true" selected="true">Pilih Waktu</option>
                                     <option value="15.00">15.00 WIB</option>
                                     <option value="16.00">16.00 WIB</option>
                                     <option value="17.00">17.00 WIB</option>
@@ -323,7 +407,7 @@
                         <div id="waktu6">
                             <label for="hari1">Sesi 2
                                 <select id="hari2" name="hari2[]" class="form-control" style="float:left">
-                                    <option value="">Pilih Hari</option>
+                                    <option value="0" disabled="true" selected="true">Pilih Hari</option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
                                     <option value="Rabu">Rabu</option>
@@ -334,9 +418,9 @@
                                 </select>
                             </label>
 
-                            <label for="waktu_hari2" style="float:right">Waktu Sesi 2
+                            <label for="waktu_hari2" style="float:right">Waktu 2
                                 <select id="waktu_hari2" name="waktu_hari2[]" class="form-control" style="float:right">
-                                    <option value="">Pilih Waktu</option>
+                                    <option value="0" disabled="true" selected="true">Pilih Waktu</option>
                                     <option value="15.00">15.00 WIB</option>
                                     <option value="16.00">16.00 WIB</option>
                                     <option value="17.00">17.00 WIB</option>

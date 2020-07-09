@@ -33,12 +33,10 @@ class ProgramController extends Controller
     }
     
     //untuk invoice
-    public function data()
+   public function data()
     {
-        $data = ModelJadwal::where('murid_id', '=', Auth::user()->id)->first();
-        $alamat = ModelSiswa::where('id', '=', Auth::user()->id)->get();
-        $invoice = ModelInvoice::where('id_murid', '=', Auth::user()->id)->get();
-        return view('murid/invoice', compact('data', 'alamat', 'invoice'));
+        $data = ModelInvoice::where('id_murid', '=', Auth::user()->id)->get();
+        return view('murid/invoice', compact('data'));
     }
 
     //untuk invoice
@@ -53,7 +51,7 @@ class ProgramController extends Controller
     //untuk invoice
     public function pdf($id)
     {
-        $data = ModelInvoice::where('id_murid', $id)->get();
+        $data = ModelInvoice::where('id', $id)->get();
         $pdf = PDF::loadView('murid/invoicenya', ['data'=>$data])->setPaper('A4');
         return $pdf->download('invoice.pdf');
     }

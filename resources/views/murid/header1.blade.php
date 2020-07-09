@@ -9,6 +9,37 @@
 .modall-title {
     margin-left: 8em;
 }
+@media screen and (width: 375px) {
+.modall-title {
+    margin-left: 5em;
+}
+  }
+  @media screen and (width: 360px) {
+.modall-title {
+    margin-left: 4em;
+}
+  }
+    @media screen and (width: 320px) {
+.modall-title {
+    margin-left: 3em;
+}
+  }
+    @media screen and (width: 414px) {
+.modall-title {
+    margin-left: 6em;
+}
+  }
+
+    @media screen and (width: 411px) {
+.modall-title {
+    margin-left: 6em;
+}
+  }
+    @media screen and (width: 568px) {
+.modall-title {
+    margin-left: 9em;
+}
+  }
 </style>
  <nav class="main-header navbar navbar-expand navbar-white navbar-light border-bottom">
     <!-- Left navbar links -->
@@ -35,6 +66,9 @@
           </a>
           <a href="/changePasswordMurid" class="dropdown-item">
             <i class="fas fa-edit"></i> Ubah Kata Sandi 
+          </a>
+          <a href="/pilihMetode" class="dropdown-item">
+            <i class="fas fa-shopping-cart"></i> Beli Kelas Baru
           </a>
           
           <a href="/" class="nav-link btn-login; dropdown-item" data-toggle="modal" data-target="#exampleModal">

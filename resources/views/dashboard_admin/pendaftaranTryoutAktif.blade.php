@@ -32,7 +32,7 @@
                                         <th>Nama</th>
                                         <th>No Telepon</th>
                                         <th>Asal Sekolah</th>
-                                        <th>Program</th>
+                                        <th>Tryout</th>
                                         <th>Email</th>
                                         <th>Bukti Pembayaran</th>
                                         <th>Status</th>
@@ -48,7 +48,7 @@
                                         <td>{{ $d->nama_lengkap }}</td>
                                         <td>{{ $d->no_telp }}</td>
                                         <td>{{ $d->asal_sekolah }}</td>
-                                        <td>{{ $d->program->program }}</td>
+                                        <td>{{ $d->tryout->nama}}</td>
                                         <td>{{ $d->email }}</td>
                                         <td>
                                             @if($d->file==null)

@@ -72,7 +72,7 @@ display: block;
                             </a>
                         </li>
                         <li>
-                            <a href="/probel-dinamis" class="nav-link {{ 'probel-dinamis' == request()->path() ? 'nav-link active' : '' }}">Program
+                            <a href="/probel-dinamis" class="nav-link {{ 'probel-dinamis' == request()->path() ? 'nav-link active' : '' }}">Tryout
                             </a>
                         </li>
                         <li>
@@ -94,7 +94,7 @@ display: block;
                             </a>
                         </li>
                         <li>
-                            <a href="/probel-dinamis" class="nav-link {{ 'probel-dinamis' == request()->path() ? 'nav-link active' : '' }}">Program
+                            <a href="/probel-dinamis" class="nav-link {{ 'probel-dinamis' == request()->path() ? 'nav-link active' : '' }}">Tryout
                             </a>
                         </li>
                         <li>

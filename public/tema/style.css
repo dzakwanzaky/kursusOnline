@@ -61,7 +61,11 @@ body {
      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     line-height: 1.80857;
 }
-
+.bodyy {
+    background: url(images/satuu.jpg) repeat top center #f2f3f5; height: 320px;
+    background-color: #fff;
+    
+}
 body.demos .section {
     background: url(images/bg.png) repeat top center #f2f3f5;
 }
@@ -594,7 +598,14 @@ a img.aligncenter {
     border-radius: 50px;
     font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+.btn-masuk:focus {
+ color: #ffffff;
+ background-color: #147bc6;
+ border-color:#80bdff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
+}
 
+  
 .btn-masuk-1 {
     width: 50%;
     height: 40px;
@@ -2617,6 +2628,12 @@ body.app_version .dev-list .widget-title small{
     margin-bottom: 10px;
     height: 50px;
     font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.button:focus {
+ color: #ffffff;
+ background-color: #147bc6;
+ border-color:#80bdff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
 }
 .button2 {
     background-color: #92CD16;

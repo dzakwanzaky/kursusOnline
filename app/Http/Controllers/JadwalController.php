@@ -244,7 +244,7 @@ class JadwalController extends Controller
         $invoice->kategori = $request->kategori;
         $invoice->kelas_id = $request->kelas_id;
         $invoice->paket_id = $request->paket_id;
-        $invoice->harga = $request->harga;
+       
         $invoice->save();
 
         foreach ($request->mapel_id as $key => $value){
@@ -259,7 +259,7 @@ class JadwalController extends Controller
         $data->status = $request->status[$key];
         $data->save();
         }
-        return redirect('invoiceDetail')->withMessage('Kamu Berhasil Daftar Les');
+        return view('base/invoiceDetail', compact('invoice'));
     }
 
     /**

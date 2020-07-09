@@ -5,9 +5,40 @@
     margin-top: 15px;
     font-color: #6c757d;
 }
-.modall-title {
+.modalll-title {
     margin-left: 8em;
 }
+  @media screen and (width: 375px) {
+.modalll-title {
+    margin-left: 5em;
+}
+  }
+  @media screen and (width: 360px) {
+.modalll-title {
+    margin-left: 4em;
+}
+  }
+    @media screen and (width: 320px) {
+.modalll-title {
+    margin-left: 3em;
+}
+  }
+    @media screen and (width: 414px) {
+.modalll-title {
+    margin-left: 6em;
+}
+  }
+
+    @media screen and (width: 411px) {
+.modalll-title {
+    margin-left: 6em;
+}
+  }
+    @media screen and (width: 568px) {
+.modalll-title {
+    margin-left: 9em;
+}
+  }
 </style>
  <nav class="main-header navbar navbar-expand navbar-white navbar-light border-bottom">
     <!-- Left navbar links -->
@@ -35,7 +66,9 @@
           <a href="/changePasswordMurid" class="dropdown-item">
             <i class="fas fa-edit"></i> Ubah Kata Sandi 
           </a>
-          
+          <a href="/pilihMetode" class="dropdown-item">
+            <i class="fas fa-shopping-cart"></i> Beli Kelas Baru
+          </a>
 
           <a href="/" class="nav-link btn-login; dropdown-item" data-toggle="modal" data-target="#exampleModal">
           &nbsp;&nbsp;<i class="fas fa-sign-out-alt"></i> Keluar 
@@ -51,7 +84,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modall-title" id="exampleModalLabel">Konfirmasi Aksi</h5>
+        <h5 class="modalll-title" id="exampleModalLabel">Konfirmasi Aksi</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

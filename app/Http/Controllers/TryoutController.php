@@ -75,8 +75,9 @@ class TryoutController extends Controller
 		return view('base/soal',['data' => $data,'max_number'=>$many_data]);
     }
 
-    public function akses($program_id){
-        return view('base.aksessoal', compact('program_id'));
+    public function akses($tryout_id){
+        
+        return view('base.aksessoal', compact('tryout_id'));
     }
 
 

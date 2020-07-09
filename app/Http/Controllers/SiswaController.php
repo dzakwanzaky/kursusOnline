@@ -27,13 +27,13 @@ class SiswaController extends Controller
     }
     
     public function daftarSiswa(){
-        $data = ModelSiswa::where('status', 'AKTIF')->get();
+        $data = ModelInvoice::where('status', 'AKTIF')->get();
         return view('dashboard_admin.daftarSiswa', compact('data'));
     }
 
      
     public function daftarSiswaBelumAktif(){
-        $data = ModelSiswa::where('status', 'BELUM AKTIF')->get();
+        $data = ModelInvoice::where('status', 'BELUM AKTIF')->get();
         return view('dashboard_admin.daftarSiswaBelumAktif', compact('data'));
     }
 
@@ -83,7 +83,7 @@ class SiswaController extends Controller
             'kabupaten' => 'required',
             'kecamatan' => 'required',
             'alamat_detail' => 'min:10',
-            'file' => 'image'
+            'file' => 'required|mimes: jpg,png,jpeg|max:2048'
             
        ],
 
@@ -94,7 +94,9 @@ class SiswaController extends Controller
             'kabupaten.required' => 'kabupaten tidak boleh kosong',
             'kecamatan.required' => 'kecamatan tidak boleh kosong',
             'alamat_detail.min' => 'Alamat detail minimal 10 karakter',
-            'file' => 'Foto profil harus jpg/png'
+            'file.required' => 'Foto diri tidak boleh kosong',
+            'file.mimes' => 'Format foto diri tidak didukung',
+            'file.max' => 'Foto diri lebih dari 2mb'
        ]);
 
         $data = new ModelSiswa();
@@ -126,6 +128,18 @@ class SiswaController extends Controller
 
     public function update(Request $request, $id)
     {
+          $this->validate($request,[
+            'tanggal_lahir' => 'required',
+            'file' => 'mimes: jpg,png,jpeg|max:2048'
+            
+       ],
+
+       [
+           
+            'tanggal_lahir.required' => 'Tanggal lahir tidak boleh kosong',
+            'file.mimes' => 'Format Foto diri tidak didukung',
+            'file.max' => 'Foto diri lebih dari 2mb'
+       ]);
         $data = ModelSiswa::where('id',$id)->first();
         $data->provinsi = $request->provinsi;
         $data->kecamatan = $request->kecamatan;
@@ -141,7 +155,7 @@ class SiswaController extends Controller
         }
         $data->save();
          if(Auth::user()->role == 'siswa'){
-            return redirect('profileMurid')->with('success', 'Data berhasil di ubah');
+            return redirect('profileMurid')->with('success', 'Data profil siswa di ubah');
             } else {
                 return redirect('daftarSiswa')->withMessage('Berhasil Konfirmasi');
             }
@@ -155,7 +169,7 @@ class SiswaController extends Controller
     }
 
     public function konfirmasi(Request $request, $id){
-        $data = ModelSiswa::with('user')->where('id', $id)->first();
+        $data = ModelInvoice::where('id', $id)->first();
         $data->status = $request->status;
         $data->save();
         Mail::to($data->user->email)->send(new PaymentMail());
