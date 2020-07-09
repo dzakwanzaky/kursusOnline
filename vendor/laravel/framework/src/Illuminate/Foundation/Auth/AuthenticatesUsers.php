@@ -67,7 +67,19 @@ trait AuthenticatesUsers
         $request->validate([
             $this->username() => 'required|string',
             'password' => 'required|string',
-        ]);
+        ],
+
+[
+            
+            'email.required' => 'Email tidak boleh kosong',
+            'email.min' => 'Email tidak boleh kurang dari 11 karakter',
+            'email.email' => 'Email tidak valid',
+            'email.unique' => 'Email sudah ada, silakan login',
+            'password.min' => 'Password tidak boleh kurang dari 7 masukan',
+            'password.required' => 'Kata sandi tidak boleh kosong',
+            'password_confirmation.same' => 'Konfirmasi password tidak sama',
+            'password_confirmation.required' => 'Konfirmasi password tidak boleh kosong'
+       ]);
     }
 
     /**

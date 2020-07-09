@@ -2,6 +2,9 @@
 @extends('base/script_page')
 
 @section('content')
+<style type="text/css">
+    .form-control::-webkit-input-placeholder{color:#ced4da; font-size:15px;opacity:1}
+    </style>
 <div class="container">
     <br>
     <br>
@@ -35,7 +38,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Kata Sandi baru') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Masukan kata sandi baru" autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -49,7 +52,12 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Konfirmasi Kata Sandi Baru') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" placeholder="Konfirmasi kata sandi" autocomplete="new-password">
+                                @error('password_confirmation')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 

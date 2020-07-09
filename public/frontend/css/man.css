@@ -20,10 +20,10 @@
 }
 
 @media (width: 360px){
-.search-course-area{
+.search-course-area .overlay-bg{
 	background:url(../img/s-bg.jpg) center;
 	background-size:cover; 
-	height: 45%;
+	height: 22em;
 }
 }
 
@@ -42,10 +42,10 @@
 }
 }
 @media (width: 320px){
-.search-course-area{
+.search-course-area .overlay-bg{
 	background:url(../img/s-bg.jpg) center;
 	background-size:cover; 
-	height: 51%;
+	height: 21em;
 }
 }
 @media (width: 375px){

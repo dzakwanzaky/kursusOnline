@@ -2,12 +2,398 @@
 .box{
   position:absolute;
   top:50%;
+  left:36%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:50%;
+  left:64%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+@media screen and (width: 320px) {
+.box{
+  position:absolute;
+  top:50%;
   left:50%;
   transform : translate(-50% ,-50%);
   padding-top: 200px;
 
 }
+.boxi{
+  position:absolute;
+  top:95%;
+  left:50%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
 
+}
+}
+@media screen and (width: 360px) {
+.box{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:95%;
+  left:50%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 375px) {
+.box{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:95%;
+  left:50%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 414px) {
+.box{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:95%;
+  left:50%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 411px) {
+.box{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:95%;
+  left:50%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 480px) {
+.box{
+  position:absolute;
+  top:50%;
+  left:27%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:50%;
+  left:72%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 517px) {
+.box{
+  position:absolute;
+  top:50%;
+  left:27%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:50%;
+  left:72%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 640px) {
+.box{
+  position:absolute;
+  top:50%;
+  left:33%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:50%;
+  left:68%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 568px) {
+.box{
+  position:absolute;
+  top:50%;
+  left:30%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:50%;
+  left:68%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 667px) {
+.box{
+  position:absolute;
+  top:50%;
+  left:31%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:50%;
+  left:65%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 600px) {
+.box{
+  position:absolute;
+  top:50%;
+  left:31%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:50%;
+  left:68%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 768px) {
+.box{
+  position:absolute;
+  top:60%;
+  left:25%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:60%;
+  left:69%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 736px) {
+.box{
+  position:absolute;
+  top:60%;
+  left:33%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:60%;
+  left:65%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 731px) {
+.box{
+  position:absolute;
+  top:60%;
+  left:33%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:60%;
+  left:65%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 800px) {
+.box{
+  position:absolute;
+  top:60%;
+  left:25%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:60%;
+  left:69%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 812px) {
+.box{
+  position:absolute;
+  top:60%;
+  left:25%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:60%;
+  left:69%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 823px) {
+.box{
+  position:absolute;
+  top:60%;
+  left:25%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:60%;
+  left:69%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+
+@media screen and (width: 1024px) {
+.box{
+  position:absolute;
+  top:60%;
+  left:30%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:60%;
+  left:65%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 1920px) {
+.box{
+  position:absolute;
+  top:60%;
+  left:37%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:60%;
+  left:57%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 980px) {
+.box{
+  position:absolute;
+  top:60%;
+  left:30%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:60%;
+  left:65%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
+@media screen and (width: 900px) {
+.box{
+  position:absolute;
+  top:60%;
+  left:27%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+.boxi{
+  position:absolute;
+  top:60%;
+  left:67%;
+  transform : translate(-50% ,-50%);
+  padding-top: 200px;
+
+}
+}
 .btn:link,
 .btn:visited{
   text-decoration: none;

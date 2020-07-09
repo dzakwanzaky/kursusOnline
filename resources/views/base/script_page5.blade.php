@@ -20,7 +20,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/tema/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="/tema/style.css">    
+    <link rel="stylesheet" href="/tema/stylet.css">    
     <!-- ALL VERSION CSS -->
     <link rel="stylesheet" href="/tema/css/versions.css">
     <!-- Responsive CSS -->

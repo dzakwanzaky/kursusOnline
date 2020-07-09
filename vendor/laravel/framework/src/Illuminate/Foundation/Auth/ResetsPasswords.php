@@ -66,7 +66,21 @@ trait ResetsPasswords
         return [
             'token' => 'required',
             'email' => 'required|email',
-            'password' => 'required|confirmed|min:8',
+            'password' => 'required|min:8',
+            'password_confirmation' => 'required|same:password',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'email.required' => 'Email tidak boleh kosong',
+            'email.email' => 'Email tidak valid',
+            'password.required' => 'Password tidak boleh kosong',
+            'password.min' => 'Masukan password minimal 8 karakter',
+            'password_confirmation.required' => 'Konfirmasi password tidak boleh kosong',
+            'password_confirmation.same' => 'Konfirmasi password tidak sama'
+            
         ];
     }
 

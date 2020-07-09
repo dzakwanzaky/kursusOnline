@@ -8,6 +8,95 @@
   height: 145%;
 
 }
+.awake2 {
+  background-color: #fff;
+  height: 40%;
+
+}
+@media screen and (width:1024px) {
+.awake2 {
+  background-color: #fff;
+  height: 17%;
+
+}
+}
+@media screen and (width:768px) {
+.awake2 {
+  background-color: #fff;
+  height: 22%;
+
+}
+}
+@media screen and (width:667px) {
+.awake2 {
+  background-color: #fff;
+  height: 55%;
+
+}
+}
+@media screen and (width:568px) {
+.awake2 {
+  background-color: #fff;
+  height: 55%;
+
+}
+}
+@media screen and (width:736px) {
+.awake2 {
+  background-color: #fff;
+  height: 60%;
+
+}
+}
+@media screen and (width:320px) {
+.awake2 {
+  background-color: #fff;
+  height: 63%;
+
+}
+}
+@media screen and (width:360px) {
+.awake2 {
+  background-color: #fff;
+  height: 46%;
+
+}
+}
+@media screen and (width:812px) {
+.awake2 {
+  background-color: #fff;
+  height: 58%;
+
+}
+}
+@media screen and (width:823px) {
+.awake2 {
+  background-color: #fff;
+  height: 58%;
+
+}
+}
+@media screen and (height:768px) {
+.awake2 {
+  background-color: #fff;
+  height: 27%;
+
+}
+}
+@media screen and (width:731px) {
+.awake2 {
+  background-color: #fff;
+  height: 60%;
+
+}
+}
+@media screen and (width:640px) {
+.awake2 {
+  background-color: #fff;
+  height: 60%;
+
+}
+}
 
 
 .butn {
@@ -656,12 +745,19 @@ p{
  .gong {
             padding: 3px;
         }
+.typing p {
+   line-height: 1.4em;
+      font-size: 19px;
+      font-family: sans-serif;
+      color: #999999;
+      font-weight: normal;
+      margin-left: 3em;
+}
     </style>
 <div class="gong">
 </div>
 <div class="awake">
-
-              <section class="search-course-area relative" style="background:url('frontend/img/satuu.jpg')">
+<div class="awake2">
       
         <div class="container">
           <body bgcolor="#ffffff">
@@ -678,7 +774,7 @@ p{
                 <b><font color="#000">Terimakasih Telah <br>Membeli
                 Kelas Kami</b>
                 <br>
-                <p style="margin-left: 7.5em"><br>
+                <p><br>
                 Tunggu kami untuk melakukan verifikasi terhadap data Anda dan menemukan tutor terbaik untuk Anda :)</p>
               </font>
               </h4>
@@ -688,7 +784,7 @@ p{
               
                 
               
-                
+</div>         
 </div>
 </div>
 </div>

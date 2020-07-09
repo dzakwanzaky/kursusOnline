@@ -65,7 +65,7 @@ display: block;
                 <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
                     <ul class="navbar-nav">
                         <li><a class="nav-link" href="/"><li style="font-weight:500">Beranda</a></li>
-                        <li style="font-weight:500"><a class="nav-link" href="/probel-dinamis">Program</a></li>
+                        <li style="font-weight:500"><a class="nav-link" href="/probel-dinamis">Tryout</a></li>
                         <li style="font-weight:500"><a class="nav-link" href="/paket"><font weight="500">Paket</a></font></li>
                         <li><div class="btn-login"><a href="/login">Masuk</a></div></li>
                         <li><div class="btn-login"><a href="/registerPilih">Daftar</a></div></li>
@@ -86,7 +86,7 @@ display: block;
                  <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
                     <ul class="navbar-nav">
                         <li><a class="nav-link" href="/"><li style="font-weight:500">Beranda</a></li>
-                        <li style="font-weight:500"><a class="nav-link" href="/probel-dinamis">Program</a></li>
+                        <li style="font-weight:500"><a class="nav-link" href="/probel-dinamis">Tryout</a></li>
                         <li style="font-weight:500"><a class="nav-link" href="/paket"><font weight="500">Paket</a></font></li>
                         
                     </ul>

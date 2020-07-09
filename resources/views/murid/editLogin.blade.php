@@ -7,7 +7,7 @@
 @endif
 
 @if(session('warning'))
-<div class="alert alert-info" role="alert">
+<div class="alert alert-warning" role="alert">
   {{ session('warning') }}
 </div>
 @endif
@@ -25,6 +25,123 @@
 .has-error {
      color: red;
 }
+@media screen and (width: 375px) {
+.modall-title {
+    margin-left: 5em;
+}
+  }
+  @media screen and (width: 360px) {
+.modall-title {
+    margin-left: 4em;
+}
+  }
+    @media screen and (width: 320px) {
+.modall-title {
+    margin-left: 3em;
+}
+  }
+    @media screen and (width: 414px) {
+.modall-title {
+    margin-left: 6em;
+}
+  }
+
+    @media screen and (width: 411px) {
+.modall-title {
+    margin-left: 6em;
+}
+  }
+    @media screen and (width: 568px) {
+.modall-title {
+    margin-left: 9em;
+}
+  }
+
+
+  @media screen and (width: 1024px) {
+     .card {
+    width: 60%;
+    margin-left: 9em;
+  }
+  }
+  @media screen and (width: 768px) {
+     .card {
+    width: 70%;
+    margin-left: 5em;
+  }
+  }
+   @media screen and (width: 736px) {
+     .card {
+    width: 70%;
+    margin-left: 7em;
+  }
+  }
+  @media screen and (width: 731px) {
+     .card {
+    width: 70%;
+    margin-left: 6em;
+  }
+  }
+     @media screen and (width: 667px) {
+     .card {
+    width: 70%;
+    margin-left: 6em;
+  }
+  }
+   @media screen and (width: 640px) {
+     .card {
+    width: 70%;
+    margin-left: 5.5em;
+  }
+  }
+     @media screen and (width: 568px) {
+     .card {
+    width: 70%;
+    margin-left: 5em;
+  }
+  }
+    @media screen and (width: 812px) {
+     .card {
+    width: 70%;
+    margin-left: 5em;
+  }
+  }
+     @media screen and (width: 823px) {
+     .card {
+    width: 70%;
+    margin-left: 5em;
+  }
+  }
+  @media screen and (width: 375px) {
+     .card {
+    width: 80%;
+    margin-left: 2em;
+  }
+  }
+  @media screen and (width: 360px) {
+     .card {
+    width: 90%;
+    margin-left: 1em;
+  }
+  }
+  @media screen and (width: 320px) {
+     .card {
+    width: 90%;
+    margin-left: 1em;
+  }
+  }
+  @media screen and (width: 414px) {
+     .card {
+    width: 82%;
+    margin-left: 2em;
+  }
+  }
+   @media screen and (width: 411px) {
+     .card {
+    width: 82%;
+    margin-left: 2em;
+  }
+  }
 
 </style>
 <!-- Content Wrapper. Contains page content -->
@@ -42,10 +159,10 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/murid">Murid</a>
+                                    <a href="/murid">Siswa</a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Edit Akun Murid
+                                    Ubah Akun Siswa
                                 </li>
                             </ol>
                         </div>			
@@ -73,7 +190,7 @@
                 <form action="{{ route('register.update', $d->id) }}" method="post" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			{{ method_field('PUT') }}
-<p><center style="font-size:24px">Edit Akun Murid</center></p>
+<p><center style="font-size:24px">Ubah Akun Siswa</center></p>
           <div class="form-group">
             <label for="">Nama Lengkap :</label>
              <div class="form_login{{$errors->has('name') ? ' has-error' : ''}}">

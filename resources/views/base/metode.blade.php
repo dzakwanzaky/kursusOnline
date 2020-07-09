@@ -2,9 +2,56 @@
 @extends('base/script_page')
 @section('content')
 <style type="text/css">
-    h2 {
-        margin-left: 2em;
+    h2.form-title {
+        margin-left: 4em;
+        font-size: 20px;
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
+
+    }
+    @media screen and (width: 375px) {
+       h2.form-title {
+        margin-left: 0em;
+        width: 13em;
+        font-size: 20px;
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    }
+    }
+     @media screen and (width: 360px) {
+       h2.form-title {
+        margin-left: -0.5em;
+        width: 13em;
+       font-size: 20px;
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+    }
+    @media screen and (width: 320px) {
+       h2.form-title {
+        margin-left: -1em;
+        width: 12em;
+        font-size: 20px;
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    }
+    }
+    @media screen and (width: 414px) {
+       h2.form-title {
+        margin-left: 0.7em;
+        width: 13em;
+        font-size: 20px;
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    }
+    }
+    @media screen and (width: 411px) {
+       h2.form-title {
+        margin-left: 0.7em;
+        width: 13em;
+        font-size: 20px;
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    }
     }
 </style>
     <div class="main">

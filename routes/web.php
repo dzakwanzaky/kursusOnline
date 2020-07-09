@@ -13,7 +13,7 @@
 Auth::routes(['verify' => true]);
 
 
-Route::get('/wizardsbm/{program_id}', 'TryoutController@akses')->name('wizardsbm');
+Route::get('/wizardsbm/{tryout_id}', 'TryoutController@akses')->name('wizardsbm');
 
 Route::get('/tesi', function () {
     return view('base/tes');
@@ -280,8 +280,8 @@ Route::get('/editProfile/{id}', 'Auth\RegisterController@editProfile')->name('ed
 Route::get('/editAdmin/{id}', 'Auth\RegisterController@editAdmin')->name('editAdmin');
 Route::get('/getKabupaten/{id}', 'SiswaController@getKabupaten')->name('getKabupaten');
 Route::get('/getKecamatan/{id}', 'SiswaController@getKecamatan')->name('getKecamatan');
-Route::post('/upload', 'InvoiceController@proses_upload')->name('upload');
-Route::post('/unggah', 'InvoiceController@proses_unggah')->name('unggah');
+Route::post('/upload/{id}', 'InvoiceController@proses_upload')->name('upload');
+Route::post('/unggah/{id}', 'InvoiceController@proses_unggah')->name('unggah');
 Route::get('/invoicenya_pdf', 'ProgramController@pdf'); 
 // Route::get('/verify','VerifyController@getVerify')->name('getverify');
 // Route::post('/verify','VerifyController@postVerify')->name('verify');
@@ -292,7 +292,7 @@ Route::get('/tambahProgram','ProgramController@tambah')->name('tambahProgram');
 Route::get('/tambahPaket','PaketController@tambah')->name('tambahPaket');
 Route::get('/probel-dinamis','ProgramController@program')->name('probel-dinamis');
 Route::get('/invoiceDetail','ProgramController@detail');
-Route::get('/invoicePDF/{murid_id}','ProgramController@pdf')->name('invoicePDF');
+Route::get('/invoicePDF/{id}','ProgramController@pdf')->name('invoicePDF');
 
 //base
 Route::get('/pendaftaranProgram1','JadwalController@program1');

@@ -3,8 +3,57 @@
 @section('content')
  <style type="text/css">
     h2 {
-        margin-left: 5em;
+        margin-left: 6.5em;
 
+    }
+    .form-title{
+      font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 20px;
+    }
+    @media screen and (width: 375px) {
+    h2.form-title {
+        width: 200px;
+        margin-left: 2em;
+      font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+
+    }
+    }
+    @media screen and (width: 360px) {
+    h2.form-title {
+        width: 200px;
+        margin-left: 2em;
+      font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+
+    }
+    }
+     @media screen and (width: 320px) {
+    h2.form-title {
+        width: 200px;
+        margin-left: 1em;
+      font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+
+    }
+    }
+ @media screen and (width: 414px) {
+    h2.form-title {
+        width: 200px;
+        margin-left: 3em;
+      font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+
+    }
+    }
+    @media screen and (width: 411px) {
+    h2.form-title {
+        width: 200px;
+        margin-left: 3em;
+      font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+
+    }
     }
     labell {
         font-size: 17px;
@@ -12,6 +61,12 @@
     }
     .daftar {
         font-weight: bolder;
+    }
+    .loginhere {
+        margin-top: 30px;
+    }
+    .signuphere-link{
+        font-weight: 500;
     }
 </style>
     <div class="main">
@@ -25,7 +80,7 @@
 
                 <labell for="email">Email</labell>
                 <div class="form-textbox">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Masukan email Anda">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus placeholder="Masukan email Anda">
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -36,7 +91,7 @@
 
                 <labell for="pass">Kata Sandi</labell>
                 <div class="input-group">
-                      <input id="password" type="password" name="password" class="form-control" data-toggle="password" placeholder="Masukan kata sandi Anda">
+                      <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" class="form-control" data-toggle="password" placeholder="Masukan kata sandi Anda">
                       <div class="input-group-append">
                       <span class="input-group-text"><i class="fa fa-eye"></i></span>
                       </div>
@@ -83,14 +138,13 @@
                 </div>
 
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}></input>
-                        <label class="form-check-label" for="remember">Ingat saya ?</label>
-                        <a href="{{ url('/password/reset') }}" style="font-weight: inherit;color: #408ABD;;"> | Lupa Kata Sandi</a>
+                 
+                        <a href="{{ url('/password/reset') }}" style="font-weight: 500;color: #408ABD;;"> <p class="form-check-input">Lupa Kata Sandi</a>
                 </div>
             </form>
 
             <p class="loginhere">
-                Belum punya akun ?<a href="/registerPilih" class="signuphere-link"> Daftar Sekarang</p></a>
+                <br>Belum punya akun ?<a href="/registerPilih" class="signuphere-link"> Daftar Sekarang</p></a>
             </p>
         </div>
     </div>

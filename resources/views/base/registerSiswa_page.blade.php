@@ -11,13 +11,60 @@
         font-size: 17px;
 
     }
-
+    .form-tile{
+        margin-left: 5em;
+         font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+         font-size: 20px;
+    }
     .help-block {
         color: red;
     }
 
     .has-error {
         color: red;
+    }
+    .loginhere-link{
+        font-weight: 500;
+    }
+    @media screen and (width: 375px) {
+        .form-tile {
+            width: 10em;
+            margin-left:20px;
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+    }
+     @media screen and (width: 360px) {
+        .form-tile {
+            width: 10em;
+            margin-left: 5px;
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+    }
+    @media screen and (width: 320px) {
+        .form-tile {
+            width: 9em;
+            margin-left: 0px;
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+    }
+    @media screen and (width: 414px) {
+        .form-tile {
+            width: 10em;
+            margin-left: 40px;
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+    }
+    @media screen and (width: 411px) {
+        .form-tile {
+            width: 10em;
+            margin-left: 35px;
+            font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
     }
 </style>
 <div class="main">
@@ -26,7 +73,7 @@
             <form class="signup-form" role="form" method="POST" action="{{ route('register.store') }}">
                 {{ csrf_field() }}
 
-                <h2 class="form-title">Daftar Akun Murid</h2>
+                <h2 class="form-tile">Daftar Akun Siswa</h2>
 
 
                 <labell for="name">Nama Lengkap</labell>
@@ -64,7 +111,7 @@
                 <labell for="email">Email</labell>
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <div class="form-title">
-                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"
+                        <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}"
                             placeholder="Masukan email Anda" value="{{ old('email') }}">
 
                         @if ($errors->has('email'))

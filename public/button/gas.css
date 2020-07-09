@@ -7,7 +7,15 @@
   padding: 8px 13px;
   background-color: #03a9f4;
   color: #ffffff;
+  border-color: #fff;
 }
+.buton:focus{
+ color: #ffffff;
+ background-color: #147bc6;
+ border-color:#80bdff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
+}
+
 .buton:hover{
   text-decoration: none;
   background-color: #01579b;
@@ -23,7 +31,15 @@
   padding: 8px 13px;
   background-color: #03a9f4;
   color: #ffffff;
+  border-color: #fff;
 }
+.buton:focus{
+ color: #ffffff;
+ background-color: #147bc6;
+ border-color:#80bdff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
+}
+
 .buton:hover{
   text-decoration: none;
   background-color: #01579b;
@@ -38,11 +54,18 @@
   padding: 8px 13px;
   background-color: #03a9f4;
   color: #ffffff;
+  border-color: #fff;
 }
 .butonn:hover{
   text-decoration: none;
   background-color: #01579b;
   color: #ffffff;
+}
+.butonn:focus{
+ color: #ffffff;
+ background-color: #147bc6;
+ border-color:#80bdff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
 }
 
 .butone{
@@ -54,12 +77,20 @@
   padding: 8px 13px;
   background-color: #03a9f4;
   color: #ffffff;
+  border-color: #fff;
 }
 .butone:hover{
   text-decoration: none;
   background-color: #01579b;
   color: #ffffff;
 }
+.butone:focus{
+ color: #ffffff;
+ background-color: #147bc6;
+ border-color:#80bdff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
+}
+
 }
 
 @media screen and (width: 320px) {
@@ -72,12 +103,20 @@
   padding: 7px 7px;
   background-color: #03a9f4;
   color: #ffffff;
+  border-color: #fff;
 }
 .buton:hover{
   text-decoration: none;
   background-color: #01579b;
   color: #ffffff;
 }
+.buton:focus{
+ color: #ffffff;
+ background-color: #147bc6;
+ border-color:#80bdff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
+}
+
 .butonn{
   margin-left: 40px;
   text-decoration: none;
@@ -87,15 +126,22 @@
    padding: 7px 7px;
   background-color: #03a9f4;
   color: #ffffff;
+  border-color: #fff;
 }
 .butonn:hover{
   text-decoration: none;
   background-color: #01579b;
   color: #ffffff;
 }
+.butonn:focus{
+ color: #ffffff;
+ background-color: #147bc6;
+ border-color:#80bdff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
+}
 
 .butone{
-  margin-left: 50px;
+  margin-left: 70px;
   text-decoration: none;
   font-family: arial;
   font-size: 16px;
@@ -103,14 +149,22 @@
    padding: 7px 7px;
   background-color: #03a9f4;
   color: #ffffff;
+  border-color: #fff;
 }
 .butone:hover{
   text-decoration: none;
   background-color: #01579b;
   color: #ffffff;
 }
+.butone:focus{
+ color: #ffffff;
+ background-color: #147bc6;
+ border-color:#80bdff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
+}
+
 .but{
-  margin-left: 5px;
+  margin-left: 20px;
   text-decoration: none;
   font-family: arial;
   font-size: 16px;
@@ -118,7 +172,15 @@
    padding: 7px 7px;
   background-color: #03a9f4;
   color: #ffffff;
+  border-color: #fff;
 }
+.but:focus{
+ color: #ffffff;
+ background-color: #147bc6;
+ border-color:#80bdff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
+}
+
 .but:hover{
   text-decoration: none;
   background-color: #01579b;
@@ -138,11 +200,18 @@
   padding: 8px 13px;
   background-color: #03a9f4;
   color: #ffffff;
+  border-color: #fff;
 }
 .butonn:hover{
   text-decoration: none;
   background-color: #01579b;
   color: #ffffff;
+}
+.butonn:focus{
+ color: #ffffff;
+ background-color: #147bc6;
+ border-color:#80bdff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
 }
 
 
@@ -155,11 +224,18 @@
   padding: 8px 13px;
   background-color: #03a9f4;
   color: #ffffff;
+  border-color: #fff;
 }
 .butone:hover{
   text-decoration: none;
   background-color: #01579b;
   color: #ffffff;
+}
+.butone:focus{
+ color: #ffffff;
+ background-color: #147bc6;
+ border-color:#80bdff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
 }
 
 
@@ -173,12 +249,20 @@
   padding: 8px 13px;
   background-color: #03a9f4;
   color: #ffffff;
+  border-color: #fff;
 }
 .but:hover{
   text-decoration: none;
   background-color: #01579b;
   color: #ffffff;
 }
+.but:focus{
+ color: #ffffff;
+ background-color: #147bc6;
+ border-color:#80bdff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
+}
+
 .btni {
   box-sizing: border-box;
   -webkit-appearance: none;
@@ -205,6 +289,13 @@
   margin-top: 20px;
   text-align:center!important
 }
+.btni:focus{
+ color: #ffffff;
+
+
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
+}
+
 .first:hover {
 
  
@@ -428,7 +519,7 @@
 }
 
 .butone{
-  margin-left: 55px;
+  margin-left: 65px;
   text-decoration: none;
   font-family: arial;
   font-size: 16px;
@@ -443,7 +534,7 @@
   color: #ffffff;
 }
 .but{
-  margin-left: 5px;
+  margin-left: 10px;
   text-decoration: none;
   font-family: arial;
   font-size: 16px;

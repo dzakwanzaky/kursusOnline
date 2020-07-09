@@ -15,14 +15,14 @@
     @media screen and (width: 320px) {
         .awake {
             background-color: #f8f8ff;
-            height: 145%;
+            height: 170%;
         }
     }
 
     @media screen and (width: 640px) {
         .awake {
             background-color: #f8f8ff;
-            height: 200%;
+            height: 245%;
         }
     }
 
@@ -36,41 +36,59 @@
     @media screen and (width: 823px) {
         .awake {
             background-color: #f8f8ff;
-            height: 180%;
+            height: 210%;
         }
     }
 
     @media screen and (width: 568px) {
         .awake {
             background-color: #f8f8ff;
-            height: 240%;
+            height: 280%;
         }
     }
 
     @media screen and (width: 667px) {
         .awake {
             background-color: #f8f8ff;
-            height: 210%;
+            height: 250%;
         }
     }
 
     @media screen and (width: 736px) {
         .awake {
             background-color: #f8f8ff;
-            height: 180%;
+            height: 220%;
+        }
+    }
+    @media screen and (width: 731px) {
+        .awake {
+            background-color: #f8f8ff;
+            height: 230%;
         }
     }
 
     @media screen and (width: 812px) {
         .awake {
             background-color: #f8f8ff;
-            height: 200%;
+            height: 240%;
+        }
+    }
+    @media screen and (height: 1366px) {
+        .awake {
+            background-color: #f8f8ff;
+            height: 90%;
+        }
+    }
+    @media screen and (height: 1024px) {
+        .awake {
+            background-color: #f8f8ff;
+            height: 90%;
         }
     }
      @media screen and (width: 411px) {
         .awake {
             background-color: #f8f8ff;
-            height: 120%;
+            height: 125%;
         }
     }
 </style>
@@ -146,7 +164,13 @@
         background-color: transparent;
         font-size: 1.5rem;
         transition: 0.25s linear;
+        border-color: #fff;
     }
+    .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
+
 
     .modal .content-wrapper .close:before,
     .modal .content-wrapper .close:after {
@@ -301,6 +325,10 @@
             font-size: 1.5rem;
             transition: 0.25s linear;
         }
+            .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
 
         .modal .content-wrapper .close:before,
         .modal .content-wrapper .close:after {
@@ -456,6 +484,10 @@
             font-size: 1.5rem;
             transition: 0.25s linear;
         }
+            .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
 
         .modal .content-wrapper .close:before,
         .modal .content-wrapper .close:after {
@@ -612,7 +644,10 @@
             font-size: 1.5rem;
             transition: 0.25s linear;
         }
-
+            .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
         .modal .content-wrapper .close:before,
         .modal .content-wrapper .close:after {
             position: absolute;
@@ -767,7 +802,10 @@
             font-size: 1.5rem;
             transition: 0.25s linear;
         }
-
+            .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
         .modal .content-wrapper .close:before,
         .modal .content-wrapper .close:after {
             position: absolute;
@@ -922,7 +960,10 @@
             font-size: 1.5rem;
             transition: 0.25s linear;
         }
-
+    .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
         .modal .content-wrapper .close:before,
         .modal .content-wrapper .close:after {
             position: absolute;
@@ -1077,7 +1118,10 @@
             font-size: 1.5rem;
             transition: 0.25s linear;
         }
-
+    .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
         .modal .content-wrapper .close:before,
         .modal .content-wrapper .close:after {
             position: absolute;
@@ -1232,6 +1276,10 @@
             font-size: 1.5rem;
             transition: 0.25s linear;
         }
+            .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
 
         .modal .content-wrapper .close:before,
         .modal .content-wrapper .close:after {
@@ -1338,7 +1386,7 @@
         }
 
         .modal .content-wrapper {
-            border-radius: 5px;
+            border-radius: 15px;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -1358,7 +1406,7 @@
         }
 
         .gr {
-
+            margin-top: 30px;
             margin-bottom: 14px;
             font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
             font-size: 14px;
@@ -1373,7 +1421,7 @@
         }
 
         .modal .content-wrapper .close {
-            margin-top: 2px;
+            margin-top: 35px;
             position: absolute;
             top: 0.5rem;
             right: 0.5rem;
@@ -1387,6 +1435,10 @@
             font-size: 1.5rem;
             transition: 0.25s linear;
         }
+            .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
 
         .modal .content-wrapper .close:before,
         .modal .content-wrapper .close:after {
@@ -1542,6 +1594,10 @@
             font-size: 1.5rem;
             transition: 0.25s linear;
         }
+            .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
 
         .modal .content-wrapper .close:before,
         .modal .content-wrapper .close:after {
@@ -1697,7 +1753,10 @@
             font-size: 1.5rem;
             transition: 0.25s linear;
         }
-
+    .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
         .modal .content-wrapper .close:before,
         .modal .content-wrapper .close:after {
             position: absolute;
@@ -1838,7 +1897,7 @@
         }
 
         .modal .content-wrapper .close {
-            margin-top: 2px;
+            margin-top: 15px;
             position: absolute;
             top: 0.5rem;
             right: 0.5rem;
@@ -1852,7 +1911,10 @@
             font-size: 1.5rem;
             transition: 0.25s linear;
         }
-
+    .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
         .modal .content-wrapper .close:before,
         .modal .content-wrapper .close:after {
             position: absolute;
@@ -1993,7 +2055,7 @@
         }
 
         .modal .content-wrapper .close {
-            margin-top: 2px;
+            margin-top: 12px;
             position: absolute;
             top: 0.5rem;
             right: 0.5rem;
@@ -2007,6 +2069,10 @@
             font-size: 1.5rem;
             transition: 0.25s linear;
         }
+            .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
 
         .modal .content-wrapper .close:before,
         .modal .content-wrapper .close:after {
@@ -2162,6 +2228,10 @@
             font-size: 1.5rem;
             transition: 0.25s linear;
         }
+            .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
 
         .modal .content-wrapper .close:before,
         .modal .content-wrapper .close:after {
@@ -2317,6 +2387,10 @@
             font-size: 1.5rem;
             transition: 0.25s linear;
         }
+            .close:focus{
+ border-color:#fff;
+ outline:0;box-shadow:0 0 0 .2rem rgba(0,0,0,.0)
+}
 
         .modal .content-wrapper .close:before,
         .modal .content-wrapper .close:after {
@@ -2400,8 +2474,9 @@
         }
     }
     h.lead {
-        font-size: 16px;
+        font-size: 0.77em;
     }
+
 </style>
 
 
@@ -2413,7 +2488,7 @@
                 <div class="big-tagline">
                     @foreach($data as $d)
                     <br><br>
-                    <h2>Soal Latihan {{$d->tryout->nama}}</h2>
+                    <h2>Soal Latihan Tryout {{$d->tryout->nama}}</h2>
                     <div class="lead"><b>Soal no {{$d->nomor_soal}}</b><br>
                     <h class="lead">{!! $d->soal !!}</h></div>
 
@@ -2533,12 +2608,15 @@
             <input type="radio" name="radio">
             <span class="checkmark"></span>
         </label>
+         @if($d->tryout->program_id == '1')
+     
+        @else
         <label class="containerr">
             <pu>E.&nbsp;{{$d->option_e}}</pu>
             <input type="radio" name="radio">
             <span class="checkmark"></span>
         </label>
-
+@endif
 
         <form action="{{route('soalTO', $d->id_to)}}" method="get">
             @if (request()->get('page')==0 )
@@ -2556,7 +2634,7 @@
                 </a>
 
                 <form action="{{route('wizardsbm', $d->tryout->program->id)}}" method="get">
-                <a href="{{route('wizardsbm', $d->tryout->program->id)}}" class="ok">
+                <a href="{{route('wizardsbm', $d->tryout->id)}}" class="ok">
                     <font color="#ffffff">Ok</font>
                 </form>
                 </a>

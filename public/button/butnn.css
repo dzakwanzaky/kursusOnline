@@ -5,7 +5,7 @@
 	background: #fff;
 	box-shadow: 0 0 20px;
 	border-radius: 8px;
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -82,7 +82,7 @@
 	background: #fff;
 	box-shadow: 0 0 20px;
 	border-radius: 8px;
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -145,7 +145,7 @@
 	background: #fff;
 	box-shadow: 0 0 20px;
 	border-radius: 8px;
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -158,8 +158,9 @@
 #box p{
 	margin-top: 30px;
 	color: #333;
-	font size: 20px;
+	font size: 18px;
 }
+
 
 #box span {
     color: #2ecc71;

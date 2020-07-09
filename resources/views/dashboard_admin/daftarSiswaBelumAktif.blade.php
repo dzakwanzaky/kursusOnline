@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Daftar Siswa Belum Aktif</h1>
+                    <h1 class="m-0 text-dark">Daftar Les Belum Aktif</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
 
@@ -39,10 +39,11 @@
 
                                         <th>No.</th>
                                         <th>Nama Lengkap</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>Alamat</th>
-                                        <th>Status</th>
+                                        <th>Program</th>
+                                        <th>Kelas</th>
+                                        <th>Paket</th>
                                         <th>Bukti Pembayaran</th>
+                                        <th>Status</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -51,9 +52,23 @@
                                         @php $no = 1; @endphp
                                         @foreach($data as $d)
                                         <td>{{ $no++ }}</td>
+                                        
                                         <td> {{ $d->user->name }} </td>
-                                        <td>{{ $d->jenis_kelamin }}</td>
-                                        <td>{{ $d->kabupaten }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
+                                        <td> {{ $d->program->program }} </td>
+                                        <td> {{ $d->kelas->kelas }} </td>
+                                        <td> {{ $d->paket->nama_paket }} </td>
+                                       <td>
+                                            @if($d->file==null)
+                                            <button name="status" class=" btn btn-sm btn-danger"
+                                                style="text-align:center">BELUM UPLOAD</button>
+
+                                            </a>
+                                            @else
+                                            <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
+                                                {{ $d->file }}
+                                            </a>
+                                            @endif
+                                        </td>
                                         <td>
 
                                             <button class=" btn btn-sm btn-warning"
@@ -63,18 +78,7 @@
 
                                         </form>
 
-                                        <td>
-                                            @if($d->files->file==null)
-                                            <button name="status" class=" btn btn-sm btn-danger"
-                                                style="text-align:center">BELUM UPLOAD</button>
-
-                                            </a>
-                                            @else
-                                            <a href="{{ url('/data_file/'.$d->files->file) }}" target="_blank">
-                                                {{ $d->files->file }}
-                                            </a>
-                                            @endif
-                                        </td>
+                                    
 
                                         <form action="{{ route('konfirmasi', $d->id) }}" enctype="multipart/form-data">
                                             {{ csrf_field() }}

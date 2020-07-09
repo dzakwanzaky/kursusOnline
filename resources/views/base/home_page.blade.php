@@ -18,23 +18,23 @@
 
 
 <!-- LANDING PAGE -->
-<div id="home" class="parallax first-section" style="background-image:url('tema/images/bimbel.jpg');">
+<div id="home" class="parallax first-section" style="background-image:url('tema/images/dua.jpg');">
     <div class="container">
         <div class="row align-items-center justify-content-center">
             <div class="col-md-12">
                 <div class="row mb-4">
                     @if(Auth::guest())
                     <div class="col-md-7">
-                        <h3>Gabung bersama kami dan</h3>
-                        <h3>raih suksesmu!</h3>
+                        <h3 style="color: #000000;">Gabung bersama kami dan</h3>
+                        <h3 style="color: #000000;">raih suksesmu!</h3>
                         <p class="lead"></p>
                         <a data-scroll href="/registerPilih" class="btn btn-light btn-radius btn-brd"
                             style="font-weight:bold"> GABUNG SEKARANG! </a>
                     </div>
                     @else
                     <div class="col-md-7">
-                        <h3>Gabung bersama kami dan</h3>
-                        <h3>raih suksesmu!</h3>
+                        <h3 style="color: #000000;">Gabung bersama kami dan</h3>
+                        <h3 style="color: #000000;">raih suksesmu!</h3>
                         <p class="lead"></p>
                         <a data-scroll href="/" class="btn btn-light btn-radius btn-brd" style="font-weight:bold">INOFA
                             COURSE</a>
@@ -137,7 +137,7 @@
         <div class="container">
             <div class="row">
                 <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-                    <a href="portfolio.html" class="image image-2 " style="background-image: url('images/work-2.jpg');"
+                    <a href="portfolio.html" class="image image-2 " style="background-image: url('images/gas.jpg');"
                         data-scrollax=" properties: { translateY: '-20%'}"></a>
                     <div class="text">
                         <h4 class="subheading">Program</h4>
@@ -150,7 +150,7 @@
                 </div>
                 <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
                     <a href="portfolio.html" class="image image-2 order-2"
-                        style="background-image: url('images/work-2.jpg');"
+                        style="background-image: url('images/oho.jpg');"
                         data-scrollax=" properties: { translateY: '-20%'}"></a>
                     <div class="text order-1">
                         <h4 class="subheading">Soal Latian</h4>
@@ -161,19 +161,7 @@
                         <p><a href="/probel" class="btn btn-primary px-4">Lihat Soal</a></p>
                     </div>
                 </div>
-                <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-                    <a href="portfolio.html" class="image image-2" style="background-image: url('images/work-3.jpg'); "
-                        data-scrollax=" properties: { translateY: '-20%'}"></a>
-                    <div class="text">
-                        <h4 class="subheading">Proses</h4>
-                        <h2 class="heading"><a href="portfolio.html">Proses pendaftaran mudah, murah dan terpercaya</a>
-                        </h2>
-                        <p>Bimbingan belajar kami sudah dipercayai oleh banyak pengguna dikarenakan selain lengkap,
-                            bimbingan kami juga murah dalam biaya dan proses pendaftaran untuk mendapatkan layanan dari
-                            kami juga sangat mudah.</p>
-                        <p><a href="/tentangkami" class="btn btn-primary px-4">Tentang Kami</a></p>
-                    </div>
-                </div>
+                
             </div>
 
         </div>
@@ -214,7 +202,7 @@
                             <div class="text">
                                 <p class="mb-5">{{$d->isi}}</p>
                                 <p class="name" style="color:#4a4a4a">{{$d->user->name}}</p>
-                                <span class="position">Program bimbel {{$d->siswa->files->program->program}} Inofa</span>
+                                <span class="position">Program bimbel {{$d->siswa->files->program->program}} </span>
                             </div>
                         </div>
                     </div>
@@ -237,9 +225,16 @@
             <h2 class="h4">Lalu, Tunggu apa lagi<strong class="px-3">gabung bersama kami sekarang</strong></h4>
 
 
+                <br>
                 <div class="box">
                     <a href="/login" class="btn btn-white btn-animation-1">
-                        <font color="#DB7093">Gabung sekarang</font>
+                        <font color="#DB7093">Daftar les sekarang</font>
+                    </a>
+
+                </div>
+                <div class="boxi">
+                    <a href="/probel-dinamis" class="btn btn-white btn-animation-1">
+                        <font color="#DB7093">Coba tryout sekarang</font>
                     </a>
 
                 </div>

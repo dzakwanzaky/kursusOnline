@@ -28,26 +28,62 @@
 			{{ csrf_field() }}
 			{{ method_field('PUT') }}
               <div class="form-group"> <!-- Date input -->
-                <label  class="control-label" for="tanggal">Date</label>
-                <input class="form-control" id="tanggal" name="tanggal" placeholder="MM/DD/YYY" type="text"/>
+                <label  class="control-label" for="tanggal">Tanggal</label>
+                
+                 <input id="tanggal" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{ old('tanggal') }}" autocomplete="tanggal">
+
+                    @error('tanggal')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+
               </div>
               <div class="form-group">
               <label for="name" >Waktu Mulai</label>
-              <input class="form-control" id="single-input" name="waktu_mulai" value="">
+              <input id="single-input" class="form-control @error('waktu_mulai') is-invalid @enderror" name="waktu_mulai" value="{{ old('waktu_mulai') }}" autocomplete="waktu_mulai">
+
+                    @error('waktu_mulai')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
               </div>
               <div class="form-group">
-						    <label for="name">Waktu Selesai :</label>
-                <input class="form-control" id="single-input-2" name="waktu_selesai" value="">
+						    <label for="name">Waktu Selesai </label>
+                <input id="single-input-2" class="form-control @error('waktu_selesai') is-invalid @enderror" name="waktu_selesai" value="{{ old('waktu_selesai') }}" autocomplete="waktu_selesai">
+
+                    @error('waktu_selesai')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 					    </div>
               <div class="form-group">
-						    <label for="">Saran, Kritikan dan Masukkan :</label>
-						    <input type="text" class="form-control" id="report" name="report">
+                <label for="name">Materi </label>
+                <input id="single-input-2" class="form-control @error('materi') is-invalid @enderror" name="materi" value="{{ old('materi') }}" autocomplete="materi">
+
+                    @error('materi')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+              </div>
+              <div class="form-group">
+						    <label for="">Saran, Kritikan dan Masukkan </label>
+						    <input id="report" class="form-control @error('report') is-invalid @enderror" name="report" value="{{ old('report') }}" autocomplete="report">
+
+                    @error('report')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 					    </div>
 
               <input type="text" class="form-control" id="kehadiran" name="kehadiran" value="HADIR" style="display:none"></input>
               <div class="form-group"> 
                         <a>
-                            <button type="submit" style="float:right" class="btn btn-md btn-success" >Submit</button>
+                            <button type="submit" style="float:right" class="btn btn-md btn-success" >Simpan</button>
                         </a>
                     </div>
                     @endforeach

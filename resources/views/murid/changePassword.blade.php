@@ -22,6 +22,216 @@
     margin-top: 15px;
     font-color: #6c757d;
 }
+   @media screen and (width: 768px) {
+
+  .card {
+    width: 100%;
+    margin-left: 1px;
+
+}
+  .help-block {
+    color: red;
+    font-size: 14px;
+    margin-top: 0em;
+    margin-left: 12em;
+}
+    }
+ @media screen and (width: 736px) {
+
+  .card {
+    width: 80%;
+    margin-left: 4.5em;
+
+}
+  .help-block {
+    color: red;
+    font-size: 13px;
+    margin-left: 1em;
+}
+    }
+ @media screen and (width: 667px) {
+
+  .card {
+    width: 80%;
+    margin-left: 4em;
+
+}
+  .help-block {
+    color: red;
+    font-size: 13px;
+    margin-left: 1em;
+}
+    }
+     @media screen and (width: 812px) {
+
+  .card {
+    width: 100%;
+    margin-left: 1px;
+
+}
+  .help-block {
+    color: red;
+    font-size: 13px;
+    margin-left: 14em;
+}
+    }
+   @media screen and (width: 375px) {
+
+  .card {
+    width: 100%;
+    margin-left: 1px;
+
+}
+  .help-block {
+    color: red;
+    font-size: 13px;
+    margin-left: 1em;
+}
+    }
+   @media screen and (width: 320px) {
+
+  .card {
+    width: 100%;
+    margin-left: 1px;
+
+}
+  .help-block {
+    color: red;
+    font-size: 13px;
+    margin-left: 1em;
+}
+    }
+    @media screen and (width: 360px) {
+
+  .card {
+    width: 100%;
+    margin-left: 1px;
+
+}
+  .help-block {
+    color: red;
+    font-size: 13px;
+    margin-left: 1em;
+}
+    }
+   @media screen and (width: 414px) {
+
+  .card {
+    width: 100%;
+    margin-left: 1px;
+
+}
+  .help-block {
+    color: red;
+    font-size: 13px;
+    margin-left: 1em;
+}
+    }
+   @media screen and (width: 411px) {
+
+  .card {
+    width: 100%;
+    margin-left: 1px;
+
+}
+  .help-block {
+    color: red;
+    font-size: 13px;
+    margin-left: 1em;
+}
+    }
+ @media screen and (width: 568px) {
+
+  .card {
+    width: 75%;
+    margin-left: 4em;
+
+}
+  .help-block {
+    color: red;
+    font-size: 13px;
+    margin-left: 1em;
+}
+    }
+ @media screen and (width: 640px) {
+
+  .card {
+    width: 75%;
+    margin-left: 5em;
+
+}
+  .help-block {
+    color: red;
+    font-size: 13px;
+    margin-left: 1em;
+}
+    }
+ @media screen and (width: 823px) {
+
+  .card {
+    width: 75%;
+    margin-left: 4em;
+
+}
+  .help-block {
+    color: red;
+    font-size: 13px;
+    margin-left: 11em;
+}
+    }
+ @media screen and (width: 731px) {
+
+  .card {
+    width: 75%;
+    margin-left: 5em;
+
+}
+  .help-block {
+    color: red;
+    font-size: 13px;
+    margin-left: 1em;
+}
+    }
+@media screen and (width: 1024px) {
+
+  .card {
+    width: 100%;
+    margin-left: 1px;
+
+}
+    }
+
+@media screen and (width: 375px) {
+.modall-title {
+    margin-left: 5em;
+}
+  }
+  @media screen and (width: 360px) {
+.modall-title {
+    margin-left: 4em;
+}
+  }
+    @media screen and (width: 320px) {
+.modall-title {
+    margin-left: 3em;
+}
+  }
+    @media screen and (width: 414px) {
+.modall-title {
+    margin-left: 6em;
+}
+  }
+
+    @media screen and (width: 411px) {
+.modall-title {
+    margin-left: 6em;
+}
+  }
+    @media screen and (width: 568px) {
+.modall-title {
+    margin-left: 9em;
+}
+  }
 </style>
 <link rel="stylesheet" href="{{asset('/assets')}}/bootstrap/css/bootstrap.min.css">
 
@@ -40,7 +250,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right" style="font-size:14px">
                                 <li class="breadcrumb-item">
-                                    <a href="/murid">Murid</a>
+                                    <a href="/murid">Siswa</a>
                                 </li>
                                 <li class="breadcrumb-item active">
                                     Ubah Kata Sandi

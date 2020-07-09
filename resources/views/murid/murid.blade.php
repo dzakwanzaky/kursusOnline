@@ -28,7 +28,7 @@
 
                                 <tr>
                                     <th>No.</th>
-                                    <th>Nama</th>
+                                    <th>Nama Tutor</th>
                                     <th>Kelas</th>
                                     <th>Mata Pelajaran</th>
                                     <th>Sesi 1</th>
@@ -42,8 +42,16 @@
                                 @foreach($data as $d)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{ $d->jadwal->name }}</td>
-                                    <td>{{ $d->invoice->kelas->kelas }}</td>
+                                    @if($d->tutor_id == null)
+                                    <td></td>
+                                    @else
+                                    <td>{{ $d->tutor->name }}</td>
+                                    @endif
+                                    <td>{{ $d->invoice->kelas->kelas  }} {{ $d->invoice->program->program }} </td>
+
+
+
+
                                     <td>{{ $d->mapel->mapel }}</td>
                                     <td>{{ $d->hari1 }} {{ $d->waktu_hari1 }}</td>
                                     <td id="hari2td">{{ $d->hari2 }} {{ $d->waktu_hari2 }}</td>

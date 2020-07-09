@@ -1,5 +1,5 @@
 @include('base/header_page')
-@extends('base/script_page')
+@extends('base/script_aja')
 @section('content')
 <style type="text/css">
     h4 {

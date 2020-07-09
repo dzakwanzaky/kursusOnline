@@ -57,10 +57,10 @@ class ChangePasswordController extends Controller
    
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
         if (auth()->user()->role == 'tutor'){
-            return redirect('profile')->with('success', 'Password Berhasil Diubah');
+            return redirect('profile')->with('success', 'Kata sandi berhasil di ubah');
             
             } else if (auth()->user()->role == 'siswa') {
-                Session::flash('success', 'Kata Sandi Berhasil di Ubah');
+                Session::flash('success', 'Kata sandi berhasil di ubah');
                 return redirect('/invoice');
             } else {
                 return redirect('profileAdmin')->with('success', 'Password Berhasil Diubah');

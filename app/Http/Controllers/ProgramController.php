@@ -33,9 +33,10 @@ class ProgramController extends Controller
     }
     
     //untuk invoice
-    public function data()
+   public function data()
     {
-        $data = ModelInvoice::with('siswa')->get();
+        $data = ModelInvoice::where('id_murid', '=', Auth::user()->id)->get();
+
         return view('murid/invoice', compact('data'));
     }
 
@@ -51,7 +52,7 @@ class ProgramController extends Controller
     //untuk invoice
     public function pdf($id)
     {
-        $data = ModelInvoice::where('id_murid', $id)->get();
+        $data = ModelInvoice::where('id', $id)->get();
         $pdf = PDF::loadView('murid/invoicenya', ['data'=>$data])->setPaper('A4');
         return $pdf->download('invoice.pdf');
     }

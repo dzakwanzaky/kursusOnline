@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark" style="float:left">Daftar Siswa Aktif</h1>
+                    <h1 class="m-0 text-dark" style="float:left">Daftar Les Aktif</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
 
@@ -30,8 +30,9 @@
 
                                         <th>No.</th>
                                         <th>Nama</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>Alamat</th>
+                                        <th>Program</th>
+                                        <th>Kelas</th>
+                                        <th>Paket</th>
                                         <th>Status</th>
                                         <th>Bukti Pembayaran</th>
                                         <th>Aksi</th>
@@ -43,19 +44,20 @@
                                         @foreach($data as $d)
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $d->user->name }}</td>
-                                        <td>{{ $d->jenis_kelamin }}</td>
-                                        <td>{{ $d->kota }} {{ $d->kecamatan }} {{ $d->provinsi }} </td>
+                                        <td>{{ $d->program->program }}</td>
+                                        <td>{{ $d->kelas->kelas}} </td>
+                                         <td>{{$d->paket->nama_paket}} </td>
                                         <td>
                                             <button class=" btn btn-sm btn-success" style="text-align:center">
                                                 {{ $d->status }}</button>
                                         </td>
                                         <td>
-                                            @if($d->files->file==null)
+                                            @if($d->file==null)
                                             <button name="status" class=" btn btn-sm btn-danger"
                                                 style="text-align:center">BELUM UPLOAD</button>
                                             @else
-                                            <a href="{{ url('/data_file/'.$d->files->file) }}" target="_blank">
-                                                {{ $d->files->file }}
+                                            <a href="{{ url('/data_file/'.$d->file) }}" target="_blank">
+                                                {{ $d->file }}
                                             </a>
                                             @endif
                                         </td>
