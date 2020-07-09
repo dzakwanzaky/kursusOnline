@@ -138,18 +138,23 @@
 <script>
     $('#button-sub').hide();
 </script>
-<script src="https://cdn.tiny.cloud/1/jj2iuwt16dheyzaquicjvu4dg0q2iae3aqb5530kmbud4hf7/tinymce/5/tinymce.min.js"
-    referrerpolicy="origin"></script>
-<script>
-    tinymce.init({
-        selector: "textarea",
-    });
-</script>
+<script src="{{ asset('/lte/plugins/tinymce/js/tinymce/tinymce.min.js') }}" defer></script>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
     $('#add').click(function () {
         var html =
-            `<script src="https://cdn.tiny.cloud/1/jj2iuwt16dheyzaquicjvu4dg0q2iae3aqb5530kmbud4hf7/tinymce/5/tinymce.min.js" referrerpolicy="origin"><\/script><script>tinymce.init({selector: "textarea",});<\/script><div class="container-fluid"><div class="row"><div class="col-lg-12"><div class="card">
+            `<script src="{{ asset('/lte/plugins/tinymce/js/tinymce/tinymce.min.js') }}" defer><\/script>
+            <script>tinymce.init({
+                selector: "textarea",
+                setup: function (editor) {
+                editor.on('change', function () {
+                editor.save();
+            });
+        },
+            });
+            <\/script>
+            <div class="container-fluid"><div class="row"><div class="col-lg-12"><div class="card">
             <div class="card-body"><input style="display:none" id="id_to" name="id_to" value="{{ $id }}"></input>
             <button type="button" name="remove" id="" class="btn btn-danger btn-md remove" style="float:right">Hapus Soal</button>
             <div class="panel-body"><div><b>Masukkan Nomor Soal :</b></div>
@@ -174,12 +179,11 @@
             <br><div><b>Masukkan Pembahasan :</b></div><textarea id="testt" name="pembahasan[]"></textarea></div></div></div></div></div>`;
         $('#body').append(html);
         $('#button-sub').show();
-        tinymce.init({
-            selector: "#test",
-        });
-        tinymce.init({
-            selector: "#testt",
-        });
+    
+        var index = 0;
+        $('#textarea').attr("id", index++);
+        console.log($(this).attr('id'));
+
     });
 
     $(document).on('click', '.remove', function () {

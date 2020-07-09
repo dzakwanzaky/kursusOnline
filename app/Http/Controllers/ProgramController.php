@@ -36,6 +36,7 @@ class ProgramController extends Controller
    public function data()
     {
         $data = ModelInvoice::where('id_murid', '=', Auth::user()->id)->get();
+
         return view('murid/invoice', compact('data'));
     }
 

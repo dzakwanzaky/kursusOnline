@@ -147,7 +147,7 @@
 
 @endsection
 @push('script')
-<script src="https://cdn.tiny.cloud/1/jj2iuwt16dheyzaquicjvu4dg0q2iae3aqb5530kmbud4hf7/tinymce/5/tinymce.min.js"
+<script src="https://cdn.tiny.cloud/1/a5mkd182f5dfmv0hfmg50vj71ahbc1ien5dwyaghpvd9avkg/tinymce/5/tinymce.min.js"
     referrerpolicy="origin"></script>
 <script>
     tinymce.init({

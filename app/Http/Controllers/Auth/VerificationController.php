@@ -42,7 +42,7 @@ class VerificationController extends Controller
      */
     public function __construct(Request $request)
     {
-     
+
         $user=User::where('email_verified_at', $request->email_verified_at)->latest()->first();
         Auth::login($user, true);
         $this->middleware('auth');
